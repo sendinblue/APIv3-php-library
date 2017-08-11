@@ -1,6 +1,6 @@
 <?php
 /**
- * SendEmail1Test
+ * SmtpemailAttachmentTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * SendEmail1Test Class Doc Comment
+ * SmtpemailAttachmentTest Class Doc Comment
  *
  * @category    Class */
-// * @description SendEmail1
+// * @description SmtpemailAttachment
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SendEmail1Test extends \PHPUnit_Framework_TestCase
+class SmtpemailAttachmentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,65 +71,30 @@ class SendEmail1Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SendEmail1"
+     * Test "SmtpemailAttachment"
      */
-    public function testSendEmail1()
+    public function testSmtpemailAttachment()
     {
     }
 
     /**
-     * Test attribute "email_to"
+     * Test attribute "url"
      */
-    public function testPropertyEmailTo()
+    public function testPropertyUrl()
     {
     }
 
     /**
-     * Test attribute "email_bcc"
+     * Test attribute "content"
      */
-    public function testPropertyEmailBcc()
+    public function testPropertyContent()
     {
     }
 
     /**
-     * Test attribute "email_cc"
+     * Test attribute "name"
      */
-    public function testPropertyEmailCc()
-    {
-    }
-
-    /**
-     * Test attribute "reply_to"
-     */
-    public function testPropertyReplyTo()
-    {
-    }
-
-    /**
-     * Test attribute "attachment_url"
-     */
-    public function testPropertyAttachmentUrl()
-    {
-    }
-
-    /**
-     * Test attribute "attachment"
-     */
-    public function testPropertyAttachment()
-    {
-    }
-
-    /**
-     * Test attribute "headers"
-     */
-    public function testPropertyHeaders()
-    {
-    }
-
-    /**
-     * Test attribute "attributes"
-     */
-    public function testPropertyAttributes()
+    public function testPropertyName()
     {
     }
 }

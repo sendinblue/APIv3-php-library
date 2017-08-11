@@ -1,6 +1,6 @@
 <?php
 /**
- * SmtptemplatestemplateIdsendAttachment
+ * SmtpemailAttachment
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * SmtptemplatestemplateIdsendAttachment Class Doc Comment
+ * SmtpemailAttachment Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
+class SmtpemailAttachment implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,13 +47,14 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'smtptemplatestemplateIdsend_attachment';
+    protected static $swaggerModelName = 'smtpemail_attachment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'url' => 'string',
         'content' => 'string',
         'name' => 'string'
     ];
@@ -63,6 +64,7 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'url' => 'url',
         'content' => 'byte',
         'name' => null
     ];
@@ -82,6 +84,7 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'url' => 'url',
         'content' => 'content',
         'name' => 'name'
     ];
@@ -92,6 +95,7 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'url' => 'setUrl',
         'content' => 'setContent',
         'name' => 'setName'
     ];
@@ -102,6 +106,7 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'url' => 'getUrl',
         'content' => 'getContent',
         'name' => 'getName'
     ];
@@ -137,6 +142,7 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
@@ -174,6 +180,27 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
 
 
     /**
+     * Gets url
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     * @param string $url Absolute url of the attachment (no local file).
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
      * Gets content
      * @return string
      */
@@ -191,7 +218,7 @@ class SmtptemplatestemplateIdsendAttachment implements ArrayAccess
     {
 
         if (!is_null($content) && (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $content))) {
-            throw new \InvalidArgumentException("invalid value for $content when calling SmtptemplatestemplateIdsendAttachment., must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.");
+            throw new \InvalidArgumentException("invalid value for $content when calling SmtpemailAttachment., must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.");
         }
 
         $this->container['content'] = $content;

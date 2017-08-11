@@ -58,6 +58,7 @@ class SendEmail implements ArrayAccess
         'email_bcc' => 'string[]',
         'email_cc' => 'string[]',
         'reply_to' => 'string',
+        'attachment_url' => 'string',
         'attachment' => '\Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]',
         'headers' => 'map[string,string]',
         'attributes' => 'map[string,string]'
@@ -72,6 +73,7 @@ class SendEmail implements ArrayAccess
         'email_bcc' => 'email',
         'email_cc' => 'email',
         'reply_to' => 'email',
+        'attachment_url' => 'url',
         'attachment' => null,
         'headers' => null,
         'attributes' => null
@@ -96,6 +98,7 @@ class SendEmail implements ArrayAccess
         'email_bcc' => 'emailBcc',
         'email_cc' => 'emailCc',
         'reply_to' => 'replyTo',
+        'attachment_url' => 'attachmentUrl',
         'attachment' => 'attachment',
         'headers' => 'headers',
         'attributes' => 'attributes'
@@ -111,6 +114,7 @@ class SendEmail implements ArrayAccess
         'email_bcc' => 'setEmailBcc',
         'email_cc' => 'setEmailCc',
         'reply_to' => 'setReplyTo',
+        'attachment_url' => 'setAttachmentUrl',
         'attachment' => 'setAttachment',
         'headers' => 'setHeaders',
         'attributes' => 'setAttributes'
@@ -126,6 +130,7 @@ class SendEmail implements ArrayAccess
         'email_bcc' => 'getEmailBcc',
         'email_cc' => 'getEmailCc',
         'reply_to' => 'getReplyTo',
+        'attachment_url' => 'getAttachmentUrl',
         'attachment' => 'getAttachment',
         'headers' => 'getHeaders',
         'attributes' => 'getAttributes'
@@ -166,6 +171,7 @@ class SendEmail implements ArrayAccess
         $this->container['email_bcc'] = isset($data['email_bcc']) ? $data['email_bcc'] : null;
         $this->container['email_cc'] = isset($data['email_cc']) ? $data['email_cc'] : null;
         $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
+        $this->container['attachment_url'] = isset($data['attachment_url']) ? $data['attachment_url'] : null;
         $this->container['attachment'] = isset($data['attachment']) ? $data['attachment'] : null;
         $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
@@ -287,6 +293,27 @@ class SendEmail implements ArrayAccess
     }
 
     /**
+     * Gets attachment_url
+     * @return string
+     */
+    public function getAttachmentUrl()
+    {
+        return $this->container['attachment_url'];
+    }
+
+    /**
+     * Sets attachment_url
+     * @param string $attachment_url Absolute url of the attachment (no local file). Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * @return $this
+     */
+    public function setAttachmentUrl($attachment_url)
+    {
+        $this->container['attachment_url'] = $attachment_url;
+
+        return $this;
+    }
+
+    /**
      * Gets attachment
      * @return \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]
      */
@@ -297,7 +324,7 @@ class SendEmail implements ArrayAccess
 
     /**
      * Sets attachment
-     * @param \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * @param \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[] $attachment Pass the base64 content of the attachment. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
      * @return $this
      */
     public function setAttachment($attachment)

@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **email_bcc** | **string[]** | Email addresses of the recipients in bcc | [optional] 
 **email_cc** | **string[]** | Email addresses of the recipients in cc | [optional] 
 **reply_to** | **string** | Email on which campaign recipients will be able to reply to | [optional] 
-**attachment** | [**\Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]**](SmtptemplatestemplateIdsendAttachment.md) | Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez | [optional] 
+**attachment_url** | **string** | Absolute url of the attachment (no local file). Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez | [optional] 
+**attachment** | [**\Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]**](SmtptemplatestemplateIdsendAttachment.md) | Pass the base64 content of the attachment. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez | [optional] 
 **headers** | **map[string,string]** |  | [optional] 
 **attributes** | **map[string,string]** |  | [optional] 
 

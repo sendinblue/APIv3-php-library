@@ -341,6 +341,7 @@ Class | Method | HTTP request | Description
  - [SmsCampaignsRecipients](docs/Model/SmsCampaignsRecipients.md)
  - [SmtpTemplate](docs/Model/SmtpTemplate.md)
  - [SmtpTemplate1](docs/Model/SmtpTemplate1.md)
+ - [SmtpemailAttachment](docs/Model/SmtpemailAttachment.md)
  - [SmtpemailBcc](docs/Model/SmtpemailBcc.md)
  - [SmtpemailCc](docs/Model/SmtpemailCc.md)
  - [SmtpemailReplyTo](docs/Model/SmtpemailReplyTo.md)
