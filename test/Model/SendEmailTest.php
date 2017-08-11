@@ -106,6 +106,13 @@ class SendEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "attachment_url"
+     */
+    public function testPropertyAttachmentUrl()
+    {
+    }
+
+    /**
      * Test attribute "attachment"
      */
     public function testPropertyAttachment()

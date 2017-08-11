@@ -62,7 +62,7 @@ class SendSmtpEmail1 implements ArrayAccess
         'text_content' => 'string',
         'subject' => 'string',
         'reply_to' => '\Swagger\Client\Model\SmtpemailReplyTo',
-        'attachment' => '\Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]',
+        'attachment' => '\Swagger\Client\Model\SmtpemailAttachment[]',
         'headers' => 'map[string,string]'
     ];
 
@@ -402,7 +402,7 @@ class SendSmtpEmail1 implements ArrayAccess
 
     /**
      * Gets attachment
-     * @return \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]
+     * @return \Swagger\Client\Model\SmtpemailAttachment[]
      */
     public function getAttachment()
     {
@@ -411,7 +411,7 @@ class SendSmtpEmail1 implements ArrayAccess
 
     /**
      * Sets attachment
-     * @param \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * @param \Swagger\Client\Model\SmtpemailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
      * @return $this
      */
     public function setAttachment($attachment)

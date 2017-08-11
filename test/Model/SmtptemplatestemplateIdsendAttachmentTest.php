@@ -78,13 +78,6 @@ class SmtptemplatestemplateIdsendAttachmentTest extends \PHPUnit_Framework_TestC
     }
 
     /**
-     * Test attribute "url"
-     */
-    public function testPropertyUrl()
-    {
-    }
-
-    /**
      * Test attribute "content"
      */
     public function testPropertyContent()
