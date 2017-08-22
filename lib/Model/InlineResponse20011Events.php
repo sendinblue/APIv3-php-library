@@ -59,7 +59,8 @@ class InlineResponse20011Events implements ArrayAccess
         'message_id' => 'string',
         'event' => 'string',
         'reason' => 'string',
-        'tag' => 'string'
+        'tag' => 'string',
+        'ip' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class InlineResponse20011Events implements ArrayAccess
         'message_id' => null,
         'event' => null,
         'reason' => null,
-        'tag' => null
+        'tag' => null,
+        'ip' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class InlineResponse20011Events implements ArrayAccess
         'message_id' => 'messageId',
         'event' => 'event',
         'reason' => 'reason',
-        'tag' => 'tag'
+        'tag' => 'tag',
+        'ip' => 'ip'
     ];
 
 
@@ -109,7 +112,8 @@ class InlineResponse20011Events implements ArrayAccess
         'message_id' => 'setMessageId',
         'event' => 'setEvent',
         'reason' => 'setReason',
-        'tag' => 'setTag'
+        'tag' => 'setTag',
+        'ip' => 'setIp'
     ];
 
 
@@ -123,7 +127,8 @@ class InlineResponse20011Events implements ArrayAccess
         'message_id' => 'getMessageId',
         'event' => 'getEvent',
         'reason' => 'getReason',
-        'tag' => 'getTag'
+        'tag' => 'getTag',
+        'ip' => 'getIp'
     ];
 
     public static function attributeMap()
@@ -195,6 +200,7 @@ class InlineResponse20011Events implements ArrayAccess
         $this->container['event'] = isset($data['event']) ? $data['event'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
     }
 
     /**
@@ -401,6 +407,27 @@ class InlineResponse20011Events implements ArrayAccess
     public function setTag($tag)
     {
         $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->container['ip'];
+    }
+
+    /**
+     * Sets ip
+     * @param string $ip IP from which the user has opened the email or clicked on the link (only availble if the event is opened or clicks)
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->container['ip'] = $ip;
 
         return $this;
     }
