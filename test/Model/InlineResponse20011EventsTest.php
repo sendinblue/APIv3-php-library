@@ -118,4 +118,11 @@ class InlineResponse20011EventsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTag()
     {
     }
+
+    /**
+     * Test attribute "ip"
+     */
+    public function testPropertyIp()
+    {
+    }
 }
