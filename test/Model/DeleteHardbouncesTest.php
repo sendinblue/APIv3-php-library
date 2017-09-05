@@ -78,21 +78,21 @@ class DeleteHardbouncesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "start_date"
+     * Test attribute "startDate"
      */
     public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "end_date"
+     * Test attribute "endDate"
      */
     public function testPropertyEndDate()
     {
     }
 
     /**
-     * Test attribute "contact_email"
+     * Test attribute "contactEmail"
      */
     public function testPropertyContactEmail()
     {

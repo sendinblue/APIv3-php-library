@@ -85,21 +85,21 @@ class GetAccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "firstName"
      */
     public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "lastName"
      */
     public function testPropertyLastName()
     {
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "companyName"
      */
     public function testPropertyCompanyName()
     {
@@ -127,7 +127,7 @@ class GetAccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "marketing_automation"
+     * Test attribute "marketingAutomation"
      */
     public function testPropertyMarketingAutomation()
     {

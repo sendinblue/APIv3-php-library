@@ -57,7 +57,7 @@ class CreateAttribute implements ArrayAccess
         'category' => 'string',
         'name' => 'string',
         'value' => 'string',
-        'enumemaration' => '\Swagger\Client\Model\ContactsattributesEnumemaration[]',
+        'enumemaration' => '\Swagger\Client\Model\CreateAttributeEnumemaration[]',
         'type' => 'string'
     ];
 
@@ -338,7 +338,7 @@ class CreateAttribute implements ArrayAccess
 
     /**
      * Gets enumemaration
-     * @return \Swagger\Client\Model\ContactsattributesEnumemaration[]
+     * @return \Swagger\Client\Model\CreateAttributeEnumemaration[]
      */
     public function getEnumemaration()
     {
@@ -347,7 +347,7 @@ class CreateAttribute implements ArrayAccess
 
     /**
      * Sets enumemaration
-     * @param \Swagger\Client\Model\ContactsattributesEnumemaration[] $enumemaration Values that the attribute can take. Use only if the attribute's category is category
+     * @param \Swagger\Client\Model\CreateAttributeEnumemaration[] $enumemaration Values that the attribute can take. Use only if the attribute's category is category
      * @return $this
      */
     public function setEnumemaration($enumemaration)

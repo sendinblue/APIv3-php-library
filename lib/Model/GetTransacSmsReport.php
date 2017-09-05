@@ -54,7 +54,7 @@ class GetTransacSmsReport implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reports' => '\Swagger\Client\Model\InlineResponse20024Reports[]'
+        'reports' => '\Swagger\Client\Model\GetTransacSmsReportReports[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetTransacSmsReport implements ArrayAccess
 
     /**
      * Gets reports
-     * @return \Swagger\Client\Model\InlineResponse20024Reports[]
+     * @return \Swagger\Client\Model\GetTransacSmsReportReports[]
      */
     public function getReports()
     {
@@ -171,7 +171,7 @@ class GetTransacSmsReport implements ArrayAccess
 
     /**
      * Sets reports
-     * @param \Swagger\Client\Model\InlineResponse20024Reports[] $reports
+     * @param \Swagger\Client\Model\GetTransacSmsReportReports[] $reports
      * @return $this
      */
     public function setReports($reports)

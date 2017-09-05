@@ -57,15 +57,15 @@ class GetSmtpTemplateOverview implements ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'subject' => 'string',
-        'is_active' => 'bool',
-        'test_sent' => 'bool',
-        'sender' => '\Swagger\Client\Model\InlineResponse20012Sender',
-        'reply_to' => 'string',
-        'to_field' => 'string',
+        'isActive' => 'bool',
+        'testSent' => 'bool',
+        'sender' => '\Swagger\Client\Model\GetSmtpTemplateOverviewSender',
+        'replyTo' => 'string',
+        'toField' => 'string',
         'tag' => 'string',
-        'html_content' => 'string',
-        'created_at' => 'string',
-        'modified_at' => 'string'
+        'htmlContent' => 'string',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string'
     ];
 
     /**
@@ -76,15 +76,15 @@ class GetSmtpTemplateOverview implements ArrayAccess
         'id' => 'int32',
         'name' => null,
         'subject' => null,
-        'is_active' => null,
-        'test_sent' => null,
+        'isActive' => null,
+        'testSent' => null,
         'sender' => null,
-        'reply_to' => 'email',
-        'to_field' => null,
+        'replyTo' => 'email',
+        'toField' => null,
         'tag' => null,
-        'html_content' => null,
-        'created_at' => null,
-        'modified_at' => null
+        'htmlContent' => null,
+        'createdAt' => null,
+        'modifiedAt' => null
     ];
 
     public static function swaggerTypes()
@@ -105,15 +105,15 @@ class GetSmtpTemplateOverview implements ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'subject' => 'subject',
-        'is_active' => 'isActive',
-        'test_sent' => 'testSent',
+        'isActive' => 'isActive',
+        'testSent' => 'testSent',
         'sender' => 'sender',
-        'reply_to' => 'replyTo',
-        'to_field' => 'toField',
+        'replyTo' => 'replyTo',
+        'toField' => 'toField',
         'tag' => 'tag',
-        'html_content' => 'htmlContent',
-        'created_at' => 'createdAt',
-        'modified_at' => 'modifiedAt'
+        'htmlContent' => 'htmlContent',
+        'createdAt' => 'createdAt',
+        'modifiedAt' => 'modifiedAt'
     ];
 
 
@@ -125,15 +125,15 @@ class GetSmtpTemplateOverview implements ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'subject' => 'setSubject',
-        'is_active' => 'setIsActive',
-        'test_sent' => 'setTestSent',
+        'isActive' => 'setIsActive',
+        'testSent' => 'setTestSent',
         'sender' => 'setSender',
-        'reply_to' => 'setReplyTo',
-        'to_field' => 'setToField',
+        'replyTo' => 'setReplyTo',
+        'toField' => 'setToField',
         'tag' => 'setTag',
-        'html_content' => 'setHtmlContent',
-        'created_at' => 'setCreatedAt',
-        'modified_at' => 'setModifiedAt'
+        'htmlContent' => 'setHtmlContent',
+        'createdAt' => 'setCreatedAt',
+        'modifiedAt' => 'setModifiedAt'
     ];
 
 
@@ -145,15 +145,15 @@ class GetSmtpTemplateOverview implements ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'subject' => 'getSubject',
-        'is_active' => 'getIsActive',
-        'test_sent' => 'getTestSent',
+        'isActive' => 'getIsActive',
+        'testSent' => 'getTestSent',
         'sender' => 'getSender',
-        'reply_to' => 'getReplyTo',
-        'to_field' => 'getToField',
+        'replyTo' => 'getReplyTo',
+        'toField' => 'getToField',
         'tag' => 'getTag',
-        'html_content' => 'getHtmlContent',
-        'created_at' => 'getCreatedAt',
-        'modified_at' => 'getModifiedAt'
+        'htmlContent' => 'getHtmlContent',
+        'createdAt' => 'getCreatedAt',
+        'modifiedAt' => 'getModifiedAt'
     ];
 
     public static function attributeMap()
@@ -190,15 +190,15 @@ class GetSmtpTemplateOverview implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['is_active'] = isset($data['is_active']) ? $data['is_active'] : null;
-        $this->container['test_sent'] = isset($data['test_sent']) ? $data['test_sent'] : null;
+        $this->container['isActive'] = isset($data['isActive']) ? $data['isActive'] : null;
+        $this->container['testSent'] = isset($data['testSent']) ? $data['testSent'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
-        $this->container['to_field'] = isset($data['to_field']) ? $data['to_field'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['toField'] = isset($data['toField']) ? $data['toField'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['html_content'] = isset($data['html_content']) ? $data['html_content'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['modified_at'] = isset($data['modified_at']) ? $data['modified_at'] : null;
+        $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
     }
 
     /**
@@ -219,36 +219,36 @@ class GetSmtpTemplateOverview implements ArrayAccess
         if ($this->container['subject'] === null) {
             $invalid_properties[] = "'subject' can't be null";
         }
-        if ($this->container['is_active'] === null) {
-            $invalid_properties[] = "'is_active' can't be null";
+        if ($this->container['isActive'] === null) {
+            $invalid_properties[] = "'isActive' can't be null";
         }
-        if ($this->container['test_sent'] === null) {
-            $invalid_properties[] = "'test_sent' can't be null";
+        if ($this->container['testSent'] === null) {
+            $invalid_properties[] = "'testSent' can't be null";
         }
-        if ($this->container['reply_to'] === null) {
-            $invalid_properties[] = "'reply_to' can't be null";
+        if ($this->container['replyTo'] === null) {
+            $invalid_properties[] = "'replyTo' can't be null";
         }
-        if ($this->container['to_field'] === null) {
-            $invalid_properties[] = "'to_field' can't be null";
+        if ($this->container['toField'] === null) {
+            $invalid_properties[] = "'toField' can't be null";
         }
         if ($this->container['tag'] === null) {
             $invalid_properties[] = "'tag' can't be null";
         }
-        if ($this->container['html_content'] === null) {
-            $invalid_properties[] = "'html_content' can't be null";
+        if ($this->container['htmlContent'] === null) {
+            $invalid_properties[] = "'htmlContent' can't be null";
         }
-        if ($this->container['created_at'] === null) {
-            $invalid_properties[] = "'created_at' can't be null";
+        if ($this->container['createdAt'] === null) {
+            $invalid_properties[] = "'createdAt' can't be null";
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['created_at'])) {
-            $invalid_properties[] = "invalid value for 'created_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['createdAt'])) {
+            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
-        if ($this->container['modified_at'] === null) {
-            $invalid_properties[] = "'modified_at' can't be null";
+        if ($this->container['modifiedAt'] === null) {
+            $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modified_at'])) {
-            $invalid_properties[] = "invalid value for 'modified_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modifiedAt'])) {
+            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
         return $invalid_properties;
@@ -272,34 +272,34 @@ class GetSmtpTemplateOverview implements ArrayAccess
         if ($this->container['subject'] === null) {
             return false;
         }
-        if ($this->container['is_active'] === null) {
+        if ($this->container['isActive'] === null) {
             return false;
         }
-        if ($this->container['test_sent'] === null) {
+        if ($this->container['testSent'] === null) {
             return false;
         }
-        if ($this->container['reply_to'] === null) {
+        if ($this->container['replyTo'] === null) {
             return false;
         }
-        if ($this->container['to_field'] === null) {
+        if ($this->container['toField'] === null) {
             return false;
         }
         if ($this->container['tag'] === null) {
             return false;
         }
-        if ($this->container['html_content'] === null) {
+        if ($this->container['htmlContent'] === null) {
             return false;
         }
-        if ($this->container['created_at'] === null) {
+        if ($this->container['createdAt'] === null) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['created_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['createdAt'])) {
             return false;
         }
-        if ($this->container['modified_at'] === null) {
+        if ($this->container['modifiedAt'] === null) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modified_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modifiedAt'])) {
             return false;
         }
         return true;
@@ -370,50 +370,50 @@ class GetSmtpTemplateOverview implements ArrayAccess
     }
 
     /**
-     * Gets is_active
+     * Gets isActive
      * @return bool
      */
     public function getIsActive()
     {
-        return $this->container['is_active'];
+        return $this->container['isActive'];
     }
 
     /**
-     * Sets is_active
-     * @param bool $is_active Status of template (true=active, false=inactive)
+     * Sets isActive
+     * @param bool $isActive Status of template (true=active, false=inactive)
      * @return $this
      */
-    public function setIsActive($is_active)
+    public function setIsActive($isActive)
     {
-        $this->container['is_active'] = $is_active;
+        $this->container['isActive'] = $isActive;
 
         return $this;
     }
 
     /**
-     * Gets test_sent
+     * Gets testSent
      * @return bool
      */
     public function getTestSent()
     {
-        return $this->container['test_sent'];
+        return $this->container['testSent'];
     }
 
     /**
-     * Sets test_sent
-     * @param bool $test_sent Status of test sending for the template (true=test email has been sent, false=test email has not been sent)
+     * Sets testSent
+     * @param bool $testSent Status of test sending for the template (true=test email has been sent, false=test email has not been sent)
      * @return $this
      */
-    public function setTestSent($test_sent)
+    public function setTestSent($testSent)
     {
-        $this->container['test_sent'] = $test_sent;
+        $this->container['testSent'] = $testSent;
 
         return $this;
     }
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\InlineResponse20012Sender
+     * @return \Swagger\Client\Model\GetSmtpTemplateOverviewSender
      */
     public function getSender()
     {
@@ -422,7 +422,7 @@ class GetSmtpTemplateOverview implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\InlineResponse20012Sender $sender
+     * @param \Swagger\Client\Model\GetSmtpTemplateOverviewSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -433,43 +433,43 @@ class GetSmtpTemplateOverview implements ArrayAccess
     }
 
     /**
-     * Gets reply_to
+     * Gets replyTo
      * @return string
      */
     public function getReplyTo()
     {
-        return $this->container['reply_to'];
+        return $this->container['replyTo'];
     }
 
     /**
-     * Sets reply_to
-     * @param string $reply_to Email defined as the \"Reply to\" for the template
+     * Sets replyTo
+     * @param string $replyTo Email defined as the \"Reply to\" for the template
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setReplyTo($replyTo)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['replyTo'] = $replyTo;
 
         return $this;
     }
 
     /**
-     * Gets to_field
+     * Gets toField
      * @return string
      */
     public function getToField()
     {
-        return $this->container['to_field'];
+        return $this->container['toField'];
     }
 
     /**
-     * Sets to_field
-     * @param string $to_field Customisation of the \"to\" field for the template
+     * Sets toField
+     * @param string $toField Customisation of the \"to\" field for the template
      * @return $this
      */
-    public function setToField($to_field)
+    public function setToField($toField)
     {
-        $this->container['to_field'] = $to_field;
+        $this->container['toField'] = $toField;
 
         return $this;
     }
@@ -496,74 +496,74 @@ class GetSmtpTemplateOverview implements ArrayAccess
     }
 
     /**
-     * Gets html_content
+     * Gets htmlContent
      * @return string
      */
     public function getHtmlContent()
     {
-        return $this->container['html_content'];
+        return $this->container['htmlContent'];
     }
 
     /**
-     * Sets html_content
-     * @param string $html_content HTML content of the template
+     * Sets htmlContent
+     * @param string $htmlContent HTML content of the template
      * @return $this
      */
-    public function setHtmlContent($html_content)
+    public function setHtmlContent($htmlContent)
     {
-        $this->container['html_content'] = $html_content;
+        $this->container['htmlContent'] = $htmlContent;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      * @return string
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
-     * @param string $created_at Creation date of the template
+     * Sets createdAt
+     * @param string $createdAt Creation date of the template
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
 
-        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $created_at))) {
-            throw new \InvalidArgumentException("invalid value for $created_at when calling GetSmtpTemplateOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $createdAt))) {
+            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetSmtpTemplateOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets modified_at
+     * Gets modifiedAt
      * @return string
      */
     public function getModifiedAt()
     {
-        return $this->container['modified_at'];
+        return $this->container['modifiedAt'];
     }
 
     /**
-     * Sets modified_at
-     * @param string $modified_at Last modification date of the template
+     * Sets modifiedAt
+     * @param string $modifiedAt Last modification date of the template
      * @return $this
      */
-    public function setModifiedAt($modified_at)
+    public function setModifiedAt($modifiedAt)
     {
 
-        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $modified_at))) {
-            throw new \InvalidArgumentException("invalid value for $modified_at when calling GetSmtpTemplateOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $modifiedAt))) {
+            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetSmtpTemplateOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['modified_at'] = $modified_at;
+        $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
     }

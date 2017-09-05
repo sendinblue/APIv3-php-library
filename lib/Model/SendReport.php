@@ -55,7 +55,7 @@ class SendReport implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'language' => 'string',
-        'email' => '\Swagger\Client\Model\EmailCampaignscampaignIdsendReportEmail'
+        'email' => '\Swagger\Client\Model\SendReportEmail'
     ];
 
     /**
@@ -232,7 +232,7 @@ class SendReport implements ArrayAccess
 
     /**
      * Gets email
-     * @return \Swagger\Client\Model\EmailCampaignscampaignIdsendReportEmail
+     * @return \Swagger\Client\Model\SendReportEmail
      */
     public function getEmail()
     {
@@ -241,7 +241,7 @@ class SendReport implements ArrayAccess
 
     /**
      * Sets email
-     * @param \Swagger\Client\Model\EmailCampaignscampaignIdsendReportEmail $email
+     * @param \Swagger\Client\Model\SendReportEmail $email
      * @return $this
      */
     public function setEmail($email)

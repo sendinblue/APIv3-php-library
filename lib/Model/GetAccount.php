@@ -55,13 +55,13 @@ class GetAccount implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'email' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'company_name' => 'string',
-        'address' => '\Swagger\Client\Model\InlineResponse200Address',
-        'plan' => '\Swagger\Client\Model\InlineResponse200Plan[]',
-        'relay' => '\Swagger\Client\Model\InlineResponse200Relay',
-        'marketing_automation' => '\Swagger\Client\Model\InlineResponse200MarketingAutomation'
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'companyName' => 'string',
+        'address' => '\Swagger\Client\Model\GetExtendedClientAddress',
+        'plan' => '\Swagger\Client\Model\GetAccountPlan[]',
+        'relay' => '\Swagger\Client\Model\GetAccountRelay',
+        'marketingAutomation' => '\Swagger\Client\Model\GetAccountMarketingAutomation'
     ];
 
     /**
@@ -70,13 +70,13 @@ class GetAccount implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-        'first_name' => null,
-        'last_name' => null,
-        'company_name' => null,
+        'firstName' => null,
+        'lastName' => null,
+        'companyName' => null,
         'address' => null,
         'plan' => null,
         'relay' => null,
-        'marketing_automation' => null
+        'marketingAutomation' => null
     ];
 
     public static function swaggerTypes()
@@ -95,13 +95,13 @@ class GetAccount implements ArrayAccess
      */
     protected static $attributeMap = [
         'email' => 'email',
-        'first_name' => 'firstName',
-        'last_name' => 'lastName',
-        'company_name' => 'companyName',
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'companyName' => 'companyName',
         'address' => 'address',
         'plan' => 'plan',
         'relay' => 'relay',
-        'marketing_automation' => 'marketingAutomation'
+        'marketingAutomation' => 'marketingAutomation'
     ];
 
 
@@ -111,13 +111,13 @@ class GetAccount implements ArrayAccess
      */
     protected static $setters = [
         'email' => 'setEmail',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'company_name' => 'setCompanyName',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'companyName' => 'setCompanyName',
         'address' => 'setAddress',
         'plan' => 'setPlan',
         'relay' => 'setRelay',
-        'marketing_automation' => 'setMarketingAutomation'
+        'marketingAutomation' => 'setMarketingAutomation'
     ];
 
 
@@ -127,13 +127,13 @@ class GetAccount implements ArrayAccess
      */
     protected static $getters = [
         'email' => 'getEmail',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'company_name' => 'getCompanyName',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'companyName' => 'getCompanyName',
         'address' => 'getAddress',
         'plan' => 'getPlan',
         'relay' => 'getRelay',
-        'marketing_automation' => 'getMarketingAutomation'
+        'marketingAutomation' => 'getMarketingAutomation'
     ];
 
     public static function attributeMap()
@@ -168,13 +168,13 @@ class GetAccount implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['plan'] = isset($data['plan']) ? $data['plan'] : null;
         $this->container['relay'] = isset($data['relay']) ? $data['relay'] : null;
-        $this->container['marketing_automation'] = isset($data['marketing_automation']) ? $data['marketing_automation'] : null;
+        $this->container['marketingAutomation'] = isset($data['marketingAutomation']) ? $data['marketingAutomation'] : null;
     }
 
     /**
@@ -189,14 +189,14 @@ class GetAccount implements ArrayAccess
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
-        if ($this->container['first_name'] === null) {
-            $invalid_properties[] = "'first_name' can't be null";
+        if ($this->container['firstName'] === null) {
+            $invalid_properties[] = "'firstName' can't be null";
         }
-        if ($this->container['last_name'] === null) {
-            $invalid_properties[] = "'last_name' can't be null";
+        if ($this->container['lastName'] === null) {
+            $invalid_properties[] = "'lastName' can't be null";
         }
-        if ($this->container['company_name'] === null) {
-            $invalid_properties[] = "'company_name' can't be null";
+        if ($this->container['companyName'] === null) {
+            $invalid_properties[] = "'companyName' can't be null";
         }
         if ($this->container['plan'] === null) {
             $invalid_properties[] = "'plan' can't be null";
@@ -216,13 +216,13 @@ class GetAccount implements ArrayAccess
         if ($this->container['email'] === null) {
             return false;
         }
-        if ($this->container['first_name'] === null) {
+        if ($this->container['firstName'] === null) {
             return false;
         }
-        if ($this->container['last_name'] === null) {
+        if ($this->container['lastName'] === null) {
             return false;
         }
-        if ($this->container['company_name'] === null) {
+        if ($this->container['companyName'] === null) {
             return false;
         }
         if ($this->container['plan'] === null) {
@@ -254,71 +254,71 @@ class GetAccount implements ArrayAccess
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
-     * @param string $first_name First Name
+     * Sets firstName
+     * @param string $firstName First Name
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name Last Name
+     * Sets lastName
+     * @param string $lastName Last Name
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets company_name
+     * Gets companyName
      * @return string
      */
     public function getCompanyName()
     {
-        return $this->container['company_name'];
+        return $this->container['companyName'];
     }
 
     /**
-     * Sets company_name
-     * @param string $company_name Name of the company
+     * Sets companyName
+     * @param string $companyName Name of the company
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setCompanyName($companyName)
     {
-        $this->container['company_name'] = $company_name;
+        $this->container['companyName'] = $companyName;
 
         return $this;
     }
 
     /**
      * Gets address
-     * @return \Swagger\Client\Model\InlineResponse200Address
+     * @return \Swagger\Client\Model\GetExtendedClientAddress
      */
     public function getAddress()
     {
@@ -327,7 +327,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets address
-     * @param \Swagger\Client\Model\InlineResponse200Address $address
+     * @param \Swagger\Client\Model\GetExtendedClientAddress $address
      * @return $this
      */
     public function setAddress($address)
@@ -339,7 +339,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Gets plan
-     * @return \Swagger\Client\Model\InlineResponse200Plan[]
+     * @return \Swagger\Client\Model\GetAccountPlan[]
      */
     public function getPlan()
     {
@@ -348,7 +348,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets plan
-     * @param \Swagger\Client\Model\InlineResponse200Plan[] $plan Information about your plans and credits
+     * @param \Swagger\Client\Model\GetAccountPlan[] $plan Information about your plans and credits
      * @return $this
      */
     public function setPlan($plan)
@@ -360,7 +360,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Gets relay
-     * @return \Swagger\Client\Model\InlineResponse200Relay
+     * @return \Swagger\Client\Model\GetAccountRelay
      */
     public function getRelay()
     {
@@ -369,7 +369,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets relay
-     * @param \Swagger\Client\Model\InlineResponse200Relay $relay
+     * @param \Swagger\Client\Model\GetAccountRelay $relay
      * @return $this
      */
     public function setRelay($relay)
@@ -380,22 +380,22 @@ class GetAccount implements ArrayAccess
     }
 
     /**
-     * Gets marketing_automation
-     * @return \Swagger\Client\Model\InlineResponse200MarketingAutomation
+     * Gets marketingAutomation
+     * @return \Swagger\Client\Model\GetAccountMarketingAutomation
      */
     public function getMarketingAutomation()
     {
-        return $this->container['marketing_automation'];
+        return $this->container['marketingAutomation'];
     }
 
     /**
-     * Sets marketing_automation
-     * @param \Swagger\Client\Model\InlineResponse200MarketingAutomation $marketing_automation
+     * Sets marketingAutomation
+     * @param \Swagger\Client\Model\GetAccountMarketingAutomation $marketingAutomation
      * @return $this
      */
-    public function setMarketingAutomation($marketing_automation)
+    public function setMarketingAutomation($marketingAutomation)
     {
-        $this->container['marketing_automation'] = $marketing_automation;
+        $this->container['marketingAutomation'] = $marketingAutomation;
 
         return $this;
     }

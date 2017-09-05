@@ -55,14 +55,14 @@ class GetContactCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messages_sent' => '\Swagger\Client\Model\InlineResponse20015MessagesSent[]',
-        'hard_bounces' => '\Swagger\Client\Model\InlineResponse20015MessagesSent[]',
-        'soft_bounces' => '\Swagger\Client\Model\InlineResponse20015MessagesSent[]',
-        'complaints' => '\Swagger\Client\Model\InlineResponse20015MessagesSent[]',
-        'unsubscriptions' => '\Swagger\Client\Model\InlineResponse20015Unsubscriptions',
-        'opened' => '\Swagger\Client\Model\InlineResponse20015Opened[]',
-        'clicked' => '\Swagger\Client\Model\InlineResponse20015Clicked[]',
-        'transac_attributes' => '\Swagger\Client\Model\InlineResponse20015TransacAttributes[]'
+        'messagesSent' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'hardBounces' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'softBounces' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'complaints' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'unsubscriptions' => '\Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions',
+        'opened' => '\Swagger\Client\Model\GetContactCampaignStatsOpened[]',
+        'clicked' => '\Swagger\Client\Model\GetContactCampaignStatsClicked[]',
+        'transacAttributes' => '\Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[]'
     ];
 
     /**
@@ -70,14 +70,14 @@ class GetContactCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messages_sent' => null,
-        'hard_bounces' => null,
-        'soft_bounces' => null,
+        'messagesSent' => null,
+        'hardBounces' => null,
+        'softBounces' => null,
         'complaints' => null,
         'unsubscriptions' => null,
         'opened' => null,
         'clicked' => null,
-        'transac_attributes' => null
+        'transacAttributes' => null
     ];
 
     public static function swaggerTypes()
@@ -95,14 +95,14 @@ class GetContactCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messages_sent' => 'messagesSent',
-        'hard_bounces' => 'hardBounces',
-        'soft_bounces' => 'softBounces',
+        'messagesSent' => 'messagesSent',
+        'hardBounces' => 'hardBounces',
+        'softBounces' => 'softBounces',
         'complaints' => 'complaints',
         'unsubscriptions' => 'unsubscriptions',
         'opened' => 'opened',
         'clicked' => 'clicked',
-        'transac_attributes' => 'transacAttributes'
+        'transacAttributes' => 'transacAttributes'
     ];
 
 
@@ -111,14 +111,14 @@ class GetContactCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messages_sent' => 'setMessagesSent',
-        'hard_bounces' => 'setHardBounces',
-        'soft_bounces' => 'setSoftBounces',
+        'messagesSent' => 'setMessagesSent',
+        'hardBounces' => 'setHardBounces',
+        'softBounces' => 'setSoftBounces',
         'complaints' => 'setComplaints',
         'unsubscriptions' => 'setUnsubscriptions',
         'opened' => 'setOpened',
         'clicked' => 'setClicked',
-        'transac_attributes' => 'setTransacAttributes'
+        'transacAttributes' => 'setTransacAttributes'
     ];
 
 
@@ -127,14 +127,14 @@ class GetContactCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messages_sent' => 'getMessagesSent',
-        'hard_bounces' => 'getHardBounces',
-        'soft_bounces' => 'getSoftBounces',
+        'messagesSent' => 'getMessagesSent',
+        'hardBounces' => 'getHardBounces',
+        'softBounces' => 'getSoftBounces',
         'complaints' => 'getComplaints',
         'unsubscriptions' => 'getUnsubscriptions',
         'opened' => 'getOpened',
         'clicked' => 'getClicked',
-        'transac_attributes' => 'getTransacAttributes'
+        'transacAttributes' => 'getTransacAttributes'
     ];
 
     public static function attributeMap()
@@ -168,14 +168,14 @@ class GetContactCampaignStats implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messages_sent'] = isset($data['messages_sent']) ? $data['messages_sent'] : null;
-        $this->container['hard_bounces'] = isset($data['hard_bounces']) ? $data['hard_bounces'] : null;
-        $this->container['soft_bounces'] = isset($data['soft_bounces']) ? $data['soft_bounces'] : null;
+        $this->container['messagesSent'] = isset($data['messagesSent']) ? $data['messagesSent'] : null;
+        $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
+        $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
         $this->container['complaints'] = isset($data['complaints']) ? $data['complaints'] : null;
         $this->container['unsubscriptions'] = isset($data['unsubscriptions']) ? $data['unsubscriptions'] : null;
         $this->container['opened'] = isset($data['opened']) ? $data['opened'] : null;
         $this->container['clicked'] = isset($data['clicked']) ? $data['clicked'] : null;
-        $this->container['transac_attributes'] = isset($data['transac_attributes']) ? $data['transac_attributes'] : null;
+        $this->container['transacAttributes'] = isset($data['transacAttributes']) ? $data['transacAttributes'] : null;
     }
 
     /**
@@ -204,71 +204,71 @@ class GetContactCampaignStats implements ArrayAccess
 
 
     /**
-     * Gets messages_sent
-     * @return \Swagger\Client\Model\InlineResponse20015MessagesSent[]
+     * Gets messagesSent
+     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getMessagesSent()
     {
-        return $this->container['messages_sent'];
+        return $this->container['messagesSent'];
     }
 
     /**
-     * Sets messages_sent
-     * @param \Swagger\Client\Model\InlineResponse20015MessagesSent[] $messages_sent
+     * Sets messagesSent
+     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $messagesSent
      * @return $this
      */
-    public function setMessagesSent($messages_sent)
+    public function setMessagesSent($messagesSent)
     {
-        $this->container['messages_sent'] = $messages_sent;
+        $this->container['messagesSent'] = $messagesSent;
 
         return $this;
     }
 
     /**
-     * Gets hard_bounces
-     * @return \Swagger\Client\Model\InlineResponse20015MessagesSent[]
+     * Gets hardBounces
+     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getHardBounces()
     {
-        return $this->container['hard_bounces'];
+        return $this->container['hardBounces'];
     }
 
     /**
-     * Sets hard_bounces
-     * @param \Swagger\Client\Model\InlineResponse20015MessagesSent[] $hard_bounces
+     * Sets hardBounces
+     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $hardBounces
      * @return $this
      */
-    public function setHardBounces($hard_bounces)
+    public function setHardBounces($hardBounces)
     {
-        $this->container['hard_bounces'] = $hard_bounces;
+        $this->container['hardBounces'] = $hardBounces;
 
         return $this;
     }
 
     /**
-     * Gets soft_bounces
-     * @return \Swagger\Client\Model\InlineResponse20015MessagesSent[]
+     * Gets softBounces
+     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getSoftBounces()
     {
-        return $this->container['soft_bounces'];
+        return $this->container['softBounces'];
     }
 
     /**
-     * Sets soft_bounces
-     * @param \Swagger\Client\Model\InlineResponse20015MessagesSent[] $soft_bounces
+     * Sets softBounces
+     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $softBounces
      * @return $this
      */
-    public function setSoftBounces($soft_bounces)
+    public function setSoftBounces($softBounces)
     {
-        $this->container['soft_bounces'] = $soft_bounces;
+        $this->container['softBounces'] = $softBounces;
 
         return $this;
     }
 
     /**
      * Gets complaints
-     * @return \Swagger\Client\Model\InlineResponse20015MessagesSent[]
+     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getComplaints()
     {
@@ -277,7 +277,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets complaints
-     * @param \Swagger\Client\Model\InlineResponse20015MessagesSent[] $complaints
+     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $complaints
      * @return $this
      */
     public function setComplaints($complaints)
@@ -289,7 +289,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets unsubscriptions
-     * @return \Swagger\Client\Model\InlineResponse20015Unsubscriptions
+     * @return \Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions
      */
     public function getUnsubscriptions()
     {
@@ -298,7 +298,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets unsubscriptions
-     * @param \Swagger\Client\Model\InlineResponse20015Unsubscriptions $unsubscriptions
+     * @param \Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions $unsubscriptions
      * @return $this
      */
     public function setUnsubscriptions($unsubscriptions)
@@ -310,7 +310,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets opened
-     * @return \Swagger\Client\Model\InlineResponse20015Opened[]
+     * @return \Swagger\Client\Model\GetContactCampaignStatsOpened[]
      */
     public function getOpened()
     {
@@ -319,7 +319,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets opened
-     * @param \Swagger\Client\Model\InlineResponse20015Opened[] $opened
+     * @param \Swagger\Client\Model\GetContactCampaignStatsOpened[] $opened
      * @return $this
      */
     public function setOpened($opened)
@@ -331,7 +331,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets clicked
-     * @return \Swagger\Client\Model\InlineResponse20015Clicked[]
+     * @return \Swagger\Client\Model\GetContactCampaignStatsClicked[]
      */
     public function getClicked()
     {
@@ -340,7 +340,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets clicked
-     * @param \Swagger\Client\Model\InlineResponse20015Clicked[] $clicked
+     * @param \Swagger\Client\Model\GetContactCampaignStatsClicked[] $clicked
      * @return $this
      */
     public function setClicked($clicked)
@@ -351,22 +351,22 @@ class GetContactCampaignStats implements ArrayAccess
     }
 
     /**
-     * Gets transac_attributes
-     * @return \Swagger\Client\Model\InlineResponse20015TransacAttributes[]
+     * Gets transacAttributes
+     * @return \Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[]
      */
     public function getTransacAttributes()
     {
-        return $this->container['transac_attributes'];
+        return $this->container['transacAttributes'];
     }
 
     /**
-     * Sets transac_attributes
-     * @param \Swagger\Client\Model\InlineResponse20015TransacAttributes[] $transac_attributes
+     * Sets transacAttributes
+     * @param \Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[] $transacAttributes
      * @return $this
      */
-    public function setTransacAttributes($transac_attributes)
+    public function setTransacAttributes($transacAttributes)
     {
-        $this->container['transac_attributes'] = $transac_attributes;
+        $this->container['transacAttributes'] = $transacAttributes;
 
         return $this;
     }

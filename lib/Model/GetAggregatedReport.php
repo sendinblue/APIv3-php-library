@@ -57,13 +57,13 @@ class GetAggregatedReport implements ArrayAccess
         'range' => 'string',
         'requests' => 'int',
         'delivered' => 'int',
-        'hard_bounces' => 'int',
-        'soft_bounces' => 'int',
+        'hardBounces' => 'int',
+        'softBounces' => 'int',
         'clicks' => 'int',
-        'unique_clicks' => 'int',
+        'uniqueClicks' => 'int',
         'opens' => 'int',
-        'unique_opens' => 'int',
-        'spam_reports' => 'int',
+        'uniqueOpens' => 'int',
+        'spamReports' => 'int',
         'blocked' => 'int',
         'invalid' => 'int'
     ];
@@ -76,13 +76,13 @@ class GetAggregatedReport implements ArrayAccess
         'range' => null,
         'requests' => 'int32',
         'delivered' => 'int32',
-        'hard_bounces' => 'int32',
-        'soft_bounces' => 'int32',
+        'hardBounces' => 'int32',
+        'softBounces' => 'int32',
         'clicks' => 'int32',
-        'unique_clicks' => 'int32',
+        'uniqueClicks' => 'int32',
         'opens' => 'int32',
-        'unique_opens' => 'int32',
-        'spam_reports' => 'int32',
+        'uniqueOpens' => 'int32',
+        'spamReports' => 'int32',
         'blocked' => 'int32',
         'invalid' => 'int32'
     ];
@@ -105,13 +105,13 @@ class GetAggregatedReport implements ArrayAccess
         'range' => 'range',
         'requests' => 'requests',
         'delivered' => 'delivered',
-        'hard_bounces' => 'hardBounces',
-        'soft_bounces' => 'softBounces',
+        'hardBounces' => 'hardBounces',
+        'softBounces' => 'softBounces',
         'clicks' => 'clicks',
-        'unique_clicks' => 'uniqueClicks',
+        'uniqueClicks' => 'uniqueClicks',
         'opens' => 'opens',
-        'unique_opens' => 'uniqueOpens',
-        'spam_reports' => 'spamReports',
+        'uniqueOpens' => 'uniqueOpens',
+        'spamReports' => 'spamReports',
         'blocked' => 'blocked',
         'invalid' => 'invalid'
     ];
@@ -125,13 +125,13 @@ class GetAggregatedReport implements ArrayAccess
         'range' => 'setRange',
         'requests' => 'setRequests',
         'delivered' => 'setDelivered',
-        'hard_bounces' => 'setHardBounces',
-        'soft_bounces' => 'setSoftBounces',
+        'hardBounces' => 'setHardBounces',
+        'softBounces' => 'setSoftBounces',
         'clicks' => 'setClicks',
-        'unique_clicks' => 'setUniqueClicks',
+        'uniqueClicks' => 'setUniqueClicks',
         'opens' => 'setOpens',
-        'unique_opens' => 'setUniqueOpens',
-        'spam_reports' => 'setSpamReports',
+        'uniqueOpens' => 'setUniqueOpens',
+        'spamReports' => 'setSpamReports',
         'blocked' => 'setBlocked',
         'invalid' => 'setInvalid'
     ];
@@ -145,13 +145,13 @@ class GetAggregatedReport implements ArrayAccess
         'range' => 'getRange',
         'requests' => 'getRequests',
         'delivered' => 'getDelivered',
-        'hard_bounces' => 'getHardBounces',
-        'soft_bounces' => 'getSoftBounces',
+        'hardBounces' => 'getHardBounces',
+        'softBounces' => 'getSoftBounces',
         'clicks' => 'getClicks',
-        'unique_clicks' => 'getUniqueClicks',
+        'uniqueClicks' => 'getUniqueClicks',
         'opens' => 'getOpens',
-        'unique_opens' => 'getUniqueOpens',
-        'spam_reports' => 'getSpamReports',
+        'uniqueOpens' => 'getUniqueOpens',
+        'spamReports' => 'getSpamReports',
         'blocked' => 'getBlocked',
         'invalid' => 'getInvalid'
     ];
@@ -190,13 +190,13 @@ class GetAggregatedReport implements ArrayAccess
         $this->container['range'] = isset($data['range']) ? $data['range'] : null;
         $this->container['requests'] = isset($data['requests']) ? $data['requests'] : null;
         $this->container['delivered'] = isset($data['delivered']) ? $data['delivered'] : null;
-        $this->container['hard_bounces'] = isset($data['hard_bounces']) ? $data['hard_bounces'] : null;
-        $this->container['soft_bounces'] = isset($data['soft_bounces']) ? $data['soft_bounces'] : null;
+        $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
+        $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
         $this->container['clicks'] = isset($data['clicks']) ? $data['clicks'] : null;
-        $this->container['unique_clicks'] = isset($data['unique_clicks']) ? $data['unique_clicks'] : null;
+        $this->container['uniqueClicks'] = isset($data['uniqueClicks']) ? $data['uniqueClicks'] : null;
         $this->container['opens'] = isset($data['opens']) ? $data['opens'] : null;
-        $this->container['unique_opens'] = isset($data['unique_opens']) ? $data['unique_opens'] : null;
-        $this->container['spam_reports'] = isset($data['spam_reports']) ? $data['spam_reports'] : null;
+        $this->container['uniqueOpens'] = isset($data['uniqueOpens']) ? $data['uniqueOpens'] : null;
+        $this->container['spamReports'] = isset($data['spamReports']) ? $data['spamReports'] : null;
         $this->container['blocked'] = isset($data['blocked']) ? $data['blocked'] : null;
         $this->container['invalid'] = isset($data['invalid']) ? $data['invalid'] : null;
     }
@@ -219,26 +219,26 @@ class GetAggregatedReport implements ArrayAccess
         if ($this->container['delivered'] === null) {
             $invalid_properties[] = "'delivered' can't be null";
         }
-        if ($this->container['hard_bounces'] === null) {
-            $invalid_properties[] = "'hard_bounces' can't be null";
+        if ($this->container['hardBounces'] === null) {
+            $invalid_properties[] = "'hardBounces' can't be null";
         }
-        if ($this->container['soft_bounces'] === null) {
-            $invalid_properties[] = "'soft_bounces' can't be null";
+        if ($this->container['softBounces'] === null) {
+            $invalid_properties[] = "'softBounces' can't be null";
         }
         if ($this->container['clicks'] === null) {
             $invalid_properties[] = "'clicks' can't be null";
         }
-        if ($this->container['unique_clicks'] === null) {
-            $invalid_properties[] = "'unique_clicks' can't be null";
+        if ($this->container['uniqueClicks'] === null) {
+            $invalid_properties[] = "'uniqueClicks' can't be null";
         }
         if ($this->container['opens'] === null) {
             $invalid_properties[] = "'opens' can't be null";
         }
-        if ($this->container['unique_opens'] === null) {
-            $invalid_properties[] = "'unique_opens' can't be null";
+        if ($this->container['uniqueOpens'] === null) {
+            $invalid_properties[] = "'uniqueOpens' can't be null";
         }
-        if ($this->container['spam_reports'] === null) {
-            $invalid_properties[] = "'spam_reports' can't be null";
+        if ($this->container['spamReports'] === null) {
+            $invalid_properties[] = "'spamReports' can't be null";
         }
         if ($this->container['blocked'] === null) {
             $invalid_properties[] = "'blocked' can't be null";
@@ -267,25 +267,25 @@ class GetAggregatedReport implements ArrayAccess
         if ($this->container['delivered'] === null) {
             return false;
         }
-        if ($this->container['hard_bounces'] === null) {
+        if ($this->container['hardBounces'] === null) {
             return false;
         }
-        if ($this->container['soft_bounces'] === null) {
+        if ($this->container['softBounces'] === null) {
             return false;
         }
         if ($this->container['clicks'] === null) {
             return false;
         }
-        if ($this->container['unique_clicks'] === null) {
+        if ($this->container['uniqueClicks'] === null) {
             return false;
         }
         if ($this->container['opens'] === null) {
             return false;
         }
-        if ($this->container['unique_opens'] === null) {
+        if ($this->container['uniqueOpens'] === null) {
             return false;
         }
-        if ($this->container['spam_reports'] === null) {
+        if ($this->container['spamReports'] === null) {
             return false;
         }
         if ($this->container['blocked'] === null) {
@@ -362,43 +362,43 @@ class GetAggregatedReport implements ArrayAccess
     }
 
     /**
-     * Gets hard_bounces
+     * Gets hardBounces
      * @return int
      */
     public function getHardBounces()
     {
-        return $this->container['hard_bounces'];
+        return $this->container['hardBounces'];
     }
 
     /**
-     * Sets hard_bounces
-     * @param int $hard_bounces Number of hardbounces for the timeframe
+     * Sets hardBounces
+     * @param int $hardBounces Number of hardbounces for the timeframe
      * @return $this
      */
-    public function setHardBounces($hard_bounces)
+    public function setHardBounces($hardBounces)
     {
-        $this->container['hard_bounces'] = $hard_bounces;
+        $this->container['hardBounces'] = $hardBounces;
 
         return $this;
     }
 
     /**
-     * Gets soft_bounces
+     * Gets softBounces
      * @return int
      */
     public function getSoftBounces()
     {
-        return $this->container['soft_bounces'];
+        return $this->container['softBounces'];
     }
 
     /**
-     * Sets soft_bounces
-     * @param int $soft_bounces Number of softbounces for the timeframe
+     * Sets softBounces
+     * @param int $softBounces Number of softbounces for the timeframe
      * @return $this
      */
-    public function setSoftBounces($soft_bounces)
+    public function setSoftBounces($softBounces)
     {
-        $this->container['soft_bounces'] = $soft_bounces;
+        $this->container['softBounces'] = $softBounces;
 
         return $this;
     }
@@ -425,22 +425,22 @@ class GetAggregatedReport implements ArrayAccess
     }
 
     /**
-     * Gets unique_clicks
+     * Gets uniqueClicks
      * @return int
      */
     public function getUniqueClicks()
     {
-        return $this->container['unique_clicks'];
+        return $this->container['uniqueClicks'];
     }
 
     /**
-     * Sets unique_clicks
-     * @param int $unique_clicks Number of unique clicks for the timeframe
+     * Sets uniqueClicks
+     * @param int $uniqueClicks Number of unique clicks for the timeframe
      * @return $this
      */
-    public function setUniqueClicks($unique_clicks)
+    public function setUniqueClicks($uniqueClicks)
     {
-        $this->container['unique_clicks'] = $unique_clicks;
+        $this->container['uniqueClicks'] = $uniqueClicks;
 
         return $this;
     }
@@ -467,43 +467,43 @@ class GetAggregatedReport implements ArrayAccess
     }
 
     /**
-     * Gets unique_opens
+     * Gets uniqueOpens
      * @return int
      */
     public function getUniqueOpens()
     {
-        return $this->container['unique_opens'];
+        return $this->container['uniqueOpens'];
     }
 
     /**
-     * Sets unique_opens
-     * @param int $unique_opens Number of unique openings for the timeframe
+     * Sets uniqueOpens
+     * @param int $uniqueOpens Number of unique openings for the timeframe
      * @return $this
      */
-    public function setUniqueOpens($unique_opens)
+    public function setUniqueOpens($uniqueOpens)
     {
-        $this->container['unique_opens'] = $unique_opens;
+        $this->container['uniqueOpens'] = $uniqueOpens;
 
         return $this;
     }
 
     /**
-     * Gets spam_reports
+     * Gets spamReports
      * @return int
      */
     public function getSpamReports()
     {
-        return $this->container['spam_reports'];
+        return $this->container['spamReports'];
     }
 
     /**
-     * Sets spam_reports
-     * @param int $spam_reports Number of complaint (spam report) for the timeframe
+     * Sets spamReports
+     * @param int $spamReports Number of complaint (spam report) for the timeframe
      * @return $this
      */
-    public function setSpamReports($spam_reports)
+    public function setSpamReports($spamReports)
     {
-        $this->container['spam_reports'] = $spam_reports;
+        $this->container['spamReports'] = $spamReports;
 
         return $this;
     }

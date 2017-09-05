@@ -92,14 +92,14 @@ class PostSendSmsTestFailedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "unexisting_sms"
+     * Test attribute "unexistingSms"
      */
     public function testPropertyUnexistingSms()
     {
     }
 
     /**
-     * Test attribute "without_list_sms"
+     * Test attribute "withoutListSms"
      */
     public function testPropertyWithoutListSms()
     {

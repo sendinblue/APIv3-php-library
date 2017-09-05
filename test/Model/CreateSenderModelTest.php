@@ -85,14 +85,14 @@ class CreateSenderModelTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "spf_error"
+     * Test attribute "spfError"
      */
     public function testPropertySpfError()
     {
     }
 
     /**
-     * Test attribute "dkim_error"
+     * Test attribute "dkimError"
      */
     public function testPropertyDkimError()
     {

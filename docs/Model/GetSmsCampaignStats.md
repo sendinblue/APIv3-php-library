@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **delivered** | **int** | Number of delivered SMS | 
 **sent** | **int** | Number of sent SMS | 
 **processing** | **int** | Number of processing SMS | 
-**soft_bounces** | **int** | Number of softbounced SMS | 
-**hard_bounces** | **int** | Number of hardbounced SMS | 
+**softBounces** | **int** | Number of softbounced SMS | 
+**hardBounces** | **int** | Number of hardbounced SMS | 
 **unsubscriptions** | **int** | Number of unsubscription SMS | 
 **answered** | **int** | Number of replies to the SMS | 
 

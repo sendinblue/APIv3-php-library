@@ -85,28 +85,28 @@ class UpdateContactTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email_blacklisted"
+     * Test attribute "emailBlacklisted"
      */
     public function testPropertyEmailBlacklisted()
     {
     }
 
     /**
-     * Test attribute "sms_blacklisted"
+     * Test attribute "smsBlacklisted"
      */
     public function testPropertySmsBlacklisted()
     {
     }
 
     /**
-     * Test attribute "list_ids"
+     * Test attribute "listIds"
      */
     public function testPropertyListIds()
     {
     }
 
     /**
-     * Test attribute "unlink_list_ids"
+     * Test attribute "unlinkListIds"
      */
     public function testPropertyUnlinkListIds()
     {

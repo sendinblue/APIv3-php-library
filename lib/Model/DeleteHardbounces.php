@@ -54,9 +54,9 @@ class DeleteHardbounces implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
-        'contact_email' => 'string'
+        'startDate' => '\DateTime',
+        'endDate' => '\DateTime',
+        'contactEmail' => 'string'
     ];
 
     /**
@@ -64,9 +64,9 @@ class DeleteHardbounces implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'contact_email' => 'email'
+        'startDate' => 'date',
+        'endDate' => 'date',
+        'contactEmail' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -84,9 +84,9 @@ class DeleteHardbounces implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_date' => 'startDate',
-        'end_date' => 'endDate',
-        'contact_email' => 'contactEmail'
+        'startDate' => 'startDate',
+        'endDate' => 'endDate',
+        'contactEmail' => 'contactEmail'
     ];
 
 
@@ -95,9 +95,9 @@ class DeleteHardbounces implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'contact_email' => 'setContactEmail'
+        'startDate' => 'setStartDate',
+        'endDate' => 'setEndDate',
+        'contactEmail' => 'setContactEmail'
     ];
 
 
@@ -106,9 +106,9 @@ class DeleteHardbounces implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'contact_email' => 'getContactEmail'
+        'startDate' => 'getStartDate',
+        'endDate' => 'getEndDate',
+        'contactEmail' => 'getContactEmail'
     ];
 
     public static function attributeMap()
@@ -142,9 +142,9 @@ class DeleteHardbounces implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['contact_email'] = isset($data['contact_email']) ? $data['contact_email'] : null;
+        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
+        $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
+        $this->container['contactEmail'] = isset($data['contactEmail']) ? $data['contactEmail'] : null;
     }
 
     /**
@@ -173,64 +173,64 @@ class DeleteHardbounces implements ArrayAccess
 
 
     /**
-     * Gets start_date
+     * Gets startDate
      * @return \DateTime
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
-     * @param \DateTime $start_date Starting date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be lower than equal to endDate
+     * Sets startDate
+     * @param \DateTime $startDate Starting date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be lower than equal to endDate
      * @return $this
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets end_date
+     * Gets endDate
      * @return \DateTime
      */
     public function getEndDate()
     {
-        return $this->container['end_date'];
+        return $this->container['endDate'];
     }
 
     /**
-     * Sets end_date
-     * @param \DateTime $end_date Ending date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be greater than equal to startDate
+     * Sets endDate
+     * @param \DateTime $endDate Ending date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be greater than equal to startDate
      * @return $this
      */
-    public function setEndDate($end_date)
+    public function setEndDate($endDate)
     {
-        $this->container['end_date'] = $end_date;
+        $this->container['endDate'] = $endDate;
 
         return $this;
     }
 
     /**
-     * Gets contact_email
+     * Gets contactEmail
      * @return string
      */
     public function getContactEmail()
     {
-        return $this->container['contact_email'];
+        return $this->container['contactEmail'];
     }
 
     /**
-     * Sets contact_email
-     * @param string $contact_email Target a specific email address
+     * Sets contactEmail
+     * @param string $contactEmail Target a specific email address
      * @return $this
      */
-    public function setContactEmail($contact_email)
+    public function setContactEmail($contactEmail)
     {
-        $this->container['contact_email'] = $contact_email;
+        $this->container['contactEmail'] = $contactEmail;
 
         return $this;
     }

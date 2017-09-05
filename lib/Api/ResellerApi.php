@@ -92,14 +92,14 @@ class ResellerApi
      *
      * Add Email and/or SMS credits to a specific child account
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\AddCredits1 $add_credits Values to post to add credit to a specific child account (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2003
+     * @return \Swagger\Client\Model\RemainingCreditModel
      */
-    public function addCredits($child_id, $add_credits)
+    public function addCredits($childId, $addCredits)
     {
-        list($response) = $this->addCreditsWithHttpInfo($child_id, $add_credits);
+        list($response) = $this->addCreditsWithHttpInfo($childId, $addCredits);
         return $response;
     }
 
@@ -108,20 +108,20 @@ class ResellerApi
      *
      * Add Email and/or SMS credits to a specific child account
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\AddCredits1 $add_credits Values to post to add credit to a specific child account (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addCreditsWithHttpInfo($child_id, $add_credits)
+    public function addCreditsWithHttpInfo($childId, $addCredits)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling addCredits');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling addCredits');
         }
-        // verify the required parameter 'add_credits' is set
-        if ($add_credits === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $add_credits when calling addCredits');
+        // verify the required parameter 'addCredits' is set
+        if ($addCredits === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $addCredits when calling addCredits');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}/credits/add";
@@ -136,17 +136,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($add_credits)) {
-            $_tempBody = $add_credits;
+        if (isset($addCredits)) {
+            $_tempBody = $addCredits;
         }
 
         // for model (json/xml)
@@ -168,27 +168,27 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2003',
+                '\Swagger\Client\Model\RemainingCreditModel',
                 '/reseller/children/{childId}/credits/add'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2003', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2003', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\RemainingCreditModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -202,14 +202,14 @@ class ResellerApi
      *
      * Associate a dedicated IP to the child
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\IpId $ip_id IP&#39;s id (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function associateIpToChild($child_id, $ip_id)
+    public function associateIpToChild($childId, $ipId)
     {
-        list($response) = $this->associateIpToChildWithHttpInfo($child_id, $ip_id);
+        list($response) = $this->associateIpToChildWithHttpInfo($childId, $ipId);
         return $response;
     }
 
@@ -218,20 +218,20 @@ class ResellerApi
      *
      * Associate a dedicated IP to the child
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\IpId $ip_id IP&#39;s id (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function associateIpToChildWithHttpInfo($child_id, $ip_id)
+    public function associateIpToChildWithHttpInfo($childId, $ipId)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling associateIpToChild');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling associateIpToChild');
         }
-        // verify the required parameter 'ip_id' is set
-        if ($ip_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $ip_id when calling associateIpToChild');
+        // verify the required parameter 'ipId' is set
+        if ($ipId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $ipId when calling associateIpToChild');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}/ips/associate";
@@ -246,17 +246,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($ip_id)) {
-            $_tempBody = $ip_id;
+        if (isset($ipId)) {
+            $_tempBody = $ipId;
         }
 
         // for model (json/xml)
@@ -286,11 +286,11 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -304,13 +304,13 @@ class ResellerApi
      *
      * Creates a reseller child
      *
-     * @param \Swagger\Client\Model\ResellerChild $reseller_child reseller child to add (optional)
+     * @param \Swagger\Client\Model\CreateChild $resellerChild reseller child to add (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createResellerChild($reseller_child = null)
+    public function createResellerChild($resellerChild = null)
     {
-        list($response) = $this->createResellerChildWithHttpInfo($reseller_child);
+        list($response) = $this->createResellerChildWithHttpInfo($resellerChild);
         return $response;
     }
 
@@ -319,11 +319,11 @@ class ResellerApi
      *
      * Creates a reseller child
      *
-     * @param \Swagger\Client\Model\ResellerChild $reseller_child reseller child to add (optional)
+     * @param \Swagger\Client\Model\CreateChild $resellerChild reseller child to add (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createResellerChildWithHttpInfo($reseller_child = null)
+    public function createResellerChildWithHttpInfo($resellerChild = null)
     {
         // parse inputs
         $resourcePath = "/reseller/children";
@@ -339,8 +339,8 @@ class ResellerApi
 
         // body params
         $_tempBody = null;
-        if (isset($reseller_child)) {
-            $_tempBody = $reseller_child;
+        if (isset($resellerChild)) {
+            $_tempBody = $resellerChild;
         }
 
         // for model (json/xml)
@@ -362,23 +362,23 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/reseller/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -392,13 +392,13 @@ class ResellerApi
      *
      * Deletes a single reseller child based on the childId supplied
      *
-     * @param int $child_id id of reseller&#39;s child (required)
+     * @param int $childId id of reseller&#39;s child (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteResellerChild($child_id)
+    public function deleteResellerChild($childId)
     {
-        list($response) = $this->deleteResellerChildWithHttpInfo($child_id);
+        list($response) = $this->deleteResellerChildWithHttpInfo($childId);
         return $response;
     }
 
@@ -407,15 +407,15 @@ class ResellerApi
      *
      * Deletes a single reseller child based on the childId supplied
      *
-     * @param int $child_id id of reseller&#39;s child (required)
+     * @param int $childId id of reseller&#39;s child (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteResellerChildWithHttpInfo($child_id)
+    public function deleteResellerChildWithHttpInfo($childId)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling deleteResellerChild');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling deleteResellerChild');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}";
@@ -430,10 +430,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
@@ -465,15 +465,15 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -487,14 +487,14 @@ class ResellerApi
      *
      * Dissociate a dedicated IP to the child
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\IpId1 $ip_id IP&#39;s id (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function dissociateIpFromChild($child_id, $ip_id)
+    public function dissociateIpFromChild($childId, $ipId)
     {
-        list($response) = $this->dissociateIpFromChildWithHttpInfo($child_id, $ip_id);
+        list($response) = $this->dissociateIpFromChildWithHttpInfo($childId, $ipId);
         return $response;
     }
 
@@ -503,20 +503,20 @@ class ResellerApi
      *
      * Dissociate a dedicated IP to the child
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\IpId1 $ip_id IP&#39;s id (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dissociateIpFromChildWithHttpInfo($child_id, $ip_id)
+    public function dissociateIpFromChildWithHttpInfo($childId, $ipId)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling dissociateIpFromChild');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling dissociateIpFromChild');
         }
-        // verify the required parameter 'ip_id' is set
-        if ($ip_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $ip_id when calling dissociateIpFromChild');
+        // verify the required parameter 'ipId' is set
+        if ($ipId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $ipId when calling dissociateIpFromChild');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}/ips/dissociate";
@@ -531,17 +531,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($ip_id)) {
-            $_tempBody = $ip_id;
+        if (isset($ipId)) {
+            $_tempBody = $ipId;
         }
 
         // for model (json/xml)
@@ -571,11 +571,11 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -589,13 +589,13 @@ class ResellerApi
      *
      * Gets the info about a specific child account
      *
-     * @param int $child_id id of reseller&#39;s child (required)
+     * @param int $childId id of reseller&#39;s child (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2002
+     * @return \Swagger\Client\Model\GetChildInfo
      */
-    public function getChildInfo($child_id)
+    public function getChildInfo($childId)
     {
-        list($response) = $this->getChildInfoWithHttpInfo($child_id);
+        list($response) = $this->getChildInfoWithHttpInfo($childId);
         return $response;
     }
 
@@ -604,15 +604,15 @@ class ResellerApi
      *
      * Gets the info about a specific child account
      *
-     * @param int $child_id id of reseller&#39;s child (required)
+     * @param int $childId id of reseller&#39;s child (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetChildInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChildInfoWithHttpInfo($child_id)
+    public function getChildInfoWithHttpInfo($childId)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling getChildInfo');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling getChildInfo');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}";
@@ -627,10 +627,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
@@ -654,27 +654,27 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2002',
+                '\Swagger\Client\Model\GetChildInfo',
                 '/reseller/children/{childId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetChildInfo', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetChildInfo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -689,7 +689,7 @@ class ResellerApi
      * Gets the list of all reseller's children accounts
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2001
+     * @return \Swagger\Client\Model\GetChildrenList
      */
     public function getResellerChilds()
     {
@@ -703,7 +703,7 @@ class ResellerApi
      * Gets the list of all reseller's children accounts
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetChildrenList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResellerChildsWithHttpInfo()
     {
@@ -739,19 +739,19 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2001',
+                '\Swagger\Client\Model\GetChildrenList',
                 '/reseller/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetChildrenList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetChildrenList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -765,14 +765,14 @@ class ResellerApi
      *
      * Remove Email and/or SMS credits from a specific child account
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\RemoveCredits1 $remove_credits Values to post to remove email or SMS credits from a specific child account (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2003
+     * @return \Swagger\Client\Model\RemainingCreditModel
      */
-    public function removeCredits($child_id, $remove_credits)
+    public function removeCredits($childId, $removeCredits)
     {
-        list($response) = $this->removeCreditsWithHttpInfo($child_id, $remove_credits);
+        list($response) = $this->removeCreditsWithHttpInfo($childId, $removeCredits);
         return $response;
     }
 
@@ -781,20 +781,20 @@ class ResellerApi
      *
      * Remove Email and/or SMS credits from a specific child account
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\RemoveCredits1 $remove_credits Values to post to remove email or SMS credits from a specific child account (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeCreditsWithHttpInfo($child_id, $remove_credits)
+    public function removeCreditsWithHttpInfo($childId, $removeCredits)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling removeCredits');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling removeCredits');
         }
-        // verify the required parameter 'remove_credits' is set
-        if ($remove_credits === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $remove_credits when calling removeCredits');
+        // verify the required parameter 'removeCredits' is set
+        if ($removeCredits === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $removeCredits when calling removeCredits');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}/credits/remove";
@@ -809,17 +809,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($remove_credits)) {
-            $_tempBody = $remove_credits;
+        if (isset($removeCredits)) {
+            $_tempBody = $removeCredits;
         }
 
         // for model (json/xml)
@@ -841,27 +841,27 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2003',
+                '\Swagger\Client\Model\RemainingCreditModel',
                 '/reseller/children/{childId}/credits/remove'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2003', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2003', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\RemainingCreditModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -875,14 +875,14 @@ class ResellerApi
      *
      * Updates infos of reseller's child based on the childId supplied
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\ResellerChild1 $reseller_child values to update in child profile (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateResellerChild($child_id, $reseller_child)
+    public function updateResellerChild($childId, $resellerChild)
     {
-        list($response) = $this->updateResellerChildWithHttpInfo($child_id, $reseller_child);
+        list($response) = $this->updateResellerChildWithHttpInfo($childId, $resellerChild);
         return $response;
     }
 
@@ -891,20 +891,20 @@ class ResellerApi
      *
      * Updates infos of reseller's child based on the childId supplied
      *
-     * @param int $child_id id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\ResellerChild1 $reseller_child values to update in child profile (required)
+     * @param int $childId id of reseller&#39;s child (required)
+     * @param \Swagger\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateResellerChildWithHttpInfo($child_id, $reseller_child)
+    public function updateResellerChildWithHttpInfo($childId, $resellerChild)
     {
-        // verify the required parameter 'child_id' is set
-        if ($child_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $child_id when calling updateResellerChild');
+        // verify the required parameter 'childId' is set
+        if ($childId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childId when calling updateResellerChild');
         }
-        // verify the required parameter 'reseller_child' is set
-        if ($reseller_child === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $reseller_child when calling updateResellerChild');
+        // verify the required parameter 'resellerChild' is set
+        if ($resellerChild === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $resellerChild when calling updateResellerChild');
         }
         // parse inputs
         $resourcePath = "/reseller/children/{childId}";
@@ -919,17 +919,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($child_id !== null) {
+        if ($childId !== null) {
             $resourcePath = str_replace(
                 "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($child_id),
+                $this->apiClient->getSerializer()->toPathValue($childId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($reseller_child)) {
-            $_tempBody = $reseller_child;
+        if (isset($resellerChild)) {
+            $_tempBody = $resellerChild;
         }
 
         // for model (json/xml)
@@ -959,15 +959,15 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

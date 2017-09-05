@@ -78,21 +78,21 @@ class GetContactCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "messages_sent"
+     * Test attribute "messagesSent"
      */
     public function testPropertyMessagesSent()
     {
     }
 
     /**
-     * Test attribute "hard_bounces"
+     * Test attribute "hardBounces"
      */
     public function testPropertyHardBounces()
     {
     }
 
     /**
-     * Test attribute "soft_bounces"
+     * Test attribute "softBounces"
      */
     public function testPropertySoftBounces()
     {
@@ -127,7 +127,7 @@ class GetContactCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "transac_attributes"
+     * Test attribute "transacAttributes"
      */
     public function testPropertyTransacAttributes()
     {

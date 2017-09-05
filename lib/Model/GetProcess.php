@@ -57,7 +57,7 @@ class GetProcess implements ArrayAccess
         'id' => 'int',
         'status' => 'string',
         'name' => 'string',
-        'export_url' => 'string'
+        'exportUrl' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class GetProcess implements ArrayAccess
         'id' => 'int32',
         'status' => null,
         'name' => null,
-        'export_url' => null
+        'exportUrl' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +89,7 @@ class GetProcess implements ArrayAccess
         'id' => 'id',
         'status' => 'status',
         'name' => 'name',
-        'export_url' => 'export_url'
+        'exportUrl' => 'export_url'
     ];
 
 
@@ -101,7 +101,7 @@ class GetProcess implements ArrayAccess
         'id' => 'setId',
         'status' => 'setStatus',
         'name' => 'setName',
-        'export_url' => 'setExportUrl'
+        'exportUrl' => 'setExportUrl'
     ];
 
 
@@ -113,7 +113,7 @@ class GetProcess implements ArrayAccess
         'id' => 'getId',
         'status' => 'getStatus',
         'name' => 'getName',
-        'export_url' => 'getExportUrl'
+        'exportUrl' => 'getExportUrl'
     ];
 
     public static function attributeMap()
@@ -166,7 +166,7 @@ class GetProcess implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['export_url'] = isset($data['export_url']) ? $data['export_url'] : null;
+        $this->container['exportUrl'] = isset($data['exportUrl']) ? $data['exportUrl'] : null;
     }
 
     /**
@@ -297,22 +297,22 @@ class GetProcess implements ArrayAccess
     }
 
     /**
-     * Gets export_url
+     * Gets exportUrl
      * @return string
      */
     public function getExportUrl()
     {
-        return $this->container['export_url'];
+        return $this->container['exportUrl'];
     }
 
     /**
-     * Sets export_url
-     * @param string $export_url URL on which send export the of contacts once the process is completed
+     * Sets exportUrl
+     * @param string $exportUrl URL on which send export the of contacts once the process is completed
      * @return $this
      */
-    public function setExportUrl($export_url)
+    public function setExportUrl($exportUrl)
     {
-        $this->container['export_url'] = $export_url;
+        $this->container['exportUrl'] = $exportUrl;
 
         return $this;
     }

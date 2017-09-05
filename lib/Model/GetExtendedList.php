@@ -56,12 +56,12 @@ class GetExtendedList implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'name' => 'string',
-        'total_blacklisted' => 'int',
-        'total_subscribers' => 'int',
-        'folder_id' => 'int',
-        'created_at' => '\DateTime',
-        'campaign_stats' => '\Swagger\Client\Model\InlineResponse20020CampaignStats[]',
-        'dynamic_list' => 'bool'
+        'totalBlacklisted' => 'int',
+        'totalSubscribers' => 'int',
+        'folderId' => 'int',
+        'createdAt' => '\DateTime',
+        'campaignStats' => '\Swagger\Client\Model\GetExtendedListCampaignStats[]',
+        'dynamicList' => 'bool'
     ];
 
     /**
@@ -71,12 +71,12 @@ class GetExtendedList implements ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'int32',
         'name' => null,
-        'total_blacklisted' => 'int32',
-        'total_subscribers' => 'int32',
-        'folder_id' => 'int32',
-        'created_at' => 'date',
-        'campaign_stats' => null,
-        'dynamic_list' => null
+        'totalBlacklisted' => 'int32',
+        'totalSubscribers' => 'int32',
+        'folderId' => 'int32',
+        'createdAt' => 'date',
+        'campaignStats' => null,
+        'dynamicList' => null
     ];
 
     public static function swaggerTypes()
@@ -96,12 +96,12 @@ class GetExtendedList implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'total_blacklisted' => 'totalBlacklisted',
-        'total_subscribers' => 'totalSubscribers',
-        'folder_id' => 'folderId',
-        'created_at' => 'createdAt',
-        'campaign_stats' => 'campaignStats',
-        'dynamic_list' => 'dynamicList'
+        'totalBlacklisted' => 'totalBlacklisted',
+        'totalSubscribers' => 'totalSubscribers',
+        'folderId' => 'folderId',
+        'createdAt' => 'createdAt',
+        'campaignStats' => 'campaignStats',
+        'dynamicList' => 'dynamicList'
     ];
 
 
@@ -112,12 +112,12 @@ class GetExtendedList implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'total_blacklisted' => 'setTotalBlacklisted',
-        'total_subscribers' => 'setTotalSubscribers',
-        'folder_id' => 'setFolderId',
-        'created_at' => 'setCreatedAt',
-        'campaign_stats' => 'setCampaignStats',
-        'dynamic_list' => 'setDynamicList'
+        'totalBlacklisted' => 'setTotalBlacklisted',
+        'totalSubscribers' => 'setTotalSubscribers',
+        'folderId' => 'setFolderId',
+        'createdAt' => 'setCreatedAt',
+        'campaignStats' => 'setCampaignStats',
+        'dynamicList' => 'setDynamicList'
     ];
 
 
@@ -128,12 +128,12 @@ class GetExtendedList implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'total_blacklisted' => 'getTotalBlacklisted',
-        'total_subscribers' => 'getTotalSubscribers',
-        'folder_id' => 'getFolderId',
-        'created_at' => 'getCreatedAt',
-        'campaign_stats' => 'getCampaignStats',
-        'dynamic_list' => 'getDynamicList'
+        'totalBlacklisted' => 'getTotalBlacklisted',
+        'totalSubscribers' => 'getTotalSubscribers',
+        'folderId' => 'getFolderId',
+        'createdAt' => 'getCreatedAt',
+        'campaignStats' => 'getCampaignStats',
+        'dynamicList' => 'getDynamicList'
     ];
 
     public static function attributeMap()
@@ -169,12 +169,12 @@ class GetExtendedList implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['total_blacklisted'] = isset($data['total_blacklisted']) ? $data['total_blacklisted'] : null;
-        $this->container['total_subscribers'] = isset($data['total_subscribers']) ? $data['total_subscribers'] : null;
-        $this->container['folder_id'] = isset($data['folder_id']) ? $data['folder_id'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['campaign_stats'] = isset($data['campaign_stats']) ? $data['campaign_stats'] : null;
-        $this->container['dynamic_list'] = isset($data['dynamic_list']) ? $data['dynamic_list'] : null;
+        $this->container['totalBlacklisted'] = isset($data['totalBlacklisted']) ? $data['totalBlacklisted'] : null;
+        $this->container['totalSubscribers'] = isset($data['totalSubscribers']) ? $data['totalSubscribers'] : null;
+        $this->container['folderId'] = isset($data['folderId']) ? $data['folderId'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['campaignStats'] = isset($data['campaignStats']) ? $data['campaignStats'] : null;
+        $this->container['dynamicList'] = isset($data['dynamicList']) ? $data['dynamicList'] : null;
     }
 
     /**
@@ -192,17 +192,17 @@ class GetExtendedList implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['total_blacklisted'] === null) {
-            $invalid_properties[] = "'total_blacklisted' can't be null";
+        if ($this->container['totalBlacklisted'] === null) {
+            $invalid_properties[] = "'totalBlacklisted' can't be null";
         }
-        if ($this->container['total_subscribers'] === null) {
-            $invalid_properties[] = "'total_subscribers' can't be null";
+        if ($this->container['totalSubscribers'] === null) {
+            $invalid_properties[] = "'totalSubscribers' can't be null";
         }
-        if ($this->container['folder_id'] === null) {
-            $invalid_properties[] = "'folder_id' can't be null";
+        if ($this->container['folderId'] === null) {
+            $invalid_properties[] = "'folderId' can't be null";
         }
-        if ($this->container['created_at'] === null) {
-            $invalid_properties[] = "'created_at' can't be null";
+        if ($this->container['createdAt'] === null) {
+            $invalid_properties[] = "'createdAt' can't be null";
         }
         return $invalid_properties;
     }
@@ -222,16 +222,16 @@ class GetExtendedList implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['total_blacklisted'] === null) {
+        if ($this->container['totalBlacklisted'] === null) {
             return false;
         }
-        if ($this->container['total_subscribers'] === null) {
+        if ($this->container['totalSubscribers'] === null) {
             return false;
         }
-        if ($this->container['folder_id'] === null) {
+        if ($this->container['folderId'] === null) {
             return false;
         }
-        if ($this->container['created_at'] === null) {
+        if ($this->container['createdAt'] === null) {
             return false;
         }
         return true;
@@ -281,127 +281,127 @@ class GetExtendedList implements ArrayAccess
     }
 
     /**
-     * Gets total_blacklisted
+     * Gets totalBlacklisted
      * @return int
      */
     public function getTotalBlacklisted()
     {
-        return $this->container['total_blacklisted'];
+        return $this->container['totalBlacklisted'];
     }
 
     /**
-     * Sets total_blacklisted
-     * @param int $total_blacklisted Number of blacklisted contacts in the list
+     * Sets totalBlacklisted
+     * @param int $totalBlacklisted Number of blacklisted contacts in the list
      * @return $this
      */
-    public function setTotalBlacklisted($total_blacklisted)
+    public function setTotalBlacklisted($totalBlacklisted)
     {
-        $this->container['total_blacklisted'] = $total_blacklisted;
+        $this->container['totalBlacklisted'] = $totalBlacklisted;
 
         return $this;
     }
 
     /**
-     * Gets total_subscribers
+     * Gets totalSubscribers
      * @return int
      */
     public function getTotalSubscribers()
     {
-        return $this->container['total_subscribers'];
+        return $this->container['totalSubscribers'];
     }
 
     /**
-     * Sets total_subscribers
-     * @param int $total_subscribers Number of contacts in the list
+     * Sets totalSubscribers
+     * @param int $totalSubscribers Number of contacts in the list
      * @return $this
      */
-    public function setTotalSubscribers($total_subscribers)
+    public function setTotalSubscribers($totalSubscribers)
     {
-        $this->container['total_subscribers'] = $total_subscribers;
+        $this->container['totalSubscribers'] = $totalSubscribers;
 
         return $this;
     }
 
     /**
-     * Gets folder_id
+     * Gets folderId
      * @return int
      */
     public function getFolderId()
     {
-        return $this->container['folder_id'];
+        return $this->container['folderId'];
     }
 
     /**
-     * Sets folder_id
-     * @param int $folder_id ID of the folder
+     * Sets folderId
+     * @param int $folderId ID of the folder
      * @return $this
      */
-    public function setFolderId($folder_id)
+    public function setFolderId($folderId)
     {
-        $this->container['folder_id'] = $folder_id;
+        $this->container['folderId'] = $folderId;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      * @return \DateTime
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
-     * @param \DateTime $created_at Creation Date of the list
+     * Sets createdAt
+     * @param \DateTime $createdAt Creation Date of the list
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets campaign_stats
-     * @return \Swagger\Client\Model\InlineResponse20020CampaignStats[]
+     * Gets campaignStats
+     * @return \Swagger\Client\Model\GetExtendedListCampaignStats[]
      */
     public function getCampaignStats()
     {
-        return $this->container['campaign_stats'];
+        return $this->container['campaignStats'];
     }
 
     /**
-     * Sets campaign_stats
-     * @param \Swagger\Client\Model\InlineResponse20020CampaignStats[] $campaign_stats
+     * Sets campaignStats
+     * @param \Swagger\Client\Model\GetExtendedListCampaignStats[] $campaignStats
      * @return $this
      */
-    public function setCampaignStats($campaign_stats)
+    public function setCampaignStats($campaignStats)
     {
-        $this->container['campaign_stats'] = $campaign_stats;
+        $this->container['campaignStats'] = $campaignStats;
 
         return $this;
     }
 
     /**
-     * Gets dynamic_list
+     * Gets dynamicList
      * @return bool
      */
     public function getDynamicList()
     {
-        return $this->container['dynamic_list'];
+        return $this->container['dynamicList'];
     }
 
     /**
-     * Sets dynamic_list
-     * @param bool $dynamic_list Status telling if the list is dynamic or not (true=dynamic, false=not dynamic)
+     * Sets dynamicList
+     * @param bool $dynamicList Status telling if the list is dynamic or not (true=dynamic, false=not dynamic)
      * @return $this
      */
-    public function setDynamicList($dynamic_list)
+    public function setDynamicList($dynamicList)
     {
-        $this->container['dynamic_list'] = $dynamic_list;
+        $this->container['dynamicList'] = $dynamicList;
 
         return $this;
     }

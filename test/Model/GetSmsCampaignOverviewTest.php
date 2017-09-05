@@ -106,14 +106,14 @@ class GetSmsCampaignOverviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "scheduled_at"
+     * Test attribute "scheduledAt"
      */
     public function testPropertyScheduledAt()
     {
     }
 
     /**
-     * Test attribute "test_sent"
+     * Test attribute "testSent"
      */
     public function testPropertyTestSent()
     {
@@ -127,14 +127,14 @@ class GetSmsCampaignOverviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_at"
+     * Test attribute "createdAt"
      */
     public function testPropertyCreatedAt()
     {
     }
 
     /**
-     * Test attribute "modified_at"
+     * Test attribute "modifiedAt"
      */
     public function testPropertyModifiedAt()
     {

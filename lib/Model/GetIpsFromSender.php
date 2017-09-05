@@ -54,7 +54,7 @@ class GetIpsFromSender implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ips' => '\Swagger\Client\Model\InlineResponse2005Ips[]'
+        'ips' => '\Swagger\Client\Model\GetIpFromSender[]'
     ];
 
     /**
@@ -168,7 +168,7 @@ class GetIpsFromSender implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \Swagger\Client\Model\InlineResponse2005Ips[]
+     * @return \Swagger\Client\Model\GetIpFromSender[]
      */
     public function getIps()
     {
@@ -177,7 +177,7 @@ class GetIpsFromSender implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \Swagger\Client\Model\InlineResponse2005Ips[] $ips Dedicated IP(s) linked to a sender
+     * @param \Swagger\Client\Model\GetIpFromSender[] $ips Dedicated IP(s) linked to a sender
      * @return $this
      */
     public function setIps($ips)

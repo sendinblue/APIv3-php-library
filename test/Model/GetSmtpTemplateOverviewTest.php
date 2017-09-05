@@ -99,14 +99,14 @@ class GetSmtpTemplateOverviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "is_active"
+     * Test attribute "isActive"
      */
     public function testPropertyIsActive()
     {
     }
 
     /**
-     * Test attribute "test_sent"
+     * Test attribute "testSent"
      */
     public function testPropertyTestSent()
     {
@@ -120,14 +120,14 @@ class GetSmtpTemplateOverviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "replyTo"
      */
     public function testPropertyReplyTo()
     {
     }
 
     /**
-     * Test attribute "to_field"
+     * Test attribute "toField"
      */
     public function testPropertyToField()
     {
@@ -141,21 +141,21 @@ class GetSmtpTemplateOverviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "html_content"
+     * Test attribute "htmlContent"
      */
     public function testPropertyHtmlContent()
     {
     }
 
     /**
-     * Test attribute "created_at"
+     * Test attribute "createdAt"
      */
     public function testPropertyCreatedAt()
     {
     }
 
     /**
-     * Test attribute "modified_at"
+     * Test attribute "modifiedAt"
      */
     public function testPropertyModifiedAt()
     {

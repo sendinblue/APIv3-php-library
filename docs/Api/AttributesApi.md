@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createAttribute**
-> \Swagger\Client\Model\InlineResponse201 createAttribute($create_attribute)
+> \Swagger\Client\Model\CreateModel createAttribute($createAttribute)
 
 Creates contact attributes
 
@@ -23,10 +23,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\AttributesApi();
-$create_attribute = new \Swagger\Client\Model\CreateAttribute1(); // \Swagger\Client\Model\CreateAttribute1 | Values to create an attribute
+$createAttribute = new \Swagger\Client\Model\CreateAttribute(); // \Swagger\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
-    $result = $api_instance->createAttribute($create_attribute);
+    $result = $api_instance->createAttribute($createAttribute);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->createAttribute: ', $e->getMessage(), PHP_EOL;
@@ -38,11 +38,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_attribute** | [**\Swagger\Client\Model\CreateAttribute1**](../Model/CreateAttribute1.md)| Values to create an attribute |
+ **createAttribute** | [**\Swagger\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAttribute**
-> deleteAttribute($attribute_id)
+> deleteAttribute($attributeId)
 
 Deletes an attribute
 
@@ -69,10 +69,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\AttributesApi();
-$attribute_id = "attribute_id_example"; // string | id of the attribute
+$attributeId = "attributeId_example"; // string | id of the attribute
 
 try {
-    $api_instance->deleteAttribute($attribute_id);
+    $api_instance->deleteAttribute($attributeId);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->deleteAttribute: ', $e->getMessage(), PHP_EOL;
 }
@@ -83,7 +83,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_id** | **string**| id of the attribute |
+ **attributeId** | **string**| id of the attribute |
 
 ### Return type
 
@@ -101,7 +101,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAttributes**
-> \Swagger\Client\Model\InlineResponse20016 getAttributes()
+> \Swagger\Client\Model\GetAttributes getAttributes()
 
 Lists all attributes
 
@@ -129,7 +129,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\GetAttributes**](../Model/GetAttributes.md)
 
 ### Authorization
 

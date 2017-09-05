@@ -55,9 +55,9 @@ class CreateChild implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'email' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'company_name' => 'string',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'companyName' => 'string',
         'password' => 'string'
     ];
 
@@ -67,9 +67,9 @@ class CreateChild implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-        'first_name' => null,
-        'last_name' => null,
-        'company_name' => null,
+        'firstName' => null,
+        'lastName' => null,
+        'companyName' => null,
         'password' => 'password'
     ];
 
@@ -89,9 +89,9 @@ class CreateChild implements ArrayAccess
      */
     protected static $attributeMap = [
         'email' => 'email',
-        'first_name' => 'firstName',
-        'last_name' => 'lastName',
-        'company_name' => 'companyName',
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'companyName' => 'companyName',
         'password' => 'password'
     ];
 
@@ -102,9 +102,9 @@ class CreateChild implements ArrayAccess
      */
     protected static $setters = [
         'email' => 'setEmail',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'company_name' => 'setCompanyName',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'companyName' => 'setCompanyName',
         'password' => 'setPassword'
     ];
 
@@ -115,9 +115,9 @@ class CreateChild implements ArrayAccess
      */
     protected static $getters = [
         'email' => 'getEmail',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'company_name' => 'getCompanyName',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'companyName' => 'getCompanyName',
         'password' => 'getPassword'
     ];
 
@@ -153,9 +153,9 @@ class CreateChild implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
@@ -171,14 +171,14 @@ class CreateChild implements ArrayAccess
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
-        if ($this->container['first_name'] === null) {
-            $invalid_properties[] = "'first_name' can't be null";
+        if ($this->container['firstName'] === null) {
+            $invalid_properties[] = "'firstName' can't be null";
         }
-        if ($this->container['last_name'] === null) {
-            $invalid_properties[] = "'last_name' can't be null";
+        if ($this->container['lastName'] === null) {
+            $invalid_properties[] = "'lastName' can't be null";
         }
-        if ($this->container['company_name'] === null) {
-            $invalid_properties[] = "'company_name' can't be null";
+        if ($this->container['companyName'] === null) {
+            $invalid_properties[] = "'companyName' can't be null";
         }
         if ($this->container['password'] === null) {
             $invalid_properties[] = "'password' can't be null";
@@ -198,13 +198,13 @@ class CreateChild implements ArrayAccess
         if ($this->container['email'] === null) {
             return false;
         }
-        if ($this->container['first_name'] === null) {
+        if ($this->container['firstName'] === null) {
             return false;
         }
-        if ($this->container['last_name'] === null) {
+        if ($this->container['lastName'] === null) {
             return false;
         }
-        if ($this->container['company_name'] === null) {
+        if ($this->container['companyName'] === null) {
             return false;
         }
         if ($this->container['password'] === null) {
@@ -236,64 +236,64 @@ class CreateChild implements ArrayAccess
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
-     * @param string $first_name First name to use to create the child account
+     * Sets firstName
+     * @param string $firstName First name to use to create the child account
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name Last name to use to create the child account
+     * Sets lastName
+     * @param string $lastName Last name to use to create the child account
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets company_name
+     * Gets companyName
      * @return string
      */
     public function getCompanyName()
     {
-        return $this->container['company_name'];
+        return $this->container['companyName'];
     }
 
     /**
-     * Sets company_name
-     * @param string $company_name Company name to use to create the child account
+     * Sets companyName
+     * @param string $companyName Company name to use to create the child account
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setCompanyName($companyName)
     {
-        $this->container['company_name'] = $company_name;
+        $this->container['companyName'] = $companyName;
 
         return $this;
     }

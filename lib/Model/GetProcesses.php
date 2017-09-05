@@ -54,7 +54,7 @@ class GetProcesses implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'processes' => '\Swagger\Client\Model\InlineResponse2007Processes[]',
+        'processes' => '\Swagger\Client\Model\GetProcess[]',
         'count' => 'int'
     ];
 
@@ -174,7 +174,7 @@ class GetProcesses implements ArrayAccess
 
     /**
      * Gets processes
-     * @return \Swagger\Client\Model\InlineResponse2007Processes[]
+     * @return \Swagger\Client\Model\GetProcess[]
      */
     public function getProcesses()
     {
@@ -183,7 +183,7 @@ class GetProcesses implements ArrayAccess
 
     /**
      * Sets processes
-     * @param \Swagger\Client\Model\InlineResponse2007Processes[] $processes List of processes available on your account
+     * @param \Swagger\Client\Model\GetProcess[] $processes List of processes available on your account
      * @return $this
      */
     public function setProcesses($processes)

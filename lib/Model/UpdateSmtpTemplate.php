@@ -55,15 +55,15 @@ class UpdateSmtpTemplate implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'tag' => 'string',
-        'sender' => '\Swagger\Client\Model\SmtptemplatestemplateIdSender',
-        'template_name' => 'string',
-        'html_content' => 'string',
-        'html_url' => 'string',
+        'sender' => '\Swagger\Client\Model\UpdateSmtpTemplateSender',
+        'templateName' => 'string',
+        'htmlContent' => 'string',
+        'htmlUrl' => 'string',
         'subject' => 'string',
-        'reply_to' => 'string',
-        'to_field' => 'string',
-        'attachment_url' => 'string',
-        'is_active' => 'bool'
+        'replyTo' => 'string',
+        'toField' => 'string',
+        'attachmentUrl' => 'string',
+        'isActive' => 'bool'
     ];
 
     /**
@@ -73,14 +73,14 @@ class UpdateSmtpTemplate implements ArrayAccess
     protected static $swaggerFormats = [
         'tag' => null,
         'sender' => null,
-        'template_name' => null,
-        'html_content' => null,
-        'html_url' => 'url',
+        'templateName' => null,
+        'htmlContent' => null,
+        'htmlUrl' => 'url',
         'subject' => null,
-        'reply_to' => 'email',
-        'to_field' => null,
-        'attachment_url' => 'url',
-        'is_active' => null
+        'replyTo' => 'email',
+        'toField' => null,
+        'attachmentUrl' => 'url',
+        'isActive' => null
     ];
 
     public static function swaggerTypes()
@@ -100,14 +100,14 @@ class UpdateSmtpTemplate implements ArrayAccess
     protected static $attributeMap = [
         'tag' => 'tag',
         'sender' => 'sender',
-        'template_name' => 'templateName',
-        'html_content' => 'htmlContent',
-        'html_url' => 'htmlUrl',
+        'templateName' => 'templateName',
+        'htmlContent' => 'htmlContent',
+        'htmlUrl' => 'htmlUrl',
         'subject' => 'subject',
-        'reply_to' => 'replyTo',
-        'to_field' => 'toField',
-        'attachment_url' => 'attachmentUrl',
-        'is_active' => 'isActive'
+        'replyTo' => 'replyTo',
+        'toField' => 'toField',
+        'attachmentUrl' => 'attachmentUrl',
+        'isActive' => 'isActive'
     ];
 
 
@@ -118,14 +118,14 @@ class UpdateSmtpTemplate implements ArrayAccess
     protected static $setters = [
         'tag' => 'setTag',
         'sender' => 'setSender',
-        'template_name' => 'setTemplateName',
-        'html_content' => 'setHtmlContent',
-        'html_url' => 'setHtmlUrl',
+        'templateName' => 'setTemplateName',
+        'htmlContent' => 'setHtmlContent',
+        'htmlUrl' => 'setHtmlUrl',
         'subject' => 'setSubject',
-        'reply_to' => 'setReplyTo',
-        'to_field' => 'setToField',
-        'attachment_url' => 'setAttachmentUrl',
-        'is_active' => 'setIsActive'
+        'replyTo' => 'setReplyTo',
+        'toField' => 'setToField',
+        'attachmentUrl' => 'setAttachmentUrl',
+        'isActive' => 'setIsActive'
     ];
 
 
@@ -136,14 +136,14 @@ class UpdateSmtpTemplate implements ArrayAccess
     protected static $getters = [
         'tag' => 'getTag',
         'sender' => 'getSender',
-        'template_name' => 'getTemplateName',
-        'html_content' => 'getHtmlContent',
-        'html_url' => 'getHtmlUrl',
+        'templateName' => 'getTemplateName',
+        'htmlContent' => 'getHtmlContent',
+        'htmlUrl' => 'getHtmlUrl',
         'subject' => 'getSubject',
-        'reply_to' => 'getReplyTo',
-        'to_field' => 'getToField',
-        'attachment_url' => 'getAttachmentUrl',
-        'is_active' => 'getIsActive'
+        'replyTo' => 'getReplyTo',
+        'toField' => 'getToField',
+        'attachmentUrl' => 'getAttachmentUrl',
+        'isActive' => 'getIsActive'
     ];
 
     public static function attributeMap()
@@ -179,14 +179,14 @@ class UpdateSmtpTemplate implements ArrayAccess
     {
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
-        $this->container['template_name'] = isset($data['template_name']) ? $data['template_name'] : null;
-        $this->container['html_content'] = isset($data['html_content']) ? $data['html_content'] : null;
-        $this->container['html_url'] = isset($data['html_url']) ? $data['html_url'] : null;
+        $this->container['templateName'] = isset($data['templateName']) ? $data['templateName'] : null;
+        $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
+        $this->container['htmlUrl'] = isset($data['htmlUrl']) ? $data['htmlUrl'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
-        $this->container['to_field'] = isset($data['to_field']) ? $data['to_field'] : null;
-        $this->container['attachment_url'] = isset($data['attachment_url']) ? $data['attachment_url'] : null;
-        $this->container['is_active'] = isset($data['is_active']) ? $data['is_active'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['toField'] = isset($data['toField']) ? $data['toField'] : null;
+        $this->container['attachmentUrl'] = isset($data['attachmentUrl']) ? $data['attachmentUrl'] : null;
+        $this->container['isActive'] = isset($data['isActive']) ? $data['isActive'] : null;
     }
 
     /**
@@ -237,7 +237,7 @@ class UpdateSmtpTemplate implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\SmtptemplatestemplateIdSender
+     * @return \Swagger\Client\Model\UpdateSmtpTemplateSender
      */
     public function getSender()
     {
@@ -246,7 +246,7 @@ class UpdateSmtpTemplate implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\SmtptemplatestemplateIdSender $sender
+     * @param \Swagger\Client\Model\UpdateSmtpTemplateSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -257,64 +257,64 @@ class UpdateSmtpTemplate implements ArrayAccess
     }
 
     /**
-     * Gets template_name
+     * Gets templateName
      * @return string
      */
     public function getTemplateName()
     {
-        return $this->container['template_name'];
+        return $this->container['templateName'];
     }
 
     /**
-     * Sets template_name
-     * @param string $template_name Name of the template
+     * Sets templateName
+     * @param string $templateName Name of the template
      * @return $this
      */
-    public function setTemplateName($template_name)
+    public function setTemplateName($templateName)
     {
-        $this->container['template_name'] = $template_name;
+        $this->container['templateName'] = $templateName;
 
         return $this;
     }
 
     /**
-     * Gets html_content
+     * Gets htmlContent
      * @return string
      */
     public function getHtmlContent()
     {
-        return $this->container['html_content'];
+        return $this->container['htmlContent'];
     }
 
     /**
-     * Sets html_content
-     * @param string $html_content Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters)
+     * Sets htmlContent
+     * @param string $htmlContent Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters)
      * @return $this
      */
-    public function setHtmlContent($html_content)
+    public function setHtmlContent($htmlContent)
     {
-        $this->container['html_content'] = $html_content;
+        $this->container['htmlContent'] = $htmlContent;
 
         return $this;
     }
 
     /**
-     * Gets html_url
+     * Gets htmlUrl
      * @return string
      */
     public function getHtmlUrl()
     {
-        return $this->container['html_url'];
+        return $this->container['htmlUrl'];
     }
 
     /**
-     * Sets html_url
-     * @param string $html_url Required if htmlContent is empty. URL to the body of the email (HTML)
+     * Sets htmlUrl
+     * @param string $htmlUrl Required if htmlContent is empty. URL to the body of the email (HTML)
      * @return $this
      */
-    public function setHtmlUrl($html_url)
+    public function setHtmlUrl($htmlUrl)
     {
-        $this->container['html_url'] = $html_url;
+        $this->container['htmlUrl'] = $htmlUrl;
 
         return $this;
     }
@@ -341,85 +341,85 @@ class UpdateSmtpTemplate implements ArrayAccess
     }
 
     /**
-     * Gets reply_to
+     * Gets replyTo
      * @return string
      */
     public function getReplyTo()
     {
-        return $this->container['reply_to'];
+        return $this->container['replyTo'];
     }
 
     /**
-     * Sets reply_to
-     * @param string $reply_to Email on which campaign recipients will be able to reply to
+     * Sets replyTo
+     * @param string $replyTo Email on which campaign recipients will be able to reply to
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setReplyTo($replyTo)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['replyTo'] = $replyTo;
 
         return $this;
     }
 
     /**
-     * Gets to_field
+     * Gets toField
      * @return string
      */
     public function getToField()
     {
-        return $this->container['to_field'];
+        return $this->container['toField'];
     }
 
     /**
-     * Sets to_field
-     * @param string $to_field To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. These attributes must already exist in contacts database
+     * Sets toField
+     * @param string $toField To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. These attributes must already exist in contacts database
      * @return $this
      */
-    public function setToField($to_field)
+    public function setToField($toField)
     {
-        $this->container['to_field'] = $to_field;
+        $this->container['toField'] = $toField;
 
         return $this;
     }
 
     /**
-     * Gets attachment_url
+     * Gets attachmentUrl
      * @return string
      */
     public function getAttachmentUrl()
     {
-        return $this->container['attachment_url'];
+        return $this->container['attachmentUrl'];
     }
 
     /**
-     * Sets attachment_url
-     * @param string $attachment_url Absolute url of the attachment (no local file). Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff and rtf
+     * Sets attachmentUrl
+     * @param string $attachmentUrl Absolute url of the attachment (no local file). Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff and rtf
      * @return $this
      */
-    public function setAttachmentUrl($attachment_url)
+    public function setAttachmentUrl($attachmentUrl)
     {
-        $this->container['attachment_url'] = $attachment_url;
+        $this->container['attachmentUrl'] = $attachmentUrl;
 
         return $this;
     }
 
     /**
-     * Gets is_active
+     * Gets isActive
      * @return bool
      */
     public function getIsActive()
     {
-        return $this->container['is_active'];
+        return $this->container['isActive'];
     }
 
     /**
-     * Sets is_active
-     * @param bool $is_active Status of the template. isActive = false means template is inactive, isActive = true means template is active
+     * Sets isActive
+     * @param bool $isActive Status of the template. isActive = false means template is inactive, isActive = true means template is active
      * @return $this
      */
-    public function setIsActive($is_active)
+    public function setIsActive($isActive)
     {
-        $this->container['is_active'] = $is_active;
+        $this->container['isActive'] = $isActive;
 
         return $this;
     }

@@ -54,7 +54,7 @@ class GetSendersList implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'senders' => '\Swagger\Client\Model\InlineResponse2004Senders[]'
+        'senders' => '\Swagger\Client\Model\GetSendersListSenders[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetSendersList implements ArrayAccess
 
     /**
      * Gets senders
-     * @return \Swagger\Client\Model\InlineResponse2004Senders[]
+     * @return \Swagger\Client\Model\GetSendersListSenders[]
      */
     public function getSenders()
     {
@@ -171,7 +171,7 @@ class GetSendersList implements ArrayAccess
 
     /**
      * Sets senders
-     * @param \Swagger\Client\Model\InlineResponse2004Senders[] $senders List of the senders available in your account
+     * @param \Swagger\Client\Model\GetSendersListSenders[] $senders List of the senders available in your account
      * @return $this
      */
     public function setSenders($senders)

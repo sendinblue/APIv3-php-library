@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createSMSCampaign**
-> \Swagger\Client\Model\InlineResponse201 createSMSCampaign($create_sms_campaign)
+> \Swagger\Client\Model\CreateModel createSMSCampaign($createSmsCampaign)
 
 Creates a SMS campaign
 
@@ -30,10 +30,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$create_sms_campaign = new \Swagger\Client\Model\CreateSmsCampaign1(); // \Swagger\Client\Model\CreateSmsCampaign1 | Values to create an SMS Campaign
+$createSmsCampaign = new \Swagger\Client\Model\CreateSmsCampaign(); // \Swagger\Client\Model\CreateSmsCampaign | Values to create an SMS Campaign
 
 try {
-    $result = $api_instance->createSMSCampaign($create_sms_campaign);
+    $result = $api_instance->createSMSCampaign($createSmsCampaign);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->createSMSCampaign: ', $e->getMessage(), PHP_EOL;
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_sms_campaign** | [**\Swagger\Client\Model\CreateSmsCampaign1**](../Model/CreateSmsCampaign1.md)| Values to create an SMS Campaign |
+ **createSmsCampaign** | [**\Swagger\Client\Model\CreateSmsCampaign**](../Model/CreateSmsCampaign.md)| Values to create an SMS Campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSMSCampaigns**
-> deleteSMSCampaigns($campaign_id)
+> deleteSMSCampaigns($campaignId)
 
 Delete the SMS campaign
 
@@ -76,10 +76,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the SMS campaign
+$campaignId = "campaignId_example"; // string | id of the SMS campaign
 
 try {
-    $api_instance->deleteSMSCampaigns($campaign_id);
+    $api_instance->deleteSMSCampaigns($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->deleteSMSCampaigns: ', $e->getMessage(), PHP_EOL;
 }
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the SMS campaign |
+ **campaignId** | **string**| id of the SMS campaign |
 
 ### Return type
 
@@ -108,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSMSCampaigns**
-> \Swagger\Client\Model\InlineResponse20021 getSMSCampaigns($status, $limit, $offset)
+> \Swagger\Client\Model\GetSmsCampaigns getSMSCampaigns($status, $limit, $offset)
 
 Returns the informations for all your created SMS campaigns
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\Swagger\Client\Model\GetSmsCampaigns**](../Model/GetSmsCampaigns.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmsCampaign**
-> \Swagger\Client\Model\InlineResponse20021Campaigns getSmsCampaign($campaign_id, $get_sms_campaign)
+> \Swagger\Client\Model\GetSmsCampaign getSmsCampaign($campaignId, $getSmsCampaign)
 
 Get a SMS campaign
 
@@ -171,11 +171,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the SMS campaign
-$get_sms_campaign = new \Swagger\Client\Model\GetSmsCampaign1(); // \Swagger\Client\Model\GetSmsCampaign1 | Values to update an SMS Campaign
+$campaignId = "campaignId_example"; // string | id of the SMS campaign
+$getSmsCampaign = new \Swagger\Client\Model\GetSmsCampaign(); // \Swagger\Client\Model\GetSmsCampaign | Values to update an SMS Campaign
 
 try {
-    $result = $api_instance->getSmsCampaign($campaign_id, $get_sms_campaign);
+    $result = $api_instance->getSmsCampaign($campaignId, $getSmsCampaign);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->getSmsCampaign: ', $e->getMessage(), PHP_EOL;
@@ -187,12 +187,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the SMS campaign |
- **get_sms_campaign** | [**\Swagger\Client\Model\GetSmsCampaign1**](../Model/GetSmsCampaign1.md)| Values to update an SMS Campaign |
+ **campaignId** | **string**| id of the SMS campaign |
+ **getSmsCampaign** | [**\Swagger\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021Campaigns**](../Model/InlineResponse20021Campaigns.md)
+[**\Swagger\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **requestSMSRecipientExport**
-> \Swagger\Client\Model\InlineResponse202 requestSMSRecipientExport($campaign_id, $recipient_export)
+> \Swagger\Client\Model\CreatedProcessId requestSMSRecipientExport($campaignId, $recipientExport)
 
 Exports the recipients of the specified campaign.
 
@@ -221,11 +221,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the campaign
-$recipient_export = new \Swagger\Client\Model\RecipientExport1(); // \Swagger\Client\Model\RecipientExport1 | Values to send for a recipient export request
+$campaignId = "campaignId_example"; // string | id of the campaign
+$recipientExport = new \Swagger\Client\Model\RequestSMSRecipientExport(); // \Swagger\Client\Model\RequestSMSRecipientExport | Values to send for a recipient export request
 
 try {
-    $result = $api_instance->requestSMSRecipientExport($campaign_id, $recipient_export);
+    $result = $api_instance->requestSMSRecipientExport($campaignId, $recipientExport);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->requestSMSRecipientExport: ', $e->getMessage(), PHP_EOL;
@@ -237,12 +237,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the campaign |
- **recipient_export** | [**\Swagger\Client\Model\RecipientExport1**](../Model/RecipientExport1.md)| Values to send for a recipient export request | [optional]
+ **campaignId** | **string**| id of the campaign |
+ **recipientExport** | [**\Swagger\Client\Model\RequestSMSRecipientExport**](../Model/RequestSMSRecipientExport.md)| Values to send for a recipient export request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse202**](../Model/InlineResponse202.md)
+[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendSMSCampaignNow**
-> sendSMSCampaignNow($campaign_id)
+> sendSMSCampaignNow($campaignId)
 
 Send your SMS campaign immediately
 
@@ -269,10 +269,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the campaign
+$campaignId = "campaignId_example"; // string | id of the campaign
 
 try {
-    $api_instance->sendSMSCampaignNow($campaign_id);
+    $api_instance->sendSMSCampaignNow($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendSMSCampaignNow: ', $e->getMessage(), PHP_EOL;
 }
@@ -283,7 +283,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the campaign |
+ **campaignId** | **string**| id of the campaign |
 
 ### Return type
 
@@ -301,7 +301,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendSMSReport**
-> sendSMSReport($campaign_id, $send_report)
+> sendSMSReport($campaignId, $sendReport)
 
 Send report of SMS campaigns
 
@@ -316,11 +316,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the campaign
-$send_report = new \Swagger\Client\Model\SendReport2(); // \Swagger\Client\Model\SendReport2 | Values for send a report
+$campaignId = "campaignId_example"; // string | id of the campaign
+$sendReport = new \Swagger\Client\Model\SendReport(); // \Swagger\Client\Model\SendReport | Values for send a report
 
 try {
-    $api_instance->sendSMSReport($campaign_id, $send_report);
+    $api_instance->sendSMSReport($campaignId, $sendReport);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendSMSReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -331,8 +331,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the campaign |
- **send_report** | [**\Swagger\Client\Model\SendReport2**](../Model/SendReport2.md)| Values for send a report |
+ **campaignId** | **string**| id of the campaign |
+ **sendReport** | [**\Swagger\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
 
 ### Return type
 
@@ -350,7 +350,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendTestSms**
-> sendTestSms($campaign_id, $send_test_sms)
+> sendTestSms($campaignId, $sendTestSms)
 
 Send an SMS
 
@@ -363,11 +363,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the SMS campaign
-$send_test_sms = new \Swagger\Client\Model\SendTestSms1(); // \Swagger\Client\Model\SendTestSms1 | Mobile number to which send the test
+$campaignId = "campaignId_example"; // string | Id of the SMS campaign
+$sendTestSms = new \Swagger\Client\Model\SendTestSms(); // \Swagger\Client\Model\SendTestSms | Mobile number to which send the test
 
 try {
-    $api_instance->sendTestSms($campaign_id, $send_test_sms);
+    $api_instance->sendTestSms($campaignId, $sendTestSms);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendTestSms: ', $e->getMessage(), PHP_EOL;
 }
@@ -378,8 +378,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the SMS campaign |
- **send_test_sms** | [**\Swagger\Client\Model\SendTestSms1**](../Model/SendTestSms1.md)| Mobile number to which send the test |
+ **campaignId** | **string**| Id of the SMS campaign |
+ **sendTestSms** | [**\Swagger\Client\Model\SendTestSms**](../Model/SendTestSms.md)| Mobile number to which send the test |
 
 ### Return type
 
@@ -397,7 +397,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSMSCampaignStatus**
-> updateSMSCampaignStatus($campaign_id, $status)
+> updateSMSCampaignStatus($campaignId, $status)
 
 Update the campaign status
 
@@ -410,11 +410,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the campaign
-$status = new \Swagger\Client\Model\Status1(); // \Swagger\Client\Model\Status1 | Status of the campaign.
+$campaignId = "campaignId_example"; // string | id of the campaign
+$status = new \Swagger\Client\Model\UpdateCampaignStatus(); // \Swagger\Client\Model\UpdateCampaignStatus | Status of the campaign.
 
 try {
-    $api_instance->updateSMSCampaignStatus($campaign_id, $status);
+    $api_instance->updateSMSCampaignStatus($campaignId, $status);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->updateSMSCampaignStatus: ', $e->getMessage(), PHP_EOL;
 }
@@ -425,8 +425,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the campaign |
- **status** | [**\Swagger\Client\Model\Status1**](../Model/Status1.md)| Status of the campaign. |
+ **campaignId** | **string**| id of the campaign |
+ **status** | [**\Swagger\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign. |
 
 ### Return type
 
@@ -444,7 +444,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSmsCampaign**
-> updateSmsCampaign($campaign_id, $update_sms_campaign)
+> updateSmsCampaign($campaignId, $updateSmsCampaign)
 
 Updates a SMS campaign
 
@@ -457,11 +457,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the SMS campaign
-$update_sms_campaign = new \Swagger\Client\Model\UpdateSmsCampaign1(); // \Swagger\Client\Model\UpdateSmsCampaign1 | Values to update an SMS Campaign
+$campaignId = "campaignId_example"; // string | id of the SMS campaign
+$updateSmsCampaign = new \Swagger\Client\Model\UpdateSmsCampaign(); // \Swagger\Client\Model\UpdateSmsCampaign | Values to update an SMS Campaign
 
 try {
-    $api_instance->updateSmsCampaign($campaign_id, $update_sms_campaign);
+    $api_instance->updateSmsCampaign($campaignId, $updateSmsCampaign);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->updateSmsCampaign: ', $e->getMessage(), PHP_EOL;
 }
@@ -472,8 +472,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the SMS campaign |
- **update_sms_campaign** | [**\Swagger\Client\Model\UpdateSmsCampaign1**](../Model/UpdateSmsCampaign1.md)| Values to update an SMS Campaign |
+ **campaignId** | **string**| id of the SMS campaign |
+ **updateSmsCampaign** | [**\Swagger\Client\Model\UpdateSmsCampaign**](../Model/UpdateSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type
 

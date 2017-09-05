@@ -55,7 +55,7 @@ class GetSmtpTemplates implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'count' => 'int',
-        'templates' => '\Swagger\Client\Model\InlineResponse20012Templates[]'
+        'templates' => '\Swagger\Client\Model\GetSmtpTemplateOverview[]'
     ];
 
     /**
@@ -189,7 +189,7 @@ class GetSmtpTemplates implements ArrayAccess
 
     /**
      * Gets templates
-     * @return \Swagger\Client\Model\InlineResponse20012Templates[]
+     * @return \Swagger\Client\Model\GetSmtpTemplateOverview[]
      */
     public function getTemplates()
     {
@@ -198,7 +198,7 @@ class GetSmtpTemplates implements ArrayAccess
 
     /**
      * Sets templates
-     * @param \Swagger\Client\Model\InlineResponse20012Templates[] $templates
+     * @param \Swagger\Client\Model\GetSmtpTemplateOverview[] $templates
      * @return $this
      */
     public function setTemplates($templates)

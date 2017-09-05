@@ -106,14 +106,14 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "html_content"
+     * Test attribute "htmlContent"
      */
     public function testPropertyHtmlContent()
     {
     }
 
     /**
-     * Test attribute "text_content"
+     * Test attribute "textContent"
      */
     public function testPropertyTextContent()
     {
@@ -127,7 +127,7 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "replyTo"
      */
     public function testPropertyReplyTo()
     {

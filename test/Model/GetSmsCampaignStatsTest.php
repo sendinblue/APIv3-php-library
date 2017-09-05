@@ -99,14 +99,14 @@ class GetSmsCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "soft_bounces"
+     * Test attribute "softBounces"
      */
     public function testPropertySoftBounces()
     {
     }
 
     /**
-     * Test attribute "hard_bounces"
+     * Test attribute "hardBounces"
      */
     public function testPropertyHardBounces()
     {

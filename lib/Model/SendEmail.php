@@ -54,12 +54,12 @@ class SendEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'email_to' => 'string[]',
-        'email_bcc' => 'string[]',
-        'email_cc' => 'string[]',
-        'reply_to' => 'string',
-        'attachment_url' => 'string',
-        'attachment' => '\Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]',
+        'emailTo' => 'string[]',
+        'emailBcc' => 'string[]',
+        'emailCc' => 'string[]',
+        'replyTo' => 'string',
+        'attachmentUrl' => 'string',
+        'attachment' => '\Swagger\Client\Model\SendEmailAttachment[]',
         'headers' => 'map[string,string]',
         'attributes' => 'map[string,string]'
     ];
@@ -69,11 +69,11 @@ class SendEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'email_to' => 'email',
-        'email_bcc' => 'email',
-        'email_cc' => 'email',
-        'reply_to' => 'email',
-        'attachment_url' => 'url',
+        'emailTo' => 'email',
+        'emailBcc' => 'email',
+        'emailCc' => 'email',
+        'replyTo' => 'email',
+        'attachmentUrl' => 'url',
         'attachment' => null,
         'headers' => null,
         'attributes' => null
@@ -94,11 +94,11 @@ class SendEmail implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email_to' => 'emailTo',
-        'email_bcc' => 'emailBcc',
-        'email_cc' => 'emailCc',
-        'reply_to' => 'replyTo',
-        'attachment_url' => 'attachmentUrl',
+        'emailTo' => 'emailTo',
+        'emailBcc' => 'emailBcc',
+        'emailCc' => 'emailCc',
+        'replyTo' => 'replyTo',
+        'attachmentUrl' => 'attachmentUrl',
         'attachment' => 'attachment',
         'headers' => 'headers',
         'attributes' => 'attributes'
@@ -110,11 +110,11 @@ class SendEmail implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email_to' => 'setEmailTo',
-        'email_bcc' => 'setEmailBcc',
-        'email_cc' => 'setEmailCc',
-        'reply_to' => 'setReplyTo',
-        'attachment_url' => 'setAttachmentUrl',
+        'emailTo' => 'setEmailTo',
+        'emailBcc' => 'setEmailBcc',
+        'emailCc' => 'setEmailCc',
+        'replyTo' => 'setReplyTo',
+        'attachmentUrl' => 'setAttachmentUrl',
         'attachment' => 'setAttachment',
         'headers' => 'setHeaders',
         'attributes' => 'setAttributes'
@@ -126,11 +126,11 @@ class SendEmail implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email_to' => 'getEmailTo',
-        'email_bcc' => 'getEmailBcc',
-        'email_cc' => 'getEmailCc',
-        'reply_to' => 'getReplyTo',
-        'attachment_url' => 'getAttachmentUrl',
+        'emailTo' => 'getEmailTo',
+        'emailBcc' => 'getEmailBcc',
+        'emailCc' => 'getEmailCc',
+        'replyTo' => 'getReplyTo',
+        'attachmentUrl' => 'getAttachmentUrl',
         'attachment' => 'getAttachment',
         'headers' => 'getHeaders',
         'attributes' => 'getAttributes'
@@ -167,11 +167,11 @@ class SendEmail implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['email_to'] = isset($data['email_to']) ? $data['email_to'] : null;
-        $this->container['email_bcc'] = isset($data['email_bcc']) ? $data['email_bcc'] : null;
-        $this->container['email_cc'] = isset($data['email_cc']) ? $data['email_cc'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
-        $this->container['attachment_url'] = isset($data['attachment_url']) ? $data['attachment_url'] : null;
+        $this->container['emailTo'] = isset($data['emailTo']) ? $data['emailTo'] : null;
+        $this->container['emailBcc'] = isset($data['emailBcc']) ? $data['emailBcc'] : null;
+        $this->container['emailCc'] = isset($data['emailCc']) ? $data['emailCc'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['attachmentUrl'] = isset($data['attachmentUrl']) ? $data['attachmentUrl'] : null;
         $this->container['attachment'] = isset($data['attachment']) ? $data['attachment'] : null;
         $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
@@ -186,8 +186,8 @@ class SendEmail implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['email_to'] === null) {
-            $invalid_properties[] = "'email_to' can't be null";
+        if ($this->container['emailTo'] === null) {
+            $invalid_properties[] = "'emailTo' can't be null";
         }
         return $invalid_properties;
     }
@@ -201,7 +201,7 @@ class SendEmail implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['email_to'] === null) {
+        if ($this->container['emailTo'] === null) {
             return false;
         }
         return true;
@@ -209,113 +209,113 @@ class SendEmail implements ArrayAccess
 
 
     /**
-     * Gets email_to
+     * Gets emailTo
      * @return string[]
      */
     public function getEmailTo()
     {
-        return $this->container['email_to'];
+        return $this->container['emailTo'];
     }
 
     /**
-     * Sets email_to
-     * @param string[] $email_to Email addresses of the recipients
+     * Sets emailTo
+     * @param string[] $emailTo Email addresses of the recipients
      * @return $this
      */
-    public function setEmailTo($email_to)
+    public function setEmailTo($emailTo)
     {
-        $this->container['email_to'] = $email_to;
+        $this->container['emailTo'] = $emailTo;
 
         return $this;
     }
 
     /**
-     * Gets email_bcc
+     * Gets emailBcc
      * @return string[]
      */
     public function getEmailBcc()
     {
-        return $this->container['email_bcc'];
+        return $this->container['emailBcc'];
     }
 
     /**
-     * Sets email_bcc
-     * @param string[] $email_bcc Email addresses of the recipients in bcc
+     * Sets emailBcc
+     * @param string[] $emailBcc Email addresses of the recipients in bcc
      * @return $this
      */
-    public function setEmailBcc($email_bcc)
+    public function setEmailBcc($emailBcc)
     {
-        $this->container['email_bcc'] = $email_bcc;
+        $this->container['emailBcc'] = $emailBcc;
 
         return $this;
     }
 
     /**
-     * Gets email_cc
+     * Gets emailCc
      * @return string[]
      */
     public function getEmailCc()
     {
-        return $this->container['email_cc'];
+        return $this->container['emailCc'];
     }
 
     /**
-     * Sets email_cc
-     * @param string[] $email_cc Email addresses of the recipients in cc
+     * Sets emailCc
+     * @param string[] $emailCc Email addresses of the recipients in cc
      * @return $this
      */
-    public function setEmailCc($email_cc)
+    public function setEmailCc($emailCc)
     {
-        $this->container['email_cc'] = $email_cc;
+        $this->container['emailCc'] = $emailCc;
 
         return $this;
     }
 
     /**
-     * Gets reply_to
+     * Gets replyTo
      * @return string
      */
     public function getReplyTo()
     {
-        return $this->container['reply_to'];
+        return $this->container['replyTo'];
     }
 
     /**
-     * Sets reply_to
-     * @param string $reply_to Email on which campaign recipients will be able to reply to
+     * Sets replyTo
+     * @param string $replyTo Email on which campaign recipients will be able to reply to
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setReplyTo($replyTo)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['replyTo'] = $replyTo;
 
         return $this;
     }
 
     /**
-     * Gets attachment_url
+     * Gets attachmentUrl
      * @return string
      */
     public function getAttachmentUrl()
     {
-        return $this->container['attachment_url'];
+        return $this->container['attachmentUrl'];
     }
 
     /**
-     * Sets attachment_url
-     * @param string $attachment_url Absolute url of the attachment (no local file). Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * Sets attachmentUrl
+     * @param string $attachmentUrl Absolute url of the attachment (no local file). Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
      * @return $this
      */
-    public function setAttachmentUrl($attachment_url)
+    public function setAttachmentUrl($attachmentUrl)
     {
-        $this->container['attachment_url'] = $attachment_url;
+        $this->container['attachmentUrl'] = $attachmentUrl;
 
         return $this;
     }
 
     /**
      * Gets attachment
-     * @return \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[]
+     * @return \Swagger\Client\Model\SendEmailAttachment[]
      */
     public function getAttachment()
     {
@@ -324,7 +324,7 @@ class SendEmail implements ArrayAccess
 
     /**
      * Sets attachment
-     * @param \Swagger\Client\Model\SmtptemplatestemplateIdsendAttachment[] $attachment Pass the base64 content of the attachment. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * @param \Swagger\Client\Model\SendEmailAttachment[] $attachment Pass the base64 content of the attachment. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
      * @return $this
      */
     public function setAttachment($attachment)

@@ -54,7 +54,7 @@ class SendTemplateEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'message_id' => 'string'
+        'messageId' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class SendTemplateEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'message_id' => null
+        'messageId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class SendTemplateEmail implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'message_id' => 'messageId'
+        'messageId' => 'messageId'
     ];
 
 
@@ -89,7 +89,7 @@ class SendTemplateEmail implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'message_id' => 'setMessageId'
+        'messageId' => 'setMessageId'
     ];
 
 
@@ -98,7 +98,7 @@ class SendTemplateEmail implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'message_id' => 'getMessageId'
+        'messageId' => 'getMessageId'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class SendTemplateEmail implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['message_id'] = isset($data['message_id']) ? $data['message_id'] : null;
+        $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
     }
 
     /**
@@ -144,8 +144,8 @@ class SendTemplateEmail implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['message_id'] === null) {
-            $invalid_properties[] = "'message_id' can't be null";
+        if ($this->container['messageId'] === null) {
+            $invalid_properties[] = "'messageId' can't be null";
         }
         return $invalid_properties;
     }
@@ -159,7 +159,7 @@ class SendTemplateEmail implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['message_id'] === null) {
+        if ($this->container['messageId'] === null) {
             return false;
         }
         return true;
@@ -167,22 +167,22 @@ class SendTemplateEmail implements ArrayAccess
 
 
     /**
-     * Gets message_id
+     * Gets messageId
      * @return string
      */
     public function getMessageId()
     {
-        return $this->container['message_id'];
+        return $this->container['messageId'];
     }
 
     /**
-     * Sets message_id
-     * @param string $message_id Message ID of the template Email sent
+     * Sets messageId
+     * @param string $messageId Message ID of the template Email sent
      * @return $this
      */
-    public function setMessageId($message_id)
+    public function setMessageId($messageId)
     {
-        $this->container['message_id'] = $message_id;
+        $this->container['messageId'] = $messageId;
 
         return $this;
     }

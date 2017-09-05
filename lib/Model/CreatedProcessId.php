@@ -54,7 +54,7 @@ class CreatedProcessId implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'process_id' => 'int'
+        'processId' => 'int'
     ];
 
     /**
@@ -62,7 +62,7 @@ class CreatedProcessId implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'process_id' => 'int32'
+        'processId' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class CreatedProcessId implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'process_id' => 'processId'
+        'processId' => 'processId'
     ];
 
 
@@ -89,7 +89,7 @@ class CreatedProcessId implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'process_id' => 'setProcessId'
+        'processId' => 'setProcessId'
     ];
 
 
@@ -98,7 +98,7 @@ class CreatedProcessId implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'process_id' => 'getProcessId'
+        'processId' => 'getProcessId'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class CreatedProcessId implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['process_id'] = isset($data['process_id']) ? $data['process_id'] : null;
+        $this->container['processId'] = isset($data['processId']) ? $data['processId'] : null;
     }
 
     /**
@@ -144,8 +144,8 @@ class CreatedProcessId implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['process_id'] === null) {
-            $invalid_properties[] = "'process_id' can't be null";
+        if ($this->container['processId'] === null) {
+            $invalid_properties[] = "'processId' can't be null";
         }
         return $invalid_properties;
     }
@@ -159,7 +159,7 @@ class CreatedProcessId implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['process_id'] === null) {
+        if ($this->container['processId'] === null) {
             return false;
         }
         return true;
@@ -167,22 +167,22 @@ class CreatedProcessId implements ArrayAccess
 
 
     /**
-     * Gets process_id
+     * Gets processId
      * @return int
      */
     public function getProcessId()
     {
-        return $this->container['process_id'];
+        return $this->container['processId'];
     }
 
     /**
-     * Sets process_id
-     * @param int $process_id Id of the process created
+     * Sets processId
+     * @param int $processId Id of the process created
      * @return $this
      */
-    public function setProcessId($process_id)
+    public function setProcessId($processId)
     {
-        $this->container['process_id'] = $process_id;
+        $this->container['processId'] = $processId;
 
         return $this;
     }

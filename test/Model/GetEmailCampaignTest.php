@@ -113,14 +113,14 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "scheduled_at"
+     * Test attribute "scheduledAt"
      */
     public function testPropertyScheduledAt()
     {
     }
 
     /**
-     * Test attribute "test_sent"
+     * Test attribute "testSent"
      */
     public function testPropertyTestSent()
     {
@@ -148,28 +148,28 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "replyTo"
      */
     public function testPropertyReplyTo()
     {
     }
 
     /**
-     * Test attribute "to_field"
+     * Test attribute "toField"
      */
     public function testPropertyToField()
     {
     }
 
     /**
-     * Test attribute "html_content"
+     * Test attribute "htmlContent"
      */
     public function testPropertyHtmlContent()
     {
     }
 
     /**
-     * Test attribute "share_link"
+     * Test attribute "shareLink"
      */
     public function testPropertyShareLink()
     {
@@ -183,28 +183,28 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_at"
+     * Test attribute "createdAt"
      */
     public function testPropertyCreatedAt()
     {
     }
 
     /**
-     * Test attribute "modified_at"
+     * Test attribute "modifiedAt"
      */
     public function testPropertyModifiedAt()
     {
     }
 
     /**
-     * Test attribute "inline_image_activation"
+     * Test attribute "inlineImageActivation"
      */
     public function testPropertyInlineImageActivation()
     {
     }
 
     /**
-     * Test attribute "mirror_active"
+     * Test attribute "mirrorActive"
      */
     public function testPropertyMirrorActive()
     {
@@ -214,20 +214,6 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
      * Test attribute "recurring"
      */
     public function testPropertyRecurring()
-    {
-    }
-
-    /**
-     * Test attribute "recipients"
-     */
-    public function testPropertyRecipients()
-    {
-    }
-
-    /**
-     * Test attribute "statistics"
-     */
-    public function testPropertyStatistics()
     {
     }
 }

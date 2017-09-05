@@ -78,35 +78,35 @@ class RequestContactImportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "file_url"
+     * Test attribute "fileUrl"
      */
     public function testPropertyFileUrl()
     {
     }
 
     /**
-     * Test attribute "file_body"
+     * Test attribute "fileBody"
      */
     public function testPropertyFileBody()
     {
     }
 
     /**
-     * Test attribute "list_ids"
+     * Test attribute "listIds"
      */
     public function testPropertyListIds()
     {
     }
 
     /**
-     * Test attribute "notify_url"
+     * Test attribute "notifyUrl"
      */
     public function testPropertyNotifyUrl()
     {
     }
 
     /**
-     * Test attribute "new_list"
+     * Test attribute "newList"
      */
     public function testPropertyNewList()
     {

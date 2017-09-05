@@ -54,11 +54,11 @@ class RequestContactImport implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'file_url' => 'string',
-        'file_body' => 'string',
-        'list_ids' => 'int[]',
-        'notify_url' => 'string',
-        'new_list' => '\Swagger\Client\Model\ContactsimportNewList'
+        'fileUrl' => 'string',
+        'fileBody' => 'string',
+        'listIds' => 'int[]',
+        'notifyUrl' => 'string',
+        'newList' => '\Swagger\Client\Model\RequestContactImportNewList'
     ];
 
     /**
@@ -66,11 +66,11 @@ class RequestContactImport implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'file_url' => 'url',
-        'file_body' => null,
-        'list_ids' => 'int32',
-        'notify_url' => 'url',
-        'new_list' => null
+        'fileUrl' => 'url',
+        'fileBody' => null,
+        'listIds' => 'int32',
+        'notifyUrl' => 'url',
+        'newList' => null
     ];
 
     public static function swaggerTypes()
@@ -88,11 +88,11 @@ class RequestContactImport implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'file_url' => 'fileUrl',
-        'file_body' => 'fileBody',
-        'list_ids' => 'listIds',
-        'notify_url' => 'notifyUrl',
-        'new_list' => 'newList'
+        'fileUrl' => 'fileUrl',
+        'fileBody' => 'fileBody',
+        'listIds' => 'listIds',
+        'notifyUrl' => 'notifyUrl',
+        'newList' => 'newList'
     ];
 
 
@@ -101,11 +101,11 @@ class RequestContactImport implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'file_url' => 'setFileUrl',
-        'file_body' => 'setFileBody',
-        'list_ids' => 'setListIds',
-        'notify_url' => 'setNotifyUrl',
-        'new_list' => 'setNewList'
+        'fileUrl' => 'setFileUrl',
+        'fileBody' => 'setFileBody',
+        'listIds' => 'setListIds',
+        'notifyUrl' => 'setNotifyUrl',
+        'newList' => 'setNewList'
     ];
 
 
@@ -114,11 +114,11 @@ class RequestContactImport implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'file_url' => 'getFileUrl',
-        'file_body' => 'getFileBody',
-        'list_ids' => 'getListIds',
-        'notify_url' => 'getNotifyUrl',
-        'new_list' => 'getNewList'
+        'fileUrl' => 'getFileUrl',
+        'fileBody' => 'getFileBody',
+        'listIds' => 'getListIds',
+        'notifyUrl' => 'getNotifyUrl',
+        'newList' => 'getNewList'
     ];
 
     public static function attributeMap()
@@ -152,11 +152,11 @@ class RequestContactImport implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['file_url'] = isset($data['file_url']) ? $data['file_url'] : null;
-        $this->container['file_body'] = isset($data['file_body']) ? $data['file_body'] : null;
-        $this->container['list_ids'] = isset($data['list_ids']) ? $data['list_ids'] : null;
-        $this->container['notify_url'] = isset($data['notify_url']) ? $data['notify_url'] : null;
-        $this->container['new_list'] = isset($data['new_list']) ? $data['new_list'] : null;
+        $this->container['fileUrl'] = isset($data['fileUrl']) ? $data['fileUrl'] : null;
+        $this->container['fileBody'] = isset($data['fileBody']) ? $data['fileBody'] : null;
+        $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
+        $this->container['notifyUrl'] = isset($data['notifyUrl']) ? $data['notifyUrl'] : null;
+        $this->container['newList'] = isset($data['newList']) ? $data['newList'] : null;
     }
 
     /**
@@ -185,106 +185,106 @@ class RequestContactImport implements ArrayAccess
 
 
     /**
-     * Gets file_url
+     * Gets fileUrl
      * @return string
      */
     public function getFileUrl()
     {
-        return $this->container['file_url'];
+        return $this->container['fileUrl'];
     }
 
     /**
-     * Sets file_url
-     * @param string $file_url Mandatory if fileBody not defined. URL of the file to be imported (no local file). Possible file types: .txt, .csv
+     * Sets fileUrl
+     * @param string $fileUrl Mandatory if fileBody not defined. URL of the file to be imported (no local file). Possible file types: .txt, .csv
      * @return $this
      */
-    public function setFileUrl($file_url)
+    public function setFileUrl($fileUrl)
     {
-        $this->container['file_url'] = $file_url;
+        $this->container['fileUrl'] = $fileUrl;
 
         return $this;
     }
 
     /**
-     * Gets file_body
+     * Gets fileBody
      * @return string
      */
     public function getFileBody()
     {
-        return $this->container['file_body'];
+        return $this->container['fileBody'];
     }
 
     /**
-     * Sets file_body
-     * @param string $file_body Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes
+     * Sets fileBody
+     * @param string $fileBody Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes
      * @return $this
      */
-    public function setFileBody($file_body)
+    public function setFileBody($fileBody)
     {
-        $this->container['file_body'] = $file_body;
+        $this->container['fileBody'] = $fileBody;
 
         return $this;
     }
 
     /**
-     * Gets list_ids
+     * Gets listIds
      * @return int[]
      */
     public function getListIds()
     {
-        return $this->container['list_ids'];
+        return $this->container['listIds'];
     }
 
     /**
-     * Sets list_ids
-     * @param int[] $list_ids Manadatory if newList is not defined. Ids of the lists in which to add the contacts
+     * Sets listIds
+     * @param int[] $listIds Manadatory if newList is not defined. Ids of the lists in which to add the contacts
      * @return $this
      */
-    public function setListIds($list_ids)
+    public function setListIds($listIds)
     {
-        $this->container['list_ids'] = $list_ids;
+        $this->container['listIds'] = $listIds;
 
         return $this;
     }
 
     /**
-     * Gets notify_url
+     * Gets notifyUrl
      * @return string
      */
     public function getNotifyUrl()
     {
-        return $this->container['notify_url'];
+        return $this->container['notifyUrl'];
     }
 
     /**
-     * Sets notify_url
-     * @param string $notify_url URL that will be called once the export process is finished
+     * Sets notifyUrl
+     * @param string $notifyUrl URL that will be called once the export process is finished
      * @return $this
      */
-    public function setNotifyUrl($notify_url)
+    public function setNotifyUrl($notifyUrl)
     {
-        $this->container['notify_url'] = $notify_url;
+        $this->container['notifyUrl'] = $notifyUrl;
 
         return $this;
     }
 
     /**
-     * Gets new_list
-     * @return \Swagger\Client\Model\ContactsimportNewList
+     * Gets newList
+     * @return \Swagger\Client\Model\RequestContactImportNewList
      */
     public function getNewList()
     {
-        return $this->container['new_list'];
+        return $this->container['newList'];
     }
 
     /**
-     * Sets new_list
-     * @param \Swagger\Client\Model\ContactsimportNewList $new_list
+     * Sets newList
+     * @param \Swagger\Client\Model\RequestContactImportNewList $newList
      * @return $this
      */
-    public function setNewList($new_list)
+    public function setNewList($newList)
     {
-        $this->container['new_list'] = $new_list;
+        $this->container['newList'] = $newList;
 
         return $this;
     }

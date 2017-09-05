@@ -55,8 +55,8 @@ class CreateSenderModel implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-        'spf_error' => 'bool',
-        'dkim_error' => 'bool'
+        'spfError' => 'bool',
+        'dkimError' => 'bool'
     ];
 
     /**
@@ -65,8 +65,8 @@ class CreateSenderModel implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'int32',
-        'spf_error' => null,
-        'dkim_error' => null
+        'spfError' => null,
+        'dkimError' => null
     ];
 
     public static function swaggerTypes()
@@ -85,8 +85,8 @@ class CreateSenderModel implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'spf_error' => 'spfError',
-        'dkim_error' => 'dkimError'
+        'spfError' => 'spfError',
+        'dkimError' => 'dkimError'
     ];
 
 
@@ -96,8 +96,8 @@ class CreateSenderModel implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'spf_error' => 'setSpfError',
-        'dkim_error' => 'setDkimError'
+        'spfError' => 'setSpfError',
+        'dkimError' => 'setDkimError'
     ];
 
 
@@ -107,8 +107,8 @@ class CreateSenderModel implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'spf_error' => 'getSpfError',
-        'dkim_error' => 'getDkimError'
+        'spfError' => 'getSpfError',
+        'dkimError' => 'getDkimError'
     ];
 
     public static function attributeMap()
@@ -143,8 +143,8 @@ class CreateSenderModel implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['spf_error'] = isset($data['spf_error']) ? $data['spf_error'] : null;
-        $this->container['dkim_error'] = isset($data['dkim_error']) ? $data['dkim_error'] : null;
+        $this->container['spfError'] = isset($data['spfError']) ? $data['spfError'] : null;
+        $this->container['dkimError'] = isset($data['dkimError']) ? $data['dkimError'] : null;
     }
 
     /**
@@ -200,43 +200,43 @@ class CreateSenderModel implements ArrayAccess
     }
 
     /**
-     * Gets spf_error
+     * Gets spfError
      * @return bool
      */
     public function getSpfError()
     {
-        return $this->container['spf_error'];
+        return $this->container['spfError'];
     }
 
     /**
-     * Sets spf_error
-     * @param bool $spf_error Status of SPF configuration for the sender (true = SPF not well configured, false = SPF well configured)
+     * Sets spfError
+     * @param bool $spfError Status of SPF configuration for the sender (true = SPF not well configured, false = SPF well configured)
      * @return $this
      */
-    public function setSpfError($spf_error)
+    public function setSpfError($spfError)
     {
-        $this->container['spf_error'] = $spf_error;
+        $this->container['spfError'] = $spfError;
 
         return $this;
     }
 
     /**
-     * Gets dkim_error
+     * Gets dkimError
      * @return bool
      */
     public function getDkimError()
     {
-        return $this->container['dkim_error'];
+        return $this->container['dkimError'];
     }
 
     /**
-     * Sets dkim_error
-     * @param bool $dkim_error Status of DKIM configuration for the sender (true = DKIM not well configured, false = DKIM well configured)
+     * Sets dkimError
+     * @param bool $dkimError Status of DKIM configuration for the sender (true = DKIM not well configured, false = DKIM well configured)
      * @return $this
      */
-    public function setDkimError($dkim_error)
+    public function setDkimError($dkimError)
     {
-        $this->container['dkim_error'] = $dkim_error;
+        $this->container['dkimError'] = $dkimError;
 
         return $this;
     }

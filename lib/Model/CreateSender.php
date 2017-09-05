@@ -56,7 +56,7 @@ class CreateSender implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'email' => 'string',
-        'ips' => '\Swagger\Client\Model\SendersIps[]'
+        'ips' => '\Swagger\Client\Model\CreateSenderIps[]'
     ];
 
     /**
@@ -228,7 +228,7 @@ class CreateSender implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \Swagger\Client\Model\SendersIps[]
+     * @return \Swagger\Client\Model\CreateSenderIps[]
      */
     public function getIps()
     {
@@ -237,7 +237,7 @@ class CreateSender implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \Swagger\Client\Model\SendersIps[] $ips Mandatory in case of dedicated IP, IPs to associate to the sender
+     * @param \Swagger\Client\Model\CreateSenderIps[] $ips Mandatory in case of dedicated IP, IPs to associate to the sender
      * @return $this
      */
     public function setIps($ips)

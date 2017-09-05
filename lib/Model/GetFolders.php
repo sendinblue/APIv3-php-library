@@ -54,7 +54,7 @@ class GetFolders implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'folders' => '\Swagger\Client\Model\InlineResponse20017Folders[]',
+        'folders' => 'object[]',
         'count' => 'int'
     ];
 
@@ -168,7 +168,7 @@ class GetFolders implements ArrayAccess
 
     /**
      * Gets folders
-     * @return \Swagger\Client\Model\InlineResponse20017Folders[]
+     * @return object[]
      */
     public function getFolders()
     {
@@ -177,7 +177,7 @@ class GetFolders implements ArrayAccess
 
     /**
      * Sets folders
-     * @param \Swagger\Client\Model\InlineResponse20017Folders[] $folders
+     * @param object[] $folders
      * @return $this
      */
     public function setFolders($folders)

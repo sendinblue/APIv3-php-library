@@ -54,11 +54,11 @@ class GetExtendedCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'campaign_stats' => '\Swagger\Client\Model\InlineResponse2008StatisticsCampaignStats[]',
-        'mirror_click' => 'int',
+        'campaignStats' => 'object[]',
+        'mirrorClick' => 'int',
         'remaining' => 'int',
-        'links_stats' => 'map[string,\Swagger\Client\Model\InlineResponse2008StatisticsLinksStats]',
-        'stats_by_domain' => 'map[string,\Swagger\Client\Model\InlineResponse2008StatisticsCampaignStats]'
+        'linksStats' => 'map[string,\Swagger\Client\Model\GetExtendedCampaignStatsLinksStats]',
+        'statsByDomain' => '\Swagger\Client\Model\GetStatsByDomain'
     ];
 
     /**
@@ -66,11 +66,11 @@ class GetExtendedCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'campaign_stats' => null,
-        'mirror_click' => 'int32',
+        'campaignStats' => null,
+        'mirrorClick' => 'int32',
         'remaining' => 'int32',
-        'links_stats' => null,
-        'stats_by_domain' => null
+        'linksStats' => null,
+        'statsByDomain' => null
     ];
 
     public static function swaggerTypes()
@@ -88,11 +88,11 @@ class GetExtendedCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'campaign_stats' => 'campaignStats',
-        'mirror_click' => 'mirrorClick',
+        'campaignStats' => 'campaignStats',
+        'mirrorClick' => 'mirrorClick',
         'remaining' => 'remaining',
-        'links_stats' => 'linksStats',
-        'stats_by_domain' => 'statsByDomain'
+        'linksStats' => 'linksStats',
+        'statsByDomain' => 'statsByDomain'
     ];
 
 
@@ -101,11 +101,11 @@ class GetExtendedCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'campaign_stats' => 'setCampaignStats',
-        'mirror_click' => 'setMirrorClick',
+        'campaignStats' => 'setCampaignStats',
+        'mirrorClick' => 'setMirrorClick',
         'remaining' => 'setRemaining',
-        'links_stats' => 'setLinksStats',
-        'stats_by_domain' => 'setStatsByDomain'
+        'linksStats' => 'setLinksStats',
+        'statsByDomain' => 'setStatsByDomain'
     ];
 
 
@@ -114,11 +114,11 @@ class GetExtendedCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'campaign_stats' => 'getCampaignStats',
-        'mirror_click' => 'getMirrorClick',
+        'campaignStats' => 'getCampaignStats',
+        'mirrorClick' => 'getMirrorClick',
         'remaining' => 'getRemaining',
-        'links_stats' => 'getLinksStats',
-        'stats_by_domain' => 'getStatsByDomain'
+        'linksStats' => 'getLinksStats',
+        'statsByDomain' => 'getStatsByDomain'
     ];
 
     public static function attributeMap()
@@ -152,11 +152,11 @@ class GetExtendedCampaignStats implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaign_stats'] = isset($data['campaign_stats']) ? $data['campaign_stats'] : null;
-        $this->container['mirror_click'] = isset($data['mirror_click']) ? $data['mirror_click'] : null;
+        $this->container['campaignStats'] = isset($data['campaignStats']) ? $data['campaignStats'] : null;
+        $this->container['mirrorClick'] = isset($data['mirrorClick']) ? $data['mirrorClick'] : null;
         $this->container['remaining'] = isset($data['remaining']) ? $data['remaining'] : null;
-        $this->container['links_stats'] = isset($data['links_stats']) ? $data['links_stats'] : null;
-        $this->container['stats_by_domain'] = isset($data['stats_by_domain']) ? $data['stats_by_domain'] : null;
+        $this->container['linksStats'] = isset($data['linksStats']) ? $data['linksStats'] : null;
+        $this->container['statsByDomain'] = isset($data['statsByDomain']) ? $data['statsByDomain'] : null;
     }
 
     /**
@@ -168,20 +168,20 @@ class GetExtendedCampaignStats implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['campaign_stats'] === null) {
-            $invalid_properties[] = "'campaign_stats' can't be null";
+        if ($this->container['campaignStats'] === null) {
+            $invalid_properties[] = "'campaignStats' can't be null";
         }
-        if ($this->container['mirror_click'] === null) {
-            $invalid_properties[] = "'mirror_click' can't be null";
+        if ($this->container['mirrorClick'] === null) {
+            $invalid_properties[] = "'mirrorClick' can't be null";
         }
         if ($this->container['remaining'] === null) {
             $invalid_properties[] = "'remaining' can't be null";
         }
-        if ($this->container['links_stats'] === null) {
-            $invalid_properties[] = "'links_stats' can't be null";
+        if ($this->container['linksStats'] === null) {
+            $invalid_properties[] = "'linksStats' can't be null";
         }
-        if ($this->container['stats_by_domain'] === null) {
-            $invalid_properties[] = "'stats_by_domain' can't be null";
+        if ($this->container['statsByDomain'] === null) {
+            $invalid_properties[] = "'statsByDomain' can't be null";
         }
         return $invalid_properties;
     }
@@ -195,19 +195,19 @@ class GetExtendedCampaignStats implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['campaign_stats'] === null) {
+        if ($this->container['campaignStats'] === null) {
             return false;
         }
-        if ($this->container['mirror_click'] === null) {
+        if ($this->container['mirrorClick'] === null) {
             return false;
         }
         if ($this->container['remaining'] === null) {
             return false;
         }
-        if ($this->container['links_stats'] === null) {
+        if ($this->container['linksStats'] === null) {
             return false;
         }
-        if ($this->container['stats_by_domain'] === null) {
+        if ($this->container['statsByDomain'] === null) {
             return false;
         }
         return true;
@@ -215,43 +215,43 @@ class GetExtendedCampaignStats implements ArrayAccess
 
 
     /**
-     * Gets campaign_stats
-     * @return \Swagger\Client\Model\InlineResponse2008StatisticsCampaignStats[]
+     * Gets campaignStats
+     * @return object[]
      */
     public function getCampaignStats()
     {
-        return $this->container['campaign_stats'];
+        return $this->container['campaignStats'];
     }
 
     /**
-     * Sets campaign_stats
-     * @param \Swagger\Client\Model\InlineResponse2008StatisticsCampaignStats[] $campaign_stats
+     * Sets campaignStats
+     * @param object[] $campaignStats
      * @return $this
      */
-    public function setCampaignStats($campaign_stats)
+    public function setCampaignStats($campaignStats)
     {
-        $this->container['campaign_stats'] = $campaign_stats;
+        $this->container['campaignStats'] = $campaignStats;
 
         return $this;
     }
 
     /**
-     * Gets mirror_click
+     * Gets mirrorClick
      * @return int
      */
     public function getMirrorClick()
     {
-        return $this->container['mirror_click'];
+        return $this->container['mirrorClick'];
     }
 
     /**
-     * Sets mirror_click
-     * @param int $mirror_click Number of clicks on mirror link
+     * Sets mirrorClick
+     * @param int $mirrorClick Number of clicks on mirror link
      * @return $this
      */
-    public function setMirrorClick($mirror_click)
+    public function setMirrorClick($mirrorClick)
     {
-        $this->container['mirror_click'] = $mirror_click;
+        $this->container['mirrorClick'] = $mirrorClick;
 
         return $this;
     }
@@ -278,43 +278,43 @@ class GetExtendedCampaignStats implements ArrayAccess
     }
 
     /**
-     * Gets links_stats
-     * @return map[string,\Swagger\Client\Model\InlineResponse2008StatisticsLinksStats]
+     * Gets linksStats
+     * @return map[string,\Swagger\Client\Model\GetExtendedCampaignStatsLinksStats]
      */
     public function getLinksStats()
     {
-        return $this->container['links_stats'];
+        return $this->container['linksStats'];
     }
 
     /**
-     * Sets links_stats
-     * @param map[string,\Swagger\Client\Model\InlineResponse2008StatisticsLinksStats] $links_stats
+     * Sets linksStats
+     * @param map[string,\Swagger\Client\Model\GetExtendedCampaignStatsLinksStats] $linksStats
      * @return $this
      */
-    public function setLinksStats($links_stats)
+    public function setLinksStats($linksStats)
     {
-        $this->container['links_stats'] = $links_stats;
+        $this->container['linksStats'] = $linksStats;
 
         return $this;
     }
 
     /**
-     * Gets stats_by_domain
-     * @return map[string,\Swagger\Client\Model\InlineResponse2008StatisticsCampaignStats]
+     * Gets statsByDomain
+     * @return \Swagger\Client\Model\GetStatsByDomain
      */
     public function getStatsByDomain()
     {
-        return $this->container['stats_by_domain'];
+        return $this->container['statsByDomain'];
     }
 
     /**
-     * Sets stats_by_domain
-     * @param map[string,\Swagger\Client\Model\InlineResponse2008StatisticsCampaignStats] $stats_by_domain
+     * Sets statsByDomain
+     * @param \Swagger\Client\Model\GetStatsByDomain $statsByDomain
      * @return $this
      */
-    public function setStatsByDomain($stats_by_domain)
+    public function setStatsByDomain($statsByDomain)
     {
-        $this->container['stats_by_domain'] = $stats_by_domain;
+        $this->container['statsByDomain'] = $statsByDomain;
 
         return $this;
     }

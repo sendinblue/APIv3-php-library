@@ -54,8 +54,8 @@ class RemainingCreditModel implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'child' => '\Swagger\Client\Model\InlineResponse2003Child',
-        'reseller' => '\Swagger\Client\Model\InlineResponse2003Reseller'
+        'child' => '\Swagger\Client\Model\RemainingCreditModelChild',
+        'reseller' => '\Swagger\Client\Model\RemainingCreditModelReseller'
     ];
 
     /**
@@ -168,7 +168,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Gets child
-     * @return \Swagger\Client\Model\InlineResponse2003Child
+     * @return \Swagger\Client\Model\RemainingCreditModelChild
      */
     public function getChild()
     {
@@ -177,7 +177,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Sets child
-     * @param \Swagger\Client\Model\InlineResponse2003Child $child
+     * @param \Swagger\Client\Model\RemainingCreditModelChild $child
      * @return $this
      */
     public function setChild($child)
@@ -189,7 +189,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Gets reseller
-     * @return \Swagger\Client\Model\InlineResponse2003Reseller
+     * @return \Swagger\Client\Model\RemainingCreditModelReseller
      */
     public function getReseller()
     {
@@ -198,7 +198,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Sets reseller
-     * @param \Swagger\Client\Model\InlineResponse2003Reseller $reseller
+     * @param \Swagger\Client\Model\RemainingCreditModelReseller $reseller
      * @return $this
      */
     public function setReseller($reseller)

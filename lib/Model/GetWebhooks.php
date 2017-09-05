@@ -54,7 +54,7 @@ class GetWebhooks implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'webhooks' => '\Swagger\Client\Model\InlineResponse20013Webhooks[]'
+        'webhooks' => 'object[]'
     ];
 
     /**
@@ -168,7 +168,7 @@ class GetWebhooks implements ArrayAccess
 
     /**
      * Gets webhooks
-     * @return \Swagger\Client\Model\InlineResponse20013Webhooks[]
+     * @return object[]
      */
     public function getWebhooks()
     {
@@ -177,7 +177,7 @@ class GetWebhooks implements ArrayAccess
 
     /**
      * Sets webhooks
-     * @param \Swagger\Client\Model\InlineResponse20013Webhooks[] $webhooks
+     * @param object[] $webhooks
      * @return $this
      */
     public function setWebhooks($webhooks)

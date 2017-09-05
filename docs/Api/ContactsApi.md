@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **addContactToList**
-> \Swagger\Client\Model\InlineResponse2014 addContactToList($list_id, $contact_emails)
+> \Swagger\Client\Model\PostContactInfo addContactToList($listId, $contactEmails)
 
 Add existing contacts to a list
 
@@ -44,11 +44,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$list_id = "list_id_example"; // string | Id of the list
-$contact_emails = new \Swagger\Client\Model\ContactEmails(); // \Swagger\Client\Model\ContactEmails | Emails addresses of the contacts
+$listId = "listId_example"; // string | Id of the list
+$contactEmails = new \Swagger\Client\Model\AddRemoveContactToList(); // \Swagger\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
 
 try {
-    $result = $api_instance->addContactToList($list_id, $contact_emails);
+    $result = $api_instance->addContactToList($listId, $contactEmails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->addContactToList: ', $e->getMessage(), PHP_EOL;
@@ -60,12 +60,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **string**| Id of the list |
- **contact_emails** | [**\Swagger\Client\Model\ContactEmails**](../Model/ContactEmails.md)| Emails addresses of the contacts |
+ **listId** | **string**| Id of the list |
+ **contactEmails** | [**\Swagger\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\Swagger\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAttribute**
-> \Swagger\Client\Model\InlineResponse201 createAttribute($create_attribute)
+> \Swagger\Client\Model\CreateModel createAttribute($createAttribute)
 
 Creates contact attributes
 
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$create_attribute = new \Swagger\Client\Model\CreateAttribute1(); // \Swagger\Client\Model\CreateAttribute1 | Values to create an attribute
+$createAttribute = new \Swagger\Client\Model\CreateAttribute(); // \Swagger\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
-    $result = $api_instance->createAttribute($create_attribute);
+    $result = $api_instance->createAttribute($createAttribute);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->createAttribute: ', $e->getMessage(), PHP_EOL;
@@ -107,11 +107,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_attribute** | [**\Swagger\Client\Model\CreateAttribute1**](../Model/CreateAttribute1.md)| Values to create an attribute |
+ **createAttribute** | [**\Swagger\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createContact**
-> \Swagger\Client\Model\InlineResponse201 createContact($create_contact)
+> \Swagger\Client\Model\CreateModel createContact($createContact)
 
 Create a contact
 
@@ -138,10 +138,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$create_contact = new \Swagger\Client\Model\CreateContact1(); // \Swagger\Client\Model\CreateContact1 | Values to create a contact
+$createContact = new \Swagger\Client\Model\CreateContact(); // \Swagger\Client\Model\CreateContact | Values to create a contact
 
 try {
-    $result = $api_instance->createContact($create_contact);
+    $result = $api_instance->createContact($createContact);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->createContact: ', $e->getMessage(), PHP_EOL;
@@ -153,11 +153,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_contact** | [**\Swagger\Client\Model\CreateContact1**](../Model/CreateContact1.md)| Values to create a contact |
+ **createContact** | [**\Swagger\Client\Model\CreateContact**](../Model/CreateContact.md)| Values to create a contact |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createFolder**
-> \Swagger\Client\Model\InlineResponse201 createFolder($name)
+> \Swagger\Client\Model\CreateModel createFolder($name)
 
 Create a folder
 
@@ -184,7 +184,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$name = new \Swagger\Client\Model\Name(); // \Swagger\Client\Model\Name | Name of the folder
+$name = new \Swagger\Client\Model\CreaUpdateFolder(); // \Swagger\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $result = $api_instance->createFolder($name);
@@ -199,11 +199,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**\Swagger\Client\Model\Name**](../Model/Name.md)| Name of the folder |
+ **name** | [**\Swagger\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createList**
-> \Swagger\Client\Model\InlineResponse201 createList($create_list)
+> \Swagger\Client\Model\CreateModel createList($createList)
 
 Create a list
 
@@ -230,10 +230,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$create_list = new \Swagger\Client\Model\CreateList1(); // \Swagger\Client\Model\CreateList1 | Values to create a list
+$createList = new \Swagger\Client\Model\CreateList(); // \Swagger\Client\Model\CreateList | Values to create a list
 
 try {
-    $result = $api_instance->createList($create_list);
+    $result = $api_instance->createList($createList);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->createList: ', $e->getMessage(), PHP_EOL;
@@ -245,11 +245,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_list** | [**\Swagger\Client\Model\CreateList1**](../Model/CreateList1.md)| Values to create a list |
+ **createList** | [**\Swagger\Client\Model\CreateList**](../Model/CreateList.md)| Values to create a list |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAttribute**
-> deleteAttribute($attribute_id)
+> deleteAttribute($attributeId)
 
 Deletes an attribute
 
@@ -276,10 +276,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$attribute_id = "attribute_id_example"; // string | id of the attribute
+$attributeId = "attributeId_example"; // string | id of the attribute
 
 try {
-    $api_instance->deleteAttribute($attribute_id);
+    $api_instance->deleteAttribute($attributeId);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->deleteAttribute: ', $e->getMessage(), PHP_EOL;
 }
@@ -290,7 +290,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_id** | **string**| id of the attribute |
+ **attributeId** | **string**| id of the attribute |
 
 ### Return type
 
@@ -308,7 +308,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteFolder**
-> deleteFolder($folder_id)
+> deleteFolder($folderId)
 
 Delete a folder (and all its lists)
 
@@ -321,10 +321,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$folder_id = "folder_id_example"; // string | Id of the folder
+$folderId = "folderId_example"; // string | Id of the folder
 
 try {
-    $api_instance->deleteFolder($folder_id);
+    $api_instance->deleteFolder($folderId);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->deleteFolder: ', $e->getMessage(), PHP_EOL;
 }
@@ -335,7 +335,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **string**| Id of the folder |
+ **folderId** | **string**| Id of the folder |
 
 ### Return type
 
@@ -353,7 +353,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteList**
-> deleteList($list_id)
+> deleteList($listId)
 
 Delete a list
 
@@ -366,10 +366,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$list_id = "list_id_example"; // string | Id of the list
+$listId = "listId_example"; // string | Id of the list
 
 try {
-    $api_instance->deleteList($list_id);
+    $api_instance->deleteList($listId);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->deleteList: ', $e->getMessage(), PHP_EOL;
 }
@@ -380,7 +380,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **string**| Id of the list |
+ **listId** | **string**| Id of the list |
 
 ### Return type
 
@@ -398,7 +398,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAttributes**
-> \Swagger\Client\Model\InlineResponse20016 getAttributes()
+> \Swagger\Client\Model\GetAttributes getAttributes()
 
 Lists all attributes
 
@@ -426,7 +426,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\GetAttributes**](../Model/GetAttributes.md)
 
 ### Authorization
 
@@ -440,7 +440,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactInfo**
-> \Swagger\Client\Model\InlineResponse20014Contacts getContactInfo($email)
+> \Swagger\Client\Model\GetExtendedContactDetails getContactInfo($email)
 
 Retrieves contact informations
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014Contacts**](../Model/InlineResponse20014Contacts.md)
+[**\Swagger\Client\Model\GetExtendedContactDetails**](../Model/GetExtendedContactDetails.md)
 
 ### Authorization
 
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactStats**
-> \Swagger\Client\Model\InlineResponse20015 getContactStats($email)
+> \Swagger\Client\Model\GetContactCampaignStats getContactStats($email)
 
 Get the campaigns statistics for a contact
 
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\GetContactCampaignStats**](../Model/GetContactCampaignStats.md)
 
 ### Authorization
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContacts**
-> \Swagger\Client\Model\InlineResponse20014 getContacts($limit, $offset)
+> \Swagger\Client\Model\GetContacts getContacts($limit, $offset)
 
 Get all the contacts
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\GetContacts**](../Model/GetContacts.md)
 
 ### Authorization
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactsFromList**
-> \Swagger\Client\Model\InlineResponse20014 getContactsFromList($list_id, $modified_since, $limit, $offset)
+> \Swagger\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
 
 Get the contacts in a list
 
@@ -593,13 +593,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$list_id = "list_id_example"; // string | Id of the list
-$modified_since = "modified_since_example"; // string | Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
+$listId = "listId_example"; // string | Id of the list
+$modifiedSince = "modifiedSince_example"; // string | Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
 $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getContactsFromList($list_id, $modified_since, $limit, $offset);
+    $result = $api_instance->getContactsFromList($listId, $modifiedSince, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getContactsFromList: ', $e->getMessage(), PHP_EOL;
@@ -611,14 +611,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **string**| Id of the list |
- **modified_since** | **string**| Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) | [optional]
+ **listId** | **string**| Id of the list |
+ **modifiedSince** | **string**| Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) | [optional]
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\GetContacts**](../Model/GetContacts.md)
 
 ### Authorization
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolder**
-> \Swagger\Client\Model\InlineResponse20017Folders getFolder($folder_id)
+> \Swagger\Client\Model\GetFolder getFolder($folderId)
 
 Returns folder details
 
@@ -645,10 +645,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$folder_id = "folder_id_example"; // string | id of the folder
+$folderId = "folderId_example"; // string | id of the folder
 
 try {
-    $result = $api_instance->getFolder($folder_id);
+    $result = $api_instance->getFolder($folderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getFolder: ', $e->getMessage(), PHP_EOL;
@@ -660,11 +660,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **string**| id of the folder |
+ **folderId** | **string**| id of the folder |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017Folders**](../Model/InlineResponse20017Folders.md)
+[**\Swagger\Client\Model\GetFolder**](../Model/GetFolder.md)
 
 ### Authorization
 
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderLists**
-> \Swagger\Client\Model\InlineResponse20018 getFolderLists($folder_id, $limit, $offset)
+> \Swagger\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
 Get the lists in a folder
 
@@ -691,12 +691,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$folder_id = "folder_id_example"; // string | Id of the folder
+$folderId = "folderId_example"; // string | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getFolderLists($folder_id, $limit, $offset);
+    $result = $api_instance->getFolderLists($folderId, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getFolderLists: ', $e->getMessage(), PHP_EOL;
@@ -708,13 +708,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **string**| Id of the folder |
+ **folderId** | **string**| Id of the folder |
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\Swagger\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
 
 ### Authorization
 
@@ -728,7 +728,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolders**
-> \Swagger\Client\Model\InlineResponse20017 getFolders($limit, $offset)
+> \Swagger\Client\Model\GetFolders getFolders($limit, $offset)
 
 Get all the folders
 
@@ -762,7 +762,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\Swagger\Client\Model\GetFolders**](../Model/GetFolders.md)
 
 ### Authorization
 
@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getList**
-> \Swagger\Client\Model\InlineResponse20020 getList($list_id)
+> \Swagger\Client\Model\GetExtendedList getList($listId)
 
 Get the details of a list
 
@@ -789,10 +789,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$list_id = "list_id_example"; // string | Id of the list
+$listId = "listId_example"; // string | Id of the list
 
 try {
-    $result = $api_instance->getList($list_id);
+    $result = $api_instance->getList($listId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getList: ', $e->getMessage(), PHP_EOL;
@@ -804,11 +804,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **string**| Id of the list |
+ **listId** | **string**| Id of the list |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\Swagger\Client\Model\GetExtendedList**](../Model/GetExtendedList.md)
 
 ### Authorization
 
@@ -822,7 +822,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLists**
-> \Swagger\Client\Model\InlineResponse20019 getLists($limit, $offset)
+> \Swagger\Client\Model\GetLists getLists($limit, $offset)
 
 Get all the lists
 
@@ -856,7 +856,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\GetLists**](../Model/GetLists.md)
 
 ### Authorization
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **importContacts**
-> \Swagger\Client\Model\InlineResponse202 importContacts($request_contact_import)
+> \Swagger\Client\Model\CreatedProcessId importContacts($requestContactImport)
 
 Import contacts
 
@@ -885,10 +885,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$request_contact_import = new \Swagger\Client\Model\RequestContactImport1(); // \Swagger\Client\Model\RequestContactImport1 | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
+$requestContactImport = new \Swagger\Client\Model\RequestContactImport(); // \Swagger\Client\Model\RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
 
 try {
-    $result = $api_instance->importContacts($request_contact_import);
+    $result = $api_instance->importContacts($requestContactImport);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->importContacts: ', $e->getMessage(), PHP_EOL;
@@ -900,11 +900,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_contact_import** | [**\Swagger\Client\Model\RequestContactImport1**](../Model/RequestContactImport1.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; |
+ **requestContactImport** | [**\Swagger\Client\Model\RequestContactImport**](../Model/RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse202**](../Model/InlineResponse202.md)
+[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeContactToList**
-> \Swagger\Client\Model\InlineResponse2014 removeContactToList($list_id, $contact_emails)
+> \Swagger\Client\Model\PostContactInfo removeContactToList($listId, $contactEmails)
 
 Remove existing contacts from a list
 
@@ -931,11 +931,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$list_id = "list_id_example"; // string | Id of the list
-$contact_emails = new \Swagger\Client\Model\ContactEmails1(); // \Swagger\Client\Model\ContactEmails1 | Emails adresses of the contact
+$listId = "listId_example"; // string | Id of the list
+$contactEmails = new \Swagger\Client\Model\AddRemoveContactToList(); // \Swagger\Client\Model\AddRemoveContactToList | Emails adresses of the contact
 
 try {
-    $result = $api_instance->removeContactToList($list_id, $contact_emails);
+    $result = $api_instance->removeContactToList($listId, $contactEmails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->removeContactToList: ', $e->getMessage(), PHP_EOL;
@@ -947,12 +947,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **string**| Id of the list |
- **contact_emails** | [**\Swagger\Client\Model\ContactEmails1**](../Model/ContactEmails1.md)| Emails adresses of the contact |
+ **listId** | **string**| Id of the list |
+ **contactEmails** | [**\Swagger\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\Swagger\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
 
 ### Authorization
 
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **requestContactExport**
-> \Swagger\Client\Model\InlineResponse202 requestContactExport($request_contact_export)
+> \Swagger\Client\Model\CreatedProcessId requestContactExport($requestContactExport)
 
 Export contacts
 
@@ -981,10 +981,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$request_contact_export = new \Swagger\Client\Model\RequestContactExport1(); // \Swagger\Client\Model\RequestContactExport1 | Values to request a contact export
+$requestContactExport = new \Swagger\Client\Model\RequestContactExport(); // \Swagger\Client\Model\RequestContactExport | Values to request a contact export
 
 try {
-    $result = $api_instance->requestContactExport($request_contact_export);
+    $result = $api_instance->requestContactExport($requestContactExport);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->requestContactExport: ', $e->getMessage(), PHP_EOL;
@@ -996,11 +996,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_contact_export** | [**\Swagger\Client\Model\RequestContactExport1**](../Model/RequestContactExport1.md)| Values to request a contact export |
+ **requestContactExport** | [**\Swagger\Client\Model\RequestContactExport**](../Model/RequestContactExport.md)| Values to request a contact export |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse202**](../Model/InlineResponse202.md)
+[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -1014,7 +1014,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateContact**
-> updateContact($email, $update_contact)
+> updateContact($email, $updateContact)
 
 Updates a contact
 
@@ -1028,10 +1028,10 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'Y
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email (urlencoded) of the contact
-$update_contact = new \Swagger\Client\Model\UpdateContact1(); // \Swagger\Client\Model\UpdateContact1 | Values to update a contact
+$updateContact = new \Swagger\Client\Model\UpdateContact(); // \Swagger\Client\Model\UpdateContact | Values to update a contact
 
 try {
-    $api_instance->updateContact($email, $update_contact);
+    $api_instance->updateContact($email, $updateContact);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->updateContact: ', $e->getMessage(), PHP_EOL;
 }
@@ -1043,7 +1043,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **string**| Email (urlencoded) of the contact |
- **update_contact** | [**\Swagger\Client\Model\UpdateContact1**](../Model/UpdateContact1.md)| Values to update a contact |
+ **updateContact** | [**\Swagger\Client\Model\UpdateContact**](../Model/UpdateContact.md)| Values to update a contact |
 
 ### Return type
 
@@ -1061,7 +1061,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFolder**
-> updateFolder($folder_id, $name)
+> updateFolder($folderId, $name)
 
 Update a contact folder
 
@@ -1074,11 +1074,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$folder_id = "folder_id_example"; // string | Id of the folder
-$name = new \Swagger\Client\Model\Name1(); // \Swagger\Client\Model\Name1 | Name of the folder
+$folderId = "folderId_example"; // string | Id of the folder
+$name = new \Swagger\Client\Model\CreaUpdateFolder(); // \Swagger\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
-    $api_instance->updateFolder($folder_id, $name);
+    $api_instance->updateFolder($folderId, $name);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->updateFolder: ', $e->getMessage(), PHP_EOL;
 }
@@ -1089,8 +1089,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **string**| Id of the folder |
- **name** | [**\Swagger\Client\Model\Name1**](../Model/Name1.md)| Name of the folder |
+ **folderId** | **string**| Id of the folder |
+ **name** | [**\Swagger\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
@@ -1108,7 +1108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateList**
-> updateList($list_id, $update_list)
+> updateList($listId, $updateList)
 
 Update a list
 
@@ -1121,11 +1121,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ContactsApi();
-$list_id = "list_id_example"; // string | Id of the list
-$update_list = new \Swagger\Client\Model\UpdateList1(); // \Swagger\Client\Model\UpdateList1 | Values to update a list
+$listId = "listId_example"; // string | Id of the list
+$updateList = new \Swagger\Client\Model\UpdateList(); // \Swagger\Client\Model\UpdateList | Values to update a list
 
 try {
-    $api_instance->updateList($list_id, $update_list);
+    $api_instance->updateList($listId, $updateList);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->updateList: ', $e->getMessage(), PHP_EOL;
 }
@@ -1136,8 +1136,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **string**| Id of the list |
- **update_list** | [**\Swagger\Client\Model\UpdateList1**](../Model/UpdateList1.md)| Values to update a list |
+ **listId** | **string**| Id of the list |
+ **updateList** | [**\Swagger\Client\Model\UpdateList**](../Model/UpdateList.md)| Values to update a list |
 
 ### Return type
 

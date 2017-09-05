@@ -54,15 +54,15 @@ class GetCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'list_id' => 'int',
-        'unique_clicks' => 'int',
+        'listId' => 'int',
+        'uniqueClicks' => 'int',
         'clickers' => 'int',
         'complaints' => 'int',
         'delivered' => 'int',
         'sent' => 'int',
-        'soft_bounces' => 'int',
-        'hard_bounces' => 'int',
-        'unique_views' => 'int',
+        'softBounces' => 'int',
+        'hardBounces' => 'int',
+        'uniqueViews' => 'int',
         'unsubscriptions' => 'int',
         'viewed' => 'int',
         'deferred' => 'int'
@@ -73,15 +73,15 @@ class GetCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'list_id' => 'int32',
-        'unique_clicks' => 'int32',
+        'listId' => 'int32',
+        'uniqueClicks' => 'int32',
         'clickers' => 'int32',
         'complaints' => 'int32',
         'delivered' => 'int32',
         'sent' => 'int32',
-        'soft_bounces' => 'int32',
-        'hard_bounces' => 'int32',
-        'unique_views' => 'int32',
+        'softBounces' => 'int32',
+        'hardBounces' => 'int32',
+        'uniqueViews' => 'int32',
         'unsubscriptions' => 'int32',
         'viewed' => 'int32',
         'deferred' => 'int32'
@@ -102,15 +102,15 @@ class GetCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'list_id' => 'listId',
-        'unique_clicks' => 'uniqueClicks',
+        'listId' => 'listId',
+        'uniqueClicks' => 'uniqueClicks',
         'clickers' => 'clickers',
         'complaints' => 'complaints',
         'delivered' => 'delivered',
         'sent' => 'sent',
-        'soft_bounces' => 'softBounces',
-        'hard_bounces' => 'hardBounces',
-        'unique_views' => 'uniqueViews',
+        'softBounces' => 'softBounces',
+        'hardBounces' => 'hardBounces',
+        'uniqueViews' => 'uniqueViews',
         'unsubscriptions' => 'unsubscriptions',
         'viewed' => 'viewed',
         'deferred' => 'deferred'
@@ -122,15 +122,15 @@ class GetCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'list_id' => 'setListId',
-        'unique_clicks' => 'setUniqueClicks',
+        'listId' => 'setListId',
+        'uniqueClicks' => 'setUniqueClicks',
         'clickers' => 'setClickers',
         'complaints' => 'setComplaints',
         'delivered' => 'setDelivered',
         'sent' => 'setSent',
-        'soft_bounces' => 'setSoftBounces',
-        'hard_bounces' => 'setHardBounces',
-        'unique_views' => 'setUniqueViews',
+        'softBounces' => 'setSoftBounces',
+        'hardBounces' => 'setHardBounces',
+        'uniqueViews' => 'setUniqueViews',
         'unsubscriptions' => 'setUnsubscriptions',
         'viewed' => 'setViewed',
         'deferred' => 'setDeferred'
@@ -142,15 +142,15 @@ class GetCampaignStats implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'list_id' => 'getListId',
-        'unique_clicks' => 'getUniqueClicks',
+        'listId' => 'getListId',
+        'uniqueClicks' => 'getUniqueClicks',
         'clickers' => 'getClickers',
         'complaints' => 'getComplaints',
         'delivered' => 'getDelivered',
         'sent' => 'getSent',
-        'soft_bounces' => 'getSoftBounces',
-        'hard_bounces' => 'getHardBounces',
-        'unique_views' => 'getUniqueViews',
+        'softBounces' => 'getSoftBounces',
+        'hardBounces' => 'getHardBounces',
+        'uniqueViews' => 'getUniqueViews',
         'unsubscriptions' => 'getUnsubscriptions',
         'viewed' => 'getViewed',
         'deferred' => 'getDeferred'
@@ -187,15 +187,15 @@ class GetCampaignStats implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['list_id'] = isset($data['list_id']) ? $data['list_id'] : null;
-        $this->container['unique_clicks'] = isset($data['unique_clicks']) ? $data['unique_clicks'] : null;
+        $this->container['listId'] = isset($data['listId']) ? $data['listId'] : null;
+        $this->container['uniqueClicks'] = isset($data['uniqueClicks']) ? $data['uniqueClicks'] : null;
         $this->container['clickers'] = isset($data['clickers']) ? $data['clickers'] : null;
         $this->container['complaints'] = isset($data['complaints']) ? $data['complaints'] : null;
         $this->container['delivered'] = isset($data['delivered']) ? $data['delivered'] : null;
         $this->container['sent'] = isset($data['sent']) ? $data['sent'] : null;
-        $this->container['soft_bounces'] = isset($data['soft_bounces']) ? $data['soft_bounces'] : null;
-        $this->container['hard_bounces'] = isset($data['hard_bounces']) ? $data['hard_bounces'] : null;
-        $this->container['unique_views'] = isset($data['unique_views']) ? $data['unique_views'] : null;
+        $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
+        $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
+        $this->container['uniqueViews'] = isset($data['uniqueViews']) ? $data['uniqueViews'] : null;
         $this->container['unsubscriptions'] = isset($data['unsubscriptions']) ? $data['unsubscriptions'] : null;
         $this->container['viewed'] = isset($data['viewed']) ? $data['viewed'] : null;
         $this->container['deferred'] = isset($data['deferred']) ? $data['deferred'] : null;
@@ -210,11 +210,11 @@ class GetCampaignStats implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['list_id'] === null) {
-            $invalid_properties[] = "'list_id' can't be null";
+        if ($this->container['listId'] === null) {
+            $invalid_properties[] = "'listId' can't be null";
         }
-        if ($this->container['unique_clicks'] === null) {
-            $invalid_properties[] = "'unique_clicks' can't be null";
+        if ($this->container['uniqueClicks'] === null) {
+            $invalid_properties[] = "'uniqueClicks' can't be null";
         }
         if ($this->container['clickers'] === null) {
             $invalid_properties[] = "'clickers' can't be null";
@@ -228,14 +228,14 @@ class GetCampaignStats implements ArrayAccess
         if ($this->container['sent'] === null) {
             $invalid_properties[] = "'sent' can't be null";
         }
-        if ($this->container['soft_bounces'] === null) {
-            $invalid_properties[] = "'soft_bounces' can't be null";
+        if ($this->container['softBounces'] === null) {
+            $invalid_properties[] = "'softBounces' can't be null";
         }
-        if ($this->container['hard_bounces'] === null) {
-            $invalid_properties[] = "'hard_bounces' can't be null";
+        if ($this->container['hardBounces'] === null) {
+            $invalid_properties[] = "'hardBounces' can't be null";
         }
-        if ($this->container['unique_views'] === null) {
-            $invalid_properties[] = "'unique_views' can't be null";
+        if ($this->container['uniqueViews'] === null) {
+            $invalid_properties[] = "'uniqueViews' can't be null";
         }
         if ($this->container['unsubscriptions'] === null) {
             $invalid_properties[] = "'unsubscriptions' can't be null";
@@ -258,10 +258,10 @@ class GetCampaignStats implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['list_id'] === null) {
+        if ($this->container['listId'] === null) {
             return false;
         }
-        if ($this->container['unique_clicks'] === null) {
+        if ($this->container['uniqueClicks'] === null) {
             return false;
         }
         if ($this->container['clickers'] === null) {
@@ -276,13 +276,13 @@ class GetCampaignStats implements ArrayAccess
         if ($this->container['sent'] === null) {
             return false;
         }
-        if ($this->container['soft_bounces'] === null) {
+        if ($this->container['softBounces'] === null) {
             return false;
         }
-        if ($this->container['hard_bounces'] === null) {
+        if ($this->container['hardBounces'] === null) {
             return false;
         }
-        if ($this->container['unique_views'] === null) {
+        if ($this->container['uniqueViews'] === null) {
             return false;
         }
         if ($this->container['unsubscriptions'] === null) {
@@ -299,43 +299,43 @@ class GetCampaignStats implements ArrayAccess
 
 
     /**
-     * Gets list_id
+     * Gets listId
      * @return int
      */
     public function getListId()
     {
-        return $this->container['list_id'];
+        return $this->container['listId'];
     }
 
     /**
-     * Sets list_id
-     * @param int $list_id List Id of email campaign (only in case of get email campaign(s))
+     * Sets listId
+     * @param int $listId List Id of email campaign (only in case of get email campaign(s))
      * @return $this
      */
-    public function setListId($list_id)
+    public function setListId($listId)
     {
-        $this->container['list_id'] = $list_id;
+        $this->container['listId'] = $listId;
 
         return $this;
     }
 
     /**
-     * Gets unique_clicks
+     * Gets uniqueClicks
      * @return int
      */
     public function getUniqueClicks()
     {
-        return $this->container['unique_clicks'];
+        return $this->container['uniqueClicks'];
     }
 
     /**
-     * Sets unique_clicks
-     * @param int $unique_clicks Number of unique clicks for the campaign
+     * Sets uniqueClicks
+     * @param int $uniqueClicks Number of unique clicks for the campaign
      * @return $this
      */
-    public function setUniqueClicks($unique_clicks)
+    public function setUniqueClicks($uniqueClicks)
     {
-        $this->container['unique_clicks'] = $unique_clicks;
+        $this->container['uniqueClicks'] = $uniqueClicks;
 
         return $this;
     }
@@ -425,64 +425,64 @@ class GetCampaignStats implements ArrayAccess
     }
 
     /**
-     * Gets soft_bounces
+     * Gets softBounces
      * @return int
      */
     public function getSoftBounces()
     {
-        return $this->container['soft_bounces'];
+        return $this->container['softBounces'];
     }
 
     /**
-     * Sets soft_bounces
-     * @param int $soft_bounces Number of softbounce for the campaign
+     * Sets softBounces
+     * @param int $softBounces Number of softbounce for the campaign
      * @return $this
      */
-    public function setSoftBounces($soft_bounces)
+    public function setSoftBounces($softBounces)
     {
-        $this->container['soft_bounces'] = $soft_bounces;
+        $this->container['softBounces'] = $softBounces;
 
         return $this;
     }
 
     /**
-     * Gets hard_bounces
+     * Gets hardBounces
      * @return int
      */
     public function getHardBounces()
     {
-        return $this->container['hard_bounces'];
+        return $this->container['hardBounces'];
     }
 
     /**
-     * Sets hard_bounces
-     * @param int $hard_bounces Number of harbounce for the campaign
+     * Sets hardBounces
+     * @param int $hardBounces Number of harbounce for the campaign
      * @return $this
      */
-    public function setHardBounces($hard_bounces)
+    public function setHardBounces($hardBounces)
     {
-        $this->container['hard_bounces'] = $hard_bounces;
+        $this->container['hardBounces'] = $hardBounces;
 
         return $this;
     }
 
     /**
-     * Gets unique_views
+     * Gets uniqueViews
      * @return int
      */
     public function getUniqueViews()
     {
-        return $this->container['unique_views'];
+        return $this->container['uniqueViews'];
     }
 
     /**
-     * Sets unique_views
-     * @param int $unique_views Number of unique openings for the campaign
+     * Sets uniqueViews
+     * @param int $uniqueViews Number of unique openings for the campaign
      * @return $this
      */
-    public function setUniqueViews($unique_views)
+    public function setUniqueViews($uniqueViews)
     {
-        $this->container['unique_views'] = $unique_views;
+        $this->container['uniqueViews'] = $uniqueViews;
 
         return $this;
     }

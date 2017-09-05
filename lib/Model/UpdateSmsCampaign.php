@@ -57,8 +57,8 @@ class UpdateSmsCampaign implements ArrayAccess
         'name' => 'string',
         'sender' => 'string',
         'content' => 'string',
-        'recipients' => '\Swagger\Client\Model\SmsCampaignsRecipients',
-        'scheduled_at' => 'string'
+        'recipients' => '\Swagger\Client\Model\CreateSmsCampaignRecipients',
+        'scheduledAt' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class UpdateSmsCampaign implements ArrayAccess
         'sender' => null,
         'content' => null,
         'recipients' => null,
-        'scheduled_at' => null
+        'scheduledAt' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +92,7 @@ class UpdateSmsCampaign implements ArrayAccess
         'sender' => 'sender',
         'content' => 'content',
         'recipients' => 'recipients',
-        'scheduled_at' => 'scheduledAt'
+        'scheduledAt' => 'scheduledAt'
     ];
 
 
@@ -105,7 +105,7 @@ class UpdateSmsCampaign implements ArrayAccess
         'sender' => 'setSender',
         'content' => 'setContent',
         'recipients' => 'setRecipients',
-        'scheduled_at' => 'setScheduledAt'
+        'scheduledAt' => 'setScheduledAt'
     ];
 
 
@@ -118,7 +118,7 @@ class UpdateSmsCampaign implements ArrayAccess
         'sender' => 'getSender',
         'content' => 'getContent',
         'recipients' => 'getRecipients',
-        'scheduled_at' => 'getScheduledAt'
+        'scheduledAt' => 'getScheduledAt'
     ];
 
     public static function attributeMap()
@@ -156,7 +156,7 @@ class UpdateSmsCampaign implements ArrayAccess
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
-        $this->container['scheduled_at'] = isset($data['scheduled_at']) ? $data['scheduled_at'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
     }
 
     /**
@@ -172,8 +172,8 @@ class UpdateSmsCampaign implements ArrayAccess
             $invalid_properties[] = "invalid value for 'sender', the character length must be smaller than or equal to 11.";
         }
 
-        if (!is_null($this->container['scheduled_at']) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
-            $invalid_properties[] = "invalid value for 'scheduled_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!is_null($this->container['scheduledAt']) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
+            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
         return $invalid_properties;
@@ -191,7 +191,7 @@ class UpdateSmsCampaign implements ArrayAccess
         if (strlen($this->container['sender']) > 11) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
             return false;
         }
         return true;
@@ -267,7 +267,7 @@ class UpdateSmsCampaign implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\SmsCampaignsRecipients
+     * @return \Swagger\Client\Model\CreateSmsCampaignRecipients
      */
     public function getRecipients()
     {
@@ -276,7 +276,7 @@ class UpdateSmsCampaign implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\SmsCampaignsRecipients $recipients
+     * @param \Swagger\Client\Model\CreateSmsCampaignRecipients $recipients
      * @return $this
      */
     public function setRecipients($recipients)
@@ -287,27 +287,27 @@ class UpdateSmsCampaign implements ArrayAccess
     }
 
     /**
-     * Gets scheduled_at
+     * Gets scheduledAt
      * @return string
      */
     public function getScheduledAt()
     {
-        return $this->container['scheduled_at'];
+        return $this->container['scheduledAt'];
     }
 
     /**
-     * Sets scheduled_at
-     * @param string $scheduled_at Date and time on which the campaign has to run
+     * Sets scheduledAt
+     * @param string $scheduledAt Date and time on which the campaign has to run
      * @return $this
      */
-    public function setScheduledAt($scheduled_at)
+    public function setScheduledAt($scheduledAt)
     {
 
-        if (!is_null($scheduled_at) && (!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduled_at))) {
-            throw new \InvalidArgumentException("invalid value for $scheduled_at when calling UpdateSmsCampaign., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if (!is_null($scheduledAt) && (!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduledAt))) {
+            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling UpdateSmsCampaign., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['scheduled_at'] = $scheduled_at;
+        $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
     }

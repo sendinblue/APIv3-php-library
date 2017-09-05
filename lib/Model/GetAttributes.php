@@ -54,7 +54,7 @@ class GetAttributes implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'attributes' => '\Swagger\Client\Model\InlineResponse20016Attributes[]'
+        'attributes' => '\Swagger\Client\Model\GetAttributesAttributes[]'
     ];
 
     /**
@@ -168,7 +168,7 @@ class GetAttributes implements ArrayAccess
 
     /**
      * Gets attributes
-     * @return \Swagger\Client\Model\InlineResponse20016Attributes[]
+     * @return \Swagger\Client\Model\GetAttributesAttributes[]
      */
     public function getAttributes()
     {
@@ -177,7 +177,7 @@ class GetAttributes implements ArrayAccess
 
     /**
      * Sets attributes
-     * @param \Swagger\Client\Model\InlineResponse20016Attributes[] $attributes Listing of available contact attributes in your account
+     * @param \Swagger\Client\Model\GetAttributesAttributes[] $attributes Listing of available contact attributes in your account
      * @return $this
      */
     public function setAttributes($attributes)

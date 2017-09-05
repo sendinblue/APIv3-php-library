@@ -78,14 +78,14 @@ class GetExtendedCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "campaign_stats"
+     * Test attribute "campaignStats"
      */
     public function testPropertyCampaignStats()
     {
     }
 
     /**
-     * Test attribute "mirror_click"
+     * Test attribute "mirrorClick"
      */
     public function testPropertyMirrorClick()
     {
@@ -99,14 +99,14 @@ class GetExtendedCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links_stats"
+     * Test attribute "linksStats"
      */
     public function testPropertyLinksStats()
     {
     }
 
     /**
-     * Test attribute "stats_by_domain"
+     * Test attribute "statsByDomain"
      */
     public function testPropertyStatsByDomain()
     {

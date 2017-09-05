@@ -58,7 +58,7 @@ class SendTransacSms implements ArrayAccess
         'recipient' => 'string',
         'content' => 'string',
         'tag' => 'string',
-        'web_url' => 'string'
+        'webUrl' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class SendTransacSms implements ArrayAccess
         'recipient' => null,
         'content' => null,
         'tag' => null,
-        'web_url' => 'url'
+        'webUrl' => 'url'
     ];
 
     public static function swaggerTypes()
@@ -92,7 +92,7 @@ class SendTransacSms implements ArrayAccess
         'recipient' => 'recipient',
         'content' => 'content',
         'tag' => 'tag',
-        'web_url' => 'webUrl'
+        'webUrl' => 'webUrl'
     ];
 
 
@@ -105,7 +105,7 @@ class SendTransacSms implements ArrayAccess
         'recipient' => 'setRecipient',
         'content' => 'setContent',
         'tag' => 'setTag',
-        'web_url' => 'setWebUrl'
+        'webUrl' => 'setWebUrl'
     ];
 
 
@@ -118,7 +118,7 @@ class SendTransacSms implements ArrayAccess
         'recipient' => 'getRecipient',
         'content' => 'getContent',
         'tag' => 'getTag',
-        'web_url' => 'getWebUrl'
+        'webUrl' => 'getWebUrl'
     ];
 
     public static function attributeMap()
@@ -156,7 +156,7 @@ class SendTransacSms implements ArrayAccess
         $this->container['recipient'] = isset($data['recipient']) ? $data['recipient'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['web_url'] = isset($data['web_url']) ? $data['web_url'] : null;
+        $this->container['webUrl'] = isset($data['webUrl']) ? $data['webUrl'] : null;
     }
 
     /**
@@ -309,22 +309,22 @@ class SendTransacSms implements ArrayAccess
     }
 
     /**
-     * Gets web_url
+     * Gets webUrl
      * @return string
      */
     public function getWebUrl()
     {
-        return $this->container['web_url'];
+        return $this->container['webUrl'];
     }
 
     /**
-     * Sets web_url
-     * @param string $web_url Webhook to call for each event triggered by the message (delivered etc.)
+     * Sets webUrl
+     * @param string $webUrl Webhook to call for each event triggered by the message (delivered etc.)
      * @return $this
      */
-    public function setWebUrl($web_url)
+    public function setWebUrl($webUrl)
     {
-        $this->container['web_url'] = $web_url;
+        $this->container['webUrl'] = $webUrl;
 
         return $this;
     }

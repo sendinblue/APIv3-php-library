@@ -78,14 +78,14 @@ class EmailExportRecipientsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "notify_url"
+     * Test attribute "notifyURL"
      */
-    public function testPropertyNotifyUrl()
+    public function testPropertyNotifyURL()
     {
     }
 
     /**
-     * Test attribute "recipients_type"
+     * Test attribute "recipientsType"
      */
     public function testPropertyRecipientsType()
     {

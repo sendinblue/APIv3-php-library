@@ -92,21 +92,21 @@ class CreateSmtpTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "template_name"
+     * Test attribute "templateName"
      */
     public function testPropertyTemplateName()
     {
     }
 
     /**
-     * Test attribute "html_content"
+     * Test attribute "htmlContent"
      */
     public function testPropertyHtmlContent()
     {
     }
 
     /**
-     * Test attribute "html_url"
+     * Test attribute "htmlUrl"
      */
     public function testPropertyHtmlUrl()
     {
@@ -120,28 +120,28 @@ class CreateSmtpTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "replyTo"
      */
     public function testPropertyReplyTo()
     {
     }
 
     /**
-     * Test attribute "to_field"
+     * Test attribute "toField"
      */
     public function testPropertyToField()
     {
     }
 
     /**
-     * Test attribute "attachment_url"
+     * Test attribute "attachmentUrl"
      */
     public function testPropertyAttachmentUrl()
     {
     }
 
     /**
-     * Test attribute "is_active"
+     * Test attribute "isActive"
      */
     public function testPropertyIsActive()
     {

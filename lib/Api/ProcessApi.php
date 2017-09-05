@@ -92,13 +92,13 @@ class ProcessApi
      *
      * Return the informations for a process
      *
-     * @param string $process_id Id of the process (required)
+     * @param string $processId Id of the process (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2007Processes
+     * @return \Swagger\Client\Model\GetProcess
      */
-    public function getProcess($process_id)
+    public function getProcess($processId)
     {
-        list($response) = $this->getProcessWithHttpInfo($process_id);
+        list($response) = $this->getProcessWithHttpInfo($processId);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class ProcessApi
      *
      * Return the informations for a process
      *
-     * @param string $process_id Id of the process (required)
+     * @param string $processId Id of the process (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2007Processes, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetProcess, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProcessWithHttpInfo($process_id)
+    public function getProcessWithHttpInfo($processId)
     {
-        // verify the required parameter 'process_id' is set
-        if ($process_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $process_id when calling getProcess');
+        // verify the required parameter 'processId' is set
+        if ($processId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $processId when calling getProcess');
         }
         // parse inputs
         $resourcePath = "/processes/{processId}";
@@ -130,10 +130,10 @@ class ProcessApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($process_id !== null) {
+        if ($processId !== null) {
             $resourcePath = str_replace(
                 "{" . "processId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($process_id),
+                $this->apiClient->getSerializer()->toPathValue($processId),
                 $resourcePath
             );
         }
@@ -157,23 +157,23 @@ class ProcessApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2007Processes',
+                '\Swagger\Client\Model\GetProcess',
                 '/processes/{processId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2007Processes', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetProcess', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2007Processes', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetProcess', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -190,7 +190,7 @@ class ProcessApi
      * @param int $limit Number limitation for the result returned (optional, default to 10)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2007
+     * @return \Swagger\Client\Model\GetProcesses
      */
     public function getProcesses($limit = '10', $offset = '0')
     {
@@ -206,7 +206,7 @@ class ProcessApi
      * @param int $limit Number limitation for the result returned (optional, default to 10)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetProcesses, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProcessesWithHttpInfo($limit = '10', $offset = '0')
     {
@@ -254,19 +254,19 @@ class ProcessApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2007',
+                '\Swagger\Client\Model\GetProcesses',
                 '/processes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2007', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetProcesses', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2007', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetProcesses', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

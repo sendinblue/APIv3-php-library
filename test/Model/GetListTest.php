@@ -92,14 +92,14 @@ class GetListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "total_blacklisted"
+     * Test attribute "totalBlacklisted"
      */
     public function testPropertyTotalBlacklisted()
     {
     }
 
     /**
-     * Test attribute "total_subscribers"
+     * Test attribute "totalSubscribers"
      */
     public function testPropertyTotalSubscribers()
     {

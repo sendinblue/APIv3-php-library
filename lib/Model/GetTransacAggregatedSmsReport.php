@@ -57,8 +57,8 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         'range' => 'string',
         'requests' => 'int',
         'delivered' => 'int',
-        'hard_bounces' => 'int',
-        'soft_bounces' => 'int',
+        'hardBounces' => 'int',
+        'softBounces' => 'int',
         'blocked' => 'int',
         'unsubscribed' => 'int',
         'replied' => 'int',
@@ -74,8 +74,8 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         'range' => null,
         'requests' => 'int32',
         'delivered' => 'int32',
-        'hard_bounces' => 'int32',
-        'soft_bounces' => 'int32',
+        'hardBounces' => 'int32',
+        'softBounces' => 'int32',
         'blocked' => 'int32',
         'unsubscribed' => 'int32',
         'replied' => 'int32',
@@ -101,8 +101,8 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         'range' => 'range',
         'requests' => 'requests',
         'delivered' => 'delivered',
-        'hard_bounces' => 'hardBounces',
-        'soft_bounces' => 'softBounces',
+        'hardBounces' => 'hardBounces',
+        'softBounces' => 'softBounces',
         'blocked' => 'blocked',
         'unsubscribed' => 'unsubscribed',
         'replied' => 'replied',
@@ -119,8 +119,8 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         'range' => 'setRange',
         'requests' => 'setRequests',
         'delivered' => 'setDelivered',
-        'hard_bounces' => 'setHardBounces',
-        'soft_bounces' => 'setSoftBounces',
+        'hardBounces' => 'setHardBounces',
+        'softBounces' => 'setSoftBounces',
         'blocked' => 'setBlocked',
         'unsubscribed' => 'setUnsubscribed',
         'replied' => 'setReplied',
@@ -137,8 +137,8 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         'range' => 'getRange',
         'requests' => 'getRequests',
         'delivered' => 'getDelivered',
-        'hard_bounces' => 'getHardBounces',
-        'soft_bounces' => 'getSoftBounces',
+        'hardBounces' => 'getHardBounces',
+        'softBounces' => 'getSoftBounces',
         'blocked' => 'getBlocked',
         'unsubscribed' => 'getUnsubscribed',
         'replied' => 'getReplied',
@@ -180,8 +180,8 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         $this->container['range'] = isset($data['range']) ? $data['range'] : null;
         $this->container['requests'] = isset($data['requests']) ? $data['requests'] : null;
         $this->container['delivered'] = isset($data['delivered']) ? $data['delivered'] : null;
-        $this->container['hard_bounces'] = isset($data['hard_bounces']) ? $data['hard_bounces'] : null;
-        $this->container['soft_bounces'] = isset($data['soft_bounces']) ? $data['soft_bounces'] : null;
+        $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
+        $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
         $this->container['blocked'] = isset($data['blocked']) ? $data['blocked'] : null;
         $this->container['unsubscribed'] = isset($data['unsubscribed']) ? $data['unsubscribed'] : null;
         $this->container['replied'] = isset($data['replied']) ? $data['replied'] : null;
@@ -207,11 +207,11 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         if ($this->container['delivered'] === null) {
             $invalid_properties[] = "'delivered' can't be null";
         }
-        if ($this->container['hard_bounces'] === null) {
-            $invalid_properties[] = "'hard_bounces' can't be null";
+        if ($this->container['hardBounces'] === null) {
+            $invalid_properties[] = "'hardBounces' can't be null";
         }
-        if ($this->container['soft_bounces'] === null) {
-            $invalid_properties[] = "'soft_bounces' can't be null";
+        if ($this->container['softBounces'] === null) {
+            $invalid_properties[] = "'softBounces' can't be null";
         }
         if ($this->container['blocked'] === null) {
             $invalid_properties[] = "'blocked' can't be null";
@@ -249,10 +249,10 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
         if ($this->container['delivered'] === null) {
             return false;
         }
-        if ($this->container['hard_bounces'] === null) {
+        if ($this->container['hardBounces'] === null) {
             return false;
         }
-        if ($this->container['soft_bounces'] === null) {
+        if ($this->container['softBounces'] === null) {
             return false;
         }
         if ($this->container['blocked'] === null) {
@@ -338,43 +338,43 @@ class GetTransacAggregatedSmsReport implements ArrayAccess
     }
 
     /**
-     * Gets hard_bounces
+     * Gets hardBounces
      * @return int
      */
     public function getHardBounces()
     {
-        return $this->container['hard_bounces'];
+        return $this->container['hardBounces'];
     }
 
     /**
-     * Sets hard_bounces
-     * @param int $hard_bounces Number of hardbounces for the timeframe
+     * Sets hardBounces
+     * @param int $hardBounces Number of hardbounces for the timeframe
      * @return $this
      */
-    public function setHardBounces($hard_bounces)
+    public function setHardBounces($hardBounces)
     {
-        $this->container['hard_bounces'] = $hard_bounces;
+        $this->container['hardBounces'] = $hardBounces;
 
         return $this;
     }
 
     /**
-     * Gets soft_bounces
+     * Gets softBounces
      * @return int
      */
     public function getSoftBounces()
     {
-        return $this->container['soft_bounces'];
+        return $this->container['softBounces'];
     }
 
     /**
-     * Sets soft_bounces
-     * @param int $soft_bounces Number of softbounces for the timeframe
+     * Sets softBounces
+     * @param int $softBounces Number of softbounces for the timeframe
      * @return $this
      */
-    public function setSoftBounces($soft_bounces)
+    public function setSoftBounces($softBounces)
     {
-        $this->container['soft_bounces'] = $soft_bounces;
+        $this->container['softBounces'] = $softBounces;
 
         return $this;
     }

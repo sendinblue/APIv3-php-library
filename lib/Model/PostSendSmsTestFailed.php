@@ -56,8 +56,8 @@ class PostSendSmsTestFailed implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'int',
         'message' => 'string',
-        'unexisting_sms' => 'string[]',
-        'without_list_sms' => 'string[]'
+        'unexistingSms' => 'string[]',
+        'withoutListSms' => 'string[]'
     ];
 
     /**
@@ -67,8 +67,8 @@ class PostSendSmsTestFailed implements ArrayAccess
     protected static $swaggerFormats = [
         'code' => 'int32',
         'message' => null,
-        'unexisting_sms' => 'email',
-        'without_list_sms' => 'email'
+        'unexistingSms' => 'email',
+        'withoutListSms' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -88,8 +88,8 @@ class PostSendSmsTestFailed implements ArrayAccess
     protected static $attributeMap = [
         'code' => 'code',
         'message' => 'message',
-        'unexisting_sms' => 'unexistingSms',
-        'without_list_sms' => 'withoutListSms'
+        'unexistingSms' => 'unexistingSms',
+        'withoutListSms' => 'withoutListSms'
     ];
 
 
@@ -100,8 +100,8 @@ class PostSendSmsTestFailed implements ArrayAccess
     protected static $setters = [
         'code' => 'setCode',
         'message' => 'setMessage',
-        'unexisting_sms' => 'setUnexistingSms',
-        'without_list_sms' => 'setWithoutListSms'
+        'unexistingSms' => 'setUnexistingSms',
+        'withoutListSms' => 'setWithoutListSms'
     ];
 
 
@@ -112,8 +112,8 @@ class PostSendSmsTestFailed implements ArrayAccess
     protected static $getters = [
         'code' => 'getCode',
         'message' => 'getMessage',
-        'unexisting_sms' => 'getUnexistingSms',
-        'without_list_sms' => 'getWithoutListSms'
+        'unexistingSms' => 'getUnexistingSms',
+        'withoutListSms' => 'getWithoutListSms'
     ];
 
     public static function attributeMap()
@@ -149,8 +149,8 @@ class PostSendSmsTestFailed implements ArrayAccess
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['unexisting_sms'] = isset($data['unexisting_sms']) ? $data['unexisting_sms'] : null;
-        $this->container['without_list_sms'] = isset($data['without_list_sms']) ? $data['without_list_sms'] : null;
+        $this->container['unexistingSms'] = isset($data['unexistingSms']) ? $data['unexistingSms'] : null;
+        $this->container['withoutListSms'] = isset($data['withoutListSms']) ? $data['withoutListSms'] : null;
     }
 
     /**
@@ -233,43 +233,43 @@ class PostSendSmsTestFailed implements ArrayAccess
     }
 
     /**
-     * Gets unexisting_sms
+     * Gets unexistingSms
      * @return string[]
      */
     public function getUnexistingSms()
     {
-        return $this->container['unexisting_sms'];
+        return $this->container['unexistingSms'];
     }
 
     /**
-     * Sets unexisting_sms
-     * @param string[] $unexisting_sms
+     * Sets unexistingSms
+     * @param string[] $unexistingSms
      * @return $this
      */
-    public function setUnexistingSms($unexisting_sms)
+    public function setUnexistingSms($unexistingSms)
     {
-        $this->container['unexisting_sms'] = $unexisting_sms;
+        $this->container['unexistingSms'] = $unexistingSms;
 
         return $this;
     }
 
     /**
-     * Gets without_list_sms
+     * Gets withoutListSms
      * @return string[]
      */
     public function getWithoutListSms()
     {
-        return $this->container['without_list_sms'];
+        return $this->container['withoutListSms'];
     }
 
     /**
-     * Sets without_list_sms
-     * @param string[] $without_list_sms
+     * Sets withoutListSms
+     * @param string[] $withoutListSms
      * @return $this
      */
-    public function setWithoutListSms($without_list_sms)
+    public function setWithoutListSms($withoutListSms)
     {
-        $this->container['without_list_sms'] = $without_list_sms;
+        $this->container['withoutListSms'] = $withoutListSms;
 
         return $this;
     }

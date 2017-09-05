@@ -55,7 +55,7 @@ class GetLists implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'count' => 'int',
-        'lists' => '\Swagger\Client\Model\InlineResponse20018Lists[]'
+        'lists' => '\Swagger\Client\Model\GetListsLists[]'
     ];
 
     /**
@@ -201,7 +201,7 @@ class GetLists implements ArrayAccess
 
     /**
      * Gets lists
-     * @return \Swagger\Client\Model\InlineResponse20018Lists[]
+     * @return \Swagger\Client\Model\GetListsLists[]
      */
     public function getLists()
     {
@@ -210,7 +210,7 @@ class GetLists implements ArrayAccess
 
     /**
      * Sets lists
-     * @param \Swagger\Client\Model\InlineResponse20018Lists[] $lists Listing of all the lists available in your account
+     * @param \Swagger\Client\Model\GetListsLists[] $lists Listing of all the lists available in your account
      * @return $this
      */
     public function setLists($lists)

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getProcess**
-> \Swagger\Client\Model\InlineResponse2007Processes getProcess($process_id)
+> \Swagger\Client\Model\GetProcess getProcess($processId)
 
 Return the informations for a process
 
@@ -22,10 +22,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ProcessApi();
-$process_id = "process_id_example"; // string | Id of the process
+$processId = "processId_example"; // string | Id of the process
 
 try {
-    $result = $api_instance->getProcess($process_id);
+    $result = $api_instance->getProcess($processId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProcessApi->getProcess: ', $e->getMessage(), PHP_EOL;
@@ -37,11 +37,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **process_id** | **string**| Id of the process |
+ **processId** | **string**| Id of the process |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2007Processes**](../Model/InlineResponse2007Processes.md)
+[**\Swagger\Client\Model\GetProcess**](../Model/GetProcess.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProcesses**
-> \Swagger\Client\Model\InlineResponse2007 getProcesses($limit, $offset)
+> \Swagger\Client\Model\GetProcesses getProcesses($limit, $offset)
 
 Return all the processes for your account
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Swagger\Client\Model\GetProcesses**](../Model/GetProcesses.md)
 
 ### Authorization
 
