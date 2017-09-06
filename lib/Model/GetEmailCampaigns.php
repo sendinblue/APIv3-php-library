@@ -54,7 +54,7 @@ class GetEmailCampaigns implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'campaigns' => 'null[]',
+        'campaigns' => 'object[]',
         'count' => 'int'
     ];
 
@@ -174,7 +174,7 @@ class GetEmailCampaigns implements ArrayAccess
 
     /**
      * Gets campaigns
-     * @return null[]
+     * @return object[]
      */
     public function getCampaigns()
     {
@@ -183,7 +183,7 @@ class GetEmailCampaigns implements ArrayAccess
 
     /**
      * Sets campaigns
-     * @param null[] $campaigns
+     * @param object[] $campaigns
      * @return $this
      */
     public function setCampaigns($campaigns)
