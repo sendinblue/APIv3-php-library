@@ -30,7 +30,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "sendinblue/APIv3-php-library": "*@dev"
+    "sendinblue/sendinblue-apiv3": "*@dev"
   }
 }
 ```
