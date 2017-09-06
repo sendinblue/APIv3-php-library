@@ -54,7 +54,7 @@ class PostContactInfo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'contacts' => '\Swagger\Client\Model\InlineResponse2014Contacts'
+        'contacts' => '\Swagger\Client\Model\PostContactInfoContacts'
     ];
 
     /**
@@ -162,7 +162,7 @@ class PostContactInfo implements ArrayAccess
 
     /**
      * Gets contacts
-     * @return \Swagger\Client\Model\InlineResponse2014Contacts
+     * @return \Swagger\Client\Model\PostContactInfoContacts
      */
     public function getContacts()
     {
@@ -171,7 +171,7 @@ class PostContactInfo implements ArrayAccess
 
     /**
      * Sets contacts
-     * @param \Swagger\Client\Model\InlineResponse2014Contacts $contacts
+     * @param \Swagger\Client\Model\PostContactInfoContacts $contacts
      * @return $this
      */
     public function setContacts($contacts)

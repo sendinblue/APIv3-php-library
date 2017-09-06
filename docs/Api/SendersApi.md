@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createSender**
-> \Swagger\Client\Model\InlineResponse2011 createSender($sender)
+> \Swagger\Client\Model\CreateSenderModel createSender($sender)
 
 Create a new sender
 
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SendersApi();
-$sender = new \Swagger\Client\Model\Sender(); // \Swagger\Client\Model\Sender | sender's name
+$sender = new \Swagger\Client\Model\CreateSender(); // \Swagger\Client\Model\CreateSender | sender's name
 
 try {
     $result = $api_instance->createSender($sender);
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender** | [**\Swagger\Client\Model\Sender**](../Model/Sender.md)| sender&#39;s name | [optional]
+ **sender** | [**\Swagger\Client\Model\CreateSender**](../Model/CreateSender.md)| sender&#39;s name | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\Swagger\Client\Model\CreateSenderModel**](../Model/CreateSenderModel.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSender**
-> deleteSender($sender_id)
+> deleteSender($senderId)
 
 Delete a sender
 
@@ -72,10 +72,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SendersApi();
-$sender_id = "sender_id_example"; // string | Id of the sender
+$senderId = "senderId_example"; // string | Id of the sender
 
 try {
-    $api_instance->deleteSender($sender_id);
+    $api_instance->deleteSender($senderId);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->deleteSender: ', $e->getMessage(), PHP_EOL;
 }
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_id** | **string**| Id of the sender |
+ **senderId** | **string**| Id of the sender |
 
 ### Return type
 
@@ -104,7 +104,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getIps**
-> \Swagger\Client\Model\InlineResponse2006 getIps()
+> \Swagger\Client\Model\GetIps getIps()
 
 Return all the dedicated IPs for your account
 
@@ -132,7 +132,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\GetIps**](../Model/GetIps.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getIpsFromSender**
-> \Swagger\Client\Model\InlineResponse2005 getIpsFromSender($sender_id)
+> \Swagger\Client\Model\GetIpsFromSender getIpsFromSender($senderId)
 
 Return all the dedicated IPs for a sender
 
@@ -159,10 +159,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SendersApi();
-$sender_id = "sender_id_example"; // string | Id of the sender
+$senderId = "senderId_example"; // string | Id of the sender
 
 try {
-    $result = $api_instance->getIpsFromSender($sender_id);
+    $result = $api_instance->getIpsFromSender($senderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->getIpsFromSender: ', $e->getMessage(), PHP_EOL;
@@ -174,11 +174,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_id** | **string**| Id of the sender |
+ **senderId** | **string**| Id of the sender |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\GetIpsFromSender**](../Model/GetIpsFromSender.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSenders**
-> \Swagger\Client\Model\InlineResponse2004 getSenders($ip, $domain)
+> \Swagger\Client\Model\GetSendersList getSenders($ip, $domain)
 
 Get the list of all your senders
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Swagger\Client\Model\GetSendersList**](../Model/GetSendersList.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSender**
-> updateSender($sender_id, $sender)
+> updateSender($senderId, $sender)
 
 Update a sender
 
@@ -253,11 +253,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\SendersApi();
-$sender_id = "sender_id_example"; // string | Id of the sender
-$sender = new \Swagger\Client\Model\Sender1(); // \Swagger\Client\Model\Sender1 | sender's name
+$senderId = "senderId_example"; // string | Id of the sender
+$sender = new \Swagger\Client\Model\UpdateSender(); // \Swagger\Client\Model\UpdateSender | sender's name
 
 try {
-    $api_instance->updateSender($sender_id, $sender);
+    $api_instance->updateSender($senderId, $sender);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->updateSender: ', $e->getMessage(), PHP_EOL;
 }
@@ -268,8 +268,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_id** | **string**| Id of the sender |
- **sender** | [**\Swagger\Client\Model\Sender1**](../Model/Sender1.md)| sender&#39;s name | [optional]
+ **senderId** | **string**| Id of the sender |
+ **sender** | [**\Swagger\Client\Model\UpdateSender**](../Model/UpdateSender.md)| sender&#39;s name | [optional]
 
 ### Return type
 

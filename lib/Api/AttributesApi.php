@@ -92,13 +92,13 @@ class AttributesApi
      *
      * Creates contact attributes
      *
-     * @param \Swagger\Client\Model\CreateAttribute1 $create_attribute Values to create an attribute (required)
+     * @param \Swagger\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createAttribute($create_attribute)
+    public function createAttribute($createAttribute)
     {
-        list($response) = $this->createAttributeWithHttpInfo($create_attribute);
+        list($response) = $this->createAttributeWithHttpInfo($createAttribute);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class AttributesApi
      *
      * Creates contact attributes
      *
-     * @param \Swagger\Client\Model\CreateAttribute1 $create_attribute Values to create an attribute (required)
+     * @param \Swagger\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAttributeWithHttpInfo($create_attribute)
+    public function createAttributeWithHttpInfo($createAttribute)
     {
-        // verify the required parameter 'create_attribute' is set
-        if ($create_attribute === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_attribute when calling createAttribute');
+        // verify the required parameter 'createAttribute' is set
+        if ($createAttribute === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createAttribute when calling createAttribute');
         }
         // parse inputs
         $resourcePath = "/contacts/attributes";
@@ -131,8 +131,8 @@ class AttributesApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_attribute)) {
-            $_tempBody = $create_attribute;
+        if (isset($createAttribute)) {
+            $_tempBody = $createAttribute;
         }
 
         // for model (json/xml)
@@ -154,19 +154,19 @@ class AttributesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/contacts/attributes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -180,13 +180,13 @@ class AttributesApi
      *
      * Deletes an attribute
      *
-     * @param string $attribute_id id of the attribute (required)
+     * @param string $attributeId id of the attribute (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteAttribute($attribute_id)
+    public function deleteAttribute($attributeId)
     {
-        list($response) = $this->deleteAttributeWithHttpInfo($attribute_id);
+        list($response) = $this->deleteAttributeWithHttpInfo($attributeId);
         return $response;
     }
 
@@ -195,15 +195,15 @@ class AttributesApi
      *
      * Deletes an attribute
      *
-     * @param string $attribute_id id of the attribute (required)
+     * @param string $attributeId id of the attribute (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAttributeWithHttpInfo($attribute_id)
+    public function deleteAttributeWithHttpInfo($attributeId)
     {
-        // verify the required parameter 'attribute_id' is set
-        if ($attribute_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $attribute_id when calling deleteAttribute');
+        // verify the required parameter 'attributeId' is set
+        if ($attributeId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeId when calling deleteAttribute');
         }
         // parse inputs
         $resourcePath = "/contacts/attributes/{attributeId}";
@@ -218,10 +218,10 @@ class AttributesApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($attribute_id !== null) {
+        if ($attributeId !== null) {
             $resourcePath = str_replace(
                 "{" . "attributeId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($attribute_id),
+                $this->apiClient->getSerializer()->toPathValue($attributeId),
                 $resourcePath
             );
         }
@@ -253,11 +253,11 @@ class AttributesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -272,7 +272,7 @@ class AttributesApi
      * Lists all attributes
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20016
+     * @return \Swagger\Client\Model\GetAttributes
      */
     public function getAttributes()
     {
@@ -286,7 +286,7 @@ class AttributesApi
      * Lists all attributes
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetAttributes, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAttributesWithHttpInfo()
     {
@@ -322,15 +322,15 @@ class AttributesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20016',
+                '\Swagger\Client\Model\GetAttributes',
                 '/contacts/attributes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetAttributes', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetAttributes', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

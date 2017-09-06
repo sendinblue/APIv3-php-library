@@ -92,42 +92,42 @@ class GetExtendedListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "total_blacklisted"
+     * Test attribute "totalBlacklisted"
      */
     public function testPropertyTotalBlacklisted()
     {
     }
 
     /**
-     * Test attribute "total_subscribers"
+     * Test attribute "totalSubscribers"
      */
     public function testPropertyTotalSubscribers()
     {
     }
 
     /**
-     * Test attribute "folder_id"
+     * Test attribute "folderId"
      */
     public function testPropertyFolderId()
     {
     }
 
     /**
-     * Test attribute "created_at"
+     * Test attribute "createdAt"
      */
     public function testPropertyCreatedAt()
     {
     }
 
     /**
-     * Test attribute "campaign_stats"
+     * Test attribute "campaignStats"
      */
     public function testPropertyCampaignStats()
     {
     }
 
     /**
-     * Test attribute "dynamic_list"
+     * Test attribute "dynamicList"
      */
     public function testPropertyDynamicList()
     {

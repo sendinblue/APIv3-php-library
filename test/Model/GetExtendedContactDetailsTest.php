@@ -92,35 +92,35 @@ class GetExtendedContactDetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email_blacklisted"
+     * Test attribute "emailBlacklisted"
      */
     public function testPropertyEmailBlacklisted()
     {
     }
 
     /**
-     * Test attribute "sms_blacklisted"
+     * Test attribute "smsBlacklisted"
      */
     public function testPropertySmsBlacklisted()
     {
     }
 
     /**
-     * Test attribute "modified_at"
+     * Test attribute "modifiedAt"
      */
     public function testPropertyModifiedAt()
     {
     }
 
     /**
-     * Test attribute "list_ids"
+     * Test attribute "listIds"
      */
     public function testPropertyListIds()
     {
     }
 
     /**
-     * Test attribute "list_unsubscribed"
+     * Test attribute "listUnsubscribed"
      */
     public function testPropertyListUnsubscribed()
     {

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createEmailCampaign**
-> \Swagger\Client\Model\InlineResponse201 createEmailCampaign($email_campaigns)
+> \Swagger\Client\Model\CreateModel createEmailCampaign($emailCampaigns)
 
 Create an email campaign
 
@@ -30,10 +30,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$email_campaigns = new \Swagger\Client\Model\EmailCampaigns(); // \Swagger\Client\Model\EmailCampaigns | Values to create a campaign
+$emailCampaigns = new \Swagger\Client\Model\CreateEmailCampaign(); // \Swagger\Client\Model\CreateEmailCampaign | Values to create a campaign
 
 try {
-    $result = $api_instance->createEmailCampaign($email_campaigns);
+    $result = $api_instance->createEmailCampaign($emailCampaigns);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->createEmailCampaign: ', $e->getMessage(), PHP_EOL;
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email_campaigns** | [**\Swagger\Client\Model\EmailCampaigns**](../Model/EmailCampaigns.md)| Values to create a campaign |
+ **emailCampaigns** | [**\Swagger\Client\Model\CreateEmailCampaign**](../Model/CreateEmailCampaign.md)| Values to create a campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteEmailCampaigns**
-> deleteEmailCampaigns($campaign_id)
+> deleteEmailCampaigns($campaignId)
 
 Delete an email campaign
 
@@ -76,10 +76,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | id of the campaign
+$campaignId = "campaignId_example"; // string | id of the campaign
 
 try {
-    $api_instance->deleteEmailCampaigns($campaign_id);
+    $api_instance->deleteEmailCampaigns($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->deleteEmailCampaigns: ', $e->getMessage(), PHP_EOL;
 }
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| id of the campaign |
+ **campaignId** | **string**| id of the campaign |
 
 ### Return type
 
@@ -108,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **emailExportRecipients**
-> \Swagger\Client\Model\InlineResponse202 emailExportRecipients($campaign_id, $recipient_export)
+> \Swagger\Client\Model\CreatedProcessId emailExportRecipients($campaignId, $recipientExport)
 
 Export the recipients of a campaign
 
@@ -121,11 +121,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
-$recipient_export = new \Swagger\Client\Model\RecipientExport(); // \Swagger\Client\Model\RecipientExport | Values to send for a recipient export request
+$campaignId = "campaignId_example"; // string | Id of the campaign
+$recipientExport = new \Swagger\Client\Model\EmailExportRecipients(); // \Swagger\Client\Model\EmailExportRecipients | Values to send for a recipient export request
 
 try {
-    $result = $api_instance->emailExportRecipients($campaign_id, $recipient_export);
+    $result = $api_instance->emailExportRecipients($campaignId, $recipientExport);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->emailExportRecipients: ', $e->getMessage(), PHP_EOL;
@@ -137,12 +137,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
- **recipient_export** | [**\Swagger\Client\Model\RecipientExport**](../Model/RecipientExport.md)| Values to send for a recipient export request | [optional]
+ **campaignId** | **string**| Id of the campaign |
+ **recipientExport** | [**\Swagger\Client\Model\EmailExportRecipients**](../Model/EmailExportRecipients.md)| Values to send for a recipient export request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse202**](../Model/InlineResponse202.md)
+[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailCampaign**
-> \Swagger\Client\Model\InlineResponse2008Campaigns getEmailCampaign($campaign_id)
+> \Swagger\Client\Model\GetEmailCampaign getEmailCampaign($campaignId)
 
 Get campaign informations
 
@@ -169,10 +169,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
+$campaignId = "campaignId_example"; // string | Id of the campaign
 
 try {
-    $result = $api_instance->getEmailCampaign($campaign_id);
+    $result = $api_instance->getEmailCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->getEmailCampaign: ', $e->getMessage(), PHP_EOL;
@@ -184,11 +184,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
+ **campaignId** | **string**| Id of the campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008Campaigns**](../Model/InlineResponse2008Campaigns.md)
+[**\Swagger\Client\Model\GetEmailCampaign**](../Model/GetEmailCampaign.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailCampaigns**
-> \Swagger\Client\Model\InlineResponse2008 getEmailCampaigns($type, $status, $limit, $offset)
+> \Swagger\Client\Model\GetEmailCampaigns getEmailCampaigns($type, $status, $limit, $offset)
 
 Return all your created campaigns
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\Swagger\Client\Model\GetEmailCampaigns**](../Model/GetEmailCampaigns.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendEmailCampaignNow**
-> sendEmailCampaignNow($campaign_id)
+> sendEmailCampaignNow($campaignId)
 
 Send an email campaign id of the campaign immediately
 
@@ -267,10 +267,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
+$campaignId = "campaignId_example"; // string | Id of the campaign
 
 try {
-    $api_instance->sendEmailCampaignNow($campaign_id);
+    $api_instance->sendEmailCampaignNow($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->sendEmailCampaignNow: ', $e->getMessage(), PHP_EOL;
 }
@@ -281,7 +281,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
+ **campaignId** | **string**| Id of the campaign |
 
 ### Return type
 
@@ -299,7 +299,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendReport**
-> sendReport($campaign_id, $send_report)
+> sendReport($campaignId, $sendReport)
 
 Send the report of a campaigns
 
@@ -314,11 +314,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
-$send_report = new \Swagger\Client\Model\SendReport1(); // \Swagger\Client\Model\SendReport1 | Values for send a report
+$campaignId = "campaignId_example"; // string | Id of the campaign
+$sendReport = new \Swagger\Client\Model\SendReport(); // \Swagger\Client\Model\SendReport | Values for send a report
 
 try {
-    $api_instance->sendReport($campaign_id, $send_report);
+    $api_instance->sendReport($campaignId, $sendReport);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->sendReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -329,8 +329,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
- **send_report** | [**\Swagger\Client\Model\SendReport1**](../Model/SendReport1.md)| Values for send a report |
+ **campaignId** | **string**| Id of the campaign |
+ **sendReport** | [**\Swagger\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
 
 ### Return type
 
@@ -348,7 +348,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendTestEmail**
-> sendTestEmail($campaign_id, $email_to)
+> sendTestEmail($campaignId, $emailTo)
 
 Send an email campaign to your test list
 
@@ -361,11 +361,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
-$email_to = new \Swagger\Client\Model\EmailTo(); // \Swagger\Client\Model\EmailTo | 
+$campaignId = "campaignId_example"; // string | Id of the campaign
+$emailTo = new \Swagger\Client\Model\SendTestEmail(); // \Swagger\Client\Model\SendTestEmail | 
 
 try {
-    $api_instance->sendTestEmail($campaign_id, $email_to);
+    $api_instance->sendTestEmail($campaignId, $emailTo);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->sendTestEmail: ', $e->getMessage(), PHP_EOL;
 }
@@ -376,8 +376,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
- **email_to** | [**\Swagger\Client\Model\EmailTo**](../Model/EmailTo.md)|  |
+ **campaignId** | **string**| Id of the campaign |
+ **emailTo** | [**\Swagger\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
 
 ### Return type
 
@@ -395,7 +395,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCampaignStatus**
-> updateCampaignStatus($campaign_id, $status)
+> updateCampaignStatus($campaignId, $status)
 
 Update a campaign status
 
@@ -408,11 +408,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
-$status = new \Swagger\Client\Model\Status(); // \Swagger\Client\Model\Status | Status of the campaign
+$campaignId = "campaignId_example"; // string | Id of the campaign
+$status = new \Swagger\Client\Model\UpdateCampaignStatus(); // \Swagger\Client\Model\UpdateCampaignStatus | Status of the campaign
 
 try {
-    $api_instance->updateCampaignStatus($campaign_id, $status);
+    $api_instance->updateCampaignStatus($campaignId, $status);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->updateCampaignStatus: ', $e->getMessage(), PHP_EOL;
 }
@@ -423,8 +423,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
- **status** | [**\Swagger\Client\Model\Status**](../Model/Status.md)| Status of the campaign |
+ **campaignId** | **string**| Id of the campaign |
+ **status** | [**\Swagger\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign |
 
 ### Return type
 
@@ -442,7 +442,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateEmailCampaigns**
-> updateEmailCampaigns($campaign_id, $email_campaign)
+> updateEmailCampaigns($campaignId, $emailCampaign)
 
 Update a campaign
 
@@ -455,11 +455,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$campaign_id = "campaign_id_example"; // string | Id of the campaign
-$email_campaign = new \Swagger\Client\Model\EmailCampaign(); // \Swagger\Client\Model\EmailCampaign | Values to update a campaign
+$campaignId = "campaignId_example"; // string | Id of the campaign
+$emailCampaign = new \Swagger\Client\Model\UpdateEmailCampaign(); // \Swagger\Client\Model\UpdateEmailCampaign | Values to update a campaign
 
 try {
-    $api_instance->updateEmailCampaigns($campaign_id, $email_campaign);
+    $api_instance->updateEmailCampaigns($campaignId, $emailCampaign);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->updateEmailCampaigns: ', $e->getMessage(), PHP_EOL;
 }
@@ -470,8 +470,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **string**| Id of the campaign |
- **email_campaign** | [**\Swagger\Client\Model\EmailCampaign**](../Model/EmailCampaign.md)| Values to update a campaign |
+ **campaignId** | **string**| Id of the campaign |
+ **emailCampaign** | [**\Swagger\Client\Model\UpdateEmailCampaign**](../Model/UpdateEmailCampaign.md)| Values to update a campaign |
 
 ### Return type
 

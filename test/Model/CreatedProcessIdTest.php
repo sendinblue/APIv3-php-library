@@ -78,7 +78,7 @@ class CreatedProcessIdTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "process_id"
+     * Test attribute "processId"
      */
     public function testPropertyProcessId()
     {

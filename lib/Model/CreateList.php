@@ -55,7 +55,7 @@ class CreateList implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'folder_id' => 'int'
+        'folderId' => 'int'
     ];
 
     /**
@@ -64,7 +64,7 @@ class CreateList implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'folder_id' => 'int32'
+        'folderId' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -83,7 +83,7 @@ class CreateList implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'folder_id' => 'folderId'
+        'folderId' => 'folderId'
     ];
 
 
@@ -93,7 +93,7 @@ class CreateList implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'folder_id' => 'setFolderId'
+        'folderId' => 'setFolderId'
     ];
 
 
@@ -103,7 +103,7 @@ class CreateList implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'folder_id' => 'getFolderId'
+        'folderId' => 'getFolderId'
     ];
 
     public static function attributeMap()
@@ -138,7 +138,7 @@ class CreateList implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['folder_id'] = isset($data['folder_id']) ? $data['folder_id'] : null;
+        $this->container['folderId'] = isset($data['folderId']) ? $data['folderId'] : null;
     }
 
     /**
@@ -153,8 +153,8 @@ class CreateList implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['folder_id'] === null) {
-            $invalid_properties[] = "'folder_id' can't be null";
+        if ($this->container['folderId'] === null) {
+            $invalid_properties[] = "'folderId' can't be null";
         }
         return $invalid_properties;
     }
@@ -171,7 +171,7 @@ class CreateList implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['folder_id'] === null) {
+        if ($this->container['folderId'] === null) {
             return false;
         }
         return true;
@@ -200,22 +200,22 @@ class CreateList implements ArrayAccess
     }
 
     /**
-     * Gets folder_id
+     * Gets folderId
      * @return int
      */
     public function getFolderId()
     {
-        return $this->container['folder_id'];
+        return $this->container['folderId'];
     }
 
     /**
-     * Sets folder_id
-     * @param int $folder_id Id of the folder in which to create the list
+     * Sets folderId
+     * @param int $folderId Id of the folder in which to create the list
      * @return $this
      */
-    public function setFolderId($folder_id)
+    public function setFolderId($folderId)
     {
-        $this->container['folder_id'] = $folder_id;
+        $this->container['folderId'] = $folderId;
 
         return $this;
     }

@@ -78,7 +78,7 @@ class SendTestEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email_to"
+     * Test attribute "emailTo"
      */
     public function testPropertyEmailTo()
     {

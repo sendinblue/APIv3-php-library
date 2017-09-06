@@ -54,7 +54,7 @@ class GetChildrenList implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'children' => '\Swagger\Client\Model\InlineResponse2001Children[]'
+        'children' => 'object[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetChildrenList implements ArrayAccess
 
     /**
      * Gets children
-     * @return \Swagger\Client\Model\InlineResponse2001Children[]
+     * @return object[]
      */
     public function getChildren()
     {
@@ -171,7 +171,7 @@ class GetChildrenList implements ArrayAccess
 
     /**
      * Sets children
-     * @param \Swagger\Client\Model\InlineResponse2001Children[] $children Your children's account information
+     * @param object[] $children Your children's account information
      * @return $this
      */
     public function setChildren($children)

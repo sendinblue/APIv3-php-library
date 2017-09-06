@@ -78,21 +78,21 @@ class RequestContactExportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "export_attributes"
+     * Test attribute "exportAttributes"
      */
     public function testPropertyExportAttributes()
     {
     }
 
     /**
-     * Test attribute "contact_filter"
+     * Test attribute "contactFilter"
      */
     public function testPropertyContactFilter()
     {
     }
 
     /**
-     * Test attribute "notify_url"
+     * Test attribute "notifyUrl"
      */
     public function testPropertyNotifyUrl()
     {

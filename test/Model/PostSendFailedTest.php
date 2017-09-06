@@ -92,21 +92,21 @@ class PostSendFailedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "unexisting_emails"
+     * Test attribute "unexistingEmails"
      */
     public function testPropertyUnexistingEmails()
     {
     }
 
     /**
-     * Test attribute "without_list_emails"
+     * Test attribute "withoutListEmails"
      */
     public function testPropertyWithoutListEmails()
     {
     }
 
     /**
-     * Test attribute "black_listed_emails"
+     * Test attribute "blackListedEmails"
      */
     public function testPropertyBlackListedEmails()
     {

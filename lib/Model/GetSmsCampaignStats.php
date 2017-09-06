@@ -57,8 +57,8 @@ class GetSmsCampaignStats implements ArrayAccess
         'delivered' => 'int',
         'sent' => 'int',
         'processing' => 'int',
-        'soft_bounces' => 'int',
-        'hard_bounces' => 'int',
+        'softBounces' => 'int',
+        'hardBounces' => 'int',
         'unsubscriptions' => 'int',
         'answered' => 'int'
     ];
@@ -71,8 +71,8 @@ class GetSmsCampaignStats implements ArrayAccess
         'delivered' => 'int32',
         'sent' => 'int32',
         'processing' => 'int32',
-        'soft_bounces' => 'int32',
-        'hard_bounces' => 'int32',
+        'softBounces' => 'int32',
+        'hardBounces' => 'int32',
         'unsubscriptions' => 'int32',
         'answered' => 'int32'
     ];
@@ -95,8 +95,8 @@ class GetSmsCampaignStats implements ArrayAccess
         'delivered' => 'delivered',
         'sent' => 'sent',
         'processing' => 'processing',
-        'soft_bounces' => 'softBounces',
-        'hard_bounces' => 'hardBounces',
+        'softBounces' => 'softBounces',
+        'hardBounces' => 'hardBounces',
         'unsubscriptions' => 'unsubscriptions',
         'answered' => 'answered'
     ];
@@ -110,8 +110,8 @@ class GetSmsCampaignStats implements ArrayAccess
         'delivered' => 'setDelivered',
         'sent' => 'setSent',
         'processing' => 'setProcessing',
-        'soft_bounces' => 'setSoftBounces',
-        'hard_bounces' => 'setHardBounces',
+        'softBounces' => 'setSoftBounces',
+        'hardBounces' => 'setHardBounces',
         'unsubscriptions' => 'setUnsubscriptions',
         'answered' => 'setAnswered'
     ];
@@ -125,8 +125,8 @@ class GetSmsCampaignStats implements ArrayAccess
         'delivered' => 'getDelivered',
         'sent' => 'getSent',
         'processing' => 'getProcessing',
-        'soft_bounces' => 'getSoftBounces',
-        'hard_bounces' => 'getHardBounces',
+        'softBounces' => 'getSoftBounces',
+        'hardBounces' => 'getHardBounces',
         'unsubscriptions' => 'getUnsubscriptions',
         'answered' => 'getAnswered'
     ];
@@ -165,8 +165,8 @@ class GetSmsCampaignStats implements ArrayAccess
         $this->container['delivered'] = isset($data['delivered']) ? $data['delivered'] : null;
         $this->container['sent'] = isset($data['sent']) ? $data['sent'] : null;
         $this->container['processing'] = isset($data['processing']) ? $data['processing'] : null;
-        $this->container['soft_bounces'] = isset($data['soft_bounces']) ? $data['soft_bounces'] : null;
-        $this->container['hard_bounces'] = isset($data['hard_bounces']) ? $data['hard_bounces'] : null;
+        $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
+        $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
         $this->container['unsubscriptions'] = isset($data['unsubscriptions']) ? $data['unsubscriptions'] : null;
         $this->container['answered'] = isset($data['answered']) ? $data['answered'] : null;
     }
@@ -189,11 +189,11 @@ class GetSmsCampaignStats implements ArrayAccess
         if ($this->container['processing'] === null) {
             $invalid_properties[] = "'processing' can't be null";
         }
-        if ($this->container['soft_bounces'] === null) {
-            $invalid_properties[] = "'soft_bounces' can't be null";
+        if ($this->container['softBounces'] === null) {
+            $invalid_properties[] = "'softBounces' can't be null";
         }
-        if ($this->container['hard_bounces'] === null) {
-            $invalid_properties[] = "'hard_bounces' can't be null";
+        if ($this->container['hardBounces'] === null) {
+            $invalid_properties[] = "'hardBounces' can't be null";
         }
         if ($this->container['unsubscriptions'] === null) {
             $invalid_properties[] = "'unsubscriptions' can't be null";
@@ -222,10 +222,10 @@ class GetSmsCampaignStats implements ArrayAccess
         if ($this->container['processing'] === null) {
             return false;
         }
-        if ($this->container['soft_bounces'] === null) {
+        if ($this->container['softBounces'] === null) {
             return false;
         }
-        if ($this->container['hard_bounces'] === null) {
+        if ($this->container['hardBounces'] === null) {
             return false;
         }
         if ($this->container['unsubscriptions'] === null) {
@@ -302,43 +302,43 @@ class GetSmsCampaignStats implements ArrayAccess
     }
 
     /**
-     * Gets soft_bounces
+     * Gets softBounces
      * @return int
      */
     public function getSoftBounces()
     {
-        return $this->container['soft_bounces'];
+        return $this->container['softBounces'];
     }
 
     /**
-     * Sets soft_bounces
-     * @param int $soft_bounces Number of softbounced SMS
+     * Sets softBounces
+     * @param int $softBounces Number of softbounced SMS
      * @return $this
      */
-    public function setSoftBounces($soft_bounces)
+    public function setSoftBounces($softBounces)
     {
-        $this->container['soft_bounces'] = $soft_bounces;
+        $this->container['softBounces'] = $softBounces;
 
         return $this;
     }
 
     /**
-     * Gets hard_bounces
+     * Gets hardBounces
      * @return int
      */
     public function getHardBounces()
     {
-        return $this->container['hard_bounces'];
+        return $this->container['hardBounces'];
     }
 
     /**
-     * Sets hard_bounces
-     * @param int $hard_bounces Number of hardbounced SMS
+     * Sets hardBounces
+     * @param int $hardBounces Number of hardbounced SMS
      * @return $this
      */
-    public function setHardBounces($hard_bounces)
+    public function setHardBounces($hardBounces)
     {
-        $this->container['hard_bounces'] = $hard_bounces;
+        $this->container['hardBounces'] = $hardBounces;
 
         return $this;
     }

@@ -59,7 +59,7 @@ class GetCampaignOverview implements ArrayAccess
         'subject' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'scheduled_at' => 'string'
+        'scheduledAt' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class GetCampaignOverview implements ArrayAccess
         'subject' => null,
         'type' => null,
         'status' => null,
-        'scheduled_at' => null
+        'scheduledAt' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +95,7 @@ class GetCampaignOverview implements ArrayAccess
         'subject' => 'subject',
         'type' => 'type',
         'status' => 'status',
-        'scheduled_at' => 'scheduledAt'
+        'scheduledAt' => 'scheduledAt'
     ];
 
 
@@ -109,7 +109,7 @@ class GetCampaignOverview implements ArrayAccess
         'subject' => 'setSubject',
         'type' => 'setType',
         'status' => 'setStatus',
-        'scheduled_at' => 'setScheduledAt'
+        'scheduledAt' => 'setScheduledAt'
     ];
 
 
@@ -123,7 +123,7 @@ class GetCampaignOverview implements ArrayAccess
         'subject' => 'getSubject',
         'type' => 'getType',
         'status' => 'getStatus',
-        'scheduled_at' => 'getScheduledAt'
+        'scheduledAt' => 'getScheduledAt'
     ];
 
     public static function attributeMap()
@@ -198,7 +198,7 @@ class GetCampaignOverview implements ArrayAccess
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['scheduled_at'] = isset($data['scheduled_at']) ? $data['scheduled_at'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
     }
 
     /**
@@ -241,11 +241,11 @@ class GetCampaignOverview implements ArrayAccess
             );
         }
 
-        if ($this->container['scheduled_at'] === null) {
-            $invalid_properties[] = "'scheduled_at' can't be null";
+        if ($this->container['scheduledAt'] === null) {
+            $invalid_properties[] = "'scheduledAt' can't be null";
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
-            $invalid_properties[] = "invalid value for 'scheduled_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
+            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
         return $invalid_properties;
@@ -283,10 +283,10 @@ class GetCampaignOverview implements ArrayAccess
         if (!in_array($this->container['status'], $allowed_values)) {
             return false;
         }
-        if ($this->container['scheduled_at'] === null) {
+        if ($this->container['scheduledAt'] === null) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
             return false;
         }
         return true;
@@ -417,27 +417,27 @@ class GetCampaignOverview implements ArrayAccess
     }
 
     /**
-     * Gets scheduled_at
+     * Gets scheduledAt
      * @return string
      */
     public function getScheduledAt()
     {
-        return $this->container['scheduled_at'];
+        return $this->container['scheduledAt'];
     }
 
     /**
-     * Sets scheduled_at
-     * @param string $scheduled_at Date on which campaign is scheduled
+     * Sets scheduledAt
+     * @param string $scheduledAt Date on which campaign is scheduled
      * @return $this
      */
-    public function setScheduledAt($scheduled_at)
+    public function setScheduledAt($scheduledAt)
     {
 
-        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduled_at))) {
-            throw new \InvalidArgumentException("invalid value for $scheduled_at when calling GetCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduledAt))) {
+            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling GetCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['scheduled_at'] = $scheduled_at;
+        $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
     }

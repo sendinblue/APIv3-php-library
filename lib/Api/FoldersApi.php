@@ -92,9 +92,9 @@ class FoldersApi
      *
      * Create a folder
      *
-     * @param \Swagger\Client\Model\Name $name Name of the folder (required)
+     * @param \Swagger\Client\Model\CreaUpdateFolder $name Name of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
     public function createFolder($name)
     {
@@ -107,9 +107,9 @@ class FoldersApi
      *
      * Create a folder
      *
-     * @param \Swagger\Client\Model\Name $name Name of the folder (required)
+     * @param \Swagger\Client\Model\CreaUpdateFolder $name Name of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFolderWithHttpInfo($name)
     {
@@ -154,19 +154,19 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/contacts/folders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -180,13 +180,13 @@ class FoldersApi
      *
      * Delete a folder (and all its lists)
      *
-     * @param string $folder_id Id of the folder (required)
+     * @param string $folderId Id of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteFolder($folder_id)
+    public function deleteFolder($folderId)
     {
-        list($response) = $this->deleteFolderWithHttpInfo($folder_id);
+        list($response) = $this->deleteFolderWithHttpInfo($folderId);
         return $response;
     }
 
@@ -195,15 +195,15 @@ class FoldersApi
      *
      * Delete a folder (and all its lists)
      *
-     * @param string $folder_id Id of the folder (required)
+     * @param string $folderId Id of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFolderWithHttpInfo($folder_id)
+    public function deleteFolderWithHttpInfo($folderId)
     {
-        // verify the required parameter 'folder_id' is set
-        if ($folder_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $folder_id when calling deleteFolder');
+        // verify the required parameter 'folderId' is set
+        if ($folderId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folderId when calling deleteFolder');
         }
         // parse inputs
         $resourcePath = "/contacts/folders/{folderId}";
@@ -218,10 +218,10 @@ class FoldersApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($folder_id !== null) {
+        if ($folderId !== null) {
             $resourcePath = str_replace(
                 "{" . "folderId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($folder_id),
+                $this->apiClient->getSerializer()->toPathValue($folderId),
                 $resourcePath
             );
         }
@@ -253,11 +253,11 @@ class FoldersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -271,13 +271,13 @@ class FoldersApi
      *
      * Returns folder details
      *
-     * @param string $folder_id id of the folder (required)
+     * @param string $folderId id of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017Folders
+     * @return \Swagger\Client\Model\GetFolder
      */
-    public function getFolder($folder_id)
+    public function getFolder($folderId)
     {
-        list($response) = $this->getFolderWithHttpInfo($folder_id);
+        list($response) = $this->getFolderWithHttpInfo($folderId);
         return $response;
     }
 
@@ -286,15 +286,15 @@ class FoldersApi
      *
      * Returns folder details
      *
-     * @param string $folder_id id of the folder (required)
+     * @param string $folderId id of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017Folders, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetFolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFolderWithHttpInfo($folder_id)
+    public function getFolderWithHttpInfo($folderId)
     {
-        // verify the required parameter 'folder_id' is set
-        if ($folder_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $folder_id when calling getFolder');
+        // verify the required parameter 'folderId' is set
+        if ($folderId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folderId when calling getFolder');
         }
         // parse inputs
         $resourcePath = "/contacts/folders/{folderId}";
@@ -309,10 +309,10 @@ class FoldersApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($folder_id !== null) {
+        if ($folderId !== null) {
             $resourcePath = str_replace(
                 "{" . "folderId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($folder_id),
+                $this->apiClient->getSerializer()->toPathValue($folderId),
                 $resourcePath
             );
         }
@@ -336,23 +336,23 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017Folders',
+                '\Swagger\Client\Model\GetFolder',
                 '/contacts/folders/{folderId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017Folders', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetFolder', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017Folders', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetFolder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -366,15 +366,15 @@ class FoldersApi
      *
      * Get the lists in a folder
      *
-     * @param string $folder_id Id of the folder (required)
+     * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20018
+     * @return \Swagger\Client\Model\GetFolderLists
      */
-    public function getFolderLists($folder_id, $limit = '10', $offset = '0')
+    public function getFolderLists($folderId, $limit = '10', $offset = '0')
     {
-        list($response) = $this->getFolderListsWithHttpInfo($folder_id, $limit, $offset);
+        list($response) = $this->getFolderListsWithHttpInfo($folderId, $limit, $offset);
         return $response;
     }
 
@@ -383,17 +383,17 @@ class FoldersApi
      *
      * Get the lists in a folder
      *
-     * @param string $folder_id Id of the folder (required)
+     * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetFolderLists, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFolderListsWithHttpInfo($folder_id, $limit = '10', $offset = '0')
+    public function getFolderListsWithHttpInfo($folderId, $limit = '10', $offset = '0')
     {
-        // verify the required parameter 'folder_id' is set
-        if ($folder_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $folder_id when calling getFolderLists');
+        // verify the required parameter 'folderId' is set
+        if ($folderId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folderId when calling getFolderLists');
         }
         if (!is_null($limit) && ($limit > 50)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling FoldersApi.getFolderLists, must be smaller than or equal to 50.');
@@ -420,10 +420,10 @@ class FoldersApi
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // path params
-        if ($folder_id !== null) {
+        if ($folderId !== null) {
             $resourcePath = str_replace(
                 "{" . "folderId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($folder_id),
+                $this->apiClient->getSerializer()->toPathValue($folderId),
                 $resourcePath
             );
         }
@@ -447,23 +447,23 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20018',
+                '\Swagger\Client\Model\GetFolderLists',
                 '/contacts/folders/{folderId}/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetFolderLists', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetFolderLists', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -480,7 +480,7 @@ class FoldersApi
      * @param int $limit Number of documents per page (required)
      * @param int $offset Index of the first document of the page (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017
+     * @return \Swagger\Client\Model\GetFolders
      */
     public function getFolders($limit, $offset)
     {
@@ -496,7 +496,7 @@ class FoldersApi
      * @param int $limit Number of documents per page (required)
      * @param int $offset Index of the first document of the page (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetFolders, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFoldersWithHttpInfo($limit, $offset)
     {
@@ -552,19 +552,19 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017',
+                '\Swagger\Client\Model\GetFolders',
                 '/contacts/folders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetFolders', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetFolders', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -578,14 +578,14 @@ class FoldersApi
      *
      * Update a contact folder
      *
-     * @param string $folder_id Id of the folder (required)
-     * @param \Swagger\Client\Model\Name1 $name Name of the folder (required)
+     * @param string $folderId Id of the folder (required)
+     * @param \Swagger\Client\Model\CreaUpdateFolder $name Name of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateFolder($folder_id, $name)
+    public function updateFolder($folderId, $name)
     {
-        list($response) = $this->updateFolderWithHttpInfo($folder_id, $name);
+        list($response) = $this->updateFolderWithHttpInfo($folderId, $name);
         return $response;
     }
 
@@ -594,16 +594,16 @@ class FoldersApi
      *
      * Update a contact folder
      *
-     * @param string $folder_id Id of the folder (required)
-     * @param \Swagger\Client\Model\Name1 $name Name of the folder (required)
+     * @param string $folderId Id of the folder (required)
+     * @param \Swagger\Client\Model\CreaUpdateFolder $name Name of the folder (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateFolderWithHttpInfo($folder_id, $name)
+    public function updateFolderWithHttpInfo($folderId, $name)
     {
-        // verify the required parameter 'folder_id' is set
-        if ($folder_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $folder_id when calling updateFolder');
+        // verify the required parameter 'folderId' is set
+        if ($folderId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folderId when calling updateFolder');
         }
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -622,10 +622,10 @@ class FoldersApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($folder_id !== null) {
+        if ($folderId !== null) {
             $resourcePath = str_replace(
                 "{" . "folderId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($folder_id),
+                $this->apiClient->getSerializer()->toPathValue($folderId),
                 $resourcePath
             );
         }
@@ -662,11 +662,11 @@ class FoldersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

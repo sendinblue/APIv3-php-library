@@ -99,21 +99,21 @@ class UpdateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "html_content"
+     * Test attribute "htmlContent"
      */
     public function testPropertyHtmlContent()
     {
     }
 
     /**
-     * Test attribute "html_url"
+     * Test attribute "htmlUrl"
      */
     public function testPropertyHtmlUrl()
     {
     }
 
     /**
-     * Test attribute "scheduled_at"
+     * Test attribute "scheduledAt"
      */
     public function testPropertyScheduledAt()
     {
@@ -127,14 +127,14 @@ class UpdateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "replyTo"
      */
     public function testPropertyReplyTo()
     {
     }
 
     /**
-     * Test attribute "to_field"
+     * Test attribute "toField"
      */
     public function testPropertyToField()
     {
@@ -148,21 +148,21 @@ class UpdateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "attachment_url"
+     * Test attribute "attachmentUrl"
      */
     public function testPropertyAttachmentUrl()
     {
     }
 
     /**
-     * Test attribute "inline_image_activation"
+     * Test attribute "inlineImageActivation"
      */
     public function testPropertyInlineImageActivation()
     {
     }
 
     /**
-     * Test attribute "mirror_active"
+     * Test attribute "mirrorActive"
      */
     public function testPropertyMirrorActive()
     {
@@ -190,7 +190,7 @@ class UpdateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "utm_campaign"
+     * Test attribute "utmCampaign"
      */
     public function testPropertyUtmCampaign()
     {

@@ -92,13 +92,13 @@ class EmailCampaignsApi
      *
      * Create an email campaign
      *
-     * @param \Swagger\Client\Model\EmailCampaigns $email_campaigns Values to create a campaign (required)
+     * @param \Swagger\Client\Model\CreateEmailCampaign $emailCampaigns Values to create a campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createEmailCampaign($email_campaigns)
+    public function createEmailCampaign($emailCampaigns)
     {
-        list($response) = $this->createEmailCampaignWithHttpInfo($email_campaigns);
+        list($response) = $this->createEmailCampaignWithHttpInfo($emailCampaigns);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class EmailCampaignsApi
      *
      * Create an email campaign
      *
-     * @param \Swagger\Client\Model\EmailCampaigns $email_campaigns Values to create a campaign (required)
+     * @param \Swagger\Client\Model\CreateEmailCampaign $emailCampaigns Values to create a campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEmailCampaignWithHttpInfo($email_campaigns)
+    public function createEmailCampaignWithHttpInfo($emailCampaigns)
     {
-        // verify the required parameter 'email_campaigns' is set
-        if ($email_campaigns === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $email_campaigns when calling createEmailCampaign');
+        // verify the required parameter 'emailCampaigns' is set
+        if ($emailCampaigns === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $emailCampaigns when calling createEmailCampaign');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns";
@@ -131,8 +131,8 @@ class EmailCampaignsApi
 
         // body params
         $_tempBody = null;
-        if (isset($email_campaigns)) {
-            $_tempBody = $email_campaigns;
+        if (isset($emailCampaigns)) {
+            $_tempBody = $emailCampaigns;
         }
 
         // for model (json/xml)
@@ -154,19 +154,19 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/emailCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -180,13 +180,13 @@ class EmailCampaignsApi
      *
      * Delete an email campaign
      *
-     * @param string $campaign_id id of the campaign (required)
+     * @param string $campaignId id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteEmailCampaigns($campaign_id)
+    public function deleteEmailCampaigns($campaignId)
     {
-        list($response) = $this->deleteEmailCampaignsWithHttpInfo($campaign_id);
+        list($response) = $this->deleteEmailCampaignsWithHttpInfo($campaignId);
         return $response;
     }
 
@@ -195,15 +195,15 @@ class EmailCampaignsApi
      *
      * Delete an email campaign
      *
-     * @param string $campaign_id id of the campaign (required)
+     * @param string $campaignId id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEmailCampaignsWithHttpInfo($campaign_id)
+    public function deleteEmailCampaignsWithHttpInfo($campaignId)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling deleteEmailCampaigns');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling deleteEmailCampaigns');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}";
@@ -218,10 +218,10 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -253,11 +253,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -271,14 +271,14 @@ class EmailCampaignsApi
      *
      * Export the recipients of a campaign
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\RecipientExport $recipient_export Values to send for a recipient export request (optional)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\EmailExportRecipients $recipientExport Values to send for a recipient export request (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse202
+     * @return \Swagger\Client\Model\CreatedProcessId
      */
-    public function emailExportRecipients($campaign_id, $recipient_export = null)
+    public function emailExportRecipients($campaignId, $recipientExport = null)
     {
-        list($response) = $this->emailExportRecipientsWithHttpInfo($campaign_id, $recipient_export);
+        list($response) = $this->emailExportRecipientsWithHttpInfo($campaignId, $recipientExport);
         return $response;
     }
 
@@ -287,16 +287,16 @@ class EmailCampaignsApi
      *
      * Export the recipients of a campaign
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\RecipientExport $recipient_export Values to send for a recipient export request (optional)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\EmailExportRecipients $recipientExport Values to send for a recipient export request (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailExportRecipientsWithHttpInfo($campaign_id, $recipient_export = null)
+    public function emailExportRecipientsWithHttpInfo($campaignId, $recipientExport = null)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling emailExportRecipients');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling emailExportRecipients');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}/exportRecipients";
@@ -311,17 +311,17 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($recipient_export)) {
-            $_tempBody = $recipient_export;
+        if (isset($recipientExport)) {
+            $_tempBody = $recipientExport;
         }
 
         // for model (json/xml)
@@ -343,23 +343,23 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse202',
+                '\Swagger\Client\Model\CreatedProcessId',
                 '/emailCampaigns/{campaignId}/exportRecipients'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse202', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreatedProcessId', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse202', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreatedProcessId', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -373,13 +373,13 @@ class EmailCampaignsApi
      *
      * Get campaign informations
      *
-     * @param string $campaign_id Id of the campaign (required)
+     * @param string $campaignId Id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2008Campaigns
+     * @return \Swagger\Client\Model\GetEmailCampaign
      */
-    public function getEmailCampaign($campaign_id)
+    public function getEmailCampaign($campaignId)
     {
-        list($response) = $this->getEmailCampaignWithHttpInfo($campaign_id);
+        list($response) = $this->getEmailCampaignWithHttpInfo($campaignId);
         return $response;
     }
 
@@ -388,15 +388,15 @@ class EmailCampaignsApi
      *
      * Get campaign informations
      *
-     * @param string $campaign_id Id of the campaign (required)
+     * @param string $campaignId Id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2008Campaigns, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetEmailCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailCampaignWithHttpInfo($campaign_id)
+    public function getEmailCampaignWithHttpInfo($campaignId)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling getEmailCampaign');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling getEmailCampaign');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}";
@@ -411,10 +411,10 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -438,23 +438,23 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2008Campaigns',
+                '\Swagger\Client\Model\GetEmailCampaign',
                 '/emailCampaigns/{campaignId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008Campaigns', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetEmailCampaign', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008Campaigns', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetEmailCampaign', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -473,7 +473,7 @@ class EmailCampaignsApi
      * @param int $limit Number of documents per page (optional, default to 500)
      * @param int $offset Index of the first document in the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2008
+     * @return \Swagger\Client\Model\GetEmailCampaigns
      */
     public function getEmailCampaigns($type = null, $status = null, $limit = '500', $offset = '0')
     {
@@ -491,7 +491,7 @@ class EmailCampaignsApi
      * @param int $limit Number of documents per page (optional, default to 500)
      * @param int $offset Index of the first document in the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetEmailCampaigns, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailCampaignsWithHttpInfo($type = null, $status = null, $limit = '500', $offset = '0')
     {
@@ -547,19 +547,19 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2008',
+                '\Swagger\Client\Model\GetEmailCampaigns',
                 '/emailCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetEmailCampaigns', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetEmailCampaigns', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -573,13 +573,13 @@ class EmailCampaignsApi
      *
      * Send an email campaign id of the campaign immediately
      *
-     * @param string $campaign_id Id of the campaign (required)
+     * @param string $campaignId Id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendEmailCampaignNow($campaign_id)
+    public function sendEmailCampaignNow($campaignId)
     {
-        list($response) = $this->sendEmailCampaignNowWithHttpInfo($campaign_id);
+        list($response) = $this->sendEmailCampaignNowWithHttpInfo($campaignId);
         return $response;
     }
 
@@ -588,15 +588,15 @@ class EmailCampaignsApi
      *
      * Send an email campaign id of the campaign immediately
      *
-     * @param string $campaign_id Id of the campaign (required)
+     * @param string $campaignId Id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendEmailCampaignNowWithHttpInfo($campaign_id)
+    public function sendEmailCampaignNowWithHttpInfo($campaignId)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling sendEmailCampaignNow');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendEmailCampaignNow');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}/sendNow";
@@ -611,10 +611,10 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -646,15 +646,15 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 402:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -668,14 +668,14 @@ class EmailCampaignsApi
      *
      * Send the report of a campaigns
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\SendReport1 $send_report Values for send a report (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\SendReport $sendReport Values for send a report (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendReport($campaign_id, $send_report)
+    public function sendReport($campaignId, $sendReport)
     {
-        list($response) = $this->sendReportWithHttpInfo($campaign_id, $send_report);
+        list($response) = $this->sendReportWithHttpInfo($campaignId, $sendReport);
         return $response;
     }
 
@@ -684,20 +684,20 @@ class EmailCampaignsApi
      *
      * Send the report of a campaigns
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\SendReport1 $send_report Values for send a report (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\SendReport $sendReport Values for send a report (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendReportWithHttpInfo($campaign_id, $send_report)
+    public function sendReportWithHttpInfo($campaignId, $sendReport)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling sendReport');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendReport');
         }
-        // verify the required parameter 'send_report' is set
-        if ($send_report === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_report when calling sendReport');
+        // verify the required parameter 'sendReport' is set
+        if ($sendReport === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendReport when calling sendReport');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}/sendReport";
@@ -712,17 +712,17 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($send_report)) {
-            $_tempBody = $send_report;
+        if (isset($sendReport)) {
+            $_tempBody = $sendReport;
         }
 
         // for model (json/xml)
@@ -752,11 +752,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -770,14 +770,14 @@ class EmailCampaignsApi
      *
      * Send an email campaign to your test list
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\EmailTo $email_to  (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\SendTestEmail $emailTo  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendTestEmail($campaign_id, $email_to)
+    public function sendTestEmail($campaignId, $emailTo)
     {
-        list($response) = $this->sendTestEmailWithHttpInfo($campaign_id, $email_to);
+        list($response) = $this->sendTestEmailWithHttpInfo($campaignId, $emailTo);
         return $response;
     }
 
@@ -786,20 +786,20 @@ class EmailCampaignsApi
      *
      * Send an email campaign to your test list
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\EmailTo $email_to  (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\SendTestEmail $emailTo  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTestEmailWithHttpInfo($campaign_id, $email_to)
+    public function sendTestEmailWithHttpInfo($campaignId, $emailTo)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling sendTestEmail');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendTestEmail');
         }
-        // verify the required parameter 'email_to' is set
-        if ($email_to === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $email_to when calling sendTestEmail');
+        // verify the required parameter 'emailTo' is set
+        if ($emailTo === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $emailTo when calling sendTestEmail');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}/sendTest";
@@ -814,17 +814,17 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($email_to)) {
-            $_tempBody = $email_to;
+        if (isset($emailTo)) {
+            $_tempBody = $emailTo;
         }
 
         // for model (json/xml)
@@ -854,11 +854,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostSendFailed', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -872,14 +872,14 @@ class EmailCampaignsApi
      *
      * Update a campaign status
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\Status $status Status of the campaign (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\UpdateCampaignStatus $status Status of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateCampaignStatus($campaign_id, $status)
+    public function updateCampaignStatus($campaignId, $status)
     {
-        list($response) = $this->updateCampaignStatusWithHttpInfo($campaign_id, $status);
+        list($response) = $this->updateCampaignStatusWithHttpInfo($campaignId, $status);
         return $response;
     }
 
@@ -888,16 +888,16 @@ class EmailCampaignsApi
      *
      * Update a campaign status
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\Status $status Status of the campaign (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\UpdateCampaignStatus $status Status of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCampaignStatusWithHttpInfo($campaign_id, $status)
+    public function updateCampaignStatusWithHttpInfo($campaignId, $status)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling updateCampaignStatus');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateCampaignStatus');
         }
         // verify the required parameter 'status' is set
         if ($status === null) {
@@ -916,10 +916,10 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -956,11 +956,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -974,14 +974,14 @@ class EmailCampaignsApi
      *
      * Update a campaign
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\EmailCampaign $email_campaign Values to update a campaign (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\UpdateEmailCampaign $emailCampaign Values to update a campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateEmailCampaigns($campaign_id, $email_campaign)
+    public function updateEmailCampaigns($campaignId, $emailCampaign)
     {
-        list($response) = $this->updateEmailCampaignsWithHttpInfo($campaign_id, $email_campaign);
+        list($response) = $this->updateEmailCampaignsWithHttpInfo($campaignId, $emailCampaign);
         return $response;
     }
 
@@ -990,20 +990,20 @@ class EmailCampaignsApi
      *
      * Update a campaign
      *
-     * @param string $campaign_id Id of the campaign (required)
-     * @param \Swagger\Client\Model\EmailCampaign $email_campaign Values to update a campaign (required)
+     * @param string $campaignId Id of the campaign (required)
+     * @param \Swagger\Client\Model\UpdateEmailCampaign $emailCampaign Values to update a campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateEmailCampaignsWithHttpInfo($campaign_id, $email_campaign)
+    public function updateEmailCampaignsWithHttpInfo($campaignId, $emailCampaign)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling updateEmailCampaigns');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateEmailCampaigns');
         }
-        // verify the required parameter 'email_campaign' is set
-        if ($email_campaign === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $email_campaign when calling updateEmailCampaigns');
+        // verify the required parameter 'emailCampaign' is set
+        if ($emailCampaign === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $emailCampaign when calling updateEmailCampaigns');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}";
@@ -1018,17 +1018,17 @@ class EmailCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($email_campaign)) {
-            $_tempBody = $email_campaign;
+        if (isset($emailCampaign)) {
+            $_tempBody = $emailCampaign;
         }
 
         // for model (json/xml)
@@ -1058,11 +1058,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

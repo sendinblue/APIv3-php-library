@@ -54,15 +54,15 @@ class SendSmtpEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'sender' => '\Swagger\Client\Model\SmtpemailSender',
-        'to' => '\Swagger\Client\Model\SmtpemailTo[]',
-        'bcc' => '\Swagger\Client\Model\SmtpemailBcc[]',
-        'cc' => '\Swagger\Client\Model\SmtpemailCc[]',
-        'html_content' => 'string',
-        'text_content' => 'string',
+        'sender' => '\Swagger\Client\Model\SendSmtpEmailSender',
+        'to' => '\Swagger\Client\Model\SendSmtpEmailTo[]',
+        'bcc' => '\Swagger\Client\Model\SendSmtpEmailBcc[]',
+        'cc' => '\Swagger\Client\Model\SendSmtpEmailCc[]',
+        'htmlContent' => 'string',
+        'textContent' => 'string',
         'subject' => 'string',
-        'reply_to' => '\Swagger\Client\Model\SmtpemailReplyTo',
-        'attachment' => '\Swagger\Client\Model\SmtpemailAttachment[]',
+        'replyTo' => '\Swagger\Client\Model\SendSmtpEmailReplyTo',
+        'attachment' => '\Swagger\Client\Model\SendSmtpEmailAttachment[]',
         'headers' => 'map[string,string]'
     ];
 
@@ -75,10 +75,10 @@ class SendSmtpEmail implements ArrayAccess
         'to' => null,
         'bcc' => null,
         'cc' => null,
-        'html_content' => null,
-        'text_content' => null,
+        'htmlContent' => null,
+        'textContent' => null,
         'subject' => null,
-        'reply_to' => null,
+        'replyTo' => null,
         'attachment' => null,
         'headers' => null
     ];
@@ -102,10 +102,10 @@ class SendSmtpEmail implements ArrayAccess
         'to' => 'to',
         'bcc' => 'bcc',
         'cc' => 'cc',
-        'html_content' => 'htmlContent',
-        'text_content' => 'textContent',
+        'htmlContent' => 'htmlContent',
+        'textContent' => 'textContent',
         'subject' => 'subject',
-        'reply_to' => 'replyTo',
+        'replyTo' => 'replyTo',
         'attachment' => 'attachment',
         'headers' => 'headers'
     ];
@@ -120,10 +120,10 @@ class SendSmtpEmail implements ArrayAccess
         'to' => 'setTo',
         'bcc' => 'setBcc',
         'cc' => 'setCc',
-        'html_content' => 'setHtmlContent',
-        'text_content' => 'setTextContent',
+        'htmlContent' => 'setHtmlContent',
+        'textContent' => 'setTextContent',
         'subject' => 'setSubject',
-        'reply_to' => 'setReplyTo',
+        'replyTo' => 'setReplyTo',
         'attachment' => 'setAttachment',
         'headers' => 'setHeaders'
     ];
@@ -138,10 +138,10 @@ class SendSmtpEmail implements ArrayAccess
         'to' => 'getTo',
         'bcc' => 'getBcc',
         'cc' => 'getCc',
-        'html_content' => 'getHtmlContent',
-        'text_content' => 'getTextContent',
+        'htmlContent' => 'getHtmlContent',
+        'textContent' => 'getTextContent',
         'subject' => 'getSubject',
-        'reply_to' => 'getReplyTo',
+        'replyTo' => 'getReplyTo',
         'attachment' => 'getAttachment',
         'headers' => 'getHeaders'
     ];
@@ -181,10 +181,10 @@ class SendSmtpEmail implements ArrayAccess
         $this->container['to'] = isset($data['to']) ? $data['to'] : null;
         $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
         $this->container['cc'] = isset($data['cc']) ? $data['cc'] : null;
-        $this->container['html_content'] = isset($data['html_content']) ? $data['html_content'] : null;
-        $this->container['text_content'] = isset($data['text_content']) ? $data['text_content'] : null;
+        $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
+        $this->container['textContent'] = isset($data['textContent']) ? $data['textContent'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
         $this->container['attachment'] = isset($data['attachment']) ? $data['attachment'] : null;
         $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
     }
@@ -201,8 +201,8 @@ class SendSmtpEmail implements ArrayAccess
         if ($this->container['to'] === null) {
             $invalid_properties[] = "'to' can't be null";
         }
-        if ($this->container['html_content'] === null) {
-            $invalid_properties[] = "'html_content' can't be null";
+        if ($this->container['htmlContent'] === null) {
+            $invalid_properties[] = "'htmlContent' can't be null";
         }
         if ($this->container['subject'] === null) {
             $invalid_properties[] = "'subject' can't be null";
@@ -222,7 +222,7 @@ class SendSmtpEmail implements ArrayAccess
         if ($this->container['to'] === null) {
             return false;
         }
-        if ($this->container['html_content'] === null) {
+        if ($this->container['htmlContent'] === null) {
             return false;
         }
         if ($this->container['subject'] === null) {
@@ -234,7 +234,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\SmtpemailSender
+     * @return \Swagger\Client\Model\SendSmtpEmailSender
      */
     public function getSender()
     {
@@ -243,7 +243,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\SmtpemailSender $sender
+     * @param \Swagger\Client\Model\SendSmtpEmailSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -255,7 +255,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets to
-     * @return \Swagger\Client\Model\SmtpemailTo[]
+     * @return \Swagger\Client\Model\SendSmtpEmailTo[]
      */
     public function getTo()
     {
@@ -264,7 +264,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets to
-     * @param \Swagger\Client\Model\SmtpemailTo[] $to Email addresses and names of the recipients
+     * @param \Swagger\Client\Model\SendSmtpEmailTo[] $to Email addresses and names of the recipients
      * @return $this
      */
     public function setTo($to)
@@ -276,7 +276,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets bcc
-     * @return \Swagger\Client\Model\SmtpemailBcc[]
+     * @return \Swagger\Client\Model\SendSmtpEmailBcc[]
      */
     public function getBcc()
     {
@@ -285,7 +285,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets bcc
-     * @param \Swagger\Client\Model\SmtpemailBcc[] $bcc Email addresses and names of the recipients in bcc
+     * @param \Swagger\Client\Model\SendSmtpEmailBcc[] $bcc Email addresses and names of the recipients in bcc
      * @return $this
      */
     public function setBcc($bcc)
@@ -297,7 +297,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets cc
-     * @return \Swagger\Client\Model\SmtpemailCc[]
+     * @return \Swagger\Client\Model\SendSmtpEmailCc[]
      */
     public function getCc()
     {
@@ -306,7 +306,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets cc
-     * @param \Swagger\Client\Model\SmtpemailCc[] $cc Email addresses and names of the recipients in cc
+     * @param \Swagger\Client\Model\SendSmtpEmailCc[] $cc Email addresses and names of the recipients in cc
      * @return $this
      */
     public function setCc($cc)
@@ -317,43 +317,43 @@ class SendSmtpEmail implements ArrayAccess
     }
 
     /**
-     * Gets html_content
+     * Gets htmlContent
      * @return string
      */
     public function getHtmlContent()
     {
-        return $this->container['html_content'];
+        return $this->container['htmlContent'];
     }
 
     /**
-     * Sets html_content
-     * @param string $html_content HTML body of the message
+     * Sets htmlContent
+     * @param string $htmlContent HTML body of the message
      * @return $this
      */
-    public function setHtmlContent($html_content)
+    public function setHtmlContent($htmlContent)
     {
-        $this->container['html_content'] = $html_content;
+        $this->container['htmlContent'] = $htmlContent;
 
         return $this;
     }
 
     /**
-     * Gets text_content
+     * Gets textContent
      * @return string
      */
     public function getTextContent()
     {
-        return $this->container['text_content'];
+        return $this->container['textContent'];
     }
 
     /**
-     * Sets text_content
-     * @param string $text_content Plain Text body of the message
+     * Sets textContent
+     * @param string $textContent Plain Text body of the message
      * @return $this
      */
-    public function setTextContent($text_content)
+    public function setTextContent($textContent)
     {
-        $this->container['text_content'] = $text_content;
+        $this->container['textContent'] = $textContent;
 
         return $this;
     }
@@ -380,29 +380,29 @@ class SendSmtpEmail implements ArrayAccess
     }
 
     /**
-     * Gets reply_to
-     * @return \Swagger\Client\Model\SmtpemailReplyTo
+     * Gets replyTo
+     * @return \Swagger\Client\Model\SendSmtpEmailReplyTo
      */
     public function getReplyTo()
     {
-        return $this->container['reply_to'];
+        return $this->container['replyTo'];
     }
 
     /**
-     * Sets reply_to
-     * @param \Swagger\Client\Model\SmtpemailReplyTo $reply_to
+     * Sets replyTo
+     * @param \Swagger\Client\Model\SendSmtpEmailReplyTo $replyTo
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setReplyTo($replyTo)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['replyTo'] = $replyTo;
 
         return $this;
     }
 
     /**
      * Gets attachment
-     * @return \Swagger\Client\Model\SmtpemailAttachment[]
+     * @return \Swagger\Client\Model\SendSmtpEmailAttachment[]
      */
     public function getAttachment()
     {
@@ -411,7 +411,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets attachment
-     * @param \Swagger\Client\Model\SmtpemailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * @param \Swagger\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
      * @return $this
      */
     public function setAttachment($attachment)

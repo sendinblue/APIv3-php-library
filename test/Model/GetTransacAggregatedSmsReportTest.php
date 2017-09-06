@@ -99,14 +99,14 @@ class GetTransacAggregatedSmsReportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "hard_bounces"
+     * Test attribute "hardBounces"
      */
     public function testPropertyHardBounces()
     {
     }
 
     /**
-     * Test attribute "soft_bounces"
+     * Test attribute "softBounces"
      */
     public function testPropertySoftBounces()
     {

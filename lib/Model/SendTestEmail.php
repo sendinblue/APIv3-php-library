@@ -54,7 +54,7 @@ class SendTestEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'email_to' => 'string[]'
+        'emailTo' => 'string[]'
     ];
 
     /**
@@ -62,7 +62,7 @@ class SendTestEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'email_to' => 'email'
+        'emailTo' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class SendTestEmail implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email_to' => 'emailTo'
+        'emailTo' => 'emailTo'
     ];
 
 
@@ -89,7 +89,7 @@ class SendTestEmail implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email_to' => 'setEmailTo'
+        'emailTo' => 'setEmailTo'
     ];
 
 
@@ -98,7 +98,7 @@ class SendTestEmail implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email_to' => 'getEmailTo'
+        'emailTo' => 'getEmailTo'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class SendTestEmail implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['email_to'] = isset($data['email_to']) ? $data['email_to'] : null;
+        $this->container['emailTo'] = isset($data['emailTo']) ? $data['emailTo'] : null;
     }
 
     /**
@@ -161,22 +161,22 @@ class SendTestEmail implements ArrayAccess
 
 
     /**
-     * Gets email_to
+     * Gets emailTo
      * @return string[]
      */
     public function getEmailTo()
     {
-        return $this->container['email_to'];
+        return $this->container['emailTo'];
     }
 
     /**
-     * Sets email_to
-     * @param string[] $email_to If empty the test email will be sent to your entire test list. Use this field to send it to specific addresses in your list.
+     * Sets emailTo
+     * @param string[] $emailTo If empty the test email will be sent to your entire test list. Use this field to send it to specific addresses in your list.
      * @return $this
      */
-    public function setEmailTo($email_to)
+    public function setEmailTo($emailTo)
     {
-        $this->container['email_to'] = $email_to;
+        $this->container['emailTo'] = $emailTo;
 
         return $this;
     }

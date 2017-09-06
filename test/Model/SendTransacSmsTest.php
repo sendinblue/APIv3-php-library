@@ -106,7 +106,7 @@ class SendTransacSmsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "web_url"
+     * Test attribute "webUrl"
      */
     public function testPropertyWebUrl()
     {

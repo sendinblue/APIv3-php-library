@@ -78,14 +78,14 @@ class GetCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "list_id"
+     * Test attribute "listId"
      */
     public function testPropertyListId()
     {
     }
 
     /**
-     * Test attribute "unique_clicks"
+     * Test attribute "uniqueClicks"
      */
     public function testPropertyUniqueClicks()
     {
@@ -120,21 +120,21 @@ class GetCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "soft_bounces"
+     * Test attribute "softBounces"
      */
     public function testPropertySoftBounces()
     {
     }
 
     /**
-     * Test attribute "hard_bounces"
+     * Test attribute "hardBounces"
      */
     public function testPropertyHardBounces()
     {
     }
 
     /**
-     * Test attribute "unique_views"
+     * Test attribute "uniqueViews"
      */
     public function testPropertyUniqueViews()
     {

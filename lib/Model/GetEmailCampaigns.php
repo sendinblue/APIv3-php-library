@@ -54,7 +54,7 @@ class GetEmailCampaigns implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'campaigns' => '\Swagger\Client\Model\InlineResponse2008Campaigns[]',
+        'campaigns' => 'null[]',
         'count' => 'int'
     ];
 
@@ -174,7 +174,7 @@ class GetEmailCampaigns implements ArrayAccess
 
     /**
      * Gets campaigns
-     * @return \Swagger\Client\Model\InlineResponse2008Campaigns[]
+     * @return null[]
      */
     public function getCampaigns()
     {
@@ -183,7 +183,7 @@ class GetEmailCampaigns implements ArrayAccess
 
     /**
      * Sets campaigns
-     * @param \Swagger\Client\Model\InlineResponse2008Campaigns[] $campaigns
+     * @param null[] $campaigns
      * @return $this
      */
     public function setCampaigns($campaigns)

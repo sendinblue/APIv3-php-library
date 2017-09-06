@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **recipient** | **string** | Mobile number to send SMS with the country code | 
 **content** | **string** | Content of the message. If more than 160 characters long, multiple text messages will be sent | 
 **tag** | **string** | Tag of the message | [optional] 
-**web_url** | **string** | Webhook to call for each event triggered by the message (delivered etc.) | [optional] 
+**webUrl** | **string** | Webhook to call for each event triggered by the message (delivered etc.) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

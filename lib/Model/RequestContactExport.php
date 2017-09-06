@@ -54,9 +54,9 @@ class RequestContactExport implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'export_attributes' => 'string[]',
-        'contact_filter' => 'object',
-        'notify_url' => 'string'
+        'exportAttributes' => 'string[]',
+        'contactFilter' => 'object',
+        'notifyUrl' => 'string'
     ];
 
     /**
@@ -64,9 +64,9 @@ class RequestContactExport implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'export_attributes' => null,
-        'contact_filter' => null,
-        'notify_url' => 'url'
+        'exportAttributes' => null,
+        'contactFilter' => null,
+        'notifyUrl' => 'url'
     ];
 
     public static function swaggerTypes()
@@ -84,9 +84,9 @@ class RequestContactExport implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_attributes' => 'exportAttributes',
-        'contact_filter' => 'contactFilter',
-        'notify_url' => 'notifyUrl'
+        'exportAttributes' => 'exportAttributes',
+        'contactFilter' => 'contactFilter',
+        'notifyUrl' => 'notifyUrl'
     ];
 
 
@@ -95,9 +95,9 @@ class RequestContactExport implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'export_attributes' => 'setExportAttributes',
-        'contact_filter' => 'setContactFilter',
-        'notify_url' => 'setNotifyUrl'
+        'exportAttributes' => 'setExportAttributes',
+        'contactFilter' => 'setContactFilter',
+        'notifyUrl' => 'setNotifyUrl'
     ];
 
 
@@ -106,9 +106,9 @@ class RequestContactExport implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'export_attributes' => 'getExportAttributes',
-        'contact_filter' => 'getContactFilter',
-        'notify_url' => 'getNotifyUrl'
+        'exportAttributes' => 'getExportAttributes',
+        'contactFilter' => 'getContactFilter',
+        'notifyUrl' => 'getNotifyUrl'
     ];
 
     public static function attributeMap()
@@ -142,9 +142,9 @@ class RequestContactExport implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['export_attributes'] = isset($data['export_attributes']) ? $data['export_attributes'] : null;
-        $this->container['contact_filter'] = isset($data['contact_filter']) ? $data['contact_filter'] : null;
-        $this->container['notify_url'] = isset($data['notify_url']) ? $data['notify_url'] : null;
+        $this->container['exportAttributes'] = isset($data['exportAttributes']) ? $data['exportAttributes'] : null;
+        $this->container['contactFilter'] = isset($data['contactFilter']) ? $data['contactFilter'] : null;
+        $this->container['notifyUrl'] = isset($data['notifyUrl']) ? $data['notifyUrl'] : null;
     }
 
     /**
@@ -156,8 +156,8 @@ class RequestContactExport implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['contact_filter'] === null) {
-            $invalid_properties[] = "'contact_filter' can't be null";
+        if ($this->container['contactFilter'] === null) {
+            $invalid_properties[] = "'contactFilter' can't be null";
         }
         return $invalid_properties;
     }
@@ -171,7 +171,7 @@ class RequestContactExport implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['contact_filter'] === null) {
+        if ($this->container['contactFilter'] === null) {
             return false;
         }
         return true;
@@ -179,64 +179,64 @@ class RequestContactExport implements ArrayAccess
 
 
     /**
-     * Gets export_attributes
+     * Gets exportAttributes
      * @return string[]
      */
     public function getExportAttributes()
     {
-        return $this->container['export_attributes'];
+        return $this->container['exportAttributes'];
     }
 
     /**
-     * Sets export_attributes
-     * @param string[] $export_attributes Name of attributes to export. These attributes must be in your contact database
+     * Sets exportAttributes
+     * @param string[] $exportAttributes Name of attributes to export. These attributes must be in your contact database
      * @return $this
      */
-    public function setExportAttributes($export_attributes)
+    public function setExportAttributes($exportAttributes)
     {
-        $this->container['export_attributes'] = $export_attributes;
+        $this->container['exportAttributes'] = $exportAttributes;
 
         return $this;
     }
 
     /**
-     * Gets contact_filter
+     * Gets contactFilter
      * @return object
      */
     public function getContactFilter()
     {
-        return $this->container['contact_filter'];
+        return $this->container['contactFilter'];
     }
 
     /**
-     * Sets contact_filter
-     * @param object $contact_filter Filter to apply to the export
+     * Sets contactFilter
+     * @param object $contactFilter Filter to apply to the export
      * @return $this
      */
-    public function setContactFilter($contact_filter)
+    public function setContactFilter($contactFilter)
     {
-        $this->container['contact_filter'] = $contact_filter;
+        $this->container['contactFilter'] = $contactFilter;
 
         return $this;
     }
 
     /**
-     * Gets notify_url
+     * Gets notifyUrl
      * @return string
      */
     public function getNotifyUrl()
     {
-        return $this->container['notify_url'];
+        return $this->container['notifyUrl'];
     }
 
     /**
-     * Sets notify_url
-     * @param string $notify_url Webhook that will be called once the export process is finished
+     * Sets notifyUrl
+     * @param string $notifyUrl Webhook that will be called once the export process is finished
      * @return $this
      */
-    public function setNotifyUrl($notify_url)
+    public function setNotifyUrl($notifyUrl)
     {
-        $this->container['notify_url'] = $notify_url;
+        $this->container['notifyUrl'] = $notifyUrl;
 
         return $this;
     }

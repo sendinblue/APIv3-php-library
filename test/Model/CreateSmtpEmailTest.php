@@ -78,7 +78,7 @@ class CreateSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "message_id"
+     * Test attribute "messageId"
      */
     public function testPropertyMessageId()
     {

@@ -92,13 +92,13 @@ class SMSCampaignsApi
      *
      * Creates a SMS campaign
      *
-     * @param \Swagger\Client\Model\CreateSmsCampaign1 $create_sms_campaign Values to create an SMS Campaign (required)
+     * @param \Swagger\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createSMSCampaign($create_sms_campaign)
+    public function createSMSCampaign($createSmsCampaign)
     {
-        list($response) = $this->createSMSCampaignWithHttpInfo($create_sms_campaign);
+        list($response) = $this->createSMSCampaignWithHttpInfo($createSmsCampaign);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class SMSCampaignsApi
      *
      * Creates a SMS campaign
      *
-     * @param \Swagger\Client\Model\CreateSmsCampaign1 $create_sms_campaign Values to create an SMS Campaign (required)
+     * @param \Swagger\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSMSCampaignWithHttpInfo($create_sms_campaign)
+    public function createSMSCampaignWithHttpInfo($createSmsCampaign)
     {
-        // verify the required parameter 'create_sms_campaign' is set
-        if ($create_sms_campaign === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_sms_campaign when calling createSMSCampaign');
+        // verify the required parameter 'createSmsCampaign' is set
+        if ($createSmsCampaign === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createSmsCampaign when calling createSMSCampaign');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns";
@@ -131,8 +131,8 @@ class SMSCampaignsApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_sms_campaign)) {
-            $_tempBody = $create_sms_campaign;
+        if (isset($createSmsCampaign)) {
+            $_tempBody = $createSmsCampaign;
         }
 
         // for model (json/xml)
@@ -154,19 +154,19 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/smsCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -180,13 +180,13 @@ class SMSCampaignsApi
      *
      * Delete the SMS campaign
      *
-     * @param string $campaign_id id of the SMS campaign (required)
+     * @param string $campaignId id of the SMS campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteSMSCampaigns($campaign_id)
+    public function deleteSMSCampaigns($campaignId)
     {
-        list($response) = $this->deleteSMSCampaignsWithHttpInfo($campaign_id);
+        list($response) = $this->deleteSMSCampaignsWithHttpInfo($campaignId);
         return $response;
     }
 
@@ -195,15 +195,15 @@ class SMSCampaignsApi
      *
      * Delete the SMS campaign
      *
-     * @param string $campaign_id id of the SMS campaign (required)
+     * @param string $campaignId id of the SMS campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSMSCampaignsWithHttpInfo($campaign_id)
+    public function deleteSMSCampaignsWithHttpInfo($campaignId)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling deleteSMSCampaigns');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling deleteSMSCampaigns');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}";
@@ -218,10 +218,10 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -253,11 +253,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -275,7 +275,7 @@ class SMSCampaignsApi
      * @param int $limit Number limitation for the result returned (optional, default to 500)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20021
+     * @return \Swagger\Client\Model\GetSmsCampaigns
      */
     public function getSMSCampaigns($status = null, $limit = '500', $offset = '0')
     {
@@ -292,7 +292,7 @@ class SMSCampaignsApi
      * @param int $limit Number limitation for the result returned (optional, default to 500)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetSmsCampaigns, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSMSCampaignsWithHttpInfo($status = null, $limit = '500', $offset = '0')
     {
@@ -344,19 +344,19 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20021',
+                '\Swagger\Client\Model\GetSmsCampaigns',
                 '/smsCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20021', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetSmsCampaigns', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20021', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetSmsCampaigns', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -370,14 +370,14 @@ class SMSCampaignsApi
      *
      * Get a SMS campaign
      *
-     * @param string $campaign_id id of the SMS campaign (required)
-     * @param \Swagger\Client\Model\GetSmsCampaign1 $get_sms_campaign Values to update an SMS Campaign (required)
+     * @param string $campaignId id of the SMS campaign (required)
+     * @param \Swagger\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20021Campaigns
+     * @return \Swagger\Client\Model\GetSmsCampaign
      */
-    public function getSmsCampaign($campaign_id, $get_sms_campaign)
+    public function getSmsCampaign($campaignId, $getSmsCampaign)
     {
-        list($response) = $this->getSmsCampaignWithHttpInfo($campaign_id, $get_sms_campaign);
+        list($response) = $this->getSmsCampaignWithHttpInfo($campaignId, $getSmsCampaign);
         return $response;
     }
 
@@ -386,20 +386,20 @@ class SMSCampaignsApi
      *
      * Get a SMS campaign
      *
-     * @param string $campaign_id id of the SMS campaign (required)
-     * @param \Swagger\Client\Model\GetSmsCampaign1 $get_sms_campaign Values to update an SMS Campaign (required)
+     * @param string $campaignId id of the SMS campaign (required)
+     * @param \Swagger\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20021Campaigns, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetSmsCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmsCampaignWithHttpInfo($campaign_id, $get_sms_campaign)
+    public function getSmsCampaignWithHttpInfo($campaignId, $getSmsCampaign)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling getSmsCampaign');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling getSmsCampaign');
         }
-        // verify the required parameter 'get_sms_campaign' is set
-        if ($get_sms_campaign === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $get_sms_campaign when calling getSmsCampaign');
+        // verify the required parameter 'getSmsCampaign' is set
+        if ($getSmsCampaign === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $getSmsCampaign when calling getSmsCampaign');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}";
@@ -414,17 +414,17 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($get_sms_campaign)) {
-            $_tempBody = $get_sms_campaign;
+        if (isset($getSmsCampaign)) {
+            $_tempBody = $getSmsCampaign;
         }
 
         // for model (json/xml)
@@ -446,23 +446,23 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20021Campaigns',
+                '\Swagger\Client\Model\GetSmsCampaign',
                 '/smsCampaigns/{campaignId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20021Campaigns', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetSmsCampaign', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20021Campaigns', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetSmsCampaign', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -476,14 +476,14 @@ class SMSCampaignsApi
      *
      * Exports the recipients of the specified campaign.
      *
-     * @param string $campaign_id id of the campaign (required)
-     * @param \Swagger\Client\Model\RecipientExport1 $recipient_export Values to send for a recipient export request (optional)
+     * @param string $campaignId id of the campaign (required)
+     * @param \Swagger\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse202
+     * @return \Swagger\Client\Model\CreatedProcessId
      */
-    public function requestSMSRecipientExport($campaign_id, $recipient_export = null)
+    public function requestSMSRecipientExport($campaignId, $recipientExport = null)
     {
-        list($response) = $this->requestSMSRecipientExportWithHttpInfo($campaign_id, $recipient_export);
+        list($response) = $this->requestSMSRecipientExportWithHttpInfo($campaignId, $recipientExport);
         return $response;
     }
 
@@ -492,16 +492,16 @@ class SMSCampaignsApi
      *
      * Exports the recipients of the specified campaign.
      *
-     * @param string $campaign_id id of the campaign (required)
-     * @param \Swagger\Client\Model\RecipientExport1 $recipient_export Values to send for a recipient export request (optional)
+     * @param string $campaignId id of the campaign (required)
+     * @param \Swagger\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
      */
-    public function requestSMSRecipientExportWithHttpInfo($campaign_id, $recipient_export = null)
+    public function requestSMSRecipientExportWithHttpInfo($campaignId, $recipientExport = null)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling requestSMSRecipientExport');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling requestSMSRecipientExport');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/exportRecipients";
@@ -516,17 +516,17 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($recipient_export)) {
-            $_tempBody = $recipient_export;
+        if (isset($recipientExport)) {
+            $_tempBody = $recipientExport;
         }
 
         // for model (json/xml)
@@ -548,23 +548,23 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse202',
+                '\Swagger\Client\Model\CreatedProcessId',
                 '/smsCampaigns/{campaignId}/exportRecipients'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse202', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreatedProcessId', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse202', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreatedProcessId', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -578,13 +578,13 @@ class SMSCampaignsApi
      *
      * Send your SMS campaign immediately
      *
-     * @param string $campaign_id id of the campaign (required)
+     * @param string $campaignId id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendSMSCampaignNow($campaign_id)
+    public function sendSMSCampaignNow($campaignId)
     {
-        list($response) = $this->sendSMSCampaignNowWithHttpInfo($campaign_id);
+        list($response) = $this->sendSMSCampaignNowWithHttpInfo($campaignId);
         return $response;
     }
 
@@ -593,15 +593,15 @@ class SMSCampaignsApi
      *
      * Send your SMS campaign immediately
      *
-     * @param string $campaign_id id of the campaign (required)
+     * @param string $campaignId id of the campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendSMSCampaignNowWithHttpInfo($campaign_id)
+    public function sendSMSCampaignNowWithHttpInfo($campaignId)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling sendSMSCampaignNow');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendSMSCampaignNow');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/sendNow";
@@ -616,10 +616,10 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -651,15 +651,15 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 402:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -673,14 +673,14 @@ class SMSCampaignsApi
      *
      * Send report of SMS campaigns
      *
-     * @param string $campaign_id id of the campaign (required)
-     * @param \Swagger\Client\Model\SendReport2 $send_report Values for send a report (required)
+     * @param string $campaignId id of the campaign (required)
+     * @param \Swagger\Client\Model\SendReport $sendReport Values for send a report (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendSMSReport($campaign_id, $send_report)
+    public function sendSMSReport($campaignId, $sendReport)
     {
-        list($response) = $this->sendSMSReportWithHttpInfo($campaign_id, $send_report);
+        list($response) = $this->sendSMSReportWithHttpInfo($campaignId, $sendReport);
         return $response;
     }
 
@@ -689,20 +689,20 @@ class SMSCampaignsApi
      *
      * Send report of SMS campaigns
      *
-     * @param string $campaign_id id of the campaign (required)
-     * @param \Swagger\Client\Model\SendReport2 $send_report Values for send a report (required)
+     * @param string $campaignId id of the campaign (required)
+     * @param \Swagger\Client\Model\SendReport $sendReport Values for send a report (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendSMSReportWithHttpInfo($campaign_id, $send_report)
+    public function sendSMSReportWithHttpInfo($campaignId, $sendReport)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling sendSMSReport');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendSMSReport');
         }
-        // verify the required parameter 'send_report' is set
-        if ($send_report === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_report when calling sendSMSReport');
+        // verify the required parameter 'sendReport' is set
+        if ($sendReport === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendReport when calling sendSMSReport');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/sendReport";
@@ -717,17 +717,17 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($send_report)) {
-            $_tempBody = $send_report;
+        if (isset($sendReport)) {
+            $_tempBody = $sendReport;
         }
 
         // for model (json/xml)
@@ -757,11 +757,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -775,14 +775,14 @@ class SMSCampaignsApi
      *
      * Send an SMS
      *
-     * @param string $campaign_id Id of the SMS campaign (required)
-     * @param \Swagger\Client\Model\SendTestSms1 $send_test_sms Mobile number to which send the test (required)
+     * @param string $campaignId Id of the SMS campaign (required)
+     * @param \Swagger\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendTestSms($campaign_id, $send_test_sms)
+    public function sendTestSms($campaignId, $sendTestSms)
     {
-        list($response) = $this->sendTestSmsWithHttpInfo($campaign_id, $send_test_sms);
+        list($response) = $this->sendTestSmsWithHttpInfo($campaignId, $sendTestSms);
         return $response;
     }
 
@@ -791,20 +791,20 @@ class SMSCampaignsApi
      *
      * Send an SMS
      *
-     * @param string $campaign_id Id of the SMS campaign (required)
-     * @param \Swagger\Client\Model\SendTestSms1 $send_test_sms Mobile number to which send the test (required)
+     * @param string $campaignId Id of the SMS campaign (required)
+     * @param \Swagger\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTestSmsWithHttpInfo($campaign_id, $send_test_sms)
+    public function sendTestSmsWithHttpInfo($campaignId, $sendTestSms)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling sendTestSms');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendTestSms');
         }
-        // verify the required parameter 'send_test_sms' is set
-        if ($send_test_sms === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_test_sms when calling sendTestSms');
+        // verify the required parameter 'sendTestSms' is set
+        if ($sendTestSms === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendTestSms when calling sendTestSms');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/sendTest";
@@ -819,17 +819,17 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($send_test_sms)) {
-            $_tempBody = $send_test_sms;
+        if (isset($sendTestSms)) {
+            $_tempBody = $sendTestSms;
         }
 
         // for model (json/xml)
@@ -859,11 +859,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostSendSmsTestFailed', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -877,14 +877,14 @@ class SMSCampaignsApi
      *
      * Update the campaign status
      *
-     * @param string $campaign_id id of the campaign (required)
-     * @param \Swagger\Client\Model\Status1 $status Status of the campaign. (required)
+     * @param string $campaignId id of the campaign (required)
+     * @param \Swagger\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateSMSCampaignStatus($campaign_id, $status)
+    public function updateSMSCampaignStatus($campaignId, $status)
     {
-        list($response) = $this->updateSMSCampaignStatusWithHttpInfo($campaign_id, $status);
+        list($response) = $this->updateSMSCampaignStatusWithHttpInfo($campaignId, $status);
         return $response;
     }
 
@@ -893,16 +893,16 @@ class SMSCampaignsApi
      *
      * Update the campaign status
      *
-     * @param string $campaign_id id of the campaign (required)
-     * @param \Swagger\Client\Model\Status1 $status Status of the campaign. (required)
+     * @param string $campaignId id of the campaign (required)
+     * @param \Swagger\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSMSCampaignStatusWithHttpInfo($campaign_id, $status)
+    public function updateSMSCampaignStatusWithHttpInfo($campaignId, $status)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling updateSMSCampaignStatus');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateSMSCampaignStatus');
         }
         // verify the required parameter 'status' is set
         if ($status === null) {
@@ -921,10 +921,10 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -961,11 +961,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -979,14 +979,14 @@ class SMSCampaignsApi
      *
      * Updates a SMS campaign
      *
-     * @param string $campaign_id id of the SMS campaign (required)
-     * @param \Swagger\Client\Model\UpdateSmsCampaign1 $update_sms_campaign Values to update an SMS Campaign (required)
+     * @param string $campaignId id of the SMS campaign (required)
+     * @param \Swagger\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateSmsCampaign($campaign_id, $update_sms_campaign)
+    public function updateSmsCampaign($campaignId, $updateSmsCampaign)
     {
-        list($response) = $this->updateSmsCampaignWithHttpInfo($campaign_id, $update_sms_campaign);
+        list($response) = $this->updateSmsCampaignWithHttpInfo($campaignId, $updateSmsCampaign);
         return $response;
     }
 
@@ -995,20 +995,20 @@ class SMSCampaignsApi
      *
      * Updates a SMS campaign
      *
-     * @param string $campaign_id id of the SMS campaign (required)
-     * @param \Swagger\Client\Model\UpdateSmsCampaign1 $update_sms_campaign Values to update an SMS Campaign (required)
+     * @param string $campaignId id of the SMS campaign (required)
+     * @param \Swagger\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSmsCampaignWithHttpInfo($campaign_id, $update_sms_campaign)
+    public function updateSmsCampaignWithHttpInfo($campaignId, $updateSmsCampaign)
     {
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaign_id when calling updateSmsCampaign');
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateSmsCampaign');
         }
-        // verify the required parameter 'update_sms_campaign' is set
-        if ($update_sms_campaign === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_sms_campaign when calling updateSmsCampaign');
+        // verify the required parameter 'updateSmsCampaign' is set
+        if ($updateSmsCampaign === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateSmsCampaign when calling updateSmsCampaign');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}";
@@ -1023,17 +1023,17 @@ class SMSCampaignsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaign_id),
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($update_sms_campaign)) {
-            $_tempBody = $update_sms_campaign;
+        if (isset($updateSmsCampaign)) {
+            $_tempBody = $updateSmsCampaign;
         }
 
         // for model (json/xml)
@@ -1063,11 +1063,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

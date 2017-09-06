@@ -85,7 +85,7 @@ class GetCampaignRecipientsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "exclusion_lists"
+     * Test attribute "exclusionLists"
      */
     public function testPropertyExclusionLists()
     {

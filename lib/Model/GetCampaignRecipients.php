@@ -54,8 +54,8 @@ class GetCampaignRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'lists' => '\Swagger\Client\Model\InlineResponse2008RecipientsLists[]',
-        'exclusion_lists' => '\Swagger\Client\Model\InlineResponse2008RecipientsExclusionLists[]'
+        'lists' => '\Swagger\Client\Model\GetCampaignRecipientsLists[]',
+        'exclusionLists' => '\Swagger\Client\Model\GetCampaignRecipientsExclusionLists[]'
     ];
 
     /**
@@ -64,7 +64,7 @@ class GetCampaignRecipients implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'lists' => null,
-        'exclusion_lists' => null
+        'exclusionLists' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +83,7 @@ class GetCampaignRecipients implements ArrayAccess
      */
     protected static $attributeMap = [
         'lists' => 'lists',
-        'exclusion_lists' => 'exclusionLists'
+        'exclusionLists' => 'exclusionLists'
     ];
 
 
@@ -93,7 +93,7 @@ class GetCampaignRecipients implements ArrayAccess
      */
     protected static $setters = [
         'lists' => 'setLists',
-        'exclusion_lists' => 'setExclusionLists'
+        'exclusionLists' => 'setExclusionLists'
     ];
 
 
@@ -103,7 +103,7 @@ class GetCampaignRecipients implements ArrayAccess
      */
     protected static $getters = [
         'lists' => 'getLists',
-        'exclusion_lists' => 'getExclusionLists'
+        'exclusionLists' => 'getExclusionLists'
     ];
 
     public static function attributeMap()
@@ -138,7 +138,7 @@ class GetCampaignRecipients implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['lists'] = isset($data['lists']) ? $data['lists'] : null;
-        $this->container['exclusion_lists'] = isset($data['exclusion_lists']) ? $data['exclusion_lists'] : null;
+        $this->container['exclusionLists'] = isset($data['exclusionLists']) ? $data['exclusionLists'] : null;
     }
 
     /**
@@ -153,8 +153,8 @@ class GetCampaignRecipients implements ArrayAccess
         if ($this->container['lists'] === null) {
             $invalid_properties[] = "'lists' can't be null";
         }
-        if ($this->container['exclusion_lists'] === null) {
-            $invalid_properties[] = "'exclusion_lists' can't be null";
+        if ($this->container['exclusionLists'] === null) {
+            $invalid_properties[] = "'exclusionLists' can't be null";
         }
         return $invalid_properties;
     }
@@ -171,7 +171,7 @@ class GetCampaignRecipients implements ArrayAccess
         if ($this->container['lists'] === null) {
             return false;
         }
-        if ($this->container['exclusion_lists'] === null) {
+        if ($this->container['exclusionLists'] === null) {
             return false;
         }
         return true;
@@ -180,7 +180,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Gets lists
-     * @return \Swagger\Client\Model\InlineResponse2008RecipientsLists[]
+     * @return \Swagger\Client\Model\GetCampaignRecipientsLists[]
      */
     public function getLists()
     {
@@ -189,7 +189,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Sets lists
-     * @param \Swagger\Client\Model\InlineResponse2008RecipientsLists[] $lists Lists included in the campaign
+     * @param \Swagger\Client\Model\GetCampaignRecipientsLists[] $lists Lists included in the campaign
      * @return $this
      */
     public function setLists($lists)
@@ -200,22 +200,22 @@ class GetCampaignRecipients implements ArrayAccess
     }
 
     /**
-     * Gets exclusion_lists
-     * @return \Swagger\Client\Model\InlineResponse2008RecipientsExclusionLists[]
+     * Gets exclusionLists
+     * @return \Swagger\Client\Model\GetCampaignRecipientsExclusionLists[]
      */
     public function getExclusionLists()
     {
-        return $this->container['exclusion_lists'];
+        return $this->container['exclusionLists'];
     }
 
     /**
-     * Sets exclusion_lists
-     * @param \Swagger\Client\Model\InlineResponse2008RecipientsExclusionLists[] $exclusion_lists Lists excluded of the campaign
+     * Sets exclusionLists
+     * @param \Swagger\Client\Model\GetCampaignRecipientsExclusionLists[] $exclusionLists Lists excluded of the campaign
      * @return $this
      */
-    public function setExclusionLists($exclusion_lists)
+    public function setExclusionLists($exclusionLists)
     {
-        $this->container['exclusion_lists'] = $exclusion_lists;
+        $this->container['exclusionLists'] = $exclusionLists;
 
         return $this;
     }

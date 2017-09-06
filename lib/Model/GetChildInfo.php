@@ -55,14 +55,14 @@ class GetChildInfo implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'email' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'company_name' => 'string',
-        'credits' => '\Swagger\Client\Model\InlineResponse2001Credits',
-        'statistics' => '\Swagger\Client\Model\InlineResponse2001Statistics',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'companyName' => 'string',
+        'credits' => '\Swagger\Client\Model\GetChildInfoCredits',
+        'statistics' => '\Swagger\Client\Model\GetChildInfoStatistics',
         'password' => 'string',
-        'ips' => '\Swagger\Client\Model\InlineResponse2001Ips[]',
-        'api_keys' => '\Swagger\Client\Model\InlineResponse2001ApiKeys[]'
+        'ips' => '\Swagger\Client\Model\GetChildInfoIps[]',
+        'apiKeys' => '\Swagger\Client\Model\GetChildInfoApiKeys[]'
     ];
 
     /**
@@ -71,14 +71,14 @@ class GetChildInfo implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-        'first_name' => null,
-        'last_name' => null,
-        'company_name' => null,
+        'firstName' => null,
+        'lastName' => null,
+        'companyName' => null,
         'credits' => null,
         'statistics' => null,
         'password' => 'password',
         'ips' => null,
-        'api_keys' => null
+        'apiKeys' => null
     ];
 
     public static function swaggerTypes()
@@ -97,14 +97,14 @@ class GetChildInfo implements ArrayAccess
      */
     protected static $attributeMap = [
         'email' => 'email',
-        'first_name' => 'firstName',
-        'last_name' => 'lastName',
-        'company_name' => 'companyName',
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'companyName' => 'companyName',
         'credits' => 'credits',
         'statistics' => 'statistics',
         'password' => 'password',
         'ips' => 'ips',
-        'api_keys' => 'apiKeys'
+        'apiKeys' => 'apiKeys'
     ];
 
 
@@ -114,14 +114,14 @@ class GetChildInfo implements ArrayAccess
      */
     protected static $setters = [
         'email' => 'setEmail',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'company_name' => 'setCompanyName',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'companyName' => 'setCompanyName',
         'credits' => 'setCredits',
         'statistics' => 'setStatistics',
         'password' => 'setPassword',
         'ips' => 'setIps',
-        'api_keys' => 'setApiKeys'
+        'apiKeys' => 'setApiKeys'
     ];
 
 
@@ -131,14 +131,14 @@ class GetChildInfo implements ArrayAccess
      */
     protected static $getters = [
         'email' => 'getEmail',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'company_name' => 'getCompanyName',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'companyName' => 'getCompanyName',
         'credits' => 'getCredits',
         'statistics' => 'getStatistics',
         'password' => 'getPassword',
         'ips' => 'getIps',
-        'api_keys' => 'getApiKeys'
+        'apiKeys' => 'getApiKeys'
     ];
 
     public static function attributeMap()
@@ -173,14 +173,14 @@ class GetChildInfo implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
         $this->container['credits'] = isset($data['credits']) ? $data['credits'] : null;
         $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['ips'] = isset($data['ips']) ? $data['ips'] : null;
-        $this->container['api_keys'] = isset($data['api_keys']) ? $data['api_keys'] : null;
+        $this->container['apiKeys'] = isset($data['apiKeys']) ? $data['apiKeys'] : null;
     }
 
     /**
@@ -195,14 +195,14 @@ class GetChildInfo implements ArrayAccess
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
-        if ($this->container['first_name'] === null) {
-            $invalid_properties[] = "'first_name' can't be null";
+        if ($this->container['firstName'] === null) {
+            $invalid_properties[] = "'firstName' can't be null";
         }
-        if ($this->container['last_name'] === null) {
-            $invalid_properties[] = "'last_name' can't be null";
+        if ($this->container['lastName'] === null) {
+            $invalid_properties[] = "'lastName' can't be null";
         }
-        if ($this->container['company_name'] === null) {
-            $invalid_properties[] = "'company_name' can't be null";
+        if ($this->container['companyName'] === null) {
+            $invalid_properties[] = "'companyName' can't be null";
         }
         if ($this->container['password'] === null) {
             $invalid_properties[] = "'password' can't be null";
@@ -222,13 +222,13 @@ class GetChildInfo implements ArrayAccess
         if ($this->container['email'] === null) {
             return false;
         }
-        if ($this->container['first_name'] === null) {
+        if ($this->container['firstName'] === null) {
             return false;
         }
-        if ($this->container['last_name'] === null) {
+        if ($this->container['lastName'] === null) {
             return false;
         }
-        if ($this->container['company_name'] === null) {
+        if ($this->container['companyName'] === null) {
             return false;
         }
         if ($this->container['password'] === null) {
@@ -260,71 +260,71 @@ class GetChildInfo implements ArrayAccess
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
-     * @param string $first_name First Name
+     * Sets firstName
+     * @param string $firstName First Name
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name Last Name
+     * Sets lastName
+     * @param string $lastName Last Name
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets company_name
+     * Gets companyName
      * @return string
      */
     public function getCompanyName()
     {
-        return $this->container['company_name'];
+        return $this->container['companyName'];
     }
 
     /**
-     * Sets company_name
-     * @param string $company_name Name of the company
+     * Sets companyName
+     * @param string $companyName Name of the company
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setCompanyName($companyName)
     {
-        $this->container['company_name'] = $company_name;
+        $this->container['companyName'] = $companyName;
 
         return $this;
     }
 
     /**
      * Gets credits
-     * @return \Swagger\Client\Model\InlineResponse2001Credits
+     * @return \Swagger\Client\Model\GetChildInfoCredits
      */
     public function getCredits()
     {
@@ -333,7 +333,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets credits
-     * @param \Swagger\Client\Model\InlineResponse2001Credits $credits
+     * @param \Swagger\Client\Model\GetChildInfoCredits $credits
      * @return $this
      */
     public function setCredits($credits)
@@ -345,7 +345,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets statistics
-     * @return \Swagger\Client\Model\InlineResponse2001Statistics
+     * @return \Swagger\Client\Model\GetChildInfoStatistics
      */
     public function getStatistics()
     {
@@ -354,7 +354,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets statistics
-     * @param \Swagger\Client\Model\InlineResponse2001Statistics $statistics
+     * @param \Swagger\Client\Model\GetChildInfoStatistics $statistics
      * @return $this
      */
     public function setStatistics($statistics)
@@ -387,7 +387,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \Swagger\Client\Model\InlineResponse2001Ips[]
+     * @return \Swagger\Client\Model\GetChildInfoIps[]
      */
     public function getIps()
     {
@@ -396,7 +396,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \Swagger\Client\Model\InlineResponse2001Ips[] $ips IP(s) associated to a child account user
+     * @param \Swagger\Client\Model\GetChildInfoIps[] $ips IP(s) associated to a child account user
      * @return $this
      */
     public function setIps($ips)
@@ -407,22 +407,22 @@ class GetChildInfo implements ArrayAccess
     }
 
     /**
-     * Gets api_keys
-     * @return \Swagger\Client\Model\InlineResponse2001ApiKeys[]
+     * Gets apiKeys
+     * @return \Swagger\Client\Model\GetChildInfoApiKeys[]
      */
     public function getApiKeys()
     {
-        return $this->container['api_keys'];
+        return $this->container['apiKeys'];
     }
 
     /**
-     * Sets api_keys
-     * @param \Swagger\Client\Model\InlineResponse2001ApiKeys[] $api_keys API Keys associated to child account
+     * Sets apiKeys
+     * @param \Swagger\Client\Model\GetChildInfoApiKeys[] $apiKeys API Keys associated to child account
      * @return $this
      */
-    public function setApiKeys($api_keys)
+    public function setApiKeys($apiKeys)
     {
-        $this->container['api_keys'] = $api_keys;
+        $this->container['apiKeys'] = $apiKeys;
 
         return $this;
     }

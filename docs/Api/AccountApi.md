@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getAccount**
-> \Swagger\Client\Model\InlineResponse200 getAccount()
+> \Swagger\Client\Model\GetAccount getAccount()
 
 Get your account informations, plans and credits details
 
@@ -36,7 +36,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Swagger\Client\Model\GetAccount**](../Model/GetAccount.md)
 
 ### Authorization
 

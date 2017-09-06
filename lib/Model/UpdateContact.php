@@ -55,10 +55,10 @@ class UpdateContact implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'attributes' => 'map[string,string]',
-        'email_blacklisted' => 'bool',
-        'sms_blacklisted' => 'bool',
-        'list_ids' => 'int[]',
-        'unlink_list_ids' => 'int[]'
+        'emailBlacklisted' => 'bool',
+        'smsBlacklisted' => 'bool',
+        'listIds' => 'int[]',
+        'unlinkListIds' => 'int[]'
     ];
 
     /**
@@ -67,10 +67,10 @@ class UpdateContact implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'attributes' => null,
-        'email_blacklisted' => null,
-        'sms_blacklisted' => null,
-        'list_ids' => 'int32',
-        'unlink_list_ids' => 'int32'
+        'emailBlacklisted' => null,
+        'smsBlacklisted' => null,
+        'listIds' => 'int32',
+        'unlinkListIds' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -89,10 +89,10 @@ class UpdateContact implements ArrayAccess
      */
     protected static $attributeMap = [
         'attributes' => 'attributes',
-        'email_blacklisted' => 'emailBlacklisted',
-        'sms_blacklisted' => 'smsBlacklisted',
-        'list_ids' => 'listIds',
-        'unlink_list_ids' => 'unlinkListIds'
+        'emailBlacklisted' => 'emailBlacklisted',
+        'smsBlacklisted' => 'smsBlacklisted',
+        'listIds' => 'listIds',
+        'unlinkListIds' => 'unlinkListIds'
     ];
 
 
@@ -102,10 +102,10 @@ class UpdateContact implements ArrayAccess
      */
     protected static $setters = [
         'attributes' => 'setAttributes',
-        'email_blacklisted' => 'setEmailBlacklisted',
-        'sms_blacklisted' => 'setSmsBlacklisted',
-        'list_ids' => 'setListIds',
-        'unlink_list_ids' => 'setUnlinkListIds'
+        'emailBlacklisted' => 'setEmailBlacklisted',
+        'smsBlacklisted' => 'setSmsBlacklisted',
+        'listIds' => 'setListIds',
+        'unlinkListIds' => 'setUnlinkListIds'
     ];
 
 
@@ -115,10 +115,10 @@ class UpdateContact implements ArrayAccess
      */
     protected static $getters = [
         'attributes' => 'getAttributes',
-        'email_blacklisted' => 'getEmailBlacklisted',
-        'sms_blacklisted' => 'getSmsBlacklisted',
-        'list_ids' => 'getListIds',
-        'unlink_list_ids' => 'getUnlinkListIds'
+        'emailBlacklisted' => 'getEmailBlacklisted',
+        'smsBlacklisted' => 'getSmsBlacklisted',
+        'listIds' => 'getListIds',
+        'unlinkListIds' => 'getUnlinkListIds'
     ];
 
     public static function attributeMap()
@@ -153,10 +153,10 @@ class UpdateContact implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
-        $this->container['email_blacklisted'] = isset($data['email_blacklisted']) ? $data['email_blacklisted'] : null;
-        $this->container['sms_blacklisted'] = isset($data['sms_blacklisted']) ? $data['sms_blacklisted'] : null;
-        $this->container['list_ids'] = isset($data['list_ids']) ? $data['list_ids'] : null;
-        $this->container['unlink_list_ids'] = isset($data['unlink_list_ids']) ? $data['unlink_list_ids'] : null;
+        $this->container['emailBlacklisted'] = isset($data['emailBlacklisted']) ? $data['emailBlacklisted'] : null;
+        $this->container['smsBlacklisted'] = isset($data['smsBlacklisted']) ? $data['smsBlacklisted'] : null;
+        $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
+        $this->container['unlinkListIds'] = isset($data['unlinkListIds']) ? $data['unlinkListIds'] : null;
     }
 
     /**
@@ -206,85 +206,85 @@ class UpdateContact implements ArrayAccess
     }
 
     /**
-     * Gets email_blacklisted
+     * Gets emailBlacklisted
      * @return bool
      */
     public function getEmailBlacklisted()
     {
-        return $this->container['email_blacklisted'];
+        return $this->container['emailBlacklisted'];
     }
 
     /**
-     * Sets email_blacklisted
-     * @param bool $email_blacklisted Blacklist the contact for emails (emailBlacklisted = true)
+     * Sets emailBlacklisted
+     * @param bool $emailBlacklisted Blacklist the contact for emails (emailBlacklisted = true)
      * @return $this
      */
-    public function setEmailBlacklisted($email_blacklisted)
+    public function setEmailBlacklisted($emailBlacklisted)
     {
-        $this->container['email_blacklisted'] = $email_blacklisted;
+        $this->container['emailBlacklisted'] = $emailBlacklisted;
 
         return $this;
     }
 
     /**
-     * Gets sms_blacklisted
+     * Gets smsBlacklisted
      * @return bool
      */
     public function getSmsBlacklisted()
     {
-        return $this->container['sms_blacklisted'];
+        return $this->container['smsBlacklisted'];
     }
 
     /**
-     * Sets sms_blacklisted
-     * @param bool $sms_blacklisted Blacklist the contact for SMS (smsBlacklisted = true)
+     * Sets smsBlacklisted
+     * @param bool $smsBlacklisted Blacklist the contact for SMS (smsBlacklisted = true)
      * @return $this
      */
-    public function setSmsBlacklisted($sms_blacklisted)
+    public function setSmsBlacklisted($smsBlacklisted)
     {
-        $this->container['sms_blacklisted'] = $sms_blacklisted;
+        $this->container['smsBlacklisted'] = $smsBlacklisted;
 
         return $this;
     }
 
     /**
-     * Gets list_ids
+     * Gets listIds
      * @return int[]
      */
     public function getListIds()
     {
-        return $this->container['list_ids'];
+        return $this->container['listIds'];
     }
 
     /**
-     * Sets list_ids
-     * @param int[] $list_ids Ids of the lists to add the contact to
+     * Sets listIds
+     * @param int[] $listIds Ids of the lists to add the contact to
      * @return $this
      */
-    public function setListIds($list_ids)
+    public function setListIds($listIds)
     {
-        $this->container['list_ids'] = $list_ids;
+        $this->container['listIds'] = $listIds;
 
         return $this;
     }
 
     /**
-     * Gets unlink_list_ids
+     * Gets unlinkListIds
      * @return int[]
      */
     public function getUnlinkListIds()
     {
-        return $this->container['unlink_list_ids'];
+        return $this->container['unlinkListIds'];
     }
 
     /**
-     * Sets unlink_list_ids
-     * @param int[] $unlink_list_ids Ids of the lists to remove the contact from
+     * Sets unlinkListIds
+     * @param int[] $unlinkListIds Ids of the lists to remove the contact from
      * @return $this
      */
-    public function setUnlinkListIds($unlink_list_ids)
+    public function setUnlinkListIds($unlinkListIds)
     {
-        $this->container['unlink_list_ids'] = $unlink_list_ids;
+        $this->container['unlinkListIds'] = $unlinkListIds;
 
         return $this;
     }

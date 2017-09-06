@@ -99,14 +99,14 @@ class GetAggregatedReportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "hard_bounces"
+     * Test attribute "hardBounces"
      */
     public function testPropertyHardBounces()
     {
     }
 
     /**
-     * Test attribute "soft_bounces"
+     * Test attribute "softBounces"
      */
     public function testPropertySoftBounces()
     {
@@ -120,7 +120,7 @@ class GetAggregatedReportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "unique_clicks"
+     * Test attribute "uniqueClicks"
      */
     public function testPropertyUniqueClicks()
     {
@@ -134,14 +134,14 @@ class GetAggregatedReportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "unique_opens"
+     * Test attribute "uniqueOpens"
      */
     public function testPropertyUniqueOpens()
     {
     }
 
     /**
-     * Test attribute "spam_reports"
+     * Test attribute "spamReports"
      */
     public function testPropertySpamReports()
     {

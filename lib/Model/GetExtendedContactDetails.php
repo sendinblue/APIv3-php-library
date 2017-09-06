@@ -56,11 +56,11 @@ class GetExtendedContactDetails implements ArrayAccess
     protected static $swaggerTypes = [
         'email' => 'string',
         'id' => 'int',
-        'email_blacklisted' => 'bool',
-        'sms_blacklisted' => 'bool',
-        'modified_at' => '\DateTime',
-        'list_ids' => 'int[]',
-        'list_unsubscribed' => 'int[]',
+        'emailBlacklisted' => 'bool',
+        'smsBlacklisted' => 'bool',
+        'modifiedAt' => '\DateTime',
+        'listIds' => 'int[]',
+        'listUnsubscribed' => 'int[]',
         'attributes' => 'map[string,string]'
     ];
 
@@ -71,11 +71,11 @@ class GetExtendedContactDetails implements ArrayAccess
     protected static $swaggerFormats = [
         'email' => 'email',
         'id' => 'int32',
-        'email_blacklisted' => null,
-        'sms_blacklisted' => null,
-        'modified_at' => 'date-time',
-        'list_ids' => 'int32',
-        'list_unsubscribed' => 'int32',
+        'emailBlacklisted' => null,
+        'smsBlacklisted' => null,
+        'modifiedAt' => 'date-time',
+        'listIds' => 'int32',
+        'listUnsubscribed' => 'int32',
         'attributes' => null
     ];
 
@@ -96,11 +96,11 @@ class GetExtendedContactDetails implements ArrayAccess
     protected static $attributeMap = [
         'email' => 'email',
         'id' => 'id',
-        'email_blacklisted' => 'emailBlacklisted',
-        'sms_blacklisted' => 'smsBlacklisted',
-        'modified_at' => 'modifiedAt',
-        'list_ids' => 'listIds',
-        'list_unsubscribed' => 'listUnsubscribed',
+        'emailBlacklisted' => 'emailBlacklisted',
+        'smsBlacklisted' => 'smsBlacklisted',
+        'modifiedAt' => 'modifiedAt',
+        'listIds' => 'listIds',
+        'listUnsubscribed' => 'listUnsubscribed',
         'attributes' => 'attributes'
     ];
 
@@ -112,11 +112,11 @@ class GetExtendedContactDetails implements ArrayAccess
     protected static $setters = [
         'email' => 'setEmail',
         'id' => 'setId',
-        'email_blacklisted' => 'setEmailBlacklisted',
-        'sms_blacklisted' => 'setSmsBlacklisted',
-        'modified_at' => 'setModifiedAt',
-        'list_ids' => 'setListIds',
-        'list_unsubscribed' => 'setListUnsubscribed',
+        'emailBlacklisted' => 'setEmailBlacklisted',
+        'smsBlacklisted' => 'setSmsBlacklisted',
+        'modifiedAt' => 'setModifiedAt',
+        'listIds' => 'setListIds',
+        'listUnsubscribed' => 'setListUnsubscribed',
         'attributes' => 'setAttributes'
     ];
 
@@ -128,11 +128,11 @@ class GetExtendedContactDetails implements ArrayAccess
     protected static $getters = [
         'email' => 'getEmail',
         'id' => 'getId',
-        'email_blacklisted' => 'getEmailBlacklisted',
-        'sms_blacklisted' => 'getSmsBlacklisted',
-        'modified_at' => 'getModifiedAt',
-        'list_ids' => 'getListIds',
-        'list_unsubscribed' => 'getListUnsubscribed',
+        'emailBlacklisted' => 'getEmailBlacklisted',
+        'smsBlacklisted' => 'getSmsBlacklisted',
+        'modifiedAt' => 'getModifiedAt',
+        'listIds' => 'getListIds',
+        'listUnsubscribed' => 'getListUnsubscribed',
         'attributes' => 'getAttributes'
     ];
 
@@ -169,11 +169,11 @@ class GetExtendedContactDetails implements ArrayAccess
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['email_blacklisted'] = isset($data['email_blacklisted']) ? $data['email_blacklisted'] : null;
-        $this->container['sms_blacklisted'] = isset($data['sms_blacklisted']) ? $data['sms_blacklisted'] : null;
-        $this->container['modified_at'] = isset($data['modified_at']) ? $data['modified_at'] : null;
-        $this->container['list_ids'] = isset($data['list_ids']) ? $data['list_ids'] : null;
-        $this->container['list_unsubscribed'] = isset($data['list_unsubscribed']) ? $data['list_unsubscribed'] : null;
+        $this->container['emailBlacklisted'] = isset($data['emailBlacklisted']) ? $data['emailBlacklisted'] : null;
+        $this->container['smsBlacklisted'] = isset($data['smsBlacklisted']) ? $data['smsBlacklisted'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
+        $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
+        $this->container['listUnsubscribed'] = isset($data['listUnsubscribed']) ? $data['listUnsubscribed'] : null;
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
     }
 
@@ -192,17 +192,17 @@ class GetExtendedContactDetails implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['email_blacklisted'] === null) {
-            $invalid_properties[] = "'email_blacklisted' can't be null";
+        if ($this->container['emailBlacklisted'] === null) {
+            $invalid_properties[] = "'emailBlacklisted' can't be null";
         }
-        if ($this->container['sms_blacklisted'] === null) {
-            $invalid_properties[] = "'sms_blacklisted' can't be null";
+        if ($this->container['smsBlacklisted'] === null) {
+            $invalid_properties[] = "'smsBlacklisted' can't be null";
         }
-        if ($this->container['modified_at'] === null) {
-            $invalid_properties[] = "'modified_at' can't be null";
+        if ($this->container['modifiedAt'] === null) {
+            $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if ($this->container['list_ids'] === null) {
-            $invalid_properties[] = "'list_ids' can't be null";
+        if ($this->container['listIds'] === null) {
+            $invalid_properties[] = "'listIds' can't be null";
         }
         if ($this->container['attributes'] === null) {
             $invalid_properties[] = "'attributes' can't be null";
@@ -225,16 +225,16 @@ class GetExtendedContactDetails implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['email_blacklisted'] === null) {
+        if ($this->container['emailBlacklisted'] === null) {
             return false;
         }
-        if ($this->container['sms_blacklisted'] === null) {
+        if ($this->container['smsBlacklisted'] === null) {
             return false;
         }
-        if ($this->container['modified_at'] === null) {
+        if ($this->container['modifiedAt'] === null) {
             return false;
         }
-        if ($this->container['list_ids'] === null) {
+        if ($this->container['listIds'] === null) {
             return false;
         }
         if ($this->container['attributes'] === null) {
@@ -287,106 +287,106 @@ class GetExtendedContactDetails implements ArrayAccess
     }
 
     /**
-     * Gets email_blacklisted
+     * Gets emailBlacklisted
      * @return bool
      */
     public function getEmailBlacklisted()
     {
-        return $this->container['email_blacklisted'];
+        return $this->container['emailBlacklisted'];
     }
 
     /**
-     * Sets email_blacklisted
-     * @param bool $email_blacklisted Blacklist status for email campaigns (true=blacklisted, false=not blacklisted)
+     * Sets emailBlacklisted
+     * @param bool $emailBlacklisted Blacklist status for email campaigns (true=blacklisted, false=not blacklisted)
      * @return $this
      */
-    public function setEmailBlacklisted($email_blacklisted)
+    public function setEmailBlacklisted($emailBlacklisted)
     {
-        $this->container['email_blacklisted'] = $email_blacklisted;
+        $this->container['emailBlacklisted'] = $emailBlacklisted;
 
         return $this;
     }
 
     /**
-     * Gets sms_blacklisted
+     * Gets smsBlacklisted
      * @return bool
      */
     public function getSmsBlacklisted()
     {
-        return $this->container['sms_blacklisted'];
+        return $this->container['smsBlacklisted'];
     }
 
     /**
-     * Sets sms_blacklisted
-     * @param bool $sms_blacklisted Blacklist status for SMS campaigns (true=blacklisted, false=not blacklisted)
+     * Sets smsBlacklisted
+     * @param bool $smsBlacklisted Blacklist status for SMS campaigns (true=blacklisted, false=not blacklisted)
      * @return $this
      */
-    public function setSmsBlacklisted($sms_blacklisted)
+    public function setSmsBlacklisted($smsBlacklisted)
     {
-        $this->container['sms_blacklisted'] = $sms_blacklisted;
+        $this->container['smsBlacklisted'] = $smsBlacklisted;
 
         return $this;
     }
 
     /**
-     * Gets modified_at
+     * Gets modifiedAt
      * @return \DateTime
      */
     public function getModifiedAt()
     {
-        return $this->container['modified_at'];
+        return $this->container['modifiedAt'];
     }
 
     /**
-     * Sets modified_at
-     * @param \DateTime $modified_at Last modification date of the contact
+     * Sets modifiedAt
+     * @param \DateTime $modifiedAt Last modification date of the contact
      * @return $this
      */
-    public function setModifiedAt($modified_at)
+    public function setModifiedAt($modifiedAt)
     {
-        $this->container['modified_at'] = $modified_at;
+        $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
     }
 
     /**
-     * Gets list_ids
+     * Gets listIds
      * @return int[]
      */
     public function getListIds()
     {
-        return $this->container['list_ids'];
+        return $this->container['listIds'];
     }
 
     /**
-     * Sets list_ids
-     * @param int[] $list_ids
+     * Sets listIds
+     * @param int[] $listIds
      * @return $this
      */
-    public function setListIds($list_ids)
+    public function setListIds($listIds)
     {
-        $this->container['list_ids'] = $list_ids;
+        $this->container['listIds'] = $listIds;
 
         return $this;
     }
 
     /**
-     * Gets list_unsubscribed
+     * Gets listUnsubscribed
      * @return int[]
      */
     public function getListUnsubscribed()
     {
-        return $this->container['list_unsubscribed'];
+        return $this->container['listUnsubscribed'];
     }
 
     /**
-     * Sets list_unsubscribed
-     * @param int[] $list_unsubscribed
+     * Sets listUnsubscribed
+     * @param int[] $listUnsubscribed
      * @return $this
      */
-    public function setListUnsubscribed($list_unsubscribed)
+    public function setListUnsubscribed($listUnsubscribed)
     {
-        $this->container['list_unsubscribed'] = $list_unsubscribed;
+        $this->container['listUnsubscribed'] = $listUnsubscribed;
 
         return $this;
     }

@@ -78,35 +78,35 @@ class SendEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email_to"
+     * Test attribute "emailTo"
      */
     public function testPropertyEmailTo()
     {
     }
 
     /**
-     * Test attribute "email_bcc"
+     * Test attribute "emailBcc"
      */
     public function testPropertyEmailBcc()
     {
     }
 
     /**
-     * Test attribute "email_cc"
+     * Test attribute "emailCc"
      */
     public function testPropertyEmailCc()
     {
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "replyTo"
      */
     public function testPropertyReplyTo()
     {
     }
 
     /**
-     * Test attribute "attachment_url"
+     * Test attribute "attachmentUrl"
      */
     public function testPropertyAttachmentUrl()
     {

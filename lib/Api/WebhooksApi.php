@@ -92,13 +92,13 @@ class WebhooksApi
      *
      * Create a webhook
      *
-     * @param \Swagger\Client\Model\CreateWebhook1 $create_webhook Values to create a webhook (required)
+     * @param \Swagger\Client\Model\CreateWebhook $createWebhook Values to create a webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createWebhook($create_webhook)
+    public function createWebhook($createWebhook)
     {
-        list($response) = $this->createWebhookWithHttpInfo($create_webhook);
+        list($response) = $this->createWebhookWithHttpInfo($createWebhook);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class WebhooksApi
      *
      * Create a webhook
      *
-     * @param \Swagger\Client\Model\CreateWebhook1 $create_webhook Values to create a webhook (required)
+     * @param \Swagger\Client\Model\CreateWebhook $createWebhook Values to create a webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createWebhookWithHttpInfo($create_webhook)
+    public function createWebhookWithHttpInfo($createWebhook)
     {
-        // verify the required parameter 'create_webhook' is set
-        if ($create_webhook === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_webhook when calling createWebhook');
+        // verify the required parameter 'createWebhook' is set
+        if ($createWebhook === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createWebhook when calling createWebhook');
         }
         // parse inputs
         $resourcePath = "/webhooks";
@@ -131,8 +131,8 @@ class WebhooksApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_webhook)) {
-            $_tempBody = $create_webhook;
+        if (isset($createWebhook)) {
+            $_tempBody = $createWebhook;
         }
 
         // for model (json/xml)
@@ -154,19 +154,19 @@ class WebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/webhooks'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -180,13 +180,13 @@ class WebhooksApi
      *
      * Delete a webhook
      *
-     * @param string $webhook_id Id of the webhook (required)
+     * @param string $webhookId Id of the webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteWebhook($webhook_id)
+    public function deleteWebhook($webhookId)
     {
-        list($response) = $this->deleteWebhookWithHttpInfo($webhook_id);
+        list($response) = $this->deleteWebhookWithHttpInfo($webhookId);
         return $response;
     }
 
@@ -195,15 +195,15 @@ class WebhooksApi
      *
      * Delete a webhook
      *
-     * @param string $webhook_id Id of the webhook (required)
+     * @param string $webhookId Id of the webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteWebhookWithHttpInfo($webhook_id)
+    public function deleteWebhookWithHttpInfo($webhookId)
     {
-        // verify the required parameter 'webhook_id' is set
-        if ($webhook_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $webhook_id when calling deleteWebhook');
+        // verify the required parameter 'webhookId' is set
+        if ($webhookId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling deleteWebhook');
         }
         // parse inputs
         $resourcePath = "/webhooks/{webhookId}";
@@ -218,10 +218,10 @@ class WebhooksApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($webhook_id !== null) {
+        if ($webhookId !== null) {
             $resourcePath = str_replace(
                 "{" . "webhookId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($webhook_id),
+                $this->apiClient->getSerializer()->toPathValue($webhookId),
                 $resourcePath
             );
         }
@@ -253,11 +253,11 @@ class WebhooksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -271,13 +271,13 @@ class WebhooksApi
      *
      * Get a webhook details
      *
-     * @param string $webhook_id Id of the webhook (required)
+     * @param string $webhookId Id of the webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20013Webhooks
+     * @return \Swagger\Client\Model\GetWebhook
      */
-    public function getWebhook($webhook_id)
+    public function getWebhook($webhookId)
     {
-        list($response) = $this->getWebhookWithHttpInfo($webhook_id);
+        list($response) = $this->getWebhookWithHttpInfo($webhookId);
         return $response;
     }
 
@@ -286,15 +286,15 @@ class WebhooksApi
      *
      * Get a webhook details
      *
-     * @param string $webhook_id Id of the webhook (required)
+     * @param string $webhookId Id of the webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20013Webhooks, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetWebhook, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWebhookWithHttpInfo($webhook_id)
+    public function getWebhookWithHttpInfo($webhookId)
     {
-        // verify the required parameter 'webhook_id' is set
-        if ($webhook_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $webhook_id when calling getWebhook');
+        // verify the required parameter 'webhookId' is set
+        if ($webhookId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling getWebhook');
         }
         // parse inputs
         $resourcePath = "/webhooks/{webhookId}";
@@ -309,10 +309,10 @@ class WebhooksApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($webhook_id !== null) {
+        if ($webhookId !== null) {
             $resourcePath = str_replace(
                 "{" . "webhookId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($webhook_id),
+                $this->apiClient->getSerializer()->toPathValue($webhookId),
                 $resourcePath
             );
         }
@@ -336,23 +336,23 @@ class WebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20013Webhooks',
+                '\Swagger\Client\Model\GetWebhook',
                 '/webhooks/{webhookId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20013Webhooks', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetWebhook', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20013Webhooks', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetWebhook', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -368,7 +368,7 @@ class WebhooksApi
      *
      * @param string $type Filter on webhook type (optional, default to transactional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20013
+     * @return \Swagger\Client\Model\GetWebhooks
      */
     public function getWebhooks($type = 'transactional')
     {
@@ -383,7 +383,7 @@ class WebhooksApi
      *
      * @param string $type Filter on webhook type (optional, default to transactional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetWebhooks, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhooksWithHttpInfo($type = 'transactional')
     {
@@ -423,19 +423,19 @@ class WebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20013',
+                '\Swagger\Client\Model\GetWebhooks',
                 '/webhooks'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20013', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetWebhooks', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20013', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetWebhooks', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -449,14 +449,14 @@ class WebhooksApi
      *
      * Update a webhook
      *
-     * @param string $webhook_id Id of the webhook (required)
-     * @param \Swagger\Client\Model\UpdateWebhook1 $update_webhook Values to update a webhook (required)
+     * @param string $webhookId Id of the webhook (required)
+     * @param \Swagger\Client\Model\UpdateWebhook $updateWebhook Values to update a webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateWebhook($webhook_id, $update_webhook)
+    public function updateWebhook($webhookId, $updateWebhook)
     {
-        list($response) = $this->updateWebhookWithHttpInfo($webhook_id, $update_webhook);
+        list($response) = $this->updateWebhookWithHttpInfo($webhookId, $updateWebhook);
         return $response;
     }
 
@@ -465,20 +465,20 @@ class WebhooksApi
      *
      * Update a webhook
      *
-     * @param string $webhook_id Id of the webhook (required)
-     * @param \Swagger\Client\Model\UpdateWebhook1 $update_webhook Values to update a webhook (required)
+     * @param string $webhookId Id of the webhook (required)
+     * @param \Swagger\Client\Model\UpdateWebhook $updateWebhook Values to update a webhook (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateWebhookWithHttpInfo($webhook_id, $update_webhook)
+    public function updateWebhookWithHttpInfo($webhookId, $updateWebhook)
     {
-        // verify the required parameter 'webhook_id' is set
-        if ($webhook_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $webhook_id when calling updateWebhook');
+        // verify the required parameter 'webhookId' is set
+        if ($webhookId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling updateWebhook');
         }
-        // verify the required parameter 'update_webhook' is set
-        if ($update_webhook === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_webhook when calling updateWebhook');
+        // verify the required parameter 'updateWebhook' is set
+        if ($updateWebhook === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateWebhook when calling updateWebhook');
         }
         // parse inputs
         $resourcePath = "/webhooks/{webhookId}";
@@ -493,17 +493,17 @@ class WebhooksApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($webhook_id !== null) {
+        if ($webhookId !== null) {
             $resourcePath = str_replace(
                 "{" . "webhookId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($webhook_id),
+                $this->apiClient->getSerializer()->toPathValue($webhookId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($update_webhook)) {
-            $_tempBody = $update_webhook;
+        if (isset($updateWebhook)) {
+            $_tempBody = $updateWebhook;
         }
 
         // for model (json/xml)
@@ -533,11 +533,11 @@ class WebhooksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

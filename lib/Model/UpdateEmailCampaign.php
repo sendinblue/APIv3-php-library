@@ -55,22 +55,22 @@ class UpdateEmailCampaign implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'tag' => 'string',
-        'sender' => '\Swagger\Client\Model\EmailCampaignscampaignIdSender',
+        'sender' => '\Swagger\Client\Model\UpdateEmailCampaignSender',
         'name' => 'string',
-        'html_content' => 'string',
-        'html_url' => 'string',
-        'scheduled_at' => 'string',
+        'htmlContent' => 'string',
+        'htmlUrl' => 'string',
+        'scheduledAt' => 'string',
         'subject' => 'string',
-        'reply_to' => 'string',
-        'to_field' => 'string',
-        'recipients' => '\Swagger\Client\Model\EmailCampaignscampaignIdRecipients',
-        'attachment_url' => 'string',
-        'inline_image_activation' => 'bool',
-        'mirror_active' => 'bool',
+        'replyTo' => 'string',
+        'toField' => 'string',
+        'recipients' => '\Swagger\Client\Model\UpdateEmailCampaignRecipients',
+        'attachmentUrl' => 'string',
+        'inlineImageActivation' => 'bool',
+        'mirrorActive' => 'bool',
         'recurring' => 'bool',
         'footer' => 'string',
         'header' => 'string',
-        'utm_campaign' => 'string'
+        'utmCampaign' => 'string'
     ];
 
     /**
@@ -81,20 +81,20 @@ class UpdateEmailCampaign implements ArrayAccess
         'tag' => null,
         'sender' => null,
         'name' => null,
-        'html_content' => null,
-        'html_url' => 'url',
-        'scheduled_at' => null,
+        'htmlContent' => null,
+        'htmlUrl' => 'url',
+        'scheduledAt' => null,
         'subject' => null,
-        'reply_to' => 'email',
-        'to_field' => null,
+        'replyTo' => 'email',
+        'toField' => null,
         'recipients' => null,
-        'attachment_url' => 'url',
-        'inline_image_activation' => null,
-        'mirror_active' => null,
+        'attachmentUrl' => 'url',
+        'inlineImageActivation' => null,
+        'mirrorActive' => null,
         'recurring' => null,
         'footer' => null,
         'header' => null,
-        'utm_campaign' => null
+        'utmCampaign' => null
     ];
 
     public static function swaggerTypes()
@@ -115,20 +115,20 @@ class UpdateEmailCampaign implements ArrayAccess
         'tag' => 'tag',
         'sender' => 'sender',
         'name' => 'name',
-        'html_content' => 'htmlContent',
-        'html_url' => 'htmlUrl',
-        'scheduled_at' => 'scheduledAt',
+        'htmlContent' => 'htmlContent',
+        'htmlUrl' => 'htmlUrl',
+        'scheduledAt' => 'scheduledAt',
         'subject' => 'subject',
-        'reply_to' => 'replyTo',
-        'to_field' => 'toField',
+        'replyTo' => 'replyTo',
+        'toField' => 'toField',
         'recipients' => 'recipients',
-        'attachment_url' => 'attachmentUrl',
-        'inline_image_activation' => 'inlineImageActivation',
-        'mirror_active' => 'mirrorActive',
+        'attachmentUrl' => 'attachmentUrl',
+        'inlineImageActivation' => 'inlineImageActivation',
+        'mirrorActive' => 'mirrorActive',
         'recurring' => 'recurring',
         'footer' => 'footer',
         'header' => 'header',
-        'utm_campaign' => 'utmCampaign'
+        'utmCampaign' => 'utmCampaign'
     ];
 
 
@@ -140,20 +140,20 @@ class UpdateEmailCampaign implements ArrayAccess
         'tag' => 'setTag',
         'sender' => 'setSender',
         'name' => 'setName',
-        'html_content' => 'setHtmlContent',
-        'html_url' => 'setHtmlUrl',
-        'scheduled_at' => 'setScheduledAt',
+        'htmlContent' => 'setHtmlContent',
+        'htmlUrl' => 'setHtmlUrl',
+        'scheduledAt' => 'setScheduledAt',
         'subject' => 'setSubject',
-        'reply_to' => 'setReplyTo',
-        'to_field' => 'setToField',
+        'replyTo' => 'setReplyTo',
+        'toField' => 'setToField',
         'recipients' => 'setRecipients',
-        'attachment_url' => 'setAttachmentUrl',
-        'inline_image_activation' => 'setInlineImageActivation',
-        'mirror_active' => 'setMirrorActive',
+        'attachmentUrl' => 'setAttachmentUrl',
+        'inlineImageActivation' => 'setInlineImageActivation',
+        'mirrorActive' => 'setMirrorActive',
         'recurring' => 'setRecurring',
         'footer' => 'setFooter',
         'header' => 'setHeader',
-        'utm_campaign' => 'setUtmCampaign'
+        'utmCampaign' => 'setUtmCampaign'
     ];
 
 
@@ -165,20 +165,20 @@ class UpdateEmailCampaign implements ArrayAccess
         'tag' => 'getTag',
         'sender' => 'getSender',
         'name' => 'getName',
-        'html_content' => 'getHtmlContent',
-        'html_url' => 'getHtmlUrl',
-        'scheduled_at' => 'getScheduledAt',
+        'htmlContent' => 'getHtmlContent',
+        'htmlUrl' => 'getHtmlUrl',
+        'scheduledAt' => 'getScheduledAt',
         'subject' => 'getSubject',
-        'reply_to' => 'getReplyTo',
-        'to_field' => 'getToField',
+        'replyTo' => 'getReplyTo',
+        'toField' => 'getToField',
         'recipients' => 'getRecipients',
-        'attachment_url' => 'getAttachmentUrl',
-        'inline_image_activation' => 'getInlineImageActivation',
-        'mirror_active' => 'getMirrorActive',
+        'attachmentUrl' => 'getAttachmentUrl',
+        'inlineImageActivation' => 'getInlineImageActivation',
+        'mirrorActive' => 'getMirrorActive',
         'recurring' => 'getRecurring',
         'footer' => 'getFooter',
         'header' => 'getHeader',
-        'utm_campaign' => 'getUtmCampaign'
+        'utmCampaign' => 'getUtmCampaign'
     ];
 
     public static function attributeMap()
@@ -215,20 +215,20 @@ class UpdateEmailCampaign implements ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['html_content'] = isset($data['html_content']) ? $data['html_content'] : null;
-        $this->container['html_url'] = isset($data['html_url']) ? $data['html_url'] : null;
-        $this->container['scheduled_at'] = isset($data['scheduled_at']) ? $data['scheduled_at'] : null;
+        $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
+        $this->container['htmlUrl'] = isset($data['htmlUrl']) ? $data['htmlUrl'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
-        $this->container['to_field'] = isset($data['to_field']) ? $data['to_field'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['toField'] = isset($data['toField']) ? $data['toField'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
-        $this->container['attachment_url'] = isset($data['attachment_url']) ? $data['attachment_url'] : null;
-        $this->container['inline_image_activation'] = isset($data['inline_image_activation']) ? $data['inline_image_activation'] : false;
-        $this->container['mirror_active'] = isset($data['mirror_active']) ? $data['mirror_active'] : null;
+        $this->container['attachmentUrl'] = isset($data['attachmentUrl']) ? $data['attachmentUrl'] : null;
+        $this->container['inlineImageActivation'] = isset($data['inlineImageActivation']) ? $data['inlineImageActivation'] : false;
+        $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : false;
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
-        $this->container['utm_campaign'] = isset($data['utm_campaign']) ? $data['utm_campaign'] : null;
+        $this->container['utmCampaign'] = isset($data['utmCampaign']) ? $data['utmCampaign'] : null;
     }
 
     /**
@@ -240,8 +240,8 @@ class UpdateEmailCampaign implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['scheduled_at']) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
-            $invalid_properties[] = "invalid value for 'scheduled_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!is_null($this->container['scheduledAt']) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
+            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
         return $invalid_properties;
@@ -256,7 +256,7 @@ class UpdateEmailCampaign implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
             return false;
         }
         return true;
@@ -286,7 +286,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\EmailCampaignscampaignIdSender
+     * @return \Swagger\Client\Model\UpdateEmailCampaignSender
      */
     public function getSender()
     {
@@ -295,7 +295,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\EmailCampaignscampaignIdSender $sender
+     * @param \Swagger\Client\Model\UpdateEmailCampaignSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -327,69 +327,69 @@ class UpdateEmailCampaign implements ArrayAccess
     }
 
     /**
-     * Gets html_content
+     * Gets htmlContent
      * @return string
      */
     public function getHtmlContent()
     {
-        return $this->container['html_content'];
+        return $this->container['htmlContent'];
     }
 
     /**
-     * Sets html_content
-     * @param string $html_content Body of the message (HTML version). REQUIRED if htmlUrl is empty
+     * Sets htmlContent
+     * @param string $htmlContent Body of the message (HTML version). REQUIRED if htmlUrl is empty
      * @return $this
      */
-    public function setHtmlContent($html_content)
+    public function setHtmlContent($htmlContent)
     {
-        $this->container['html_content'] = $html_content;
+        $this->container['htmlContent'] = $htmlContent;
 
         return $this;
     }
 
     /**
-     * Gets html_url
+     * Gets htmlUrl
      * @return string
      */
     public function getHtmlUrl()
     {
-        return $this->container['html_url'];
+        return $this->container['htmlUrl'];
     }
 
     /**
-     * Sets html_url
-     * @param string $html_url Url which contents the body of the email message. REQUIRED if htmlContent is empty
+     * Sets htmlUrl
+     * @param string $htmlUrl Url which contents the body of the email message. REQUIRED if htmlContent is empty
      * @return $this
      */
-    public function setHtmlUrl($html_url)
+    public function setHtmlUrl($htmlUrl)
     {
-        $this->container['html_url'] = $html_url;
+        $this->container['htmlUrl'] = $htmlUrl;
 
         return $this;
     }
 
     /**
-     * Gets scheduled_at
+     * Gets scheduledAt
      * @return string
      */
     public function getScheduledAt()
     {
-        return $this->container['scheduled_at'];
+        return $this->container['scheduledAt'];
     }
 
     /**
-     * Sets scheduled_at
-     * @param string $scheduled_at Date and time on which the campaign has to run
+     * Sets scheduledAt
+     * @param string $scheduledAt Date and time on which the campaign has to run
      * @return $this
      */
-    public function setScheduledAt($scheduled_at)
+    public function setScheduledAt($scheduledAt)
     {
 
-        if (!is_null($scheduled_at) && (!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduled_at))) {
-            throw new \InvalidArgumentException("invalid value for $scheduled_at when calling UpdateEmailCampaign., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if (!is_null($scheduledAt) && (!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduledAt))) {
+            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling UpdateEmailCampaign., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['scheduled_at'] = $scheduled_at;
+        $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
     }
@@ -416,50 +416,50 @@ class UpdateEmailCampaign implements ArrayAccess
     }
 
     /**
-     * Gets reply_to
+     * Gets replyTo
      * @return string
      */
     public function getReplyTo()
     {
-        return $this->container['reply_to'];
+        return $this->container['replyTo'];
     }
 
     /**
-     * Sets reply_to
-     * @param string $reply_to Email on which campaign recipients will be able to reply to
+     * Sets replyTo
+     * @param string $replyTo Email on which campaign recipients will be able to reply to
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setReplyTo($replyTo)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['replyTo'] = $replyTo;
 
         return $this;
     }
 
     /**
-     * Gets to_field
+     * Gets toField
      * @return string
      */
     public function getToField()
     {
-        return $this->container['to_field'];
+        return $this->container['toField'];
     }
 
     /**
-     * Sets to_field
-     * @param string $to_field This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. To use the contact attributes here, these must already exist in SendinBlue account
+     * Sets toField
+     * @param string $toField This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. To use the contact attributes here, these must already exist in SendinBlue account
      * @return $this
      */
-    public function setToField($to_field)
+    public function setToField($toField)
     {
-        $this->container['to_field'] = $to_field;
+        $this->container['toField'] = $toField;
 
         return $this;
     }
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\EmailCampaignscampaignIdRecipients
+     * @return \Swagger\Client\Model\UpdateEmailCampaignRecipients
      */
     public function getRecipients()
     {
@@ -468,7 +468,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\EmailCampaignscampaignIdRecipients $recipients
+     * @param \Swagger\Client\Model\UpdateEmailCampaignRecipients $recipients
      * @return $this
      */
     public function setRecipients($recipients)
@@ -479,64 +479,64 @@ class UpdateEmailCampaign implements ArrayAccess
     }
 
     /**
-     * Gets attachment_url
+     * Gets attachmentUrl
      * @return string
      */
     public function getAttachmentUrl()
     {
-        return $this->container['attachment_url'];
+        return $this->container['attachmentUrl'];
     }
 
     /**
-     * Sets attachment_url
-     * @param string $attachment_url Absolute url of the attachment. Url not allowed from local machine. File must be hosted somewhere.Possilbe extension values are xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff and rtf
+     * Sets attachmentUrl
+     * @param string $attachmentUrl Absolute url of the attachment. Url not allowed from local machine. File must be hosted somewhere.Possilbe extension values are xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff and rtf
      * @return $this
      */
-    public function setAttachmentUrl($attachment_url)
+    public function setAttachmentUrl($attachmentUrl)
     {
-        $this->container['attachment_url'] = $attachment_url;
+        $this->container['attachmentUrl'] = $attachmentUrl;
 
         return $this;
     }
 
     /**
-     * Gets inline_image_activation
+     * Gets inlineImageActivation
      * @return bool
      */
     public function getInlineImageActivation()
     {
-        return $this->container['inline_image_activation'];
+        return $this->container['inlineImageActivation'];
     }
 
     /**
-     * Sets inline_image_activation
-     * @param bool $inline_image_activation Status of inline image. inlineImageActivation = false means image can’t be embedded, & inlineImageActivation = true means image can be embedded, in the email. You cannot send a campaign of more than 4MB with images embedded in the email. Campaigns with the images embedded in the email must be sent to less than 5000 contacts.
+     * Sets inlineImageActivation
+     * @param bool $inlineImageActivation Status of inline image. inlineImageActivation = false means image can’t be embedded, & inlineImageActivation = true means image can be embedded, in the email. You cannot send a campaign of more than 4MB with images embedded in the email. Campaigns with the images embedded in the email must be sent to less than 5000 contacts.
      * @return $this
      */
-    public function setInlineImageActivation($inline_image_activation)
+    public function setInlineImageActivation($inlineImageActivation)
     {
-        $this->container['inline_image_activation'] = $inline_image_activation;
+        $this->container['inlineImageActivation'] = $inlineImageActivation;
 
         return $this;
     }
 
     /**
-     * Gets mirror_active
+     * Gets mirrorActive
      * @return bool
      */
     public function getMirrorActive()
     {
-        return $this->container['mirror_active'];
+        return $this->container['mirrorActive'];
     }
 
     /**
-     * Sets mirror_active
-     * @param bool $mirror_active Status of mirror links in campaign. mirrorActive = false means mirror links are deactivated, & mirrorActive = true means mirror links are activated, in the campaign
+     * Sets mirrorActive
+     * @param bool $mirrorActive Status of mirror links in campaign. mirrorActive = false means mirror links are deactivated, & mirrorActive = true means mirror links are activated, in the campaign
      * @return $this
      */
-    public function setMirrorActive($mirror_active)
+    public function setMirrorActive($mirrorActive)
     {
-        $this->container['mirror_active'] = $mirror_active;
+        $this->container['mirrorActive'] = $mirrorActive;
 
         return $this;
     }
@@ -605,22 +605,22 @@ class UpdateEmailCampaign implements ArrayAccess
     }
 
     /**
-     * Gets utm_campaign
+     * Gets utmCampaign
      * @return string
      */
     public function getUtmCampaign()
     {
-        return $this->container['utm_campaign'];
+        return $this->container['utmCampaign'];
     }
 
     /**
-     * Sets utm_campaign
-     * @param string $utm_campaign Customize the utm_campaign value. If this field is empty, the campaign name will be used. Only alphanumeric characters and spaces are allowed
+     * Sets utmCampaign
+     * @param string $utmCampaign Customize the utm_campaign value. If this field is empty, the campaign name will be used. Only alphanumeric characters and spaces are allowed
      * @return $this
      */
-    public function setUtmCampaign($utm_campaign)
+    public function setUtmCampaign($utmCampaign)
     {
-        $this->container['utm_campaign'] = $utm_campaign;
+        $this->container['utmCampaign'] = $utmCampaign;
 
         return $this;
     }

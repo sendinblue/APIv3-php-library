@@ -85,7 +85,7 @@ class CreateListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "folder_id"
+     * Test attribute "folderId"
      */
     public function testPropertyFolderId()
     {

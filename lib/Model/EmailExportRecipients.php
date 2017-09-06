@@ -54,8 +54,8 @@ class EmailExportRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'notify_url' => 'string',
-        'recipients_type' => 'string'
+        'notifyURL' => 'string',
+        'recipientsType' => 'string'
     ];
 
     /**
@@ -63,8 +63,8 @@ class EmailExportRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'notify_url' => 'url',
-        'recipients_type' => null
+        'notifyURL' => 'url',
+        'recipientsType' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +82,8 @@ class EmailExportRecipients implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'notify_url' => 'notifyURL',
-        'recipients_type' => 'recipientsType'
+        'notifyURL' => 'notifyURL',
+        'recipientsType' => 'recipientsType'
     ];
 
 
@@ -92,8 +92,8 @@ class EmailExportRecipients implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'notify_url' => 'setNotifyUrl',
-        'recipients_type' => 'setRecipientsType'
+        'notifyURL' => 'setNotifyURL',
+        'recipientsType' => 'setRecipientsType'
     ];
 
 
@@ -102,8 +102,8 @@ class EmailExportRecipients implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'notify_url' => 'getNotifyUrl',
-        'recipients_type' => 'getRecipientsType'
+        'notifyURL' => 'getNotifyURL',
+        'recipientsType' => 'getRecipientsType'
     ];
 
     public static function attributeMap()
@@ -163,8 +163,8 @@ class EmailExportRecipients implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['notify_url'] = isset($data['notify_url']) ? $data['notify_url'] : null;
-        $this->container['recipients_type'] = isset($data['recipients_type']) ? $data['recipients_type'] : null;
+        $this->container['notifyURL'] = isset($data['notifyURL']) ? $data['notifyURL'] : null;
+        $this->container['recipientsType'] = isset($data['recipientsType']) ? $data['recipientsType'] : null;
     }
 
     /**
@@ -176,13 +176,13 @@ class EmailExportRecipients implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['recipients_type'] === null) {
-            $invalid_properties[] = "'recipients_type' can't be null";
+        if ($this->container['recipientsType'] === null) {
+            $invalid_properties[] = "'recipientsType' can't be null";
         }
         $allowed_values = $this->getRecipientsTypeAllowableValues();
-        if (!in_array($this->container['recipients_type'], $allowed_values)) {
+        if (!in_array($this->container['recipientsType'], $allowed_values)) {
             $invalid_properties[] = sprintf(
-                "invalid value for 'recipients_type', must be one of '%s'",
+                "invalid value for 'recipientsType', must be one of '%s'",
                 implode("', '", $allowed_values)
             );
         }
@@ -199,11 +199,11 @@ class EmailExportRecipients implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['recipients_type'] === null) {
+        if ($this->container['recipientsType'] === null) {
             return false;
         }
         $allowed_values = $this->getRecipientsTypeAllowableValues();
-        if (!in_array($this->container['recipients_type'], $allowed_values)) {
+        if (!in_array($this->container['recipientsType'], $allowed_values)) {
             return false;
         }
         return true;
@@ -211,52 +211,52 @@ class EmailExportRecipients implements ArrayAccess
 
 
     /**
-     * Gets notify_url
+     * Gets notifyURL
      * @return string
      */
-    public function getNotifyUrl()
+    public function getNotifyURL()
     {
-        return $this->container['notify_url'];
+        return $this->container['notifyURL'];
     }
 
     /**
-     * Sets notify_url
-     * @param string $notify_url Webhook called once the export process is finished
+     * Sets notifyURL
+     * @param string $notifyURL Webhook called once the export process is finished
      * @return $this
      */
-    public function setNotifyUrl($notify_url)
+    public function setNotifyURL($notifyURL)
     {
-        $this->container['notify_url'] = $notify_url;
+        $this->container['notifyURL'] = $notifyURL;
 
         return $this;
     }
 
     /**
-     * Gets recipients_type
+     * Gets recipientsType
      * @return string
      */
     public function getRecipientsType()
     {
-        return $this->container['recipients_type'];
+        return $this->container['recipientsType'];
     }
 
     /**
-     * Sets recipients_type
-     * @param string $recipients_type Type of recipients to export for a campaign
+     * Sets recipientsType
+     * @param string $recipientsType Type of recipients to export for a campaign
      * @return $this
      */
-    public function setRecipientsType($recipients_type)
+    public function setRecipientsType($recipientsType)
     {
         $allowed_values = $this->getRecipientsTypeAllowableValues();
-        if (!in_array($recipients_type, $allowed_values)) {
+        if (!in_array($recipientsType, $allowed_values)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'recipients_type', must be one of '%s'",
+                    "Invalid value for 'recipientsType', must be one of '%s'",
                     implode("', '", $allowed_values)
                 )
             );
         }
-        $this->container['recipients_type'] = $recipients_type;
+        $this->container['recipientsType'] = $recipientsType;
 
         return $this;
     }

@@ -92,14 +92,14 @@ class ListsApi
      *
      * Add existing contacts to a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param \Swagger\Client\Model\ContactEmails $contact_emails Emails addresses of the contacts (required)
+     * @param string $listId Id of the list (required)
+     * @param \Swagger\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2014
+     * @return \Swagger\Client\Model\PostContactInfo
      */
-    public function addContactToList($list_id, $contact_emails)
+    public function addContactToList($listId, $contactEmails)
     {
-        list($response) = $this->addContactToListWithHttpInfo($list_id, $contact_emails);
+        list($response) = $this->addContactToListWithHttpInfo($listId, $contactEmails);
         return $response;
     }
 
@@ -108,20 +108,20 @@ class ListsApi
      *
      * Add existing contacts to a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param \Swagger\Client\Model\ContactEmails $contact_emails Emails addresses of the contacts (required)
+     * @param string $listId Id of the list (required)
+     * @param \Swagger\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addContactToListWithHttpInfo($list_id, $contact_emails)
+    public function addContactToListWithHttpInfo($listId, $contactEmails)
     {
-        // verify the required parameter 'list_id' is set
-        if ($list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling addContactToList');
+        // verify the required parameter 'listId' is set
+        if ($listId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling addContactToList');
         }
-        // verify the required parameter 'contact_emails' is set
-        if ($contact_emails === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $contact_emails when calling addContactToList');
+        // verify the required parameter 'contactEmails' is set
+        if ($contactEmails === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $contactEmails when calling addContactToList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists/{listId}/contacts/add";
@@ -136,17 +136,17 @@ class ListsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($list_id !== null) {
+        if ($listId !== null) {
             $resourcePath = str_replace(
                 "{" . "listId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($list_id),
+                $this->apiClient->getSerializer()->toPathValue($listId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($contact_emails)) {
-            $_tempBody = $contact_emails;
+        if (isset($contactEmails)) {
+            $_tempBody = $contactEmails;
         }
 
         // for model (json/xml)
@@ -168,23 +168,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2014',
+                '\Swagger\Client\Model\PostContactInfo',
                 '/contacts/lists/{listId}/contacts/add'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PostContactInfo', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostContactInfo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -198,13 +198,13 @@ class ListsApi
      *
      * Create a list
      *
-     * @param \Swagger\Client\Model\CreateList1 $create_list Values to create a list (required)
+     * @param \Swagger\Client\Model\CreateList $createList Values to create a list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createList($create_list)
+    public function createList($createList)
     {
-        list($response) = $this->createListWithHttpInfo($create_list);
+        list($response) = $this->createListWithHttpInfo($createList);
         return $response;
     }
 
@@ -213,15 +213,15 @@ class ListsApi
      *
      * Create a list
      *
-     * @param \Swagger\Client\Model\CreateList1 $create_list Values to create a list (required)
+     * @param \Swagger\Client\Model\CreateList $createList Values to create a list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createListWithHttpInfo($create_list)
+    public function createListWithHttpInfo($createList)
     {
-        // verify the required parameter 'create_list' is set
-        if ($create_list === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $create_list when calling createList');
+        // verify the required parameter 'createList' is set
+        if ($createList === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createList when calling createList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists";
@@ -237,8 +237,8 @@ class ListsApi
 
         // body params
         $_tempBody = null;
-        if (isset($create_list)) {
-            $_tempBody = $create_list;
+        if (isset($createList)) {
+            $_tempBody = $createList;
         }
 
         // for model (json/xml)
@@ -260,19 +260,19 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/contacts/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -286,13 +286,13 @@ class ListsApi
      *
      * Delete a list
      *
-     * @param string $list_id Id of the list (required)
+     * @param string $listId Id of the list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteList($list_id)
+    public function deleteList($listId)
     {
-        list($response) = $this->deleteListWithHttpInfo($list_id);
+        list($response) = $this->deleteListWithHttpInfo($listId);
         return $response;
     }
 
@@ -301,15 +301,15 @@ class ListsApi
      *
      * Delete a list
      *
-     * @param string $list_id Id of the list (required)
+     * @param string $listId Id of the list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteListWithHttpInfo($list_id)
+    public function deleteListWithHttpInfo($listId)
     {
-        // verify the required parameter 'list_id' is set
-        if ($list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling deleteList');
+        // verify the required parameter 'listId' is set
+        if ($listId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling deleteList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists/{listId}";
@@ -324,10 +324,10 @@ class ListsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($list_id !== null) {
+        if ($listId !== null) {
             $resourcePath = str_replace(
                 "{" . "listId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($list_id),
+                $this->apiClient->getSerializer()->toPathValue($listId),
                 $resourcePath
             );
         }
@@ -359,11 +359,11 @@ class ListsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -377,16 +377,16 @@ class ListsApi
      *
      * Get the contacts in a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param string $modified_since Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
+     * @param string $listId Id of the list (required)
+     * @param string $modifiedSince Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20014
+     * @return \Swagger\Client\Model\GetContacts
      */
-    public function getContactsFromList($list_id, $modified_since = null, $limit = '50', $offset = '0')
+    public function getContactsFromList($listId, $modifiedSince = null, $limit = '50', $offset = '0')
     {
-        list($response) = $this->getContactsFromListWithHttpInfo($list_id, $modified_since, $limit, $offset);
+        list($response) = $this->getContactsFromListWithHttpInfo($listId, $modifiedSince, $limit, $offset);
         return $response;
     }
 
@@ -395,21 +395,21 @@ class ListsApi
      *
      * Get the contacts in a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param string $modified_since Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
+     * @param string $listId Id of the list (required)
+     * @param string $modifiedSince Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetContacts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactsFromListWithHttpInfo($list_id, $modified_since = null, $limit = '50', $offset = '0')
+    public function getContactsFromListWithHttpInfo($listId, $modifiedSince = null, $limit = '50', $offset = '0')
     {
-        // verify the required parameter 'list_id' is set
-        if ($list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling getContactsFromList');
+        // verify the required parameter 'listId' is set
+        if ($listId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling getContactsFromList');
         }
-        if (!is_null($modified_since) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $modified_since)) {
-            throw new \InvalidArgumentException("invalid value for \"modified_since\" when calling ListsApi.getContactsFromList, must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if (!is_null($modifiedSince) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $modifiedSince)) {
+            throw new \InvalidArgumentException("invalid value for \"modifiedSince\" when calling ListsApi.getContactsFromList, must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
         if (!is_null($limit) && ($limit > 500)) {
@@ -429,8 +429,8 @@ class ListsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($modified_since !== null) {
-            $queryParams['modifiedSince'] = $this->apiClient->getSerializer()->toQueryValue($modified_since);
+        if ($modifiedSince !== null) {
+            $queryParams['modifiedSince'] = $this->apiClient->getSerializer()->toQueryValue($modifiedSince);
         }
         // query params
         if ($limit !== null) {
@@ -441,10 +441,10 @@ class ListsApi
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // path params
-        if ($list_id !== null) {
+        if ($listId !== null) {
             $resourcePath = str_replace(
                 "{" . "listId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($list_id),
+                $this->apiClient->getSerializer()->toPathValue($listId),
                 $resourcePath
             );
         }
@@ -468,23 +468,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20014',
+                '\Swagger\Client\Model\GetContacts',
                 '/contacts/lists/{listId}/contacts'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetContacts', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetContacts', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -498,15 +498,15 @@ class ListsApi
      *
      * Get the lists in a folder
      *
-     * @param string $folder_id Id of the folder (required)
+     * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20018
+     * @return \Swagger\Client\Model\GetFolderLists
      */
-    public function getFolderLists($folder_id, $limit = '10', $offset = '0')
+    public function getFolderLists($folderId, $limit = '10', $offset = '0')
     {
-        list($response) = $this->getFolderListsWithHttpInfo($folder_id, $limit, $offset);
+        list($response) = $this->getFolderListsWithHttpInfo($folderId, $limit, $offset);
         return $response;
     }
 
@@ -515,17 +515,17 @@ class ListsApi
      *
      * Get the lists in a folder
      *
-     * @param string $folder_id Id of the folder (required)
+     * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetFolderLists, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFolderListsWithHttpInfo($folder_id, $limit = '10', $offset = '0')
+    public function getFolderListsWithHttpInfo($folderId, $limit = '10', $offset = '0')
     {
-        // verify the required parameter 'folder_id' is set
-        if ($folder_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $folder_id when calling getFolderLists');
+        // verify the required parameter 'folderId' is set
+        if ($folderId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folderId when calling getFolderLists');
         }
         if (!is_null($limit) && ($limit > 50)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling ListsApi.getFolderLists, must be smaller than or equal to 50.');
@@ -552,10 +552,10 @@ class ListsApi
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // path params
-        if ($folder_id !== null) {
+        if ($folderId !== null) {
             $resourcePath = str_replace(
                 "{" . "folderId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($folder_id),
+                $this->apiClient->getSerializer()->toPathValue($folderId),
                 $resourcePath
             );
         }
@@ -579,23 +579,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20018',
+                '\Swagger\Client\Model\GetFolderLists',
                 '/contacts/folders/{folderId}/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetFolderLists', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetFolderLists', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -609,13 +609,13 @@ class ListsApi
      *
      * Get the details of a list
      *
-     * @param string $list_id Id of the list (required)
+     * @param string $listId Id of the list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20020
+     * @return \Swagger\Client\Model\GetExtendedList
      */
-    public function getList($list_id)
+    public function getList($listId)
     {
-        list($response) = $this->getListWithHttpInfo($list_id);
+        list($response) = $this->getListWithHttpInfo($listId);
         return $response;
     }
 
@@ -624,15 +624,15 @@ class ListsApi
      *
      * Get the details of a list
      *
-     * @param string $list_id Id of the list (required)
+     * @param string $listId Id of the list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20020, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetExtendedList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getListWithHttpInfo($list_id)
+    public function getListWithHttpInfo($listId)
     {
-        // verify the required parameter 'list_id' is set
-        if ($list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling getList');
+        // verify the required parameter 'listId' is set
+        if ($listId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling getList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists/{listId}";
@@ -647,10 +647,10 @@ class ListsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($list_id !== null) {
+        if ($listId !== null) {
             $resourcePath = str_replace(
                 "{" . "listId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($list_id),
+                $this->apiClient->getSerializer()->toPathValue($listId),
                 $resourcePath
             );
         }
@@ -674,23 +674,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20020',
+                '\Swagger\Client\Model\GetExtendedList',
                 '/contacts/lists/{listId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20020', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetExtendedList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20020', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetExtendedList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -707,7 +707,7 @@ class ListsApi
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20019
+     * @return \Swagger\Client\Model\GetLists
      */
     public function getLists($limit = '10', $offset = '0')
     {
@@ -723,7 +723,7 @@ class ListsApi
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetLists, HTTP status code, HTTP response headers (array of strings)
      */
     public function getListsWithHttpInfo($limit = '10', $offset = '0')
     {
@@ -771,19 +771,19 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20019',
+                '\Swagger\Client\Model\GetLists',
                 '/contacts/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetLists', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetLists', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -797,14 +797,14 @@ class ListsApi
      *
      * Remove existing contacts from a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param \Swagger\Client\Model\ContactEmails1 $contact_emails Emails adresses of the contact (required)
+     * @param string $listId Id of the list (required)
+     * @param \Swagger\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2014
+     * @return \Swagger\Client\Model\PostContactInfo
      */
-    public function removeContactToList($list_id, $contact_emails)
+    public function removeContactToList($listId, $contactEmails)
     {
-        list($response) = $this->removeContactToListWithHttpInfo($list_id, $contact_emails);
+        list($response) = $this->removeContactToListWithHttpInfo($listId, $contactEmails);
         return $response;
     }
 
@@ -813,20 +813,20 @@ class ListsApi
      *
      * Remove existing contacts from a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param \Swagger\Client\Model\ContactEmails1 $contact_emails Emails adresses of the contact (required)
+     * @param string $listId Id of the list (required)
+     * @param \Swagger\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeContactToListWithHttpInfo($list_id, $contact_emails)
+    public function removeContactToListWithHttpInfo($listId, $contactEmails)
     {
-        // verify the required parameter 'list_id' is set
-        if ($list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling removeContactToList');
+        // verify the required parameter 'listId' is set
+        if ($listId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling removeContactToList');
         }
-        // verify the required parameter 'contact_emails' is set
-        if ($contact_emails === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $contact_emails when calling removeContactToList');
+        // verify the required parameter 'contactEmails' is set
+        if ($contactEmails === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $contactEmails when calling removeContactToList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists/{listId}/contacts/remove";
@@ -841,17 +841,17 @@ class ListsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($list_id !== null) {
+        if ($listId !== null) {
             $resourcePath = str_replace(
                 "{" . "listId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($list_id),
+                $this->apiClient->getSerializer()->toPathValue($listId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($contact_emails)) {
-            $_tempBody = $contact_emails;
+        if (isset($contactEmails)) {
+            $_tempBody = $contactEmails;
         }
 
         // for model (json/xml)
@@ -873,23 +873,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2014',
+                '\Swagger\Client\Model\PostContactInfo',
                 '/contacts/lists/{listId}/contacts/remove'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PostContactInfo', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostContactInfo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -903,14 +903,14 @@ class ListsApi
      *
      * Update a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param \Swagger\Client\Model\UpdateList1 $update_list Values to update a list (required)
+     * @param string $listId Id of the list (required)
+     * @param \Swagger\Client\Model\UpdateList $updateList Values to update a list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateList($list_id, $update_list)
+    public function updateList($listId, $updateList)
     {
-        list($response) = $this->updateListWithHttpInfo($list_id, $update_list);
+        list($response) = $this->updateListWithHttpInfo($listId, $updateList);
         return $response;
     }
 
@@ -919,20 +919,20 @@ class ListsApi
      *
      * Update a list
      *
-     * @param string $list_id Id of the list (required)
-     * @param \Swagger\Client\Model\UpdateList1 $update_list Values to update a list (required)
+     * @param string $listId Id of the list (required)
+     * @param \Swagger\Client\Model\UpdateList $updateList Values to update a list (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateListWithHttpInfo($list_id, $update_list)
+    public function updateListWithHttpInfo($listId, $updateList)
     {
-        // verify the required parameter 'list_id' is set
-        if ($list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $list_id when calling updateList');
+        // verify the required parameter 'listId' is set
+        if ($listId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling updateList');
         }
-        // verify the required parameter 'update_list' is set
-        if ($update_list === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $update_list when calling updateList');
+        // verify the required parameter 'updateList' is set
+        if ($updateList === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateList when calling updateList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists/{listId}";
@@ -947,17 +947,17 @@ class ListsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($list_id !== null) {
+        if ($listId !== null) {
             $resourcePath = str_replace(
                 "{" . "listId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($list_id),
+                $this->apiClient->getSerializer()->toPathValue($listId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($update_list)) {
-            $_tempBody = $update_list;
+        if (isset($updateList)) {
+            $_tempBody = $updateList;
         }
 
         // for model (json/xml)
@@ -987,11 +987,11 @@ class ListsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

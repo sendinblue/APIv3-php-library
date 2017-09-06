@@ -78,7 +78,7 @@ class SendTestSmsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "phone_numbers"
+     * Test attribute "phoneNumbers"
      */
     public function testPropertyPhoneNumbers()
     {

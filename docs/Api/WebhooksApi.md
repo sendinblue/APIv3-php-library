@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createWebhook**
-> \Swagger\Client\Model\InlineResponse201 createWebhook($create_webhook)
+> \Swagger\Client\Model\CreateModel createWebhook($createWebhook)
 
 Create a webhook
 
@@ -25,10 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\WebhooksApi();
-$create_webhook = new \Swagger\Client\Model\CreateWebhook1(); // \Swagger\Client\Model\CreateWebhook1 | Values to create a webhook
+$createWebhook = new \Swagger\Client\Model\CreateWebhook(); // \Swagger\Client\Model\CreateWebhook | Values to create a webhook
 
 try {
-    $result = $api_instance->createWebhook($create_webhook);
+    $result = $api_instance->createWebhook($createWebhook);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->createWebhook: ', $e->getMessage(), PHP_EOL;
@@ -40,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_webhook** | [**\Swagger\Client\Model\CreateWebhook1**](../Model/CreateWebhook1.md)| Values to create a webhook |
+ **createWebhook** | [**\Swagger\Client\Model\CreateWebhook**](../Model/CreateWebhook.md)| Values to create a webhook |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteWebhook**
-> deleteWebhook($webhook_id)
+> deleteWebhook($webhookId)
 
 Delete a webhook
 
@@ -71,10 +71,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\WebhooksApi();
-$webhook_id = "webhook_id_example"; // string | Id of the webhook
+$webhookId = "webhookId_example"; // string | Id of the webhook
 
 try {
-    $api_instance->deleteWebhook($webhook_id);
+    $api_instance->deleteWebhook($webhookId);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->deleteWebhook: ', $e->getMessage(), PHP_EOL;
 }
@@ -85,7 +85,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **string**| Id of the webhook |
+ **webhookId** | **string**| Id of the webhook |
 
 ### Return type
 
@@ -103,7 +103,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \Swagger\Client\Model\InlineResponse20013Webhooks getWebhook($webhook_id)
+> \Swagger\Client\Model\GetWebhook getWebhook($webhookId)
 
 Get a webhook details
 
@@ -116,10 +116,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\WebhooksApi();
-$webhook_id = "webhook_id_example"; // string | Id of the webhook
+$webhookId = "webhookId_example"; // string | Id of the webhook
 
 try {
-    $result = $api_instance->getWebhook($webhook_id);
+    $result = $api_instance->getWebhook($webhookId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->getWebhook: ', $e->getMessage(), PHP_EOL;
@@ -131,11 +131,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **string**| Id of the webhook |
+ **webhookId** | **string**| Id of the webhook |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013Webhooks**](../Model/InlineResponse20013Webhooks.md)
+[**\Swagger\Client\Model\GetWebhook**](../Model/GetWebhook.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Swagger\Client\Model\InlineResponse20013 getWebhooks($type)
+> \Swagger\Client\Model\GetWebhooks getWebhooks($type)
 
 Get all webhooks
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\GetWebhooks**](../Model/GetWebhooks.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhook**
-> updateWebhook($webhook_id, $update_webhook)
+> updateWebhook($webhookId, $updateWebhook)
 
 Update a webhook
 
@@ -208,11 +208,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\WebhooksApi();
-$webhook_id = "webhook_id_example"; // string | Id of the webhook
-$update_webhook = new \Swagger\Client\Model\UpdateWebhook1(); // \Swagger\Client\Model\UpdateWebhook1 | Values to update a webhook
+$webhookId = "webhookId_example"; // string | Id of the webhook
+$updateWebhook = new \Swagger\Client\Model\UpdateWebhook(); // \Swagger\Client\Model\UpdateWebhook | Values to update a webhook
 
 try {
-    $api_instance->updateWebhook($webhook_id, $update_webhook);
+    $api_instance->updateWebhook($webhookId, $updateWebhook);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->updateWebhook: ', $e->getMessage(), PHP_EOL;
 }
@@ -223,8 +223,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **string**| Id of the webhook |
- **update_webhook** | [**\Swagger\Client\Model\UpdateWebhook1**](../Model/UpdateWebhook1.md)| Values to update a webhook |
+ **webhookId** | **string**| Id of the webhook |
+ **updateWebhook** | [**\Swagger\Client\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| Values to update a webhook |
 
 ### Return type
 

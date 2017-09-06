@@ -56,9 +56,9 @@ class PostSendFailed implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'int',
         'message' => 'string',
-        'unexisting_emails' => 'string[]',
-        'without_list_emails' => 'string[]',
-        'black_listed_emails' => 'string[]'
+        'unexistingEmails' => 'string[]',
+        'withoutListEmails' => 'string[]',
+        'blackListedEmails' => 'string[]'
     ];
 
     /**
@@ -68,9 +68,9 @@ class PostSendFailed implements ArrayAccess
     protected static $swaggerFormats = [
         'code' => 'int32',
         'message' => null,
-        'unexisting_emails' => 'email',
-        'without_list_emails' => 'email',
-        'black_listed_emails' => 'email'
+        'unexistingEmails' => 'email',
+        'withoutListEmails' => 'email',
+        'blackListedEmails' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -90,9 +90,9 @@ class PostSendFailed implements ArrayAccess
     protected static $attributeMap = [
         'code' => 'code',
         'message' => 'message',
-        'unexisting_emails' => 'unexistingEmails',
-        'without_list_emails' => 'withoutListEmails',
-        'black_listed_emails' => 'blackListedEmails'
+        'unexistingEmails' => 'unexistingEmails',
+        'withoutListEmails' => 'withoutListEmails',
+        'blackListedEmails' => 'blackListedEmails'
     ];
 
 
@@ -103,9 +103,9 @@ class PostSendFailed implements ArrayAccess
     protected static $setters = [
         'code' => 'setCode',
         'message' => 'setMessage',
-        'unexisting_emails' => 'setUnexistingEmails',
-        'without_list_emails' => 'setWithoutListEmails',
-        'black_listed_emails' => 'setBlackListedEmails'
+        'unexistingEmails' => 'setUnexistingEmails',
+        'withoutListEmails' => 'setWithoutListEmails',
+        'blackListedEmails' => 'setBlackListedEmails'
     ];
 
 
@@ -116,9 +116,9 @@ class PostSendFailed implements ArrayAccess
     protected static $getters = [
         'code' => 'getCode',
         'message' => 'getMessage',
-        'unexisting_emails' => 'getUnexistingEmails',
-        'without_list_emails' => 'getWithoutListEmails',
-        'black_listed_emails' => 'getBlackListedEmails'
+        'unexistingEmails' => 'getUnexistingEmails',
+        'withoutListEmails' => 'getWithoutListEmails',
+        'blackListedEmails' => 'getBlackListedEmails'
     ];
 
     public static function attributeMap()
@@ -154,9 +154,9 @@ class PostSendFailed implements ArrayAccess
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['unexisting_emails'] = isset($data['unexisting_emails']) ? $data['unexisting_emails'] : null;
-        $this->container['without_list_emails'] = isset($data['without_list_emails']) ? $data['without_list_emails'] : null;
-        $this->container['black_listed_emails'] = isset($data['black_listed_emails']) ? $data['black_listed_emails'] : null;
+        $this->container['unexistingEmails'] = isset($data['unexistingEmails']) ? $data['unexistingEmails'] : null;
+        $this->container['withoutListEmails'] = isset($data['withoutListEmails']) ? $data['withoutListEmails'] : null;
+        $this->container['blackListedEmails'] = isset($data['blackListedEmails']) ? $data['blackListedEmails'] : null;
     }
 
     /**
@@ -239,64 +239,64 @@ class PostSendFailed implements ArrayAccess
     }
 
     /**
-     * Gets unexisting_emails
+     * Gets unexistingEmails
      * @return string[]
      */
     public function getUnexistingEmails()
     {
-        return $this->container['unexisting_emails'];
+        return $this->container['unexistingEmails'];
     }
 
     /**
-     * Sets unexisting_emails
-     * @param string[] $unexisting_emails
+     * Sets unexistingEmails
+     * @param string[] $unexistingEmails
      * @return $this
      */
-    public function setUnexistingEmails($unexisting_emails)
+    public function setUnexistingEmails($unexistingEmails)
     {
-        $this->container['unexisting_emails'] = $unexisting_emails;
+        $this->container['unexistingEmails'] = $unexistingEmails;
 
         return $this;
     }
 
     /**
-     * Gets without_list_emails
+     * Gets withoutListEmails
      * @return string[]
      */
     public function getWithoutListEmails()
     {
-        return $this->container['without_list_emails'];
+        return $this->container['withoutListEmails'];
     }
 
     /**
-     * Sets without_list_emails
-     * @param string[] $without_list_emails
+     * Sets withoutListEmails
+     * @param string[] $withoutListEmails
      * @return $this
      */
-    public function setWithoutListEmails($without_list_emails)
+    public function setWithoutListEmails($withoutListEmails)
     {
-        $this->container['without_list_emails'] = $without_list_emails;
+        $this->container['withoutListEmails'] = $withoutListEmails;
 
         return $this;
     }
 
     /**
-     * Gets black_listed_emails
+     * Gets blackListedEmails
      * @return string[]
      */
     public function getBlackListedEmails()
     {
-        return $this->container['black_listed_emails'];
+        return $this->container['blackListedEmails'];
     }
 
     /**
-     * Sets black_listed_emails
-     * @param string[] $black_listed_emails
+     * Sets blackListedEmails
+     * @param string[] $blackListedEmails
      * @return $this
      */
-    public function setBlackListedEmails($black_listed_emails)
+    public function setBlackListedEmails($blackListedEmails)
     {
-        $this->container['black_listed_emails'] = $black_listed_emails;
+        $this->container['blackListedEmails'] = $blackListedEmails;
 
         return $this;
     }

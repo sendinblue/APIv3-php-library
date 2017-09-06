@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **addCredits**
-> \Swagger\Client\Model\InlineResponse2003 addCredits($child_id, $add_credits)
+> \Swagger\Client\Model\RemainingCreditModel addCredits($childId, $addCredits)
 
 Add Email and/or SMS credits to a specific child account
 
@@ -29,11 +29,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
-$add_credits = new \Swagger\Client\Model\AddCredits1(); // \Swagger\Client\Model\AddCredits1 | Values to post to add credit to a specific child account
+$childId = 56; // int | id of reseller's child
+$addCredits = new \Swagger\Client\Model\AddCredits(); // \Swagger\Client\Model\AddCredits | Values to post to add credit to a specific child account
 
 try {
-    $result = $api_instance->addCredits($child_id, $add_credits);
+    $result = $api_instance->addCredits($childId, $addCredits);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->addCredits: ', $e->getMessage(), PHP_EOL;
@@ -45,12 +45,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
- **add_credits** | [**\Swagger\Client\Model\AddCredits1**](../Model/AddCredits1.md)| Values to post to add credit to a specific child account |
+ **childId** | **int**| id of reseller&#39;s child |
+ **addCredits** | [**\Swagger\Client\Model\AddCredits**](../Model/AddCredits.md)| Values to post to add credit to a specific child account |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Swagger\Client\Model\RemainingCreditModel**](../Model/RemainingCreditModel.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **associateIpToChild**
-> associateIpToChild($child_id, $ip_id)
+> associateIpToChild($childId, $ipId)
 
 Associate a dedicated IP to the child
 
@@ -77,11 +77,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
-$ip_id = new \Swagger\Client\Model\IpId(); // \Swagger\Client\Model\IpId | IP's id
+$childId = 56; // int | id of reseller's child
+$ipId = new \Swagger\Client\Model\ManageIp(); // \Swagger\Client\Model\ManageIp | IP's id
 
 try {
-    $api_instance->associateIpToChild($child_id, $ip_id);
+    $api_instance->associateIpToChild($childId, $ipId);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->associateIpToChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -92,8 +92,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
- **ip_id** | [**\Swagger\Client\Model\IpId**](../Model/IpId.md)| IP&#39;s id |
+ **childId** | **int**| id of reseller&#39;s child |
+ **ipId** | [**\Swagger\Client\Model\ManageIp**](../Model/ManageIp.md)| IP&#39;s id |
 
 ### Return type
 
@@ -111,7 +111,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createResellerChild**
-> \Swagger\Client\Model\InlineResponse201 createResellerChild($reseller_child)
+> \Swagger\Client\Model\CreateModel createResellerChild($resellerChild)
 
 Creates a reseller child
 
@@ -124,10 +124,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$reseller_child = new \Swagger\Client\Model\ResellerChild(); // \Swagger\Client\Model\ResellerChild | reseller child to add
+$resellerChild = new \Swagger\Client\Model\CreateChild(); // \Swagger\Client\Model\CreateChild | reseller child to add
 
 try {
-    $result = $api_instance->createResellerChild($reseller_child);
+    $result = $api_instance->createResellerChild($resellerChild);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->createResellerChild: ', $e->getMessage(), PHP_EOL;
@@ -139,11 +139,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reseller_child** | [**\Swagger\Client\Model\ResellerChild**](../Model/ResellerChild.md)| reseller child to add | [optional]
+ **resellerChild** | [**\Swagger\Client\Model\CreateChild**](../Model/CreateChild.md)| reseller child to add | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteResellerChild**
-> deleteResellerChild($child_id)
+> deleteResellerChild($childId)
 
 Deletes a single reseller child based on the childId supplied
 
@@ -170,10 +170,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
+$childId = 56; // int | id of reseller's child
 
 try {
-    $api_instance->deleteResellerChild($child_id);
+    $api_instance->deleteResellerChild($childId);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->deleteResellerChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -184,7 +184,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
+ **childId** | **int**| id of reseller&#39;s child |
 
 ### Return type
 
@@ -202,7 +202,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **dissociateIpFromChild**
-> dissociateIpFromChild($child_id, $ip_id)
+> dissociateIpFromChild($childId, $ipId)
 
 Dissociate a dedicated IP to the child
 
@@ -215,11 +215,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
-$ip_id = new \Swagger\Client\Model\IpId1(); // \Swagger\Client\Model\IpId1 | IP's id
+$childId = 56; // int | id of reseller's child
+$ipId = new \Swagger\Client\Model\ManageIp(); // \Swagger\Client\Model\ManageIp | IP's id
 
 try {
-    $api_instance->dissociateIpFromChild($child_id, $ip_id);
+    $api_instance->dissociateIpFromChild($childId, $ipId);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->dissociateIpFromChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -230,8 +230,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
- **ip_id** | [**\Swagger\Client\Model\IpId1**](../Model/IpId1.md)| IP&#39;s id |
+ **childId** | **int**| id of reseller&#39;s child |
+ **ipId** | [**\Swagger\Client\Model\ManageIp**](../Model/ManageIp.md)| IP&#39;s id |
 
 ### Return type
 
@@ -249,7 +249,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChildInfo**
-> \Swagger\Client\Model\InlineResponse2002 getChildInfo($child_id)
+> \Swagger\Client\Model\GetChildInfo getChildInfo($childId)
 
 Gets the info about a specific child account
 
@@ -262,10 +262,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
+$childId = 56; // int | id of reseller's child
 
 try {
-    $result = $api_instance->getChildInfo($child_id);
+    $result = $api_instance->getChildInfo($childId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->getChildInfo: ', $e->getMessage(), PHP_EOL;
@@ -277,11 +277,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
+ **childId** | **int**| id of reseller&#39;s child |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Swagger\Client\Model\GetChildInfo**](../Model/GetChildInfo.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getResellerChilds**
-> \Swagger\Client\Model\InlineResponse2001 getResellerChilds()
+> \Swagger\Client\Model\GetChildrenList getResellerChilds()
 
 Gets the list of all reseller's children accounts
 
@@ -323,7 +323,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Swagger\Client\Model\GetChildrenList**](../Model/GetChildrenList.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeCredits**
-> \Swagger\Client\Model\InlineResponse2003 removeCredits($child_id, $remove_credits)
+> \Swagger\Client\Model\RemainingCreditModel removeCredits($childId, $removeCredits)
 
 Remove Email and/or SMS credits from a specific child account
 
@@ -350,11 +350,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
-$remove_credits = new \Swagger\Client\Model\RemoveCredits1(); // \Swagger\Client\Model\RemoveCredits1 | Values to post to remove email or SMS credits from a specific child account
+$childId = 56; // int | id of reseller's child
+$removeCredits = new \Swagger\Client\Model\RemoveCredits(); // \Swagger\Client\Model\RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
 try {
-    $result = $api_instance->removeCredits($child_id, $remove_credits);
+    $result = $api_instance->removeCredits($childId, $removeCredits);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->removeCredits: ', $e->getMessage(), PHP_EOL;
@@ -366,12 +366,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
- **remove_credits** | [**\Swagger\Client\Model\RemoveCredits1**](../Model/RemoveCredits1.md)| Values to post to remove email or SMS credits from a specific child account |
+ **childId** | **int**| id of reseller&#39;s child |
+ **removeCredits** | [**\Swagger\Client\Model\RemoveCredits**](../Model/RemoveCredits.md)| Values to post to remove email or SMS credits from a specific child account |
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Swagger\Client\Model\RemainingCreditModel**](../Model/RemainingCreditModel.md)
 
 ### Authorization
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateResellerChild**
-> updateResellerChild($child_id, $reseller_child)
+> updateResellerChild($childId, $resellerChild)
 
 Updates infos of reseller's child based on the childId supplied
 
@@ -398,11 +398,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 
 $api_instance = new Swagger\Client\Api\ResellerApi();
-$child_id = 56; // int | id of reseller's child
-$reseller_child = new \Swagger\Client\Model\ResellerChild1(); // \Swagger\Client\Model\ResellerChild1 | values to update in child profile
+$childId = 56; // int | id of reseller's child
+$resellerChild = new \Swagger\Client\Model\UpdateChild(); // \Swagger\Client\Model\UpdateChild | values to update in child profile
 
 try {
-    $api_instance->updateResellerChild($child_id, $reseller_child);
+    $api_instance->updateResellerChild($childId, $resellerChild);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->updateResellerChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -413,8 +413,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child |
- **reseller_child** | [**\Swagger\Client\Model\ResellerChild1**](../Model/ResellerChild1.md)| values to update in child profile |
+ **childId** | **int**| id of reseller&#39;s child |
+ **resellerChild** | [**\Swagger\Client\Model\UpdateChild**](../Model/UpdateChild.md)| values to update in child profile |
 
 ### Return type
 

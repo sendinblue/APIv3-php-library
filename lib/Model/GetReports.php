@@ -54,7 +54,7 @@ class GetReports implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reports' => '\Swagger\Client\Model\InlineResponse2009Reports[]'
+        'reports' => '\Swagger\Client\Model\GetReportsReports[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetReports implements ArrayAccess
 
     /**
      * Gets reports
-     * @return \Swagger\Client\Model\InlineResponse2009Reports[]
+     * @return \Swagger\Client\Model\GetReportsReports[]
      */
     public function getReports()
     {
@@ -171,7 +171,7 @@ class GetReports implements ArrayAccess
 
     /**
      * Sets reports
-     * @param \Swagger\Client\Model\InlineResponse2009Reports[] $reports
+     * @param \Swagger\Client\Model\GetReportsReports[] $reports
      * @return $this
      */
     public function setReports($reports)

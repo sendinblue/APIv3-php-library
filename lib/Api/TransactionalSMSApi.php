@@ -93,19 +93,19 @@ class TransactionalSMSApi
      * Get all the SMS activity (unaggregated events)
      *
      * @param int $limit Number of documents per page (optional, default to 50)
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
-     * @param string $phone_number Filter the report for a specific phone number (optional)
+     * @param string $phoneNumber Filter the report for a specific phone number (optional)
      * @param string $event Filter the report for specific events (optional)
      * @param string $tags Filter the report for specific tags passed as a serialized urlencoded array (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\GetSmsEventReport
      */
-    public function getSmsEvents($limit = '50', $start_date = null, $end_date = null, $offset = '0', $days = null, $phone_number = null, $event = null, $tags = null)
+    public function getSmsEvents($limit = '50', $startDate = null, $endDate = null, $offset = '0', $days = null, $phoneNumber = null, $event = null, $tags = null)
     {
-        list($response) = $this->getSmsEventsWithHttpInfo($limit, $start_date, $end_date, $offset, $days, $phone_number, $event, $tags);
+        list($response) = $this->getSmsEventsWithHttpInfo($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags);
         return $response;
     }
 
@@ -115,17 +115,17 @@ class TransactionalSMSApi
      * Get all the SMS activity (unaggregated events)
      *
      * @param int $limit Number of documents per page (optional, default to 50)
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
-     * @param string $phone_number Filter the report for a specific phone number (optional)
+     * @param string $phoneNumber Filter the report for a specific phone number (optional)
      * @param string $event Filter the report for specific events (optional)
      * @param string $tags Filter the report for specific tags passed as a serialized urlencoded array (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetSmsEventReport, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmsEventsWithHttpInfo($limit = '50', $start_date = null, $end_date = null, $offset = '0', $days = null, $phone_number = null, $event = null, $tags = null)
+    public function getSmsEventsWithHttpInfo($limit = '50', $startDate = null, $endDate = null, $offset = '0', $days = null, $phoneNumber = null, $event = null, $tags = null)
     {
         if (!is_null($limit) && ($limit > 100)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalSMSApi.getSmsEvents, must be smaller than or equal to 100.');
@@ -148,12 +148,12 @@ class TransactionalSMSApi
             $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
         }
         // query params
-        if ($start_date !== null) {
-            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        if ($startDate !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($startDate);
         }
         // query params
-        if ($end_date !== null) {
-            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        if ($endDate !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($endDate);
         }
         // query params
         if ($offset !== null) {
@@ -164,8 +164,8 @@ class TransactionalSMSApi
             $queryParams['days'] = $this->apiClient->getSerializer()->toQueryValue($days);
         }
         // query params
-        if ($phone_number !== null) {
-            $queryParams['phoneNumber'] = $this->apiClient->getSerializer()->toQueryValue($phone_number);
+        if ($phoneNumber !== null) {
+            $queryParams['phoneNumber'] = $this->apiClient->getSerializer()->toQueryValue($phoneNumber);
         }
         // query params
         if ($event !== null) {
@@ -195,19 +195,19 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\GetSmsEventReport',
                 '/transactionalSMS/statistics/events'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetSmsEventReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetSmsEventReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -221,16 +221,16 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated over a period of time
      *
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param string $tag Filter on a tag (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\GetTransacAggregatedSmsReport
      */
-    public function getTransacAggregatedSmsReport($start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getTransacAggregatedSmsReport($startDate = null, $endDate = null, $days = null, $tag = null)
     {
-        list($response) = $this->getTransacAggregatedSmsReportWithHttpInfo($start_date, $end_date, $days, $tag);
+        list($response) = $this->getTransacAggregatedSmsReportWithHttpInfo($startDate, $endDate, $days, $tag);
         return $response;
     }
 
@@ -239,14 +239,14 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated over a period of time
      *
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param string $tag Filter on a tag (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetTransacAggregatedSmsReport, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransacAggregatedSmsReportWithHttpInfo($start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getTransacAggregatedSmsReportWithHttpInfo($startDate = null, $endDate = null, $days = null, $tag = null)
     {
         // parse inputs
         $resourcePath = "/transactionalSMS/statistics/aggregatedReport";
@@ -261,12 +261,12 @@ class TransactionalSMSApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($start_date !== null) {
-            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        if ($startDate !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($startDate);
         }
         // query params
-        if ($end_date !== null) {
-            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        if ($endDate !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($endDate);
         }
         // query params
         if ($days !== null) {
@@ -296,19 +296,19 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\GetTransacAggregatedSmsReport',
                 '/transactionalSMS/statistics/aggregatedReport'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetTransacAggregatedSmsReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetTransacAggregatedSmsReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -322,16 +322,16 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated per day
      *
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Filter on a tag (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20024
+     * @return \Swagger\Client\Model\GetTransacSmsReport
      */
-    public function getTransacSmsReport($start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getTransacSmsReport($startDate = null, $endDate = null, $days = null, $tag = null)
     {
-        list($response) = $this->getTransacSmsReportWithHttpInfo($start_date, $end_date, $days, $tag);
+        list($response) = $this->getTransacSmsReportWithHttpInfo($startDate, $endDate, $days, $tag);
         return $response;
     }
 
@@ -340,14 +340,14 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated per day
      *
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Filter on a tag (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetTransacSmsReport, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransacSmsReportWithHttpInfo($start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getTransacSmsReportWithHttpInfo($startDate = null, $endDate = null, $days = null, $tag = null)
     {
         // parse inputs
         $resourcePath = "/transactionalSMS/statistics/reports";
@@ -362,12 +362,12 @@ class TransactionalSMSApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($start_date !== null) {
-            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        if ($startDate !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($startDate);
         }
         // query params
-        if ($end_date !== null) {
-            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        if ($endDate !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($endDate);
         }
         // query params
         if ($days !== null) {
@@ -397,19 +397,19 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20024',
+                '\Swagger\Client\Model\GetTransacSmsReport',
                 '/transactionalSMS/statistics/reports'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetTransacSmsReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetTransacSmsReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -423,13 +423,13 @@ class TransactionalSMSApi
      *
      * Send the SMS campaign to the specified mobile number
      *
-     * @param \Swagger\Client\Model\SendTransacSms1 $send_transac_sms Values to send a transactional SMS (required)
+     * @param \Swagger\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2015
+     * @return \Swagger\Client\Model\SendSms
      */
-    public function sendTransacSms($send_transac_sms)
+    public function sendTransacSms($sendTransacSms)
     {
-        list($response) = $this->sendTransacSmsWithHttpInfo($send_transac_sms);
+        list($response) = $this->sendTransacSmsWithHttpInfo($sendTransacSms);
         return $response;
     }
 
@@ -438,15 +438,15 @@ class TransactionalSMSApi
      *
      * Send the SMS campaign to the specified mobile number
      *
-     * @param \Swagger\Client\Model\SendTransacSms1 $send_transac_sms Values to send a transactional SMS (required)
+     * @param \Swagger\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\SendSms, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTransacSmsWithHttpInfo($send_transac_sms)
+    public function sendTransacSmsWithHttpInfo($sendTransacSms)
     {
-        // verify the required parameter 'send_transac_sms' is set
-        if ($send_transac_sms === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_transac_sms when calling sendTransacSms');
+        // verify the required parameter 'sendTransacSms' is set
+        if ($sendTransacSms === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendTransacSms when calling sendTransacSms');
         }
         // parse inputs
         $resourcePath = "/transactionalSMS/sms";
@@ -462,8 +462,8 @@ class TransactionalSMSApi
 
         // body params
         $_tempBody = null;
-        if (isset($send_transac_sms)) {
-            $_tempBody = $send_transac_sms;
+        if (isset($sendTransacSms)) {
+            $_tempBody = $sendTransacSms;
         }
 
         // for model (json/xml)
@@ -485,23 +485,23 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2015',
+                '\Swagger\Client\Model\SendSms',
                 '/transactionalSMS/sms'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SendSms', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SendSms', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 402:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

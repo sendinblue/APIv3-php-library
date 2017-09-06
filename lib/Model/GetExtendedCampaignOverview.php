@@ -59,20 +59,20 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'subject' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'scheduled_at' => 'string',
-        'test_sent' => 'bool',
+        'scheduledAt' => 'string',
+        'testSent' => 'bool',
         'header' => 'string',
         'footer' => 'string',
-        'sender' => '\Swagger\Client\Model\InlineResponse2008Sender',
-        'reply_to' => 'string',
-        'to_field' => 'string',
-        'html_content' => 'string',
-        'share_link' => 'string',
+        'sender' => '\Swagger\Client\Model\GetExtendedCampaignOverviewSender',
+        'replyTo' => 'string',
+        'toField' => 'string',
+        'htmlContent' => 'string',
+        'shareLink' => 'string',
         'tag' => 'string',
-        'created_at' => 'string',
-        'modified_at' => 'string',
-        'inline_image_activation' => 'bool',
-        'mirror_active' => 'bool',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string',
+        'inlineImageActivation' => 'bool',
+        'mirrorActive' => 'bool',
         'recurring' => 'bool'
     ];
 
@@ -86,20 +86,20 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'subject' => null,
         'type' => null,
         'status' => null,
-        'scheduled_at' => null,
-        'test_sent' => null,
+        'scheduledAt' => null,
+        'testSent' => null,
         'header' => null,
         'footer' => null,
         'sender' => null,
-        'reply_to' => 'email',
-        'to_field' => 'email',
-        'html_content' => null,
-        'share_link' => 'url',
+        'replyTo' => 'email',
+        'toField' => 'email',
+        'htmlContent' => null,
+        'shareLink' => 'url',
         'tag' => null,
-        'created_at' => null,
-        'modified_at' => null,
-        'inline_image_activation' => null,
-        'mirror_active' => null,
+        'createdAt' => null,
+        'modifiedAt' => null,
+        'inlineImageActivation' => null,
+        'mirrorActive' => null,
         'recurring' => null
     ];
 
@@ -123,20 +123,20 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'subject' => 'subject',
         'type' => 'type',
         'status' => 'status',
-        'scheduled_at' => 'scheduledAt',
-        'test_sent' => 'testSent',
+        'scheduledAt' => 'scheduledAt',
+        'testSent' => 'testSent',
         'header' => 'header',
         'footer' => 'footer',
         'sender' => 'sender',
-        'reply_to' => 'replyTo',
-        'to_field' => 'toField',
-        'html_content' => 'htmlContent',
-        'share_link' => 'shareLink',
+        'replyTo' => 'replyTo',
+        'toField' => 'toField',
+        'htmlContent' => 'htmlContent',
+        'shareLink' => 'shareLink',
         'tag' => 'tag',
-        'created_at' => 'createdAt',
-        'modified_at' => 'modifiedAt',
-        'inline_image_activation' => 'inlineImageActivation',
-        'mirror_active' => 'mirrorActive',
+        'createdAt' => 'createdAt',
+        'modifiedAt' => 'modifiedAt',
+        'inlineImageActivation' => 'inlineImageActivation',
+        'mirrorActive' => 'mirrorActive',
         'recurring' => 'recurring'
     ];
 
@@ -151,20 +151,20 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'subject' => 'setSubject',
         'type' => 'setType',
         'status' => 'setStatus',
-        'scheduled_at' => 'setScheduledAt',
-        'test_sent' => 'setTestSent',
+        'scheduledAt' => 'setScheduledAt',
+        'testSent' => 'setTestSent',
         'header' => 'setHeader',
         'footer' => 'setFooter',
         'sender' => 'setSender',
-        'reply_to' => 'setReplyTo',
-        'to_field' => 'setToField',
-        'html_content' => 'setHtmlContent',
-        'share_link' => 'setShareLink',
+        'replyTo' => 'setReplyTo',
+        'toField' => 'setToField',
+        'htmlContent' => 'setHtmlContent',
+        'shareLink' => 'setShareLink',
         'tag' => 'setTag',
-        'created_at' => 'setCreatedAt',
-        'modified_at' => 'setModifiedAt',
-        'inline_image_activation' => 'setInlineImageActivation',
-        'mirror_active' => 'setMirrorActive',
+        'createdAt' => 'setCreatedAt',
+        'modifiedAt' => 'setModifiedAt',
+        'inlineImageActivation' => 'setInlineImageActivation',
+        'mirrorActive' => 'setMirrorActive',
         'recurring' => 'setRecurring'
     ];
 
@@ -179,20 +179,20 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'subject' => 'getSubject',
         'type' => 'getType',
         'status' => 'getStatus',
-        'scheduled_at' => 'getScheduledAt',
-        'test_sent' => 'getTestSent',
+        'scheduledAt' => 'getScheduledAt',
+        'testSent' => 'getTestSent',
         'header' => 'getHeader',
         'footer' => 'getFooter',
         'sender' => 'getSender',
-        'reply_to' => 'getReplyTo',
-        'to_field' => 'getToField',
-        'html_content' => 'getHtmlContent',
-        'share_link' => 'getShareLink',
+        'replyTo' => 'getReplyTo',
+        'toField' => 'getToField',
+        'htmlContent' => 'getHtmlContent',
+        'shareLink' => 'getShareLink',
         'tag' => 'getTag',
-        'created_at' => 'getCreatedAt',
-        'modified_at' => 'getModifiedAt',
-        'inline_image_activation' => 'getInlineImageActivation',
-        'mirror_active' => 'getMirrorActive',
+        'createdAt' => 'getCreatedAt',
+        'modifiedAt' => 'getModifiedAt',
+        'inlineImageActivation' => 'getInlineImageActivation',
+        'mirrorActive' => 'getMirrorActive',
         'recurring' => 'getRecurring'
     ];
 
@@ -268,20 +268,20 @@ class GetExtendedCampaignOverview implements ArrayAccess
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['scheduled_at'] = isset($data['scheduled_at']) ? $data['scheduled_at'] : null;
-        $this->container['test_sent'] = isset($data['test_sent']) ? $data['test_sent'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
+        $this->container['testSent'] = isset($data['testSent']) ? $data['testSent'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
-        $this->container['to_field'] = isset($data['to_field']) ? $data['to_field'] : null;
-        $this->container['html_content'] = isset($data['html_content']) ? $data['html_content'] : null;
-        $this->container['share_link'] = isset($data['share_link']) ? $data['share_link'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['toField'] = isset($data['toField']) ? $data['toField'] : null;
+        $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
+        $this->container['shareLink'] = isset($data['shareLink']) ? $data['shareLink'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['modified_at'] = isset($data['modified_at']) ? $data['modified_at'] : null;
-        $this->container['inline_image_activation'] = isset($data['inline_image_activation']) ? $data['inline_image_activation'] : null;
-        $this->container['mirror_active'] = isset($data['mirror_active']) ? $data['mirror_active'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
+        $this->container['inlineImageActivation'] = isset($data['inlineImageActivation']) ? $data['inlineImageActivation'] : null;
+        $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
     }
 
@@ -325,15 +325,15 @@ class GetExtendedCampaignOverview implements ArrayAccess
             );
         }
 
-        if ($this->container['scheduled_at'] === null) {
-            $invalid_properties[] = "'scheduled_at' can't be null";
+        if ($this->container['scheduledAt'] === null) {
+            $invalid_properties[] = "'scheduledAt' can't be null";
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
-            $invalid_properties[] = "invalid value for 'scheduled_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
+            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
-        if ($this->container['test_sent'] === null) {
-            $invalid_properties[] = "'test_sent' can't be null";
+        if ($this->container['testSent'] === null) {
+            $invalid_properties[] = "'testSent' can't be null";
         }
         if ($this->container['header'] === null) {
             $invalid_properties[] = "'header' can't be null";
@@ -341,33 +341,33 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if ($this->container['footer'] === null) {
             $invalid_properties[] = "'footer' can't be null";
         }
-        if ($this->container['reply_to'] === null) {
-            $invalid_properties[] = "'reply_to' can't be null";
+        if ($this->container['replyTo'] === null) {
+            $invalid_properties[] = "'replyTo' can't be null";
         }
-        if ($this->container['to_field'] === null) {
-            $invalid_properties[] = "'to_field' can't be null";
+        if ($this->container['toField'] === null) {
+            $invalid_properties[] = "'toField' can't be null";
         }
-        if ($this->container['html_content'] === null) {
-            $invalid_properties[] = "'html_content' can't be null";
+        if ($this->container['htmlContent'] === null) {
+            $invalid_properties[] = "'htmlContent' can't be null";
         }
-        if ($this->container['share_link'] === null) {
-            $invalid_properties[] = "'share_link' can't be null";
+        if ($this->container['shareLink'] === null) {
+            $invalid_properties[] = "'shareLink' can't be null";
         }
         if ($this->container['tag'] === null) {
             $invalid_properties[] = "'tag' can't be null";
         }
-        if ($this->container['created_at'] === null) {
-            $invalid_properties[] = "'created_at' can't be null";
+        if ($this->container['createdAt'] === null) {
+            $invalid_properties[] = "'createdAt' can't be null";
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['created_at'])) {
-            $invalid_properties[] = "invalid value for 'created_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['createdAt'])) {
+            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
-        if ($this->container['modified_at'] === null) {
-            $invalid_properties[] = "'modified_at' can't be null";
+        if ($this->container['modifiedAt'] === null) {
+            $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modified_at'])) {
-            $invalid_properties[] = "invalid value for 'modified_at', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modifiedAt'])) {
+            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
         }
 
         return $invalid_properties;
@@ -405,13 +405,13 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if (!in_array($this->container['status'], $allowed_values)) {
             return false;
         }
-        if ($this->container['scheduled_at'] === null) {
+        if ($this->container['scheduledAt'] === null) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduled_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
             return false;
         }
-        if ($this->container['test_sent'] === null) {
+        if ($this->container['testSent'] === null) {
             return false;
         }
         if ($this->container['header'] === null) {
@@ -420,31 +420,31 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if ($this->container['footer'] === null) {
             return false;
         }
-        if ($this->container['reply_to'] === null) {
+        if ($this->container['replyTo'] === null) {
             return false;
         }
-        if ($this->container['to_field'] === null) {
+        if ($this->container['toField'] === null) {
             return false;
         }
-        if ($this->container['html_content'] === null) {
+        if ($this->container['htmlContent'] === null) {
             return false;
         }
-        if ($this->container['share_link'] === null) {
+        if ($this->container['shareLink'] === null) {
             return false;
         }
         if ($this->container['tag'] === null) {
             return false;
         }
-        if ($this->container['created_at'] === null) {
+        if ($this->container['createdAt'] === null) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['created_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['createdAt'])) {
             return false;
         }
-        if ($this->container['modified_at'] === null) {
+        if ($this->container['modifiedAt'] === null) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modified_at'])) {
+        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['modifiedAt'])) {
             return false;
         }
         return true;
@@ -575,48 +575,48 @@ class GetExtendedCampaignOverview implements ArrayAccess
     }
 
     /**
-     * Gets scheduled_at
+     * Gets scheduledAt
      * @return string
      */
     public function getScheduledAt()
     {
-        return $this->container['scheduled_at'];
+        return $this->container['scheduledAt'];
     }
 
     /**
-     * Sets scheduled_at
-     * @param string $scheduled_at Date on which campaign is scheduled
+     * Sets scheduledAt
+     * @param string $scheduledAt Date on which campaign is scheduled
      * @return $this
      */
-    public function setScheduledAt($scheduled_at)
+    public function setScheduledAt($scheduledAt)
     {
 
-        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduled_at))) {
-            throw new \InvalidArgumentException("invalid value for $scheduled_at when calling GetExtendedCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduledAt))) {
+            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling GetExtendedCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['scheduled_at'] = $scheduled_at;
+        $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
     }
 
     /**
-     * Gets test_sent
+     * Gets testSent
      * @return bool
      */
     public function getTestSent()
     {
-        return $this->container['test_sent'];
+        return $this->container['testSent'];
     }
 
     /**
-     * Sets test_sent
-     * @param bool $test_sent Retrieved the status of test email sending. (true=Test email has been sent  false=Test email has not been sent)
+     * Sets testSent
+     * @param bool $testSent Retrieved the status of test email sending. (true=Test email has been sent  false=Test email has not been sent)
      * @return $this
      */
-    public function setTestSent($test_sent)
+    public function setTestSent($testSent)
     {
-        $this->container['test_sent'] = $test_sent;
+        $this->container['testSent'] = $testSent;
 
         return $this;
     }
@@ -665,7 +665,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\InlineResponse2008Sender
+     * @return \Swagger\Client\Model\GetExtendedCampaignOverviewSender
      */
     public function getSender()
     {
@@ -674,7 +674,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\InlineResponse2008Sender $sender
+     * @param \Swagger\Client\Model\GetExtendedCampaignOverviewSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -685,85 +685,85 @@ class GetExtendedCampaignOverview implements ArrayAccess
     }
 
     /**
-     * Gets reply_to
+     * Gets replyTo
      * @return string
      */
     public function getReplyTo()
     {
-        return $this->container['reply_to'];
+        return $this->container['replyTo'];
     }
 
     /**
-     * Sets reply_to
-     * @param string $reply_to Email defined as the \"Reply to\" of the campaign
+     * Sets replyTo
+     * @param string $replyTo Email defined as the \"Reply to\" of the campaign
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setReplyTo($replyTo)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['replyTo'] = $replyTo;
 
         return $this;
     }
 
     /**
-     * Gets to_field
+     * Gets toField
      * @return string
      */
     public function getToField()
     {
-        return $this->container['to_field'];
+        return $this->container['toField'];
     }
 
     /**
-     * Sets to_field
-     * @param string $to_field Customisation of the \"to\" field of the campaign
+     * Sets toField
+     * @param string $toField Customisation of the \"to\" field of the campaign
      * @return $this
      */
-    public function setToField($to_field)
+    public function setToField($toField)
     {
-        $this->container['to_field'] = $to_field;
+        $this->container['toField'] = $toField;
 
         return $this;
     }
 
     /**
-     * Gets html_content
+     * Gets htmlContent
      * @return string
      */
     public function getHtmlContent()
     {
-        return $this->container['html_content'];
+        return $this->container['htmlContent'];
     }
 
     /**
-     * Sets html_content
-     * @param string $html_content HTML content of the campaign
+     * Sets htmlContent
+     * @param string $htmlContent HTML content of the campaign
      * @return $this
      */
-    public function setHtmlContent($html_content)
+    public function setHtmlContent($htmlContent)
     {
-        $this->container['html_content'] = $html_content;
+        $this->container['htmlContent'] = $htmlContent;
 
         return $this;
     }
 
     /**
-     * Gets share_link
+     * Gets shareLink
      * @return string
      */
     public function getShareLink()
     {
-        return $this->container['share_link'];
+        return $this->container['shareLink'];
     }
 
     /**
-     * Sets share_link
-     * @param string $share_link Link to share the campaign on social medias
+     * Sets shareLink
+     * @param string $shareLink Link to share the campaign on social medias
      * @return $this
      */
-    public function setShareLink($share_link)
+    public function setShareLink($shareLink)
     {
-        $this->container['share_link'] = $share_link;
+        $this->container['shareLink'] = $shareLink;
 
         return $this;
     }
@@ -790,95 +790,95 @@ class GetExtendedCampaignOverview implements ArrayAccess
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      * @return string
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
-     * @param string $created_at Creation date of the campaign
+     * Sets createdAt
+     * @param string $createdAt Creation date of the campaign
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
 
-        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $created_at))) {
-            throw new \InvalidArgumentException("invalid value for $created_at when calling GetExtendedCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $createdAt))) {
+            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetExtendedCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets modified_at
+     * Gets modifiedAt
      * @return string
      */
     public function getModifiedAt()
     {
-        return $this->container['modified_at'];
+        return $this->container['modifiedAt'];
     }
 
     /**
-     * Sets modified_at
-     * @param string $modified_at Date of last modification of the campaign
+     * Sets modifiedAt
+     * @param string $modifiedAt Date of last modification of the campaign
      * @return $this
      */
-    public function setModifiedAt($modified_at)
+    public function setModifiedAt($modifiedAt)
     {
 
-        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $modified_at))) {
-            throw new \InvalidArgumentException("invalid value for $modified_at when calling GetExtendedCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if ((!preg_match("/YYYY-MM-DD HH:mm:ss/", $modifiedAt))) {
+            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetExtendedCampaignOverview., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
         }
 
-        $this->container['modified_at'] = $modified_at;
+        $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
     }
 
     /**
-     * Gets inline_image_activation
+     * Gets inlineImageActivation
      * @return bool
      */
     public function getInlineImageActivation()
     {
-        return $this->container['inline_image_activation'];
+        return $this->container['inlineImageActivation'];
     }
 
     /**
-     * Sets inline_image_activation
-     * @param bool $inline_image_activation Status of inline image. inlineImageActivation = false means image can’t be embedded, & inlineImageActivation = true means image can be embedded, in the email.
+     * Sets inlineImageActivation
+     * @param bool $inlineImageActivation Status of inline image. inlineImageActivation = false means image can’t be embedded, & inlineImageActivation = true means image can be embedded, in the email.
      * @return $this
      */
-    public function setInlineImageActivation($inline_image_activation)
+    public function setInlineImageActivation($inlineImageActivation)
     {
-        $this->container['inline_image_activation'] = $inline_image_activation;
+        $this->container['inlineImageActivation'] = $inlineImageActivation;
 
         return $this;
     }
 
     /**
-     * Gets mirror_active
+     * Gets mirrorActive
      * @return bool
      */
     public function getMirrorActive()
     {
-        return $this->container['mirror_active'];
+        return $this->container['mirrorActive'];
     }
 
     /**
-     * Sets mirror_active
-     * @param bool $mirror_active Status of mirror links in campaign. mirrorActive = false means mirror links are deactivated, & mirrorActive = true means mirror links are activated, in the campaign
+     * Sets mirrorActive
+     * @param bool $mirrorActive Status of mirror links in campaign. mirrorActive = false means mirror links are deactivated, & mirrorActive = true means mirror links are activated, in the campaign
      * @return $this
      */
-    public function setMirrorActive($mirror_active)
+    public function setMirrorActive($mirrorActive)
     {
-        $this->container['mirror_active'] = $mirror_active;
+        $this->container['mirrorActive'] = $mirrorActive;
 
         return $this;
     }

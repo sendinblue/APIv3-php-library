@@ -59,8 +59,8 @@ class GetWebhook implements ArrayAccess
         'description' => 'string',
         'events' => 'string[]',
         'type' => 'string',
-        'created_at' => '\DateTime',
-        'modified_at' => '\DateTime'
+        'createdAt' => '\DateTime',
+        'modifiedAt' => '\DateTime'
     ];
 
     /**
@@ -73,8 +73,8 @@ class GetWebhook implements ArrayAccess
         'description' => null,
         'events' => null,
         'type' => null,
-        'created_at' => 'date',
-        'modified_at' => 'date'
+        'createdAt' => 'date',
+        'modifiedAt' => 'date'
     ];
 
     public static function swaggerTypes()
@@ -97,8 +97,8 @@ class GetWebhook implements ArrayAccess
         'description' => 'description',
         'events' => 'events',
         'type' => 'type',
-        'created_at' => 'createdAt',
-        'modified_at' => 'modifiedAt'
+        'createdAt' => 'createdAt',
+        'modifiedAt' => 'modifiedAt'
     ];
 
 
@@ -112,8 +112,8 @@ class GetWebhook implements ArrayAccess
         'description' => 'setDescription',
         'events' => 'setEvents',
         'type' => 'setType',
-        'created_at' => 'setCreatedAt',
-        'modified_at' => 'setModifiedAt'
+        'createdAt' => 'setCreatedAt',
+        'modifiedAt' => 'setModifiedAt'
     ];
 
 
@@ -127,8 +127,8 @@ class GetWebhook implements ArrayAccess
         'description' => 'getDescription',
         'events' => 'getEvents',
         'type' => 'getType',
-        'created_at' => 'getCreatedAt',
-        'modified_at' => 'getModifiedAt'
+        'createdAt' => 'getCreatedAt',
+        'modifiedAt' => 'getModifiedAt'
     ];
 
     public static function attributeMap()
@@ -181,8 +181,8 @@ class GetWebhook implements ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['events'] = isset($data['events']) ? $data['events'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['modified_at'] = isset($data['modified_at']) ? $data['modified_at'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
     }
 
     /**
@@ -217,11 +217,11 @@ class GetWebhook implements ArrayAccess
             );
         }
 
-        if ($this->container['created_at'] === null) {
-            $invalid_properties[] = "'created_at' can't be null";
+        if ($this->container['createdAt'] === null) {
+            $invalid_properties[] = "'createdAt' can't be null";
         }
-        if ($this->container['modified_at'] === null) {
-            $invalid_properties[] = "'modified_at' can't be null";
+        if ($this->container['modifiedAt'] === null) {
+            $invalid_properties[] = "'modifiedAt' can't be null";
         }
         return $invalid_properties;
     }
@@ -254,10 +254,10 @@ class GetWebhook implements ArrayAccess
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
-        if ($this->container['created_at'] === null) {
+        if ($this->container['createdAt'] === null) {
             return false;
         }
-        if ($this->container['modified_at'] === null) {
+        if ($this->container['modifiedAt'] === null) {
             return false;
         }
         return true;
@@ -379,43 +379,43 @@ class GetWebhook implements ArrayAccess
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      * @return \DateTime
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
-     * @param \DateTime $created_at Creation date of the webhook
+     * Sets createdAt
+     * @param \DateTime $createdAt Creation date of the webhook
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets modified_at
+     * Gets modifiedAt
      * @return \DateTime
      */
     public function getModifiedAt()
     {
-        return $this->container['modified_at'];
+        return $this->container['modifiedAt'];
     }
 
     /**
-     * Sets modified_at
-     * @param \DateTime $modified_at Last modification date of the webhook
+     * Sets modifiedAt
+     * @param \DateTime $modifiedAt Last modification date of the webhook
      * @return $this
      */
-    public function setModifiedAt($modified_at)
+    public function setModifiedAt($modifiedAt)
     {
-        $this->container['modified_at'] = $modified_at;
+        $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
     }

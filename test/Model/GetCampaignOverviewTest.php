@@ -113,7 +113,7 @@ class GetCampaignOverviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "scheduled_at"
+     * Test attribute "scheduledAt"
      */
     public function testPropertyScheduledAt()
     {

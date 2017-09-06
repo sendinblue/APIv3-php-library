@@ -99,7 +99,7 @@ class GetProcessTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "export_url"
+     * Test attribute "exportUrl"
      */
     public function testPropertyExportUrl()
     {

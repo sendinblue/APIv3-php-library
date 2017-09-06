@@ -54,7 +54,7 @@ class GetContacts implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'contacts' => '\Swagger\Client\Model\InlineResponse20014Contacts[]',
+        'contacts' => 'object[]',
         'count' => 'int'
     ];
 
@@ -180,7 +180,7 @@ class GetContacts implements ArrayAccess
 
     /**
      * Gets contacts
-     * @return \Swagger\Client\Model\InlineResponse20014Contacts[]
+     * @return object[]
      */
     public function getContacts()
     {
@@ -189,7 +189,7 @@ class GetContacts implements ArrayAccess
 
     /**
      * Sets contacts
-     * @param \Swagger\Client\Model\InlineResponse20014Contacts[] $contacts
+     * @param object[] $contacts
      * @return $this
      */
     public function setContacts($contacts)

@@ -54,7 +54,7 @@ class GetEmailEventReport implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'events' => '\Swagger\Client\Model\InlineResponse20011Events[]'
+        'events' => '\Swagger\Client\Model\GetEmailEventReportEvents[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetEmailEventReport implements ArrayAccess
 
     /**
      * Gets events
-     * @return \Swagger\Client\Model\InlineResponse20011Events[]
+     * @return \Swagger\Client\Model\GetEmailEventReportEvents[]
      */
     public function getEvents()
     {
@@ -171,7 +171,7 @@ class GetEmailEventReport implements ArrayAccess
 
     /**
      * Sets events
-     * @param \Swagger\Client\Model\InlineResponse20011Events[] $events
+     * @param \Swagger\Client\Model\GetEmailEventReportEvents[] $events
      * @return $this
      */
     public function setEvents($events)

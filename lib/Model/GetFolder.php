@@ -56,9 +56,9 @@ class GetFolder implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'name' => 'string',
-        'total_blacklisted' => 'int',
-        'total_subscribers' => 'int',
-        'unique_subscribers' => 'int'
+        'totalBlacklisted' => 'int',
+        'totalSubscribers' => 'int',
+        'uniqueSubscribers' => 'int'
     ];
 
     /**
@@ -68,9 +68,9 @@ class GetFolder implements ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'int32',
         'name' => null,
-        'total_blacklisted' => 'int32',
-        'total_subscribers' => 'int32',
-        'unique_subscribers' => 'int32'
+        'totalBlacklisted' => 'int32',
+        'totalSubscribers' => 'int32',
+        'uniqueSubscribers' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -90,9 +90,9 @@ class GetFolder implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'total_blacklisted' => 'totalBlacklisted',
-        'total_subscribers' => 'totalSubscribers',
-        'unique_subscribers' => 'uniqueSubscribers'
+        'totalBlacklisted' => 'totalBlacklisted',
+        'totalSubscribers' => 'totalSubscribers',
+        'uniqueSubscribers' => 'uniqueSubscribers'
     ];
 
 
@@ -103,9 +103,9 @@ class GetFolder implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'total_blacklisted' => 'setTotalBlacklisted',
-        'total_subscribers' => 'setTotalSubscribers',
-        'unique_subscribers' => 'setUniqueSubscribers'
+        'totalBlacklisted' => 'setTotalBlacklisted',
+        'totalSubscribers' => 'setTotalSubscribers',
+        'uniqueSubscribers' => 'setUniqueSubscribers'
     ];
 
 
@@ -116,9 +116,9 @@ class GetFolder implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'total_blacklisted' => 'getTotalBlacklisted',
-        'total_subscribers' => 'getTotalSubscribers',
-        'unique_subscribers' => 'getUniqueSubscribers'
+        'totalBlacklisted' => 'getTotalBlacklisted',
+        'totalSubscribers' => 'getTotalSubscribers',
+        'uniqueSubscribers' => 'getUniqueSubscribers'
     ];
 
     public static function attributeMap()
@@ -154,9 +154,9 @@ class GetFolder implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['total_blacklisted'] = isset($data['total_blacklisted']) ? $data['total_blacklisted'] : null;
-        $this->container['total_subscribers'] = isset($data['total_subscribers']) ? $data['total_subscribers'] : null;
-        $this->container['unique_subscribers'] = isset($data['unique_subscribers']) ? $data['unique_subscribers'] : null;
+        $this->container['totalBlacklisted'] = isset($data['totalBlacklisted']) ? $data['totalBlacklisted'] : null;
+        $this->container['totalSubscribers'] = isset($data['totalSubscribers']) ? $data['totalSubscribers'] : null;
+        $this->container['uniqueSubscribers'] = isset($data['uniqueSubscribers']) ? $data['uniqueSubscribers'] : null;
     }
 
     /**
@@ -174,14 +174,14 @@ class GetFolder implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['total_blacklisted'] === null) {
-            $invalid_properties[] = "'total_blacklisted' can't be null";
+        if ($this->container['totalBlacklisted'] === null) {
+            $invalid_properties[] = "'totalBlacklisted' can't be null";
         }
-        if ($this->container['total_subscribers'] === null) {
-            $invalid_properties[] = "'total_subscribers' can't be null";
+        if ($this->container['totalSubscribers'] === null) {
+            $invalid_properties[] = "'totalSubscribers' can't be null";
         }
-        if ($this->container['unique_subscribers'] === null) {
-            $invalid_properties[] = "'unique_subscribers' can't be null";
+        if ($this->container['uniqueSubscribers'] === null) {
+            $invalid_properties[] = "'uniqueSubscribers' can't be null";
         }
         return $invalid_properties;
     }
@@ -201,13 +201,13 @@ class GetFolder implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['total_blacklisted'] === null) {
+        if ($this->container['totalBlacklisted'] === null) {
             return false;
         }
-        if ($this->container['total_subscribers'] === null) {
+        if ($this->container['totalSubscribers'] === null) {
             return false;
         }
-        if ($this->container['unique_subscribers'] === null) {
+        if ($this->container['uniqueSubscribers'] === null) {
             return false;
         }
         return true;
@@ -257,64 +257,64 @@ class GetFolder implements ArrayAccess
     }
 
     /**
-     * Gets total_blacklisted
+     * Gets totalBlacklisted
      * @return int
      */
     public function getTotalBlacklisted()
     {
-        return $this->container['total_blacklisted'];
+        return $this->container['totalBlacklisted'];
     }
 
     /**
-     * Sets total_blacklisted
-     * @param int $total_blacklisted Number of blacklisted contacts in the folder
+     * Sets totalBlacklisted
+     * @param int $totalBlacklisted Number of blacklisted contacts in the folder
      * @return $this
      */
-    public function setTotalBlacklisted($total_blacklisted)
+    public function setTotalBlacklisted($totalBlacklisted)
     {
-        $this->container['total_blacklisted'] = $total_blacklisted;
+        $this->container['totalBlacklisted'] = $totalBlacklisted;
 
         return $this;
     }
 
     /**
-     * Gets total_subscribers
+     * Gets totalSubscribers
      * @return int
      */
     public function getTotalSubscribers()
     {
-        return $this->container['total_subscribers'];
+        return $this->container['totalSubscribers'];
     }
 
     /**
-     * Sets total_subscribers
-     * @param int $total_subscribers Number of contacts in the folder
+     * Sets totalSubscribers
+     * @param int $totalSubscribers Number of contacts in the folder
      * @return $this
      */
-    public function setTotalSubscribers($total_subscribers)
+    public function setTotalSubscribers($totalSubscribers)
     {
-        $this->container['total_subscribers'] = $total_subscribers;
+        $this->container['totalSubscribers'] = $totalSubscribers;
 
         return $this;
     }
 
     /**
-     * Gets unique_subscribers
+     * Gets uniqueSubscribers
      * @return int
      */
     public function getUniqueSubscribers()
     {
-        return $this->container['unique_subscribers'];
+        return $this->container['uniqueSubscribers'];
     }
 
     /**
-     * Sets unique_subscribers
-     * @param int $unique_subscribers Number of unique contacts in the folder
+     * Sets uniqueSubscribers
+     * @param int $uniqueSubscribers Number of unique contacts in the folder
      * @return $this
      */
-    public function setUniqueSubscribers($unique_subscribers)
+    public function setUniqueSubscribers($uniqueSubscribers)
     {
-        $this->container['unique_subscribers'] = $unique_subscribers;
+        $this->container['uniqueSubscribers'] = $uniqueSubscribers;
 
         return $this;
     }

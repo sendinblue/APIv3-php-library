@@ -92,13 +92,13 @@ class SMTPApi
      *
      * Create an smtp template
      *
-     * @param \Swagger\Client\Model\SmtpTemplate $smtp_template values to update in smtp template (required)
+     * @param \Swagger\Client\Model\CreateSmtpTemplate $smtpTemplate values to update in smtp template (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse201
+     * @return \Swagger\Client\Model\CreateModel
      */
-    public function createSmtpTemplate($smtp_template)
+    public function createSmtpTemplate($smtpTemplate)
     {
-        list($response) = $this->createSmtpTemplateWithHttpInfo($smtp_template);
+        list($response) = $this->createSmtpTemplateWithHttpInfo($smtpTemplate);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class SMTPApi
      *
      * Create an smtp template
      *
-     * @param \Swagger\Client\Model\SmtpTemplate $smtp_template values to update in smtp template (required)
+     * @param \Swagger\Client\Model\CreateSmtpTemplate $smtpTemplate values to update in smtp template (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSmtpTemplateWithHttpInfo($smtp_template)
+    public function createSmtpTemplateWithHttpInfo($smtpTemplate)
     {
-        // verify the required parameter 'smtp_template' is set
-        if ($smtp_template === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $smtp_template when calling createSmtpTemplate');
+        // verify the required parameter 'smtpTemplate' is set
+        if ($smtpTemplate === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $smtpTemplate when calling createSmtpTemplate');
         }
         // parse inputs
         $resourcePath = "/smtp/templates";
@@ -131,8 +131,8 @@ class SMTPApi
 
         // body params
         $_tempBody = null;
-        if (isset($smtp_template)) {
-            $_tempBody = $smtp_template;
+        if (isset($smtpTemplate)) {
+            $_tempBody = $smtpTemplate;
         }
 
         // for model (json/xml)
@@ -154,19 +154,19 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse201',
+                '\Swagger\Client\Model\CreateModel',
                 '/smtp/templates'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -180,13 +180,13 @@ class SMTPApi
      *
      * Delete hardbounces
      *
-     * @param \Swagger\Client\Model\DeleteHardbounces1 $delete_hardbounces values to delete hardbounces (optional)
+     * @param \Swagger\Client\Model\DeleteHardbounces $deleteHardbounces values to delete hardbounces (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteHardbounces($delete_hardbounces = null)
+    public function deleteHardbounces($deleteHardbounces = null)
     {
-        list($response) = $this->deleteHardbouncesWithHttpInfo($delete_hardbounces);
+        list($response) = $this->deleteHardbouncesWithHttpInfo($deleteHardbounces);
         return $response;
     }
 
@@ -195,11 +195,11 @@ class SMTPApi
      *
      * Delete hardbounces
      *
-     * @param \Swagger\Client\Model\DeleteHardbounces1 $delete_hardbounces values to delete hardbounces (optional)
+     * @param \Swagger\Client\Model\DeleteHardbounces $deleteHardbounces values to delete hardbounces (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteHardbouncesWithHttpInfo($delete_hardbounces = null)
+    public function deleteHardbouncesWithHttpInfo($deleteHardbounces = null)
     {
         // parse inputs
         $resourcePath = "/smtp/deleteHardbounces";
@@ -215,8 +215,8 @@ class SMTPApi
 
         // body params
         $_tempBody = null;
-        if (isset($delete_hardbounces)) {
-            $_tempBody = $delete_hardbounces;
+        if (isset($deleteHardbounces)) {
+            $_tempBody = $deleteHardbounces;
         }
 
         // for model (json/xml)
@@ -246,7 +246,7 @@ class SMTPApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -260,16 +260,16 @@ class SMTPApi
      *
      * Get your SMTP activity aggregated over a period of time
      *
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Tag of the emails (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20010
+     * @return \Swagger\Client\Model\GetAggregatedReport
      */
-    public function getAggregatedSmtpReport($start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getAggregatedSmtpReport($startDate = null, $endDate = null, $days = null, $tag = null)
     {
-        list($response) = $this->getAggregatedSmtpReportWithHttpInfo($start_date, $end_date, $days, $tag);
+        list($response) = $this->getAggregatedSmtpReportWithHttpInfo($startDate, $endDate, $days, $tag);
         return $response;
     }
 
@@ -278,14 +278,14 @@ class SMTPApi
      *
      * Get your SMTP activity aggregated over a period of time
      *
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Tag of the emails (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetAggregatedReport, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAggregatedSmtpReportWithHttpInfo($start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getAggregatedSmtpReportWithHttpInfo($startDate = null, $endDate = null, $days = null, $tag = null)
     {
         // parse inputs
         $resourcePath = "/smtp/statistics/aggregatedReport";
@@ -300,12 +300,12 @@ class SMTPApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($start_date !== null) {
-            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        if ($startDate !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($startDate);
         }
         // query params
-        if ($end_date !== null) {
-            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        if ($endDate !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($endDate);
         }
         // query params
         if ($days !== null) {
@@ -335,19 +335,19 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20010',
+                '\Swagger\Client\Model\GetAggregatedReport',
                 '/smtp/statistics/aggregatedReport'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20010', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetAggregatedReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetAggregatedReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -363,20 +363,20 @@ class SMTPApi
      *
      * @param int $limit Number limitation for the result returned (optional, default to 50)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $email Filter the report for a specific email addresses (optional)
      * @param string $event Filter the report for a specific event type (optional)
      * @param string $tags Filter the report for tags (serialized and urlencoded array) (optional)
-     * @param string $message_id Filter on a specific message id (optional)
-     * @param string $template_id Filter on a specific template id (optional)
+     * @param string $messageId Filter on a specific message id (optional)
+     * @param string $templateId Filter on a specific template id (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20011
+     * @return \Swagger\Client\Model\GetEmailEventReport
      */
-    public function getEmailEventReport($limit = '50', $offset = '0', $start_date = null, $end_date = null, $days = null, $email = null, $event = null, $tags = null, $message_id = null, $template_id = null)
+    public function getEmailEventReport($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
     {
-        list($response) = $this->getEmailEventReportWithHttpInfo($limit, $offset, $start_date, $end_date, $days, $email, $event, $tags, $message_id, $template_id);
+        list($response) = $this->getEmailEventReportWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId);
         return $response;
     }
 
@@ -387,18 +387,18 @@ class SMTPApi
      *
      * @param int $limit Number limitation for the result returned (optional, default to 50)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $email Filter the report for a specific email addresses (optional)
      * @param string $event Filter the report for a specific event type (optional)
      * @param string $tags Filter the report for tags (serialized and urlencoded array) (optional)
-     * @param string $message_id Filter on a specific message id (optional)
-     * @param string $template_id Filter on a specific template id (optional)
+     * @param string $messageId Filter on a specific message id (optional)
+     * @param string $templateId Filter on a specific template id (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetEmailEventReport, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailEventReportWithHttpInfo($limit = '50', $offset = '0', $start_date = null, $end_date = null, $days = null, $email = null, $event = null, $tags = null, $message_id = null, $template_id = null)
+    public function getEmailEventReportWithHttpInfo($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
     {
         if (!is_null($limit) && ($limit > 100)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getEmailEventReport, must be smaller than or equal to 100.');
@@ -425,12 +425,12 @@ class SMTPApi
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // query params
-        if ($start_date !== null) {
-            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        if ($startDate !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($startDate);
         }
         // query params
-        if ($end_date !== null) {
-            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        if ($endDate !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($endDate);
         }
         // query params
         if ($days !== null) {
@@ -449,12 +449,12 @@ class SMTPApi
             $queryParams['tags'] = $this->apiClient->getSerializer()->toQueryValue($tags);
         }
         // query params
-        if ($message_id !== null) {
-            $queryParams['messageId'] = $this->apiClient->getSerializer()->toQueryValue($message_id);
+        if ($messageId !== null) {
+            $queryParams['messageId'] = $this->apiClient->getSerializer()->toQueryValue($messageId);
         }
         // query params
-        if ($template_id !== null) {
-            $queryParams['templateId'] = $this->apiClient->getSerializer()->toQueryValue($template_id);
+        if ($templateId !== null) {
+            $queryParams['templateId'] = $this->apiClient->getSerializer()->toQueryValue($templateId);
         }
 
         // for model (json/xml)
@@ -476,19 +476,19 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20011',
+                '\Swagger\Client\Model\GetEmailEventReport',
                 '/smtp/statistics/events'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20011', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetEmailEventReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20011', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetEmailEventReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -504,16 +504,16 @@ class SMTPApi
      *
      * @param int $limit Number of documents returned per page (optional, default to 50)
      * @param int $offset Index of the first document on the page (optional, default to 0)
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Tag of the emails (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2009
+     * @return \Swagger\Client\Model\GetReports
      */
-    public function getSmtpReport($limit = '50', $offset = '0', $start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getSmtpReport($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
     {
-        list($response) = $this->getSmtpReportWithHttpInfo($limit, $offset, $start_date, $end_date, $days, $tag);
+        list($response) = $this->getSmtpReportWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $tag);
         return $response;
     }
 
@@ -524,14 +524,14 @@ class SMTPApi
      *
      * @param int $limit Number of documents returned per page (optional, default to 50)
      * @param int $offset Index of the first document on the page (optional, default to 0)
-     * @param \DateTime $start_date Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param \DateTime $end_date Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Tag of the emails (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetReports, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmtpReportWithHttpInfo($limit = '50', $offset = '0', $start_date = null, $end_date = null, $days = null, $tag = null)
+    public function getSmtpReportWithHttpInfo($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
     {
         if (!is_null($limit) && ($limit > 100)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getSmtpReport, must be smaller than or equal to 100.');
@@ -558,12 +558,12 @@ class SMTPApi
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // query params
-        if ($start_date !== null) {
-            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        if ($startDate !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($startDate);
         }
         // query params
-        if ($end_date !== null) {
-            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        if ($endDate !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($endDate);
         }
         // query params
         if ($days !== null) {
@@ -593,19 +593,19 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2009',
+                '\Swagger\Client\Model\GetReports',
                 '/smtp/statistics/reports'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetReports', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetReports', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -619,13 +619,13 @@ class SMTPApi
      *
      * Returns the template informations
      *
-     * @param string $template_id id of the template (required)
+     * @param string $templateId id of the template (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20012Templates
+     * @return \Swagger\Client\Model\GetSmtpTemplateOverview
      */
-    public function getSmtpTemplate($template_id)
+    public function getSmtpTemplate($templateId)
     {
-        list($response) = $this->getSmtpTemplateWithHttpInfo($template_id);
+        list($response) = $this->getSmtpTemplateWithHttpInfo($templateId);
         return $response;
     }
 
@@ -634,15 +634,15 @@ class SMTPApi
      *
      * Returns the template informations
      *
-     * @param string $template_id id of the template (required)
+     * @param string $templateId id of the template (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20012Templates, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetSmtpTemplateOverview, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmtpTemplateWithHttpInfo($template_id)
+    public function getSmtpTemplateWithHttpInfo($templateId)
     {
-        // verify the required parameter 'template_id' is set
-        if ($template_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template_id when calling getSmtpTemplate');
+        // verify the required parameter 'templateId' is set
+        if ($templateId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $templateId when calling getSmtpTemplate');
         }
         // parse inputs
         $resourcePath = "/smtp/templates/{templateId}";
@@ -657,10 +657,10 @@ class SMTPApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($template_id !== null) {
+        if ($templateId !== null) {
             $resourcePath = str_replace(
                 "{" . "templateId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($template_id),
+                $this->apiClient->getSerializer()->toPathValue($templateId),
                 $resourcePath
             );
         }
@@ -684,23 +684,23 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20012Templates',
+                '\Swagger\Client\Model\GetSmtpTemplateOverview',
                 '/smtp/templates/{templateId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20012Templates', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetSmtpTemplateOverview', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20012Templates', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetSmtpTemplateOverview', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -714,15 +714,15 @@ class SMTPApi
      *
      * Get the list of SMTP templates
      *
-     * @param bool $template_status Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
+     * @param bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param int $limit Number of documents returned per page (optional, default to 50)
      * @param int $offset Index of the first document in the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20012
+     * @return \Swagger\Client\Model\GetSmtpTemplates
      */
-    public function getSmtpTemplates($template_status = null, $limit = '50', $offset = '0')
+    public function getSmtpTemplates($templateStatus = null, $limit = '50', $offset = '0')
     {
-        list($response) = $this->getSmtpTemplatesWithHttpInfo($template_status, $limit, $offset);
+        list($response) = $this->getSmtpTemplatesWithHttpInfo($templateStatus, $limit, $offset);
         return $response;
     }
 
@@ -731,13 +731,13 @@ class SMTPApi
      *
      * Get the list of SMTP templates
      *
-     * @param bool $template_status Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
+     * @param bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param int $limit Number of documents returned per page (optional, default to 50)
      * @param int $offset Index of the first document in the page (optional, default to 0)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetSmtpTemplates, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmtpTemplatesWithHttpInfo($template_status = null, $limit = '50', $offset = '0')
+    public function getSmtpTemplatesWithHttpInfo($templateStatus = null, $limit = '50', $offset = '0')
     {
         if (!is_null($limit) && ($limit > 1000)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getSmtpTemplates, must be smaller than or equal to 1000.');
@@ -756,8 +756,8 @@ class SMTPApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // query params
-        if ($template_status !== null) {
-            $queryParams['templateStatus'] = $this->apiClient->getSerializer()->toQueryValue($template_status);
+        if ($templateStatus !== null) {
+            $queryParams['templateStatus'] = $this->apiClient->getSerializer()->toQueryValue($templateStatus);
         }
         // query params
         if ($limit !== null) {
@@ -787,19 +787,19 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20012',
+                '\Swagger\Client\Model\GetSmtpTemplates',
                 '/smtp/templates'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20012', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetSmtpTemplates', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20012', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetSmtpTemplates', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -813,14 +813,14 @@ class SMTPApi
      *
      * Send a template
      *
-     * @param string $template_id Id of the template (required)
-     * @param \Swagger\Client\Model\SendEmail1 $send_email  (required)
+     * @param string $templateId Id of the template (required)
+     * @param \Swagger\Client\Model\SendEmail $sendEmail  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2012
+     * @return \Swagger\Client\Model\SendTemplateEmail
      */
-    public function sendTemplate($template_id, $send_email)
+    public function sendTemplate($templateId, $sendEmail)
     {
-        list($response) = $this->sendTemplateWithHttpInfo($template_id, $send_email);
+        list($response) = $this->sendTemplateWithHttpInfo($templateId, $sendEmail);
         return $response;
     }
 
@@ -829,20 +829,20 @@ class SMTPApi
      *
      * Send a template
      *
-     * @param string $template_id Id of the template (required)
-     * @param \Swagger\Client\Model\SendEmail1 $send_email  (required)
+     * @param string $templateId Id of the template (required)
+     * @param \Swagger\Client\Model\SendEmail $sendEmail  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\SendTemplateEmail, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTemplateWithHttpInfo($template_id, $send_email)
+    public function sendTemplateWithHttpInfo($templateId, $sendEmail)
     {
-        // verify the required parameter 'template_id' is set
-        if ($template_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template_id when calling sendTemplate');
+        // verify the required parameter 'templateId' is set
+        if ($templateId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $templateId when calling sendTemplate');
         }
-        // verify the required parameter 'send_email' is set
-        if ($send_email === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_email when calling sendTemplate');
+        // verify the required parameter 'sendEmail' is set
+        if ($sendEmail === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendEmail when calling sendTemplate');
         }
         // parse inputs
         $resourcePath = "/smtp/templates/{templateId}/send";
@@ -857,17 +857,17 @@ class SMTPApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($template_id !== null) {
+        if ($templateId !== null) {
             $resourcePath = str_replace(
                 "{" . "templateId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($template_id),
+                $this->apiClient->getSerializer()->toPathValue($templateId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($send_email)) {
-            $_tempBody = $send_email;
+        if (isset($sendEmail)) {
+            $_tempBody = $sendEmail;
         }
 
         // for model (json/xml)
@@ -889,23 +889,23 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2012',
+                '\Swagger\Client\Model\SendTemplateEmail',
                 '/smtp/templates/{templateId}/send'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2012', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SendTemplateEmail', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2012', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SendTemplateEmail', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostSendFailed', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -919,14 +919,14 @@ class SMTPApi
      *
      * Send a template to your test list
      *
-     * @param string $template_id Id of the template (required)
-     * @param \Swagger\Client\Model\SendTestEmail1 $send_test_email  (required)
+     * @param string $templateId Id of the template (required)
+     * @param \Swagger\Client\Model\SendTestEmail $sendTestEmail  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendTestTemplate($template_id, $send_test_email)
+    public function sendTestTemplate($templateId, $sendTestEmail)
     {
-        list($response) = $this->sendTestTemplateWithHttpInfo($template_id, $send_test_email);
+        list($response) = $this->sendTestTemplateWithHttpInfo($templateId, $sendTestEmail);
         return $response;
     }
 
@@ -935,20 +935,20 @@ class SMTPApi
      *
      * Send a template to your test list
      *
-     * @param string $template_id Id of the template (required)
-     * @param \Swagger\Client\Model\SendTestEmail1 $send_test_email  (required)
+     * @param string $templateId Id of the template (required)
+     * @param \Swagger\Client\Model\SendTestEmail $sendTestEmail  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTestTemplateWithHttpInfo($template_id, $send_test_email)
+    public function sendTestTemplateWithHttpInfo($templateId, $sendTestEmail)
     {
-        // verify the required parameter 'template_id' is set
-        if ($template_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template_id when calling sendTestTemplate');
+        // verify the required parameter 'templateId' is set
+        if ($templateId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $templateId when calling sendTestTemplate');
         }
-        // verify the required parameter 'send_test_email' is set
-        if ($send_test_email === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_test_email when calling sendTestTemplate');
+        // verify the required parameter 'sendTestEmail' is set
+        if ($sendTestEmail === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendTestEmail when calling sendTestTemplate');
         }
         // parse inputs
         $resourcePath = "/smtp/templates/{templateId}/sendTest";
@@ -963,17 +963,17 @@ class SMTPApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($template_id !== null) {
+        if ($templateId !== null) {
             $resourcePath = str_replace(
                 "{" . "templateId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($template_id),
+                $this->apiClient->getSerializer()->toPathValue($templateId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($send_test_email)) {
-            $_tempBody = $send_test_email;
+        if (isset($sendTestEmail)) {
+            $_tempBody = $sendTestEmail;
         }
 
         // for model (json/xml)
@@ -1003,11 +1003,11 @@ class SMTPApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostSendFailed', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1021,13 +1021,13 @@ class SMTPApi
      *
      * Send a transactional email
      *
-     * @param \Swagger\Client\Model\SendSmtpEmail1 $send_smtp_email Values to send a transactional email (required)
+     * @param \Swagger\Client\Model\SendSmtpEmail $sendSmtpEmail Values to send a transactional email (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2013
+     * @return \Swagger\Client\Model\CreateSmtpEmail
      */
-    public function sendTransacEmail($send_smtp_email)
+    public function sendTransacEmail($sendSmtpEmail)
     {
-        list($response) = $this->sendTransacEmailWithHttpInfo($send_smtp_email);
+        list($response) = $this->sendTransacEmailWithHttpInfo($sendSmtpEmail);
         return $response;
     }
 
@@ -1036,15 +1036,15 @@ class SMTPApi
      *
      * Send a transactional email
      *
-     * @param \Swagger\Client\Model\SendSmtpEmail1 $send_smtp_email Values to send a transactional email (required)
+     * @param \Swagger\Client\Model\SendSmtpEmail $sendSmtpEmail Values to send a transactional email (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CreateSmtpEmail, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTransacEmailWithHttpInfo($send_smtp_email)
+    public function sendTransacEmailWithHttpInfo($sendSmtpEmail)
     {
-        // verify the required parameter 'send_smtp_email' is set
-        if ($send_smtp_email === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $send_smtp_email when calling sendTransacEmail');
+        // verify the required parameter 'sendSmtpEmail' is set
+        if ($sendSmtpEmail === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sendSmtpEmail when calling sendTransacEmail');
         }
         // parse inputs
         $resourcePath = "/smtp/email";
@@ -1060,8 +1060,8 @@ class SMTPApi
 
         // body params
         $_tempBody = null;
-        if (isset($send_smtp_email)) {
-            $_tempBody = $send_smtp_email;
+        if (isset($sendSmtpEmail)) {
+            $_tempBody = $sendSmtpEmail;
         }
 
         // for model (json/xml)
@@ -1083,19 +1083,19 @@ class SMTPApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2013',
+                '\Swagger\Client\Model\CreateSmtpEmail',
                 '/smtp/email'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2013', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateSmtpEmail', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2013', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateSmtpEmail', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1109,14 +1109,14 @@ class SMTPApi
      *
      * Updates an smtp templates
      *
-     * @param string $template_id id of the template (required)
-     * @param \Swagger\Client\Model\SmtpTemplate1 $smtp_template values to update in smtp template (required)
+     * @param string $templateId id of the template (required)
+     * @param \Swagger\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in smtp template (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateSmtpTemplate($template_id, $smtp_template)
+    public function updateSmtpTemplate($templateId, $smtpTemplate)
     {
-        list($response) = $this->updateSmtpTemplateWithHttpInfo($template_id, $smtp_template);
+        list($response) = $this->updateSmtpTemplateWithHttpInfo($templateId, $smtpTemplate);
         return $response;
     }
 
@@ -1125,20 +1125,20 @@ class SMTPApi
      *
      * Updates an smtp templates
      *
-     * @param string $template_id id of the template (required)
-     * @param \Swagger\Client\Model\SmtpTemplate1 $smtp_template values to update in smtp template (required)
+     * @param string $templateId id of the template (required)
+     * @param \Swagger\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in smtp template (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSmtpTemplateWithHttpInfo($template_id, $smtp_template)
+    public function updateSmtpTemplateWithHttpInfo($templateId, $smtpTemplate)
     {
-        // verify the required parameter 'template_id' is set
-        if ($template_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $template_id when calling updateSmtpTemplate');
+        // verify the required parameter 'templateId' is set
+        if ($templateId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $templateId when calling updateSmtpTemplate');
         }
-        // verify the required parameter 'smtp_template' is set
-        if ($smtp_template === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $smtp_template when calling updateSmtpTemplate');
+        // verify the required parameter 'smtpTemplate' is set
+        if ($smtpTemplate === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $smtpTemplate when calling updateSmtpTemplate');
         }
         // parse inputs
         $resourcePath = "/smtp/templates/{templateId}";
@@ -1153,17 +1153,17 @@ class SMTPApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($template_id !== null) {
+        if ($templateId !== null) {
             $resourcePath = str_replace(
                 "{" . "templateId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($template_id),
+                $this->apiClient->getSerializer()->toPathValue($templateId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($smtp_template)) {
-            $_tempBody = $smtp_template;
+        if (isset($smtpTemplate)) {
+            $_tempBody = $smtpTemplate;
         }
 
         // for model (json/xml)
@@ -1193,11 +1193,11 @@ class SMTPApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
