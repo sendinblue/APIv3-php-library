@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **reply** | **string** |  | [optional] 
 **tag** | **string** | Tag of the SMS which generated the event | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **companyName** | **string** | Company name to use to create the child account | 
 **password** | **string** | Password for the child account to login | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **enumeration** | [**\Sendinblue\Client\Model\GetAttributesEnumeration[]**](GetAttributesEnumeration.md) | Parameter only available for \&quot;category\&quot; type attributes. | [optional] 
 **calculatedValue** | **string** | Calculated value formula | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

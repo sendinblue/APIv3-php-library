@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **createdAt** | **string** | Creation date of the webhook (YYYY-MM-DD) | 
 **modifiedAt** | **string** | Last modification date of the webhook (YYYY-MM-DD) | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

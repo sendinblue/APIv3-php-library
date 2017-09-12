@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **email** | **string** | From Email to update the sender | [optional] 
 **ips** | [**\Sendinblue\Client\Model\CreateSenderIps[]**](CreateSenderIps.md) | Only in case of dedicated IP, IPs to associate to the sender. If passed, will replace all the existing IPs. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

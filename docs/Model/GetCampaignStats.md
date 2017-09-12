@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **viewed** | **int** | Number of openings for the campaign | 
 **deferred** | **int** | Number of deferred emails for the campaign | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

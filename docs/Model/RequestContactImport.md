@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **notifyUrl** | **string** | URL that will be called once the export process is finished | [optional] 
 **newList** | [**\Sendinblue\Client\Model\RequestContactImportNewList**](RequestContactImportNewList.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

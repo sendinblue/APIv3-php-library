@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **listIds** | **int[]** | Ids of the lists to add the contact to | [optional] 
 **unlinkListIds** | **int[]** | Ids of the lists to remove the contact from | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **cc** | **string[]** | Email addresses of the recipients in cc | [optional] 
 **body** | **string** | Body of the email message | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 
