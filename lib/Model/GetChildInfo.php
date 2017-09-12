@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetChildInfo Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -58,11 +58,11 @@ class GetChildInfo implements ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'companyName' => 'string',
-        'credits' => '\Sendinblue\Client\Model\GetChildInfoCredits',
-        'statistics' => '\Sendinblue\Client\Model\GetChildInfoStatistics',
+        'credits' => '\SendinBlue\Client\Model\GetChildInfoCredits',
+        'statistics' => '\SendinBlue\Client\Model\GetChildInfoStatistics',
         'password' => 'string',
-        'ips' => '\Sendinblue\Client\Model\GetChildInfoIps[]',
-        'apiKeys' => '\Sendinblue\Client\Model\GetChildInfoApiKeys[]'
+        'ips' => '\SendinBlue\Client\Model\GetChildInfoIps[]',
+        'apiKeys' => '\SendinBlue\Client\Model\GetChildInfoApiKeys[]'
     ];
 
     /**
@@ -324,7 +324,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets credits
-     * @return \Sendinblue\Client\Model\GetChildInfoCredits
+     * @return \SendinBlue\Client\Model\GetChildInfoCredits
      */
     public function getCredits()
     {
@@ -333,7 +333,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets credits
-     * @param \Sendinblue\Client\Model\GetChildInfoCredits $credits
+     * @param \SendinBlue\Client\Model\GetChildInfoCredits $credits
      * @return $this
      */
     public function setCredits($credits)
@@ -345,7 +345,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets statistics
-     * @return \Sendinblue\Client\Model\GetChildInfoStatistics
+     * @return \SendinBlue\Client\Model\GetChildInfoStatistics
      */
     public function getStatistics()
     {
@@ -354,7 +354,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets statistics
-     * @param \Sendinblue\Client\Model\GetChildInfoStatistics $statistics
+     * @param \SendinBlue\Client\Model\GetChildInfoStatistics $statistics
      * @return $this
      */
     public function setStatistics($statistics)
@@ -387,7 +387,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \Sendinblue\Client\Model\GetChildInfoIps[]
+     * @return \SendinBlue\Client\Model\GetChildInfoIps[]
      */
     public function getIps()
     {
@@ -396,7 +396,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \Sendinblue\Client\Model\GetChildInfoIps[] $ips IP(s) associated to a child account user
+     * @param \SendinBlue\Client\Model\GetChildInfoIps[] $ips IP(s) associated to a child account user
      * @return $this
      */
     public function setIps($ips)
@@ -408,7 +408,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets apiKeys
-     * @return \Sendinblue\Client\Model\GetChildInfoApiKeys[]
+     * @return \SendinBlue\Client\Model\GetChildInfoApiKeys[]
      */
     public function getApiKeys()
     {
@@ -417,7 +417,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets apiKeys
-     * @param \Sendinblue\Client\Model\GetChildInfoApiKeys[] $apiKeys API Keys associated to child account
+     * @param \SendinBlue\Client\Model\GetChildInfoApiKeys[] $apiKeys API Keys associated to child account
      * @return $this
      */
     public function setApiKeys($apiKeys)
@@ -478,10 +478,10 @@ class GetChildInfo implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

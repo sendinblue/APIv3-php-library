@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * SendReport Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,7 +55,7 @@ class SendReport implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'language' => 'string',
-        'email' => '\Sendinblue\Client\Model\SendReportEmail'
+        'email' => '\SendinBlue\Client\Model\SendReportEmail'
     ];
 
     /**
@@ -232,7 +232,7 @@ class SendReport implements ArrayAccess
 
     /**
      * Gets email
-     * @return \Sendinblue\Client\Model\SendReportEmail
+     * @return \SendinBlue\Client\Model\SendReportEmail
      */
     public function getEmail()
     {
@@ -241,7 +241,7 @@ class SendReport implements ArrayAccess
 
     /**
      * Sets email
-     * @param \Sendinblue\Client\Model\SendReportEmail $email
+     * @param \SendinBlue\Client\Model\SendReportEmail $email
      * @return $this
      */
     public function setEmail($email)
@@ -302,10 +302,10 @@ class SendReport implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

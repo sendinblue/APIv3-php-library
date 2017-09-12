@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetExtendedCampaignStats Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class GetExtendedCampaignStats implements ArrayAccess
         'campaignStats' => 'object[]',
         'mirrorClick' => 'int',
         'remaining' => 'int',
-        'linksStats' => 'map[string,\Sendinblue\Client\Model\GetExtendedCampaignStatsLinksStats]',
-        'statsByDomain' => '\Sendinblue\Client\Model\GetStatsByDomain'
+        'linksStats' => 'map[string,\SendinBlue\Client\Model\GetExtendedCampaignStatsLinksStats]',
+        'statsByDomain' => '\SendinBlue\Client\Model\GetStatsByDomain'
     ];
 
     /**
@@ -279,7 +279,7 @@ class GetExtendedCampaignStats implements ArrayAccess
 
     /**
      * Gets linksStats
-     * @return map[string,\Sendinblue\Client\Model\GetExtendedCampaignStatsLinksStats]
+     * @return map[string,\SendinBlue\Client\Model\GetExtendedCampaignStatsLinksStats]
      */
     public function getLinksStats()
     {
@@ -288,7 +288,7 @@ class GetExtendedCampaignStats implements ArrayAccess
 
     /**
      * Sets linksStats
-     * @param map[string,\Sendinblue\Client\Model\GetExtendedCampaignStatsLinksStats] $linksStats
+     * @param map[string,\SendinBlue\Client\Model\GetExtendedCampaignStatsLinksStats] $linksStats
      * @return $this
      */
     public function setLinksStats($linksStats)
@@ -300,7 +300,7 @@ class GetExtendedCampaignStats implements ArrayAccess
 
     /**
      * Gets statsByDomain
-     * @return \Sendinblue\Client\Model\GetStatsByDomain
+     * @return \SendinBlue\Client\Model\GetStatsByDomain
      */
     public function getStatsByDomain()
     {
@@ -309,7 +309,7 @@ class GetExtendedCampaignStats implements ArrayAccess
 
     /**
      * Sets statsByDomain
-     * @param \Sendinblue\Client\Model\GetStatsByDomain $statsByDomain
+     * @param \SendinBlue\Client\Model\GetStatsByDomain $statsByDomain
      * @return $this
      */
     public function setStatsByDomain($statsByDomain)
@@ -370,10 +370,10 @@ class GetExtendedCampaignStats implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * RemainingCreditModel Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class RemainingCreditModel implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'child' => '\Sendinblue\Client\Model\RemainingCreditModelChild',
-        'reseller' => '\Sendinblue\Client\Model\RemainingCreditModelReseller'
+        'child' => '\SendinBlue\Client\Model\RemainingCreditModelChild',
+        'reseller' => '\SendinBlue\Client\Model\RemainingCreditModelReseller'
     ];
 
     /**
@@ -168,7 +168,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Gets child
-     * @return \Sendinblue\Client\Model\RemainingCreditModelChild
+     * @return \SendinBlue\Client\Model\RemainingCreditModelChild
      */
     public function getChild()
     {
@@ -177,7 +177,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Sets child
-     * @param \Sendinblue\Client\Model\RemainingCreditModelChild $child
+     * @param \SendinBlue\Client\Model\RemainingCreditModelChild $child
      * @return $this
      */
     public function setChild($child)
@@ -189,7 +189,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Gets reseller
-     * @return \Sendinblue\Client\Model\RemainingCreditModelReseller
+     * @return \SendinBlue\Client\Model\RemainingCreditModelReseller
      */
     public function getReseller()
     {
@@ -198,7 +198,7 @@ class RemainingCreditModel implements ArrayAccess
 
     /**
      * Sets reseller
-     * @param \Sendinblue\Client\Model\RemainingCreditModelReseller $reseller
+     * @param \SendinBlue\Client\Model\RemainingCreditModelReseller $reseller
      * @return $this
      */
     public function setReseller($reseller)
@@ -259,10 +259,10 @@ class RemainingCreditModel implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

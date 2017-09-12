@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateEmailCampaign Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,7 +55,7 @@ class CreateEmailCampaign implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'tag' => 'string',
-        'sender' => '\Sendinblue\Client\Model\CreateEmailCampaignSender',
+        'sender' => '\SendinBlue\Client\Model\CreateEmailCampaignSender',
         'name' => 'string',
         'htmlContent' => 'string',
         'htmlUrl' => 'string',
@@ -63,7 +63,7 @@ class CreateEmailCampaign implements ArrayAccess
         'subject' => 'string',
         'replyTo' => 'string',
         'toField' => 'string',
-        'recipients' => '\Sendinblue\Client\Model\CreateEmailCampaignRecipients',
+        'recipients' => '\SendinBlue\Client\Model\CreateEmailCampaignRecipients',
         'attachmentUrl' => 'string',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
@@ -336,7 +336,7 @@ class CreateEmailCampaign implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Sendinblue\Client\Model\CreateEmailCampaignSender
+     * @return \SendinBlue\Client\Model\CreateEmailCampaignSender
      */
     public function getSender()
     {
@@ -345,7 +345,7 @@ class CreateEmailCampaign implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Sendinblue\Client\Model\CreateEmailCampaignSender $sender
+     * @param \SendinBlue\Client\Model\CreateEmailCampaignSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -509,7 +509,7 @@ class CreateEmailCampaign implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Sendinblue\Client\Model\CreateEmailCampaignRecipients
+     * @return \SendinBlue\Client\Model\CreateEmailCampaignRecipients
      */
     public function getRecipients()
     {
@@ -518,7 +518,7 @@ class CreateEmailCampaign implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Sendinblue\Client\Model\CreateEmailCampaignRecipients $recipients
+     * @param \SendinBlue\Client\Model\CreateEmailCampaignRecipients $recipients
      * @return $this
      */
     public function setRecipients($recipients)
@@ -756,10 +756,10 @@ class CreateEmailCampaign implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

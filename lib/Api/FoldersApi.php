@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Api;
+namespace SendinBlue\Client\Api;
 
-use \Sendinblue\Client\ApiClient;
-use \Sendinblue\Client\ApiException;
-use \Sendinblue\Client\Configuration;
-use \Sendinblue\Client\ObjectSerializer;
+use \SendinBlue\Client\ApiClient;
+use \SendinBlue\Client\ApiException;
+use \SendinBlue\Client\Configuration;
+use \SendinBlue\Client\ObjectSerializer;
 
 /**
  * FoldersApi Class Doc Comment
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class FoldersApi
     /**
      * API Client
      *
-     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
+     * @var \SendinBlue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
+     * @param \SendinBlue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
+    public function __construct(\SendinBlue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class FoldersApi
     /**
      * Get API client
      *
-     * @return \Sendinblue\Client\ApiClient get the API client
+     * @return \SendinBlue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class FoldersApi
     /**
      * Set the API client
      *
-     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
+     * @param \SendinBlue\Client\ApiClient $apiClient set the API client
      *
      * @return FoldersApi
      */
-    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
+    public function setApiClient(\SendinBlue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class FoldersApi
      *
      * Create a folder
      *
-     * @param \Sendinblue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\CreateModel
+     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\CreateModel
      */
     public function createFolder($name)
     {
@@ -107,9 +107,9 @@ class FoldersApi
      *
      * Create a folder
      *
-     * @param \Sendinblue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFolderWithHttpInfo($name)
     {
@@ -154,19 +154,19 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\CreateModel',
+                '\SendinBlue\Client\Model\CreateModel',
                 '/contacts/folders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -181,7 +181,7 @@ class FoldersApi
      * Delete a folder (and all its lists)
      *
      * @param string $folderId Id of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteFolder($folderId)
@@ -196,7 +196,7 @@ class FoldersApi
      * Delete a folder (and all its lists)
      *
      * @param string $folderId Id of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFolderWithHttpInfo($folderId)
@@ -253,11 +253,11 @@ class FoldersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -272,8 +272,8 @@ class FoldersApi
      * Returns folder details
      *
      * @param string $folderId id of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetFolder
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetFolder
      */
     public function getFolder($folderId)
     {
@@ -287,8 +287,8 @@ class FoldersApi
      * Returns folder details
      *
      * @param string $folderId id of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetFolder, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetFolder, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFolderWithHttpInfo($folderId)
     {
@@ -336,23 +336,23 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetFolder',
+                '\SendinBlue\Client\Model\GetFolder',
                 '/contacts/folders/{folderId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetFolder', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetFolder', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetFolder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetFolder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -369,8 +369,8 @@ class FoldersApi
      * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetFolderLists
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetFolderLists
      */
     public function getFolderLists($folderId, $limit = '10', $offset = '0')
     {
@@ -386,8 +386,8 @@ class FoldersApi
      * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetFolderLists, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetFolderLists, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFolderListsWithHttpInfo($folderId, $limit = '10', $offset = '0')
     {
@@ -447,23 +447,23 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetFolderLists',
+                '\SendinBlue\Client\Model\GetFolderLists',
                 '/contacts/folders/{folderId}/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetFolderLists', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetFolderLists', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetFolderLists', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetFolderLists', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -479,8 +479,8 @@ class FoldersApi
      *
      * @param int $limit Number of documents per page (required)
      * @param int $offset Index of the first document of the page (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetFolders
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetFolders
      */
     public function getFolders($limit, $offset)
     {
@@ -495,8 +495,8 @@ class FoldersApi
      *
      * @param int $limit Number of documents per page (required)
      * @param int $offset Index of the first document of the page (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetFolders, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetFolders, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFoldersWithHttpInfo($limit, $offset)
     {
@@ -552,19 +552,19 @@ class FoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetFolders',
+                '\SendinBlue\Client\Model\GetFolders',
                 '/contacts/folders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetFolders', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetFolders', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetFolders', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetFolders', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -579,8 +579,8 @@ class FoldersApi
      * Update a contact folder
      *
      * @param string $folderId Id of the folder (required)
-     * @param \Sendinblue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateFolder($folderId, $name)
@@ -595,8 +595,8 @@ class FoldersApi
      * Update a contact folder
      *
      * @param string $folderId Id of the folder (required)
-     * @param \Sendinblue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFolderWithHttpInfo($folderId, $name)
@@ -662,11 +662,11 @@ class FoldersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

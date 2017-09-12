@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **string** | Tag of the template | [optional] 
-**sender** | [**\Sendinblue\Client\Model\UpdateSmtpTemplateSender**](UpdateSmtpTemplateSender.md) |  | [optional] 
+**sender** | [**\SendinBlue\Client\Model\UpdateSmtpTemplateSender**](UpdateSmtpTemplateSender.md) |  | [optional] 
 **templateName** | **string** | Name of the template | [optional] 
 **htmlContent** | **string** | Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters) | [optional] 
 **htmlUrl** | **string** | Required if htmlContent is empty. URL to the body of the email (HTML) | [optional] 

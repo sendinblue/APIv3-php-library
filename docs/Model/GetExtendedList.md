@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **totalSubscribers** | **int** | Number of contacts in the list | 
 **folderId** | **int** | ID of the folder | 
 **createdAt** | **string** | Creation Date of the list (YYYY-MM-DD) | 
-**campaignStats** | [**\Sendinblue\Client\Model\GetExtendedListCampaignStats[]**](GetExtendedListCampaignStats.md) |  | [optional] 
+**campaignStats** | [**\SendinBlue\Client\Model\GetExtendedListCampaignStats[]**](GetExtendedListCampaignStats.md) |  | [optional] 
 **dynamicList** | **bool** | Status telling if the list is dynamic or not (true&#x3D;dynamic, false&#x3D;not dynamic) | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

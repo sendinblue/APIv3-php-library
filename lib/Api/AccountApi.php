@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Api;
+namespace SendinBlue\Client\Api;
 
-use \Sendinblue\Client\ApiClient;
-use \Sendinblue\Client\ApiException;
-use \Sendinblue\Client\Configuration;
-use \Sendinblue\Client\ObjectSerializer;
+use \SendinBlue\Client\ApiClient;
+use \SendinBlue\Client\ApiException;
+use \SendinBlue\Client\Configuration;
+use \SendinBlue\Client\ObjectSerializer;
 
 /**
  * AccountApi Class Doc Comment
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class AccountApi
     /**
      * API Client
      *
-     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
+     * @var \SendinBlue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
+     * @param \SendinBlue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
+    public function __construct(\SendinBlue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class AccountApi
     /**
      * Get API client
      *
-     * @return \Sendinblue\Client\ApiClient get the API client
+     * @return \SendinBlue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class AccountApi
     /**
      * Set the API client
      *
-     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
+     * @param \SendinBlue\Client\ApiClient $apiClient set the API client
      *
      * @return AccountApi
      */
-    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
+    public function setApiClient(\SendinBlue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,8 +92,8 @@ class AccountApi
      *
      * Get your account informations, plans and credits details
      *
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetAccount
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetAccount
      */
     public function getAccount()
     {
@@ -106,8 +106,8 @@ class AccountApi
      *
      * Get your account informations, plans and credits details
      *
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetAccount, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountWithHttpInfo()
     {
@@ -143,15 +143,15 @@ class AccountApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetAccount',
+                '\SendinBlue\Client\Model\GetAccount',
                 '/account'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetAccount', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetAccount', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetAccount', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetAccount', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

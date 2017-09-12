@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetIpsFromSender Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class GetIpsFromSender implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ips' => '\Sendinblue\Client\Model\GetIpFromSender[]'
+        'ips' => '\SendinBlue\Client\Model\GetIpFromSender[]'
     ];
 
     /**
@@ -168,7 +168,7 @@ class GetIpsFromSender implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \Sendinblue\Client\Model\GetIpFromSender[]
+     * @return \SendinBlue\Client\Model\GetIpFromSender[]
      */
     public function getIps()
     {
@@ -177,7 +177,7 @@ class GetIpsFromSender implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \Sendinblue\Client\Model\GetIpFromSender[] $ips Dedicated IP(s) linked to a sender
+     * @param \SendinBlue\Client\Model\GetIpFromSender[] $ips Dedicated IP(s) linked to a sender
      * @return $this
      */
     public function setIps($ips)
@@ -238,10 +238,10 @@ class GetIpsFromSender implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

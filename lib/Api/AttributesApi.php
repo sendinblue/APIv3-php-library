@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Api;
+namespace SendinBlue\Client\Api;
 
-use \Sendinblue\Client\ApiClient;
-use \Sendinblue\Client\ApiException;
-use \Sendinblue\Client\Configuration;
-use \Sendinblue\Client\ObjectSerializer;
+use \SendinBlue\Client\ApiClient;
+use \SendinBlue\Client\ApiException;
+use \SendinBlue\Client\Configuration;
+use \SendinBlue\Client\ObjectSerializer;
 
 /**
  * AttributesApi Class Doc Comment
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class AttributesApi
     /**
      * API Client
      *
-     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
+     * @var \SendinBlue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
+     * @param \SendinBlue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
+    public function __construct(\SendinBlue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class AttributesApi
     /**
      * Get API client
      *
-     * @return \Sendinblue\Client\ApiClient get the API client
+     * @return \SendinBlue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class AttributesApi
     /**
      * Set the API client
      *
-     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
+     * @param \SendinBlue\Client\ApiClient $apiClient set the API client
      *
      * @return AttributesApi
      */
-    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
+    public function setApiClient(\SendinBlue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class AttributesApi
      *
      * Creates contact attributes
      *
-     * @param \Sendinblue\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\CreateModel
+     * @param \SendinBlue\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\CreateModel
      */
     public function createAttribute($createAttribute)
     {
@@ -107,9 +107,9 @@ class AttributesApi
      *
      * Creates contact attributes
      *
-     * @param \Sendinblue\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAttributeWithHttpInfo($createAttribute)
     {
@@ -154,19 +154,19 @@ class AttributesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\CreateModel',
+                '\SendinBlue\Client\Model\CreateModel',
                 '/contacts/attributes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -181,7 +181,7 @@ class AttributesApi
      * Deletes an attribute
      *
      * @param string $attributeId id of the attribute (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteAttribute($attributeId)
@@ -196,7 +196,7 @@ class AttributesApi
      * Deletes an attribute
      *
      * @param string $attributeId id of the attribute (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAttributeWithHttpInfo($attributeId)
@@ -253,11 +253,11 @@ class AttributesApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -271,8 +271,8 @@ class AttributesApi
      *
      * Lists all attributes
      *
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetAttributes
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetAttributes
      */
     public function getAttributes()
     {
@@ -285,8 +285,8 @@ class AttributesApi
      *
      * Lists all attributes
      *
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetAttributes, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetAttributes, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAttributesWithHttpInfo()
     {
@@ -322,15 +322,15 @@ class AttributesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetAttributes',
+                '\SendinBlue\Client\Model\GetAttributes',
                 '/contacts/attributes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetAttributes', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetAttributes', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetAttributes', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetAttributes', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

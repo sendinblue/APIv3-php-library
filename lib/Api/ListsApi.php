@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Api;
+namespace SendinBlue\Client\Api;
 
-use \Sendinblue\Client\ApiClient;
-use \Sendinblue\Client\ApiException;
-use \Sendinblue\Client\Configuration;
-use \Sendinblue\Client\ObjectSerializer;
+use \SendinBlue\Client\ApiClient;
+use \SendinBlue\Client\ApiException;
+use \SendinBlue\Client\Configuration;
+use \SendinBlue\Client\ObjectSerializer;
 
 /**
  * ListsApi Class Doc Comment
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ListsApi
     /**
      * API Client
      *
-     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
+     * @var \SendinBlue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
+     * @param \SendinBlue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
+    public function __construct(\SendinBlue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ListsApi
     /**
      * Get API client
      *
-     * @return \Sendinblue\Client\ApiClient get the API client
+     * @return \SendinBlue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ListsApi
     /**
      * Set the API client
      *
-     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
+     * @param \SendinBlue\Client\ApiClient $apiClient set the API client
      *
      * @return ListsApi
      */
-    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
+    public function setApiClient(\SendinBlue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,9 +93,9 @@ class ListsApi
      * Add existing contacts to a list
      *
      * @param string $listId Id of the list (required)
-     * @param \Sendinblue\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\PostContactInfo
+     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\PostContactInfo
      */
     public function addContactToList($listId, $contactEmails)
     {
@@ -109,9 +109,9 @@ class ListsApi
      * Add existing contacts to a list
      *
      * @param string $listId Id of the list (required)
-     * @param \Sendinblue\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function addContactToListWithHttpInfo($listId, $contactEmails)
     {
@@ -168,23 +168,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\PostContactInfo',
+                '\SendinBlue\Client\Model\PostContactInfo',
                 '/contacts/lists/{listId}/contacts/add'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\PostContactInfo', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\PostContactInfo', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\PostContactInfo', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\PostContactInfo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -198,9 +198,9 @@ class ListsApi
      *
      * Create a list
      *
-     * @param \Sendinblue\Client\Model\CreateList $createList Values to create a list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\CreateModel
+     * @param \SendinBlue\Client\Model\CreateList $createList Values to create a list (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\CreateModel
      */
     public function createList($createList)
     {
@@ -213,9 +213,9 @@ class ListsApi
      *
      * Create a list
      *
-     * @param \Sendinblue\Client\Model\CreateList $createList Values to create a list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\CreateList $createList Values to create a list (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createListWithHttpInfo($createList)
     {
@@ -260,19 +260,19 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\CreateModel',
+                '\SendinBlue\Client\Model\CreateModel',
                 '/contacts/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -287,7 +287,7 @@ class ListsApi
      * Delete a list
      *
      * @param string $listId Id of the list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteList($listId)
@@ -302,7 +302,7 @@ class ListsApi
      * Delete a list
      *
      * @param string $listId Id of the list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteListWithHttpInfo($listId)
@@ -359,11 +359,11 @@ class ListsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -381,8 +381,8 @@ class ListsApi
      * @param string $modifiedSince Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetContacts
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetContacts
      */
     public function getContactsFromList($listId, $modifiedSince = null, $limit = '50', $offset = '0')
     {
@@ -399,8 +399,8 @@ class ListsApi
      * @param string $modifiedSince Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetContacts, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetContacts, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactsFromListWithHttpInfo($listId, $modifiedSince = null, $limit = '50', $offset = '0')
     {
@@ -468,23 +468,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetContacts',
+                '\SendinBlue\Client\Model\GetContacts',
                 '/contacts/lists/{listId}/contacts'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetContacts', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetContacts', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetContacts', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetContacts', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -501,8 +501,8 @@ class ListsApi
      * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetFolderLists
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetFolderLists
      */
     public function getFolderLists($folderId, $limit = '10', $offset = '0')
     {
@@ -518,8 +518,8 @@ class ListsApi
      * @param string $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetFolderLists, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetFolderLists, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFolderListsWithHttpInfo($folderId, $limit = '10', $offset = '0')
     {
@@ -579,23 +579,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetFolderLists',
+                '\SendinBlue\Client\Model\GetFolderLists',
                 '/contacts/folders/{folderId}/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetFolderLists', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetFolderLists', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetFolderLists', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetFolderLists', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -610,8 +610,8 @@ class ListsApi
      * Get the details of a list
      *
      * @param string $listId Id of the list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetExtendedList
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetExtendedList
      */
     public function getList($listId)
     {
@@ -625,8 +625,8 @@ class ListsApi
      * Get the details of a list
      *
      * @param string $listId Id of the list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetExtendedList, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetExtendedList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getListWithHttpInfo($listId)
     {
@@ -674,23 +674,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetExtendedList',
+                '\SendinBlue\Client\Model\GetExtendedList',
                 '/contacts/lists/{listId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetExtendedList', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetExtendedList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetExtendedList', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetExtendedList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -706,8 +706,8 @@ class ListsApi
      *
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetLists
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetLists
      */
     public function getLists($limit = '10', $offset = '0')
     {
@@ -722,8 +722,8 @@ class ListsApi
      *
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetLists, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetLists, HTTP status code, HTTP response headers (array of strings)
      */
     public function getListsWithHttpInfo($limit = '10', $offset = '0')
     {
@@ -771,19 +771,19 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetLists',
+                '\SendinBlue\Client\Model\GetLists',
                 '/contacts/lists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetLists', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetLists', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetLists', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetLists', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -798,9 +798,9 @@ class ListsApi
      * Remove existing contacts from a list
      *
      * @param string $listId Id of the list (required)
-     * @param \Sendinblue\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\PostContactInfo
+     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\PostContactInfo
      */
     public function removeContactToList($listId, $contactEmails)
     {
@@ -814,9 +814,9 @@ class ListsApi
      * Remove existing contacts from a list
      *
      * @param string $listId Id of the list (required)
-     * @param \Sendinblue\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function removeContactToListWithHttpInfo($listId, $contactEmails)
     {
@@ -873,23 +873,23 @@ class ListsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\PostContactInfo',
+                '\SendinBlue\Client\Model\PostContactInfo',
                 '/contacts/lists/{listId}/contacts/remove'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\PostContactInfo', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\PostContactInfo', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\PostContactInfo', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\PostContactInfo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -904,8 +904,8 @@ class ListsApi
      * Update a list
      *
      * @param string $listId Id of the list (required)
-     * @param \Sendinblue\Client\Model\UpdateList $updateList Values to update a list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\UpdateList $updateList Values to update a list (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateList($listId, $updateList)
@@ -920,8 +920,8 @@ class ListsApi
      * Update a list
      *
      * @param string $listId Id of the list (required)
-     * @param \Sendinblue\Client\Model\UpdateList $updateList Values to update a list (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\UpdateList $updateList Values to update a list (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateListWithHttpInfo($listId, $updateList)
@@ -987,11 +987,11 @@ class ListsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
