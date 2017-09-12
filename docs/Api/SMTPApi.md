@@ -1,4 +1,4 @@
-# Sendinblue\Client\SMTPApi
+# SendinBlue\Client\SMTPApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **createSmtpTemplate**
-> \Sendinblue\Client\Model\CreateModel createSmtpTemplate($smtpTemplate)
+> \SendinBlue\Client\Model\CreateModel createSmtpTemplate($smtpTemplate)
 
 Create an smtp template
 
@@ -28,12 +28,12 @@ Create an smtp template
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
-$smtpTemplate = new \Sendinblue\Client\Model\CreateSmtpTemplate(); // \Sendinblue\Client\Model\CreateSmtpTemplate | values to update in smtp template
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
+$smtpTemplate = new \SendinBlue\Client\Model\CreateSmtpTemplate(); // \SendinBlue\Client\Model\CreateSmtpTemplate | values to update in smtp template
 
 try {
     $result = $api_instance->createSmtpTemplate($smtpTemplate);
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smtpTemplate** | [**\Sendinblue\Client\Model\CreateSmtpTemplate**](../Model/CreateSmtpTemplate.md)| values to update in smtp template |
+ **smtpTemplate** | [**\SendinBlue\Client\Model\CreateSmtpTemplate**](../Model/CreateSmtpTemplate.md)| values to update in smtp template |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -78,12 +78,12 @@ Delete hardbounces. To use carefully (e.g. in case of temporary ISP failures)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
-$deleteHardbounces = new \Sendinblue\Client\Model\DeleteHardbounces(); // \Sendinblue\Client\Model\DeleteHardbounces | values to delete hardbounces
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
+$deleteHardbounces = new \SendinBlue\Client\Model\DeleteHardbounces(); // \SendinBlue\Client\Model\DeleteHardbounces | values to delete hardbounces
 
 try {
     $api_instance->deleteHardbounces($deleteHardbounces);
@@ -97,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deleteHardbounces** | [**\Sendinblue\Client\Model\DeleteHardbounces**](../Model/DeleteHardbounces.md)| values to delete hardbounces | [optional]
+ **deleteHardbounces** | [**\SendinBlue\Client\Model\DeleteHardbounces**](../Model/DeleteHardbounces.md)| values to delete hardbounces | [optional]
 
 ### Return type
 
@@ -115,7 +115,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregatedSmtpReport**
-> \Sendinblue\Client\Model\GetAggregatedReport getAggregatedSmtpReport($startDate, $endDate, $days, $tag)
+> \SendinBlue\Client\Model\GetAggregatedReport getAggregatedSmtpReport($startDate, $endDate, $days, $tag)
 
 Get your SMTP activity aggregated over a period of time
 
@@ -125,11 +125,11 @@ Get your SMTP activity aggregated over a period of time
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetAggregatedReport**](../Model/GetAggregatedReport.md)
+[**\SendinBlue\Client\Model\GetAggregatedReport**](../Model/GetAggregatedReport.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailEventReport**
-> \Sendinblue\Client\Model\GetEmailEventReport getEmailEventReport($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId)
+> \SendinBlue\Client\Model\GetEmailEventReport getEmailEventReport($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId)
 
 Get all your SMTP activity (unaggregated events)
 
@@ -179,11 +179,11 @@ Get all your SMTP activity (unaggregated events)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $limit = 50; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetEmailEventReport**](../Model/GetEmailEventReport.md)
+[**\SendinBlue\Client\Model\GetEmailEventReport**](../Model/GetEmailEventReport.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmtpReport**
-> \Sendinblue\Client\Model\GetReports getSmtpReport($limit, $offset, $startDate, $endDate, $days, $tag)
+> \SendinBlue\Client\Model\GetReports getSmtpReport($limit, $offset, $startDate, $endDate, $days, $tag)
 
 Get your SMTP activity aggregated per day
 
@@ -245,11 +245,11 @@ Get your SMTP activity aggregated per day
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $limit = 50; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document on the page
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetReports**](../Model/GetReports.md)
+[**\SendinBlue\Client\Model\GetReports**](../Model/GetReports.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmtpTemplate**
-> \Sendinblue\Client\Model\GetSmtpTemplateOverview getSmtpTemplate($templateId)
+> \SendinBlue\Client\Model\GetSmtpTemplateOverview getSmtpTemplate($templateId)
 
 Returns the template informations
 
@@ -303,11 +303,11 @@ Returns the template informations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $templateId = "templateId_example"; // string | id of the template
 
 try {
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetSmtpTemplateOverview**](../Model/GetSmtpTemplateOverview.md)
+[**\SendinBlue\Client\Model\GetSmtpTemplateOverview**](../Model/GetSmtpTemplateOverview.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmtpTemplates**
-> \Sendinblue\Client\Model\GetSmtpTemplates getSmtpTemplates($templateStatus, $limit, $offset)
+> \SendinBlue\Client\Model\GetSmtpTemplates getSmtpTemplates($templateStatus, $limit, $offset)
 
 Get the list of SMTP templates
 
@@ -351,11 +351,11 @@ Get the list of SMTP templates
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $templateStatus = true; // bool | Filter on the status of the template. Active = true, inactive = false
 $limit = 50; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document in the page
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetSmtpTemplates**](../Model/GetSmtpTemplates.md)
+[**\SendinBlue\Client\Model\GetSmtpTemplates**](../Model/GetSmtpTemplates.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendTemplate**
-> \Sendinblue\Client\Model\SendTemplateEmail sendTemplate($templateId, $sendEmail)
+> \SendinBlue\Client\Model\SendTemplateEmail sendTemplate($templateId, $sendEmail)
 
 Send a template
 
@@ -403,13 +403,13 @@ Send a template
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $templateId = "templateId_example"; // string | Id of the template
-$sendEmail = new \Sendinblue\Client\Model\SendEmail(); // \Sendinblue\Client\Model\SendEmail | 
+$sendEmail = new \SendinBlue\Client\Model\SendEmail(); // \SendinBlue\Client\Model\SendEmail | 
 
 try {
     $result = $api_instance->sendTemplate($templateId, $sendEmail);
@@ -425,11 +425,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **string**| Id of the template |
- **sendEmail** | [**\Sendinblue\Client\Model\SendEmail**](../Model/SendEmail.md)|  |
+ **sendEmail** | [**\SendinBlue\Client\Model\SendEmail**](../Model/SendEmail.md)|  |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\SendTemplateEmail**](../Model/SendTemplateEmail.md)
+[**\SendinBlue\Client\Model\SendTemplateEmail**](../Model/SendTemplateEmail.md)
 
 ### Authorization
 
@@ -453,13 +453,13 @@ Send a template to your test list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $templateId = "templateId_example"; // string | Id of the template
-$sendTestEmail = new \Sendinblue\Client\Model\SendTestEmail(); // \Sendinblue\Client\Model\SendTestEmail | 
+$sendTestEmail = new \SendinBlue\Client\Model\SendTestEmail(); // \SendinBlue\Client\Model\SendTestEmail | 
 
 try {
     $api_instance->sendTestTemplate($templateId, $sendTestEmail);
@@ -474,7 +474,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **string**| Id of the template |
- **sendTestEmail** | [**\Sendinblue\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
+ **sendTestEmail** | [**\SendinBlue\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
 
 ### Return type
 
@@ -492,7 +492,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendTransacEmail**
-> \Sendinblue\Client\Model\CreateSmtpEmail sendTransacEmail($sendSmtpEmail)
+> \SendinBlue\Client\Model\CreateSmtpEmail sendTransacEmail($sendSmtpEmail)
 
 Send a transactional email
 
@@ -502,12 +502,12 @@ Send a transactional email
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
-$sendSmtpEmail = new \Sendinblue\Client\Model\SendSmtpEmail(); // \Sendinblue\Client\Model\SendSmtpEmail | Values to send a transactional email
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
+$sendSmtpEmail = new \SendinBlue\Client\Model\SendSmtpEmail(); // \SendinBlue\Client\Model\SendSmtpEmail | Values to send a transactional email
 
 try {
     $result = $api_instance->sendTransacEmail($sendSmtpEmail);
@@ -522,11 +522,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendSmtpEmail** | [**\Sendinblue\Client\Model\SendSmtpEmail**](../Model/SendSmtpEmail.md)| Values to send a transactional email |
+ **sendSmtpEmail** | [**\SendinBlue\Client\Model\SendSmtpEmail**](../Model/SendSmtpEmail.md)| Values to send a transactional email |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateSmtpEmail**](../Model/CreateSmtpEmail.md)
+[**\SendinBlue\Client\Model\CreateSmtpEmail**](../Model/CreateSmtpEmail.md)
 
 ### Authorization
 
@@ -550,13 +550,13 @@ Updates an smtp templates
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\SMTPApi();
+$api_instance = new SendinBlue\Client\Api\SMTPApi();
 $templateId = "templateId_example"; // string | id of the template
-$smtpTemplate = new \Sendinblue\Client\Model\UpdateSmtpTemplate(); // \Sendinblue\Client\Model\UpdateSmtpTemplate | values to update in smtp template
+$smtpTemplate = new \SendinBlue\Client\Model\UpdateSmtpTemplate(); // \SendinBlue\Client\Model\UpdateSmtpTemplate | values to update in smtp template
 
 try {
     $api_instance->updateSmtpTemplate($templateId, $smtpTemplate);
@@ -571,7 +571,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **string**| id of the template |
- **smtpTemplate** | [**\Sendinblue\Client\Model\UpdateSmtpTemplate**](../Model/UpdateSmtpTemplate.md)| values to update in smtp template |
+ **smtpTemplate** | [**\SendinBlue\Client\Model\UpdateSmtpTemplate**](../Model/UpdateSmtpTemplate.md)| values to update in smtp template |
 
 ### Return type
 

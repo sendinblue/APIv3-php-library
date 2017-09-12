@@ -1,4 +1,4 @@
-# Sendinblue\Client\AccountApi
+# SendinBlue\Client\AccountApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getAccount**
-> \Sendinblue\Client\Model\GetAccount getAccount()
+> \SendinBlue\Client\Model\GetAccount getAccount()
 
 Get your account informations, plans and credits details
 
@@ -18,11 +18,11 @@ Get your account informations, plans and credits details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\AccountApi();
+$api_instance = new SendinBlue\Client\Api\AccountApi();
 
 try {
     $result = $api_instance->getAccount();
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetAccount**](../Model/GetAccount.md)
+[**\SendinBlue\Client\Model\GetAccount**](../Model/GetAccount.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# Sendinblue\Client\FoldersApi
+# SendinBlue\Client\FoldersApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createFolder**
-> \Sendinblue\Client\Model\CreateModel createFolder($name)
+> \SendinBlue\Client\Model\CreateModel createFolder($name)
 
 Create a folder
 
@@ -23,12 +23,12 @@ Create a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\FoldersApi();
-$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
+$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$name = new \SendinBlue\Client\Model\CreaUpdateFolder(); // \SendinBlue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $result = $api_instance->createFolder($name);
@@ -43,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\SendinBlue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -71,11 +71,11 @@ Delete a folder (and all its lists)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\FoldersApi();
+$api_instance = new SendinBlue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | Id of the folder
 
 try {
@@ -108,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolder**
-> \Sendinblue\Client\Model\GetFolder getFolder($folderId)
+> \SendinBlue\Client\Model\GetFolder getFolder($folderId)
 
 Returns folder details
 
@@ -118,11 +118,11 @@ Returns folder details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\FoldersApi();
+$api_instance = new SendinBlue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | id of the folder
 
 try {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetFolder**](../Model/GetFolder.md)
+[**\SendinBlue\Client\Model\GetFolder**](../Model/GetFolder.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderLists**
-> \Sendinblue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
+> \SendinBlue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
 Get the lists in a folder
 
@@ -166,11 +166,11 @@ Get the lists in a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\FoldersApi();
+$api_instance = new SendinBlue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
+[**\SendinBlue\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolders**
-> \Sendinblue\Client\Model\GetFolders getFolders($limit, $offset)
+> \SendinBlue\Client\Model\GetFolders getFolders($limit, $offset)
 
 Get all the folders
 
@@ -218,11 +218,11 @@ Get all the folders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\FoldersApi();
+$api_instance = new SendinBlue\Client\Api\FoldersApi();
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetFolders**](../Model/GetFolders.md)
+[**\SendinBlue\Client\Model\GetFolders**](../Model/GetFolders.md)
 
 ### Authorization
 
@@ -268,13 +268,13 @@ Update a contact folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\FoldersApi();
+$api_instance = new SendinBlue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | Id of the folder
-$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
+$name = new \SendinBlue\Client\Model\CreaUpdateFolder(); // \SendinBlue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $api_instance->updateFolder($folderId, $name);
@@ -289,7 +289,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folderId** | **string**| Id of the folder |
- **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\SendinBlue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 

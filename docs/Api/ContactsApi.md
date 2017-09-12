@@ -1,4 +1,4 @@
-# Sendinblue\Client\ContactsApi
+# SendinBlue\Client\ContactsApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **addContactToList**
-> \Sendinblue\Client\Model\PostContactInfo addContactToList($listId, $contactEmails)
+> \SendinBlue\Client\Model\PostContactInfo addContactToList($listId, $contactEmails)
 
 Add existing contacts to a list
 
@@ -41,13 +41,13 @@ Add existing contacts to a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
-$contactEmails = new \Sendinblue\Client\Model\AddRemoveContactToList(); // \Sendinblue\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
+$contactEmails = new \SendinBlue\Client\Model\AddRemoveContactToList(); // \SendinBlue\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
 
 try {
     $result = $api_instance->addContactToList($listId, $contactEmails);
@@ -63,11 +63,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **string**| Id of the list |
- **contactEmails** | [**\Sendinblue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
+ **contactEmails** | [**\SendinBlue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
+[**\SendinBlue\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAttribute**
-> \Sendinblue\Client\Model\CreateModel createAttribute($createAttribute)
+> \SendinBlue\Client\Model\CreateModel createAttribute($createAttribute)
 
 Creates contact attributes
 
@@ -91,12 +91,12 @@ Creates contact attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
-$createAttribute = new \Sendinblue\Client\Model\CreateAttribute(); // \Sendinblue\Client\Model\CreateAttribute | Values to create an attribute
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
+$createAttribute = new \SendinBlue\Client\Model\CreateAttribute(); // \SendinBlue\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
     $result = $api_instance->createAttribute($createAttribute);
@@ -111,11 +111,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createAttribute** | [**\Sendinblue\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
+ **createAttribute** | [**\SendinBlue\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createContact**
-> \Sendinblue\Client\Model\CreateModel createContact($createContact)
+> \SendinBlue\Client\Model\CreateModel createContact($createContact)
 
 Create a contact
 
@@ -139,12 +139,12 @@ Create a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
-$createContact = new \Sendinblue\Client\Model\CreateContact(); // \Sendinblue\Client\Model\CreateContact | Values to create a contact
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
+$createContact = new \SendinBlue\Client\Model\CreateContact(); // \SendinBlue\Client\Model\CreateContact | Values to create a contact
 
 try {
     $result = $api_instance->createContact($createContact);
@@ -159,11 +159,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createContact** | [**\Sendinblue\Client\Model\CreateContact**](../Model/CreateContact.md)| Values to create a contact |
+ **createContact** | [**\SendinBlue\Client\Model\CreateContact**](../Model/CreateContact.md)| Values to create a contact |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createFolder**
-> \Sendinblue\Client\Model\CreateModel createFolder($name)
+> \SendinBlue\Client\Model\CreateModel createFolder($name)
 
 Create a folder
 
@@ -187,12 +187,12 @@ Create a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
-$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
+$name = new \SendinBlue\Client\Model\CreaUpdateFolder(); // \SendinBlue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $result = $api_instance->createFolder($name);
@@ -207,11 +207,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\SendinBlue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createList**
-> \Sendinblue\Client\Model\CreateModel createList($createList)
+> \SendinBlue\Client\Model\CreateModel createList($createList)
 
 Create a list
 
@@ -235,12 +235,12 @@ Create a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
-$createList = new \Sendinblue\Client\Model\CreateList(); // \Sendinblue\Client\Model\CreateList | Values to create a list
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
+$createList = new \SendinBlue\Client\Model\CreateList(); // \SendinBlue\Client\Model\CreateList | Values to create a list
 
 try {
     $result = $api_instance->createList($createList);
@@ -255,11 +255,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createList** | [**\Sendinblue\Client\Model\CreateList**](../Model/CreateList.md)| Values to create a list |
+ **createList** | [**\SendinBlue\Client\Model\CreateList**](../Model/CreateList.md)| Values to create a list |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -283,11 +283,11 @@ Deletes an attribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $attributeId = "attributeId_example"; // string | id of the attribute
 
 try {
@@ -330,11 +330,11 @@ Delete a folder (and all its lists)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | Id of the folder
 
 try {
@@ -377,11 +377,11 @@ Delete a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
 
 try {
@@ -414,7 +414,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAttributes**
-> \Sendinblue\Client\Model\GetAttributes getAttributes()
+> \SendinBlue\Client\Model\GetAttributes getAttributes()
 
 Lists all attributes
 
@@ -424,11 +424,11 @@ Lists all attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 
 try {
     $result = $api_instance->getAttributes();
@@ -444,7 +444,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetAttributes**](../Model/GetAttributes.md)
+[**\SendinBlue\Client\Model\GetAttributes**](../Model/GetAttributes.md)
 
 ### Authorization
 
@@ -458,7 +458,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactInfo**
-> \Sendinblue\Client\Model\GetExtendedContactDetails getContactInfo($email)
+> \SendinBlue\Client\Model\GetExtendedContactDetails getContactInfo($email)
 
 Retrieves contact informations
 
@@ -468,11 +468,11 @@ Retrieves contact informations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email (urlencoded) of the contact
 
 try {
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetExtendedContactDetails**](../Model/GetExtendedContactDetails.md)
+[**\SendinBlue\Client\Model\GetExtendedContactDetails**](../Model/GetExtendedContactDetails.md)
 
 ### Authorization
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactStats**
-> \Sendinblue\Client\Model\GetContactCampaignStats getContactStats($email)
+> \SendinBlue\Client\Model\GetContactCampaignStats getContactStats($email)
 
 Get the campaigns statistics for a contact
 
@@ -516,11 +516,11 @@ Get the campaigns statistics for a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email address (urlencoded) of the contact
 
 try {
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetContactCampaignStats**](../Model/GetContactCampaignStats.md)
+[**\SendinBlue\Client\Model\GetContactCampaignStats**](../Model/GetContactCampaignStats.md)
 
 ### Authorization
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContacts**
-> \Sendinblue\Client\Model\GetContacts getContacts($limit, $offset)
+> \SendinBlue\Client\Model\GetContacts getContacts($limit, $offset)
 
 Get all the contacts
 
@@ -564,11 +564,11 @@ Get all the contacts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetContacts**](../Model/GetContacts.md)
+[**\SendinBlue\Client\Model\GetContacts**](../Model/GetContacts.md)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactsFromList**
-> \Sendinblue\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
+> \SendinBlue\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
 
 Get the contacts in a list
 
@@ -614,11 +614,11 @@ Get the contacts in a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
 $modifiedSince = "modifiedSince_example"; // string | Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
 $limit = 50; // int | Number of documents per page
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetContacts**](../Model/GetContacts.md)
+[**\SendinBlue\Client\Model\GetContacts**](../Model/GetContacts.md)
 
 ### Authorization
 
@@ -658,7 +658,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolder**
-> \Sendinblue\Client\Model\GetFolder getFolder($folderId)
+> \SendinBlue\Client\Model\GetFolder getFolder($folderId)
 
 Returns folder details
 
@@ -668,11 +668,11 @@ Returns folder details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | id of the folder
 
 try {
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetFolder**](../Model/GetFolder.md)
+[**\SendinBlue\Client\Model\GetFolder**](../Model/GetFolder.md)
 
 ### Authorization
 
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderLists**
-> \Sendinblue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
+> \SendinBlue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
 Get the lists in a folder
 
@@ -716,11 +716,11 @@ Get the lists in a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
+[**\SendinBlue\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
 
 ### Authorization
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolders**
-> \Sendinblue\Client\Model\GetFolders getFolders($limit, $offset)
+> \SendinBlue\Client\Model\GetFolders getFolders($limit, $offset)
 
 Get all the folders
 
@@ -768,11 +768,11 @@ Get all the folders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetFolders**](../Model/GetFolders.md)
+[**\SendinBlue\Client\Model\GetFolders**](../Model/GetFolders.md)
 
 ### Authorization
 
@@ -808,7 +808,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getList**
-> \Sendinblue\Client\Model\GetExtendedList getList($listId)
+> \SendinBlue\Client\Model\GetExtendedList getList($listId)
 
 Get the details of a list
 
@@ -818,11 +818,11 @@ Get the details of a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
 
 try {
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetExtendedList**](../Model/GetExtendedList.md)
+[**\SendinBlue\Client\Model\GetExtendedList**](../Model/GetExtendedList.md)
 
 ### Authorization
 
@@ -856,7 +856,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLists**
-> \Sendinblue\Client\Model\GetLists getLists($limit, $offset)
+> \SendinBlue\Client\Model\GetLists getLists($limit, $offset)
 
 Get all the lists
 
@@ -866,11 +866,11 @@ Get all the lists
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetLists**](../Model/GetLists.md)
+[**\SendinBlue\Client\Model\GetLists**](../Model/GetLists.md)
 
 ### Authorization
 
@@ -906,7 +906,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **importContacts**
-> \Sendinblue\Client\Model\CreatedProcessId importContacts($requestContactImport)
+> \SendinBlue\Client\Model\CreatedProcessId importContacts($requestContactImport)
 
 Import contacts
 
@@ -918,12 +918,12 @@ It returns the background process ID which on completion calls the notify URL th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
-$requestContactImport = new \Sendinblue\Client\Model\RequestContactImport(); // \Sendinblue\Client\Model\RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
+$requestContactImport = new \SendinBlue\Client\Model\RequestContactImport(); // \SendinBlue\Client\Model\RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
 
 try {
     $result = $api_instance->importContacts($requestContactImport);
@@ -938,11 +938,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestContactImport** | [**\Sendinblue\Client\Model\RequestContactImport**](../Model/RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; |
+ **requestContactImport** | [**\SendinBlue\Client\Model\RequestContactImport**](../Model/RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
+[**\SendinBlue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -956,7 +956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeContactToList**
-> \Sendinblue\Client\Model\PostContactInfo removeContactToList($listId, $contactEmails)
+> \SendinBlue\Client\Model\PostContactInfo removeContactToList($listId, $contactEmails)
 
 Remove existing contacts from a list
 
@@ -966,13 +966,13 @@ Remove existing contacts from a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
-$contactEmails = new \Sendinblue\Client\Model\AddRemoveContactToList(); // \Sendinblue\Client\Model\AddRemoveContactToList | Emails adresses of the contact
+$contactEmails = new \SendinBlue\Client\Model\AddRemoveContactToList(); // \SendinBlue\Client\Model\AddRemoveContactToList | Emails adresses of the contact
 
 try {
     $result = $api_instance->removeContactToList($listId, $contactEmails);
@@ -988,11 +988,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **string**| Id of the list |
- **contactEmails** | [**\Sendinblue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
+ **contactEmails** | [**\SendinBlue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
+[**\SendinBlue\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
 
 ### Authorization
 
@@ -1006,7 +1006,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **requestContactExport**
-> \Sendinblue\Client\Model\CreatedProcessId requestContactExport($requestContactExport)
+> \SendinBlue\Client\Model\CreatedProcessId requestContactExport($requestContactExport)
 
 Export contacts
 
@@ -1018,12 +1018,12 @@ It returns the background process ID which on completion calls the notify URL th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
-$requestContactExport = new \Sendinblue\Client\Model\RequestContactExport(); // \Sendinblue\Client\Model\RequestContactExport | Values to request a contact export
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
+$requestContactExport = new \SendinBlue\Client\Model\RequestContactExport(); // \SendinBlue\Client\Model\RequestContactExport | Values to request a contact export
 
 try {
     $result = $api_instance->requestContactExport($requestContactExport);
@@ -1038,11 +1038,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestContactExport** | [**\Sendinblue\Client\Model\RequestContactExport**](../Model/RequestContactExport.md)| Values to request a contact export |
+ **requestContactExport** | [**\SendinBlue\Client\Model\RequestContactExport**](../Model/RequestContactExport.md)| Values to request a contact export |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
+[**\SendinBlue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -1066,13 +1066,13 @@ Updates a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email (urlencoded) of the contact
-$updateContact = new \Sendinblue\Client\Model\UpdateContact(); // \Sendinblue\Client\Model\UpdateContact | Values to update a contact
+$updateContact = new \SendinBlue\Client\Model\UpdateContact(); // \SendinBlue\Client\Model\UpdateContact | Values to update a contact
 
 try {
     $api_instance->updateContact($email, $updateContact);
@@ -1087,7 +1087,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **string**| Email (urlencoded) of the contact |
- **updateContact** | [**\Sendinblue\Client\Model\UpdateContact**](../Model/UpdateContact.md)| Values to update a contact |
+ **updateContact** | [**\SendinBlue\Client\Model\UpdateContact**](../Model/UpdateContact.md)| Values to update a contact |
 
 ### Return type
 
@@ -1115,13 +1115,13 @@ Update a contact folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | Id of the folder
-$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
+$name = new \SendinBlue\Client\Model\CreaUpdateFolder(); // \SendinBlue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $api_instance->updateFolder($folderId, $name);
@@ -1136,7 +1136,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folderId** | **string**| Id of the folder |
- **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\SendinBlue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
@@ -1164,13 +1164,13 @@ Update a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$api_instance = new SendinBlue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
-$updateList = new \Sendinblue\Client\Model\UpdateList(); // \Sendinblue\Client\Model\UpdateList | Values to update a list
+$updateList = new \SendinBlue\Client\Model\UpdateList(); // \SendinBlue\Client\Model\UpdateList | Values to update a list
 
 try {
     $api_instance->updateList($listId, $updateList);
@@ -1185,7 +1185,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **string**| Id of the list |
- **updateList** | [**\Sendinblue\Client\Model\UpdateList**](../Model/UpdateList.md)| Values to update a list |
+ **updateList** | [**\SendinBlue\Client\Model\UpdateList**](../Model/UpdateList.md)| Values to update a list |
 
 ### Return type
 

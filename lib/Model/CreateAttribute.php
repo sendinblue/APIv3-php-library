@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * CreateAttribute Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class CreateAttribute implements ArrayAccess
         'category' => 'string',
         'name' => 'string',
         'value' => 'string',
-        'enumemaration' => '\Sendinblue\Client\Model\CreateAttributeEnumemaration[]',
+        'enumemaration' => '\SendinBlue\Client\Model\CreateAttributeEnumemaration[]',
         'type' => 'string'
     ];
 
@@ -338,7 +338,7 @@ class CreateAttribute implements ArrayAccess
 
     /**
      * Gets enumemaration
-     * @return \Sendinblue\Client\Model\CreateAttributeEnumemaration[]
+     * @return \SendinBlue\Client\Model\CreateAttributeEnumemaration[]
      */
     public function getEnumemaration()
     {
@@ -347,7 +347,7 @@ class CreateAttribute implements ArrayAccess
 
     /**
      * Sets enumemaration
-     * @param \Sendinblue\Client\Model\CreateAttributeEnumemaration[] $enumemaration Values that the attribute can take. Use only if the attribute's category is category
+     * @param \SendinBlue\Client\Model\CreateAttributeEnumemaration[] $enumemaration Values that the attribute can take. Use only if the attribute's category is category
      * @return $this
      */
     public function setEnumemaration($enumemaration)
@@ -438,10 +438,10 @@ class CreateAttribute implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

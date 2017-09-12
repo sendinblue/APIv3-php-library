@@ -1,4 +1,4 @@
-# Sendinblue\Client\ResellerApi
+# SendinBlue\Client\ResellerApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **addCredits**
-> \Sendinblue\Client\Model\RemainingCreditModel addCredits($childId, $addCredits)
+> \SendinBlue\Client\Model\RemainingCreditModel addCredits($childId, $addCredits)
 
 Add Email and/or SMS credits to a specific child account
 
@@ -26,13 +26,13 @@ Add Email and/or SMS credits to a specific child account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
-$addCredits = new \Sendinblue\Client\Model\AddCredits(); // \Sendinblue\Client\Model\AddCredits | Values to post to add credit to a specific child account
+$addCredits = new \SendinBlue\Client\Model\AddCredits(); // \SendinBlue\Client\Model\AddCredits | Values to post to add credit to a specific child account
 
 try {
     $result = $api_instance->addCredits($childId, $addCredits);
@@ -48,11 +48,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **childId** | **int**| id of reseller&#39;s child |
- **addCredits** | [**\Sendinblue\Client\Model\AddCredits**](../Model/AddCredits.md)| Values to post to add credit to a specific child account |
+ **addCredits** | [**\SendinBlue\Client\Model\AddCredits**](../Model/AddCredits.md)| Values to post to add credit to a specific child account |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\RemainingCreditModel**](../Model/RemainingCreditModel.md)
+[**\SendinBlue\Client\Model\RemainingCreditModel**](../Model/RemainingCreditModel.md)
 
 ### Authorization
 
@@ -76,13 +76,13 @@ Associate a dedicated IP to the child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
-$ipId = new \Sendinblue\Client\Model\ManageIp(); // \Sendinblue\Client\Model\ManageIp | IP's id
+$ipId = new \SendinBlue\Client\Model\ManageIp(); // \SendinBlue\Client\Model\ManageIp | IP's id
 
 try {
     $api_instance->associateIpToChild($childId, $ipId);
@@ -97,7 +97,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **childId** | **int**| id of reseller&#39;s child |
- **ipId** | [**\Sendinblue\Client\Model\ManageIp**](../Model/ManageIp.md)| IP&#39;s id |
+ **ipId** | [**\SendinBlue\Client\Model\ManageIp**](../Model/ManageIp.md)| IP&#39;s id |
 
 ### Return type
 
@@ -115,7 +115,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createResellerChild**
-> \Sendinblue\Client\Model\CreateModel createResellerChild($resellerChild)
+> \SendinBlue\Client\Model\CreateModel createResellerChild($resellerChild)
 
 Creates a reseller child
 
@@ -125,12 +125,12 @@ Creates a reseller child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
-$resellerChild = new \Sendinblue\Client\Model\CreateChild(); // \Sendinblue\Client\Model\CreateChild | reseller child to add
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$resellerChild = new \SendinBlue\Client\Model\CreateChild(); // \SendinBlue\Client\Model\CreateChild | reseller child to add
 
 try {
     $result = $api_instance->createResellerChild($resellerChild);
@@ -145,11 +145,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resellerChild** | [**\Sendinblue\Client\Model\CreateChild**](../Model/CreateChild.md)| reseller child to add | [optional]
+ **resellerChild** | [**\SendinBlue\Client\Model\CreateChild**](../Model/CreateChild.md)| reseller child to add | [optional]
 
 ### Return type
 
-[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -173,11 +173,11 @@ Deletes a single reseller child based on the childId supplied
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
 
 try {
@@ -220,13 +220,13 @@ Dissociate a dedicated IP to the child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
-$ipId = new \Sendinblue\Client\Model\ManageIp(); // \Sendinblue\Client\Model\ManageIp | IP's id
+$ipId = new \SendinBlue\Client\Model\ManageIp(); // \SendinBlue\Client\Model\ManageIp | IP's id
 
 try {
     $api_instance->dissociateIpFromChild($childId, $ipId);
@@ -241,7 +241,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **childId** | **int**| id of reseller&#39;s child |
- **ipId** | [**\Sendinblue\Client\Model\ManageIp**](../Model/ManageIp.md)| IP&#39;s id |
+ **ipId** | [**\SendinBlue\Client\Model\ManageIp**](../Model/ManageIp.md)| IP&#39;s id |
 
 ### Return type
 
@@ -259,7 +259,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getChildInfo**
-> \Sendinblue\Client\Model\GetChildInfo getChildInfo($childId)
+> \SendinBlue\Client\Model\GetChildInfo getChildInfo($childId)
 
 Gets the info about a specific child account
 
@@ -269,11 +269,11 @@ Gets the info about a specific child account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
 
 try {
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetChildInfo**](../Model/GetChildInfo.md)
+[**\SendinBlue\Client\Model\GetChildInfo**](../Model/GetChildInfo.md)
 
 ### Authorization
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getResellerChilds**
-> \Sendinblue\Client\Model\GetChildrenList getResellerChilds()
+> \SendinBlue\Client\Model\GetChildrenList getResellerChilds()
 
 Gets the list of all reseller's children accounts
 
@@ -317,11 +317,11 @@ Gets the list of all reseller's children accounts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 
 try {
     $result = $api_instance->getResellerChilds();
@@ -337,7 +337,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Sendinblue\Client\Model\GetChildrenList**](../Model/GetChildrenList.md)
+[**\SendinBlue\Client\Model\GetChildrenList**](../Model/GetChildrenList.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeCredits**
-> \Sendinblue\Client\Model\RemainingCreditModel removeCredits($childId, $removeCredits)
+> \SendinBlue\Client\Model\RemainingCreditModel removeCredits($childId, $removeCredits)
 
 Remove Email and/or SMS credits from a specific child account
 
@@ -361,13 +361,13 @@ Remove Email and/or SMS credits from a specific child account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
-$removeCredits = new \Sendinblue\Client\Model\RemoveCredits(); // \Sendinblue\Client\Model\RemoveCredits | Values to post to remove email or SMS credits from a specific child account
+$removeCredits = new \SendinBlue\Client\Model\RemoveCredits(); // \SendinBlue\Client\Model\RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
 try {
     $result = $api_instance->removeCredits($childId, $removeCredits);
@@ -383,11 +383,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **childId** | **int**| id of reseller&#39;s child |
- **removeCredits** | [**\Sendinblue\Client\Model\RemoveCredits**](../Model/RemoveCredits.md)| Values to post to remove email or SMS credits from a specific child account |
+ **removeCredits** | [**\SendinBlue\Client\Model\RemoveCredits**](../Model/RemoveCredits.md)| Values to post to remove email or SMS credits from a specific child account |
 
 ### Return type
 
-[**\Sendinblue\Client\Model\RemainingCreditModel**](../Model/RemainingCreditModel.md)
+[**\SendinBlue\Client\Model\RemainingCreditModel**](../Model/RemainingCreditModel.md)
 
 ### Authorization
 
@@ -411,13 +411,13 @@ Updates infos of reseller's child based on the childId supplied
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Sendinblue\Client\Api\ResellerApi();
+$api_instance = new SendinBlue\Client\Api\ResellerApi();
 $childId = 56; // int | id of reseller's child
-$resellerChild = new \Sendinblue\Client\Model\UpdateChild(); // \Sendinblue\Client\Model\UpdateChild | values to update in child profile
+$resellerChild = new \SendinBlue\Client\Model\UpdateChild(); // \SendinBlue\Client\Model\UpdateChild | values to update in child profile
 
 try {
     $api_instance->updateResellerChild($childId, $resellerChild);
@@ -432,7 +432,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **childId** | **int**| id of reseller&#39;s child |
- **resellerChild** | [**\Sendinblue\Client\Model\UpdateChild**](../Model/UpdateChild.md)| values to update in child profile |
+ **resellerChild** | [**\SendinBlue\Client\Model\UpdateChild**](../Model/UpdateChild.md)| values to update in child profile |
 
 ### Return type
 

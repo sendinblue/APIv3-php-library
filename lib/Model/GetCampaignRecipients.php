@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetCampaignRecipients Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class GetCampaignRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'lists' => '\Sendinblue\Client\Model\GetCampaignRecipientsLists[]',
-        'exclusionLists' => '\Sendinblue\Client\Model\GetCampaignRecipientsExclusionLists[]'
+        'lists' => '\SendinBlue\Client\Model\GetCampaignRecipientsLists[]',
+        'exclusionLists' => '\SendinBlue\Client\Model\GetCampaignRecipientsExclusionLists[]'
     ];
 
     /**
@@ -180,7 +180,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Gets lists
-     * @return \Sendinblue\Client\Model\GetCampaignRecipientsLists[]
+     * @return \SendinBlue\Client\Model\GetCampaignRecipientsLists[]
      */
     public function getLists()
     {
@@ -189,7 +189,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Sets lists
-     * @param \Sendinblue\Client\Model\GetCampaignRecipientsLists[] $lists Lists included in the campaign
+     * @param \SendinBlue\Client\Model\GetCampaignRecipientsLists[] $lists Lists included in the campaign
      * @return $this
      */
     public function setLists($lists)
@@ -201,7 +201,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Gets exclusionLists
-     * @return \Sendinblue\Client\Model\GetCampaignRecipientsExclusionLists[]
+     * @return \SendinBlue\Client\Model\GetCampaignRecipientsExclusionLists[]
      */
     public function getExclusionLists()
     {
@@ -210,7 +210,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Sets exclusionLists
-     * @param \Sendinblue\Client\Model\GetCampaignRecipientsExclusionLists[] $exclusionLists Lists excluded of the campaign
+     * @param \SendinBlue\Client\Model\GetCampaignRecipientsExclusionLists[] $exclusionLists Lists excluded of the campaign
      * @return $this
      */
     public function setExclusionLists($exclusionLists)
@@ -271,10 +271,10 @@ class GetCampaignRecipients implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

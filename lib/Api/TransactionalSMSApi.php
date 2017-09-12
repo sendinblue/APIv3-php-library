@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Api;
+namespace SendinBlue\Client\Api;
 
-use \Sendinblue\Client\ApiClient;
-use \Sendinblue\Client\ApiException;
-use \Sendinblue\Client\Configuration;
-use \Sendinblue\Client\ObjectSerializer;
+use \SendinBlue\Client\ApiClient;
+use \SendinBlue\Client\ApiException;
+use \SendinBlue\Client\Configuration;
+use \SendinBlue\Client\ObjectSerializer;
 
 /**
  * TransactionalSMSApi Class Doc Comment
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class TransactionalSMSApi
     /**
      * API Client
      *
-     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
+     * @var \SendinBlue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
+     * @param \SendinBlue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
+    public function __construct(\SendinBlue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class TransactionalSMSApi
     /**
      * Get API client
      *
-     * @return \Sendinblue\Client\ApiClient get the API client
+     * @return \SendinBlue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class TransactionalSMSApi
     /**
      * Set the API client
      *
-     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
+     * @param \SendinBlue\Client\ApiClient $apiClient set the API client
      *
      * @return TransactionalSMSApi
      */
-    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
+    public function setApiClient(\SendinBlue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -100,8 +100,8 @@ class TransactionalSMSApi
      * @param string $phoneNumber Filter the report for a specific phone number (optional)
      * @param string $event Filter the report for specific events (optional)
      * @param string $tags Filter the report for specific tags passed as a serialized urlencoded array (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetSmsEventReport
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetSmsEventReport
      */
     public function getSmsEvents($limit = '50', $startDate = null, $endDate = null, $offset = '0', $days = null, $phoneNumber = null, $event = null, $tags = null)
     {
@@ -122,8 +122,8 @@ class TransactionalSMSApi
      * @param string $phoneNumber Filter the report for a specific phone number (optional)
      * @param string $event Filter the report for specific events (optional)
      * @param string $tags Filter the report for specific tags passed as a serialized urlencoded array (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetSmsEventReport, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetSmsEventReport, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSmsEventsWithHttpInfo($limit = '50', $startDate = null, $endDate = null, $offset = '0', $days = null, $phoneNumber = null, $event = null, $tags = null)
     {
@@ -195,19 +195,19 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetSmsEventReport',
+                '\SendinBlue\Client\Model\GetSmsEventReport',
                 '/transactionalSMS/statistics/events'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetSmsEventReport', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetSmsEventReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetSmsEventReport', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetSmsEventReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -225,8 +225,8 @@ class TransactionalSMSApi
      * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param string $tag Filter on a tag (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetTransacAggregatedSmsReport
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetTransacAggregatedSmsReport
      */
     public function getTransacAggregatedSmsReport($startDate = null, $endDate = null, $days = null, $tag = null)
     {
@@ -243,8 +243,8 @@ class TransactionalSMSApi
      * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param string $tag Filter on a tag (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetTransacAggregatedSmsReport, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetTransacAggregatedSmsReport, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransacAggregatedSmsReportWithHttpInfo($startDate = null, $endDate = null, $days = null, $tag = null)
     {
@@ -296,19 +296,19 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetTransacAggregatedSmsReport',
+                '\SendinBlue\Client\Model\GetTransacAggregatedSmsReport',
                 '/transactionalSMS/statistics/aggregatedReport'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetTransacAggregatedSmsReport', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetTransacAggregatedSmsReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetTransacAggregatedSmsReport', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetTransacAggregatedSmsReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -326,8 +326,8 @@ class TransactionalSMSApi
      * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Filter on a tag (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetTransacSmsReport
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetTransacSmsReport
      */
     public function getTransacSmsReport($startDate = null, $endDate = null, $days = null, $tag = null)
     {
@@ -344,8 +344,8 @@ class TransactionalSMSApi
      * @param \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param string $tag Filter on a tag (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetTransacSmsReport, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetTransacSmsReport, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransacSmsReportWithHttpInfo($startDate = null, $endDate = null, $days = null, $tag = null)
     {
@@ -397,19 +397,19 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetTransacSmsReport',
+                '\SendinBlue\Client\Model\GetTransacSmsReport',
                 '/transactionalSMS/statistics/reports'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetTransacSmsReport', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetTransacSmsReport', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetTransacSmsReport', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetTransacSmsReport', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -423,9 +423,9 @@ class TransactionalSMSApi
      *
      * Send the SMS campaign to the specified mobile number
      *
-     * @param \Sendinblue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\SendSms
+     * @param \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\SendSms
      */
     public function sendTransacSms($sendTransacSms)
     {
@@ -438,9 +438,9 @@ class TransactionalSMSApi
      *
      * Send the SMS campaign to the specified mobile number
      *
-     * @param \Sendinblue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\SendSms, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\SendSms, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendTransacSmsWithHttpInfo($sendTransacSms)
     {
@@ -485,23 +485,23 @@ class TransactionalSMSApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\SendSms',
+                '\SendinBlue\Client\Model\SendSms',
                 '/transactionalSMS/sms'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\SendSms', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\SendSms', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\SendSms', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\SendSms', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 402:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

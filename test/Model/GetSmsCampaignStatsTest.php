@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Sendinblue\Client;
+namespace SendinBlue\Client;
 
 /**
  * GetSmsCampaignStatsTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Sendinblue\Client;
  * @category    Class */
 // * @description GetSmsCampaignStats
 /**
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

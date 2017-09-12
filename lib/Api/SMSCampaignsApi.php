@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Api;
+namespace SendinBlue\Client\Api;
 
-use \Sendinblue\Client\ApiClient;
-use \Sendinblue\Client\ApiException;
-use \Sendinblue\Client\Configuration;
-use \Sendinblue\Client\ObjectSerializer;
+use \SendinBlue\Client\ApiClient;
+use \SendinBlue\Client\ApiException;
+use \SendinBlue\Client\Configuration;
+use \SendinBlue\Client\ObjectSerializer;
 
 /**
  * SMSCampaignsApi Class Doc Comment
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class SMSCampaignsApi
     /**
      * API Client
      *
-     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
+     * @var \SendinBlue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
+     * @param \SendinBlue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
+    public function __construct(\SendinBlue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class SMSCampaignsApi
     /**
      * Get API client
      *
-     * @return \Sendinblue\Client\ApiClient get the API client
+     * @return \SendinBlue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class SMSCampaignsApi
     /**
      * Set the API client
      *
-     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
+     * @param \SendinBlue\Client\ApiClient $apiClient set the API client
      *
      * @return SMSCampaignsApi
      */
-    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
+    public function setApiClient(\SendinBlue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class SMSCampaignsApi
      *
      * Creates a SMS campaign
      *
-     * @param \Sendinblue\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\CreateModel
+     * @param \SendinBlue\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\CreateModel
      */
     public function createSMSCampaign($createSmsCampaign)
     {
@@ -107,9 +107,9 @@ class SMSCampaignsApi
      *
      * Creates a SMS campaign
      *
-     * @param \Sendinblue\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSMSCampaignWithHttpInfo($createSmsCampaign)
     {
@@ -154,19 +154,19 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\CreateModel',
+                '\SendinBlue\Client\Model\CreateModel',
                 '/smsCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -181,7 +181,7 @@ class SMSCampaignsApi
      * Delete the SMS campaign
      *
      * @param string $campaignId id of the SMS campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteSMSCampaigns($campaignId)
@@ -196,7 +196,7 @@ class SMSCampaignsApi
      * Delete the SMS campaign
      *
      * @param string $campaignId id of the SMS campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSMSCampaignsWithHttpInfo($campaignId)
@@ -253,11 +253,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -274,8 +274,8 @@ class SMSCampaignsApi
      * @param string $status Status of campaign. (optional)
      * @param int $limit Number limitation for the result returned (optional, default to 500)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetSmsCampaigns
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetSmsCampaigns
      */
     public function getSMSCampaigns($status = null, $limit = '500', $offset = '0')
     {
@@ -291,8 +291,8 @@ class SMSCampaignsApi
      * @param string $status Status of campaign. (optional)
      * @param int $limit Number limitation for the result returned (optional, default to 500)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetSmsCampaigns, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetSmsCampaigns, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSMSCampaignsWithHttpInfo($status = null, $limit = '500', $offset = '0')
     {
@@ -344,19 +344,19 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetSmsCampaigns',
+                '\SendinBlue\Client\Model\GetSmsCampaigns',
                 '/smsCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetSmsCampaigns', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetSmsCampaigns', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetSmsCampaigns', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetSmsCampaigns', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -371,9 +371,9 @@ class SMSCampaignsApi
      * Get a SMS campaign
      *
      * @param string $campaignId id of the SMS campaign (required)
-     * @param \Sendinblue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\GetSmsCampaign
+     * @param \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\GetSmsCampaign
      */
     public function getSmsCampaign($campaignId, $getSmsCampaign)
     {
@@ -387,9 +387,9 @@ class SMSCampaignsApi
      * Get a SMS campaign
      *
      * @param string $campaignId id of the SMS campaign (required)
-     * @param \Sendinblue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\GetSmsCampaign, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetSmsCampaign, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSmsCampaignWithHttpInfo($campaignId, $getSmsCampaign)
     {
@@ -446,23 +446,23 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\GetSmsCampaign',
+                '\SendinBlue\Client\Model\GetSmsCampaign',
                 '/smsCampaigns/{campaignId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetSmsCampaign', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetSmsCampaign', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetSmsCampaign', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetSmsCampaign', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -477,9 +477,9 @@ class SMSCampaignsApi
      * Exports the recipients of the specified campaign.
      *
      * @param string $campaignId id of the campaign (required)
-     * @param \Sendinblue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return \Sendinblue\Client\Model\CreatedProcessId
+     * @param \SendinBlue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\CreatedProcessId
      */
     public function requestSMSRecipientExport($campaignId, $recipientExport = null)
     {
@@ -493,9 +493,9 @@ class SMSCampaignsApi
      * Exports the recipients of the specified campaign.
      *
      * @param string $campaignId id of the campaign (required)
-     * @param \Sendinblue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
-     * @return array of \Sendinblue\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
+     * @param \SendinBlue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
      */
     public function requestSMSRecipientExportWithHttpInfo($campaignId, $recipientExport = null)
     {
@@ -548,23 +548,23 @@ class SMSCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Sendinblue\Client\Model\CreatedProcessId',
+                '\SendinBlue\Client\Model\CreatedProcessId',
                 '/smsCampaigns/{campaignId}/exportRecipients'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreatedProcessId', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreatedProcessId', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreatedProcessId', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreatedProcessId', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -579,7 +579,7 @@ class SMSCampaignsApi
      * Send your SMS campaign immediately
      *
      * @param string $campaignId id of the campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function sendSMSCampaignNow($campaignId)
@@ -594,7 +594,7 @@ class SMSCampaignsApi
      * Send your SMS campaign immediately
      *
      * @param string $campaignId id of the campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendSMSCampaignNowWithHttpInfo($campaignId)
@@ -651,15 +651,15 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 402:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -674,8 +674,8 @@ class SMSCampaignsApi
      * Send report of SMS campaigns
      *
      * @param string $campaignId id of the campaign (required)
-     * @param \Sendinblue\Client\Model\SendReport $sendReport Values for send a report (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function sendSMSReport($campaignId, $sendReport)
@@ -690,8 +690,8 @@ class SMSCampaignsApi
      * Send report of SMS campaigns
      *
      * @param string $campaignId id of the campaign (required)
-     * @param \Sendinblue\Client\Model\SendReport $sendReport Values for send a report (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendSMSReportWithHttpInfo($campaignId, $sendReport)
@@ -757,11 +757,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -776,8 +776,8 @@ class SMSCampaignsApi
      * Send an SMS
      *
      * @param string $campaignId Id of the SMS campaign (required)
-     * @param \Sendinblue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function sendTestSms($campaignId, $sendTestSms)
@@ -792,8 +792,8 @@ class SMSCampaignsApi
      * Send an SMS
      *
      * @param string $campaignId Id of the SMS campaign (required)
-     * @param \Sendinblue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendTestSmsWithHttpInfo($campaignId, $sendTestSms)
@@ -859,11 +859,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\PostSendSmsTestFailed', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\PostSendSmsTestFailed', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -878,8 +878,8 @@ class SMSCampaignsApi
      * Update the campaign status
      *
      * @param string $campaignId id of the campaign (required)
-     * @param \Sendinblue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateSMSCampaignStatus($campaignId, $status)
@@ -894,8 +894,8 @@ class SMSCampaignsApi
      * Update the campaign status
      *
      * @param string $campaignId id of the campaign (required)
-     * @param \Sendinblue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSMSCampaignStatusWithHttpInfo($campaignId, $status)
@@ -961,11 +961,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -980,8 +980,8 @@ class SMSCampaignsApi
      * Updates a SMS campaign
      *
      * @param string $campaignId id of the SMS campaign (required)
-     * @param \Sendinblue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateSmsCampaign($campaignId, $updateSmsCampaign)
@@ -996,8 +996,8 @@ class SMSCampaignsApi
      * Updates a SMS campaign
      *
      * @param string $campaignId id of the SMS campaign (required)
-     * @param \Sendinblue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
-     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @param \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSmsCampaignWithHttpInfo($campaignId, $updateSmsCampaign)
@@ -1063,11 +1063,11 @@ class SMSCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

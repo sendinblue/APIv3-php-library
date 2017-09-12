@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **testSent** | **bool** | Retrieved the status of test email sending. (true&#x3D;Test email has been sent  false&#x3D;Test email has not been sent) | 
 **header** | **string** | Header of the campaign | 
 **footer** | **string** | Footer of the campaign | 
-**sender** | [**\Sendinblue\Client\Model\GetExtendedCampaignOverviewSender**](GetExtendedCampaignOverviewSender.md) |  | [optional] 
+**sender** | [**\SendinBlue\Client\Model\GetExtendedCampaignOverviewSender**](GetExtendedCampaignOverviewSender.md) |  | [optional] 
 **replyTo** | **string** | Email defined as the \&quot;Reply to\&quot; of the campaign | 
 **toField** | **string** | Customisation of the \&quot;to\&quot; field of the campaign | 
 **htmlContent** | **string** | HTML content of the campaign | 

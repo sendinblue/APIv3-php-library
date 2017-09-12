@@ -30,14 +30,14 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "Sendinblue\\Client\\" : "lib/" }
+        "psr-4": { "SendinBlue\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Sendinblue\\Client\\" : "test/" }
+        "psr-4": { "SendinBlue\\Client\\" : "test/" }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1.x-dev"
+            "dev-master": "2.0.x-dev"
         }
     }
 }

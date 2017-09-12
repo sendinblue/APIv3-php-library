@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Sendinblue\Client
+ * @package  SendinBlue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Sendinblue\Client\Model;
+namespace SendinBlue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetContactCampaignStatsUnsubscriptions Class Doc Comment
  *
  * @category    Class
- * @package     Sendinblue\Client
+ * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'userUnsubscription' => '\Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[]',
-        'adminUnsubscription' => '\Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[]'
+        'userUnsubscription' => '\SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[]',
+        'adminUnsubscription' => '\SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[]'
     ];
 
     /**
@@ -180,7 +180,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Gets userUnsubscription
-     * @return \Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[]
+     * @return \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[]
      */
     public function getUserUnsubscription()
     {
@@ -189,7 +189,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Sets userUnsubscription
-     * @param \Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[] $userUnsubscription Contact has unsubscribed via the unsubscription link in the email
+     * @param \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[] $userUnsubscription Contact has unsubscribed via the unsubscription link in the email
      * @return $this
      */
     public function setUserUnsubscription($userUnsubscription)
@@ -201,7 +201,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Gets adminUnsubscription
-     * @return \Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[]
+     * @return \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[]
      */
     public function getAdminUnsubscription()
     {
@@ -210,7 +210,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Sets adminUnsubscription
-     * @param \Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[] $adminUnsubscription Contact has been unsubscribed from the administrator
+     * @param \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[] $adminUnsubscription Contact has been unsubscribed from the administrator
      * @return $this
      */
     public function setAdminUnsubscription($adminUnsubscription)
@@ -271,10 +271,10 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\SendinBlue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
