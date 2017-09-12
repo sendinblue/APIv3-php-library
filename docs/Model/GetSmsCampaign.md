@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **createdAt** | **string** | Creation date of the SMS campaign (YYYY-MM-DD HH:mm:ss) | 
 **modifiedAt** | **string** | Date of last modification of the SMS campaign (YYYY-MM-DD HH:mm:ss) | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

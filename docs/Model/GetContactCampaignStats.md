@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **clicked** | [**\Sendinblue\Client\Model\GetContactCampaignStatsClicked[]**](GetContactCampaignStatsClicked.md) |  | [optional] 
 **transacAttributes** | [**\Sendinblue\Client\Model\GetContactCampaignStatsTransacAttributes[]**](GetContactCampaignStatsTransacAttributes.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

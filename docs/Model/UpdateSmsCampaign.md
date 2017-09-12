@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **recipients** | [**\Sendinblue\Client\Model\CreateSmsCampaignRecipients**](CreateSmsCampaignRecipients.md) |  | [optional] 
 **scheduledAt** | **string** | Date and time on which the campaign has to run (YYYY-MM-DD HH:mm:ss) | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

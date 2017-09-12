@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **email** | **string** | From Email to use for the sender | 
 **ips** | [**\Sendinblue\Client\Model\CreateSenderIps[]**](CreateSenderIps.md) | Mandatory in case of dedicated IP, IPs to associate to the sender | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

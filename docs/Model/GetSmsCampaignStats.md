@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **unsubscriptions** | **int** | Number of unsubscription SMS | 
 **answered** | **int** | Number of replies to the SMS | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

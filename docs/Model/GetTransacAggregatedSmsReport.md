@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **accepted** | **int** | Number of accepted for the timeframe | 
 **rejected** | **int** | Number of rejected for the timeframe | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

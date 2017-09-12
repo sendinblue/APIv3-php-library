@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **active** | **bool** | Status of sender (true&#x3D;activated, false&#x3D;deactivated) | 
 **ips** | [**\Sendinblue\Client\Model\GetSendersListIps[]**](GetSendersListIps.md) | List of dedicated IP(s) available in the account. This data is displayed only for dedicated IPs | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 
