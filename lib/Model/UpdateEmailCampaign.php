@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * UpdateEmailCampaign Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,7 +55,7 @@ class UpdateEmailCampaign implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'tag' => 'string',
-        'sender' => '\Swagger\Client\Model\UpdateEmailCampaignSender',
+        'sender' => '\Sendinblue\Client\Model\UpdateEmailCampaignSender',
         'name' => 'string',
         'htmlContent' => 'string',
         'htmlUrl' => 'string',
@@ -63,7 +63,7 @@ class UpdateEmailCampaign implements ArrayAccess
         'subject' => 'string',
         'replyTo' => 'string',
         'toField' => 'string',
-        'recipients' => '\Swagger\Client\Model\UpdateEmailCampaignRecipients',
+        'recipients' => '\Sendinblue\Client\Model\UpdateEmailCampaignRecipients',
         'attachmentUrl' => 'string',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
@@ -240,8 +240,8 @@ class UpdateEmailCampaign implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['scheduledAt']) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
-            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!is_null($this->container['scheduledAt']) && !preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
+            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
         }
 
         return $invalid_properties;
@@ -256,7 +256,7 @@ class UpdateEmailCampaign implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
             return false;
         }
         return true;
@@ -286,7 +286,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\UpdateEmailCampaignSender
+     * @return \Sendinblue\Client\Model\UpdateEmailCampaignSender
      */
     public function getSender()
     {
@@ -295,7 +295,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\UpdateEmailCampaignSender $sender
+     * @param \Sendinblue\Client\Model\UpdateEmailCampaignSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -379,14 +379,14 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param string $scheduledAt Date and time on which the campaign has to run
+     * @param string $scheduledAt Date and time on which the campaign has to run (YYYY-MM-DD HH:mm:ss)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
     {
 
-        if (!is_null($scheduledAt) && (!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduledAt))) {
-            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling UpdateEmailCampaign., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if (!is_null($scheduledAt) && (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $scheduledAt))) {
+            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling UpdateEmailCampaign., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
         }
 
         $this->container['scheduledAt'] = $scheduledAt;
@@ -459,7 +459,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\UpdateEmailCampaignRecipients
+     * @return \Sendinblue\Client\Model\UpdateEmailCampaignRecipients
      */
     public function getRecipients()
     {
@@ -468,7 +468,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\UpdateEmailCampaignRecipients $recipients
+     * @param \Sendinblue\Client\Model\UpdateEmailCampaignRecipients $recipients
      * @return $this
      */
     public function setRecipients($recipients)
@@ -676,10 +676,10 @@ class UpdateEmailCampaign implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

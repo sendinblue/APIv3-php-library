@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetExtendedClient Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GetExtendedClient implements ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'companyName' => 'string',
-        'address' => '\Swagger\Client\Model\GetExtendedClientAddress'
+        'address' => '\Sendinblue\Client\Model\GetExtendedClientAddress'
     ];
 
     /**
@@ -294,7 +294,7 @@ class GetExtendedClient implements ArrayAccess
 
     /**
      * Gets address
-     * @return \Swagger\Client\Model\GetExtendedClientAddress
+     * @return \Sendinblue\Client\Model\GetExtendedClientAddress
      */
     public function getAddress()
     {
@@ -303,7 +303,7 @@ class GetExtendedClient implements ArrayAccess
 
     /**
      * Sets address
-     * @param \Swagger\Client\Model\GetExtendedClientAddress $address
+     * @param \Sendinblue\Client\Model\GetExtendedClientAddress $address
      * @return $this
      */
     public function setAddress($address)
@@ -364,10 +364,10 @@ class GetExtendedClient implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

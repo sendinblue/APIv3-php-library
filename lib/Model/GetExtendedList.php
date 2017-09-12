@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetExtendedList Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class GetExtendedList implements ArrayAccess
         'totalBlacklisted' => 'int',
         'totalSubscribers' => 'int',
         'folderId' => 'int',
-        'createdAt' => '\DateTime',
-        'campaignStats' => '\Swagger\Client\Model\GetExtendedListCampaignStats[]',
+        'createdAt' => 'string',
+        'campaignStats' => '\Sendinblue\Client\Model\GetExtendedListCampaignStats[]',
         'dynamicList' => 'bool'
     ];
 
@@ -74,7 +74,7 @@ class GetExtendedList implements ArrayAccess
         'totalBlacklisted' => 'int32',
         'totalSubscribers' => 'int32',
         'folderId' => 'int32',
-        'createdAt' => 'date',
+        'createdAt' => null,
         'campaignStats' => null,
         'dynamicList' => null
     ];
@@ -204,6 +204,10 @@ class GetExtendedList implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             $invalid_properties[] = "'createdAt' can't be null";
         }
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['createdAt'])) {
+            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.";
+        }
+
         return $invalid_properties;
     }
 
@@ -232,6 +236,9 @@ class GetExtendedList implements ArrayAccess
             return false;
         }
         if ($this->container['createdAt'] === null) {
+            return false;
+        }
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['createdAt'])) {
             return false;
         }
         return true;
@@ -345,7 +352,7 @@ class GetExtendedList implements ArrayAccess
 
     /**
      * Gets createdAt
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedAt()
     {
@@ -354,11 +361,16 @@ class GetExtendedList implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation Date of the list
+     * @param string $createdAt Creation Date of the list (YYYY-MM-DD)
      * @return $this
      */
     public function setCreatedAt($createdAt)
     {
+
+        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $createdAt))) {
+            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetExtendedList., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.");
+        }
+
         $this->container['createdAt'] = $createdAt;
 
         return $this;
@@ -366,7 +378,7 @@ class GetExtendedList implements ArrayAccess
 
     /**
      * Gets campaignStats
-     * @return \Swagger\Client\Model\GetExtendedListCampaignStats[]
+     * @return \Sendinblue\Client\Model\GetExtendedListCampaignStats[]
      */
     public function getCampaignStats()
     {
@@ -375,7 +387,7 @@ class GetExtendedList implements ArrayAccess
 
     /**
      * Sets campaignStats
-     * @param \Swagger\Client\Model\GetExtendedListCampaignStats[] $campaignStats
+     * @param \Sendinblue\Client\Model\GetExtendedListCampaignStats[] $campaignStats
      * @return $this
      */
     public function setCampaignStats($campaignStats)
@@ -457,10 +469,10 @@ class GetExtendedList implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

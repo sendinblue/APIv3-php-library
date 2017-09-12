@@ -1,4 +1,4 @@
-# Swagger\Client\WebhooksApi
+# Sendinblue\Client\WebhooksApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createWebhook**
-> \Swagger\Client\Model\CreateModel createWebhook($createWebhook)
+> \Sendinblue\Client\Model\CreateModel createWebhook($createWebhook)
 
 Create a webhook
 
@@ -22,10 +22,12 @@ Create a webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
-$createWebhook = new \Swagger\Client\Model\CreateWebhook(); // \Swagger\Client\Model\CreateWebhook | Values to create a webhook
+$api_instance = new Sendinblue\Client\Api\WebhooksApi();
+$createWebhook = new \Sendinblue\Client\Model\CreateWebhook(); // \Sendinblue\Client\Model\CreateWebhook | Values to create a webhook
 
 try {
     $result = $api_instance->createWebhook($createWebhook);
@@ -40,11 +42,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createWebhook** | [**\Swagger\Client\Model\CreateWebhook**](../Model/CreateWebhook.md)| Values to create a webhook |
+ **createWebhook** | [**\Sendinblue\Client\Model\CreateWebhook**](../Model/CreateWebhook.md)| Values to create a webhook |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -68,9 +70,11 @@ Delete a webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new Sendinblue\Client\Api\WebhooksApi();
 $webhookId = "webhookId_example"; // string | Id of the webhook
 
 try {
@@ -103,7 +107,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \Swagger\Client\Model\GetWebhook getWebhook($webhookId)
+> \Sendinblue\Client\Model\GetWebhook getWebhook($webhookId)
 
 Get a webhook details
 
@@ -113,9 +117,11 @@ Get a webhook details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new Sendinblue\Client\Api\WebhooksApi();
 $webhookId = "webhookId_example"; // string | Id of the webhook
 
 try {
@@ -135,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWebhook**](../Model/GetWebhook.md)
+[**\Sendinblue\Client\Model\GetWebhook**](../Model/GetWebhook.md)
 
 ### Authorization
 
@@ -149,7 +155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Swagger\Client\Model\GetWebhooks getWebhooks($type)
+> \Sendinblue\Client\Model\GetWebhooks getWebhooks($type)
 
 Get all webhooks
 
@@ -159,9 +165,11 @@ Get all webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new Sendinblue\Client\Api\WebhooksApi();
 $type = "transactional"; // string | Filter on webhook type
 
 try {
@@ -181,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetWebhooks**](../Model/GetWebhooks.md)
+[**\Sendinblue\Client\Model\GetWebhooks**](../Model/GetWebhooks.md)
 
 ### Authorization
 
@@ -205,11 +213,13 @@ Update a webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\WebhooksApi();
+$api_instance = new Sendinblue\Client\Api\WebhooksApi();
 $webhookId = "webhookId_example"; // string | Id of the webhook
-$updateWebhook = new \Swagger\Client\Model\UpdateWebhook(); // \Swagger\Client\Model\UpdateWebhook | Values to update a webhook
+$updateWebhook = new \Sendinblue\Client\Model\UpdateWebhook(); // \Sendinblue\Client\Model\UpdateWebhook | Values to update a webhook
 
 try {
     $api_instance->updateWebhook($webhookId, $updateWebhook);
@@ -224,7 +234,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookId** | **string**| Id of the webhook |
- **updateWebhook** | [**\Swagger\Client\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| Values to update a webhook |
+ **updateWebhook** | [**\Sendinblue\Client\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| Values to update a webhook |
 
 ### Return type
 

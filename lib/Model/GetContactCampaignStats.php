@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Campaign Statistics for the contact
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,14 +55,14 @@ class GetContactCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messagesSent' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
-        'hardBounces' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
-        'softBounces' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
-        'complaints' => '\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]',
-        'unsubscriptions' => '\Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions',
-        'opened' => '\Swagger\Client\Model\GetContactCampaignStatsOpened[]',
-        'clicked' => '\Swagger\Client\Model\GetContactCampaignStatsClicked[]',
-        'transacAttributes' => '\Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[]'
+        'messagesSent' => '\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'hardBounces' => '\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'softBounces' => '\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'complaints' => '\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]',
+        'unsubscriptions' => '\Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptions',
+        'opened' => '\Sendinblue\Client\Model\GetContactCampaignStatsOpened[]',
+        'clicked' => '\Sendinblue\Client\Model\GetContactCampaignStatsClicked[]',
+        'transacAttributes' => '\Sendinblue\Client\Model\GetContactCampaignStatsTransacAttributes[]'
     ];
 
     /**
@@ -205,7 +205,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets messagesSent
-     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getMessagesSent()
     {
@@ -214,7 +214,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets messagesSent
-     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $messagesSent
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[] $messagesSent
      * @return $this
      */
     public function setMessagesSent($messagesSent)
@@ -226,7 +226,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets hardBounces
-     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getHardBounces()
     {
@@ -235,7 +235,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets hardBounces
-     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $hardBounces
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[] $hardBounces
      * @return $this
      */
     public function setHardBounces($hardBounces)
@@ -247,7 +247,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets softBounces
-     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getSoftBounces()
     {
@@ -256,7 +256,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets softBounces
-     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $softBounces
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[] $softBounces
      * @return $this
      */
     public function setSoftBounces($softBounces)
@@ -268,7 +268,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets complaints
-     * @return \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]
      */
     public function getComplaints()
     {
@@ -277,7 +277,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets complaints
-     * @param \Swagger\Client\Model\GetContactCampaignStatsMessagesSent[] $complaints
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[] $complaints
      * @return $this
      */
     public function setComplaints($complaints)
@@ -289,7 +289,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets unsubscriptions
-     * @return \Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptions
      */
     public function getUnsubscriptions()
     {
@@ -298,7 +298,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets unsubscriptions
-     * @param \Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions $unsubscriptions
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptions $unsubscriptions
      * @return $this
      */
     public function setUnsubscriptions($unsubscriptions)
@@ -310,7 +310,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets opened
-     * @return \Swagger\Client\Model\GetContactCampaignStatsOpened[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsOpened[]
      */
     public function getOpened()
     {
@@ -319,7 +319,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets opened
-     * @param \Swagger\Client\Model\GetContactCampaignStatsOpened[] $opened
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsOpened[] $opened
      * @return $this
      */
     public function setOpened($opened)
@@ -331,7 +331,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets clicked
-     * @return \Swagger\Client\Model\GetContactCampaignStatsClicked[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsClicked[]
      */
     public function getClicked()
     {
@@ -340,7 +340,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets clicked
-     * @param \Swagger\Client\Model\GetContactCampaignStatsClicked[] $clicked
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsClicked[] $clicked
      * @return $this
      */
     public function setClicked($clicked)
@@ -352,7 +352,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Gets transacAttributes
-     * @return \Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[]
+     * @return \Sendinblue\Client\Model\GetContactCampaignStatsTransacAttributes[]
      */
     public function getTransacAttributes()
     {
@@ -361,7 +361,7 @@ class GetContactCampaignStats implements ArrayAccess
 
     /**
      * Sets transacAttributes
-     * @param \Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[] $transacAttributes
+     * @param \Sendinblue\Client\Model\GetContactCampaignStatsTransacAttributes[] $transacAttributes
      * @return $this
      */
     public function setTransacAttributes($transacAttributes)
@@ -422,10 +422,10 @@ class GetContactCampaignStats implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

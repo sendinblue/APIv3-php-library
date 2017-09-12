@@ -1,5 +1,5 @@
 {
-    "name": "sendinblue/sendinblue-apiv3",
+    "name": "sendinblue/api-v3-sdk",
     "description": "Official SendinBlue provided RESTFul API V3 php library",
     "keywords": [
         "sendinblue",
@@ -30,14 +30,14 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
+        "psr-4": { "Sendinblue\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "Sendinblue\\Client\\" : "test/" }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.1.x-dev"
         }
     }
 }

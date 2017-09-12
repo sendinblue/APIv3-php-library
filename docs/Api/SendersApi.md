@@ -1,4 +1,4 @@
-# Swagger\Client\SendersApi
+# Sendinblue\Client\SendersApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createSender**
-> \Swagger\Client\Model\CreateSenderModel createSender($sender)
+> \Sendinblue\Client\Model\CreateSenderModel createSender($sender)
 
 Create a new sender
 
@@ -23,10 +23,12 @@ Create a new sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SendersApi();
-$sender = new \Swagger\Client\Model\CreateSender(); // \Swagger\Client\Model\CreateSender | sender's name
+$api_instance = new Sendinblue\Client\Api\SendersApi();
+$sender = new \Sendinblue\Client\Model\CreateSender(); // \Sendinblue\Client\Model\CreateSender | sender's name
 
 try {
     $result = $api_instance->createSender($sender);
@@ -41,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender** | [**\Swagger\Client\Model\CreateSender**](../Model/CreateSender.md)| sender&#39;s name | [optional]
+ **sender** | [**\Sendinblue\Client\Model\CreateSender**](../Model/CreateSender.md)| sender&#39;s name | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateSenderModel**](../Model/CreateSenderModel.md)
+[**\Sendinblue\Client\Model\CreateSenderModel**](../Model/CreateSenderModel.md)
 
 ### Authorization
 
@@ -69,9 +71,11 @@ Delete a sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SendersApi();
+$api_instance = new Sendinblue\Client\Api\SendersApi();
 $senderId = "senderId_example"; // string | Id of the sender
 
 try {
@@ -104,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getIps**
-> \Swagger\Client\Model\GetIps getIps()
+> \Sendinblue\Client\Model\GetIps getIps()
 
 Return all the dedicated IPs for your account
 
@@ -114,9 +118,11 @@ Return all the dedicated IPs for your account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SendersApi();
+$api_instance = new Sendinblue\Client\Api\SendersApi();
 
 try {
     $result = $api_instance->getIps();
@@ -132,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\GetIps**](../Model/GetIps.md)
+[**\Sendinblue\Client\Model\GetIps**](../Model/GetIps.md)
 
 ### Authorization
 
@@ -146,7 +152,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getIpsFromSender**
-> \Swagger\Client\Model\GetIpsFromSender getIpsFromSender($senderId)
+> \Sendinblue\Client\Model\GetIpsFromSender getIpsFromSender($senderId)
 
 Return all the dedicated IPs for a sender
 
@@ -156,9 +162,11 @@ Return all the dedicated IPs for a sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SendersApi();
+$api_instance = new Sendinblue\Client\Api\SendersApi();
 $senderId = "senderId_example"; // string | Id of the sender
 
 try {
@@ -178,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetIpsFromSender**](../Model/GetIpsFromSender.md)
+[**\Sendinblue\Client\Model\GetIpsFromSender**](../Model/GetIpsFromSender.md)
 
 ### Authorization
 
@@ -192,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSenders**
-> \Swagger\Client\Model\GetSendersList getSenders($ip, $domain)
+> \Sendinblue\Client\Model\GetSendersList getSenders($ip, $domain)
 
 Get the list of all your senders
 
@@ -202,9 +210,11 @@ Get the list of all your senders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SendersApi();
+$api_instance = new Sendinblue\Client\Api\SendersApi();
 $ip = "ip_example"; // string | Filter your senders for a specific ip (available for dedicated IP usage only)
 $domain = "domain_example"; // string | Filter your senders for a specific domain
 
@@ -226,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetSendersList**](../Model/GetSendersList.md)
+[**\Sendinblue\Client\Model\GetSendersList**](../Model/GetSendersList.md)
 
 ### Authorization
 
@@ -250,11 +260,13 @@ Update a sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SendersApi();
+$api_instance = new Sendinblue\Client\Api\SendersApi();
 $senderId = "senderId_example"; // string | Id of the sender
-$sender = new \Swagger\Client\Model\UpdateSender(); // \Swagger\Client\Model\UpdateSender | sender's name
+$sender = new \Sendinblue\Client\Model\UpdateSender(); // \Sendinblue\Client\Model\UpdateSender | sender's name
 
 try {
     $api_instance->updateSender($senderId, $sender);
@@ -269,7 +281,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **senderId** | **string**| Id of the sender |
- **sender** | [**\Swagger\Client\Model\UpdateSender**](../Model/UpdateSender.md)| sender&#39;s name | [optional]
+ **sender** | [**\Sendinblue\Client\Model\UpdateSender**](../Model/UpdateSender.md)| sender&#39;s name | [optional]
 
 ### Return type
 

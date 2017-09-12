@@ -1,4 +1,4 @@
-# Swagger\Client\ProcessApi
+# Sendinblue\Client\ProcessApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getProcess**
-> \Swagger\Client\Model\GetProcess getProcess($processId)
+> \Sendinblue\Client\Model\GetProcess getProcess($processId)
 
 Return the informations for a process
 
@@ -19,9 +19,11 @@ Return the informations for a process
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ProcessApi();
+$api_instance = new Sendinblue\Client\Api\ProcessApi();
 $processId = "processId_example"; // string | Id of the process
 
 try {
@@ -41,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetProcess**](../Model/GetProcess.md)
+[**\Sendinblue\Client\Model\GetProcess**](../Model/GetProcess.md)
 
 ### Authorization
 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProcesses**
-> \Swagger\Client\Model\GetProcesses getProcesses($limit, $offset)
+> \Sendinblue\Client\Model\GetProcesses getProcesses($limit, $offset)
 
 Return all the processes for your account
 
@@ -65,9 +67,11 @@ Return all the processes for your account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ProcessApi();
+$api_instance = new Sendinblue\Client\Api\ProcessApi();
 $limit = 10; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
 
@@ -89,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetProcesses**](../Model/GetProcesses.md)
+[**\Sendinblue\Client\Model\GetProcesses**](../Model/GetProcesses.md)
 
 ### Authorization
 

@@ -30,7 +30,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "sendinblue/sendinblue-apiv3": "*@dev"
+    "sendinblue/api-v3-sdk": "*@dev"
   }
 }
 ```
@@ -63,9 +63,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$api_instance = new Sendinblue\Client\Api\AccountApi();
 
 try {
     $result = $api_instance->getAccount();

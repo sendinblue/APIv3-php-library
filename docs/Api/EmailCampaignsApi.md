@@ -1,4 +1,4 @@
-# Swagger\Client\EmailCampaignsApi
+# Sendinblue\Client\EmailCampaignsApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createEmailCampaign**
-> \Swagger\Client\Model\CreateModel createEmailCampaign($emailCampaigns)
+> \Sendinblue\Client\Model\CreateModel createEmailCampaign($emailCampaigns)
 
 Create an email campaign
 
@@ -27,10 +27,12 @@ Create an email campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
-$emailCampaigns = new \Swagger\Client\Model\CreateEmailCampaign(); // \Swagger\Client\Model\CreateEmailCampaign | Values to create a campaign
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
+$emailCampaigns = new \Sendinblue\Client\Model\CreateEmailCampaign(); // \Sendinblue\Client\Model\CreateEmailCampaign | Values to create a campaign
 
 try {
     $result = $api_instance->createEmailCampaign($emailCampaigns);
@@ -45,11 +47,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **emailCampaigns** | [**\Swagger\Client\Model\CreateEmailCampaign**](../Model/CreateEmailCampaign.md)| Values to create a campaign |
+ **emailCampaigns** | [**\Sendinblue\Client\Model\CreateEmailCampaign**](../Model/CreateEmailCampaign.md)| Values to create a campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -73,9 +75,11 @@ Delete an email campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the campaign
 
 try {
@@ -108,7 +112,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **emailExportRecipients**
-> \Swagger\Client\Model\CreatedProcessId emailExportRecipients($campaignId, $recipientExport)
+> \Sendinblue\Client\Model\CreatedProcessId emailExportRecipients($campaignId, $recipientExport)
 
 Export the recipients of a campaign
 
@@ -118,11 +122,13 @@ Export the recipients of a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
-$recipientExport = new \Swagger\Client\Model\EmailExportRecipients(); // \Swagger\Client\Model\EmailExportRecipients | Values to send for a recipient export request
+$recipientExport = new \Sendinblue\Client\Model\EmailExportRecipients(); // \Sendinblue\Client\Model\EmailExportRecipients | Values to send for a recipient export request
 
 try {
     $result = $api_instance->emailExportRecipients($campaignId, $recipientExport);
@@ -138,11 +144,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| Id of the campaign |
- **recipientExport** | [**\Swagger\Client\Model\EmailExportRecipients**](../Model/EmailExportRecipients.md)| Values to send for a recipient export request | [optional]
+ **recipientExport** | [**\Sendinblue\Client\Model\EmailExportRecipients**](../Model/EmailExportRecipients.md)| Values to send for a recipient export request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
+[**\Sendinblue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -156,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailCampaign**
-> \Swagger\Client\Model\GetEmailCampaign getEmailCampaign($campaignId)
+> \Sendinblue\Client\Model\GetEmailCampaign getEmailCampaign($campaignId)
 
 Get campaign informations
 
@@ -166,9 +172,11 @@ Get campaign informations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
 
 try {
@@ -188,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetEmailCampaign**](../Model/GetEmailCampaign.md)
+[**\Sendinblue\Client\Model\GetEmailCampaign**](../Model/GetEmailCampaign.md)
 
 ### Authorization
 
@@ -202,7 +210,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEmailCampaigns**
-> \Swagger\Client\Model\GetEmailCampaigns getEmailCampaigns($type, $status, $limit, $offset)
+> \Sendinblue\Client\Model\GetEmailCampaigns getEmailCampaigns($type, $status, $limit, $offset)
 
 Return all your created campaigns
 
@@ -212,9 +220,11 @@ Return all your created campaigns
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $type = "type_example"; // string | Filter on the type of the campaigns
 $status = "status_example"; // string | Filter on the status of the campaign
 $limit = 500; // int | Number of documents per page
@@ -240,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetEmailCampaigns**](../Model/GetEmailCampaigns.md)
+[**\Sendinblue\Client\Model\GetEmailCampaigns**](../Model/GetEmailCampaigns.md)
 
 ### Authorization
 
@@ -264,9 +274,11 @@ Send an email campaign id of the campaign immediately
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
 
 try {
@@ -311,11 +323,13 @@ A PDF will be sent to the specified email addresses
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
-$sendReport = new \Swagger\Client\Model\SendReport(); // \Swagger\Client\Model\SendReport | Values for send a report
+$sendReport = new \Sendinblue\Client\Model\SendReport(); // \Sendinblue\Client\Model\SendReport | Values for send a report
 
 try {
     $api_instance->sendReport($campaignId, $sendReport);
@@ -330,7 +344,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| Id of the campaign |
- **sendReport** | [**\Swagger\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
+ **sendReport** | [**\Sendinblue\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
 
 ### Return type
 
@@ -358,11 +372,13 @@ Send an email campaign to your test list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
-$emailTo = new \Swagger\Client\Model\SendTestEmail(); // \Swagger\Client\Model\SendTestEmail | 
+$emailTo = new \Sendinblue\Client\Model\SendTestEmail(); // \Sendinblue\Client\Model\SendTestEmail | 
 
 try {
     $api_instance->sendTestEmail($campaignId, $emailTo);
@@ -377,7 +393,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| Id of the campaign |
- **emailTo** | [**\Swagger\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
+ **emailTo** | [**\Sendinblue\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
 
 ### Return type
 
@@ -405,11 +421,13 @@ Update a campaign status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
-$status = new \Swagger\Client\Model\UpdateCampaignStatus(); // \Swagger\Client\Model\UpdateCampaignStatus | Status of the campaign
+$status = new \Sendinblue\Client\Model\UpdateCampaignStatus(); // \Sendinblue\Client\Model\UpdateCampaignStatus | Status of the campaign
 
 try {
     $api_instance->updateCampaignStatus($campaignId, $status);
@@ -424,7 +442,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| Id of the campaign |
- **status** | [**\Swagger\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign |
+ **status** | [**\Sendinblue\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign |
 
 ### Return type
 
@@ -452,11 +470,13 @@ Update a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\EmailCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\EmailCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the campaign
-$emailCampaign = new \Swagger\Client\Model\UpdateEmailCampaign(); // \Swagger\Client\Model\UpdateEmailCampaign | Values to update a campaign
+$emailCampaign = new \Sendinblue\Client\Model\UpdateEmailCampaign(); // \Sendinblue\Client\Model\UpdateEmailCampaign | Values to update a campaign
 
 try {
     $api_instance->updateEmailCampaigns($campaignId, $emailCampaign);
@@ -471,7 +491,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| Id of the campaign |
- **emailCampaign** | [**\Swagger\Client\Model\UpdateEmailCampaign**](../Model/UpdateEmailCampaign.md)| Values to update a campaign |
+ **emailCampaign** | [**\Sendinblue\Client\Model\UpdateEmailCampaign**](../Model/UpdateEmailCampaign.md)| Values to update a campaign |
 
 ### Return type
 

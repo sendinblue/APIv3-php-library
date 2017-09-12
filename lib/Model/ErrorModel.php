@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ErrorModel Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -133,6 +133,8 @@ class ErrorModel implements ArrayAccess
     const CODE_DUPLICATE_PARAMETER = 'duplicate_parameter';
     const CODE_METHOD_NOT_ALLOWED = 'method_not_allowed';
     const CODE_UNAUTHORIZED = 'unauthorized';
+    const CODE_ACCOUNT_UNDER_VALIDATION = 'account_under_validation';
+    const CODE_NOT_ACCEPTABLE = 'not_acceptable';
     
 
     
@@ -155,6 +157,8 @@ class ErrorModel implements ArrayAccess
             self::CODE_DUPLICATE_PARAMETER,
             self::CODE_METHOD_NOT_ALLOWED,
             self::CODE_UNAUTHORIZED,
+            self::CODE_ACCOUNT_UNDER_VALIDATION,
+            self::CODE_NOT_ACCEPTABLE,
         ];
     }
     
@@ -326,10 +330,10 @@ class ErrorModel implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

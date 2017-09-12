@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **string** | Tag of the campaign | [optional] 
-**sender** | [**\Swagger\Client\Model\CreateEmailCampaignSender**](CreateEmailCampaignSender.md) |  | [optional] 
+**sender** | [**\Sendinblue\Client\Model\CreateEmailCampaignSender**](CreateEmailCampaignSender.md) |  | [optional] 
 **name** | **string** | Name of the campaign | 
 **htmlContent** | **string** | Mandatory if htmlUrl is empty. Body of the message (HTML) | [optional] 
 **htmlUrl** | **string** | Mandatory if htmlContent is empty. Url to the message (HTML) | [optional] 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **subject** | **string** | Subject of the campaign | 
 **replyTo** | **string** | Email on which the campaign recipients will be able to reply to | [optional] 
 **toField** | **string** | To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use [FNAME] [LNAME]. These attributes must already exist in your contact database | [optional] 
-**recipients** | [**\Swagger\Client\Model\CreateEmailCampaignRecipients**](CreateEmailCampaignRecipients.md) |  | [optional] 
+**recipients** | [**\Sendinblue\Client\Model\CreateEmailCampaignRecipients**](CreateEmailCampaignRecipients.md) |  | [optional] 
 **attachmentUrl** | **string** | Absolute url of the attachment (no local file). Extensions allowed xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff and rtf | [optional] 
 **inlineImageActivation** | **bool** | Use true to embedded the images in your email. Final size of the email should be less than 4MB. Campaigns with embedded images can not be sent to more than 5000 contacts | [optional] [default to false]
 **mirrorActive** | **bool** | Use true to enable the mirror link | [optional] 

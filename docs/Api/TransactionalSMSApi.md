@@ -1,4 +1,4 @@
-# Swagger\Client\TransactionalSMSApi
+# Sendinblue\Client\TransactionalSMSApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getSmsEvents**
-> \Swagger\Client\Model\GetSmsEventReport getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags)
+> \Sendinblue\Client\Model\GetSmsEventReport getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags)
 
 Get all the SMS activity (unaggregated events)
 
@@ -21,9 +21,11 @@ Get all the SMS activity (unaggregated events)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\TransactionalSMSApi();
+$api_instance = new Sendinblue\Client\Api\TransactionalSMSApi();
 $limit = 50; // int | Number of documents per page
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
@@ -57,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetSmsEventReport**](../Model/GetSmsEventReport.md)
+[**\Sendinblue\Client\Model\GetSmsEventReport**](../Model/GetSmsEventReport.md)
 
 ### Authorization
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransacAggregatedSmsReport**
-> \Swagger\Client\Model\GetTransacAggregatedSmsReport getTransacAggregatedSmsReport($startDate, $endDate, $days, $tag)
+> \Sendinblue\Client\Model\GetTransacAggregatedSmsReport getTransacAggregatedSmsReport($startDate, $endDate, $days, $tag)
 
 Get your SMS activity aggregated over a period of time
 
@@ -81,9 +83,11 @@ Get your SMS activity aggregated over a period of time
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\TransactionalSMSApi();
+$api_instance = new Sendinblue\Client\Api\TransactionalSMSApi();
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate
@@ -109,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetTransacAggregatedSmsReport**](../Model/GetTransacAggregatedSmsReport.md)
+[**\Sendinblue\Client\Model\GetTransacAggregatedSmsReport**](../Model/GetTransacAggregatedSmsReport.md)
 
 ### Authorization
 
@@ -123,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransacSmsReport**
-> \Swagger\Client\Model\GetTransacSmsReport getTransacSmsReport($startDate, $endDate, $days, $tag)
+> \Sendinblue\Client\Model\GetTransacSmsReport getTransacSmsReport($startDate, $endDate, $days, $tag)
 
 Get your SMS activity aggregated per day
 
@@ -133,9 +137,11 @@ Get your SMS activity aggregated per day
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\TransactionalSMSApi();
+$api_instance = new Sendinblue\Client\Api\TransactionalSMSApi();
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -161,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetTransacSmsReport**](../Model/GetTransacSmsReport.md)
+[**\Sendinblue\Client\Model\GetTransacSmsReport**](../Model/GetTransacSmsReport.md)
 
 ### Authorization
 
@@ -175,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendTransacSms**
-> \Swagger\Client\Model\SendSms sendTransacSms($sendTransacSms)
+> \Sendinblue\Client\Model\SendSms sendTransacSms($sendTransacSms)
 
 Send the SMS campaign to the specified mobile number
 
@@ -185,10 +191,12 @@ Send the SMS campaign to the specified mobile number
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\TransactionalSMSApi();
-$sendTransacSms = new \Swagger\Client\Model\SendTransacSms(); // \Swagger\Client\Model\SendTransacSms | Values to send a transactional SMS
+$api_instance = new Sendinblue\Client\Api\TransactionalSMSApi();
+$sendTransacSms = new \Sendinblue\Client\Model\SendTransacSms(); // \Sendinblue\Client\Model\SendTransacSms | Values to send a transactional SMS
 
 try {
     $result = $api_instance->sendTransacSms($sendTransacSms);
@@ -203,11 +211,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendTransacSms** | [**\Swagger\Client\Model\SendTransacSms**](../Model/SendTransacSms.md)| Values to send a transactional SMS |
+ **sendTransacSms** | [**\Sendinblue\Client\Model\SendTransacSms**](../Model/SendTransacSms.md)| Values to send a transactional SMS |
 
 ### Return type
 
-[**\Swagger\Client\Model\SendSms**](../Model/SendSms.md)
+[**\Sendinblue\Client\Model\SendSms**](../Model/SendSms.md)
 
 ### Authorization
 

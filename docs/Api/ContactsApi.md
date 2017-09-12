@@ -1,4 +1,4 @@
-# Swagger\Client\ContactsApi
+# Sendinblue\Client\ContactsApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **addContactToList**
-> \Swagger\Client\Model\PostContactInfo addContactToList($listId, $contactEmails)
+> \Sendinblue\Client\Model\PostContactInfo addContactToList($listId, $contactEmails)
 
 Add existing contacts to a list
 
@@ -41,11 +41,13 @@ Add existing contacts to a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
-$contactEmails = new \Swagger\Client\Model\AddRemoveContactToList(); // \Swagger\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
+$contactEmails = new \Sendinblue\Client\Model\AddRemoveContactToList(); // \Sendinblue\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
 
 try {
     $result = $api_instance->addContactToList($listId, $contactEmails);
@@ -61,11 +63,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **string**| Id of the list |
- **contactEmails** | [**\Swagger\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
+ **contactEmails** | [**\Sendinblue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
 
 ### Return type
 
-[**\Swagger\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
+[**\Sendinblue\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
 
 ### Authorization
 
@@ -79,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAttribute**
-> \Swagger\Client\Model\CreateModel createAttribute($createAttribute)
+> \Sendinblue\Client\Model\CreateModel createAttribute($createAttribute)
 
 Creates contact attributes
 
@@ -89,10 +91,12 @@ Creates contact attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
-$createAttribute = new \Swagger\Client\Model\CreateAttribute(); // \Swagger\Client\Model\CreateAttribute | Values to create an attribute
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$createAttribute = new \Sendinblue\Client\Model\CreateAttribute(); // \Sendinblue\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
     $result = $api_instance->createAttribute($createAttribute);
@@ -107,11 +111,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createAttribute** | [**\Swagger\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
+ **createAttribute** | [**\Sendinblue\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -125,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createContact**
-> \Swagger\Client\Model\CreateModel createContact($createContact)
+> \Sendinblue\Client\Model\CreateModel createContact($createContact)
 
 Create a contact
 
@@ -135,10 +139,12 @@ Create a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
-$createContact = new \Swagger\Client\Model\CreateContact(); // \Swagger\Client\Model\CreateContact | Values to create a contact
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$createContact = new \Sendinblue\Client\Model\CreateContact(); // \Sendinblue\Client\Model\CreateContact | Values to create a contact
 
 try {
     $result = $api_instance->createContact($createContact);
@@ -153,11 +159,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createContact** | [**\Swagger\Client\Model\CreateContact**](../Model/CreateContact.md)| Values to create a contact |
+ **createContact** | [**\Sendinblue\Client\Model\CreateContact**](../Model/CreateContact.md)| Values to create a contact |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -171,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createFolder**
-> \Swagger\Client\Model\CreateModel createFolder($name)
+> \Sendinblue\Client\Model\CreateModel createFolder($name)
 
 Create a folder
 
@@ -181,10 +187,12 @@ Create a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
-$name = new \Swagger\Client\Model\CreaUpdateFolder(); // \Swagger\Client\Model\CreaUpdateFolder | Name of the folder
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $result = $api_instance->createFolder($name);
@@ -199,11 +207,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**\Swagger\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -217,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createList**
-> \Swagger\Client\Model\CreateModel createList($createList)
+> \Sendinblue\Client\Model\CreateModel createList($createList)
 
 Create a list
 
@@ -227,10 +235,12 @@ Create a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
-$createList = new \Swagger\Client\Model\CreateList(); // \Swagger\Client\Model\CreateList | Values to create a list
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$createList = new \Sendinblue\Client\Model\CreateList(); // \Sendinblue\Client\Model\CreateList | Values to create a list
 
 try {
     $result = $api_instance->createList($createList);
@@ -245,11 +255,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createList** | [**\Swagger\Client\Model\CreateList**](../Model/CreateList.md)| Values to create a list |
+ **createList** | [**\Sendinblue\Client\Model\CreateList**](../Model/CreateList.md)| Values to create a list |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -273,9 +283,11 @@ Deletes an attribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $attributeId = "attributeId_example"; // string | id of the attribute
 
 try {
@@ -318,9 +330,11 @@ Delete a folder (and all its lists)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | Id of the folder
 
 try {
@@ -363,9 +377,11 @@ Delete a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
 
 try {
@@ -398,7 +414,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAttributes**
-> \Swagger\Client\Model\GetAttributes getAttributes()
+> \Sendinblue\Client\Model\GetAttributes getAttributes()
 
 Lists all attributes
 
@@ -408,9 +424,11 @@ Lists all attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 
 try {
     $result = $api_instance->getAttributes();
@@ -426,7 +444,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\GetAttributes**](../Model/GetAttributes.md)
+[**\Sendinblue\Client\Model\GetAttributes**](../Model/GetAttributes.md)
 
 ### Authorization
 
@@ -440,7 +458,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactInfo**
-> \Swagger\Client\Model\GetExtendedContactDetails getContactInfo($email)
+> \Sendinblue\Client\Model\GetExtendedContactDetails getContactInfo($email)
 
 Retrieves contact informations
 
@@ -450,9 +468,11 @@ Retrieves contact informations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email (urlencoded) of the contact
 
 try {
@@ -472,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetExtendedContactDetails**](../Model/GetExtendedContactDetails.md)
+[**\Sendinblue\Client\Model\GetExtendedContactDetails**](../Model/GetExtendedContactDetails.md)
 
 ### Authorization
 
@@ -486,7 +506,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactStats**
-> \Swagger\Client\Model\GetContactCampaignStats getContactStats($email)
+> \Sendinblue\Client\Model\GetContactCampaignStats getContactStats($email)
 
 Get the campaigns statistics for a contact
 
@@ -496,9 +516,11 @@ Get the campaigns statistics for a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email address (urlencoded) of the contact
 
 try {
@@ -518,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetContactCampaignStats**](../Model/GetContactCampaignStats.md)
+[**\Sendinblue\Client\Model\GetContactCampaignStats**](../Model/GetContactCampaignStats.md)
 
 ### Authorization
 
@@ -532,7 +554,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContacts**
-> \Swagger\Client\Model\GetContacts getContacts($limit, $offset)
+> \Sendinblue\Client\Model\GetContacts getContacts($limit, $offset)
 
 Get all the contacts
 
@@ -542,9 +564,11 @@ Get all the contacts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -566,7 +590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetContacts**](../Model/GetContacts.md)
+[**\Sendinblue\Client\Model\GetContacts**](../Model/GetContacts.md)
 
 ### Authorization
 
@@ -580,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactsFromList**
-> \Swagger\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
+> \Sendinblue\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
 
 Get the contacts in a list
 
@@ -590,9 +614,11 @@ Get the contacts in a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
 $modifiedSince = "modifiedSince_example"; // string | Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
 $limit = 50; // int | Number of documents per page
@@ -618,7 +644,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetContacts**](../Model/GetContacts.md)
+[**\Sendinblue\Client\Model\GetContacts**](../Model/GetContacts.md)
 
 ### Authorization
 
@@ -632,7 +658,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolder**
-> \Swagger\Client\Model\GetFolder getFolder($folderId)
+> \Sendinblue\Client\Model\GetFolder getFolder($folderId)
 
 Returns folder details
 
@@ -642,9 +668,11 @@ Returns folder details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | id of the folder
 
 try {
@@ -664,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFolder**](../Model/GetFolder.md)
+[**\Sendinblue\Client\Model\GetFolder**](../Model/GetFolder.md)
 
 ### Authorization
 
@@ -678,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderLists**
-> \Swagger\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
+> \Sendinblue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
 Get the lists in a folder
 
@@ -688,9 +716,11 @@ Get the lists in a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
@@ -714,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
+[**\Sendinblue\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
 
 ### Authorization
 
@@ -728,7 +758,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolders**
-> \Swagger\Client\Model\GetFolders getFolders($limit, $offset)
+> \Sendinblue\Client\Model\GetFolders getFolders($limit, $offset)
 
 Get all the folders
 
@@ -738,9 +768,11 @@ Get all the folders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -762,7 +794,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFolders**](../Model/GetFolders.md)
+[**\Sendinblue\Client\Model\GetFolders**](../Model/GetFolders.md)
 
 ### Authorization
 
@@ -776,7 +808,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getList**
-> \Swagger\Client\Model\GetExtendedList getList($listId)
+> \Sendinblue\Client\Model\GetExtendedList getList($listId)
 
 Get the details of a list
 
@@ -786,9 +818,11 @@ Get the details of a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
 
 try {
@@ -808,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetExtendedList**](../Model/GetExtendedList.md)
+[**\Sendinblue\Client\Model\GetExtendedList**](../Model/GetExtendedList.md)
 
 ### Authorization
 
@@ -822,7 +856,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLists**
-> \Swagger\Client\Model\GetLists getLists($limit, $offset)
+> \Sendinblue\Client\Model\GetLists getLists($limit, $offset)
 
 Get all the lists
 
@@ -832,9 +866,11 @@ Get all the lists
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -856,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetLists**](../Model/GetLists.md)
+[**\Sendinblue\Client\Model\GetLists**](../Model/GetLists.md)
 
 ### Authorization
 
@@ -870,7 +906,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **importContacts**
-> \Swagger\Client\Model\CreatedProcessId importContacts($requestContactImport)
+> \Sendinblue\Client\Model\CreatedProcessId importContacts($requestContactImport)
 
 Import contacts
 
@@ -882,10 +918,12 @@ It returns the background process ID which on completion calls the notify URL th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
-$requestContactImport = new \Swagger\Client\Model\RequestContactImport(); // \Swagger\Client\Model\RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$requestContactImport = new \Sendinblue\Client\Model\RequestContactImport(); // \Sendinblue\Client\Model\RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
 
 try {
     $result = $api_instance->importContacts($requestContactImport);
@@ -900,11 +938,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestContactImport** | [**\Swagger\Client\Model\RequestContactImport**](../Model/RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; |
+ **requestContactImport** | [**\Sendinblue\Client\Model\RequestContactImport**](../Model/RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
+[**\Sendinblue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -918,7 +956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeContactToList**
-> \Swagger\Client\Model\PostContactInfo removeContactToList($listId, $contactEmails)
+> \Sendinblue\Client\Model\PostContactInfo removeContactToList($listId, $contactEmails)
 
 Remove existing contacts from a list
 
@@ -928,11 +966,13 @@ Remove existing contacts from a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
-$contactEmails = new \Swagger\Client\Model\AddRemoveContactToList(); // \Swagger\Client\Model\AddRemoveContactToList | Emails adresses of the contact
+$contactEmails = new \Sendinblue\Client\Model\AddRemoveContactToList(); // \Sendinblue\Client\Model\AddRemoveContactToList | Emails adresses of the contact
 
 try {
     $result = $api_instance->removeContactToList($listId, $contactEmails);
@@ -948,11 +988,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **string**| Id of the list |
- **contactEmails** | [**\Swagger\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
+ **contactEmails** | [**\Sendinblue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
 
 ### Return type
 
-[**\Swagger\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
+[**\Sendinblue\Client\Model\PostContactInfo**](../Model/PostContactInfo.md)
 
 ### Authorization
 
@@ -966,7 +1006,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **requestContactExport**
-> \Swagger\Client\Model\CreatedProcessId requestContactExport($requestContactExport)
+> \Sendinblue\Client\Model\CreatedProcessId requestContactExport($requestContactExport)
 
 Export contacts
 
@@ -978,10 +1018,12 @@ It returns the background process ID which on completion calls the notify URL th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
-$requestContactExport = new \Swagger\Client\Model\RequestContactExport(); // \Swagger\Client\Model\RequestContactExport | Values to request a contact export
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
+$requestContactExport = new \Sendinblue\Client\Model\RequestContactExport(); // \Sendinblue\Client\Model\RequestContactExport | Values to request a contact export
 
 try {
     $result = $api_instance->requestContactExport($requestContactExport);
@@ -996,11 +1038,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestContactExport** | [**\Swagger\Client\Model\RequestContactExport**](../Model/RequestContactExport.md)| Values to request a contact export |
+ **requestContactExport** | [**\Sendinblue\Client\Model\RequestContactExport**](../Model/RequestContactExport.md)| Values to request a contact export |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
+[**\Sendinblue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -1024,11 +1066,13 @@ Updates a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $email = "email_example"; // string | Email (urlencoded) of the contact
-$updateContact = new \Swagger\Client\Model\UpdateContact(); // \Swagger\Client\Model\UpdateContact | Values to update a contact
+$updateContact = new \Sendinblue\Client\Model\UpdateContact(); // \Sendinblue\Client\Model\UpdateContact | Values to update a contact
 
 try {
     $api_instance->updateContact($email, $updateContact);
@@ -1043,7 +1087,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **string**| Email (urlencoded) of the contact |
- **updateContact** | [**\Swagger\Client\Model\UpdateContact**](../Model/UpdateContact.md)| Values to update a contact |
+ **updateContact** | [**\Sendinblue\Client\Model\UpdateContact**](../Model/UpdateContact.md)| Values to update a contact |
 
 ### Return type
 
@@ -1071,11 +1115,13 @@ Update a contact folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $folderId = "folderId_example"; // string | Id of the folder
-$name = new \Swagger\Client\Model\CreaUpdateFolder(); // \Swagger\Client\Model\CreaUpdateFolder | Name of the folder
+$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $api_instance->updateFolder($folderId, $name);
@@ -1090,7 +1136,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folderId** | **string**| Id of the folder |
- **name** | [**\Swagger\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
@@ -1118,11 +1164,13 @@ Update a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\ContactsApi();
+$api_instance = new Sendinblue\Client\Api\ContactsApi();
 $listId = "listId_example"; // string | Id of the list
-$updateList = new \Swagger\Client\Model\UpdateList(); // \Swagger\Client\Model\UpdateList | Values to update a list
+$updateList = new \Sendinblue\Client\Model\UpdateList(); // \Sendinblue\Client\Model\UpdateList | Values to update a list
 
 try {
     $api_instance->updateList($listId, $updateList);
@@ -1137,7 +1185,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **string**| Id of the list |
- **updateList** | [**\Swagger\Client\Model\UpdateList**](../Model/UpdateList.md)| Values to update a list |
+ **updateList** | [**\Sendinblue\Client\Model\UpdateList**](../Model/UpdateList.md)| Values to update a list |
 
 ### Return type
 

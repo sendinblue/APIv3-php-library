@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetContactDetails Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GetContactDetails implements ArrayAccess
         'id' => 'int',
         'emailBlacklisted' => 'bool',
         'smsBlacklisted' => 'bool',
-        'modifiedAt' => '\DateTime',
+        'modifiedAt' => 'string',
         'listIds' => 'int[]',
         'listUnsubscribed' => 'int[]',
         'attributes' => 'map[string,string]'
@@ -73,7 +73,7 @@ class GetContactDetails implements ArrayAccess
         'id' => 'int32',
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
-        'modifiedAt' => 'date-time',
+        'modifiedAt' => null,
         'listIds' => 'int32',
         'listUnsubscribed' => 'int32',
         'attributes' => null
@@ -201,6 +201,10 @@ class GetContactDetails implements ArrayAccess
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
+            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
+        }
+
         if ($this->container['listIds'] === null) {
             $invalid_properties[] = "'listIds' can't be null";
         }
@@ -232,6 +236,9 @@ class GetContactDetails implements ArrayAccess
             return false;
         }
         if ($this->container['modifiedAt'] === null) {
+            return false;
+        }
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
             return false;
         }
         if ($this->container['listIds'] === null) {
@@ -330,7 +337,7 @@ class GetContactDetails implements ArrayAccess
 
     /**
      * Gets modifiedAt
-     * @return \DateTime
+     * @return string
      */
     public function getModifiedAt()
     {
@@ -339,11 +346,16 @@ class GetContactDetails implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param \DateTime $modifiedAt Last modification date of the contact
+     * @param string $modifiedAt Last modification date of the contact (YYYY-MM-DD HH:mm:ss)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)
     {
+
+        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $modifiedAt))) {
+            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetContactDetails., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
+        }
+
         $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
@@ -463,10 +475,10 @@ class GetContactDetails implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

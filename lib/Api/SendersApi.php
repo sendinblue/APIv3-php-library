@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Sendinblue\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Sendinblue\Client\ApiClient;
+use \Sendinblue\Client\ApiException;
+use \Sendinblue\Client\Configuration;
+use \Sendinblue\Client\ObjectSerializer;
 
 /**
  * SendersApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class SendersApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class SendersApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Sendinblue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class SendersApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
      *
      * @return SendersApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class SendersApi
      *
      * Create a new sender
      *
-     * @param \Swagger\Client\Model\CreateSender $sender sender&#39;s name (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CreateSenderModel
+     * @param \Sendinblue\Client\Model\CreateSender $sender sender&#39;s name (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\CreateSenderModel
      */
     public function createSender($sender = null)
     {
@@ -107,9 +107,9 @@ class SendersApi
      *
      * Create a new sender
      *
-     * @param \Swagger\Client\Model\CreateSender $sender sender&#39;s name (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CreateSenderModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \Sendinblue\Client\Model\CreateSender $sender sender&#39;s name (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\CreateSenderModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSenderWithHttpInfo($sender = null)
     {
@@ -150,19 +150,19 @@ class SendersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CreateSenderModel',
+                '\Sendinblue\Client\Model\CreateSenderModel',
                 '/senders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateSenderModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateSenderModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateSenderModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateSenderModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -177,7 +177,7 @@ class SendersApi
      * Delete a sender
      *
      * @param string $senderId Id of the sender (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteSender($senderId)
@@ -192,7 +192,7 @@ class SendersApi
      * Delete a sender
      *
      * @param string $senderId Id of the sender (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSenderWithHttpInfo($senderId)
@@ -249,11 +249,11 @@ class SendersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -267,8 +267,8 @@ class SendersApi
      *
      * Return all the dedicated IPs for your account
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetIps
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetIps
      */
     public function getIps()
     {
@@ -281,8 +281,8 @@ class SendersApi
      *
      * Return all the dedicated IPs for your account
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetIps, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetIps, HTTP status code, HTTP response headers (array of strings)
      */
     public function getIpsWithHttpInfo()
     {
@@ -318,15 +318,15 @@ class SendersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetIps',
+                '\Sendinblue\Client\Model\GetIps',
                 '/senders/ips'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetIps', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetIps', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetIps', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetIps', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -341,8 +341,8 @@ class SendersApi
      * Return all the dedicated IPs for a sender
      *
      * @param string $senderId Id of the sender (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetIpsFromSender
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetIpsFromSender
      */
     public function getIpsFromSender($senderId)
     {
@@ -356,8 +356,8 @@ class SendersApi
      * Return all the dedicated IPs for a sender
      *
      * @param string $senderId Id of the sender (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetIpsFromSender, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetIpsFromSender, HTTP status code, HTTP response headers (array of strings)
      */
     public function getIpsFromSenderWithHttpInfo($senderId)
     {
@@ -405,23 +405,23 @@ class SendersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetIpsFromSender',
+                '\Sendinblue\Client\Model\GetIpsFromSender',
                 '/senders/{senderId}/ips'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetIpsFromSender', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetIpsFromSender', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetIpsFromSender', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetIpsFromSender', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -437,8 +437,8 @@ class SendersApi
      *
      * @param string $ip Filter your senders for a specific ip (available for dedicated IP usage only) (optional)
      * @param string $domain Filter your senders for a specific domain (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetSendersList
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetSendersList
      */
     public function getSenders($ip = null, $domain = null)
     {
@@ -453,8 +453,8 @@ class SendersApi
      *
      * @param string $ip Filter your senders for a specific ip (available for dedicated IP usage only) (optional)
      * @param string $domain Filter your senders for a specific domain (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetSendersList, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetSendersList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSendersWithHttpInfo($ip = null, $domain = null)
     {
@@ -498,19 +498,19 @@ class SendersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetSendersList',
+                '\Sendinblue\Client\Model\GetSendersList',
                 '/senders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetSendersList', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetSendersList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetSendersList', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetSendersList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -525,8 +525,8 @@ class SendersApi
      * Update a sender
      *
      * @param string $senderId Id of the sender (required)
-     * @param \Swagger\Client\Model\UpdateSender $sender sender&#39;s name (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateSender $sender sender&#39;s name (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateSender($senderId, $sender = null)
@@ -541,8 +541,8 @@ class SendersApi
      * Update a sender
      *
      * @param string $senderId Id of the sender (required)
-     * @param \Swagger\Client\Model\UpdateSender $sender sender&#39;s name (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateSender $sender sender&#39;s name (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSenderWithHttpInfo($senderId, $sender = null)
@@ -604,11 +604,11 @@ class SendersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

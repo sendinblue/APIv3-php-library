@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Sendinblue\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Sendinblue\Client\ApiClient;
+use \Sendinblue\Client\ApiException;
+use \Sendinblue\Client\Configuration;
+use \Sendinblue\Client\ObjectSerializer;
 
 /**
  * ProcessApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ProcessApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ProcessApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Sendinblue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ProcessApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
      *
      * @return ProcessApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,8 +93,8 @@ class ProcessApi
      * Return the informations for a process
      *
      * @param string $processId Id of the process (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetProcess
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetProcess
      */
     public function getProcess($processId)
     {
@@ -108,8 +108,8 @@ class ProcessApi
      * Return the informations for a process
      *
      * @param string $processId Id of the process (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetProcess, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetProcess, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProcessWithHttpInfo($processId)
     {
@@ -157,23 +157,23 @@ class ProcessApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetProcess',
+                '\Sendinblue\Client\Model\GetProcess',
                 '/processes/{processId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetProcess', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetProcess', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetProcess', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetProcess', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -189,8 +189,8 @@ class ProcessApi
      *
      * @param int $limit Number limitation for the result returned (optional, default to 10)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetProcesses
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetProcesses
      */
     public function getProcesses($limit = '10', $offset = '0')
     {
@@ -205,8 +205,8 @@ class ProcessApi
      *
      * @param int $limit Number limitation for the result returned (optional, default to 10)
      * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetProcesses, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetProcesses, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProcessesWithHttpInfo($limit = '10', $offset = '0')
     {
@@ -254,19 +254,19 @@ class ProcessApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetProcesses',
+                '\Sendinblue\Client\Model\GetProcesses',
                 '/processes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetProcesses', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetProcesses', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetProcesses', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetProcesses', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

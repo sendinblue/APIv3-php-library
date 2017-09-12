@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetListsLists Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class GetListsLists implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'folder' => '\Swagger\Client\Model\GetListsFolder'
+        'folder' => '\Sendinblue\Client\Model\GetListsFolder'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetListsLists implements ArrayAccess
 
     /**
      * Gets folder
-     * @return \Swagger\Client\Model\GetListsFolder
+     * @return \Sendinblue\Client\Model\GetListsFolder
      */
     public function getFolder()
     {
@@ -171,7 +171,7 @@ class GetListsLists implements ArrayAccess
 
     /**
      * Sets folder
-     * @param \Swagger\Client\Model\GetListsFolder $folder
+     * @param \Sendinblue\Client\Model\GetListsFolder $folder
      * @return $this
      */
     public function setFolder($folder)
@@ -232,10 +232,10 @@ class GetListsLists implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

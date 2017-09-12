@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * UpdateSmsCampaign Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class UpdateSmsCampaign implements ArrayAccess
         'name' => 'string',
         'sender' => 'string',
         'content' => 'string',
-        'recipients' => '\Swagger\Client\Model\CreateSmsCampaignRecipients',
+        'recipients' => '\Sendinblue\Client\Model\CreateSmsCampaignRecipients',
         'scheduledAt' => 'string'
     ];
 
@@ -172,8 +172,8 @@ class UpdateSmsCampaign implements ArrayAccess
             $invalid_properties[] = "invalid value for 'sender', the character length must be smaller than or equal to 11.";
         }
 
-        if (!is_null($this->container['scheduledAt']) && !preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
-            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /YYYY-MM-DD HH:mm:ss/.";
+        if (!is_null($this->container['scheduledAt']) && !preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
+            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
         }
 
         return $invalid_properties;
@@ -191,7 +191,7 @@ class UpdateSmsCampaign implements ArrayAccess
         if (strlen($this->container['sender']) > 11) {
             return false;
         }
-        if (!preg_match("/YYYY-MM-DD HH:mm:ss/", $this->container['scheduledAt'])) {
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
             return false;
         }
         return true;
@@ -267,7 +267,7 @@ class UpdateSmsCampaign implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\CreateSmsCampaignRecipients
+     * @return \Sendinblue\Client\Model\CreateSmsCampaignRecipients
      */
     public function getRecipients()
     {
@@ -276,7 +276,7 @@ class UpdateSmsCampaign implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\CreateSmsCampaignRecipients $recipients
+     * @param \Sendinblue\Client\Model\CreateSmsCampaignRecipients $recipients
      * @return $this
      */
     public function setRecipients($recipients)
@@ -297,14 +297,14 @@ class UpdateSmsCampaign implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param string $scheduledAt Date and time on which the campaign has to run
+     * @param string $scheduledAt Date and time on which the campaign has to run (YYYY-MM-DD HH:mm:ss)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
     {
 
-        if (!is_null($scheduledAt) && (!preg_match("/YYYY-MM-DD HH:mm:ss/", $scheduledAt))) {
-            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling UpdateSmsCampaign., must conform to the pattern /YYYY-MM-DD HH:mm:ss/.");
+        if (!is_null($scheduledAt) && (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $scheduledAt))) {
+            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling UpdateSmsCampaign., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
         }
 
         $this->container['scheduledAt'] = $scheduledAt;
@@ -363,10 +363,10 @@ class UpdateSmsCampaign implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
