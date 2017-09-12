@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetIps Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class GetIps implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ips' => '\Swagger\Client\Model\GetIp[]'
+        'ips' => '\Sendinblue\Client\Model\GetIp[]'
     ];
 
     /**
@@ -168,7 +168,7 @@ class GetIps implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \Swagger\Client\Model\GetIp[]
+     * @return \Sendinblue\Client\Model\GetIp[]
      */
     public function getIps()
     {
@@ -177,7 +177,7 @@ class GetIps implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \Swagger\Client\Model\GetIp[] $ips Dedicated IP(s) available on your account
+     * @param \Sendinblue\Client\Model\GetIp[] $ips Dedicated IP(s) available on your account
      * @return $this
      */
     public function setIps($ips)
@@ -238,10 +238,10 @@ class GetIps implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

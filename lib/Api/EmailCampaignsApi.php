@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Sendinblue\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Sendinblue\Client\ApiClient;
+use \Sendinblue\Client\ApiException;
+use \Sendinblue\Client\Configuration;
+use \Sendinblue\Client\ObjectSerializer;
 
 /**
  * EmailCampaignsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class EmailCampaignsApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class EmailCampaignsApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Sendinblue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class EmailCampaignsApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
      *
      * @return EmailCampaignsApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class EmailCampaignsApi
      *
      * Create an email campaign
      *
-     * @param \Swagger\Client\Model\CreateEmailCampaign $emailCampaigns Values to create a campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CreateModel
+     * @param \Sendinblue\Client\Model\CreateEmailCampaign $emailCampaigns Values to create a campaign (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\CreateModel
      */
     public function createEmailCampaign($emailCampaigns)
     {
@@ -107,9 +107,9 @@ class EmailCampaignsApi
      *
      * Create an email campaign
      *
-     * @param \Swagger\Client\Model\CreateEmailCampaign $emailCampaigns Values to create a campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \Sendinblue\Client\Model\CreateEmailCampaign $emailCampaigns Values to create a campaign (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createEmailCampaignWithHttpInfo($emailCampaigns)
     {
@@ -154,19 +154,19 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CreateModel',
+                '\Sendinblue\Client\Model\CreateModel',
                 '/emailCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -181,7 +181,7 @@ class EmailCampaignsApi
      * Delete an email campaign
      *
      * @param string $campaignId id of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteEmailCampaigns($campaignId)
@@ -196,7 +196,7 @@ class EmailCampaignsApi
      * Delete an email campaign
      *
      * @param string $campaignId id of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteEmailCampaignsWithHttpInfo($campaignId)
@@ -253,11 +253,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -272,9 +272,9 @@ class EmailCampaignsApi
      * Export the recipients of a campaign
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\EmailExportRecipients $recipientExport Values to send for a recipient export request (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CreatedProcessId
+     * @param \Sendinblue\Client\Model\EmailExportRecipients $recipientExport Values to send for a recipient export request (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\CreatedProcessId
      */
     public function emailExportRecipients($campaignId, $recipientExport = null)
     {
@@ -288,9 +288,9 @@ class EmailCampaignsApi
      * Export the recipients of a campaign
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\EmailExportRecipients $recipientExport Values to send for a recipient export request (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
+     * @param \Sendinblue\Client\Model\EmailExportRecipients $recipientExport Values to send for a recipient export request (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
      */
     public function emailExportRecipientsWithHttpInfo($campaignId, $recipientExport = null)
     {
@@ -343,23 +343,23 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CreatedProcessId',
+                '\Sendinblue\Client\Model\CreatedProcessId',
                 '/emailCampaigns/{campaignId}/exportRecipients'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreatedProcessId', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreatedProcessId', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreatedProcessId', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreatedProcessId', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -374,8 +374,8 @@ class EmailCampaignsApi
      * Get campaign informations
      *
      * @param string $campaignId Id of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetEmailCampaign
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetEmailCampaign
      */
     public function getEmailCampaign($campaignId)
     {
@@ -389,8 +389,8 @@ class EmailCampaignsApi
      * Get campaign informations
      *
      * @param string $campaignId Id of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetEmailCampaign, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetEmailCampaign, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailCampaignWithHttpInfo($campaignId)
     {
@@ -438,23 +438,23 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetEmailCampaign',
+                '\Sendinblue\Client\Model\GetEmailCampaign',
                 '/emailCampaigns/{campaignId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetEmailCampaign', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetEmailCampaign', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetEmailCampaign', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetEmailCampaign', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -472,8 +472,8 @@ class EmailCampaignsApi
      * @param string $status Filter on the status of the campaign (optional)
      * @param int $limit Number of documents per page (optional, default to 500)
      * @param int $offset Index of the first document in the page (optional, default to 0)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetEmailCampaigns
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetEmailCampaigns
      */
     public function getEmailCampaigns($type = null, $status = null, $limit = '500', $offset = '0')
     {
@@ -490,8 +490,8 @@ class EmailCampaignsApi
      * @param string $status Filter on the status of the campaign (optional)
      * @param int $limit Number of documents per page (optional, default to 500)
      * @param int $offset Index of the first document in the page (optional, default to 0)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetEmailCampaigns, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetEmailCampaigns, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailCampaignsWithHttpInfo($type = null, $status = null, $limit = '500', $offset = '0')
     {
@@ -547,19 +547,19 @@ class EmailCampaignsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetEmailCampaigns',
+                '\Sendinblue\Client\Model\GetEmailCampaigns',
                 '/emailCampaigns'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetEmailCampaigns', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetEmailCampaigns', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetEmailCampaigns', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetEmailCampaigns', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -574,7 +574,7 @@ class EmailCampaignsApi
      * Send an email campaign id of the campaign immediately
      *
      * @param string $campaignId Id of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function sendEmailCampaignNow($campaignId)
@@ -589,7 +589,7 @@ class EmailCampaignsApi
      * Send an email campaign id of the campaign immediately
      *
      * @param string $campaignId Id of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendEmailCampaignNowWithHttpInfo($campaignId)
@@ -646,15 +646,15 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 402:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -669,8 +669,8 @@ class EmailCampaignsApi
      * Send the report of a campaigns
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\SendReport $sendReport Values for send a report (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\SendReport $sendReport Values for send a report (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function sendReport($campaignId, $sendReport)
@@ -685,8 +685,8 @@ class EmailCampaignsApi
      * Send the report of a campaigns
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\SendReport $sendReport Values for send a report (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\SendReport $sendReport Values for send a report (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendReportWithHttpInfo($campaignId, $sendReport)
@@ -752,11 +752,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -771,8 +771,8 @@ class EmailCampaignsApi
      * Send an email campaign to your test list
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\SendTestEmail $emailTo  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\SendTestEmail $emailTo  (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function sendTestEmail($campaignId, $emailTo)
@@ -787,8 +787,8 @@ class EmailCampaignsApi
      * Send an email campaign to your test list
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\SendTestEmail $emailTo  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\SendTestEmail $emailTo  (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendTestEmailWithHttpInfo($campaignId, $emailTo)
@@ -854,11 +854,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostSendFailed', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\PostSendFailed', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -873,8 +873,8 @@ class EmailCampaignsApi
      * Update a campaign status
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\UpdateCampaignStatus $status Status of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateCampaignStatus $status Status of the campaign (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateCampaignStatus($campaignId, $status)
@@ -889,8 +889,8 @@ class EmailCampaignsApi
      * Update a campaign status
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\UpdateCampaignStatus $status Status of the campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateCampaignStatus $status Status of the campaign (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCampaignStatusWithHttpInfo($campaignId, $status)
@@ -956,11 +956,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -975,8 +975,8 @@ class EmailCampaignsApi
      * Update a campaign
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\UpdateEmailCampaign $emailCampaign Values to update a campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateEmailCampaign $emailCampaign Values to update a campaign (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateEmailCampaigns($campaignId, $emailCampaign)
@@ -991,8 +991,8 @@ class EmailCampaignsApi
      * Update a campaign
      *
      * @param string $campaignId Id of the campaign (required)
-     * @param \Swagger\Client\Model\UpdateEmailCampaign $emailCampaign Values to update a campaign (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateEmailCampaign $emailCampaign Values to update a campaign (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateEmailCampaignsWithHttpInfo($campaignId, $emailCampaign)
@@ -1058,11 +1058,11 @@ class EmailCampaignsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**messagesSent** | [**\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**hardBounces** | [**\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**softBounces** | [**\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**complaints** | [**\Swagger\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**unsubscriptions** | [**\Swagger\Client\Model\GetContactCampaignStatsUnsubscriptions**](GetContactCampaignStatsUnsubscriptions.md) |  | [optional] 
-**opened** | [**\Swagger\Client\Model\GetContactCampaignStatsOpened[]**](GetContactCampaignStatsOpened.md) |  | [optional] 
-**clicked** | [**\Swagger\Client\Model\GetContactCampaignStatsClicked[]**](GetContactCampaignStatsClicked.md) |  | [optional] 
-**transacAttributes** | [**\Swagger\Client\Model\GetContactCampaignStatsTransacAttributes[]**](GetContactCampaignStatsTransacAttributes.md) |  | [optional] 
+**messagesSent** | [**\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
+**hardBounces** | [**\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
+**softBounces** | [**\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
+**complaints** | [**\Sendinblue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
+**unsubscriptions** | [**\Sendinblue\Client\Model\GetContactCampaignStatsUnsubscriptions**](GetContactCampaignStatsUnsubscriptions.md) |  | [optional] 
+**opened** | [**\Sendinblue\Client\Model\GetContactCampaignStatsOpened[]**](GetContactCampaignStatsOpened.md) |  | [optional] 
+**clicked** | [**\Sendinblue\Client\Model\GetContactCampaignStatsClicked[]**](GetContactCampaignStatsClicked.md) |  | [optional] 
+**transacAttributes** | [**\Sendinblue\Client\Model\GetContactCampaignStatsTransacAttributes[]**](GetContactCampaignStatsTransacAttributes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

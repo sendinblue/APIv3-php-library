@@ -1,4 +1,4 @@
-# Swagger\Client\SMSCampaignsApi
+# Sendinblue\Client\SMSCampaignsApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createSMSCampaign**
-> \Swagger\Client\Model\CreateModel createSMSCampaign($createSmsCampaign)
+> \Sendinblue\Client\Model\CreateModel createSMSCampaign($createSmsCampaign)
 
 Creates a SMS campaign
 
@@ -27,10 +27,12 @@ Creates a SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
-$createSmsCampaign = new \Swagger\Client\Model\CreateSmsCampaign(); // \Swagger\Client\Model\CreateSmsCampaign | Values to create an SMS Campaign
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
+$createSmsCampaign = new \Sendinblue\Client\Model\CreateSmsCampaign(); // \Sendinblue\Client\Model\CreateSmsCampaign | Values to create an SMS Campaign
 
 try {
     $result = $api_instance->createSMSCampaign($createSmsCampaign);
@@ -45,11 +47,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createSmsCampaign** | [**\Swagger\Client\Model\CreateSmsCampaign**](../Model/CreateSmsCampaign.md)| Values to create an SMS Campaign |
+ **createSmsCampaign** | [**\Sendinblue\Client\Model\CreateSmsCampaign**](../Model/CreateSmsCampaign.md)| Values to create an SMS Campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -73,9 +75,11 @@ Delete the SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the SMS campaign
 
 try {
@@ -108,7 +112,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSMSCampaigns**
-> \Swagger\Client\Model\GetSmsCampaigns getSMSCampaigns($status, $limit, $offset)
+> \Sendinblue\Client\Model\GetSmsCampaigns getSMSCampaigns($status, $limit, $offset)
 
 Returns the informations for all your created SMS campaigns
 
@@ -118,9 +122,11 @@ Returns the informations for all your created SMS campaigns
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $status = "status_example"; // string | Status of campaign.
 $limit = 500; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
@@ -144,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetSmsCampaigns**](../Model/GetSmsCampaigns.md)
+[**\Sendinblue\Client\Model\GetSmsCampaigns**](../Model/GetSmsCampaigns.md)
 
 ### Authorization
 
@@ -158,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmsCampaign**
-> \Swagger\Client\Model\GetSmsCampaign getSmsCampaign($campaignId, $getSmsCampaign)
+> \Sendinblue\Client\Model\GetSmsCampaign getSmsCampaign($campaignId, $getSmsCampaign)
 
 Get a SMS campaign
 
@@ -168,11 +174,13 @@ Get a SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the SMS campaign
-$getSmsCampaign = new \Swagger\Client\Model\GetSmsCampaign(); // \Swagger\Client\Model\GetSmsCampaign | Values to update an SMS Campaign
+$getSmsCampaign = new \Sendinblue\Client\Model\GetSmsCampaign(); // \Sendinblue\Client\Model\GetSmsCampaign | Values to update an SMS Campaign
 
 try {
     $result = $api_instance->getSmsCampaign($campaignId, $getSmsCampaign);
@@ -188,11 +196,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| id of the SMS campaign |
- **getSmsCampaign** | [**\Swagger\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)| Values to update an SMS Campaign |
+ **getSmsCampaign** | [**\Sendinblue\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type
 
-[**\Swagger\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)
+[**\Sendinblue\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)
 
 ### Authorization
 
@@ -206,7 +214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **requestSMSRecipientExport**
-> \Swagger\Client\Model\CreatedProcessId requestSMSRecipientExport($campaignId, $recipientExport)
+> \Sendinblue\Client\Model\CreatedProcessId requestSMSRecipientExport($campaignId, $recipientExport)
 
 Exports the recipients of the specified campaign.
 
@@ -218,11 +226,13 @@ It returns the background process ID which on completion calls the notify URL th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the campaign
-$recipientExport = new \Swagger\Client\Model\RequestSMSRecipientExport(); // \Swagger\Client\Model\RequestSMSRecipientExport | Values to send for a recipient export request
+$recipientExport = new \Sendinblue\Client\Model\RequestSMSRecipientExport(); // \Sendinblue\Client\Model\RequestSMSRecipientExport | Values to send for a recipient export request
 
 try {
     $result = $api_instance->requestSMSRecipientExport($campaignId, $recipientExport);
@@ -238,11 +248,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| id of the campaign |
- **recipientExport** | [**\Swagger\Client\Model\RequestSMSRecipientExport**](../Model/RequestSMSRecipientExport.md)| Values to send for a recipient export request | [optional]
+ **recipientExport** | [**\Sendinblue\Client\Model\RequestSMSRecipientExport**](../Model/RequestSMSRecipientExport.md)| Values to send for a recipient export request | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
+[**\Sendinblue\Client\Model\CreatedProcessId**](../Model/CreatedProcessId.md)
 
 ### Authorization
 
@@ -266,9 +276,11 @@ Send your SMS campaign immediately
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the campaign
 
 try {
@@ -313,11 +325,13 @@ Send report of Sent and Archived campaign, to the specified email addresses, wit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the campaign
-$sendReport = new \Swagger\Client\Model\SendReport(); // \Swagger\Client\Model\SendReport | Values for send a report
+$sendReport = new \Sendinblue\Client\Model\SendReport(); // \Sendinblue\Client\Model\SendReport | Values for send a report
 
 try {
     $api_instance->sendSMSReport($campaignId, $sendReport);
@@ -332,7 +346,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| id of the campaign |
- **sendReport** | [**\Swagger\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
+ **sendReport** | [**\Sendinblue\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
 
 ### Return type
 
@@ -360,11 +374,13 @@ Send an SMS
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | Id of the SMS campaign
-$sendTestSms = new \Swagger\Client\Model\SendTestSms(); // \Swagger\Client\Model\SendTestSms | Mobile number to which send the test
+$sendTestSms = new \Sendinblue\Client\Model\SendTestSms(); // \Sendinblue\Client\Model\SendTestSms | Mobile number to which send the test
 
 try {
     $api_instance->sendTestSms($campaignId, $sendTestSms);
@@ -379,7 +395,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| Id of the SMS campaign |
- **sendTestSms** | [**\Swagger\Client\Model\SendTestSms**](../Model/SendTestSms.md)| Mobile number to which send the test |
+ **sendTestSms** | [**\Sendinblue\Client\Model\SendTestSms**](../Model/SendTestSms.md)| Mobile number to which send the test |
 
 ### Return type
 
@@ -407,11 +423,13 @@ Update the campaign status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the campaign
-$status = new \Swagger\Client\Model\UpdateCampaignStatus(); // \Swagger\Client\Model\UpdateCampaignStatus | Status of the campaign.
+$status = new \Sendinblue\Client\Model\UpdateCampaignStatus(); // \Sendinblue\Client\Model\UpdateCampaignStatus | Status of the campaign.
 
 try {
     $api_instance->updateSMSCampaignStatus($campaignId, $status);
@@ -426,7 +444,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| id of the campaign |
- **status** | [**\Swagger\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign. |
+ **status** | [**\Sendinblue\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign. |
 
 ### Return type
 
@@ -454,11 +472,13 @@ Updates a SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\SMSCampaignsApi();
+$api_instance = new Sendinblue\Client\Api\SMSCampaignsApi();
 $campaignId = "campaignId_example"; // string | id of the SMS campaign
-$updateSmsCampaign = new \Swagger\Client\Model\UpdateSmsCampaign(); // \Swagger\Client\Model\UpdateSmsCampaign | Values to update an SMS Campaign
+$updateSmsCampaign = new \Sendinblue\Client\Model\UpdateSmsCampaign(); // \Sendinblue\Client\Model\UpdateSmsCampaign | Values to update an SMS Campaign
 
 try {
     $api_instance->updateSmsCampaign($campaignId, $updateSmsCampaign);
@@ -473,7 +493,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **string**| id of the SMS campaign |
- **updateSmsCampaign** | [**\Swagger\Client\Model\UpdateSmsCampaign**](../Model/UpdateSmsCampaign.md)| Values to update an SMS Campaign |
+ **updateSmsCampaign** | [**\Sendinblue\Client\Model\UpdateSmsCampaign**](../Model/UpdateSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type
 

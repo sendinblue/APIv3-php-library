@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Information about your SMTP account
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class GetAccountRelay implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'enabled' => 'bool',
-        'data' => '\Swagger\Client\Model\GetAccountRelayData'
+        'data' => '\Sendinblue\Client\Model\GetAccountRelayData'
     ];
 
     /**
@@ -196,7 +196,7 @@ class GetAccountRelay implements ArrayAccess
 
     /**
      * Gets data
-     * @return \Swagger\Client\Model\GetAccountRelayData
+     * @return \Sendinblue\Client\Model\GetAccountRelayData
      */
     public function getData()
     {
@@ -205,7 +205,7 @@ class GetAccountRelay implements ArrayAccess
 
     /**
      * Sets data
-     * @param \Swagger\Client\Model\GetAccountRelayData $data
+     * @param \Sendinblue\Client\Model\GetAccountRelayData $data
      * @return $this
      */
     public function setData($data)
@@ -266,10 +266,10 @@ class GetAccountRelay implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

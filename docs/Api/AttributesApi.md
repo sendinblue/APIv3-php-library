@@ -1,4 +1,4 @@
-# Swagger\Client\AttributesApi
+# Sendinblue\Client\AttributesApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createAttribute**
-> \Swagger\Client\Model\CreateModel createAttribute($createAttribute)
+> \Sendinblue\Client\Model\CreateModel createAttribute($createAttribute)
 
 Creates contact attributes
 
@@ -20,10 +20,12 @@ Creates contact attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\AttributesApi();
-$createAttribute = new \Swagger\Client\Model\CreateAttribute(); // \Swagger\Client\Model\CreateAttribute | Values to create an attribute
+$api_instance = new Sendinblue\Client\Api\AttributesApi();
+$createAttribute = new \Sendinblue\Client\Model\CreateAttribute(); // \Sendinblue\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
     $result = $api_instance->createAttribute($createAttribute);
@@ -38,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createAttribute** | [**\Swagger\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
+ **createAttribute** | [**\Sendinblue\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -66,9 +68,11 @@ Deletes an attribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\AttributesApi();
+$api_instance = new Sendinblue\Client\Api\AttributesApi();
 $attributeId = "attributeId_example"; // string | id of the attribute
 
 try {
@@ -101,7 +105,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAttributes**
-> \Swagger\Client\Model\GetAttributes getAttributes()
+> \Sendinblue\Client\Model\GetAttributes getAttributes()
 
 Lists all attributes
 
@@ -111,9 +115,11 @@ Lists all attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\AttributesApi();
+$api_instance = new Sendinblue\Client\Api\AttributesApi();
 
 try {
     $result = $api_instance->getAttributes();
@@ -129,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\GetAttributes**](../Model/GetAttributes.md)
+[**\Sendinblue\Client\Model\GetAttributes**](../Model/GetAttributes.md)
 
 ### Authorization
 

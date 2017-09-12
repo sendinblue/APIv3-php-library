@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * GetAccount Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -58,10 +58,10 @@ class GetAccount implements ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'companyName' => 'string',
-        'address' => '\Swagger\Client\Model\GetExtendedClientAddress',
-        'plan' => '\Swagger\Client\Model\GetAccountPlan[]',
-        'relay' => '\Swagger\Client\Model\GetAccountRelay',
-        'marketingAutomation' => '\Swagger\Client\Model\GetAccountMarketingAutomation'
+        'address' => '\Sendinblue\Client\Model\GetExtendedClientAddress',
+        'plan' => '\Sendinblue\Client\Model\GetAccountPlan[]',
+        'relay' => '\Sendinblue\Client\Model\GetAccountRelay',
+        'marketingAutomation' => '\Sendinblue\Client\Model\GetAccountMarketingAutomation'
     ];
 
     /**
@@ -318,7 +318,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Gets address
-     * @return \Swagger\Client\Model\GetExtendedClientAddress
+     * @return \Sendinblue\Client\Model\GetExtendedClientAddress
      */
     public function getAddress()
     {
@@ -327,7 +327,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets address
-     * @param \Swagger\Client\Model\GetExtendedClientAddress $address
+     * @param \Sendinblue\Client\Model\GetExtendedClientAddress $address
      * @return $this
      */
     public function setAddress($address)
@@ -339,7 +339,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Gets plan
-     * @return \Swagger\Client\Model\GetAccountPlan[]
+     * @return \Sendinblue\Client\Model\GetAccountPlan[]
      */
     public function getPlan()
     {
@@ -348,7 +348,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets plan
-     * @param \Swagger\Client\Model\GetAccountPlan[] $plan Information about your plans and credits
+     * @param \Sendinblue\Client\Model\GetAccountPlan[] $plan Information about your plans and credits
      * @return $this
      */
     public function setPlan($plan)
@@ -360,7 +360,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Gets relay
-     * @return \Swagger\Client\Model\GetAccountRelay
+     * @return \Sendinblue\Client\Model\GetAccountRelay
      */
     public function getRelay()
     {
@@ -369,7 +369,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets relay
-     * @param \Swagger\Client\Model\GetAccountRelay $relay
+     * @param \Sendinblue\Client\Model\GetAccountRelay $relay
      * @return $this
      */
     public function setRelay($relay)
@@ -381,7 +381,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Gets marketingAutomation
-     * @return \Swagger\Client\Model\GetAccountMarketingAutomation
+     * @return \Sendinblue\Client\Model\GetAccountMarketingAutomation
      */
     public function getMarketingAutomation()
     {
@@ -390,7 +390,7 @@ class GetAccount implements ArrayAccess
 
     /**
      * Sets marketingAutomation
-     * @param \Swagger\Client\Model\GetAccountMarketingAutomation $marketingAutomation
+     * @param \Sendinblue\Client\Model\GetAccountMarketingAutomation $marketingAutomation
      * @return $this
      */
     public function setMarketingAutomation($marketingAutomation)
@@ -451,10 +451,10 @@ class GetAccount implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

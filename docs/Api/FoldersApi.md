@@ -1,4 +1,4 @@
-# Swagger\Client\FoldersApi
+# Sendinblue\Client\FoldersApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createFolder**
-> \Swagger\Client\Model\CreateModel createFolder($name)
+> \Sendinblue\Client\Model\CreateModel createFolder($name)
 
 Create a folder
 
@@ -23,10 +23,12 @@ Create a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
-$name = new \Swagger\Client\Model\CreaUpdateFolder(); // \Swagger\Client\Model\CreaUpdateFolder | Name of the folder
+$api_instance = new Sendinblue\Client\Api\FoldersApi();
+$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $result = $api_instance->createFolder($name);
@@ -41,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**\Swagger\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 
-[**\Swagger\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\Sendinblue\Client\Model\CreateModel**](../Model/CreateModel.md)
 
 ### Authorization
 
@@ -69,9 +71,11 @@ Delete a folder (and all its lists)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Sendinblue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | Id of the folder
 
 try {
@@ -104,7 +108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolder**
-> \Swagger\Client\Model\GetFolder getFolder($folderId)
+> \Sendinblue\Client\Model\GetFolder getFolder($folderId)
 
 Returns folder details
 
@@ -114,9 +118,11 @@ Returns folder details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Sendinblue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | id of the folder
 
 try {
@@ -136,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFolder**](../Model/GetFolder.md)
+[**\Sendinblue\Client\Model\GetFolder**](../Model/GetFolder.md)
 
 ### Authorization
 
@@ -150,7 +156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderLists**
-> \Swagger\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
+> \Sendinblue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
 Get the lists in a folder
 
@@ -160,9 +166,11 @@ Get the lists in a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Sendinblue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
@@ -186,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
+[**\Sendinblue\Client\Model\GetFolderLists**](../Model/GetFolderLists.md)
 
 ### Authorization
 
@@ -200,7 +208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolders**
-> \Swagger\Client\Model\GetFolders getFolders($limit, $offset)
+> \Sendinblue\Client\Model\GetFolders getFolders($limit, $offset)
 
 Get all the folders
 
@@ -210,9 +218,11 @@ Get all the folders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Sendinblue\Client\Api\FoldersApi();
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -234,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetFolders**](../Model/GetFolders.md)
+[**\Sendinblue\Client\Model\GetFolders**](../Model/GetFolders.md)
 
 ### Authorization
 
@@ -258,11 +268,13 @@ Update a contact folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Sendinblue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\FoldersApi();
+$api_instance = new Sendinblue\Client\Api\FoldersApi();
 $folderId = "folderId_example"; // string | Id of the folder
-$name = new \Swagger\Client\Model\CreaUpdateFolder(); // \Swagger\Client\Model\CreaUpdateFolder | Name of the folder
+$name = new \Sendinblue\Client\Model\CreaUpdateFolder(); // \Sendinblue\Client\Model\CreaUpdateFolder | Name of the folder
 
 try {
     $api_instance->updateFolder($folderId, $name);
@@ -277,7 +289,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folderId** | **string**| Id of the folder |
- **name** | [**\Swagger\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
+ **name** | [**\Sendinblue\Client\Model\CreaUpdateFolder**](../Model/CreaUpdateFolder.md)| Name of the folder |
 
 ### Return type
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Sendinblue\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * SendSmtpEmail Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Sendinblue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,15 +54,15 @@ class SendSmtpEmail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'sender' => '\Swagger\Client\Model\SendSmtpEmailSender',
-        'to' => '\Swagger\Client\Model\SendSmtpEmailTo[]',
-        'bcc' => '\Swagger\Client\Model\SendSmtpEmailBcc[]',
-        'cc' => '\Swagger\Client\Model\SendSmtpEmailCc[]',
+        'sender' => '\Sendinblue\Client\Model\SendSmtpEmailSender',
+        'to' => '\Sendinblue\Client\Model\SendSmtpEmailTo[]',
+        'bcc' => '\Sendinblue\Client\Model\SendSmtpEmailBcc[]',
+        'cc' => '\Sendinblue\Client\Model\SendSmtpEmailCc[]',
         'htmlContent' => 'string',
         'textContent' => 'string',
         'subject' => 'string',
-        'replyTo' => '\Swagger\Client\Model\SendSmtpEmailReplyTo',
-        'attachment' => '\Swagger\Client\Model\SendSmtpEmailAttachment[]',
+        'replyTo' => '\Sendinblue\Client\Model\SendSmtpEmailReplyTo',
+        'attachment' => '\Sendinblue\Client\Model\SendSmtpEmailAttachment[]',
         'headers' => 'map[string,string]'
     ];
 
@@ -234,7 +234,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets sender
-     * @return \Swagger\Client\Model\SendSmtpEmailSender
+     * @return \Sendinblue\Client\Model\SendSmtpEmailSender
      */
     public function getSender()
     {
@@ -243,7 +243,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets sender
-     * @param \Swagger\Client\Model\SendSmtpEmailSender $sender
+     * @param \Sendinblue\Client\Model\SendSmtpEmailSender $sender
      * @return $this
      */
     public function setSender($sender)
@@ -255,7 +255,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets to
-     * @return \Swagger\Client\Model\SendSmtpEmailTo[]
+     * @return \Sendinblue\Client\Model\SendSmtpEmailTo[]
      */
     public function getTo()
     {
@@ -264,7 +264,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets to
-     * @param \Swagger\Client\Model\SendSmtpEmailTo[] $to Email addresses and names of the recipients
+     * @param \Sendinblue\Client\Model\SendSmtpEmailTo[] $to Email addresses and names of the recipients
      * @return $this
      */
     public function setTo($to)
@@ -276,7 +276,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets bcc
-     * @return \Swagger\Client\Model\SendSmtpEmailBcc[]
+     * @return \Sendinblue\Client\Model\SendSmtpEmailBcc[]
      */
     public function getBcc()
     {
@@ -285,7 +285,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets bcc
-     * @param \Swagger\Client\Model\SendSmtpEmailBcc[] $bcc Email addresses and names of the recipients in bcc
+     * @param \Sendinblue\Client\Model\SendSmtpEmailBcc[] $bcc Email addresses and names of the recipients in bcc
      * @return $this
      */
     public function setBcc($bcc)
@@ -297,7 +297,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets cc
-     * @return \Swagger\Client\Model\SendSmtpEmailCc[]
+     * @return \Sendinblue\Client\Model\SendSmtpEmailCc[]
      */
     public function getCc()
     {
@@ -306,7 +306,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets cc
-     * @param \Swagger\Client\Model\SendSmtpEmailCc[] $cc Email addresses and names of the recipients in cc
+     * @param \Sendinblue\Client\Model\SendSmtpEmailCc[] $cc Email addresses and names of the recipients in cc
      * @return $this
      */
     public function setCc($cc)
@@ -381,7 +381,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets replyTo
-     * @return \Swagger\Client\Model\SendSmtpEmailReplyTo
+     * @return \Sendinblue\Client\Model\SendSmtpEmailReplyTo
      */
     public function getReplyTo()
     {
@@ -390,7 +390,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets replyTo
-     * @param \Swagger\Client\Model\SendSmtpEmailReplyTo $replyTo
+     * @param \Sendinblue\Client\Model\SendSmtpEmailReplyTo $replyTo
      * @return $this
      */
     public function setReplyTo($replyTo)
@@ -402,7 +402,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Gets attachment
-     * @return \Swagger\Client\Model\SendSmtpEmailAttachment[]
+     * @return \Sendinblue\Client\Model\SendSmtpEmailAttachment[]
      */
     public function getAttachment()
     {
@@ -411,7 +411,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets attachment
-     * @param \Swagger\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
+     * @param \Sendinblue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: gif, png, bmp, cgm, jpg, jpeg, tif, tiff, rtf, txt, css, shtml, html, htm, csv, zip, pdf, xml, ods, doc, docx, docm, ics, xls, xlsx, ppt, tar, and ez
      * @return $this
      */
     public function setAttachment($attachment)
@@ -493,10 +493,10 @@ class SendSmtpEmail implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Sendinblue\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

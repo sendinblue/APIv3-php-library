@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Sendinblue\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Sendinblue\Client\ApiClient;
+use \Sendinblue\Client\ApiException;
+use \Sendinblue\Client\Configuration;
+use \Sendinblue\Client\ObjectSerializer;
 
 /**
  * ResellerApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Sendinblue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ResellerApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Sendinblue\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Sendinblue\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Sendinblue\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ResellerApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Sendinblue\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ResellerApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Sendinblue\Client\ApiClient $apiClient set the API client
      *
      * @return ResellerApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Sendinblue\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,9 +93,9 @@ class ResellerApi
      * Add Email and/or SMS credits to a specific child account
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\RemainingCreditModel
+     * @param \Sendinblue\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\RemainingCreditModel
      */
     public function addCredits($childId, $addCredits)
     {
@@ -109,9 +109,9 @@ class ResellerApi
      * Add Email and/or SMS credits to a specific child account
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \Sendinblue\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function addCreditsWithHttpInfo($childId, $addCredits)
     {
@@ -168,27 +168,27 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\RemainingCreditModel',
+                '\Sendinblue\Client\Model\RemainingCreditModel',
                 '/reseller/children/{childId}/credits/add'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\RemainingCreditModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\RemainingCreditModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -203,8 +203,8 @@ class ResellerApi
      * Associate a dedicated IP to the child
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function associateIpToChild($childId, $ipId)
@@ -219,8 +219,8 @@ class ResellerApi
      * Associate a dedicated IP to the child
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function associateIpToChildWithHttpInfo($childId, $ipId)
@@ -286,11 +286,11 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -304,9 +304,9 @@ class ResellerApi
      *
      * Creates a reseller child
      *
-     * @param \Swagger\Client\Model\CreateChild $resellerChild reseller child to add (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CreateModel
+     * @param \Sendinblue\Client\Model\CreateChild $resellerChild reseller child to add (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\CreateModel
      */
     public function createResellerChild($resellerChild = null)
     {
@@ -319,9 +319,9 @@ class ResellerApi
      *
      * Creates a reseller child
      *
-     * @param \Swagger\Client\Model\CreateChild $resellerChild reseller child to add (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \Sendinblue\Client\Model\CreateChild $resellerChild reseller child to add (optional)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function createResellerChildWithHttpInfo($resellerChild = null)
     {
@@ -362,23 +362,23 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CreateModel',
+                '\Sendinblue\Client\Model\CreateModel',
                 '/reseller/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\CreateModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -393,7 +393,7 @@ class ResellerApi
      * Deletes a single reseller child based on the childId supplied
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function deleteResellerChild($childId)
@@ -408,7 +408,7 @@ class ResellerApi
      * Deletes a single reseller child based on the childId supplied
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteResellerChildWithHttpInfo($childId)
@@ -465,15 +465,15 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -488,8 +488,8 @@ class ResellerApi
      * Dissociate a dedicated IP to the child
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function dissociateIpFromChild($childId, $ipId)
@@ -504,8 +504,8 @@ class ResellerApi
      * Dissociate a dedicated IP to the child
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\ManageIp $ipId IP&#39;s id (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function dissociateIpFromChildWithHttpInfo($childId, $ipId)
@@ -571,11 +571,11 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -590,8 +590,8 @@ class ResellerApi
      * Gets the info about a specific child account
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetChildInfo
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetChildInfo
      */
     public function getChildInfo($childId)
     {
@@ -605,8 +605,8 @@ class ResellerApi
      * Gets the info about a specific child account
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetChildInfo, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetChildInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChildInfoWithHttpInfo($childId)
     {
@@ -654,27 +654,27 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetChildInfo',
+                '\Sendinblue\Client\Model\GetChildInfo',
                 '/reseller/children/{childId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetChildInfo', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetChildInfo', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetChildInfo', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetChildInfo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -688,8 +688,8 @@ class ResellerApi
      *
      * Gets the list of all reseller's children accounts
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetChildrenList
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\GetChildrenList
      */
     public function getResellerChilds()
     {
@@ -702,8 +702,8 @@ class ResellerApi
      *
      * Gets the list of all reseller's children accounts
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetChildrenList, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\GetChildrenList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResellerChildsWithHttpInfo()
     {
@@ -739,19 +739,19 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetChildrenList',
+                '\Sendinblue\Client\Model\GetChildrenList',
                 '/reseller/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetChildrenList', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\GetChildrenList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetChildrenList', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\GetChildrenList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -766,9 +766,9 @@ class ResellerApi
      * Remove Email and/or SMS credits from a specific child account
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\RemainingCreditModel
+     * @param \Sendinblue\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return \Sendinblue\Client\Model\RemainingCreditModel
      */
     public function removeCredits($childId, $removeCredits)
     {
@@ -782,9 +782,9 @@ class ResellerApi
      * Remove Email and/or SMS credits from a specific child account
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
+     * @param \Sendinblue\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
+     * @return array of \Sendinblue\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function removeCreditsWithHttpInfo($childId, $removeCredits)
     {
@@ -841,27 +841,27 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\RemainingCreditModel',
+                '\Sendinblue\Client\Model\RemainingCreditModel',
                 '/reseller/children/{childId}/credits/remove'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Sendinblue\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\RemainingCreditModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\RemainingCreditModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -876,8 +876,8 @@ class ResellerApi
      * Updates infos of reseller's child based on the childId supplied
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return void
      */
     public function updateResellerChild($childId, $resellerChild)
@@ -892,8 +892,8 @@ class ResellerApi
      * Updates infos of reseller's child based on the childId supplied
      *
      * @param int $childId id of reseller&#39;s child (required)
-     * @param \Swagger\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \Sendinblue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
+     * @throws \Sendinblue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateResellerChildWithHttpInfo($childId, $resellerChild)
@@ -959,15 +959,15 @@ class ResellerApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Sendinblue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
