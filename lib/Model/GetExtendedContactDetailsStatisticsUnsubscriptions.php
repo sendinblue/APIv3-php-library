@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsUnsubscriptionsUserUnsubscription
+ * GetExtendedContactDetailsStatisticsUnsubscriptions
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * GetContactCampaignStatsUnsubscriptionsUserUnsubscription Class Doc Comment
+ * GetExtendedContactDetailsStatisticsUnsubscriptions Class Doc Comment
  *
  * @category    Class
+ * @description Listing of the unsubscription for the contact
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayAccess
+class GetExtendedContactDetailsStatisticsUnsubscriptions implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,16 +48,15 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getContactCampaignStats_unsubscriptions_userUnsubscription';
+    protected static $swaggerModelName = 'getExtendedContactDetails_statistics_unsubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'campaignId' => 'int',
-        'eventTime' => '\DateTime',
-        'ip' => 'string'
+        'userUnsubscription' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription[]',
+        'adminUnsubscription' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription[]'
     ];
 
     /**
@@ -64,9 +64,8 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'campaignId' => 'int32',
-        'eventTime' => 'date-time',
-        'ip' => null
+        'userUnsubscription' => null,
+        'adminUnsubscription' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +83,8 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'campaignId' => 'campaignId',
-        'eventTime' => 'eventTime',
-        'ip' => 'ip'
+        'userUnsubscription' => 'userUnsubscription',
+        'adminUnsubscription' => 'adminUnsubscription'
     ];
 
 
@@ -95,9 +93,8 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'campaignId' => 'setCampaignId',
-        'eventTime' => 'setEventTime',
-        'ip' => 'setIp'
+        'userUnsubscription' => 'setUserUnsubscription',
+        'adminUnsubscription' => 'setAdminUnsubscription'
     ];
 
 
@@ -106,9 +103,8 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'campaignId' => 'getCampaignId',
-        'eventTime' => 'getEventTime',
-        'ip' => 'getIp'
+        'userUnsubscription' => 'getUserUnsubscription',
+        'adminUnsubscription' => 'getAdminUnsubscription'
     ];
 
     public static function attributeMap()
@@ -142,9 +138,8 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaignId'] = isset($data['campaignId']) ? $data['campaignId'] : null;
-        $this->container['eventTime'] = isset($data['eventTime']) ? $data['eventTime'] : null;
-        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['userUnsubscription'] = isset($data['userUnsubscription']) ? $data['userUnsubscription'] : null;
+        $this->container['adminUnsubscription'] = isset($data['adminUnsubscription']) ? $data['adminUnsubscription'] : null;
     }
 
     /**
@@ -156,14 +151,11 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
     {
         $invalid_properties = [];
 
-        if ($this->container['campaignId'] === null) {
-            $invalid_properties[] = "'campaignId' can't be null";
+        if ($this->container['userUnsubscription'] === null) {
+            $invalid_properties[] = "'userUnsubscription' can't be null";
         }
-        if ($this->container['eventTime'] === null) {
-            $invalid_properties[] = "'eventTime' can't be null";
-        }
-        if ($this->container['ip'] === null) {
-            $invalid_properties[] = "'ip' can't be null";
+        if ($this->container['adminUnsubscription'] === null) {
+            $invalid_properties[] = "'adminUnsubscription' can't be null";
         }
         return $invalid_properties;
     }
@@ -177,13 +169,10 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
     public function valid()
     {
 
-        if ($this->container['campaignId'] === null) {
+        if ($this->container['userUnsubscription'] === null) {
             return false;
         }
-        if ($this->container['eventTime'] === null) {
-            return false;
-        }
-        if ($this->container['ip'] === null) {
+        if ($this->container['adminUnsubscription'] === null) {
             return false;
         }
         return true;
@@ -191,64 +180,43 @@ class GetContactCampaignStatsUnsubscriptionsUserUnsubscription implements ArrayA
 
 
     /**
-     * Gets campaignId
-     * @return int
+     * Gets userUnsubscription
+     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription[]
      */
-    public function getCampaignId()
+    public function getUserUnsubscription()
     {
-        return $this->container['campaignId'];
+        return $this->container['userUnsubscription'];
     }
 
     /**
-     * Sets campaignId
-     * @param int $campaignId ID of the campaign which generated the event
+     * Sets userUnsubscription
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription[] $userUnsubscription Contact unsubscribe via unsubscription link in a campaign
      * @return $this
      */
-    public function setCampaignId($campaignId)
+    public function setUserUnsubscription($userUnsubscription)
     {
-        $this->container['campaignId'] = $campaignId;
+        $this->container['userUnsubscription'] = $userUnsubscription;
 
         return $this;
     }
 
     /**
-     * Gets eventTime
-     * @return \DateTime
+     * Gets adminUnsubscription
+     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription[]
      */
-    public function getEventTime()
+    public function getAdminUnsubscription()
     {
-        return $this->container['eventTime'];
+        return $this->container['adminUnsubscription'];
     }
 
     /**
-     * Sets eventTime
-     * @param \DateTime $eventTime Date of the event
+     * Sets adminUnsubscription
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription[] $adminUnsubscription Contact has been unsubscribed from the administrator
      * @return $this
      */
-    public function setEventTime($eventTime)
+    public function setAdminUnsubscription($adminUnsubscription)
     {
-        $this->container['eventTime'] = $eventTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets ip
-     * @return string
-     */
-    public function getIp()
-    {
-        return $this->container['ip'];
-    }
-
-    /**
-     * Sets ip
-     * @param string $ip IP from which the user has unsubscribed
-     * @return $this
-     */
-    public function setIp($ip)
-    {
-        $this->container['ip'] = $ip;
+        $this->container['adminUnsubscription'] = $adminUnsubscription;
 
         return $this;
     }

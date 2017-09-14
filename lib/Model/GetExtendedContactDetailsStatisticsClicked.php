@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsClicked
+ * GetExtendedContactDetailsStatisticsClicked
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * GetContactCampaignStatsClicked Class Doc Comment
+ * GetExtendedContactDetailsStatisticsClicked Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsClicked implements ArrayAccess
+class GetExtendedContactDetailsStatisticsClicked implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GetContactCampaignStatsClicked implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getContactCampaignStats_clicked';
+    protected static $swaggerModelName = 'getExtendedContactDetails_statistics_clicked';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -210,7 +210,7 @@ class GetContactCampaignStatsClicked implements ArrayAccess
 
     /**
      * Sets links
-     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsLinks[] $links
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsLinks[] $links Listing of the clicked links for the campaign
      * @return $this
      */
     public function setLinks($links)

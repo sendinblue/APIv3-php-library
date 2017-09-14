@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **listIds** | **int[]** |  | 
 **listUnsubscribed** | **int[]** |  | [optional] 
 **attributes** | **map[string,string]** |  | 
+**statistics** | [**\SendinBlue\Client\Model\GetExtendedContactDetailsStatistics**](GetExtendedContactDetailsStatistics.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

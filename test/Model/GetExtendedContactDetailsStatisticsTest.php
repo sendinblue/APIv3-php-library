@@ -1,6 +1,6 @@
 <?php
 /**
- * GetExtendedContactDetailsTest
+ * GetExtendedContactDetailsStatisticsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetExtendedContactDetailsTest Class Doc Comment
+ * GetExtendedContactDetailsStatisticsTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetExtendedContactDetails
+// * @description Campaign statistics of the contact
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetExtendedContactDetailsTest extends \PHPUnit_Framework_TestCase
+class GetExtendedContactDetailsStatisticsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,65 @@ class GetExtendedContactDetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetExtendedContactDetails"
+     * Test "GetExtendedContactDetailsStatistics"
      */
-    public function testGetExtendedContactDetails()
+    public function testGetExtendedContactDetailsStatistics()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "messagesSent"
      */
-    public function testPropertyEmail()
+    public function testPropertyMessagesSent()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "hardBounces"
      */
-    public function testPropertyId()
+    public function testPropertyHardBounces()
     {
     }
 
     /**
-     * Test attribute "emailBlacklisted"
+     * Test attribute "softBounces"
      */
-    public function testPropertyEmailBlacklisted()
+    public function testPropertySoftBounces()
     {
     }
 
     /**
-     * Test attribute "smsBlacklisted"
+     * Test attribute "complaints"
      */
-    public function testPropertySmsBlacklisted()
+    public function testPropertyComplaints()
     {
     }
 
     /**
-     * Test attribute "modifiedAt"
+     * Test attribute "unsubscriptions"
      */
-    public function testPropertyModifiedAt()
+    public function testPropertyUnsubscriptions()
     {
     }
 
     /**
-     * Test attribute "listIds"
+     * Test attribute "opened"
      */
-    public function testPropertyListIds()
+    public function testPropertyOpened()
     {
     }
 
     /**
-     * Test attribute "listUnsubscribed"
+     * Test attribute "clicked"
      */
-    public function testPropertyListUnsubscribed()
+    public function testPropertyClicked()
     {
     }
 
     /**
-     * Test attribute "attributes"
+     * Test attribute "transacAttributes"
      */
-    public function testPropertyAttributes()
-    {
-    }
-
-    /**
-     * Test attribute "statistics"
-     */
-    public function testPropertyStatistics()
+    public function testPropertyTransacAttributes()
     {
     }
 }
