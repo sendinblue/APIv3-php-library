@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsLinksTest
+ * GetExtendedContactDetailsStatisticsUnsubscriptionsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetContactCampaignStatsLinksTest Class Doc Comment
+ * GetExtendedContactDetailsStatisticsUnsubscriptionsTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetContactCampaignStatsLinks
+// * @description Listing of the unsubscription for the contact
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsLinksTest extends \PHPUnit_Framework_TestCase
+class GetExtendedContactDetailsStatisticsUnsubscriptionsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,23 @@ class GetContactCampaignStatsLinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetContactCampaignStatsLinks"
+     * Test "GetExtendedContactDetailsStatisticsUnsubscriptions"
      */
-    public function testGetContactCampaignStatsLinks()
+    public function testGetExtendedContactDetailsStatisticsUnsubscriptions()
     {
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "userUnsubscription"
      */
-    public function testPropertyCount()
+    public function testPropertyUserUnsubscription()
     {
     }
 
     /**
-     * Test attribute "eventTime"
+     * Test attribute "adminUnsubscription"
      */
-    public function testPropertyEventTime()
-    {
-    }
-
-    /**
-     * Test attribute "ip"
-     */
-    public function testPropertyIp()
-    {
-    }
-
-    /**
-     * Test attribute "url"
-     */
-    public function testPropertyUrl()
+    public function testPropertyAdminUnsubscription()
     {
     }
 }

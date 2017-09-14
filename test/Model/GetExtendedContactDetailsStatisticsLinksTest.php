@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsMessagesSentTest
+ * GetExtendedContactDetailsStatisticsLinksTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetContactCampaignStatsMessagesSentTest Class Doc Comment
+ * GetExtendedContactDetailsStatisticsLinksTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetContactCampaignStatsMessagesSent
+// * @description GetExtendedContactDetailsStatisticsLinks
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsMessagesSentTest extends \PHPUnit_Framework_TestCase
+class GetExtendedContactDetailsStatisticsLinksTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,16 @@ class GetContactCampaignStatsMessagesSentTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
-     * Test "GetContactCampaignStatsMessagesSent"
+     * Test "GetExtendedContactDetailsStatisticsLinks"
      */
-    public function testGetContactCampaignStatsMessagesSent()
+    public function testGetExtendedContactDetailsStatisticsLinks()
     {
     }
 
     /**
-     * Test attribute "campaignId"
+     * Test attribute "count"
      */
-    public function testPropertyCampaignId()
+    public function testPropertyCount()
     {
     }
 
@@ -88,6 +88,20 @@ class GetContactCampaignStatsMessagesSentTest extends \PHPUnit_Framework_TestCas
      * Test attribute "eventTime"
      */
     public function testPropertyEventTime()
+    {
+    }
+
+    /**
+     * Test attribute "ip"
+     */
+    public function testPropertyIp()
+    {
+    }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
     {
     }
 }

@@ -54,8 +54,8 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'userUnsubscription' => '\SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[]',
-        'adminUnsubscription' => '\SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[]'
+        'userUnsubscription' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription[]',
+        'adminUnsubscription' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription[]'
     ];
 
     /**
@@ -180,7 +180,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Gets userUnsubscription
-     * @return \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[]
+     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription[]
      */
     public function getUserUnsubscription()
     {
@@ -189,7 +189,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Sets userUnsubscription
-     * @param \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsUserUnsubscription[] $userUnsubscription Contact has unsubscribed via the unsubscription link in the email
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription[] $userUnsubscription Contact has unsubscribed via the unsubscription link in the email
      * @return $this
      */
     public function setUserUnsubscription($userUnsubscription)
@@ -201,7 +201,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Gets adminUnsubscription
-     * @return \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[]
+     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription[]
      */
     public function getAdminUnsubscription()
     {
@@ -210,7 +210,7 @@ class GetContactCampaignStatsUnsubscriptions implements ArrayAccess
 
     /**
      * Sets adminUnsubscription
-     * @param \SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptionsAdminUnsubscription[] $adminUnsubscription Contact has been unsubscribed from the administrator
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription[] $adminUnsubscription Contact has been unsubscribed from the administrator
      * @return $this
      */
     public function setAdminUnsubscription($adminUnsubscription)

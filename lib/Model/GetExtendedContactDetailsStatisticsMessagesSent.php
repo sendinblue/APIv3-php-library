@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsLinks
+ * GetExtendedContactDetailsStatisticsMessagesSent
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * GetContactCampaignStatsLinks Class Doc Comment
+ * GetExtendedContactDetailsStatisticsMessagesSent Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsLinks implements ArrayAccess
+class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,17 +47,15 @@ class GetContactCampaignStatsLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getContactCampaignStats_links';
+    protected static $swaggerModelName = 'getExtendedContactDetails_statistics_messagesSent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'count' => 'int',
-        'eventTime' => '\DateTime',
-        'ip' => 'string',
-        'url' => 'string'
+        'campaignId' => 'int',
+        'eventTime' => '\DateTime'
     ];
 
     /**
@@ -65,10 +63,8 @@ class GetContactCampaignStatsLinks implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'count' => 'int32',
-        'eventTime' => 'date-time',
-        'ip' => null,
-        'url' => null
+        'campaignId' => 'int32',
+        'eventTime' => 'date-time'
     ];
 
     public static function swaggerTypes()
@@ -86,10 +82,8 @@ class GetContactCampaignStatsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'count' => 'count',
-        'eventTime' => 'eventTime',
-        'ip' => 'ip',
-        'url' => 'url'
+        'campaignId' => 'campaignId',
+        'eventTime' => 'eventTime'
     ];
 
 
@@ -98,10 +92,8 @@ class GetContactCampaignStatsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'count' => 'setCount',
-        'eventTime' => 'setEventTime',
-        'ip' => 'setIp',
-        'url' => 'setUrl'
+        'campaignId' => 'setCampaignId',
+        'eventTime' => 'setEventTime'
     ];
 
 
@@ -110,10 +102,8 @@ class GetContactCampaignStatsLinks implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'count' => 'getCount',
-        'eventTime' => 'getEventTime',
-        'ip' => 'getIp',
-        'url' => 'getUrl'
+        'campaignId' => 'getCampaignId',
+        'eventTime' => 'getEventTime'
     ];
 
     public static function attributeMap()
@@ -147,10 +137,8 @@ class GetContactCampaignStatsLinks implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['campaignId'] = isset($data['campaignId']) ? $data['campaignId'] : null;
         $this->container['eventTime'] = isset($data['eventTime']) ? $data['eventTime'] : null;
-        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -162,17 +150,11 @@ class GetContactCampaignStatsLinks implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['count'] === null) {
-            $invalid_properties[] = "'count' can't be null";
+        if ($this->container['campaignId'] === null) {
+            $invalid_properties[] = "'campaignId' can't be null";
         }
         if ($this->container['eventTime'] === null) {
             $invalid_properties[] = "'eventTime' can't be null";
-        }
-        if ($this->container['ip'] === null) {
-            $invalid_properties[] = "'ip' can't be null";
-        }
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
         }
         return $invalid_properties;
     }
@@ -186,16 +168,10 @@ class GetContactCampaignStatsLinks implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['count'] === null) {
+        if ($this->container['campaignId'] === null) {
             return false;
         }
         if ($this->container['eventTime'] === null) {
-            return false;
-        }
-        if ($this->container['ip'] === null) {
-            return false;
-        }
-        if ($this->container['url'] === null) {
             return false;
         }
         return true;
@@ -203,22 +179,22 @@ class GetContactCampaignStatsLinks implements ArrayAccess
 
 
     /**
-     * Gets count
+     * Gets campaignId
      * @return int
      */
-    public function getCount()
+    public function getCampaignId()
     {
-        return $this->container['count'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets count
-     * @param int $count Number of clicks on this link for the campaign
+     * Sets campaignId
+     * @param int $campaignId ID of the campaign which generated the event
      * @return $this
      */
-    public function setCount($count)
+    public function setCampaignId($campaignId)
     {
-        $this->container['count'] = $count;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
@@ -240,48 +216,6 @@ class GetContactCampaignStatsLinks implements ArrayAccess
     public function setEventTime($eventTime)
     {
         $this->container['eventTime'] = $eventTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets ip
-     * @return string
-     */
-    public function getIp()
-    {
-        return $this->container['ip'];
-    }
-
-    /**
-     * Sets ip
-     * @param string $ip IP from which the user has clicked on the link
-     * @return $this
-     */
-    public function setIp($ip)
-    {
-        $this->container['ip'] = $ip;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     * @param string $url URL of the clicked link
-     * @return $this
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
 
         return $this;
     }

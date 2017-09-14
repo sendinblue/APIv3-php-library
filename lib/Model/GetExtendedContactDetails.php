@@ -61,7 +61,8 @@ class GetExtendedContactDetails implements ArrayAccess
         'modifiedAt' => 'string',
         'listIds' => 'int[]',
         'listUnsubscribed' => 'int[]',
-        'attributes' => 'map[string,string]'
+        'attributes' => 'map[string,string]',
+        'statistics' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatistics'
     ];
 
     /**
@@ -76,7 +77,8 @@ class GetExtendedContactDetails implements ArrayAccess
         'modifiedAt' => null,
         'listIds' => 'int32',
         'listUnsubscribed' => 'int32',
-        'attributes' => null
+        'attributes' => null,
+        'statistics' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +103,8 @@ class GetExtendedContactDetails implements ArrayAccess
         'modifiedAt' => 'modifiedAt',
         'listIds' => 'listIds',
         'listUnsubscribed' => 'listUnsubscribed',
-        'attributes' => 'attributes'
+        'attributes' => 'attributes',
+        'statistics' => 'statistics'
     ];
 
 
@@ -117,7 +120,8 @@ class GetExtendedContactDetails implements ArrayAccess
         'modifiedAt' => 'setModifiedAt',
         'listIds' => 'setListIds',
         'listUnsubscribed' => 'setListUnsubscribed',
-        'attributes' => 'setAttributes'
+        'attributes' => 'setAttributes',
+        'statistics' => 'setStatistics'
     ];
 
 
@@ -133,7 +137,8 @@ class GetExtendedContactDetails implements ArrayAccess
         'modifiedAt' => 'getModifiedAt',
         'listIds' => 'getListIds',
         'listUnsubscribed' => 'getListUnsubscribed',
-        'attributes' => 'getAttributes'
+        'attributes' => 'getAttributes',
+        'statistics' => 'getStatistics'
     ];
 
     public static function attributeMap()
@@ -175,6 +180,7 @@ class GetExtendedContactDetails implements ArrayAccess
         $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
         $this->container['listUnsubscribed'] = isset($data['listUnsubscribed']) ? $data['listUnsubscribed'] : null;
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
+        $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
 
     /**
@@ -420,6 +426,27 @@ class GetExtendedContactDetails implements ArrayAccess
     public function setAttributes($attributes)
     {
         $this->container['attributes'] = $attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets statistics
+     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatistics
+     */
+    public function getStatistics()
+    {
+        return $this->container['statistics'];
+    }
+
+    /**
+     * Sets statistics
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatistics $statistics
+     * @return $this
+     */
+    public function setStatistics($statistics)
+    {
+        $this->container['statistics'] = $statistics;
 
         return $this;
     }

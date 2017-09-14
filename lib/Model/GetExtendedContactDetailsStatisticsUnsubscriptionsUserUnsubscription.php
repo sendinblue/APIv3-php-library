@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsClicked
+ * GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * GetContactCampaignStatsClicked Class Doc Comment
+ * GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsClicked implements ArrayAccess
+class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GetContactCampaignStatsClicked implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getContactCampaignStats_clicked';
+    protected static $swaggerModelName = 'getExtendedContactDetails_statistics_unsubscriptions_userUnsubscription';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,7 +55,8 @@ class GetContactCampaignStatsClicked implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'campaignId' => 'int',
-        'links' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsLinks[]'
+        'eventTime' => '\DateTime',
+        'ip' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class GetContactCampaignStatsClicked implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'campaignId' => 'int32',
-        'links' => null
+        'eventTime' => 'date-time',
+        'ip' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class GetContactCampaignStatsClicked implements ArrayAccess
      */
     protected static $attributeMap = [
         'campaignId' => 'campaignId',
-        'links' => 'links'
+        'eventTime' => 'eventTime',
+        'ip' => 'ip'
     ];
 
 
@@ -93,7 +96,8 @@ class GetContactCampaignStatsClicked implements ArrayAccess
      */
     protected static $setters = [
         'campaignId' => 'setCampaignId',
-        'links' => 'setLinks'
+        'eventTime' => 'setEventTime',
+        'ip' => 'setIp'
     ];
 
 
@@ -103,7 +107,8 @@ class GetContactCampaignStatsClicked implements ArrayAccess
      */
     protected static $getters = [
         'campaignId' => 'getCampaignId',
-        'links' => 'getLinks'
+        'eventTime' => 'getEventTime',
+        'ip' => 'getIp'
     ];
 
     public static function attributeMap()
@@ -138,7 +143,8 @@ class GetContactCampaignStatsClicked implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['campaignId'] = isset($data['campaignId']) ? $data['campaignId'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['eventTime'] = isset($data['eventTime']) ? $data['eventTime'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
     }
 
     /**
@@ -153,8 +159,11 @@ class GetContactCampaignStatsClicked implements ArrayAccess
         if ($this->container['campaignId'] === null) {
             $invalid_properties[] = "'campaignId' can't be null";
         }
-        if ($this->container['links'] === null) {
-            $invalid_properties[] = "'links' can't be null";
+        if ($this->container['eventTime'] === null) {
+            $invalid_properties[] = "'eventTime' can't be null";
+        }
+        if ($this->container['ip'] === null) {
+            $invalid_properties[] = "'ip' can't be null";
         }
         return $invalid_properties;
     }
@@ -171,7 +180,10 @@ class GetContactCampaignStatsClicked implements ArrayAccess
         if ($this->container['campaignId'] === null) {
             return false;
         }
-        if ($this->container['links'] === null) {
+        if ($this->container['eventTime'] === null) {
+            return false;
+        }
+        if ($this->container['ip'] === null) {
             return false;
         }
         return true;
@@ -200,22 +212,43 @@ class GetContactCampaignStatsClicked implements ArrayAccess
     }
 
     /**
-     * Gets links
-     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsLinks[]
+     * Gets eventTime
+     * @return \DateTime
      */
-    public function getLinks()
+    public function getEventTime()
     {
-        return $this->container['links'];
+        return $this->container['eventTime'];
     }
 
     /**
-     * Sets links
-     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsLinks[] $links
+     * Sets eventTime
+     * @param \DateTime $eventTime Date of the event
      * @return $this
      */
-    public function setLinks($links)
+    public function setEventTime($eventTime)
     {
-        $this->container['links'] = $links;
+        $this->container['eventTime'] = $eventTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->container['ip'];
+    }
+
+    /**
+     * Sets ip
+     * @param string $ip IP from which the user has unsubscribed
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->container['ip'] = $ip;
 
         return $this;
     }

@@ -1,4 +1,4 @@
-s# RequestContactExport
+# RequestContactExport
 
 ## Properties
 Name | Type | Description | Notes

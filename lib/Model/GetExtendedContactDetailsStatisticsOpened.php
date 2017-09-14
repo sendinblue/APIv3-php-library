@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsUnsubscriptionsAdminUnsubscription
+ * GetExtendedContactDetailsStatisticsOpened
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * GetContactCampaignStatsUnsubscriptionsAdminUnsubscription Class Doc Comment
+ * GetExtendedContactDetailsStatisticsOpened Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements ArrayAccess
+class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,13 +47,15 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getContactCampaignStats_unsubscriptions_adminUnsubscription';
+    protected static $swaggerModelName = 'getExtendedContactDetails_statistics_opened';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'campaignId' => 'int',
+        'count' => 'int',
         'eventTime' => '\DateTime',
         'ip' => 'string'
     ];
@@ -63,6 +65,8 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'campaignId' => 'int32',
+        'count' => 'int32',
         'eventTime' => 'date-time',
         'ip' => null
     ];
@@ -82,6 +86,8 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
      * @var string[]
      */
     protected static $attributeMap = [
+        'campaignId' => 'campaignId',
+        'count' => 'count',
         'eventTime' => 'eventTime',
         'ip' => 'ip'
     ];
@@ -92,6 +98,8 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
      * @var string[]
      */
     protected static $setters = [
+        'campaignId' => 'setCampaignId',
+        'count' => 'setCount',
         'eventTime' => 'setEventTime',
         'ip' => 'setIp'
     ];
@@ -102,6 +110,8 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
      * @var string[]
      */
     protected static $getters = [
+        'campaignId' => 'getCampaignId',
+        'count' => 'getCount',
         'eventTime' => 'getEventTime',
         'ip' => 'getIp'
     ];
@@ -137,6 +147,8 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
      */
     public function __construct(array $data = null)
     {
+        $this->container['campaignId'] = isset($data['campaignId']) ? $data['campaignId'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['eventTime'] = isset($data['eventTime']) ? $data['eventTime'] : null;
         $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
     }
@@ -150,6 +162,12 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
     {
         $invalid_properties = [];
 
+        if ($this->container['campaignId'] === null) {
+            $invalid_properties[] = "'campaignId' can't be null";
+        }
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
+        }
         if ($this->container['eventTime'] === null) {
             $invalid_properties[] = "'eventTime' can't be null";
         }
@@ -168,6 +186,12 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
     public function valid()
     {
 
+        if ($this->container['campaignId'] === null) {
+            return false;
+        }
+        if ($this->container['count'] === null) {
+            return false;
+        }
         if ($this->container['eventTime'] === null) {
             return false;
         }
@@ -177,6 +201,48 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
         return true;
     }
 
+
+    /**
+     * Gets campaignId
+     * @return int
+     */
+    public function getCampaignId()
+    {
+        return $this->container['campaignId'];
+    }
+
+    /**
+     * Sets campaignId
+     * @param int $campaignId ID of the campaign which generated the event
+     * @return $this
+     */
+    public function setCampaignId($campaignId)
+    {
+        $this->container['campaignId'] = $campaignId;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     * @param int $count Number of openings for the campaign
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
 
     /**
      * Gets eventTime
@@ -210,7 +276,7 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscription implements Array
 
     /**
      * Sets ip
-     * @param string $ip IP from which the user has been unsubscribed
+     * @param string $ip IP from which the user has opened the email
      * @return $this
      */
     public function setIp($ip)

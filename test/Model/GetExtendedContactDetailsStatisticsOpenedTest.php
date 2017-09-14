@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactCampaignStatsUnsubscriptionsAdminUnsubscriptionTest
+ * GetExtendedContactDetailsStatisticsOpenedTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetContactCampaignStatsUnsubscriptionsAdminUnsubscriptionTest Class Doc Comment
+ * GetExtendedContactDetailsStatisticsOpenedTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetContactCampaignStatsUnsubscriptionsAdminUnsubscription
+// * @description GetExtendedContactDetailsStatisticsOpened
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactCampaignStatsUnsubscriptionsAdminUnsubscriptionTest extends \PHPUnit_Framework_TestCase
+class GetExtendedContactDetailsStatisticsOpenedTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,23 @@ class GetContactCampaignStatsUnsubscriptionsAdminUnsubscriptionTest extends \PHP
     }
 
     /**
-     * Test "GetContactCampaignStatsUnsubscriptionsAdminUnsubscription"
+     * Test "GetExtendedContactDetailsStatisticsOpened"
      */
-    public function testGetContactCampaignStatsUnsubscriptionsAdminUnsubscription()
+    public function testGetExtendedContactDetailsStatisticsOpened()
+    {
+    }
+
+    /**
+     * Test attribute "campaignId"
+     */
+    public function testPropertyCampaignId()
+    {
+    }
+
+    /**
+     * Test attribute "count"
+     */
+    public function testPropertyCount()
     {
     }
 

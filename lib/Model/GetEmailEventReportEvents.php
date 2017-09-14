@@ -56,11 +56,13 @@ class GetEmailEventReportEvents implements ArrayAccess
     protected static $swaggerTypes = [
         'email' => 'string',
         'date' => '\DateTime',
+        'subject' => 'string',
         'messageId' => 'string',
         'event' => 'string',
         'reason' => 'string',
         'tag' => 'string',
-        'ip' => 'string'
+        'ip' => 'string',
+        'link' => 'string'
     ];
 
     /**
@@ -70,11 +72,13 @@ class GetEmailEventReportEvents implements ArrayAccess
     protected static $swaggerFormats = [
         'email' => 'email',
         'date' => 'date',
+        'subject' => null,
         'messageId' => null,
         'event' => null,
         'reason' => null,
         'tag' => null,
-        'ip' => null
+        'ip' => null,
+        'link' => null
     ];
 
     public static function swaggerTypes()
@@ -94,11 +98,13 @@ class GetEmailEventReportEvents implements ArrayAccess
     protected static $attributeMap = [
         'email' => 'email',
         'date' => 'date',
+        'subject' => 'subject',
         'messageId' => 'messageId',
         'event' => 'event',
         'reason' => 'reason',
         'tag' => 'tag',
-        'ip' => 'ip'
+        'ip' => 'ip',
+        'link' => 'link'
     ];
 
 
@@ -109,11 +115,13 @@ class GetEmailEventReportEvents implements ArrayAccess
     protected static $setters = [
         'email' => 'setEmail',
         'date' => 'setDate',
+        'subject' => 'setSubject',
         'messageId' => 'setMessageId',
         'event' => 'setEvent',
         'reason' => 'setReason',
         'tag' => 'setTag',
-        'ip' => 'setIp'
+        'ip' => 'setIp',
+        'link' => 'setLink'
     ];
 
 
@@ -124,11 +132,13 @@ class GetEmailEventReportEvents implements ArrayAccess
     protected static $getters = [
         'email' => 'getEmail',
         'date' => 'getDate',
+        'subject' => 'getSubject',
         'messageId' => 'getMessageId',
         'event' => 'getEvent',
         'reason' => 'getReason',
         'tag' => 'getTag',
-        'ip' => 'getIp'
+        'ip' => 'getIp',
+        'link' => 'getLink'
     ];
 
     public static function attributeMap()
@@ -196,11 +206,13 @@ class GetEmailEventReportEvents implements ArrayAccess
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
         $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
         $this->container['event'] = isset($data['event']) ? $data['event'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
     }
 
     /**
@@ -319,6 +331,27 @@ class GetEmailEventReportEvents implements ArrayAccess
     }
 
     /**
+     * Gets subject
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->container['subject'];
+    }
+
+    /**
+     * Sets subject
+     * @param string $subject Subject of the event
+     * @return $this
+     */
+    public function setSubject($subject)
+    {
+        $this->container['subject'] = $subject;
+
+        return $this;
+    }
+
+    /**
      * Gets messageId
      * @return string
      */
@@ -428,6 +461,27 @@ class GetEmailEventReportEvents implements ArrayAccess
     public function setIp($ip)
     {
         $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets link
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->container['link'];
+    }
+
+    /**
+     * Sets link
+     * @param string $link The link which is sent to the user (only availble if the event is requests or opened or clicks)
+     * @return $this
+     */
+    public function setLink($link)
+    {
+        $this->container['link'] = $link;
 
         return $this;
     }

@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**messagesSent** | [**\SendinBlue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**hardBounces** | [**\SendinBlue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**softBounces** | [**\SendinBlue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
-**complaints** | [**\SendinBlue\Client\Model\GetContactCampaignStatsMessagesSent[]**](GetContactCampaignStatsMessagesSent.md) |  | [optional] 
+**messagesSent** | [**\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsMessagesSent[]**](GetExtendedContactDetailsStatisticsMessagesSent.md) |  | [optional] 
+**hardBounces** | [**\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsMessagesSent[]**](GetExtendedContactDetailsStatisticsMessagesSent.md) |  | [optional] 
+**softBounces** | [**\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsMessagesSent[]**](GetExtendedContactDetailsStatisticsMessagesSent.md) |  | [optional] 
+**complaints** | [**\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsMessagesSent[]**](GetExtendedContactDetailsStatisticsMessagesSent.md) |  | [optional] 
 **unsubscriptions** | [**\SendinBlue\Client\Model\GetContactCampaignStatsUnsubscriptions**](GetContactCampaignStatsUnsubscriptions.md) |  | [optional] 
 **opened** | [**\SendinBlue\Client\Model\GetContactCampaignStatsOpened[]**](GetContactCampaignStatsOpened.md) |  | [optional] 
 **clicked** | [**\SendinBlue\Client\Model\GetContactCampaignStatsClicked[]**](GetContactCampaignStatsClicked.md) |  | [optional] 

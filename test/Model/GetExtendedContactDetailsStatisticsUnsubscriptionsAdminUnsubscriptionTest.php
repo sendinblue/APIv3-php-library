@@ -1,6 +1,6 @@
 <?php
 /**
- * GetExtendedContactDetailsTest
+ * GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscriptionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetExtendedContactDetailsTest Class Doc Comment
+ * GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscriptionTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetExtendedContactDetails
+// * @description GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetExtendedContactDetailsTest extends \PHPUnit_Framework_TestCase
+class GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscriptionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,23 @@ class GetExtendedContactDetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetExtendedContactDetails"
+     * Test "GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription"
      */
-    public function testGetExtendedContactDetails()
+    public function testGetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "eventTime"
      */
-    public function testPropertyEmail()
+    public function testPropertyEventTime()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "ip"
      */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "emailBlacklisted"
-     */
-    public function testPropertyEmailBlacklisted()
-    {
-    }
-
-    /**
-     * Test attribute "smsBlacklisted"
-     */
-    public function testPropertySmsBlacklisted()
-    {
-    }
-
-    /**
-     * Test attribute "modifiedAt"
-     */
-    public function testPropertyModifiedAt()
-    {
-    }
-
-    /**
-     * Test attribute "listIds"
-     */
-    public function testPropertyListIds()
-    {
-    }
-
-    /**
-     * Test attribute "listUnsubscribed"
-     */
-    public function testPropertyListUnsubscribed()
-    {
-    }
-
-    /**
-     * Test attribute "attributes"
-     */
-    public function testPropertyAttributes()
-    {
-    }
-
-    /**
-     * Test attribute "statistics"
-     */
-    public function testPropertyStatistics()
+    public function testPropertyIp()
     {
     }
 }
