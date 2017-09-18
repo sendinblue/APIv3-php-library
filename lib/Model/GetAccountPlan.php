@@ -56,7 +56,7 @@ class GetAccountPlan implements ArrayAccess
     protected static $swaggerTypes = [
         'type' => 'string',
         'creditsType' => 'string',
-        'credits' => 'int'
+        'credits' => 'float'
     ];
 
     /**
@@ -66,7 +66,7 @@ class GetAccountPlan implements ArrayAccess
     protected static $swaggerFormats = [
         'type' => null,
         'creditsType' => null,
-        'credits' => 'int32'
+        'credits' => 'float'
     ];
 
     public static function swaggerTypes()
@@ -312,7 +312,7 @@ class GetAccountPlan implements ArrayAccess
 
     /**
      * Gets credits
-     * @return int
+     * @return float
      */
     public function getCredits()
     {
@@ -321,7 +321,7 @@ class GetAccountPlan implements ArrayAccess
 
     /**
      * Sets credits
-     * @param int $credits Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.
+     * @param float $credits Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.
      * @return $this
      */
     public function setCredits($credits)

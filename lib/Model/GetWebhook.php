@@ -220,15 +220,15 @@ class GetWebhook implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             $invalid_properties[] = "'createdAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['createdAt'])) {
-            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.";
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
+            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
         }
 
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['modifiedAt'])) {
-            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.";
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
+            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
         }
 
         return $invalid_properties;
@@ -265,13 +265,13 @@ class GetWebhook implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['createdAt'])) {
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
             return false;
         }
         if ($this->container['modifiedAt'] === null) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['modifiedAt'])) {
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
             return false;
         }
         return true;
@@ -403,14 +403,14 @@ class GetWebhook implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param string $createdAt Creation date of the webhook (YYYY-MM-DD)
+     * @param string $createdAt Creation date of the webhook (YYYY-MM-DD HH:mm:ss)
      * @return $this
      */
     public function setCreatedAt($createdAt)
     {
 
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $createdAt))) {
-            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetWebhook., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.");
+        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $createdAt))) {
+            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetWebhook., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
         }
 
         $this->container['createdAt'] = $createdAt;
@@ -429,14 +429,14 @@ class GetWebhook implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param string $modifiedAt Last modification date of the webhook (YYYY-MM-DD)
+     * @param string $modifiedAt Last modification date of the webhook (YYYY-MM-DD HH:mm:ss)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)
     {
 
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $modifiedAt))) {
-            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetWebhook., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.");
+        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $modifiedAt))) {
+            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetWebhook., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
         }
 
         $this->container['modifiedAt'] = $modifiedAt;
