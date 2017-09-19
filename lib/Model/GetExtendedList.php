@@ -204,8 +204,8 @@ class GetExtendedList implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             $invalid_properties[] = "'createdAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['createdAt'])) {
-            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.";
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
+            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
         }
 
         return $invalid_properties;
@@ -238,7 +238,7 @@ class GetExtendedList implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $this->container['createdAt'])) {
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
             return false;
         }
         return true;
@@ -361,14 +361,14 @@ class GetExtendedList implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param string $createdAt Creation Date of the list (YYYY-MM-DD)
+     * @param string $createdAt Creation Date of the list (YYYY-MM-DD HH:mm:ss)
      * @return $this
      */
     public function setCreatedAt($createdAt)
     {
 
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/", $createdAt))) {
-            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetExtendedList., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2})?$/.");
+        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $createdAt))) {
+            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetExtendedList., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
         }
 
         $this->container['createdAt'] = $createdAt;

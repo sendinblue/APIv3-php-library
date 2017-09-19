@@ -54,8 +54,8 @@ class GetLists implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'count' => 'int',
-        'lists' => '\SendinBlue\Client\Model\GetListsLists[]'
+        'lists' => 'object[]',
+        'count' => 'int'
     ];
 
     /**
@@ -63,8 +63,8 @@ class GetLists implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'count' => 'int32',
-        'lists' => null
+        'lists' => null,
+        'count' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -82,8 +82,8 @@ class GetLists implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'count' => 'count',
-        'lists' => 'lists'
+        'lists' => 'lists',
+        'count' => 'count'
     ];
 
 
@@ -92,8 +92,8 @@ class GetLists implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'count' => 'setCount',
-        'lists' => 'setLists'
+        'lists' => 'setLists',
+        'count' => 'setCount'
     ];
 
 
@@ -102,8 +102,8 @@ class GetLists implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'count' => 'getCount',
-        'lists' => 'getLists'
+        'lists' => 'getLists',
+        'count' => 'getCount'
     ];
 
     public static function attributeMap()
@@ -137,8 +137,8 @@ class GetLists implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['lists'] = isset($data['lists']) ? $data['lists'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
     }
 
     /**
@@ -150,11 +150,11 @@ class GetLists implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['count'] === null) {
-            $invalid_properties[] = "'count' can't be null";
-        }
         if ($this->container['lists'] === null) {
             $invalid_properties[] = "'lists' can't be null";
+        }
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
         }
         return $invalid_properties;
     }
@@ -168,15 +168,36 @@ class GetLists implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['count'] === null) {
+        if ($this->container['lists'] === null) {
             return false;
         }
-        if ($this->container['lists'] === null) {
+        if ($this->container['count'] === null) {
             return false;
         }
         return true;
     }
 
+
+    /**
+     * Gets lists
+     * @return object[]
+     */
+    public function getLists()
+    {
+        return $this->container['lists'];
+    }
+
+    /**
+     * Sets lists
+     * @param object[] $lists Listing of all the lists available in your account
+     * @return $this
+     */
+    public function setLists($lists)
+    {
+        $this->container['lists'] = $lists;
+
+        return $this;
+    }
 
     /**
      * Gets count
@@ -195,27 +216,6 @@ class GetLists implements ArrayAccess
     public function setCount($count)
     {
         $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets lists
-     * @return \SendinBlue\Client\Model\GetListsLists[]
-     */
-    public function getLists()
-    {
-        return $this->container['lists'];
-    }
-
-    /**
-     * Sets lists
-     * @param \SendinBlue\Client\Model\GetListsLists[] $lists Listing of all the lists available in your account
-     * @return $this
-     */
-    public function setLists($lists)
-    {
-        $this->container['lists'] = $lists;
 
         return $this;
     }

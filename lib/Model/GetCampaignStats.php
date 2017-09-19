@@ -210,9 +210,6 @@ class GetCampaignStats implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['listId'] === null) {
-            $invalid_properties[] = "'listId' can't be null";
-        }
         if ($this->container['uniqueClicks'] === null) {
             $invalid_properties[] = "'uniqueClicks' can't be null";
         }
@@ -258,9 +255,6 @@ class GetCampaignStats implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['listId'] === null) {
-            return false;
-        }
         if ($this->container['uniqueClicks'] === null) {
             return false;
         }

@@ -92,7 +92,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'footer' => null,
         'sender' => null,
         'replyTo' => 'email',
-        'toField' => 'email',
+        'toField' => null,
         'htmlContent' => null,
         'shareLink' => 'url',
         'tag' => null,
@@ -347,9 +347,6 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if ($this->container['htmlContent'] === null) {
             $invalid_properties[] = "'htmlContent' can't be null";
         }
-        if ($this->container['shareLink'] === null) {
-            $invalid_properties[] = "'shareLink' can't be null";
-        }
         if ($this->container['tag'] === null) {
             $invalid_properties[] = "'tag' can't be null";
         }
@@ -421,9 +418,6 @@ class GetExtendedCampaignOverview implements ArrayAccess
             return false;
         }
         if ($this->container['htmlContent'] === null) {
-            return false;
-        }
-        if ($this->container['shareLink'] === null) {
             return false;
         }
         if ($this->container['tag'] === null) {

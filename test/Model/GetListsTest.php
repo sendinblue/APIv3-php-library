@@ -78,16 +78,16 @@ class GetListsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "lists"
      */
-    public function testPropertyCount()
+    public function testPropertyLists()
     {
     }
 
     /**
-     * Test attribute "lists"
+     * Test attribute "count"
      */
-    public function testPropertyLists()
+    public function testPropertyCount()
     {
     }
 }

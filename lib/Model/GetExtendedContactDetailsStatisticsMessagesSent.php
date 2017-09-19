@@ -55,7 +55,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'campaignId' => 'int',
-        'eventTime' => '\DateTime'
+        'eventTime' => 'string'
     ];
 
     /**
@@ -64,7 +64,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'campaignId' => 'int32',
-        'eventTime' => 'date-time'
+        'eventTime' => null
     ];
 
     public static function swaggerTypes()
@@ -156,6 +156,10 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
         if ($this->container['eventTime'] === null) {
             $invalid_properties[] = "'eventTime' can't be null";
         }
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['eventTime'])) {
+            $invalid_properties[] = "invalid value for 'eventTime', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
+        }
+
         return $invalid_properties;
     }
 
@@ -172,6 +176,9 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
             return false;
         }
         if ($this->container['eventTime'] === null) {
+            return false;
+        }
+        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['eventTime'])) {
             return false;
         }
         return true;
@@ -201,7 +208,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
 
     /**
      * Gets eventTime
-     * @return \DateTime
+     * @return string
      */
     public function getEventTime()
     {
@@ -210,11 +217,16 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ArrayAccess
 
     /**
      * Sets eventTime
-     * @param \DateTime $eventTime Date of the event
+     * @param string $eventTime Date of the event
      * @return $this
      */
     public function setEventTime($eventTime)
     {
+
+        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $eventTime))) {
+            throw new \InvalidArgumentException("invalid value for $eventTime when calling GetExtendedContactDetailsStatisticsMessagesSent., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
+        }
+
         $this->container['eventTime'] = $eventTime;
 
         return $this;

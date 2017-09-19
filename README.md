@@ -265,8 +265,6 @@ Class | Method | HTTP request | Description
  - [GetIpsFromSender](docs/Model/GetIpsFromSender.md)
  - [GetList](docs/Model/GetList.md)
  - [GetLists](docs/Model/GetLists.md)
- - [GetListsFolder](docs/Model/GetListsFolder.md)
- - [GetListsLists](docs/Model/GetListsLists.md)
  - [GetProcess](docs/Model/GetProcess.md)
  - [GetProcesses](docs/Model/GetProcesses.md)
  - [GetReports](docs/Model/GetReports.md)
