@@ -176,7 +176,7 @@ class SendersApi
      *
      * Delete a sender
      *
-     * @param string $senderId Id of the sender (required)
+     * @param int $senderId Id of the sender (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
@@ -191,7 +191,7 @@ class SendersApi
      *
      * Delete a sender
      *
-     * @param string $senderId Id of the sender (required)
+     * @param int $senderId Id of the sender (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -340,7 +340,7 @@ class SendersApi
      *
      * Return all the dedicated IPs for a sender
      *
-     * @param string $senderId Id of the sender (required)
+     * @param int $senderId Id of the sender (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetIpsFromSender
      */
@@ -355,7 +355,7 @@ class SendersApi
      *
      * Return all the dedicated IPs for a sender
      *
-     * @param string $senderId Id of the sender (required)
+     * @param int $senderId Id of the sender (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetIpsFromSender, HTTP status code, HTTP response headers (array of strings)
      */
@@ -524,7 +524,7 @@ class SendersApi
      *
      * Update a sender
      *
-     * @param string $senderId Id of the sender (required)
+     * @param int $senderId Id of the sender (required)
      * @param \SendinBlue\Client\Model\UpdateSender $sender sender&#39;s name (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -540,7 +540,7 @@ class SendersApi
      *
      * Update a sender
      *
-     * @param string $senderId Id of the sender (required)
+     * @param int $senderId Id of the sender (required)
      * @param \SendinBlue\Client\Model\UpdateSender $sender sender&#39;s name (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)

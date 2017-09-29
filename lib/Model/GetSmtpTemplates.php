@@ -63,7 +63,7 @@ class GetSmtpTemplates implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'count' => 'int32',
+        'count' => 'int64',
         'templates' => null
     ];
 

@@ -346,7 +346,7 @@ class GetSmsEventReportEvents implements ArrayAccess
 
     /**
      * Sets event
-     * @param string $event Event which occured
+     * @param string $event Event which occurred
      * @return $this
      */
     public function setEvent($event)
@@ -376,7 +376,7 @@ class GetSmsEventReportEvents implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason Reason of bounce (only availble if the event is hardbounce or softbounce)
+     * @param string $reason Reason of bounce (only available if the event is hardbounce or softbounce)
      * @return $this
      */
     public function setReason($reason)

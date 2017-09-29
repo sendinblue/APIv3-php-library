@@ -74,17 +74,17 @@ class GetAggregatedReport implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'range' => null,
-        'requests' => 'int32',
-        'delivered' => 'int32',
-        'hardBounces' => 'int32',
-        'softBounces' => 'int32',
-        'clicks' => 'int32',
-        'uniqueClicks' => 'int32',
-        'opens' => 'int32',
-        'uniqueOpens' => 'int32',
-        'spamReports' => 'int32',
-        'blocked' => 'int32',
-        'invalid' => 'int32'
+        'requests' => 'int64',
+        'delivered' => 'int64',
+        'hardBounces' => 'int64',
+        'softBounces' => 'int64',
+        'clicks' => 'int64',
+        'uniqueClicks' => 'int64',
+        'opens' => 'int64',
+        'uniqueOpens' => 'int64',
+        'spamReports' => 'int64',
+        'blocked' => 'int64',
+        'invalid' => 'int64'
     ];
 
     public static function swaggerTypes()

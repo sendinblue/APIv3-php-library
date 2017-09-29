@@ -56,7 +56,7 @@ class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
     protected static $swaggerTypes = [
         'campaignId' => 'int',
         'count' => 'int',
-        'eventTime' => 'string',
+        'eventTime' => '\DateTime',
         'ip' => 'string'
     ];
 
@@ -65,9 +65,9 @@ class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'campaignId' => 'int32',
-        'count' => 'int32',
-        'eventTime' => null,
+        'campaignId' => 'int64',
+        'count' => 'int64',
+        'eventTime' => 'date-time',
         'ip' => null
     ];
 
@@ -171,10 +171,6 @@ class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
         if ($this->container['eventTime'] === null) {
             $invalid_properties[] = "'eventTime' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['eventTime'])) {
-            $invalid_properties[] = "invalid value for 'eventTime', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         if ($this->container['ip'] === null) {
             $invalid_properties[] = "'ip' can't be null";
         }
@@ -197,9 +193,6 @@ class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
             return false;
         }
         if ($this->container['eventTime'] === null) {
-            return false;
-        }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['eventTime'])) {
             return false;
         }
         if ($this->container['ip'] === null) {
@@ -253,7 +246,7 @@ class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
 
     /**
      * Gets eventTime
-     * @return string
+     * @return \DateTime
      */
     public function getEventTime()
     {
@@ -262,16 +255,11 @@ class GetExtendedContactDetailsStatisticsOpened implements ArrayAccess
 
     /**
      * Sets eventTime
-     * @param string $eventTime Date of the event
+     * @param \DateTime $eventTime Date of the event
      * @return $this
      */
     public function setEventTime($eventTime)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $eventTime))) {
-            throw new \InvalidArgumentException("invalid value for $eventTime when calling GetExtendedContactDetailsStatisticsOpened., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['eventTime'] = $eventTime;
 
         return $this;

@@ -66,7 +66,7 @@ class CreateSenderIps implements ArrayAccess
     protected static $swaggerFormats = [
         'ip' => null,
         'domain' => null,
-        'weight' => 'int32'
+        'weight' => 'int64'
     ];
 
     public static function swaggerTypes()

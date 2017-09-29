@@ -58,7 +58,7 @@ class GetContactDetails implements ArrayAccess
         'id' => 'int',
         'emailBlacklisted' => 'bool',
         'smsBlacklisted' => 'bool',
-        'modifiedAt' => 'string',
+        'modifiedAt' => '\DateTime',
         'listIds' => 'int[]',
         'listUnsubscribed' => 'int[]',
         'attributes' => 'map[string,string]'
@@ -70,12 +70,12 @@ class GetContactDetails implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-        'id' => 'int32',
+        'id' => 'int64',
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
-        'modifiedAt' => null,
-        'listIds' => 'int32',
-        'listUnsubscribed' => 'int32',
+        'modifiedAt' => 'date-time',
+        'listIds' => 'int64',
+        'listUnsubscribed' => 'int64',
         'attributes' => null
     ];
 
@@ -201,10 +201,6 @@ class GetContactDetails implements ArrayAccess
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
-            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         if ($this->container['listIds'] === null) {
             $invalid_properties[] = "'listIds' can't be null";
         }
@@ -236,9 +232,6 @@ class GetContactDetails implements ArrayAccess
             return false;
         }
         if ($this->container['modifiedAt'] === null) {
-            return false;
-        }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
             return false;
         }
         if ($this->container['listIds'] === null) {
@@ -337,7 +330,7 @@ class GetContactDetails implements ArrayAccess
 
     /**
      * Gets modifiedAt
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -346,16 +339,11 @@ class GetContactDetails implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param string $modifiedAt Last modification date of the contact (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $modifiedAt Last modification date of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $modifiedAt))) {
-            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetContactDetails., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;

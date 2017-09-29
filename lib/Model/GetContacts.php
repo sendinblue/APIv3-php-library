@@ -64,7 +64,7 @@ class GetContacts implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'contacts' => null,
-        'count' => 'int32'
+        'count' => 'int64'
     ];
 
     public static function swaggerTypes()

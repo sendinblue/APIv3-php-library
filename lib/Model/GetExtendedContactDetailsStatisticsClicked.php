@@ -63,7 +63,7 @@ class GetExtendedContactDetailsStatisticsClicked implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'campaignId' => 'int32',
+        'campaignId' => 'int64',
         'links' => null
     ];
 

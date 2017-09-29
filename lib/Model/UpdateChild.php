@@ -72,7 +72,7 @@ class UpdateChild implements ArrayAccess
         'lastName' => null,
         'companyName' => null,
         'password' => 'password',
-        'ips' => 'int32'
+        'ips' => 'int64'
     ];
 
     public static function swaggerTypes()

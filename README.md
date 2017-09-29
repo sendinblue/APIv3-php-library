@@ -191,7 +191,6 @@ Class | Method | HTTP request | Description
 
  - [AddCredits](docs/Model/AddCredits.md)
  - [AddRemoveContactToList](docs/Model/AddRemoveContactToList.md)
- - [CreaUpdateFolder](docs/Model/CreaUpdateFolder.md)
  - [CreateAttribute](docs/Model/CreateAttribute.md)
  - [CreateAttributeEnumemaration](docs/Model/CreateAttributeEnumemaration.md)
  - [CreateChild](docs/Model/CreateChild.md)
@@ -209,6 +208,7 @@ Class | Method | HTTP request | Description
  - [CreateSmtpEmail](docs/Model/CreateSmtpEmail.md)
  - [CreateSmtpTemplate](docs/Model/CreateSmtpTemplate.md)
  - [CreateSmtpTemplateSender](docs/Model/CreateSmtpTemplateSender.md)
+ - [CreateUpdateFolder](docs/Model/CreateUpdateFolder.md)
  - [CreateWebhook](docs/Model/CreateWebhook.md)
  - [CreatedProcessId](docs/Model/CreatedProcessId.md)
  - [DeleteHardbounces](docs/Model/DeleteHardbounces.md)

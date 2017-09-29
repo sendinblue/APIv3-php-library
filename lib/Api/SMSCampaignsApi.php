@@ -180,7 +180,7 @@ class SMSCampaignsApi
      *
      * Delete the SMS campaign
      *
-     * @param string $campaignId id of the SMS campaign (required)
+     * @param int $campaignId id of the SMS campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
@@ -195,7 +195,7 @@ class SMSCampaignsApi
      *
      * Delete the SMS campaign
      *
-     * @param string $campaignId id of the SMS campaign (required)
+     * @param int $campaignId id of the SMS campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -370,7 +370,7 @@ class SMSCampaignsApi
      *
      * Get a SMS campaign
      *
-     * @param string $campaignId id of the SMS campaign (required)
+     * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetSmsCampaign
@@ -386,7 +386,7 @@ class SMSCampaignsApi
      *
      * Get a SMS campaign
      *
-     * @param string $campaignId id of the SMS campaign (required)
+     * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetSmsCampaign, HTTP status code, HTTP response headers (array of strings)
@@ -476,7 +476,7 @@ class SMSCampaignsApi
      *
      * Exports the recipients of the specified campaign.
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @param \SendinBlue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\CreatedProcessId
@@ -492,7 +492,7 @@ class SMSCampaignsApi
      *
      * Exports the recipients of the specified campaign.
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @param \SendinBlue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
@@ -578,7 +578,7 @@ class SMSCampaignsApi
      *
      * Send your SMS campaign immediately
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
@@ -593,7 +593,7 @@ class SMSCampaignsApi
      *
      * Send your SMS campaign immediately
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -673,7 +673,7 @@ class SMSCampaignsApi
      *
      * Send report of SMS campaigns
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @param \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -689,7 +689,7 @@ class SMSCampaignsApi
      *
      * Send report of SMS campaigns
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @param \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
@@ -775,7 +775,7 @@ class SMSCampaignsApi
      *
      * Send an SMS
      *
-     * @param string $campaignId Id of the SMS campaign (required)
+     * @param int $campaignId Id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -791,7 +791,7 @@ class SMSCampaignsApi
      *
      * Send an SMS
      *
-     * @param string $campaignId Id of the SMS campaign (required)
+     * @param int $campaignId Id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
@@ -877,7 +877,7 @@ class SMSCampaignsApi
      *
      * Update the campaign status
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -893,7 +893,7 @@ class SMSCampaignsApi
      *
      * Update the campaign status
      *
-     * @param string $campaignId id of the campaign (required)
+     * @param int $campaignId id of the campaign (required)
      * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
@@ -979,7 +979,7 @@ class SMSCampaignsApi
      *
      * Updates a SMS campaign
      *
-     * @param string $campaignId id of the SMS campaign (required)
+     * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -995,7 +995,7 @@ class SMSCampaignsApi
      *
      * Updates a SMS campaign
      *
-     * @param string $campaignId id of the SMS campaign (required)
+     * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)

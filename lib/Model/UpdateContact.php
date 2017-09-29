@@ -69,8 +69,8 @@ class UpdateContact implements ArrayAccess
         'attributes' => null,
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
-        'listIds' => 'int32',
-        'unlinkListIds' => 'int32'
+        'listIds' => 'int64',
+        'unlinkListIds' => 'int64'
     ];
 
     public static function swaggerTypes()

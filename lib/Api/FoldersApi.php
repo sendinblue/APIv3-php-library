@@ -92,13 +92,13 @@ class FoldersApi
      *
      * Create a folder
      *
-     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @param \SendinBlue\Client\Model\CreateUpdateFolder $createFolder Name of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\CreateModel
      */
-    public function createFolder($name)
+    public function createFolder($createFolder)
     {
-        list($response) = $this->createFolderWithHttpInfo($name);
+        list($response) = $this->createFolderWithHttpInfo($createFolder);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class FoldersApi
      *
      * Create a folder
      *
-     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @param \SendinBlue\Client\Model\CreateUpdateFolder $createFolder Name of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFolderWithHttpInfo($name)
+    public function createFolderWithHttpInfo($createFolder)
     {
-        // verify the required parameter 'name' is set
-        if ($name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling createFolder');
+        // verify the required parameter 'createFolder' is set
+        if ($createFolder === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createFolder when calling createFolder');
         }
         // parse inputs
         $resourcePath = "/contacts/folders";
@@ -131,8 +131,8 @@ class FoldersApi
 
         // body params
         $_tempBody = null;
-        if (isset($name)) {
-            $_tempBody = $name;
+        if (isset($createFolder)) {
+            $_tempBody = $createFolder;
         }
 
         // for model (json/xml)
@@ -180,7 +180,7 @@ class FoldersApi
      *
      * Delete a folder (and all its lists)
      *
-     * @param string $folderId Id of the folder (required)
+     * @param int $folderId Id of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
@@ -195,7 +195,7 @@ class FoldersApi
      *
      * Delete a folder (and all its lists)
      *
-     * @param string $folderId Id of the folder (required)
+     * @param int $folderId Id of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -271,7 +271,7 @@ class FoldersApi
      *
      * Returns folder details
      *
-     * @param string $folderId id of the folder (required)
+     * @param int $folderId id of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetFolder
      */
@@ -286,7 +286,7 @@ class FoldersApi
      *
      * Returns folder details
      *
-     * @param string $folderId id of the folder (required)
+     * @param int $folderId id of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetFolder, HTTP status code, HTTP response headers (array of strings)
      */
@@ -366,7 +366,7 @@ class FoldersApi
      *
      * Get the lists in a folder
      *
-     * @param string $folderId Id of the folder (required)
+     * @param int $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -383,7 +383,7 @@ class FoldersApi
      *
      * Get the lists in a folder
      *
-     * @param string $folderId Id of the folder (required)
+     * @param int $folderId Id of the folder (required)
      * @param int $limit Number of documents per page (optional, default to 10)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -578,14 +578,14 @@ class FoldersApi
      *
      * Update a contact folder
      *
-     * @param string $folderId Id of the folder (required)
-     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @param int $folderId Id of the folder (required)
+     * @param \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateFolder($folderId, $name)
+    public function updateFolder($folderId, $updateFolder)
     {
-        list($response) = $this->updateFolderWithHttpInfo($folderId, $name);
+        list($response) = $this->updateFolderWithHttpInfo($folderId, $updateFolder);
         return $response;
     }
 
@@ -594,20 +594,20 @@ class FoldersApi
      *
      * Update a contact folder
      *
-     * @param string $folderId Id of the folder (required)
-     * @param \SendinBlue\Client\Model\CreaUpdateFolder $name Name of the folder (required)
+     * @param int $folderId Id of the folder (required)
+     * @param \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateFolderWithHttpInfo($folderId, $name)
+    public function updateFolderWithHttpInfo($folderId, $updateFolder)
     {
         // verify the required parameter 'folderId' is set
         if ($folderId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $folderId when calling updateFolder');
         }
-        // verify the required parameter 'name' is set
-        if ($name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling updateFolder');
+        // verify the required parameter 'updateFolder' is set
+        if ($updateFolder === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateFolder when calling updateFolder');
         }
         // parse inputs
         $resourcePath = "/contacts/folders/{folderId}";
@@ -631,8 +631,8 @@ class FoldersApi
         }
         // body params
         $_tempBody = null;
-        if (isset($name)) {
-            $_tempBody = $name;
+        if (isset($updateFolder)) {
+            $_tempBody = $updateFolder;
         }
 
         // for model (json/xml)

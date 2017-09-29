@@ -1,4 +1,4 @@
-# CreaUpdateFolder
+# CreateUpdateFolder
 
 ## Properties
 Name | Type | Description | Notes

@@ -70,7 +70,7 @@ class CreateContact implements ArrayAccess
         'attributes' => null,
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
-        'listIds' => 'int32'
+        'listIds' => 'int64'
     ];
 
     public static function swaggerTypes()

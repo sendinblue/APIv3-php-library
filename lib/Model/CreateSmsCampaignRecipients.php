@@ -63,8 +63,8 @@ class CreateSmsCampaignRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'listIds' => 'int32',
-        'exclusionListIds' => 'int32'
+        'listIds' => 'int64',
+        'exclusionListIds' => 'int64'
     ];
 
     public static function swaggerTypes()

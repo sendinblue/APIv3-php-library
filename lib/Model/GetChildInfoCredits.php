@@ -64,8 +64,8 @@ class GetChildInfoCredits implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emailCredits' => 'int32',
-        'smsCredits' => 'int32'
+        'emailCredits' => 'int64',
+        'smsCredits' => 'int64'
     ];
 
     public static function swaggerTypes()

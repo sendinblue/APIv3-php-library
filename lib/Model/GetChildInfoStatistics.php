@@ -65,9 +65,9 @@ class GetChildInfoStatistics implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'previousMonthTotalSent' => 'int32',
-        'currentMonthTotalSent' => 'int32',
-        'totalSent' => 'int32'
+        'previousMonthTotalSent' => 'int64',
+        'currentMonthTotalSent' => 'int64',
+        'totalSent' => 'int64'
     ];
 
     public static function swaggerTypes()

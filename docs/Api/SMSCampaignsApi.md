@@ -80,7 +80,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the SMS campaign
+$campaignId = 789; // int | id of the SMS campaign
 
 try {
     $api_instance->deleteSMSCampaigns($campaignId);
@@ -94,7 +94,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the SMS campaign |
+ **campaignId** | **int**| id of the SMS campaign |
 
 ### Return type
 
@@ -179,7 +179,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the SMS campaign
+$campaignId = 789; // int | id of the SMS campaign
 $getSmsCampaign = new \SendinBlue\Client\Model\GetSmsCampaign(); // \SendinBlue\Client\Model\GetSmsCampaign | Values to update an SMS Campaign
 
 try {
@@ -195,7 +195,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the SMS campaign |
+ **campaignId** | **int**| id of the SMS campaign |
  **getSmsCampaign** | [**\SendinBlue\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type
@@ -231,7 +231,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the campaign
+$campaignId = 789; // int | id of the campaign
 $recipientExport = new \SendinBlue\Client\Model\RequestSMSRecipientExport(); // \SendinBlue\Client\Model\RequestSMSRecipientExport | Values to send for a recipient export request
 
 try {
@@ -247,7 +247,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the campaign |
+ **campaignId** | **int**| id of the campaign |
  **recipientExport** | [**\SendinBlue\Client\Model\RequestSMSRecipientExport**](../Model/RequestSMSRecipientExport.md)| Values to send for a recipient export request | [optional]
 
 ### Return type
@@ -281,7 +281,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the campaign
+$campaignId = 789; // int | id of the campaign
 
 try {
     $api_instance->sendSMSCampaignNow($campaignId);
@@ -295,7 +295,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the campaign |
+ **campaignId** | **int**| id of the campaign |
 
 ### Return type
 
@@ -330,7 +330,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the campaign
+$campaignId = 789; // int | id of the campaign
 $sendReport = new \SendinBlue\Client\Model\SendReport(); // \SendinBlue\Client\Model\SendReport | Values for send a report
 
 try {
@@ -345,7 +345,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the campaign |
+ **campaignId** | **int**| id of the campaign |
  **sendReport** | [**\SendinBlue\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
 
 ### Return type
@@ -379,7 +379,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the SMS campaign
+$campaignId = 789; // int | Id of the SMS campaign
 $sendTestSms = new \SendinBlue\Client\Model\SendTestSms(); // \SendinBlue\Client\Model\SendTestSms | Mobile number to which send the test
 
 try {
@@ -394,7 +394,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the SMS campaign |
+ **campaignId** | **int**| Id of the SMS campaign |
  **sendTestSms** | [**\SendinBlue\Client\Model\SendTestSms**](../Model/SendTestSms.md)| Mobile number to which send the test |
 
 ### Return type
@@ -428,7 +428,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the campaign
+$campaignId = 789; // int | id of the campaign
 $status = new \SendinBlue\Client\Model\UpdateCampaignStatus(); // \SendinBlue\Client\Model\UpdateCampaignStatus | Status of the campaign.
 
 try {
@@ -443,7 +443,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the campaign |
+ **campaignId** | **int**| id of the campaign |
  **status** | [**\SendinBlue\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign. |
 
 ### Return type
@@ -477,7 +477,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the SMS campaign
+$campaignId = 789; // int | id of the SMS campaign
 $updateSmsCampaign = new \SendinBlue\Client\Model\UpdateSmsCampaign(); // \SendinBlue\Client\Model\UpdateSmsCampaign | Values to update an SMS Campaign
 
 try {
@@ -492,7 +492,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the SMS campaign |
+ **campaignId** | **int**| id of the SMS campaign |
  **updateSmsCampaign** | [**\SendinBlue\Client\Model\UpdateSmsCampaign**](../Model/UpdateSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type

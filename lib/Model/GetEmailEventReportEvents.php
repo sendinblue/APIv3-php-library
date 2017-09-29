@@ -383,7 +383,7 @@ class GetEmailEventReportEvents implements ArrayAccess
 
     /**
      * Sets event
-     * @param string $event Event which occured
+     * @param string $event Event which occurred
      * @return $this
      */
     public function setEvent($event)
@@ -413,7 +413,7 @@ class GetEmailEventReportEvents implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason Reason of bounce (only availble if the event is hardbounce or softbounce)
+     * @param string $reason Reason of bounce (only available if the event is hardbounce or softbounce)
      * @return $this
      */
     public function setReason($reason)
@@ -455,7 +455,7 @@ class GetEmailEventReportEvents implements ArrayAccess
 
     /**
      * Sets ip
-     * @param string $ip IP from which the user has opened the email or clicked on the link (only availble if the event is opened or clicks)
+     * @param string $ip IP from which the user has opened the email or clicked on the link (only available if the event is opened or clicks)
      * @return $this
      */
     public function setIp($ip)
@@ -476,7 +476,7 @@ class GetEmailEventReportEvents implements ArrayAccess
 
     /**
      * Sets link
-     * @param string $link The link which is sent to the user (only availble if the event is requests or opened or clicks)
+     * @param string $link The link which is sent to the user (only available if the event is requests or opened or clicks)
      * @return $this
      */
     public function setLink($link)

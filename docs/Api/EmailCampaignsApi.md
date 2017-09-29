@@ -80,7 +80,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | id of the campaign
+$campaignId = 789; // int | id of the campaign
 
 try {
     $api_instance->deleteEmailCampaigns($campaignId);
@@ -94,7 +94,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| id of the campaign |
+ **campaignId** | **int**| id of the campaign |
 
 ### Return type
 
@@ -127,7 +127,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 $recipientExport = new \SendinBlue\Client\Model\EmailExportRecipients(); // \SendinBlue\Client\Model\EmailExportRecipients | Values to send for a recipient export request
 
 try {
@@ -143,7 +143,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
  **recipientExport** | [**\SendinBlue\Client\Model\EmailExportRecipients**](../Model/EmailExportRecipients.md)| Values to send for a recipient export request | [optional]
 
 ### Return type
@@ -177,7 +177,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 
 try {
     $result = $api_instance->getEmailCampaign($campaignId);
@@ -192,7 +192,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
 
 ### Return type
 
@@ -279,7 +279,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 
 try {
     $api_instance->sendEmailCampaignNow($campaignId);
@@ -293,7 +293,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
 
 ### Return type
 
@@ -328,7 +328,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 $sendReport = new \SendinBlue\Client\Model\SendReport(); // \SendinBlue\Client\Model\SendReport | Values for send a report
 
 try {
@@ -343,7 +343,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
  **sendReport** | [**\SendinBlue\Client\Model\SendReport**](../Model/SendReport.md)| Values for send a report |
 
 ### Return type
@@ -377,7 +377,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 $emailTo = new \SendinBlue\Client\Model\SendTestEmail(); // \SendinBlue\Client\Model\SendTestEmail | 
 
 try {
@@ -392,7 +392,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
  **emailTo** | [**\SendinBlue\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
 
 ### Return type
@@ -426,7 +426,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 $status = new \SendinBlue\Client\Model\UpdateCampaignStatus(); // \SendinBlue\Client\Model\UpdateCampaignStatus | Status of the campaign
 
 try {
@@ -441,7 +441,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
  **status** | [**\SendinBlue\Client\Model\UpdateCampaignStatus**](../Model/UpdateCampaignStatus.md)| Status of the campaign |
 
 ### Return type
@@ -475,7 +475,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
-$campaignId = "campaignId_example"; // string | Id of the campaign
+$campaignId = 789; // int | Id of the campaign
 $emailCampaign = new \SendinBlue\Client\Model\UpdateEmailCampaign(); // \SendinBlue\Client\Model\UpdateEmailCampaign | Values to update a campaign
 
 try {
@@ -490,7 +490,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignId** | **string**| Id of the campaign |
+ **campaignId** | **int**| Id of the campaign |
  **emailCampaign** | [**\SendinBlue\Client\Model\UpdateEmailCampaign**](../Model/UpdateEmailCampaign.md)| Values to update a campaign |
 
 ### Return type

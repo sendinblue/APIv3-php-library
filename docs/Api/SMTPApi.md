@@ -193,7 +193,7 @@ $email = "email_example"; // string | Filter the report for a specific email add
 $event = "event_example"; // string | Filter the report for a specific event type
 $tags = "tags_example"; // string | Filter the report for tags (serialized and urlencoded array)
 $messageId = "messageId_example"; // string | Filter on a specific message id
-$templateId = "templateId_example"; // string | Filter on a specific template id
+$templateId = 789; // int | Filter on a specific template id
 
 try {
     $result = $api_instance->getEmailEventReport($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId);
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
  **event** | **string**| Filter the report for a specific event type | [optional]
  **tags** | **string**| Filter the report for tags (serialized and urlencoded array) | [optional]
  **messageId** | **string**| Filter on a specific message id | [optional]
- **templateId** | **string**| Filter on a specific template id | [optional]
+ **templateId** | **int**| Filter on a specific template id | [optional]
 
 ### Return type
 
@@ -308,7 +308,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMTPApi();
-$templateId = "templateId_example"; // string | id of the template
+$templateId = 789; // int | id of the template
 
 try {
     $result = $api_instance->getSmtpTemplate($templateId);
@@ -323,7 +323,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateId** | **string**| id of the template |
+ **templateId** | **int**| id of the template |
 
 ### Return type
 
@@ -408,7 +408,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMTPApi();
-$templateId = "templateId_example"; // string | Id of the template
+$templateId = 789; // int | Id of the template
 $sendEmail = new \SendinBlue\Client\Model\SendEmail(); // \SendinBlue\Client\Model\SendEmail | 
 
 try {
@@ -424,7 +424,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateId** | **string**| Id of the template |
+ **templateId** | **int**| Id of the template |
  **sendEmail** | [**\SendinBlue\Client\Model\SendEmail**](../Model/SendEmail.md)|  |
 
 ### Return type
@@ -458,7 +458,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMTPApi();
-$templateId = "templateId_example"; // string | Id of the template
+$templateId = 789; // int | Id of the template
 $sendTestEmail = new \SendinBlue\Client\Model\SendTestEmail(); // \SendinBlue\Client\Model\SendTestEmail | 
 
 try {
@@ -473,7 +473,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateId** | **string**| Id of the template |
+ **templateId** | **int**| Id of the template |
  **sendTestEmail** | [**\SendinBlue\Client\Model\SendTestEmail**](../Model/SendTestEmail.md)|  |
 
 ### Return type
@@ -555,7 +555,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SMTPApi();
-$templateId = "templateId_example"; // string | id of the template
+$templateId = 789; // int | id of the template
 $smtpTemplate = new \SendinBlue\Client\Model\UpdateSmtpTemplate(); // \SendinBlue\Client\Model\UpdateSmtpTemplate | values to update in smtp template
 
 try {
@@ -570,7 +570,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateId** | **string**| id of the template |
+ **templateId** | **int**| id of the template |
  **smtpTemplate** | [**\SendinBlue\Client\Model\UpdateSmtpTemplate**](../Model/UpdateSmtpTemplate.md)| values to update in smtp template |
 
 ### Return type

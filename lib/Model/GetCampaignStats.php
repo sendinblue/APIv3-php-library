@@ -73,18 +73,18 @@ class GetCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'listId' => 'int32',
-        'uniqueClicks' => 'int32',
-        'clickers' => 'int32',
-        'complaints' => 'int32',
-        'delivered' => 'int32',
-        'sent' => 'int32',
-        'softBounces' => 'int32',
-        'hardBounces' => 'int32',
-        'uniqueViews' => 'int32',
-        'unsubscriptions' => 'int32',
-        'viewed' => 'int32',
-        'deferred' => 'int32'
+        'listId' => 'int64',
+        'uniqueClicks' => 'int64',
+        'clickers' => 'int64',
+        'complaints' => 'int64',
+        'delivered' => 'int64',
+        'sent' => 'int64',
+        'softBounces' => 'int64',
+        'hardBounces' => 'int64',
+        'uniqueViews' => 'int64',
+        'unsubscriptions' => 'int64',
+        'viewed' => 'int64',
+        'deferred' => 'int64'
     ];
 
     public static function swaggerTypes()

@@ -370,7 +370,7 @@ class SMTPApi
      * @param string $event Filter the report for a specific event type (optional)
      * @param string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param string $messageId Filter on a specific message id (optional)
-     * @param string $templateId Filter on a specific template id (optional)
+     * @param int $templateId Filter on a specific template id (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetEmailEventReport
      */
@@ -394,7 +394,7 @@ class SMTPApi
      * @param string $event Filter the report for a specific event type (optional)
      * @param string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param string $messageId Filter on a specific message id (optional)
-     * @param string $templateId Filter on a specific template id (optional)
+     * @param int $templateId Filter on a specific template id (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetEmailEventReport, HTTP status code, HTTP response headers (array of strings)
      */
@@ -619,7 +619,7 @@ class SMTPApi
      *
      * Returns the template informations
      *
-     * @param string $templateId id of the template (required)
+     * @param int $templateId id of the template (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetSmtpTemplateOverview
      */
@@ -634,7 +634,7 @@ class SMTPApi
      *
      * Returns the template informations
      *
-     * @param string $templateId id of the template (required)
+     * @param int $templateId id of the template (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetSmtpTemplateOverview, HTTP status code, HTTP response headers (array of strings)
      */
@@ -813,7 +813,7 @@ class SMTPApi
      *
      * Send a template
      *
-     * @param string $templateId Id of the template (required)
+     * @param int $templateId Id of the template (required)
      * @param \SendinBlue\Client\Model\SendEmail $sendEmail  (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\SendTemplateEmail
@@ -829,7 +829,7 @@ class SMTPApi
      *
      * Send a template
      *
-     * @param string $templateId Id of the template (required)
+     * @param int $templateId Id of the template (required)
      * @param \SendinBlue\Client\Model\SendEmail $sendEmail  (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\SendTemplateEmail, HTTP status code, HTTP response headers (array of strings)
@@ -919,7 +919,7 @@ class SMTPApi
      *
      * Send a template to your test list
      *
-     * @param string $templateId Id of the template (required)
+     * @param int $templateId Id of the template (required)
      * @param \SendinBlue\Client\Model\SendTestEmail $sendTestEmail  (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -935,7 +935,7 @@ class SMTPApi
      *
      * Send a template to your test list
      *
-     * @param string $templateId Id of the template (required)
+     * @param int $templateId Id of the template (required)
      * @param \SendinBlue\Client\Model\SendTestEmail $sendTestEmail  (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
@@ -1109,7 +1109,7 @@ class SMTPApi
      *
      * Updates an smtp templates
      *
-     * @param string $templateId id of the template (required)
+     * @param int $templateId id of the template (required)
      * @param \SendinBlue\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in smtp template (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -1125,7 +1125,7 @@ class SMTPApi
      *
      * Updates an smtp templates
      *
-     * @param string $templateId id of the template (required)
+     * @param int $templateId id of the template (required)
      * @param \SendinBlue\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in smtp template (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)

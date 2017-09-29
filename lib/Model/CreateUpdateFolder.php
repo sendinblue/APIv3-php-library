@@ -1,6 +1,6 @@
 <?php
 /**
- * CreaUpdateFolder
+ * CreateUpdateFolder
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * CreaUpdateFolder Class Doc Comment
+ * CreateUpdateFolder Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreaUpdateFolder implements ArrayAccess
+class CreateUpdateFolder implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class CreaUpdateFolder implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'creaUpdateFolder';
+    protected static $swaggerModelName = 'createUpdateFolder';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -58,11 +58,11 @@ class GetSmsCampaign implements ArrayAccess
         'name' => 'string',
         'status' => 'string',
         'content' => 'string',
-        'scheduledAt' => 'string',
+        'scheduledAt' => '\DateTime',
         'testSent' => 'bool',
         'sender' => 'string',
-        'createdAt' => 'string',
-        'modifiedAt' => 'string'
+        'createdAt' => '\DateTime',
+        'modifiedAt' => '\DateTime'
     ];
 
     /**
@@ -70,15 +70,15 @@ class GetSmsCampaign implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'name' => null,
         'status' => null,
         'content' => null,
-        'scheduledAt' => null,
+        'scheduledAt' => 'date-time',
         'testSent' => null,
         'sender' => null,
-        'createdAt' => null,
-        'modifiedAt' => null
+        'createdAt' => 'date-time',
+        'modifiedAt' => 'date-time'
     ];
 
     public static function swaggerTypes()
@@ -237,10 +237,6 @@ class GetSmsCampaign implements ArrayAccess
         if ($this->container['scheduledAt'] === null) {
             $invalid_properties[] = "'scheduledAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
-            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         if ($this->container['testSent'] === null) {
             $invalid_properties[] = "'testSent' can't be null";
         }
@@ -250,17 +246,9 @@ class GetSmsCampaign implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             $invalid_properties[] = "'createdAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
-            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
-            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -292,9 +280,6 @@ class GetSmsCampaign implements ArrayAccess
         if ($this->container['scheduledAt'] === null) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
-            return false;
-        }
         if ($this->container['testSent'] === null) {
             return false;
         }
@@ -304,13 +289,7 @@ class GetSmsCampaign implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
-            return false;
-        }
         if ($this->container['modifiedAt'] === null) {
-            return false;
-        }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
             return false;
         }
         return true;
@@ -412,7 +391,7 @@ class GetSmsCampaign implements ArrayAccess
 
     /**
      * Gets scheduledAt
-     * @return string
+     * @return \DateTime
      */
     public function getScheduledAt()
     {
@@ -421,16 +400,11 @@ class GetSmsCampaign implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param string $scheduledAt Date on which SMS campaign is scheduled. Should be in YYYY-MM-DD HH:mm:ss format
+     * @param \DateTime $scheduledAt Date on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $scheduledAt))) {
-            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling GetSmsCampaign., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
@@ -480,7 +454,7 @@ class GetSmsCampaign implements ArrayAccess
 
     /**
      * Gets createdAt
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -489,16 +463,11 @@ class GetSmsCampaign implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param string $createdAt Creation date of the SMS campaign (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $createdAt Creation date of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $createdAt))) {
-            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetSmsCampaign., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['createdAt'] = $createdAt;
 
         return $this;
@@ -506,7 +475,7 @@ class GetSmsCampaign implements ArrayAccess
 
     /**
      * Gets modifiedAt
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -515,16 +484,11 @@ class GetSmsCampaign implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param string $modifiedAt Date of last modification of the SMS campaign (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $modifiedAt Date of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $modifiedAt))) {
-            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetSmsCampaign., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;

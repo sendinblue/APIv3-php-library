@@ -63,8 +63,8 @@ class RemainingCreditModelReseller implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'sms' => 'int32',
-        'email' => 'int32'
+        'sms' => 'int64',
+        'email' => 'int64'
     ];
 
     public static function swaggerTypes()

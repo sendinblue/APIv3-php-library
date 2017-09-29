@@ -31,7 +31,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 $addCredits = new \SendinBlue\Client\Model\AddCredits(); // \SendinBlue\Client\Model\AddCredits | Values to post to add credit to a specific child account
 
 try {
@@ -81,7 +81,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 $ipId = new \SendinBlue\Client\Model\ManageIp(); // \SendinBlue\Client\Model\ManageIp | IP's id
 
 try {
@@ -178,7 +178,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 
 try {
     $api_instance->deleteResellerChild($childId);
@@ -225,7 +225,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 $ipId = new \SendinBlue\Client\Model\ManageIp(); // \SendinBlue\Client\Model\ManageIp | IP's id
 
 try {
@@ -274,7 +274,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 
 try {
     $result = $api_instance->getChildInfo($childId);
@@ -366,7 +366,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 $removeCredits = new \SendinBlue\Client\Model\RemoveCredits(); // \SendinBlue\Client\Model\RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
 try {
@@ -416,7 +416,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ResellerApi();
-$childId = 56; // int | id of reseller's child
+$childId = 789; // int | id of reseller's child
 $resellerChild = new \SendinBlue\Client\Model\UpdateChild(); // \SendinBlue\Client\Model\UpdateChild | values to update in child profile
 
 try {

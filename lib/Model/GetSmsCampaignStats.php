@@ -68,13 +68,13 @@ class GetSmsCampaignStats implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'delivered' => 'int32',
-        'sent' => 'int32',
-        'processing' => 'int32',
-        'softBounces' => 'int32',
-        'hardBounces' => 'int32',
-        'unsubscriptions' => 'int32',
-        'answered' => 'int32'
+        'delivered' => 'int64',
+        'sent' => 'int64',
+        'processing' => 'int64',
+        'softBounces' => 'int64',
+        'hardBounces' => 'int64',
+        'unsubscriptions' => 'int64',
+        'answered' => 'int64'
     ];
 
     public static function swaggerTypes()

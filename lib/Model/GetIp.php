@@ -65,7 +65,7 @@ class GetIp implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'ip' => null,
         'active' => null,
         'domain' => null

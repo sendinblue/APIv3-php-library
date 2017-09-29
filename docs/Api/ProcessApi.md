@@ -24,7 +24,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ProcessApi();
-$processId = "processId_example"; // string | Id of the process
+$processId = 789; // int | Id of the process
 
 try {
     $result = $api_instance->getProcess($processId);
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **processId** | **string**| Id of the process |
+ **processId** | **int**| Id of the process |
 
 ### Return type
 
