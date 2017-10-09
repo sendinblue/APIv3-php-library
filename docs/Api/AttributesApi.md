@@ -73,7 +73,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\AttributesApi();
-$attributeId = "attributeId_example"; // string | id of the attribute
+$attributeId = 789; // int | id of the attribute
 
 try {
     $api_instance->deleteAttribute($attributeId);
@@ -87,7 +87,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attributeId** | **string**| id of the attribute |
+ **attributeId** | **int**| id of the attribute |
 
 ### Return type
 

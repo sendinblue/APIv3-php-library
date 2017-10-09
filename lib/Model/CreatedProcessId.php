@@ -62,7 +62,7 @@ class CreatedProcessId implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'processId' => 'int32'
+        'processId' => 'int64'
     ];
 
     public static function swaggerTypes()

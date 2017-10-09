@@ -56,7 +56,9 @@ class GetAccountPlan implements ArrayAccess
     protected static $swaggerTypes = [
         'type' => 'string',
         'creditsType' => 'string',
-        'credits' => 'float'
+        'credits' => 'float',
+        'startDate' => '\DateTime',
+        'endDate' => '\DateTime'
     ];
 
     /**
@@ -66,7 +68,9 @@ class GetAccountPlan implements ArrayAccess
     protected static $swaggerFormats = [
         'type' => null,
         'creditsType' => null,
-        'credits' => 'float'
+        'credits' => 'float',
+        'startDate' => 'date',
+        'endDate' => 'date'
     ];
 
     public static function swaggerTypes()
@@ -86,7 +90,9 @@ class GetAccountPlan implements ArrayAccess
     protected static $attributeMap = [
         'type' => 'type',
         'creditsType' => 'creditsType',
-        'credits' => 'credits'
+        'credits' => 'credits',
+        'startDate' => 'startDate',
+        'endDate' => 'endDate'
     ];
 
 
@@ -97,7 +103,9 @@ class GetAccountPlan implements ArrayAccess
     protected static $setters = [
         'type' => 'setType',
         'creditsType' => 'setCreditsType',
-        'credits' => 'setCredits'
+        'credits' => 'setCredits',
+        'startDate' => 'setStartDate',
+        'endDate' => 'setEndDate'
     ];
 
 
@@ -108,7 +116,9 @@ class GetAccountPlan implements ArrayAccess
     protected static $getters = [
         'type' => 'getType',
         'creditsType' => 'getCreditsType',
-        'credits' => 'getCredits'
+        'credits' => 'getCredits',
+        'startDate' => 'getStartDate',
+        'endDate' => 'getEndDate'
     ];
 
     public static function attributeMap()
@@ -181,6 +191,8 @@ class GetAccountPlan implements ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['creditsType'] = isset($data['creditsType']) ? $data['creditsType'] : null;
         $this->container['credits'] = isset($data['credits']) ? $data['credits'] : null;
+        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
+        $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
     }
 
     /**
@@ -327,6 +339,48 @@ class GetAccountPlan implements ArrayAccess
     public function setCredits($credits)
     {
         $this->container['credits'] = $credits;
+
+        return $this;
+    }
+
+    /**
+     * Gets startDate
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['startDate'];
+    }
+
+    /**
+     * Sets startDate
+     * @param \DateTime $startDate Date of the period from which the plan will start (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->container['startDate'] = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets endDate
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['endDate'];
+    }
+
+    /**
+     * Sets endDate
+     * @param \DateTime $endDate Date of the period from which the plan will end (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->container['endDate'] = $endDate;
 
         return $this;
     }

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date** | [**\DateTime**](Date.md) | Date of the statistics | 
+**date** | **\DateTime** | Date of the statistics | 
 **tag** | **string** | Reminder of the specified tag (only available if a specific tag has been specified in the request) | 
 **requests** | **int** | Number of requests for the date | 
 **delivered** | **int** | Number of delivered emails for the date | 

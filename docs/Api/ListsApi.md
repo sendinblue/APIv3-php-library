@@ -31,7 +31,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$listId = "listId_example"; // string | Id of the list
+$listId = 789; // int | Id of the list
 $contactEmails = new \SendinBlue\Client\Model\AddRemoveContactToList(); // \SendinBlue\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
 
 try {
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listId** | **string**| Id of the list |
+ **listId** | **int**| Id of the list |
  **contactEmails** | [**\SendinBlue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
 
 ### Return type
@@ -129,7 +129,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$listId = "listId_example"; // string | Id of the list
+$listId = 789; // int | Id of the list
 
 try {
     $api_instance->deleteList($listId);
@@ -143,7 +143,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listId** | **string**| Id of the list |
+ **listId** | **int**| Id of the list |
 
 ### Return type
 
@@ -176,8 +176,8 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$listId = "listId_example"; // string | Id of the list
-$modifiedSince = "modifiedSince_example"; // string | Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
+$listId = 789; // int | Id of the list
+$modifiedSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
 $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -194,8 +194,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listId** | **string**| Id of the list |
- **modifiedSince** | **string**| Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) | [optional]
+ **listId** | **int**| Id of the list |
+ **modifiedSince** | **\DateTime**| Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional]
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
@@ -230,7 +230,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$folderId = "folderId_example"; // string | Id of the folder
+$folderId = 789; // int | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
@@ -247,7 +247,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **string**| Id of the folder |
+ **folderId** | **int**| Id of the folder |
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
@@ -282,7 +282,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$listId = "listId_example"; // string | Id of the list
+$listId = 789; // int | Id of the list
 
 try {
     $result = $api_instance->getList($listId);
@@ -297,7 +297,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listId** | **string**| Id of the list |
+ **listId** | **int**| Id of the list |
 
 ### Return type
 
@@ -380,7 +380,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$listId = "listId_example"; // string | Id of the list
+$listId = 789; // int | Id of the list
 $contactEmails = new \SendinBlue\Client\Model\AddRemoveContactToList(); // \SendinBlue\Client\Model\AddRemoveContactToList | Emails adresses of the contact
 
 try {
@@ -396,7 +396,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listId** | **string**| Id of the list |
+ **listId** | **int**| Id of the list |
  **contactEmails** | [**\SendinBlue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
 
 ### Return type
@@ -430,7 +430,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
-$listId = "listId_example"; // string | Id of the list
+$listId = 789; // int | Id of the list
 $updateList = new \SendinBlue\Client\Model\UpdateList(); // \SendinBlue\Client\Model\UpdateList | Values to update a list
 
 try {
@@ -445,7 +445,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **listId** | **string**| Id of the list |
+ **listId** | **int**| Id of the list |
  **updateList** | [**\SendinBlue\Client\Model\UpdateList**](../Model/UpdateList.md)| Values to update a list |
 
 ### Return type

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreaUpdateFolderTest
+ * CreateUpdateFolderTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * CreaUpdateFolderTest Class Doc Comment
+ * CreateUpdateFolderTest Class Doc Comment
  *
  * @category    Class */
-// * @description CreaUpdateFolder
+// * @description CreateUpdateFolder
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreaUpdateFolderTest extends \PHPUnit_Framework_TestCase
+class CreateUpdateFolderTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class CreaUpdateFolderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreaUpdateFolder"
+     * Test "CreateUpdateFolder"
      */
-    public function testCreaUpdateFolder()
+    public function testCreateUpdateFolder()
     {
     }
 

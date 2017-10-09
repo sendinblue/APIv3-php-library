@@ -65,7 +65,7 @@ class GetProcess implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'status' => null,
         'name' => null,
         'exportUrl' => null

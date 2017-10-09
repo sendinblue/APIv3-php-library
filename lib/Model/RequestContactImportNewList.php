@@ -64,7 +64,7 @@ class RequestContactImportNewList implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'listName' => null,
-        'folderId' => 'int32'
+        'folderId' => 'int64'
     ];
 
     public static function swaggerTypes()

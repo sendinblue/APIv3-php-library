@@ -64,7 +64,7 @@ class CreateList implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'folderId' => 'int32'
+        'folderId' => 'int64'
     ];
 
     public static function swaggerTypes()

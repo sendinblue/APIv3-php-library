@@ -180,7 +180,7 @@ class WebhooksApi
      *
      * Delete a webhook
      *
-     * @param string $webhookId Id of the webhook (required)
+     * @param int $webhookId Id of the webhook (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
@@ -195,7 +195,7 @@ class WebhooksApi
      *
      * Delete a webhook
      *
-     * @param string $webhookId Id of the webhook (required)
+     * @param int $webhookId Id of the webhook (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -271,7 +271,7 @@ class WebhooksApi
      *
      * Get a webhook details
      *
-     * @param string $webhookId Id of the webhook (required)
+     * @param int $webhookId Id of the webhook (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetWebhook
      */
@@ -286,7 +286,7 @@ class WebhooksApi
      *
      * Get a webhook details
      *
-     * @param string $webhookId Id of the webhook (required)
+     * @param int $webhookId Id of the webhook (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetWebhook, HTTP status code, HTTP response headers (array of strings)
      */
@@ -449,7 +449,7 @@ class WebhooksApi
      *
      * Update a webhook
      *
-     * @param string $webhookId Id of the webhook (required)
+     * @param int $webhookId Id of the webhook (required)
      * @param \SendinBlue\Client\Model\UpdateWebhook $updateWebhook Values to update a webhook (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
@@ -465,7 +465,7 @@ class WebhooksApi
      *
      * Update a webhook
      *
-     * @param string $webhookId Id of the webhook (required)
+     * @param int $webhookId Id of the webhook (required)
      * @param \SendinBlue\Client\Model\UpdateWebhook $updateWebhook Values to update a webhook (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)

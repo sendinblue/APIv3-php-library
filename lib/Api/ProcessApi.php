@@ -92,7 +92,7 @@ class ProcessApi
      *
      * Return the informations for a process
      *
-     * @param string $processId Id of the process (required)
+     * @param int $processId Id of the process (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetProcess
      */
@@ -107,7 +107,7 @@ class ProcessApi
      *
      * Return the informations for a process
      *
-     * @param string $processId Id of the process (required)
+     * @param int $processId Id of the process (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetProcess, HTTP status code, HTTP response headers (array of strings)
      */

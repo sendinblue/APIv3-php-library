@@ -64,7 +64,7 @@ class GetFolderLists implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'lists' => null,
-        'count' => 'int32'
+        'count' => 'int64'
     ];
 
     public static function swaggerTypes()

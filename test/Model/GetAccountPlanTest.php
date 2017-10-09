@@ -97,4 +97,18 @@ class GetAccountPlanTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCredits()
     {
     }
+
+    /**
+     * Test attribute "startDate"
+     */
+    public function testPropertyStartDate()
+    {
+    }
+
+    /**
+     * Test attribute "endDate"
+     */
+    public function testPropertyEndDate()
+    {
+    }
 }

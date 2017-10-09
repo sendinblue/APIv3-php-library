@@ -59,7 +59,7 @@ class GetCampaignOverview implements ArrayAccess
         'subject' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'scheduledAt' => 'string'
+        'scheduledAt' => '\DateTime'
     ];
 
     /**
@@ -67,12 +67,12 @@ class GetCampaignOverview implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'name' => null,
         'subject' => null,
         'type' => null,
         'status' => null,
-        'scheduledAt' => null
+        'scheduledAt' => 'date-time'
     ];
 
     public static function swaggerTypes()
@@ -241,10 +241,6 @@ class GetCampaignOverview implements ArrayAccess
             );
         }
 
-        if (!is_null($this->container['scheduledAt']) && !preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
-            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -278,9 +274,6 @@ class GetCampaignOverview implements ArrayAccess
         }
         $allowed_values = $this->getStatusAllowableValues();
         if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
             return false;
         }
         return true;
@@ -412,7 +405,7 @@ class GetCampaignOverview implements ArrayAccess
 
     /**
      * Gets scheduledAt
-     * @return string
+     * @return \DateTime
      */
     public function getScheduledAt()
     {
@@ -421,16 +414,11 @@ class GetCampaignOverview implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param string $scheduledAt Date on which campaign is scheduled (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $scheduledAt Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
     {
-
-        if (!is_null($scheduledAt) && (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $scheduledAt))) {
-            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling GetCampaignOverview., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;

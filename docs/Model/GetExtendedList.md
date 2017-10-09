@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **totalBlacklisted** | **int** | Number of blacklisted contacts in the list | 
 **totalSubscribers** | **int** | Number of contacts in the list | 
 **folderId** | **int** | ID of the folder | 
-**createdAt** | **string** | Creation Date of the list (YYYY-MM-DD HH:mm:ss) | 
+**createdAt** | **\DateTime** | Creation Date of the list (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **campaignStats** | [**\SendinBlue\Client\Model\GetExtendedListCampaignStats[]**](GetExtendedListCampaignStats.md) |  | [optional] 
 **dynamicList** | **bool** | Status telling if the list is dynamic or not (true&#x3D;dynamic, false&#x3D;not dynamic) | [optional] 
 

@@ -62,7 +62,7 @@ class ManageIp implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ipId' => 'int32'
+        'ipId' => 'int64'
     ];
 
     public static function swaggerTypes()

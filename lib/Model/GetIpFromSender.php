@@ -65,10 +65,10 @@ class GetIpFromSender implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'ip' => null,
         'domain' => null,
-        'weight' => 'int32'
+        'weight' => 'int64'
     ];
 
     public static function swaggerTypes()

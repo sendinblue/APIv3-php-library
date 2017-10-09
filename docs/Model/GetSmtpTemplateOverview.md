@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **toField** | **string** | Customisation of the \&quot;to\&quot; field for the template | 
 **tag** | **string** | Tag of the template | 
 **htmlContent** | **string** | HTML content of the template | 
-**createdAt** | **string** | Creation date of the template (YYYY-MM-DD HH:mm:ss) | 
-**modifiedAt** | **string** | Last modification date of the template (YYYY-MM-DD HH:mm:ss) | 
+**createdAt** | **\DateTime** | Creation date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
+**modifiedAt** | **\DateTime** | Last modification date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

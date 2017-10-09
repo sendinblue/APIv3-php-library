@@ -76,7 +76,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SendersApi();
-$senderId = "senderId_example"; // string | Id of the sender
+$senderId = 789; // int | Id of the sender
 
 try {
     $api_instance->deleteSender($senderId);
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **senderId** | **string**| Id of the sender |
+ **senderId** | **int**| Id of the sender |
 
 ### Return type
 
@@ -167,7 +167,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SendersApi();
-$senderId = "senderId_example"; // string | Id of the sender
+$senderId = 789; // int | Id of the sender
 
 try {
     $result = $api_instance->getIpsFromSender($senderId);
@@ -182,7 +182,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **senderId** | **string**| Id of the sender |
+ **senderId** | **int**| Id of the sender |
 
 ### Return type
 
@@ -265,7 +265,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\SendersApi();
-$senderId = "senderId_example"; // string | Id of the sender
+$senderId = 789; // int | Id of the sender
 $sender = new \SendinBlue\Client\Model\UpdateSender(); // \SendinBlue\Client\Model\UpdateSender | sender's name
 
 try {
@@ -280,7 +280,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **senderId** | **string**| Id of the sender |
+ **senderId** | **int**| Id of the sender |
  **sender** | [**\SendinBlue\Client\Model\UpdateSender**](../Model/UpdateSender.md)| sender&#39;s name | [optional]
 
 ### Return type

@@ -74,15 +74,15 @@ class GetTransacSmsReportReports implements ArrayAccess
     protected static $swaggerFormats = [
         'date' => 'date',
         'tag' => null,
-        'requests' => 'int32',
-        'delivered' => 'int32',
-        'hardBounces' => 'int32',
-        'softBounces' => 'int32',
-        'blocked' => 'int32',
-        'unsubscribed' => 'int32',
-        'replied' => 'int32',
-        'accepted' => 'int32',
-        'rejected' => 'int32'
+        'requests' => 'int64',
+        'delivered' => 'int64',
+        'hardBounces' => 'int64',
+        'softBounces' => 'int64',
+        'blocked' => 'int64',
+        'unsubscribed' => 'int64',
+        'replied' => 'int64',
+        'accepted' => 'int64',
+        'rejected' => 'int64'
     ];
 
     public static function swaggerTypes()

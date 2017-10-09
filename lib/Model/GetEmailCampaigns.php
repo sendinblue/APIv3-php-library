@@ -64,7 +64,7 @@ class GetEmailCampaigns implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'campaigns' => null,
-        'count' => 'int32'
+        'count' => 'int64'
     ];
 
     public static function swaggerTypes()

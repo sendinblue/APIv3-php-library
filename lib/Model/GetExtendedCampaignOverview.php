@@ -59,7 +59,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'subject' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'scheduledAt' => 'string',
+        'scheduledAt' => '\DateTime',
         'testSent' => 'bool',
         'header' => 'string',
         'footer' => 'string',
@@ -69,8 +69,8 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'htmlContent' => 'string',
         'shareLink' => 'string',
         'tag' => 'string',
-        'createdAt' => 'string',
-        'modifiedAt' => 'string',
+        'createdAt' => '\DateTime',
+        'modifiedAt' => '\DateTime',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
         'recurring' => 'bool'
@@ -81,12 +81,12 @@ class GetExtendedCampaignOverview implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'name' => null,
         'subject' => null,
         'type' => null,
         'status' => null,
-        'scheduledAt' => null,
+        'scheduledAt' => 'date-time',
         'testSent' => null,
         'header' => null,
         'footer' => null,
@@ -96,8 +96,8 @@ class GetExtendedCampaignOverview implements ArrayAccess
         'htmlContent' => null,
         'shareLink' => 'url',
         'tag' => null,
-        'createdAt' => null,
-        'modifiedAt' => null,
+        'createdAt' => 'date-time',
+        'modifiedAt' => 'date-time',
         'inlineImageActivation' => null,
         'mirrorActive' => null,
         'recurring' => null
@@ -325,10 +325,6 @@ class GetExtendedCampaignOverview implements ArrayAccess
             );
         }
 
-        if (!is_null($this->container['scheduledAt']) && !preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
-            $invalid_properties[] = "invalid value for 'scheduledAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         if ($this->container['testSent'] === null) {
             $invalid_properties[] = "'testSent' can't be null";
         }
@@ -353,17 +349,9 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             $invalid_properties[] = "'createdAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
-            $invalid_properties[] = "invalid value for 'createdAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
-            $invalid_properties[] = "invalid value for 'modifiedAt', must be conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -399,9 +387,6 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if (!in_array($this->container['status'], $allowed_values)) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['scheduledAt'])) {
-            return false;
-        }
         if ($this->container['testSent'] === null) {
             return false;
         }
@@ -426,13 +411,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
         if ($this->container['createdAt'] === null) {
             return false;
         }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['createdAt'])) {
-            return false;
-        }
         if ($this->container['modifiedAt'] === null) {
-            return false;
-        }
-        if (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $this->container['modifiedAt'])) {
             return false;
         }
         return true;
@@ -564,7 +543,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Gets scheduledAt
-     * @return string
+     * @return \DateTime
      */
     public function getScheduledAt()
     {
@@ -573,16 +552,11 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param string $scheduledAt Date on which campaign is scheduled (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $scheduledAt Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
     {
-
-        if (!is_null($scheduledAt) && (!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $scheduledAt))) {
-            throw new \InvalidArgumentException("invalid value for $scheduledAt when calling GetExtendedCampaignOverview., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
@@ -779,7 +753,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Gets createdAt
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -788,16 +762,11 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param string $createdAt Creation date of the campaign (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $createdAt Creation date of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $createdAt))) {
-            throw new \InvalidArgumentException("invalid value for $createdAt when calling GetExtendedCampaignOverview., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['createdAt'] = $createdAt;
 
         return $this;
@@ -805,7 +774,7 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Gets modifiedAt
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -814,16 +783,11 @@ class GetExtendedCampaignOverview implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param string $modifiedAt Date of last modification of the campaign (YYYY-MM-DD HH:mm:ss)
+     * @param \DateTime $modifiedAt Date of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)
     {
-
-        if ((!preg_match("/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/", $modifiedAt))) {
-            throw new \InvalidArgumentException("invalid value for $modifiedAt when calling GetExtendedCampaignOverview., must conform to the pattern /^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/.");
-        }
-
         $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;

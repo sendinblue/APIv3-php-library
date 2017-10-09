@@ -68,7 +68,7 @@ class RequestContactImport implements ArrayAccess
     protected static $swaggerFormats = [
         'fileUrl' => 'url',
         'fileBody' => null,
-        'listIds' => 'int32',
+        'listIds' => 'int64',
         'notifyUrl' => 'url',
         'newList' => null
     ];

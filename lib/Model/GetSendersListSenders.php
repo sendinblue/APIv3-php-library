@@ -66,7 +66,7 @@ class GetSendersListSenders implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'email' => null,
         'active' => null,

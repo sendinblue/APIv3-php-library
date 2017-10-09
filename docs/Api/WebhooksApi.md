@@ -75,7 +75,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\WebhooksApi();
-$webhookId = "webhookId_example"; // string | Id of the webhook
+$webhookId = 789; // int | Id of the webhook
 
 try {
     $api_instance->deleteWebhook($webhookId);
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| Id of the webhook |
+ **webhookId** | **int**| Id of the webhook |
 
 ### Return type
 
@@ -122,7 +122,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\WebhooksApi();
-$webhookId = "webhookId_example"; // string | Id of the webhook
+$webhookId = 789; // int | Id of the webhook
 
 try {
     $result = $api_instance->getWebhook($webhookId);
@@ -137,7 +137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| Id of the webhook |
+ **webhookId** | **int**| Id of the webhook |
 
 ### Return type
 
@@ -218,7 +218,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\WebhooksApi();
-$webhookId = "webhookId_example"; // string | Id of the webhook
+$webhookId = 789; // int | Id of the webhook
 $updateWebhook = new \SendinBlue\Client\Model\UpdateWebhook(); // \SendinBlue\Client\Model\UpdateWebhook | Values to update a webhook
 
 try {
@@ -233,7 +233,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| Id of the webhook |
+ **webhookId** | **int**| Id of the webhook |
  **updateWebhook** | [**\SendinBlue\Client\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| Values to update a webhook |
 
 ### Return type

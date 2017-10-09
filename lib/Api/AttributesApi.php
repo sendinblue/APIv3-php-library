@@ -180,7 +180,7 @@ class AttributesApi
      *
      * Deletes an attribute
      *
-     * @param string $attributeId id of the attribute (required)
+     * @param int $attributeId id of the attribute (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
@@ -195,7 +195,7 @@ class AttributesApi
      *
      * Deletes an attribute
      *
-     * @param string $attributeId id of the attribute (required)
+     * @param int $attributeId id of the attribute (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

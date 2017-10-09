@@ -64,7 +64,7 @@ class GetProcesses implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'processes' => null,
-        'count' => 'int32'
+        'count' => 'int64'
     ];
 
     public static function swaggerTypes()

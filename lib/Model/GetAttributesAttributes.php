@@ -67,7 +67,7 @@ class GetAttributesAttributes implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
+        'id' => 'int64',
         'name' => null,
         'category' => null,
         'type' => null,
