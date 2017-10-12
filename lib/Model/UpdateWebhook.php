@@ -126,8 +126,44 @@ class UpdateWebhook implements ArrayAccess
         return self::$getters;
     }
 
+    const EVENTS_HARD_BOUNCE = 'hardBounce';
+    const EVENTS_SOFT_BOUNCE = 'softBounce';
+    const EVENTS_BLOCKED = 'blocked';
+    const EVENTS_SPAM = 'spam';
+    const EVENTS_DELIVERED = 'delivered';
+    const EVENTS_REQUEST = 'request';
+    const EVENTS_CLICK = 'click';
+    const EVENTS_INVALID = 'invalid';
+    const EVENTS_DEFERRED = 'deferred';
+    const EVENTS_OPENED = 'opened';
+    const EVENTS_UNIQUE_OPENED = 'uniqueOpened';
+    const EVENTS_UNSUBSCRIBED = 'unsubscribed';
+    const EVENTS_LIST_ADDITION = 'listAddition';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getEventsAllowableValues()
+    {
+        return [
+            self::EVENTS_HARD_BOUNCE,
+            self::EVENTS_SOFT_BOUNCE,
+            self::EVENTS_BLOCKED,
+            self::EVENTS_SPAM,
+            self::EVENTS_DELIVERED,
+            self::EVENTS_REQUEST,
+            self::EVENTS_CLICK,
+            self::EVENTS_INVALID,
+            self::EVENTS_DEFERRED,
+            self::EVENTS_OPENED,
+            self::EVENTS_UNIQUE_OPENED,
+            self::EVENTS_UNSUBSCRIBED,
+            self::EVENTS_LIST_ADDITION,
+        ];
+    }
     
 
     /**
@@ -230,6 +266,15 @@ class UpdateWebhook implements ArrayAccess
      */
     public function setEvents($events)
     {
+        $allowed_values = $this->getEventsAllowableValues();
+        if (!is_null($events) && array_diff($events, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'events', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
         $this->container['events'] = $events;
 
         return $this;
