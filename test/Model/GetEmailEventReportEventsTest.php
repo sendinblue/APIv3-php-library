@@ -139,4 +139,11 @@ class GetEmailEventReportEventsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyLink()
     {
     }
+
+    /**
+     * Test attribute "from"
+     */
+    public function testPropertyFrom()
+    {
+    }
 }
