@@ -62,7 +62,8 @@ class GetEmailEventReportEvents implements ArrayAccess
         'reason' => 'string',
         'tag' => 'string',
         'ip' => 'string',
-        'link' => 'string'
+        'link' => 'string',
+        'from' => 'string'
     ];
 
     /**
@@ -71,14 +72,15 @@ class GetEmailEventReportEvents implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-        'date' => 'date',
+        'date' => 'date-time',
         'subject' => null,
         'messageId' => null,
         'event' => null,
         'reason' => null,
         'tag' => null,
         'ip' => null,
-        'link' => null
+        'link' => null,
+        'from' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -104,7 +106,8 @@ class GetEmailEventReportEvents implements ArrayAccess
         'reason' => 'reason',
         'tag' => 'tag',
         'ip' => 'ip',
-        'link' => 'link'
+        'link' => 'link',
+        'from' => 'from'
     ];
 
 
@@ -121,7 +124,8 @@ class GetEmailEventReportEvents implements ArrayAccess
         'reason' => 'setReason',
         'tag' => 'setTag',
         'ip' => 'setIp',
-        'link' => 'setLink'
+        'link' => 'setLink',
+        'from' => 'setFrom'
     ];
 
 
@@ -138,7 +142,8 @@ class GetEmailEventReportEvents implements ArrayAccess
         'reason' => 'getReason',
         'tag' => 'getTag',
         'ip' => 'getIp',
-        'link' => 'getLink'
+        'link' => 'getLink',
+        'from' => 'getFrom'
     ];
 
     public static function attributeMap()
@@ -213,6 +218,7 @@ class GetEmailEventReportEvents implements ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
     }
 
     /**
@@ -244,11 +250,11 @@ class GetEmailEventReportEvents implements ArrayAccess
             );
         }
 
-        if ($this->container['reason'] === null) {
-            $invalid_properties[] = "'reason' can't be null";
-        }
         if ($this->container['tag'] === null) {
             $invalid_properties[] = "'tag' can't be null";
+        }
+        if ($this->container['from'] === null) {
+            $invalid_properties[] = "'from' can't be null";
         }
         return $invalid_properties;
     }
@@ -278,10 +284,10 @@ class GetEmailEventReportEvents implements ArrayAccess
         if (!in_array($this->container['event'], $allowed_values)) {
             return false;
         }
-        if ($this->container['reason'] === null) {
+        if ($this->container['tag'] === null) {
             return false;
         }
-        if ($this->container['tag'] === null) {
+        if ($this->container['from'] === null) {
             return false;
         }
         return true;
@@ -482,6 +488,27 @@ class GetEmailEventReportEvents implements ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets from
+     * @return string
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     * @param string $from Sender email from which the emails are sent
+     * @return $this
+     */
+    public function setFrom($from)
+    {
+        $this->container['from'] = $from;
 
         return $this;
     }
