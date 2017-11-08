@@ -93,6 +93,16 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for deleteSmtpTemplate
+     *
+     * Delete an inactive smtp template.
+     *
+     */
+    public function testDeleteSmtpTemplate()
+    {
+    }
+
+    /**
      * Test case for getAggregatedSmtpReport
      *
      * Get your SMTP activity aggregated over a period of time.

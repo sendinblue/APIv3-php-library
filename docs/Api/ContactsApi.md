@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContacts**
-> \SendinBlue\Client\Model\GetContacts getContacts($limit, $offset)
+> \SendinBlue\Client\Model\GetContacts getContacts($limit, $offset, $modifiedSince)
 
 Get all the contacts
 
@@ -571,9 +571,10 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 $api_instance = new SendinBlue\Client\Api\ContactsApi();
 $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
+$modifiedSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
 try {
-    $result = $api_instance->getContacts($limit, $offset);
+    $result = $api_instance->getContacts($limit, $offset, $modifiedSince);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getContacts: ', $e->getMessage(), PHP_EOL;
@@ -587,6 +588,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **modifiedSince** | **\DateTime**| Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional]
 
 ### Return type
 
