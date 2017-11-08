@@ -75,7 +75,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createSMSCampaign
      *
-     * Creates a SMS campaign.
+     * Creates an SMS campaign.
      *
      */
     public function testCreateSMSCampaign()
@@ -105,7 +105,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSmsCampaign
      *
-     * Get a SMS campaign.
+     * Get an SMS campaign.
      *
      */
     public function testGetSmsCampaign()
@@ -165,7 +165,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateSmsCampaign
      *
-     * Updates a SMS campaign.
+     * Updates an SMS campaign.
      *
      */
     public function testUpdateSmsCampaign()

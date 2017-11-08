@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **emailBlacklisted** | **bool** | Blacklist the contact for emails (emailBlacklisted &#x3D; true) | [optional] 
 **smsBlacklisted** | **bool** | Blacklist the contact for SMS (smsBlacklisted &#x3D; true) | [optional] 
 **listIds** | **int[]** | Ids of the lists to add the contact to | [optional] 
+**updateEnabled** | **bool** | Facilitate to update existing contact in same request (updateEnabled &#x3D; true) | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

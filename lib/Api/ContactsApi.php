@@ -1088,12 +1088,13 @@ class ContactsApi
      *
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
+     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetContacts
      */
-    public function getContacts($limit = '50', $offset = '0')
+    public function getContacts($limit = '50', $offset = '0', $modifiedSince = null)
     {
-        list($response) = $this->getContactsWithHttpInfo($limit, $offset);
+        list($response) = $this->getContactsWithHttpInfo($limit, $offset, $modifiedSince);
         return $response;
     }
 
@@ -1104,10 +1105,11 @@ class ContactsApi
      *
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
+     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetContacts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactsWithHttpInfo($limit = '50', $offset = '0')
+    public function getContactsWithHttpInfo($limit = '50', $offset = '0', $modifiedSince = null)
     {
         if (!is_null($limit) && ($limit > 1000)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling ContactsApi.getContacts, must be smaller than or equal to 1000.');
@@ -1132,6 +1134,10 @@ class ContactsApi
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // query params
+        if ($modifiedSince !== null) {
+            $queryParams['modifiedSince'] = $this->apiClient->getSerializer()->toQueryValue($modifiedSince);
         }
 
         // for model (json/xml)

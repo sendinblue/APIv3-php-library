@@ -90,7 +90,7 @@ class SMSCampaignsApi
     /**
      * Operation createSMSCampaign
      *
-     * Creates a SMS campaign
+     * Creates an SMS campaign
      *
      * @param \SendinBlue\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class SMSCampaignsApi
     /**
      * Operation createSMSCampaignWithHttpInfo
      *
-     * Creates a SMS campaign
+     * Creates an SMS campaign
      *
      * @param \SendinBlue\Client\Model\CreateSmsCampaign $createSmsCampaign Values to create an SMS Campaign (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -368,7 +368,7 @@ class SMSCampaignsApi
     /**
      * Operation getSmsCampaign
      *
-     * Get a SMS campaign
+     * Get an SMS campaign
      *
      * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
@@ -384,7 +384,7 @@ class SMSCampaignsApi
     /**
      * Operation getSmsCampaignWithHttpInfo
      *
-     * Get a SMS campaign
+     * Get an SMS campaign
      *
      * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
@@ -977,7 +977,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaign
      *
-     * Updates a SMS campaign
+     * Updates an SMS campaign
      *
      * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
@@ -993,7 +993,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignWithHttpInfo
      *
-     * Updates a SMS campaign
+     * Updates an SMS campaign
      *
      * @param int $campaignId id of the SMS campaign (required)
      * @param \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
