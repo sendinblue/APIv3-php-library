@@ -4,15 +4,16 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAttribute**](AttributesApi.md#createAttribute) | **POST** /contacts/attributes | Creates contact attributes
-[**deleteAttribute**](AttributesApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeId} | Deletes an attribute
+[**createAttribute**](AttributesApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
+[**deleteAttribute**](AttributesApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
 [**getAttributes**](AttributesApi.md#getAttributes) | **GET** /contacts/attributes | Lists all attributes
+[**updateAttribute**](AttributesApi.md#updateAttribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
 
 
 # **createAttribute**
-> \SendinBlue\Client\Model\CreateModel createAttribute($createAttribute)
+> createAttribute($attributeCategory, $attributeName, $createAttribute)
 
-Creates contact attributes
+Creates contact attribute
 
 ### Example
 ```php
@@ -25,11 +26,12 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\AttributesApi();
+$attributeCategory = "attributeCategory_example"; // string | Category of the attribute
+$attributeName = "attributeName_example"; // string | Name of the attribute
 $createAttribute = new \SendinBlue\Client\Model\CreateAttribute(); // \SendinBlue\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
-    $result = $api_instance->createAttribute($createAttribute);
-    print_r($result);
+    $api_instance->createAttribute($attributeCategory, $attributeName, $createAttribute);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->createAttribute: ', $e->getMessage(), PHP_EOL;
 }
@@ -40,11 +42,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **attributeCategory** | **string**| Category of the attribute |
+ **attributeName** | **string**| Name of the attribute |
  **createAttribute** | [**\SendinBlue\Client\Model\CreateAttribute**](../Model/CreateAttribute.md)| Values to create an attribute |
 
 ### Return type
 
-[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
+void (empty response body)
 
 ### Authorization
 
@@ -58,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAttribute**
-> deleteAttribute($attributeId)
+> deleteAttribute($attributeCategory, $attributeName)
 
 Deletes an attribute
 
@@ -73,10 +77,11 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 // SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 $api_instance = new SendinBlue\Client\Api\AttributesApi();
-$attributeId = 789; // int | id of the attribute
+$attributeCategory = "attributeCategory_example"; // string | Category of the attribute
+$attributeName = "attributeName_example"; // string | Name of the existing attribute
 
 try {
-    $api_instance->deleteAttribute($attributeId);
+    $api_instance->deleteAttribute($attributeCategory, $attributeName);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->deleteAttribute: ', $e->getMessage(), PHP_EOL;
 }
@@ -87,7 +92,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attributeId** | **int**| id of the attribute |
+ **attributeCategory** | **string**| Category of the attribute |
+ **attributeName** | **string**| Name of the existing attribute |
 
 ### Return type
 
@@ -136,6 +142,57 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\SendinBlue\Client\Model\GetAttributes**](../Model/GetAttributes.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateAttribute**
+> updateAttribute($attributeCategory, $attributeName, $updateAttribute)
+
+Updates contact attribute
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+$api_instance = new SendinBlue\Client\Api\AttributesApi();
+$attributeCategory = "attributeCategory_example"; // string | Category of the attribute
+$attributeName = "attributeName_example"; // string | Name of the existing attribute
+$updateAttribute = new \SendinBlue\Client\Model\UpdateAttribute(); // \SendinBlue\Client\Model\UpdateAttribute | Values to update an attribute
+
+try {
+    $api_instance->updateAttribute($attributeCategory, $attributeName, $updateAttribute);
+} catch (Exception $e) {
+    echo 'Exception when calling AttributesApi->updateAttribute: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attributeCategory** | **string**| Category of the attribute |
+ **attributeName** | **string**| Name of the existing attribute |
+ **updateAttribute** | [**\SendinBlue\Client\Model\UpdateAttribute**](../Model/UpdateAttribute.md)| Values to update an attribute |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

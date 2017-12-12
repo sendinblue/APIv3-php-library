@@ -54,7 +54,8 @@ class SendSms implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reference' => 'string'
+        'reference' => 'string',
+        'messageId' => 'int'
     ];
 
     /**
@@ -62,7 +63,8 @@ class SendSms implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'reference' => null
+        'reference' => null,
+        'messageId' => 'int64'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class SendSms implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'reference' => 'reference'
+        'reference' => 'reference',
+        'messageId' => 'messageId'
     ];
 
 
@@ -89,7 +92,8 @@ class SendSms implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'reference' => 'setReference'
+        'reference' => 'setReference',
+        'messageId' => 'setMessageId'
     ];
 
 
@@ -98,7 +102,8 @@ class SendSms implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'reference' => 'getReference'
+        'reference' => 'getReference',
+        'messageId' => 'getMessageId'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class SendSms implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
+        $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
     }
 
     /**
@@ -147,6 +153,9 @@ class SendSms implements ArrayAccess
         if ($this->container['reference'] === null) {
             $invalid_properties[] = "'reference' can't be null";
         }
+        if ($this->container['messageId'] === null) {
+            $invalid_properties[] = "'messageId' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -160,6 +169,9 @@ class SendSms implements ArrayAccess
     {
 
         if ($this->container['reference'] === null) {
+            return false;
+        }
+        if ($this->container['messageId'] === null) {
             return false;
         }
         return true;
@@ -183,6 +195,27 @@ class SendSms implements ArrayAccess
     public function setReference($reference)
     {
         $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageId
+     * @return int
+     */
+    public function getMessageId()
+    {
+        return $this->container['messageId'];
+    }
+
+    /**
+     * Sets messageId
+     * @param int $messageId
+     * @return $this
+     */
+    public function setMessageId($messageId)
+    {
+        $this->container['messageId'] = $messageId;
 
         return $this;
     }

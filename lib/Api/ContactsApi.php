@@ -196,35 +196,47 @@ class ContactsApi
     /**
      * Operation createAttribute
      *
-     * Creates contact attributes
+     * Creates contact attribute
      *
+     * @param string $attributeCategory Category of the attribute (required)
+     * @param string $attributeName Name of the attribute (required)
      * @param \SendinBlue\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return \SendinBlue\Client\Model\CreateModel
+     * @return void
      */
-    public function createAttribute($createAttribute)
+    public function createAttribute($attributeCategory, $attributeName, $createAttribute)
     {
-        list($response) = $this->createAttributeWithHttpInfo($createAttribute);
+        list($response) = $this->createAttributeWithHttpInfo($attributeCategory, $attributeName, $createAttribute);
         return $response;
     }
 
     /**
      * Operation createAttributeWithHttpInfo
      *
-     * Creates contact attributes
+     * Creates contact attribute
      *
+     * @param string $attributeCategory Category of the attribute (required)
+     * @param string $attributeName Name of the attribute (required)
      * @param \SendinBlue\Client\Model\CreateAttribute $createAttribute Values to create an attribute (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAttributeWithHttpInfo($createAttribute)
+    public function createAttributeWithHttpInfo($attributeCategory, $attributeName, $createAttribute)
     {
+        // verify the required parameter 'attributeCategory' is set
+        if ($attributeCategory === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeCategory when calling createAttribute');
+        }
+        // verify the required parameter 'attributeName' is set
+        if ($attributeName === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeName when calling createAttribute');
+        }
         // verify the required parameter 'createAttribute' is set
         if ($createAttribute === null) {
             throw new \InvalidArgumentException('Missing the required parameter $createAttribute when calling createAttribute');
         }
         // parse inputs
-        $resourcePath = "/contacts/attributes";
+        $resourcePath = "/contacts/attributes/{attributeCategory}/{attributeName}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -235,6 +247,22 @@ class ContactsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
+        // path params
+        if ($attributeCategory !== null) {
+            $resourcePath = str_replace(
+                "{" . "attributeCategory" . "}",
+                $this->apiClient->getSerializer()->toPathValue($attributeCategory),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($attributeName !== null) {
+            $resourcePath = str_replace(
+                "{" . "attributeName" . "}",
+                $this->apiClient->getSerializer()->toPathValue($attributeName),
+                $resourcePath
+            );
+        }
         // body params
         $_tempBody = null;
         if (isset($createAttribute)) {
@@ -260,17 +288,13 @@ class ContactsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SendinBlue\Client\Model\CreateModel',
-                '/contacts/attributes'
+                null,
+                '/contacts/attributes/{attributeCategory}/{attributeName}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [null, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateModel', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
@@ -550,13 +574,14 @@ class ContactsApi
      *
      * Deletes an attribute
      *
-     * @param int $attributeId id of the attribute (required)
+     * @param string $attributeCategory Category of the attribute (required)
+     * @param string $attributeName Name of the existing attribute (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteAttribute($attributeId)
+    public function deleteAttribute($attributeCategory, $attributeName)
     {
-        list($response) = $this->deleteAttributeWithHttpInfo($attributeId);
+        list($response) = $this->deleteAttributeWithHttpInfo($attributeCategory, $attributeName);
         return $response;
     }
 
@@ -565,18 +590,23 @@ class ContactsApi
      *
      * Deletes an attribute
      *
-     * @param int $attributeId id of the attribute (required)
+     * @param string $attributeCategory Category of the attribute (required)
+     * @param string $attributeName Name of the existing attribute (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAttributeWithHttpInfo($attributeId)
+    public function deleteAttributeWithHttpInfo($attributeCategory, $attributeName)
     {
-        // verify the required parameter 'attributeId' is set
-        if ($attributeId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $attributeId when calling deleteAttribute');
+        // verify the required parameter 'attributeCategory' is set
+        if ($attributeCategory === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeCategory when calling deleteAttribute');
+        }
+        // verify the required parameter 'attributeName' is set
+        if ($attributeName === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeName when calling deleteAttribute');
         }
         // parse inputs
-        $resourcePath = "/contacts/attributes/{attributeId}";
+        $resourcePath = "/contacts/attributes/{attributeCategory}/{attributeName}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -588,10 +618,18 @@ class ContactsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($attributeId !== null) {
+        if ($attributeCategory !== null) {
             $resourcePath = str_replace(
-                "{" . "attributeId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($attributeId),
+                "{" . "attributeCategory" . "}",
+                $this->apiClient->getSerializer()->toPathValue($attributeCategory),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($attributeName !== null) {
+            $resourcePath = str_replace(
+                "{" . "attributeName" . "}",
+                $this->apiClient->getSerializer()->toPathValue($attributeName),
                 $resourcePath
             );
         }
@@ -616,7 +654,7 @@ class ContactsApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/contacts/attributes/{attributeId}'
+                '/contacts/attributes/{attributeCategory}/{attributeName}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2065,6 +2103,122 @@ class ContactsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAttribute
+     *
+     * Updates contact attribute
+     *
+     * @param string $attributeCategory Category of the attribute (required)
+     * @param string $attributeName Name of the existing attribute (required)
+     * @param \SendinBlue\Client\Model\UpdateAttribute $updateAttribute Values to update an attribute (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return void
+     */
+    public function updateAttribute($attributeCategory, $attributeName, $updateAttribute)
+    {
+        list($response) = $this->updateAttributeWithHttpInfo($attributeCategory, $attributeName, $updateAttribute);
+        return $response;
+    }
+
+    /**
+     * Operation updateAttributeWithHttpInfo
+     *
+     * Updates contact attribute
+     *
+     * @param string $attributeCategory Category of the attribute (required)
+     * @param string $attributeName Name of the existing attribute (required)
+     * @param \SendinBlue\Client\Model\UpdateAttribute $updateAttribute Values to update an attribute (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAttributeWithHttpInfo($attributeCategory, $attributeName, $updateAttribute)
+    {
+        // verify the required parameter 'attributeCategory' is set
+        if ($attributeCategory === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeCategory when calling updateAttribute');
+        }
+        // verify the required parameter 'attributeName' is set
+        if ($attributeName === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attributeName when calling updateAttribute');
+        }
+        // verify the required parameter 'updateAttribute' is set
+        if ($updateAttribute === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $updateAttribute when calling updateAttribute');
+        }
+        // parse inputs
+        $resourcePath = "/contacts/attributes/{attributeCategory}/{attributeName}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($attributeCategory !== null) {
+            $resourcePath = str_replace(
+                "{" . "attributeCategory" . "}",
+                $this->apiClient->getSerializer()->toPathValue($attributeCategory),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($attributeName !== null) {
+            $resourcePath = str_replace(
+                "{" . "attributeName" . "}",
+                $this->apiClient->getSerializer()->toPathValue($attributeName),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($updateAttribute)) {
+            $_tempBody = $updateAttribute;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/contacts/attributes/{attributeCategory}/{attributeName}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;

@@ -1,4 +1,4 @@
-# CreateAttributeEnumemaration
+# UpdateAttributeEnumeration
 
 ## Properties
 Name | Type | Description | Notes

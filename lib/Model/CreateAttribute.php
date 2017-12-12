@@ -54,10 +54,8 @@ class CreateAttribute implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'category' => 'string',
-        'name' => 'string',
         'value' => 'string',
-        'enumemaration' => '\SendinBlue\Client\Model\CreateAttributeEnumemaration[]',
+        'enumeration' => '\SendinBlue\Client\Model\CreateAttributeEnumeration[]',
         'type' => 'string'
     ];
 
@@ -66,10 +64,8 @@ class CreateAttribute implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'category' => null,
-        'name' => null,
         'value' => null,
-        'enumemaration' => null,
+        'enumeration' => null,
         'type' => null
     ];
 
@@ -88,10 +84,8 @@ class CreateAttribute implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'category' => 'category',
-        'name' => 'name',
         'value' => 'value',
-        'enumemaration' => 'enumemaration',
+        'enumeration' => 'enumeration',
         'type' => 'type'
     ];
 
@@ -101,10 +95,8 @@ class CreateAttribute implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'category' => 'setCategory',
-        'name' => 'setName',
         'value' => 'setValue',
-        'enumemaration' => 'setEnumemaration',
+        'enumeration' => 'setEnumeration',
         'type' => 'setType'
     ];
 
@@ -114,10 +106,8 @@ class CreateAttribute implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'category' => 'getCategory',
-        'name' => 'getName',
         'value' => 'getValue',
-        'enumemaration' => 'getEnumemaration',
+        'enumeration' => 'getEnumeration',
         'type' => 'getType'
     ];
 
@@ -136,32 +126,13 @@ class CreateAttribute implements ArrayAccess
         return self::$getters;
     }
 
-    const CATEGORY_NORMAL = 'normal';
-    const CATEGORY_TRANSACTIONAL = 'transactional';
-    const CATEGORY_CATEGORY = 'category';
-    const CATEGORY_CALCULATED = 'calculated';
-    const CATEGORY__GLOBAL = 'global';
     const TYPE_TEXT = 'text';
     const TYPE_DATE = 'date';
     const TYPE_FLOAT = 'float';
     const TYPE_ID = 'id';
+    const TYPE_CATEGORY = 'category';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getCategoryAllowableValues()
-    {
-        return [
-            self::CATEGORY_NORMAL,
-            self::CATEGORY_TRANSACTIONAL,
-            self::CATEGORY_CATEGORY,
-            self::CATEGORY_CALCULATED,
-            self::CATEGORY__GLOBAL,
-        ];
-    }
     
     /**
      * Gets allowable values of the enum
@@ -174,6 +145,7 @@ class CreateAttribute implements ArrayAccess
             self::TYPE_DATE,
             self::TYPE_FLOAT,
             self::TYPE_ID,
+            self::TYPE_CATEGORY,
         ];
     }
     
@@ -190,10 +162,8 @@ class CreateAttribute implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['enumemaration'] = isset($data['enumemaration']) ? $data['enumemaration'] : null;
+        $this->container['enumeration'] = isset($data['enumeration']) ? $data['enumeration'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
@@ -206,23 +176,6 @@ class CreateAttribute implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['category'] === null) {
-            $invalid_properties[] = "'category' can't be null";
-        }
-        $allowed_values = $this->getCategoryAllowableValues();
-        if (!in_array($this->container['category'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'category', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
-        }
-        if ($this->container['value'] === null) {
-            $invalid_properties[] = "'value' can't be null";
-        }
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -243,19 +196,6 @@ class CreateAttribute implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['category'] === null) {
-            return false;
-        }
-        $allowed_values = $this->getCategoryAllowableValues();
-        if (!in_array($this->container['category'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['name'] === null) {
-            return false;
-        }
-        if ($this->container['value'] === null) {
-            return false;
-        }
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
@@ -263,57 +203,6 @@ class CreateAttribute implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets category
-     * @return string
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     * @param string $category Attribute categorisation.
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $allowed_values = $this->getCategoryAllowableValues();
-        if (!in_array($category, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'category', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name Name of the attribute
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets value
@@ -326,7 +215,7 @@ class CreateAttribute implements ArrayAccess
 
     /**
      * Sets value
-     * @param string $value Value of the attribute
+     * @param string $value Value of the attribute. Use only if the attribute's category is calculated or global
      * @return $this
      */
     public function setValue($value)
@@ -337,22 +226,22 @@ class CreateAttribute implements ArrayAccess
     }
 
     /**
-     * Gets enumemaration
-     * @return \SendinBlue\Client\Model\CreateAttributeEnumemaration[]
+     * Gets enumeration
+     * @return \SendinBlue\Client\Model\CreateAttributeEnumeration[]
      */
-    public function getEnumemaration()
+    public function getEnumeration()
     {
-        return $this->container['enumemaration'];
+        return $this->container['enumeration'];
     }
 
     /**
-     * Sets enumemaration
-     * @param \SendinBlue\Client\Model\CreateAttributeEnumemaration[] $enumemaration Values that the attribute can take. Use only if the attribute's category is category
+     * Sets enumeration
+     * @param \SendinBlue\Client\Model\CreateAttributeEnumeration[] $enumeration Values that the attribute can take. Use only if the attribute's category is category
      * @return $this
      */
-    public function setEnumemaration($enumemaration)
+    public function setEnumeration($enumeration)
     {
-        $this->container['enumemaration'] = $enumemaration;
+        $this->container['enumeration'] = $enumeration;
 
         return $this;
     }
@@ -368,7 +257,7 @@ class CreateAttribute implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type Type of the attribute
+     * @param string $type Type of the attribute. Use only if the attribute's category is normal, category or transactional ( type 'id' only available if the category is 'transactional' attribute & type 'category' only available if the category is 'category' attribute )
      * @return $this
      */
     public function setType($type)
