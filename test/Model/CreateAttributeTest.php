@@ -78,20 +78,6 @@ class CreateAttributeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "category"
-     */
-    public function testPropertyCategory()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
      * Test attribute "value"
      */
     public function testPropertyValue()
@@ -99,9 +85,9 @@ class CreateAttributeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "enumemaration"
+     * Test attribute "enumeration"
      */
-    public function testPropertyEnumemaration()
+    public function testPropertyEnumeration()
     {
     }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * GetAttributesAttributesTest
+ * UpdateAttributeEnumerationTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetAttributesAttributesTest Class Doc Comment
+ * UpdateAttributeEnumerationTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetAttributesAttributes
+// * @description UpdateAttributeEnumeration
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetAttributesAttributesTest extends \PHPUnit_Framework_TestCase
+class UpdateAttributeEnumerationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,44 +71,23 @@ class GetAttributesAttributesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetAttributesAttributes"
+     * Test "UpdateAttributeEnumeration"
      */
-    public function testGetAttributesAttributes()
+    public function testUpdateAttributeEnumeration()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "id"
      */
-    public function testPropertyName()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "category"
+     * Test attribute "label"
      */
-    public function testPropertyCategory()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
-
-    /**
-     * Test attribute "enumeration"
-     */
-    public function testPropertyEnumeration()
-    {
-    }
-
-    /**
-     * Test attribute "calculatedValue"
-     */
-    public function testPropertyCalculatedValue()
+    public function testPropertyLabel()
     {
     }
 }

@@ -54,7 +54,6 @@ class GetAttributesAttributes implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
         'name' => 'string',
         'category' => 'string',
         'type' => 'string',
@@ -67,7 +66,6 @@ class GetAttributesAttributes implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
         'name' => null,
         'category' => null,
         'type' => null,
@@ -90,7 +88,6 @@ class GetAttributesAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'name' => 'name',
         'category' => 'category',
         'type' => 'type',
@@ -104,7 +101,6 @@ class GetAttributesAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'name' => 'setName',
         'category' => 'setCategory',
         'type' => 'setType',
@@ -118,7 +114,6 @@ class GetAttributesAttributes implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'name' => 'getName',
         'category' => 'getCategory',
         'type' => 'getType',
@@ -195,7 +190,6 @@ class GetAttributesAttributes implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
@@ -212,9 +206,6 @@ class GetAttributesAttributes implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
@@ -249,9 +240,6 @@ class GetAttributesAttributes implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
         if ($this->container['name'] === null) {
             return false;
         }
@@ -269,27 +257,6 @@ class GetAttributesAttributes implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets id
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param int $id ID of the attribute
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
 
     /**
      * Gets name
