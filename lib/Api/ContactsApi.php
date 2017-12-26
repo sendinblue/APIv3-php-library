@@ -1126,7 +1126,7 @@ class ContactsApi
      *
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetContacts
      */
@@ -1143,7 +1143,7 @@ class ContactsApi
      *
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
-     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetContacts, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1224,7 +1224,7 @@ class ContactsApi
      * Get the contacts in a list
      *
      * @param int $listId Id of the list (required)
-     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -1242,7 +1242,7 @@ class ContactsApi
      * Get the contacts in a list
      *
      * @param int $listId Id of the list (required)
-     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+     * @param \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
      * @param int $limit Number of documents per page (optional, default to 50)
      * @param int $offset Index of the first document of the page (optional, default to 0)
      * @throws \SendinBlue\Client\ApiException on non-2xx response

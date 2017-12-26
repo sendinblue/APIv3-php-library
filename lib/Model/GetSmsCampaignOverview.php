@@ -400,7 +400,7 @@ class GetSmsCampaignOverview implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param \DateTime $scheduledAt Date on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
+     * @param \DateTime $scheduledAt UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
@@ -463,7 +463,7 @@ class GetSmsCampaignOverview implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation date of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $createdAt Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)
@@ -484,7 +484,7 @@ class GetSmsCampaignOverview implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param \DateTime $modifiedAt Date of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $modifiedAt UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)

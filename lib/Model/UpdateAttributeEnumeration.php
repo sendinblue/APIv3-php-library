@@ -54,7 +54,7 @@ class UpdateAttributeEnumeration implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'value' => 'int',
         'label' => 'string'
     ];
 
@@ -63,7 +63,7 @@ class UpdateAttributeEnumeration implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
+        'value' => null,
         'label' => null
     ];
 
@@ -82,7 +82,7 @@ class UpdateAttributeEnumeration implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
+        'value' => 'value',
         'label' => 'label'
     ];
 
@@ -92,7 +92,7 @@ class UpdateAttributeEnumeration implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
+        'value' => 'setValue',
         'label' => 'setLabel'
     ];
 
@@ -102,7 +102,7 @@ class UpdateAttributeEnumeration implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
+        'value' => 'getValue',
         'label' => 'getLabel'
     ];
 
@@ -137,7 +137,7 @@ class UpdateAttributeEnumeration implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
     }
 
@@ -150,6 +150,12 @@ class UpdateAttributeEnumeration implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['value'] === null) {
+            $invalid_properties[] = "'value' can't be null";
+        }
+        if ($this->container['label'] === null) {
+            $invalid_properties[] = "'label' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,27 +168,33 @@ class UpdateAttributeEnumeration implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['value'] === null) {
+            return false;
+        }
+        if ($this->container['label'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets id
+     * Gets value
      * @return int
      */
-    public function getId()
+    public function getValue()
     {
-        return $this->container['id'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets id
-     * @param int $id Id of the value
+     * Sets value
+     * @param int $value Id of the value
      * @return $this
      */
-    public function setId($id)
+    public function setValue($value)
     {
-        $this->container['id'] = $id;
+        $this->container['value'] = $value;
 
         return $this;
     }

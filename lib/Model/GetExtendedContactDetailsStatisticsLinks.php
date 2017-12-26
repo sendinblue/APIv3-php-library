@@ -234,7 +234,7 @@ class GetExtendedContactDetailsStatisticsLinks implements ArrayAccess
 
     /**
      * Sets eventTime
-     * @param \DateTime $eventTime Date of the event
+     * @param \DateTime $eventTime UTC date-time of the event
      * @return $this
      */
     public function setEventTime($eventTime)

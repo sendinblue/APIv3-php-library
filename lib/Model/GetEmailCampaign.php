@@ -552,7 +552,7 @@ class GetEmailCampaign implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param \DateTime $scheduledAt Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
@@ -762,7 +762,7 @@ class GetEmailCampaign implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation date of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $createdAt Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)
@@ -783,7 +783,7 @@ class GetEmailCampaign implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param \DateTime $modifiedAt Date of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $modifiedAt UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)

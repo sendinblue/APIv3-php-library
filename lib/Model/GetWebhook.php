@@ -389,7 +389,7 @@ class GetWebhook implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $createdAt Creation UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)
@@ -410,7 +410,7 @@ class GetWebhook implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param \DateTime $modifiedAt Last modification date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $modifiedAt Last modification UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)

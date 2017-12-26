@@ -372,7 +372,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param \DateTime $scheduledAt Date and time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $scheduledAt UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
