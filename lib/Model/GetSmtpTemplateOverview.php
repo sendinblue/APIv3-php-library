@@ -513,7 +513,7 @@ class GetSmtpTemplateOverview implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $createdAt Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)
@@ -534,7 +534,7 @@ class GetSmtpTemplateOverview implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param \DateTime $modifiedAt Last modification date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $modifiedAt Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)

@@ -326,7 +326,7 @@ class GetEmailEventReportEvents implements ArrayAccess
 
     /**
      * Sets date
-     * @param \DateTime $date Date on which the event has been generated
+     * @param \DateTime $date UTC date-time on which the event has been generated
      * @return $this
      */
     public function setDate($date)

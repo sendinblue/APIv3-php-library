@@ -414,7 +414,7 @@ class GetCampaignOverview implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param \DateTime $scheduledAt Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)

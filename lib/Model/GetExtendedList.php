@@ -354,7 +354,7 @@ class GetExtendedList implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation Date of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $createdAt Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setCreatedAt($createdAt)

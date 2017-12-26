@@ -78,9 +78,9 @@ class UpdateAttributeEnumerationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "value"
      */
-    public function testPropertyId()
+    public function testPropertyValue()
     {
     }
 

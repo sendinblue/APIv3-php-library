@@ -339,7 +339,7 @@ class GetContactDetails implements ArrayAccess
 
     /**
      * Sets modifiedAt
-     * @param \DateTime $modifiedAt Last modification date of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $modifiedAt Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setModifiedAt($modifiedAt)

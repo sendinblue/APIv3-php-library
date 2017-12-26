@@ -422,7 +422,7 @@ class CreateEmailCampaign implements ArrayAccess
 
     /**
      * Sets scheduledAt
-     * @param \DateTime $scheduledAt Sending date and time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param \DateTime $scheduledAt Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
      * @return $this
      */
     public function setScheduledAt($scheduledAt)
