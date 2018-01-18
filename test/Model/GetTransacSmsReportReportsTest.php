@@ -85,13 +85,6 @@ class GetTransacSmsReportReportsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "tag"
-     */
-    public function testPropertyTag()
-    {
-    }
-
-    /**
      * Test attribute "requests"
      */
     public function testPropertyRequests()

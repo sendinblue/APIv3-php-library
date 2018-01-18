@@ -54,8 +54,8 @@ class GetCampaignRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'lists' => '\SendinBlue\Client\Model\GetCampaignRecipientsLists[]',
-        'exclusionLists' => '\SendinBlue\Client\Model\GetCampaignRecipientsExclusionLists[]'
+        'lists' => 'int[]',
+        'exclusionLists' => 'int[]'
     ];
 
     /**
@@ -63,8 +63,8 @@ class GetCampaignRecipients implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'lists' => null,
-        'exclusionLists' => null
+        'lists' => 'int64',
+        'exclusionLists' => 'int64'
     ];
 
     public static function swaggerTypes()
@@ -180,7 +180,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Gets lists
-     * @return \SendinBlue\Client\Model\GetCampaignRecipientsLists[]
+     * @return int[]
      */
     public function getLists()
     {
@@ -189,7 +189,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Sets lists
-     * @param \SendinBlue\Client\Model\GetCampaignRecipientsLists[] $lists Lists included in the campaign
+     * @param int[] $lists
      * @return $this
      */
     public function setLists($lists)
@@ -201,7 +201,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Gets exclusionLists
-     * @return \SendinBlue\Client\Model\GetCampaignRecipientsExclusionLists[]
+     * @return int[]
      */
     public function getExclusionLists()
     {
@@ -210,7 +210,7 @@ class GetCampaignRecipients implements ArrayAccess
 
     /**
      * Sets exclusionLists
-     * @param \SendinBlue\Client\Model\GetCampaignRecipientsExclusionLists[] $exclusionLists Lists excluded of the campaign
+     * @param int[] $exclusionLists
      * @return $this
      */
     public function setExclusionLists($exclusionLists)

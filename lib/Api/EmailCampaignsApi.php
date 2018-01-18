@@ -176,7 +176,7 @@ class EmailCampaignsApi
     }
 
     /**
-     * Operation deleteEmailCampaigns
+     * Operation deleteEmailCampaign
      *
      * Delete an email campaign
      *
@@ -184,14 +184,14 @@ class EmailCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteEmailCampaigns($campaignId)
+    public function deleteEmailCampaign($campaignId)
     {
-        list($response) = $this->deleteEmailCampaignsWithHttpInfo($campaignId);
+        list($response) = $this->deleteEmailCampaignWithHttpInfo($campaignId);
         return $response;
     }
 
     /**
-     * Operation deleteEmailCampaignsWithHttpInfo
+     * Operation deleteEmailCampaignWithHttpInfo
      *
      * Delete an email campaign
      *
@@ -199,11 +199,11 @@ class EmailCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEmailCampaignsWithHttpInfo($campaignId)
+    public function deleteEmailCampaignWithHttpInfo($campaignId)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling deleteEmailCampaigns');
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling deleteEmailCampaign');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}";
@@ -970,7 +970,7 @@ class EmailCampaignsApi
     }
 
     /**
-     * Operation updateEmailCampaigns
+     * Operation updateEmailCampaign
      *
      * Update a campaign
      *
@@ -979,14 +979,14 @@ class EmailCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateEmailCampaigns($campaignId, $emailCampaign)
+    public function updateEmailCampaign($campaignId, $emailCampaign)
     {
-        list($response) = $this->updateEmailCampaignsWithHttpInfo($campaignId, $emailCampaign);
+        list($response) = $this->updateEmailCampaignWithHttpInfo($campaignId, $emailCampaign);
         return $response;
     }
 
     /**
-     * Operation updateEmailCampaignsWithHttpInfo
+     * Operation updateEmailCampaignWithHttpInfo
      *
      * Update a campaign
      *
@@ -995,15 +995,15 @@ class EmailCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateEmailCampaignsWithHttpInfo($campaignId, $emailCampaign)
+    public function updateEmailCampaignWithHttpInfo($campaignId, $emailCampaign)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateEmailCampaigns');
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateEmailCampaign');
         }
         // verify the required parameter 'emailCampaign' is set
         if ($emailCampaign === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $emailCampaign when calling updateEmailCampaigns');
+            throw new \InvalidArgumentException('Missing the required parameter $emailCampaign when calling updateEmailCampaign');
         }
         // parse inputs
         $resourcePath = "/emailCampaigns/{campaignId}";

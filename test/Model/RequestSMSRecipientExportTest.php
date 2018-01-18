@@ -1,6 +1,6 @@
 <?php
 /**
- * RequestSMSRecipientExportTest
+ * RequestSmsRecipientExportTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * RequestSMSRecipientExportTest Class Doc Comment
+ * RequestSmsRecipientExportTest Class Doc Comment
  *
  * @category    Class */
-// * @description RequestSMSRecipientExport
+// * @description RequestSmsRecipientExport
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RequestSMSRecipientExportTest extends \PHPUnit_Framework_TestCase
+class RequestSmsRecipientExportTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class RequestSMSRecipientExportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RequestSMSRecipientExport"
+     * Test "RequestSmsRecipientExport"
      */
-    public function testRequestSMSRecipientExport()
+    public function testRequestSmsRecipientExport()
     {
     }
 

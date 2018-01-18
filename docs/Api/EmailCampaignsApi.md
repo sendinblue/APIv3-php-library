@@ -5,7 +5,7 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createEmailCampaign**](EmailCampaignsApi.md#createEmailCampaign) | **POST** /emailCampaigns | Create an email campaign
-[**deleteEmailCampaigns**](EmailCampaignsApi.md#deleteEmailCampaigns) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
+[**deleteEmailCampaign**](EmailCampaignsApi.md#deleteEmailCampaign) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
 [**emailExportRecipients**](EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of a campaign
 [**getEmailCampaign**](EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns/{campaignId} | Get campaign informations
 [**getEmailCampaigns**](EmailCampaignsApi.md#getEmailCampaigns) | **GET** /emailCampaigns | Return all your created campaigns
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**sendReport**](EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns/{campaignId}/sendReport | Send the report of a campaigns
 [**sendTestEmail**](EmailCampaignsApi.md#sendTestEmail) | **POST** /emailCampaigns/{campaignId}/sendTest | Send an email campaign to your test list
 [**updateCampaignStatus**](EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns/{campaignId}/status | Update a campaign status
-[**updateEmailCampaigns**](EmailCampaignsApi.md#updateEmailCampaigns) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
+[**updateEmailCampaign**](EmailCampaignsApi.md#updateEmailCampaign) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
 
 
 # **createEmailCampaign**
@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **deleteEmailCampaigns**
-> deleteEmailCampaigns($campaignId)
+# **deleteEmailCampaign**
+> deleteEmailCampaign($campaignId)
 
 Delete an email campaign
 
@@ -83,9 +83,9 @@ $api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
 $campaignId = 789; // int | id of the campaign
 
 try {
-    $api_instance->deleteEmailCampaigns($campaignId);
+    $api_instance->deleteEmailCampaign($campaignId);
 } catch (Exception $e) {
-    echo 'Exception when calling EmailCampaignsApi->deleteEmailCampaigns: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EmailCampaignsApi->deleteEmailCampaign: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -459,8 +459,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateEmailCampaigns**
-> updateEmailCampaigns($campaignId, $emailCampaign)
+# **updateEmailCampaign**
+> updateEmailCampaign($campaignId, $emailCampaign)
 
 Update a campaign
 
@@ -479,9 +479,9 @@ $campaignId = 789; // int | Id of the campaign
 $emailCampaign = new \SendinBlue\Client\Model\UpdateEmailCampaign(); // \SendinBlue\Client\Model\UpdateEmailCampaign | Values to update a campaign
 
 try {
-    $api_instance->updateEmailCampaigns($campaignId, $emailCampaign);
+    $api_instance->updateEmailCampaign($campaignId, $emailCampaign);
 } catch (Exception $e) {
-    echo 'Exception when calling EmailCampaignsApi->updateEmailCampaigns: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EmailCampaignsApi->updateEmailCampaign: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

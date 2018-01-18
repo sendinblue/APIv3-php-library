@@ -405,7 +405,7 @@ class CreateSmtpTemplate implements ArrayAccess
 
     /**
      * Sets attachmentUrl
-     * @param string $attachmentUrl Absolute url of the attachment (no local file). Extensions allowed xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff and rtf
+     * @param string $attachmentUrl Absolute url of the attachment (no local file). Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub and eps
      * @return $this
      */
     public function setAttachmentUrl($attachmentUrl)
