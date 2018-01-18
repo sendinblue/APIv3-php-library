@@ -111,4 +111,11 @@ class UpdateContactTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUnlinkListIds()
     {
     }
+
+    /**
+     * Test attribute "smtpBlacklistSender"
+     */
+    public function testPropertySmtpBlacklistSender()
+    {
+    }
 }

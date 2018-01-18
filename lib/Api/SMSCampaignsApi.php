@@ -88,7 +88,7 @@ class SMSCampaignsApi
     }
 
     /**
-     * Operation createSMSCampaign
+     * Operation createSmsCampaign
      *
      * Creates an SMS campaign
      *
@@ -96,14 +96,14 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\CreateModel
      */
-    public function createSMSCampaign($createSmsCampaign)
+    public function createSmsCampaign($createSmsCampaign)
     {
-        list($response) = $this->createSMSCampaignWithHttpInfo($createSmsCampaign);
+        list($response) = $this->createSmsCampaignWithHttpInfo($createSmsCampaign);
         return $response;
     }
 
     /**
-     * Operation createSMSCampaignWithHttpInfo
+     * Operation createSmsCampaignWithHttpInfo
      *
      * Creates an SMS campaign
      *
@@ -111,11 +111,11 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSMSCampaignWithHttpInfo($createSmsCampaign)
+    public function createSmsCampaignWithHttpInfo($createSmsCampaign)
     {
         // verify the required parameter 'createSmsCampaign' is set
         if ($createSmsCampaign === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $createSmsCampaign when calling createSMSCampaign');
+            throw new \InvalidArgumentException('Missing the required parameter $createSmsCampaign when calling createSmsCampaign');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns";
@@ -176,7 +176,7 @@ class SMSCampaignsApi
     }
 
     /**
-     * Operation deleteSMSCampaigns
+     * Operation deleteSmsCampaign
      *
      * Delete the SMS campaign
      *
@@ -184,14 +184,14 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteSMSCampaigns($campaignId)
+    public function deleteSmsCampaign($campaignId)
     {
-        list($response) = $this->deleteSMSCampaignsWithHttpInfo($campaignId);
+        list($response) = $this->deleteSmsCampaignWithHttpInfo($campaignId);
         return $response;
     }
 
     /**
-     * Operation deleteSMSCampaignsWithHttpInfo
+     * Operation deleteSmsCampaignWithHttpInfo
      *
      * Delete the SMS campaign
      *
@@ -199,11 +199,11 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSMSCampaignsWithHttpInfo($campaignId)
+    public function deleteSmsCampaignWithHttpInfo($campaignId)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling deleteSMSCampaigns');
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling deleteSmsCampaign');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}";
@@ -257,105 +257,6 @@ class SMSCampaignsApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getSMSCampaigns
-     *
-     * Returns the informations for all your created SMS campaigns
-     *
-     * @param string $status Status of campaign. (optional)
-     * @param int $limit Number limitation for the result returned (optional, default to 500)
-     * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return \SendinBlue\Client\Model\GetSmsCampaigns
-     */
-    public function getSMSCampaigns($status = null, $limit = '500', $offset = '0')
-    {
-        list($response) = $this->getSMSCampaignsWithHttpInfo($status, $limit, $offset);
-        return $response;
-    }
-
-    /**
-     * Operation getSMSCampaignsWithHttpInfo
-     *
-     * Returns the informations for all your created SMS campaigns
-     *
-     * @param string $status Status of campaign. (optional)
-     * @param int $limit Number limitation for the result returned (optional, default to 500)
-     * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return array of \SendinBlue\Client\Model\GetSmsCampaigns, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getSMSCampaignsWithHttpInfo($status = null, $limit = '500', $offset = '0')
-    {
-        if (!is_null($limit) && ($limit > 1000)) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling SMSCampaignsApi.getSMSCampaigns, must be smaller than or equal to 1000.');
-        }
-
-        // parse inputs
-        $resourcePath = "/smsCampaigns";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // query params
-        if ($status !== null) {
-            $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
-        }
-        // query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
-        // query params
-        if ($offset !== null) {
-            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-key'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\SendinBlue\Client\Model\GetSmsCampaigns',
-                '/smsCampaigns'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetSmsCampaigns', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetSmsCampaigns', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -472,36 +373,135 @@ class SMSCampaignsApi
     }
 
     /**
-     * Operation requestSMSRecipientExport
+     * Operation getSmsCampaigns
      *
-     * Exports the recipients of the specified campaign.
+     * Returns the informations for all your created SMS campaigns
      *
-     * @param int $campaignId id of the campaign (required)
-     * @param \SendinBlue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
+     * @param string $status Status of campaign. (optional)
+     * @param int $limit Number limitation for the result returned (optional, default to 500)
+     * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return \SendinBlue\Client\Model\CreatedProcessId
+     * @return \SendinBlue\Client\Model\GetSmsCampaigns
      */
-    public function requestSMSRecipientExport($campaignId, $recipientExport = null)
+    public function getSmsCampaigns($status = null, $limit = '500', $offset = '0')
     {
-        list($response) = $this->requestSMSRecipientExportWithHttpInfo($campaignId, $recipientExport);
+        list($response) = $this->getSmsCampaignsWithHttpInfo($status, $limit, $offset);
         return $response;
     }
 
     /**
-     * Operation requestSMSRecipientExportWithHttpInfo
+     * Operation getSmsCampaignsWithHttpInfo
+     *
+     * Returns the informations for all your created SMS campaigns
+     *
+     * @param string $status Status of campaign. (optional)
+     * @param int $limit Number limitation for the result returned (optional, default to 500)
+     * @param int $offset Beginning point in the list to retrieve from. (optional, default to 0)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of \SendinBlue\Client\Model\GetSmsCampaigns, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSmsCampaignsWithHttpInfo($status = null, $limit = '500', $offset = '0')
+    {
+        if (!is_null($limit) && ($limit > 1000)) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling SMSCampaignsApi.getSmsCampaigns, must be smaller than or equal to 1000.');
+        }
+
+        // parse inputs
+        $resourcePath = "/smsCampaigns";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // query params
+        if ($status !== null) {
+            $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\SendinBlue\Client\Model\GetSmsCampaigns',
+                '/smsCampaigns'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetSmsCampaigns', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\GetSmsCampaigns', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation requestSmsRecipientExport
      *
      * Exports the recipients of the specified campaign.
      *
      * @param int $campaignId id of the campaign (required)
-     * @param \SendinBlue\Client\Model\RequestSMSRecipientExport $recipientExport Values to send for a recipient export request (optional)
+     * @param \SendinBlue\Client\Model\RequestSmsRecipientExport $recipientExport Values to send for a recipient export request (optional)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return \SendinBlue\Client\Model\CreatedProcessId
+     */
+    public function requestSmsRecipientExport($campaignId, $recipientExport = null)
+    {
+        list($response) = $this->requestSmsRecipientExportWithHttpInfo($campaignId, $recipientExport);
+        return $response;
+    }
+
+    /**
+     * Operation requestSmsRecipientExportWithHttpInfo
+     *
+     * Exports the recipients of the specified campaign.
+     *
+     * @param int $campaignId id of the campaign (required)
+     * @param \SendinBlue\Client\Model\RequestSmsRecipientExport $recipientExport Values to send for a recipient export request (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\CreatedProcessId, HTTP status code, HTTP response headers (array of strings)
      */
-    public function requestSMSRecipientExportWithHttpInfo($campaignId, $recipientExport = null)
+    public function requestSmsRecipientExportWithHttpInfo($campaignId, $recipientExport = null)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling requestSMSRecipientExport');
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling requestSmsRecipientExport');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/exportRecipients";
@@ -574,7 +574,7 @@ class SMSCampaignsApi
     }
 
     /**
-     * Operation sendSMSCampaignNow
+     * Operation sendSmsCampaignNow
      *
      * Send your SMS campaign immediately
      *
@@ -582,14 +582,14 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendSMSCampaignNow($campaignId)
+    public function sendSmsCampaignNow($campaignId)
     {
-        list($response) = $this->sendSMSCampaignNowWithHttpInfo($campaignId);
+        list($response) = $this->sendSmsCampaignNowWithHttpInfo($campaignId);
         return $response;
     }
 
     /**
-     * Operation sendSMSCampaignNowWithHttpInfo
+     * Operation sendSmsCampaignNowWithHttpInfo
      *
      * Send your SMS campaign immediately
      *
@@ -597,11 +597,11 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendSMSCampaignNowWithHttpInfo($campaignId)
+    public function sendSmsCampaignNowWithHttpInfo($campaignId)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendSMSCampaignNow');
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendSmsCampaignNow');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/sendNow";
@@ -669,7 +669,7 @@ class SMSCampaignsApi
     }
 
     /**
-     * Operation sendSMSReport
+     * Operation sendSmsReport
      *
      * Send report of SMS campaigns
      *
@@ -678,14 +678,14 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function sendSMSReport($campaignId, $sendReport)
+    public function sendSmsReport($campaignId, $sendReport)
     {
-        list($response) = $this->sendSMSReportWithHttpInfo($campaignId, $sendReport);
+        list($response) = $this->sendSmsReportWithHttpInfo($campaignId, $sendReport);
         return $response;
     }
 
     /**
-     * Operation sendSMSReportWithHttpInfo
+     * Operation sendSmsReportWithHttpInfo
      *
      * Send report of SMS campaigns
      *
@@ -694,15 +694,15 @@ class SMSCampaignsApi
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendSMSReportWithHttpInfo($campaignId, $sendReport)
+    public function sendSmsReportWithHttpInfo($campaignId, $sendReport)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendSMSReport');
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling sendSmsReport');
         }
         // verify the required parameter 'sendReport' is set
         if ($sendReport === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $sendReport when calling sendSMSReport');
+            throw new \InvalidArgumentException('Missing the required parameter $sendReport when calling sendSmsReport');
         }
         // parse inputs
         $resourcePath = "/smsCampaigns/{campaignId}/sendReport";
@@ -873,108 +873,6 @@ class SMSCampaignsApi
     }
 
     /**
-     * Operation updateSMSCampaignStatus
-     *
-     * Update the campaign status
-     *
-     * @param int $campaignId id of the campaign (required)
-     * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
-     * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return void
-     */
-    public function updateSMSCampaignStatus($campaignId, $status)
-    {
-        list($response) = $this->updateSMSCampaignStatusWithHttpInfo($campaignId, $status);
-        return $response;
-    }
-
-    /**
-     * Operation updateSMSCampaignStatusWithHttpInfo
-     *
-     * Update the campaign status
-     *
-     * @param int $campaignId id of the campaign (required)
-     * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
-     * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateSMSCampaignStatusWithHttpInfo($campaignId, $status)
-    {
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateSMSCampaignStatus');
-        }
-        // verify the required parameter 'status' is set
-        if ($status === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $status when calling updateSMSCampaignStatus');
-        }
-        // parse inputs
-        $resourcePath = "/smsCampaigns/{campaignId}/status";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // path params
-        if ($campaignId !== null) {
-            $resourcePath = str_replace(
-                "{" . "campaignId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($campaignId),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($status)) {
-            $_tempBody = $status;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-key'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/smsCampaigns/{campaignId}/status'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation updateSmsCampaign
      *
      * Updates an SMS campaign
@@ -1057,6 +955,108 @@ class SMSCampaignsApi
                 $headerParams,
                 null,
                 '/smsCampaigns/{campaignId}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateSmsCampaignStatus
+     *
+     * Update the campaign status
+     *
+     * @param int $campaignId id of the campaign (required)
+     * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return void
+     */
+    public function updateSmsCampaignStatus($campaignId, $status)
+    {
+        list($response) = $this->updateSmsCampaignStatusWithHttpInfo($campaignId, $status);
+        return $response;
+    }
+
+    /**
+     * Operation updateSmsCampaignStatusWithHttpInfo
+     *
+     * Update the campaign status
+     *
+     * @param int $campaignId id of the campaign (required)
+     * @param \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateSmsCampaignStatusWithHttpInfo($campaignId, $status)
+    {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $campaignId when calling updateSmsCampaignStatus');
+        }
+        // verify the required parameter 'status' is set
+        if ($status === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $status when calling updateSmsCampaignStatus');
+        }
+        // parse inputs
+        $resourcePath = "/smsCampaigns/{campaignId}/status";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                "{" . "campaignId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($status)) {
+            $_tempBody = $status;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/smsCampaigns/{campaignId}/status'
             );
 
             return [null, $statusCode, $httpHeader];

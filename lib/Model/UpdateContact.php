@@ -58,7 +58,8 @@ class UpdateContact implements ArrayAccess
         'emailBlacklisted' => 'bool',
         'smsBlacklisted' => 'bool',
         'listIds' => 'int[]',
-        'unlinkListIds' => 'int[]'
+        'unlinkListIds' => 'int[]',
+        'smtpBlacklistSender' => 'string[]'
     ];
 
     /**
@@ -70,7 +71,8 @@ class UpdateContact implements ArrayAccess
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
         'listIds' => 'int64',
-        'unlinkListIds' => 'int64'
+        'unlinkListIds' => 'int64',
+        'smtpBlacklistSender' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class UpdateContact implements ArrayAccess
         'emailBlacklisted' => 'emailBlacklisted',
         'smsBlacklisted' => 'smsBlacklisted',
         'listIds' => 'listIds',
-        'unlinkListIds' => 'unlinkListIds'
+        'unlinkListIds' => 'unlinkListIds',
+        'smtpBlacklistSender' => 'smtpBlacklistSender'
     ];
 
 
@@ -105,7 +108,8 @@ class UpdateContact implements ArrayAccess
         'emailBlacklisted' => 'setEmailBlacklisted',
         'smsBlacklisted' => 'setSmsBlacklisted',
         'listIds' => 'setListIds',
-        'unlinkListIds' => 'setUnlinkListIds'
+        'unlinkListIds' => 'setUnlinkListIds',
+        'smtpBlacklistSender' => 'setSmtpBlacklistSender'
     ];
 
 
@@ -118,7 +122,8 @@ class UpdateContact implements ArrayAccess
         'emailBlacklisted' => 'getEmailBlacklisted',
         'smsBlacklisted' => 'getSmsBlacklisted',
         'listIds' => 'getListIds',
-        'unlinkListIds' => 'getUnlinkListIds'
+        'unlinkListIds' => 'getUnlinkListIds',
+        'smtpBlacklistSender' => 'getSmtpBlacklistSender'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class UpdateContact implements ArrayAccess
         $this->container['smsBlacklisted'] = isset($data['smsBlacklisted']) ? $data['smsBlacklisted'] : null;
         $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
         $this->container['unlinkListIds'] = isset($data['unlinkListIds']) ? $data['unlinkListIds'] : null;
+        $this->container['smtpBlacklistSender'] = isset($data['smtpBlacklistSender']) ? $data['smtpBlacklistSender'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class UpdateContact implements ArrayAccess
     public function setUnlinkListIds($unlinkListIds)
     {
         $this->container['unlinkListIds'] = $unlinkListIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets smtpBlacklistSender
+     * @return string[]
+     */
+    public function getSmtpBlacklistSender()
+    {
+        return $this->container['smtpBlacklistSender'];
+    }
+
+    /**
+     * Sets smtpBlacklistSender
+     * @param string[] $smtpBlacklistSender SMTP forbidden sender for contact. Use only for email Contact
+     * @return $this
+     */
+    public function setSmtpBlacklistSender($smtpBlacklistSender)
+    {
+        $this->container['smtpBlacklistSender'] = $smtpBlacklistSender;
 
         return $this;
     }

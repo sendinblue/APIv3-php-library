@@ -73,32 +73,22 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createSMSCampaign
+     * Test case for createSmsCampaign
      *
      * Creates an SMS campaign.
      *
      */
-    public function testCreateSMSCampaign()
+    public function testCreateSmsCampaign()
     {
     }
 
     /**
-     * Test case for deleteSMSCampaigns
+     * Test case for deleteSmsCampaign
      *
      * Delete the SMS campaign.
      *
      */
-    public function testDeleteSMSCampaigns()
-    {
-    }
-
-    /**
-     * Test case for getSMSCampaigns
-     *
-     * Returns the informations for all your created SMS campaigns.
-     *
-     */
-    public function testGetSMSCampaigns()
+    public function testDeleteSmsCampaign()
     {
     }
 
@@ -113,32 +103,42 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for requestSMSRecipientExport
+     * Test case for getSmsCampaigns
+     *
+     * Returns the informations for all your created SMS campaigns.
+     *
+     */
+    public function testGetSmsCampaigns()
+    {
+    }
+
+    /**
+     * Test case for requestSmsRecipientExport
      *
      * Exports the recipients of the specified campaign..
      *
      */
-    public function testRequestSMSRecipientExport()
+    public function testRequestSmsRecipientExport()
     {
     }
 
     /**
-     * Test case for sendSMSCampaignNow
+     * Test case for sendSmsCampaignNow
      *
      * Send your SMS campaign immediately.
      *
      */
-    public function testSendSMSCampaignNow()
+    public function testSendSmsCampaignNow()
     {
     }
 
     /**
-     * Test case for sendSMSReport
+     * Test case for sendSmsReport
      *
      * Send report of SMS campaigns.
      *
      */
-    public function testSendSMSReport()
+    public function testSendSmsReport()
     {
     }
 
@@ -153,22 +153,22 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updateSMSCampaignStatus
-     *
-     * Update the campaign status.
-     *
-     */
-    public function testUpdateSMSCampaignStatus()
-    {
-    }
-
-    /**
      * Test case for updateSmsCampaign
      *
      * Updates an SMS campaign.
      *
      */
     public function testUpdateSmsCampaign()
+    {
+    }
+
+    /**
+     * Test case for updateSmsCampaignStatus
+     *
+     * Update the campaign status.
+     *
+     */
+    public function testUpdateSmsCampaignStatus()
     {
     }
 }

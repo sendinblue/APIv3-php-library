@@ -116,7 +116,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**updateFolder**](docs/Api/ContactsApi.md#updatefolder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
 *ContactsApi* | [**updateList**](docs/Api/ContactsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
 *EmailCampaignsApi* | [**createEmailCampaign**](docs/Api/EmailCampaignsApi.md#createemailcampaign) | **POST** /emailCampaigns | Create an email campaign
-*EmailCampaignsApi* | [**deleteEmailCampaigns**](docs/Api/EmailCampaignsApi.md#deleteemailcampaigns) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
+*EmailCampaignsApi* | [**deleteEmailCampaign**](docs/Api/EmailCampaignsApi.md#deleteemailcampaign) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
 *EmailCampaignsApi* | [**emailExportRecipients**](docs/Api/EmailCampaignsApi.md#emailexportrecipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of a campaign
 *EmailCampaignsApi* | [**getEmailCampaign**](docs/Api/EmailCampaignsApi.md#getemailcampaign) | **GET** /emailCampaigns/{campaignId} | Get campaign informations
 *EmailCampaignsApi* | [**getEmailCampaigns**](docs/Api/EmailCampaignsApi.md#getemailcampaigns) | **GET** /emailCampaigns | Return all your created campaigns
@@ -124,7 +124,7 @@ Class | Method | HTTP request | Description
 *EmailCampaignsApi* | [**sendReport**](docs/Api/EmailCampaignsApi.md#sendreport) | **POST** /emailCampaigns/{campaignId}/sendReport | Send the report of a campaigns
 *EmailCampaignsApi* | [**sendTestEmail**](docs/Api/EmailCampaignsApi.md#sendtestemail) | **POST** /emailCampaigns/{campaignId}/sendTest | Send an email campaign to your test list
 *EmailCampaignsApi* | [**updateCampaignStatus**](docs/Api/EmailCampaignsApi.md#updatecampaignstatus) | **PUT** /emailCampaigns/{campaignId}/status | Update a campaign status
-*EmailCampaignsApi* | [**updateEmailCampaigns**](docs/Api/EmailCampaignsApi.md#updateemailcampaigns) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
+*EmailCampaignsApi* | [**updateEmailCampaign**](docs/Api/EmailCampaignsApi.md#updateemailcampaign) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
 *FoldersApi* | [**createFolder**](docs/Api/FoldersApi.md#createfolder) | **POST** /contacts/folders | Create a folder
 *FoldersApi* | [**deleteFolder**](docs/Api/FoldersApi.md#deletefolder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
 *FoldersApi* | [**getFolder**](docs/Api/FoldersApi.md#getfolder) | **GET** /contacts/folders/{folderId} | Returns folder details
@@ -151,16 +151,16 @@ Class | Method | HTTP request | Description
 *ResellerApi* | [**getResellerChilds**](docs/Api/ResellerApi.md#getresellerchilds) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
 *ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childId}/credits/remove | Remove Email and/or SMS credits from a specific child account
 *ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childId} | Updates infos of reseller&#39;s child based on the childId supplied
-*SMSCampaignsApi* | [**createSMSCampaign**](docs/Api/SMSCampaignsApi.md#createsmscampaign) | **POST** /smsCampaigns | Creates an SMS campaign
-*SMSCampaignsApi* | [**deleteSMSCampaigns**](docs/Api/SMSCampaignsApi.md#deletesmscampaigns) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
-*SMSCampaignsApi* | [**getSMSCampaigns**](docs/Api/SMSCampaignsApi.md#getsmscampaigns) | **GET** /smsCampaigns | Returns the informations for all your created SMS campaigns
+*SMSCampaignsApi* | [**createSmsCampaign**](docs/Api/SMSCampaignsApi.md#createsmscampaign) | **POST** /smsCampaigns | Creates an SMS campaign
+*SMSCampaignsApi* | [**deleteSmsCampaign**](docs/Api/SMSCampaignsApi.md#deletesmscampaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
 *SMSCampaignsApi* | [**getSmsCampaign**](docs/Api/SMSCampaignsApi.md#getsmscampaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
-*SMSCampaignsApi* | [**requestSMSRecipientExport**](docs/Api/SMSCampaignsApi.md#requestsmsrecipientexport) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Exports the recipients of the specified campaign.
-*SMSCampaignsApi* | [**sendSMSCampaignNow**](docs/Api/SMSCampaignsApi.md#sendsmscampaignnow) | **POST** /smsCampaigns/{campaignId}/sendNow | Send your SMS campaign immediately
-*SMSCampaignsApi* | [**sendSMSReport**](docs/Api/SMSCampaignsApi.md#sendsmsreport) | **POST** /smsCampaigns/{campaignId}/sendReport | Send report of SMS campaigns
+*SMSCampaignsApi* | [**getSmsCampaigns**](docs/Api/SMSCampaignsApi.md#getsmscampaigns) | **GET** /smsCampaigns | Returns the informations for all your created SMS campaigns
+*SMSCampaignsApi* | [**requestSmsRecipientExport**](docs/Api/SMSCampaignsApi.md#requestsmsrecipientexport) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Exports the recipients of the specified campaign.
+*SMSCampaignsApi* | [**sendSmsCampaignNow**](docs/Api/SMSCampaignsApi.md#sendsmscampaignnow) | **POST** /smsCampaigns/{campaignId}/sendNow | Send your SMS campaign immediately
+*SMSCampaignsApi* | [**sendSmsReport**](docs/Api/SMSCampaignsApi.md#sendsmsreport) | **POST** /smsCampaigns/{campaignId}/sendReport | Send report of SMS campaigns
 *SMSCampaignsApi* | [**sendTestSms**](docs/Api/SMSCampaignsApi.md#sendtestsms) | **POST** /smsCampaigns/{campaignId}/sendTest | Send an SMS
-*SMSCampaignsApi* | [**updateSMSCampaignStatus**](docs/Api/SMSCampaignsApi.md#updatesmscampaignstatus) | **PUT** /smsCampaigns/{campaignId}/status | Update the campaign status
 *SMSCampaignsApi* | [**updateSmsCampaign**](docs/Api/SMSCampaignsApi.md#updatesmscampaign) | **PUT** /smsCampaigns/{campaignId} | Updates an SMS campaign
+*SMSCampaignsApi* | [**updateSmsCampaignStatus**](docs/Api/SMSCampaignsApi.md#updatesmscampaignstatus) | **PUT** /smsCampaigns/{campaignId}/status | Update the campaign status
 *SMTPApi* | [**createSmtpTemplate**](docs/Api/SMTPApi.md#createsmtptemplate) | **POST** /smtp/templates | Create an smtp template
 *SMTPApi* | [**deleteHardbounces**](docs/Api/SMTPApi.md#deletehardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
 *SMTPApi* | [**deleteSmtpTemplate**](docs/Api/SMTPApi.md#deletesmtptemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive smtp template
@@ -227,8 +227,6 @@ Class | Method | HTTP request | Description
  - [GetAttributesEnumeration](docs/Model/GetAttributesEnumeration.md)
  - [GetCampaignOverview](docs/Model/GetCampaignOverview.md)
  - [GetCampaignRecipients](docs/Model/GetCampaignRecipients.md)
- - [GetCampaignRecipientsExclusionLists](docs/Model/GetCampaignRecipientsExclusionLists.md)
- - [GetCampaignRecipientsLists](docs/Model/GetCampaignRecipientsLists.md)
  - [GetCampaignStats](docs/Model/GetCampaignStats.md)
  - [GetChildInfoApiKeys](docs/Model/GetChildInfoApiKeys.md)
  - [GetChildInfoCredits](docs/Model/GetChildInfoCredits.md)
@@ -301,7 +299,7 @@ Class | Method | HTTP request | Description
  - [RequestContactExport](docs/Model/RequestContactExport.md)
  - [RequestContactImport](docs/Model/RequestContactImport.md)
  - [RequestContactImportNewList](docs/Model/RequestContactImportNewList.md)
- - [RequestSMSRecipientExport](docs/Model/RequestSMSRecipientExport.md)
+ - [RequestSmsRecipientExport](docs/Model/RequestSmsRecipientExport.md)
  - [SendEmail](docs/Model/SendEmail.md)
  - [SendEmailAttachment](docs/Model/SendEmailAttachment.md)
  - [SendReport](docs/Model/SendReport.md)

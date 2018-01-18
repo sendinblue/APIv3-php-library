@@ -83,12 +83,12 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for deleteEmailCampaigns
+     * Test case for deleteEmailCampaign
      *
      * Delete an email campaign.
      *
      */
-    public function testDeleteEmailCampaigns()
+    public function testDeleteEmailCampaign()
     {
     }
 
@@ -163,12 +163,12 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updateEmailCampaigns
+     * Test case for updateEmailCampaign
      *
      * Update a campaign.
      *
      */
-    public function testUpdateEmailCampaigns()
+    public function testUpdateEmailCampaign()
     {
     }
 }
