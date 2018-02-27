@@ -1,6 +1,6 @@
 <?php
 /**
- * AddRemoveContactToList
+ * RemoveContactFromList
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * AddRemoveContactToList Class Doc Comment
+ * RemoveContactFromList Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AddRemoveContactToList implements ArrayAccess
+class RemoveContactFromList implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,15 @@ class AddRemoveContactToList implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'addRemoveContactToList';
+    protected static $swaggerModelName = 'removeContactFromList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emails' => 'string[]'
+        'emails' => 'string[]',
+        'all' => 'bool'
     ];
 
     /**
@@ -62,7 +63,8 @@ class AddRemoveContactToList implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emails' => 'email'
+        'emails' => 'email',
+        'all' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class AddRemoveContactToList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emails' => 'emails'
+        'emails' => 'emails',
+        'all' => 'all'
     ];
 
 
@@ -89,7 +92,8 @@ class AddRemoveContactToList implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emails' => 'setEmails'
+        'emails' => 'setEmails',
+        'all' => 'setAll'
     ];
 
 
@@ -98,7 +102,8 @@ class AddRemoveContactToList implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emails' => 'getEmails'
+        'emails' => 'getEmails',
+        'all' => 'getAll'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class AddRemoveContactToList implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['emails'] = isset($data['emails']) ? $data['emails'] : null;
+        $this->container['all'] = isset($data['all']) ? $data['all'] : null;
     }
 
     /**
@@ -171,12 +177,33 @@ class AddRemoveContactToList implements ArrayAccess
 
     /**
      * Sets emails
-     * @param string[] $emails Emails to add or remove from a list
+     * @param string[] $emails Required if 'all' is false. Emails to remove from a list
      * @return $this
      */
     public function setEmails($emails)
     {
         $this->container['emails'] = $emails;
+
+        return $this;
+    }
+
+    /**
+     * Gets all
+     * @return bool
+     */
+    public function getAll()
+    {
+        return $this->container['all'];
+    }
+
+    /**
+     * Sets all
+     * @param bool $all Required if 'emails' is empty. Remove all existing contacts from a list
+     * @return $this
+     */
+    public function setAll($all)
+    {
+        $this->container['all'] = $all;
 
         return $this;
     }

@@ -372,7 +372,7 @@ class UpdateSmtpTemplate implements ArrayAccess
 
     /**
      * Sets toField
-     * @param string $toField To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. These attributes must already exist in contacts database
+     * @param string $toField To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These attributes must already exist in contacts database
      * @return $this
      */
     public function setToField($toField)

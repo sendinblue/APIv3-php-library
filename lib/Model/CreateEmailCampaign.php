@@ -485,7 +485,7 @@ class CreateEmailCampaign implements ArrayAccess
 
     /**
      * Sets toField
-     * @param string $toField To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use [FNAME] [LNAME]. These attributes must already exist in your contact database
+     * @param string $toField To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use {FNAME} {LNAME}. These attributes must already exist in your contact database
      * @return $this
      */
     public function setToField($toField)

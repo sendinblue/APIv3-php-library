@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getFolderLists**](ListsApi.md#getFolderLists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
 [**getList**](ListsApi.md#getList) | **GET** /contacts/lists/{listId} | Get the details of a list
 [**getLists**](ListsApi.md#getLists) | **GET** /contacts/lists | Get all the lists
-[**removeContactToList**](ListsApi.md#removeContactToList) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+[**removeContactFromList**](ListsApi.md#removeContactFromList) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 [**updateList**](ListsApi.md#updateList) | **PUT** /contacts/lists/{listId} | Update a list
 
 
@@ -32,7 +32,7 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\AddRemoveContactToList(); // \SendinBlue\Client\Model\AddRemoveContactToList | Emails addresses of the contacts
+$contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses of the contacts
 
 try {
     $result = $api_instance->addContactToList($listId, $contactEmails);
@@ -48,7 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **int**| Id of the list |
- **contactEmails** | [**\SendinBlue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails addresses of the contacts |
+ **contactEmails** | [**\SendinBlue\Client\Model\AddContactToList**](../Model/AddContactToList.md)| Emails addresses of the contacts |
 
 ### Return type
 
@@ -364,8 +364,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **removeContactToList**
-> \SendinBlue\Client\Model\PostContactInfo removeContactToList($listId, $contactEmails)
+# **removeContactFromList**
+> \SendinBlue\Client\Model\PostContactInfo removeContactFromList($listId, $contactEmails)
 
 Remove existing contacts from a list
 
@@ -381,13 +381,13 @@ SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key',
 
 $api_instance = new SendinBlue\Client\Api\ListsApi();
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\AddRemoveContactToList(); // \SendinBlue\Client\Model\AddRemoveContactToList | Emails adresses of the contact
+$contactEmails = new \SendinBlue\Client\Model\RemoveContactFromList(); // \SendinBlue\Client\Model\RemoveContactFromList | Emails adresses of the contact
 
 try {
-    $result = $api_instance->removeContactToList($listId, $contactEmails);
+    $result = $api_instance->removeContactFromList($listId, $contactEmails);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ListsApi->removeContactToList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ListsApi->removeContactFromList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -397,7 +397,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **int**| Id of the list |
- **contactEmails** | [**\SendinBlue\Client\Model\AddRemoveContactToList**](../Model/AddRemoveContactToList.md)| Emails adresses of the contact |
+ **contactEmails** | [**\SendinBlue\Client\Model\RemoveContactFromList**](../Model/RemoveContactFromList.md)| Emails adresses of the contact |
 
 ### Return type
 

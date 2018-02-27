@@ -435,7 +435,7 @@ class UpdateEmailCampaign implements ArrayAccess
 
     /**
      * Sets toField
-     * @param string $toField This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. To use the contact attributes here, these must already exist in SendinBlue account
+     * @param string $toField This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. To use the contact attributes here, these must already exist in SendinBlue account
      * @return $this
      */
     public function setToField($toField)

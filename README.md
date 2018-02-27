@@ -109,7 +109,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**getList**](docs/Api/ContactsApi.md#getlist) | **GET** /contacts/lists/{listId} | Get the details of a list
 *ContactsApi* | [**getLists**](docs/Api/ContactsApi.md#getlists) | **GET** /contacts/lists | Get all the lists
 *ContactsApi* | [**importContacts**](docs/Api/ContactsApi.md#importcontacts) | **POST** /contacts/import | Import contacts
-*ContactsApi* | [**removeContactToList**](docs/Api/ContactsApi.md#removecontacttolist) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+*ContactsApi* | [**removeContactFromList**](docs/Api/ContactsApi.md#removecontactfromlist) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 *ContactsApi* | [**requestContactExport**](docs/Api/ContactsApi.md#requestcontactexport) | **POST** /contacts/export | Export contacts
 *ContactsApi* | [**updateAttribute**](docs/Api/ContactsApi.md#updateattribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
 *ContactsApi* | [**updateContact**](docs/Api/ContactsApi.md#updatecontact) | **PUT** /contacts/{email} | Updates a contact
@@ -138,7 +138,7 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**getFolderLists**](docs/Api/ListsApi.md#getfolderlists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
 *ListsApi* | [**getList**](docs/Api/ListsApi.md#getlist) | **GET** /contacts/lists/{listId} | Get the details of a list
 *ListsApi* | [**getLists**](docs/Api/ListsApi.md#getlists) | **GET** /contacts/lists | Get all the lists
-*ListsApi* | [**removeContactToList**](docs/Api/ListsApi.md#removecontacttolist) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+*ListsApi* | [**removeContactFromList**](docs/Api/ListsApi.md#removecontactfromlist) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 *ListsApi* | [**updateList**](docs/Api/ListsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
 *ProcessApi* | [**getProcess**](docs/Api/ProcessApi.md#getprocess) | **GET** /processes/{processId} | Return the informations for a process
 *ProcessApi* | [**getProcesses**](docs/Api/ProcessApi.md#getprocesses) | **GET** /processes | Return all the processes for your account
@@ -192,8 +192,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddContactToList](docs/Model/AddContactToList.md)
  - [AddCredits](docs/Model/AddCredits.md)
- - [AddRemoveContactToList](docs/Model/AddRemoveContactToList.md)
  - [CreateAttribute](docs/Model/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/Model/CreateAttributeEnumeration.md)
  - [CreateChild](docs/Model/CreateChild.md)
@@ -295,6 +295,7 @@ Class | Method | HTTP request | Description
  - [RemainingCreditModel](docs/Model/RemainingCreditModel.md)
  - [RemainingCreditModelChild](docs/Model/RemainingCreditModelChild.md)
  - [RemainingCreditModelReseller](docs/Model/RemainingCreditModelReseller.md)
+ - [RemoveContactFromList](docs/Model/RemoveContactFromList.md)
  - [RemoveCredits](docs/Model/RemoveCredits.md)
  - [RequestContactExport](docs/Model/RequestContactExport.md)
  - [RequestContactImport](docs/Model/RequestContactImport.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * AddRemoveContactToListTest
+ * AddContactToListTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * AddRemoveContactToListTest Class Doc Comment
+ * AddContactToListTest Class Doc Comment
  *
  * @category    Class */
-// * @description AddRemoveContactToList
+// * @description AddContactToList
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AddRemoveContactToListTest extends \PHPUnit_Framework_TestCase
+class AddContactToListTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class AddRemoveContactToListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AddRemoveContactToList"
+     * Test "AddContactToList"
      */
-    public function testAddRemoveContactToList()
+    public function testAddContactToList()
     {
     }
 
