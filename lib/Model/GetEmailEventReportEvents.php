@@ -250,12 +250,6 @@ class GetEmailEventReportEvents implements ArrayAccess
             );
         }
 
-        if ($this->container['tag'] === null) {
-            $invalid_properties[] = "'tag' can't be null";
-        }
-        if ($this->container['from'] === null) {
-            $invalid_properties[] = "'from' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -282,12 +276,6 @@ class GetEmailEventReportEvents implements ArrayAccess
         }
         $allowed_values = $this->getEventAllowableValues();
         if (!in_array($this->container['event'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['tag'] === null) {
-            return false;
-        }
-        if ($this->container['from'] === null) {
             return false;
         }
         return true;

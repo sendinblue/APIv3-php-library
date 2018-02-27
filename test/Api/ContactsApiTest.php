@@ -263,12 +263,12 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for removeContactToList
+     * Test case for removeContactFromList
      *
      * Remove existing contacts from a list.
      *
      */
-    public function testRemoveContactToList()
+    public function testRemoveContactFromList()
     {
     }
 

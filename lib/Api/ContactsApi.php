@@ -93,7 +93,7 @@ class ContactsApi
      * Add existing contacts to a list
      *
      * @param int $listId Id of the list (required)
-     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\PostContactInfo
      */
@@ -109,7 +109,7 @@ class ContactsApi
      * Add existing contacts to a list
      *
      * @param int $listId Id of the list (required)
-     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1919,40 +1919,40 @@ class ContactsApi
     }
 
     /**
-     * Operation removeContactToList
+     * Operation removeContactFromList
      *
      * Remove existing contacts from a list
      *
      * @param int $listId Id of the list (required)
-     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
+     * @param \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\PostContactInfo
      */
-    public function removeContactToList($listId, $contactEmails)
+    public function removeContactFromList($listId, $contactEmails)
     {
-        list($response) = $this->removeContactToListWithHttpInfo($listId, $contactEmails);
+        list($response) = $this->removeContactFromListWithHttpInfo($listId, $contactEmails);
         return $response;
     }
 
     /**
-     * Operation removeContactToListWithHttpInfo
+     * Operation removeContactFromListWithHttpInfo
      *
      * Remove existing contacts from a list
      *
      * @param int $listId Id of the list (required)
-     * @param \SendinBlue\Client\Model\AddRemoveContactToList $contactEmails Emails adresses of the contact (required)
+     * @param \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\PostContactInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeContactToListWithHttpInfo($listId, $contactEmails)
+    public function removeContactFromListWithHttpInfo($listId, $contactEmails)
     {
         // verify the required parameter 'listId' is set
         if ($listId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $listId when calling removeContactToList');
+            throw new \InvalidArgumentException('Missing the required parameter $listId when calling removeContactFromList');
         }
         // verify the required parameter 'contactEmails' is set
         if ($contactEmails === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $contactEmails when calling removeContactToList');
+            throw new \InvalidArgumentException('Missing the required parameter $contactEmails when calling removeContactFromList');
         }
         // parse inputs
         $resourcePath = "/contacts/lists/{listId}/contacts/remove";
