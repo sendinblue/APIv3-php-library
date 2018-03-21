@@ -73,7 +73,9 @@ class GetEmailCampaign implements ArrayAccess
         'modifiedAt' => '\DateTime',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
-        'recurring' => 'bool'
+        'recurring' => 'bool',
+        'recipients' => 'object',
+        'statistics' => 'object'
     ];
 
     /**
@@ -100,7 +102,9 @@ class GetEmailCampaign implements ArrayAccess
         'modifiedAt' => 'date-time',
         'inlineImageActivation' => null,
         'mirrorActive' => null,
-        'recurring' => null
+        'recurring' => null,
+        'recipients' => null,
+        'statistics' => null
     ];
 
     public static function swaggerTypes()
@@ -137,7 +141,9 @@ class GetEmailCampaign implements ArrayAccess
         'modifiedAt' => 'modifiedAt',
         'inlineImageActivation' => 'inlineImageActivation',
         'mirrorActive' => 'mirrorActive',
-        'recurring' => 'recurring'
+        'recurring' => 'recurring',
+        'recipients' => 'recipients',
+        'statistics' => 'statistics'
     ];
 
 
@@ -165,7 +171,9 @@ class GetEmailCampaign implements ArrayAccess
         'modifiedAt' => 'setModifiedAt',
         'inlineImageActivation' => 'setInlineImageActivation',
         'mirrorActive' => 'setMirrorActive',
-        'recurring' => 'setRecurring'
+        'recurring' => 'setRecurring',
+        'recipients' => 'setRecipients',
+        'statistics' => 'setStatistics'
     ];
 
 
@@ -193,7 +201,9 @@ class GetEmailCampaign implements ArrayAccess
         'modifiedAt' => 'getModifiedAt',
         'inlineImageActivation' => 'getInlineImageActivation',
         'mirrorActive' => 'getMirrorActive',
-        'recurring' => 'getRecurring'
+        'recurring' => 'getRecurring',
+        'recipients' => 'getRecipients',
+        'statistics' => 'getStatistics'
     ];
 
     public static function attributeMap()
@@ -283,6 +293,8 @@ class GetEmailCampaign implements ArrayAccess
         $this->container['inlineImageActivation'] = isset($data['inlineImageActivation']) ? $data['inlineImageActivation'] : null;
         $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
+        $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
+        $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
 
     /**
@@ -352,6 +364,12 @@ class GetEmailCampaign implements ArrayAccess
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
+        if ($this->container['recipients'] === null) {
+            $invalid_properties[] = "'recipients' can't be null";
+        }
+        if ($this->container['statistics'] === null) {
+            $invalid_properties[] = "'statistics' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -412,6 +430,12 @@ class GetEmailCampaign implements ArrayAccess
             return false;
         }
         if ($this->container['modifiedAt'] === null) {
+            return false;
+        }
+        if ($this->container['recipients'] === null) {
+            return false;
+        }
+        if ($this->container['statistics'] === null) {
             return false;
         }
         return true;
@@ -852,6 +876,48 @@ class GetEmailCampaign implements ArrayAccess
     public function setRecurring($recurring)
     {
         $this->container['recurring'] = $recurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipients
+     * @return object
+     */
+    public function getRecipients()
+    {
+        return $this->container['recipients'];
+    }
+
+    /**
+     * Sets recipients
+     * @param object $recipients
+     * @return $this
+     */
+    public function setRecipients($recipients)
+    {
+        $this->container['recipients'] = $recipients;
+
+        return $this;
+    }
+
+    /**
+     * Gets statistics
+     * @return object
+     */
+    public function getStatistics()
+    {
+        return $this->container['statistics'];
+    }
+
+    /**
+     * Sets statistics
+     * @param object $statistics
+     * @return $this
+     */
+    public function setStatistics($statistics)
+    {
+        $this->container['statistics'] = $statistics;
 
         return $this;
     }

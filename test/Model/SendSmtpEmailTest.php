@@ -146,4 +146,18 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     public function testPropertyHeaders()
     {
     }
+
+    /**
+     * Test attribute "templateId"
+     */
+    public function testPropertyTemplateId()
+    {
+    }
+
+    /**
+     * Test attribute "params"
+     */
+    public function testPropertyParams()
+    {
+    }
 }

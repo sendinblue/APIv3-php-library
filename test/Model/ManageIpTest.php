@@ -78,9 +78,9 @@ class ManageIpTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "ipId"
+     * Test attribute "ip"
      */
-    public function testPropertyIpId()
+    public function testPropertyIp()
     {
     }
 }

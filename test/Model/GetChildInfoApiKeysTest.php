@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * GetChildInfoApiKeysTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetChildInfoApiKeys
+// * @description API Keys associated to child account
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
@@ -78,23 +78,16 @@ class GetChildInfoApiKeysTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "v2"
      */
-    public function testPropertyName()
+    public function testPropertyV2()
     {
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "v3"
      */
-    public function testPropertyKey()
-    {
-    }
-
-    /**
-     * Test attribute "secret"
-     */
-    public function testPropertySecret()
+    public function testPropertyV3()
     {
     }
 }

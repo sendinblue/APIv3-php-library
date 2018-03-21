@@ -62,7 +62,9 @@ class GetSmsCampaign implements ArrayAccess
         'testSent' => 'bool',
         'sender' => 'string',
         'createdAt' => '\DateTime',
-        'modifiedAt' => '\DateTime'
+        'modifiedAt' => '\DateTime',
+        'recipients' => 'object',
+        'statistics' => 'object'
     ];
 
     /**
@@ -78,7 +80,9 @@ class GetSmsCampaign implements ArrayAccess
         'testSent' => null,
         'sender' => null,
         'createdAt' => 'date-time',
-        'modifiedAt' => 'date-time'
+        'modifiedAt' => 'date-time',
+        'recipients' => null,
+        'statistics' => null
     ];
 
     public static function swaggerTypes()
@@ -104,7 +108,9 @@ class GetSmsCampaign implements ArrayAccess
         'testSent' => 'testSent',
         'sender' => 'sender',
         'createdAt' => 'createdAt',
-        'modifiedAt' => 'modifiedAt'
+        'modifiedAt' => 'modifiedAt',
+        'recipients' => 'recipients',
+        'statistics' => 'statistics'
     ];
 
 
@@ -121,7 +127,9 @@ class GetSmsCampaign implements ArrayAccess
         'testSent' => 'setTestSent',
         'sender' => 'setSender',
         'createdAt' => 'setCreatedAt',
-        'modifiedAt' => 'setModifiedAt'
+        'modifiedAt' => 'setModifiedAt',
+        'recipients' => 'setRecipients',
+        'statistics' => 'setStatistics'
     ];
 
 
@@ -138,7 +146,9 @@ class GetSmsCampaign implements ArrayAccess
         'testSent' => 'getTestSent',
         'sender' => 'getSender',
         'createdAt' => 'getCreatedAt',
-        'modifiedAt' => 'getModifiedAt'
+        'modifiedAt' => 'getModifiedAt',
+        'recipients' => 'getRecipients',
+        'statistics' => 'getStatistics'
     ];
 
     public static function attributeMap()
@@ -203,6 +213,8 @@ class GetSmsCampaign implements ArrayAccess
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
+        $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
+        $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
 
     /**
@@ -249,6 +261,12 @@ class GetSmsCampaign implements ArrayAccess
         if ($this->container['modifiedAt'] === null) {
             $invalid_properties[] = "'modifiedAt' can't be null";
         }
+        if ($this->container['recipients'] === null) {
+            $invalid_properties[] = "'recipients' can't be null";
+        }
+        if ($this->container['statistics'] === null) {
+            $invalid_properties[] = "'statistics' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -290,6 +308,12 @@ class GetSmsCampaign implements ArrayAccess
             return false;
         }
         if ($this->container['modifiedAt'] === null) {
+            return false;
+        }
+        if ($this->container['recipients'] === null) {
+            return false;
+        }
+        if ($this->container['statistics'] === null) {
             return false;
         }
         return true;
@@ -490,6 +514,48 @@ class GetSmsCampaign implements ArrayAccess
     public function setModifiedAt($modifiedAt)
     {
         $this->container['modifiedAt'] = $modifiedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipients
+     * @return object
+     */
+    public function getRecipients()
+    {
+        return $this->container['recipients'];
+    }
+
+    /**
+     * Sets recipients
+     * @param object $recipients
+     * @return $this
+     */
+    public function setRecipients($recipients)
+    {
+        $this->container['recipients'] = $recipients;
+
+        return $this;
+    }
+
+    /**
+     * Gets statistics
+     * @return object
+     */
+    public function getStatistics()
+    {
+        return $this->container['statistics'];
+    }
+
+    /**
+     * Sets statistics
+     * @param object $statistics
+     * @return $this
+     */
+    public function setStatistics($statistics)
+    {
+        $this->container['statistics'] = $statistics;
 
         return $this;
     }

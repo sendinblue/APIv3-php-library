@@ -58,8 +58,7 @@ class UpdateChild implements ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'companyName' => 'string',
-        'password' => 'string',
-        'ips' => 'int[]'
+        'password' => 'string'
     ];
 
     /**
@@ -71,8 +70,7 @@ class UpdateChild implements ArrayAccess
         'firstName' => null,
         'lastName' => null,
         'companyName' => null,
-        'password' => 'password',
-        'ips' => 'int64'
+        'password' => 'password'
     ];
 
     public static function swaggerTypes()
@@ -94,8 +92,7 @@ class UpdateChild implements ArrayAccess
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'companyName' => 'companyName',
-        'password' => 'password',
-        'ips' => 'ips'
+        'password' => 'password'
     ];
 
 
@@ -108,8 +105,7 @@ class UpdateChild implements ArrayAccess
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'companyName' => 'setCompanyName',
-        'password' => 'setPassword',
-        'ips' => 'setIps'
+        'password' => 'setPassword'
     ];
 
 
@@ -122,8 +118,7 @@ class UpdateChild implements ArrayAccess
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'companyName' => 'getCompanyName',
-        'password' => 'getPassword',
-        'ips' => 'getIps'
+        'password' => 'getPassword'
     ];
 
     public static function attributeMap()
@@ -162,7 +157,6 @@ class UpdateChild implements ArrayAccess
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['ips'] = isset($data['ips']) ? $data['ips'] : null;
     }
 
     /**
@@ -291,27 +285,6 @@ class UpdateChild implements ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /**
-     * Gets ips
-     * @return int[]
-     */
-    public function getIps()
-    {
-        return $this->container['ips'];
-    }
-
-    /**
-     * Sets ips
-     * @param int[] $ips
-     * @return $this
-     */
-    public function setIps($ips)
-    {
-        $this->container['ips'] = $ips;
 
         return $this;
     }

@@ -177,7 +177,7 @@ class RemoveCredits implements ArrayAccess
 
     /**
      * Sets sms
-     * @param int $sms SMS credits to be removed from the child account
+     * @param int $sms Required if email credits are empty. SMS credits to be removed from the child account
      * @return $this
      */
     public function setSms($sms)
@@ -198,7 +198,7 @@ class RemoveCredits implements ArrayAccess
 
     /**
      * Sets email
-     * @param int $email Email credits to be removed from the child account
+     * @param int $email Required if sms credits are empty. Email credits to be removed from the child account
      * @return $this
      */
     public function setEmail($email)

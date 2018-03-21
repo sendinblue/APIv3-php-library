@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateChildTest
+ * CreateResellerTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * UpdateChildTest Class Doc Comment
+ * CreateResellerTest Class Doc Comment
  *
  * @category    Class */
-// * @description UpdateChild
+// * @description CreateReseller
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UpdateChildTest extends \PHPUnit_Framework_TestCase
+class CreateResellerTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,44 +71,16 @@ class UpdateChildTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "UpdateChild"
+     * Test "CreateReseller"
      */
-    public function testUpdateChild()
+    public function testCreateReseller()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "authKey"
      */
-    public function testPropertyEmail()
-    {
-    }
-
-    /**
-     * Test attribute "firstName"
-     */
-    public function testPropertyFirstName()
-    {
-    }
-
-    /**
-     * Test attribute "lastName"
-     */
-    public function testPropertyLastName()
-    {
-    }
-
-    /**
-     * Test attribute "companyName"
-     */
-    public function testPropertyCompanyName()
-    {
-    }
-
-    /**
-     * Test attribute "password"
-     */
-    public function testPropertyPassword()
+    public function testPropertyAuthKey()
     {
     }
 }

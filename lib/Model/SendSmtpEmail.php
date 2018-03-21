@@ -63,7 +63,9 @@ class SendSmtpEmail implements ArrayAccess
         'subject' => 'string',
         'replyTo' => '\SendinBlue\Client\Model\SendSmtpEmailReplyTo',
         'attachment' => '\SendinBlue\Client\Model\SendSmtpEmailAttachment[]',
-        'headers' => 'map[string,string]'
+        'headers' => 'map[string,string]',
+        'templateId' => 'int',
+        'params' => 'map[string,string]'
     ];
 
     /**
@@ -80,7 +82,9 @@ class SendSmtpEmail implements ArrayAccess
         'subject' => null,
         'replyTo' => null,
         'attachment' => null,
-        'headers' => null
+        'headers' => null,
+        'templateId' => 'int64',
+        'params' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +111,9 @@ class SendSmtpEmail implements ArrayAccess
         'subject' => 'subject',
         'replyTo' => 'replyTo',
         'attachment' => 'attachment',
-        'headers' => 'headers'
+        'headers' => 'headers',
+        'templateId' => 'templateId',
+        'params' => 'params'
     ];
 
 
@@ -125,7 +131,9 @@ class SendSmtpEmail implements ArrayAccess
         'subject' => 'setSubject',
         'replyTo' => 'setReplyTo',
         'attachment' => 'setAttachment',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
+        'templateId' => 'setTemplateId',
+        'params' => 'setParams'
     ];
 
 
@@ -143,7 +151,9 @@ class SendSmtpEmail implements ArrayAccess
         'subject' => 'getSubject',
         'replyTo' => 'getReplyTo',
         'attachment' => 'getAttachment',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
+        'templateId' => 'getTemplateId',
+        'params' => 'getParams'
     ];
 
     public static function attributeMap()
@@ -187,6 +197,8 @@ class SendSmtpEmail implements ArrayAccess
         $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
         $this->container['attachment'] = isset($data['attachment']) ? $data['attachment'] : null;
         $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
+        $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
+        $this->container['params'] = isset($data['params']) ? $data['params'] : null;
     }
 
     /**
@@ -201,12 +213,6 @@ class SendSmtpEmail implements ArrayAccess
         if ($this->container['to'] === null) {
             $invalid_properties[] = "'to' can't be null";
         }
-        if ($this->container['htmlContent'] === null) {
-            $invalid_properties[] = "'htmlContent' can't be null";
-        }
-        if ($this->container['subject'] === null) {
-            $invalid_properties[] = "'subject' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -220,12 +226,6 @@ class SendSmtpEmail implements ArrayAccess
     {
 
         if ($this->container['to'] === null) {
-            return false;
-        }
-        if ($this->container['htmlContent'] === null) {
-            return false;
-        }
-        if ($this->container['subject'] === null) {
             return false;
         }
         return true;
@@ -327,7 +327,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets htmlContent
-     * @param string $htmlContent HTML body of the message
+     * @param string $htmlContent HTML body of the message ( Mandatory if 'templateId' is not passed, ignored if 'templateId' is passed )
      * @return $this
      */
     public function setHtmlContent($htmlContent)
@@ -348,7 +348,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets textContent
-     * @param string $textContent Plain Text body of the message
+     * @param string $textContent Plain Text body of the message ( Ignored if 'templateId' is passed )
      * @return $this
      */
     public function setTextContent($textContent)
@@ -369,7 +369,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets subject
-     * @param string $subject Subject of the message
+     * @param string $subject Subject of the message. Mandatory if 'templateId' is not passed
      * @return $this
      */
     public function setSubject($subject)
@@ -411,7 +411,7 @@ class SendSmtpEmail implements ArrayAccess
 
     /**
      * Sets attachment
-     * @param \SendinBlue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub and eps
+     * @param \SendinBlue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment. Name can be used in both cases to define the attachment name. It is mandatory in case of content. Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub and eps ( Ignored if 'templateId' is passed )
      * @return $this
      */
     public function setAttachment($attachment)
@@ -438,6 +438,48 @@ class SendSmtpEmail implements ArrayAccess
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
+
+        return $this;
+    }
+
+    /**
+     * Gets templateId
+     * @return int
+     */
+    public function getTemplateId()
+    {
+        return $this->container['templateId'];
+    }
+
+    /**
+     * Sets templateId
+     * @param int $templateId Id of the template
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->container['templateId'] = $templateId;
+
+        return $this;
+    }
+
+    /**
+     * Gets params
+     * @return map[string,string]
+     */
+    public function getParams()
+    {
+        return $this->container['params'];
+    }
+
+    /**
+     * Sets params
+     * @param map[string,string] $params
+     * @return $this
+     */
+    public function setParams($params)
+    {
+        $this->container['params'] = $params;
 
         return $this;
     }

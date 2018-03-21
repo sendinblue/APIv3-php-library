@@ -216,4 +216,18 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
     public function testPropertyRecurring()
     {
     }
+
+    /**
+     * Test attribute "recipients"
+     */
+    public function testPropertyRecipients()
+    {
+    }
+
+    /**
+     * Test attribute "statistics"
+     */
+    public function testPropertyStatistics()
+    {
+    }
 }

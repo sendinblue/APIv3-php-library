@@ -92,14 +92,14 @@ class ResellerApi
      *
      * Add Email and/or SMS credits to a specific child account
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @param \SendinBlue\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\RemainingCreditModel
      */
-    public function addCredits($childId, $addCredits)
+    public function addCredits($childAuthKey, $addCredits)
     {
-        list($response) = $this->addCreditsWithHttpInfo($childId, $addCredits);
+        list($response) = $this->addCreditsWithHttpInfo($childAuthKey, $addCredits);
         return $response;
     }
 
@@ -108,23 +108,23 @@ class ResellerApi
      *
      * Add Email and/or SMS credits to a specific child account
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @param \SendinBlue\Client\Model\AddCredits $addCredits Values to post to add credit to a specific child account (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addCreditsWithHttpInfo($childId, $addCredits)
+    public function addCreditsWithHttpInfo($childAuthKey, $addCredits)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling addCredits');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling addCredits');
         }
         // verify the required parameter 'addCredits' is set
         if ($addCredits === null) {
             throw new \InvalidArgumentException('Missing the required parameter $addCredits when calling addCredits');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}/credits/add";
+        $resourcePath = "/reseller/children/{childAuthKey}/credits/add";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -136,10 +136,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
@@ -169,7 +169,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 '\SendinBlue\Client\Model\RemainingCreditModel',
-                '/reseller/children/{childId}/credits/add'
+                '/reseller/children/{childAuthKey}/credits/add'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
@@ -202,14 +202,14 @@ class ResellerApi
      *
      * Associate a dedicated IP to the child
      *
-     * @param int $childId id of reseller&#39;s child (required)
-     * @param \SendinBlue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param \SendinBlue\Client\Model\ManageIp $ip IP to associate (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function associateIpToChild($childId, $ipId)
+    public function associateIpToChild($childAuthKey, $ip)
     {
-        list($response) = $this->associateIpToChildWithHttpInfo($childId, $ipId);
+        list($response) = $this->associateIpToChildWithHttpInfo($childAuthKey, $ip);
         return $response;
     }
 
@@ -218,23 +218,23 @@ class ResellerApi
      *
      * Associate a dedicated IP to the child
      *
-     * @param int $childId id of reseller&#39;s child (required)
-     * @param \SendinBlue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param \SendinBlue\Client\Model\ManageIp $ip IP to associate (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function associateIpToChildWithHttpInfo($childId, $ipId)
+    public function associateIpToChildWithHttpInfo($childAuthKey, $ip)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling associateIpToChild');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling associateIpToChild');
         }
-        // verify the required parameter 'ipId' is set
-        if ($ipId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $ipId when calling associateIpToChild');
+        // verify the required parameter 'ip' is set
+        if ($ip === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $ip when calling associateIpToChild');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}/ips/associate";
+        $resourcePath = "/reseller/children/{childAuthKey}/ips/associate";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -246,17 +246,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($ipId)) {
-            $_tempBody = $ipId;
+        if (isset($ip)) {
+            $_tempBody = $ip;
         }
 
         // for model (json/xml)
@@ -279,7 +279,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reseller/children/{childId}/ips/associate'
+                '/reseller/children/{childAuthKey}/ips/associate'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -306,7 +306,7 @@ class ResellerApi
      *
      * @param \SendinBlue\Client\Model\CreateChild $resellerChild reseller child to add (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return \SendinBlue\Client\Model\CreateModel
+     * @return \SendinBlue\Client\Model\CreateReseller
      */
     public function createResellerChild($resellerChild = null)
     {
@@ -321,7 +321,7 @@ class ResellerApi
      *
      * @param \SendinBlue\Client\Model\CreateChild $resellerChild reseller child to add (optional)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SendinBlue\Client\Model\CreateReseller, HTTP status code, HTTP response headers (array of strings)
      */
     public function createResellerChildWithHttpInfo($resellerChild = null)
     {
@@ -362,15 +362,15 @@ class ResellerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SendinBlue\Client\Model\CreateModel',
+                '\SendinBlue\Client\Model\CreateReseller',
                 '/reseller/children'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateModel', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\CreateReseller', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateModel', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\CreateReseller', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -390,35 +390,35 @@ class ResellerApi
     /**
      * Operation deleteResellerChild
      *
-     * Deletes a single reseller child based on the childId supplied
+     * Deletes a single reseller child based on the childAuthKey supplied
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function deleteResellerChild($childId)
+    public function deleteResellerChild($childAuthKey)
     {
-        list($response) = $this->deleteResellerChildWithHttpInfo($childId);
+        list($response) = $this->deleteResellerChildWithHttpInfo($childAuthKey);
         return $response;
     }
 
     /**
      * Operation deleteResellerChildWithHttpInfo
      *
-     * Deletes a single reseller child based on the childId supplied
+     * Deletes a single reseller child based on the childAuthKey supplied
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteResellerChildWithHttpInfo($childId)
+    public function deleteResellerChildWithHttpInfo($childAuthKey)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling deleteResellerChild');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling deleteResellerChild');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}";
+        $resourcePath = "/reseller/children/{childAuthKey}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -430,10 +430,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
@@ -458,7 +458,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reseller/children/{childId}'
+                '/reseller/children/{childAuthKey}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -487,14 +487,14 @@ class ResellerApi
      *
      * Dissociate a dedicated IP to the child
      *
-     * @param int $childId id of reseller&#39;s child (required)
-     * @param \SendinBlue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param \SendinBlue\Client\Model\ManageIp $ip IP to dissociate (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function dissociateIpFromChild($childId, $ipId)
+    public function dissociateIpFromChild($childAuthKey, $ip)
     {
-        list($response) = $this->dissociateIpFromChildWithHttpInfo($childId, $ipId);
+        list($response) = $this->dissociateIpFromChildWithHttpInfo($childAuthKey, $ip);
         return $response;
     }
 
@@ -503,23 +503,23 @@ class ResellerApi
      *
      * Dissociate a dedicated IP to the child
      *
-     * @param int $childId id of reseller&#39;s child (required)
-     * @param \SendinBlue\Client\Model\ManageIp $ipId IP&#39;s id (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param \SendinBlue\Client\Model\ManageIp $ip IP to dissociate (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dissociateIpFromChildWithHttpInfo($childId, $ipId)
+    public function dissociateIpFromChildWithHttpInfo($childAuthKey, $ip)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling dissociateIpFromChild');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling dissociateIpFromChild');
         }
-        // verify the required parameter 'ipId' is set
-        if ($ipId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $ipId when calling dissociateIpFromChild');
+        // verify the required parameter 'ip' is set
+        if ($ip === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $ip when calling dissociateIpFromChild');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}/ips/dissociate";
+        $resourcePath = "/reseller/children/{childAuthKey}/ips/dissociate";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -531,17 +531,17 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($ipId)) {
-            $_tempBody = $ipId;
+        if (isset($ip)) {
+            $_tempBody = $ip;
         }
 
         // for model (json/xml)
@@ -564,7 +564,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reseller/children/{childId}/ips/dissociate'
+                '/reseller/children/{childAuthKey}/ips/dissociate'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -589,13 +589,13 @@ class ResellerApi
      *
      * Gets the info about a specific child account
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\GetChildInfo
      */
-    public function getChildInfo($childId)
+    public function getChildInfo($childAuthKey)
     {
-        list($response) = $this->getChildInfoWithHttpInfo($childId);
+        list($response) = $this->getChildInfoWithHttpInfo($childAuthKey);
         return $response;
     }
 
@@ -604,18 +604,18 @@ class ResellerApi
      *
      * Gets the info about a specific child account
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\GetChildInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getChildInfoWithHttpInfo($childId)
+    public function getChildInfoWithHttpInfo($childAuthKey)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling getChildInfo');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling getChildInfo');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}";
+        $resourcePath = "/reseller/children/{childAuthKey}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -627,10 +627,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
@@ -655,7 +655,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 '\SendinBlue\Client\Model\GetChildInfo',
-                '/reseller/children/{childId}'
+                '/reseller/children/{childAuthKey}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\GetChildInfo', $httpHeader), $statusCode, $httpHeader];
@@ -765,14 +765,14 @@ class ResellerApi
      *
      * Remove Email and/or SMS credits from a specific child account
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @param \SendinBlue\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return \SendinBlue\Client\Model\RemainingCreditModel
      */
-    public function removeCredits($childId, $removeCredits)
+    public function removeCredits($childAuthKey, $removeCredits)
     {
-        list($response) = $this->removeCreditsWithHttpInfo($childId, $removeCredits);
+        list($response) = $this->removeCreditsWithHttpInfo($childAuthKey, $removeCredits);
         return $response;
     }
 
@@ -781,23 +781,23 @@ class ResellerApi
      *
      * Remove Email and/or SMS credits from a specific child account
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @param \SendinBlue\Client\Model\RemoveCredits $removeCredits Values to post to remove email or SMS credits from a specific child account (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of \SendinBlue\Client\Model\RemainingCreditModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function removeCreditsWithHttpInfo($childId, $removeCredits)
+    public function removeCreditsWithHttpInfo($childAuthKey, $removeCredits)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling removeCredits');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling removeCredits');
         }
         // verify the required parameter 'removeCredits' is set
         if ($removeCredits === null) {
             throw new \InvalidArgumentException('Missing the required parameter $removeCredits when calling removeCredits');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}/credits/remove";
+        $resourcePath = "/reseller/children/{childAuthKey}/credits/remove";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -809,10 +809,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
@@ -842,7 +842,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 '\SendinBlue\Client\Model\RemainingCreditModel',
-                '/reseller/children/{childId}/credits/remove'
+                '/reseller/children/{childAuthKey}/credits/remove'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SendinBlue\Client\Model\RemainingCreditModel', $httpHeader), $statusCode, $httpHeader];
@@ -873,41 +873,41 @@ class ResellerApi
     /**
      * Operation updateResellerChild
      *
-     * Updates infos of reseller's child based on the childId supplied
+     * Updates infos of reseller's child based on the childAuthKey supplied
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @param \SendinBlue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return void
      */
-    public function updateResellerChild($childId, $resellerChild)
+    public function updateResellerChild($childAuthKey, $resellerChild)
     {
-        list($response) = $this->updateResellerChildWithHttpInfo($childId, $resellerChild);
+        list($response) = $this->updateResellerChildWithHttpInfo($childAuthKey, $resellerChild);
         return $response;
     }
 
     /**
      * Operation updateResellerChildWithHttpInfo
      *
-     * Updates infos of reseller's child based on the childId supplied
+     * Updates infos of reseller's child based on the childAuthKey supplied
      *
-     * @param int $childId id of reseller&#39;s child (required)
+     * @param string $childAuthKey auth key of reseller&#39;s child (required)
      * @param \SendinBlue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateResellerChildWithHttpInfo($childId, $resellerChild)
+    public function updateResellerChildWithHttpInfo($childAuthKey, $resellerChild)
     {
-        // verify the required parameter 'childId' is set
-        if ($childId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $childId when calling updateResellerChild');
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $childAuthKey when calling updateResellerChild');
         }
         // verify the required parameter 'resellerChild' is set
         if ($resellerChild === null) {
             throw new \InvalidArgumentException('Missing the required parameter $resellerChild when calling updateResellerChild');
         }
         // parse inputs
-        $resourcePath = "/reseller/children/{childId}";
+        $resourcePath = "/reseller/children/{childAuthKey}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -919,10 +919,10 @@ class ResellerApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
-        if ($childId !== null) {
+        if ($childAuthKey !== null) {
             $resourcePath = str_replace(
-                "{" . "childId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($childId),
+                "{" . "childAuthKey" . "}",
+                $this->apiClient->getSerializer()->toPathValue($childAuthKey),
                 $resourcePath
             );
         }
@@ -952,7 +952,7 @@ class ResellerApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reseller/children/{childId}'
+                '/reseller/children/{childAuthKey}'
             );
 
             return [null, $statusCode, $httpHeader];

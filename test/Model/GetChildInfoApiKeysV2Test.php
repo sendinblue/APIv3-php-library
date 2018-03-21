@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateChildTest
+ * GetChildInfoApiKeysV2Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * UpdateChildTest Class Doc Comment
+ * GetChildInfoApiKeysV2Test Class Doc Comment
  *
  * @category    Class */
-// * @description UpdateChild
+// * @description GetChildInfoApiKeysV2
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UpdateChildTest extends \PHPUnit_Framework_TestCase
+class GetChildInfoApiKeysV2Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,44 +71,23 @@ class UpdateChildTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "UpdateChild"
+     * Test "GetChildInfoApiKeysV2"
      */
-    public function testUpdateChild()
+    public function testGetChildInfoApiKeysV2()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "name"
      */
-    public function testPropertyEmail()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "firstName"
+     * Test attribute "key"
      */
-    public function testPropertyFirstName()
-    {
-    }
-
-    /**
-     * Test attribute "lastName"
-     */
-    public function testPropertyLastName()
-    {
-    }
-
-    /**
-     * Test attribute "companyName"
-     */
-    public function testPropertyCompanyName()
-    {
-    }
-
-    /**
-     * Test attribute "password"
-     */
-    public function testPropertyPassword()
+    public function testPropertyKey()
     {
     }
 }

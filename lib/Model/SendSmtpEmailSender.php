@@ -35,6 +35,7 @@ use \ArrayAccess;
  * SendSmtpEmailSender Class Doc Comment
  *
  * @category    Class
+ * @description Sender from which emails are sent. Mandatory if &#39;templateId&#39; is not passed
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
