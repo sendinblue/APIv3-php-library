@@ -142,15 +142,15 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**updateList**](docs/Api/ListsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
 *ProcessApi* | [**getProcess**](docs/Api/ProcessApi.md#getprocess) | **GET** /processes/{processId} | Return the informations for a process
 *ProcessApi* | [**getProcesses**](docs/Api/ProcessApi.md#getprocesses) | **GET** /processes | Return all the processes for your account
-*ResellerApi* | [**addCredits**](docs/Api/ResellerApi.md#addcredits) | **POST** /reseller/children/{childId}/credits/add | Add Email and/or SMS credits to a specific child account
-*ResellerApi* | [**associateIpToChild**](docs/Api/ResellerApi.md#associateiptochild) | **POST** /reseller/children/{childId}/ips/associate | Associate a dedicated IP to the child
+*ResellerApi* | [**addCredits**](docs/Api/ResellerApi.md#addcredits) | **POST** /reseller/children/{childAuthKey}/credits/add | Add Email and/or SMS credits to a specific child account
+*ResellerApi* | [**associateIpToChild**](docs/Api/ResellerApi.md#associateiptochild) | **POST** /reseller/children/{childAuthKey}/ips/associate | Associate a dedicated IP to the child
 *ResellerApi* | [**createResellerChild**](docs/Api/ResellerApi.md#createresellerchild) | **POST** /reseller/children | Creates a reseller child
-*ResellerApi* | [**deleteResellerChild**](docs/Api/ResellerApi.md#deleteresellerchild) | **DELETE** /reseller/children/{childId} | Deletes a single reseller child based on the childId supplied
-*ResellerApi* | [**dissociateIpFromChild**](docs/Api/ResellerApi.md#dissociateipfromchild) | **POST** /reseller/children/{childId}/ips/dissociate | Dissociate a dedicated IP to the child
-*ResellerApi* | [**getChildInfo**](docs/Api/ResellerApi.md#getchildinfo) | **GET** /reseller/children/{childId} | Gets the info about a specific child account
+*ResellerApi* | [**deleteResellerChild**](docs/Api/ResellerApi.md#deleteresellerchild) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
+*ResellerApi* | [**dissociateIpFromChild**](docs/Api/ResellerApi.md#dissociateipfromchild) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+*ResellerApi* | [**getChildInfo**](docs/Api/ResellerApi.md#getchildinfo) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 *ResellerApi* | [**getResellerChilds**](docs/Api/ResellerApi.md#getresellerchilds) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
-*ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childId}/credits/remove | Remove Email and/or SMS credits from a specific child account
-*ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childId} | Updates infos of reseller&#39;s child based on the childId supplied
+*ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
+*ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
 *SMSCampaignsApi* | [**createSmsCampaign**](docs/Api/SMSCampaignsApi.md#createsmscampaign) | **POST** /smsCampaigns | Creates an SMS campaign
 *SMSCampaignsApi* | [**deleteSmsCampaign**](docs/Api/SMSCampaignsApi.md#deletesmscampaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
 *SMSCampaignsApi* | [**getSmsCampaign**](docs/Api/SMSCampaignsApi.md#getsmscampaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
@@ -203,6 +203,7 @@ Class | Method | HTTP request | Description
  - [CreateEmailCampaignSender](docs/Model/CreateEmailCampaignSender.md)
  - [CreateList](docs/Model/CreateList.md)
  - [CreateModel](docs/Model/CreateModel.md)
+ - [CreateReseller](docs/Model/CreateReseller.md)
  - [CreateSender](docs/Model/CreateSender.md)
  - [CreateSenderIps](docs/Model/CreateSenderIps.md)
  - [CreateSenderModel](docs/Model/CreateSenderModel.md)
@@ -229,8 +230,9 @@ Class | Method | HTTP request | Description
  - [GetCampaignRecipients](docs/Model/GetCampaignRecipients.md)
  - [GetCampaignStats](docs/Model/GetCampaignStats.md)
  - [GetChildInfoApiKeys](docs/Model/GetChildInfoApiKeys.md)
+ - [GetChildInfoApiKeysV2](docs/Model/GetChildInfoApiKeysV2.md)
+ - [GetChildInfoApiKeysV3](docs/Model/GetChildInfoApiKeysV3.md)
  - [GetChildInfoCredits](docs/Model/GetChildInfoCredits.md)
- - [GetChildInfoIps](docs/Model/GetChildInfoIps.md)
  - [GetChildInfoStatistics](docs/Model/GetChildInfoStatistics.md)
  - [GetChildrenList](docs/Model/GetChildrenList.md)
  - [GetClient](docs/Model/GetClient.md)

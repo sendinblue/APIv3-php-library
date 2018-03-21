@@ -105,7 +105,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteResellerChild
      *
-     * Deletes a single reseller child based on the childId supplied.
+     * Deletes a single reseller child based on the childAuthKey supplied.
      *
      */
     public function testDeleteResellerChild()
@@ -155,7 +155,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateResellerChild
      *
-     * Updates infos of reseller's child based on the childId supplied.
+     * Updates infos of reseller's child based on the childAuthKey supplied.
      *
      */
     public function testUpdateResellerChild()

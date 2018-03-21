@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * SendSmtpEmailSenderTest Class Doc Comment
  *
  * @category    Class */
-// * @description SendSmtpEmailSender
+// * @description Sender from which emails are sent. Mandatory if &#39;templateId&#39; is not passed
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team

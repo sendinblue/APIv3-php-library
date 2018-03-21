@@ -1,6 +1,6 @@
 <?php
 /**
- * GetChildInfoIpsTest
+ * GetChildInfoApiKeysV3Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetChildInfoIpsTest Class Doc Comment
+ * GetChildInfoApiKeysV3Test Class Doc Comment
  *
  * @category    Class */
-// * @description GetChildInfoIps
+// * @description GetChildInfoApiKeysV3
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetChildInfoIpsTest extends \PHPUnit_Framework_TestCase
+class GetChildInfoApiKeysV3Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,23 @@ class GetChildInfoIpsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetChildInfoIps"
+     * Test "GetChildInfoApiKeysV3"
      */
-    public function testGetChildInfoIps()
+    public function testGetChildInfoApiKeysV3()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "name"
      */
-    public function testPropertyId()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "ip"
+     * Test attribute "key"
      */
-    public function testPropertyIp()
+    public function testPropertyKey()
     {
     }
 }

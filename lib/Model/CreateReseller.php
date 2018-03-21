@@ -1,6 +1,6 @@
 <?php
 /**
- * GetChildInfoIps
+ * CreateReseller
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * GetChildInfoIps Class Doc Comment
+ * CreateReseller Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetChildInfoIps implements ArrayAccess
+class CreateReseller implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,14 @@ class GetChildInfoIps implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getChildInfo_ips';
+    protected static $swaggerModelName = 'createReseller';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'ip' => 'string'
+        'authKey' => 'string'
     ];
 
     /**
@@ -63,8 +62,7 @@ class GetChildInfoIps implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'ip' => 'ip'
+        'authKey' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +80,7 @@ class GetChildInfoIps implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'ip' => 'ip'
+        'authKey' => 'authKey'
     ];
 
 
@@ -92,8 +89,7 @@ class GetChildInfoIps implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'ip' => 'setIp'
+        'authKey' => 'setAuthKey'
     ];
 
 
@@ -102,8 +98,7 @@ class GetChildInfoIps implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'ip' => 'getIp'
+        'authKey' => 'getAuthKey'
     ];
 
     public static function attributeMap()
@@ -137,8 +132,7 @@ class GetChildInfoIps implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['authKey'] = isset($data['authKey']) ? $data['authKey'] : null;
     }
 
     /**
@@ -150,11 +144,8 @@ class GetChildInfoIps implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['ip'] === null) {
-            $invalid_properties[] = "'ip' can't be null";
+        if ($this->container['authKey'] === null) {
+            $invalid_properties[] = "'authKey' can't be null";
         }
         return $invalid_properties;
     }
@@ -168,10 +159,7 @@ class GetChildInfoIps implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
-        if ($this->container['ip'] === null) {
+        if ($this->container['authKey'] === null) {
             return false;
         }
         return true;
@@ -179,43 +167,22 @@ class GetChildInfoIps implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param int $id ID of the IP
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ip
+     * Gets authKey
      * @return string
      */
-    public function getIp()
+    public function getAuthKey()
     {
-        return $this->container['ip'];
+        return $this->container['authKey'];
     }
 
     /**
-     * Sets ip
-     * @param string $ip IP associated to the child account user
+     * Sets authKey
+     * @param string $authKey AuthKey of Reseller child created
      * @return $this
      */
-    public function setIp($ip)
+    public function setAuthKey($authKey)
     {
-        $this->container['ip'] = $ip;
+        $this->container['authKey'] = $authKey;
 
         return $this;
     }

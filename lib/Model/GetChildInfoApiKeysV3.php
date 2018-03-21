@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorModel
+ * GetChildInfoApiKeysV3
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SendinBlue\Client\Model;
 use \ArrayAccess;
 
 /**
- * ErrorModel Class Doc Comment
+ * GetChildInfoApiKeysV3 Class Doc Comment
  *
  * @category    Class
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ErrorModel implements ArrayAccess
+class GetChildInfoApiKeysV3 implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,15 @@ class ErrorModel implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'errorModel';
+    protected static $swaggerModelName = 'getChildInfo_apiKeys_v3';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string',
-        'message' => 'string'
+        'name' => 'string',
+        'key' => 'string'
     ];
 
     /**
@@ -63,8 +63,8 @@ class ErrorModel implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-        'message' => null
+        'name' => null,
+        'key' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +82,8 @@ class ErrorModel implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message'
+        'name' => 'name',
+        'key' => 'key'
     ];
 
 
@@ -92,8 +92,8 @@ class ErrorModel implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'name' => 'setName',
+        'key' => 'setKey'
     ];
 
 
@@ -102,8 +102,8 @@ class ErrorModel implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'name' => 'getName',
+        'key' => 'getKey'
     ];
 
     public static function attributeMap()
@@ -121,48 +121,8 @@ class ErrorModel implements ArrayAccess
         return self::$getters;
     }
 
-    const CODE_INVALID_PARAMETER = 'invalid_parameter';
-    const CODE_MISSING_PARAMETER = 'missing_parameter';
-    const CODE_OUT_OF_RANGE = 'out_of_range';
-    const CODE_CAMPAIGN_PROCESSING = 'campaign_processing';
-    const CODE_CAMPAIGN_SENT = 'campaign_sent';
-    const CODE_DOCUMENT_NOT_FOUND = 'document_not_found';
-    const CODE_RESELLER_PERMISSION_DENIED = 'reseller_permission_denied';
-    const CODE_NOT_ENOUGH_CREDITS = 'not_enough_credits';
-    const CODE_PERMISSION_DENIED = 'permission_denied';
-    const CODE_DUPLICATE_PARAMETER = 'duplicate_parameter';
-    const CODE_DUPLICATE_REQUEST = 'duplicate_request';
-    const CODE_METHOD_NOT_ALLOWED = 'method_not_allowed';
-    const CODE_UNAUTHORIZED = 'unauthorized';
-    const CODE_ACCOUNT_UNDER_VALIDATION = 'account_under_validation';
-    const CODE_NOT_ACCEPTABLE = 'not_acceptable';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getCodeAllowableValues()
-    {
-        return [
-            self::CODE_INVALID_PARAMETER,
-            self::CODE_MISSING_PARAMETER,
-            self::CODE_OUT_OF_RANGE,
-            self::CODE_CAMPAIGN_PROCESSING,
-            self::CODE_CAMPAIGN_SENT,
-            self::CODE_DOCUMENT_NOT_FOUND,
-            self::CODE_RESELLER_PERMISSION_DENIED,
-            self::CODE_NOT_ENOUGH_CREDITS,
-            self::CODE_PERMISSION_DENIED,
-            self::CODE_DUPLICATE_PARAMETER,
-            self::CODE_DUPLICATE_REQUEST,
-            self::CODE_METHOD_NOT_ALLOWED,
-            self::CODE_UNAUTHORIZED,
-            self::CODE_ACCOUNT_UNDER_VALIDATION,
-            self::CODE_NOT_ACCEPTABLE,
-        ];
-    }
     
 
     /**
@@ -177,8 +137,8 @@ class ErrorModel implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
     }
 
     /**
@@ -190,19 +150,11 @@ class ErrorModel implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['code'] === null) {
-            $invalid_properties[] = "'code' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
-        $allowed_values = $this->getCodeAllowableValues();
-        if (!in_array($this->container['code'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'code', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        if ($this->container['message'] === null) {
-            $invalid_properties[] = "'message' can't be null";
+        if ($this->container['key'] === null) {
+            $invalid_properties[] = "'key' can't be null";
         }
         return $invalid_properties;
     }
@@ -216,14 +168,10 @@ class ErrorModel implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['code'] === null) {
+        if ($this->container['name'] === null) {
             return false;
         }
-        $allowed_values = $this->getCodeAllowableValues();
-        if (!in_array($this->container['code'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['message'] === null) {
+        if ($this->container['key'] === null) {
             return false;
         }
         return true;
@@ -231,52 +179,43 @@ class ErrorModel implements ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets name
      * @return string
      */
-    public function getCode()
+    public function getName()
     {
-        return $this->container['code'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets code
-     * @param string $code Error code displayed in case of a failure
+     * Sets name
+     * @param string $name Name of the key for version 3
      * @return $this
      */
-    public function setCode($code)
+    public function setName($name)
     {
-        $allowed_values = $this->getCodeAllowableValues();
-        if (!in_array($code, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'code', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['code'] = $code;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets key
      * @return string
      */
-    public function getMessage()
+    public function getKey()
     {
-        return $this->container['message'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets message
-     * @param string $message Readable message associated to the failure
+     * Sets key
+     * @param string $key API Key for version 3
      * @return $this
      */
-    public function setMessage($message)
+    public function setKey($key)
     {
-        $this->container['message'] = $message;
+        $this->container['key'] = $key;
 
         return $this;
     }

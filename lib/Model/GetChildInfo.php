@@ -61,8 +61,8 @@ class GetChildInfo implements ArrayAccess
         'credits' => '\SendinBlue\Client\Model\GetChildInfoCredits',
         'statistics' => '\SendinBlue\Client\Model\GetChildInfoStatistics',
         'password' => 'string',
-        'ips' => '\SendinBlue\Client\Model\GetChildInfoIps[]',
-        'apiKeys' => '\SendinBlue\Client\Model\GetChildInfoApiKeys[]'
+        'ips' => 'string[]',
+        'apiKeys' => '\SendinBlue\Client\Model\GetChildInfoApiKeys'
     ];
 
     /**
@@ -387,7 +387,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets ips
-     * @return \SendinBlue\Client\Model\GetChildInfoIps[]
+     * @return string[]
      */
     public function getIps()
     {
@@ -396,7 +396,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets ips
-     * @param \SendinBlue\Client\Model\GetChildInfoIps[] $ips IP(s) associated to a child account user
+     * @param string[] $ips IP(s) associated to a child account user
      * @return $this
      */
     public function setIps($ips)
@@ -408,7 +408,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Gets apiKeys
-     * @return \SendinBlue\Client\Model\GetChildInfoApiKeys[]
+     * @return \SendinBlue\Client\Model\GetChildInfoApiKeys
      */
     public function getApiKeys()
     {
@@ -417,7 +417,7 @@ class GetChildInfo implements ArrayAccess
 
     /**
      * Sets apiKeys
-     * @param \SendinBlue\Client\Model\GetChildInfoApiKeys[] $apiKeys API Keys associated to child account
+     * @param \SendinBlue\Client\Model\GetChildInfoApiKeys $apiKeys
      * @return $this
      */
     public function setApiKeys($apiKeys)

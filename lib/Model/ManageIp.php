@@ -54,7 +54,7 @@ class ManageIp implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ipId' => 'int'
+        'ip' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class ManageIp implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ipId' => 'int64'
+        'ip' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class ManageIp implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'ipId' => 'ipId'
+        'ip' => 'ip'
     ];
 
 
@@ -89,7 +89,7 @@ class ManageIp implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'ipId' => 'setIpId'
+        'ip' => 'setIp'
     ];
 
 
@@ -98,7 +98,7 @@ class ManageIp implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'ipId' => 'getIpId'
+        'ip' => 'getIp'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class ManageIp implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['ipId'] = isset($data['ipId']) ? $data['ipId'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
     }
 
     /**
@@ -161,22 +161,22 @@ class ManageIp implements ArrayAccess
 
 
     /**
-     * Gets ipId
-     * @return int
+     * Gets ip
+     * @return string
      */
-    public function getIpId()
+    public function getIp()
     {
-        return $this->container['ipId'];
+        return $this->container['ip'];
     }
 
     /**
-     * Sets ipId
-     * @param int $ipId ID of the IP
+     * Sets ip
+     * @param string $ip Dedicated ID
      * @return $this
      */
-    public function setIpId($ipId)
+    public function setIp($ip)
     {
-        $this->container['ipId'] = $ipId;
+        $this->container['ip'] = $ip;
 
         return $this;
     }

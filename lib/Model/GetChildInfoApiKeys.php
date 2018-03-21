@@ -35,6 +35,7 @@ use \ArrayAccess;
  * GetChildInfoApiKeys Class Doc Comment
  *
  * @category    Class
+ * @description API Keys associated to child account
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,9 +55,8 @@ class GetChildInfoApiKeys implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'key' => 'string',
-        'secret' => 'string'
+        'v2' => '\SendinBlue\Client\Model\GetChildInfoApiKeysV2[]',
+        'v3' => '\SendinBlue\Client\Model\GetChildInfoApiKeysV3[]'
     ];
 
     /**
@@ -64,9 +64,8 @@ class GetChildInfoApiKeys implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'key' => null,
-        'secret' => null
+        'v2' => null,
+        'v3' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +83,8 @@ class GetChildInfoApiKeys implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'key' => 'key',
-        'secret' => 'secret'
+        'v2' => 'v2',
+        'v3' => 'v3'
     ];
 
 
@@ -95,9 +93,8 @@ class GetChildInfoApiKeys implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'key' => 'setKey',
-        'secret' => 'setSecret'
+        'v2' => 'setV2',
+        'v3' => 'setV3'
     ];
 
 
@@ -106,9 +103,8 @@ class GetChildInfoApiKeys implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'key' => 'getKey',
-        'secret' => 'getSecret'
+        'v2' => 'getV2',
+        'v3' => 'getV3'
     ];
 
     public static function attributeMap()
@@ -142,9 +138,8 @@ class GetChildInfoApiKeys implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['secret'] = isset($data['secret']) ? $data['secret'] : null;
+        $this->container['v2'] = isset($data['v2']) ? $data['v2'] : null;
+        $this->container['v3'] = isset($data['v3']) ? $data['v3'] : null;
     }
 
     /**
@@ -156,11 +151,8 @@ class GetChildInfoApiKeys implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
-        }
-        if ($this->container['key'] === null) {
-            $invalid_properties[] = "'key' can't be null";
+        if ($this->container['v2'] === null) {
+            $invalid_properties[] = "'v2' can't be null";
         }
         return $invalid_properties;
     }
@@ -174,10 +166,7 @@ class GetChildInfoApiKeys implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
-            return false;
-        }
-        if ($this->container['key'] === null) {
+        if ($this->container['v2'] === null) {
             return false;
         }
         return true;
@@ -185,64 +174,43 @@ class GetChildInfoApiKeys implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
+     * Gets v2
+     * @return \SendinBlue\Client\Model\GetChildInfoApiKeysV2[]
      */
-    public function getName()
+    public function getV2()
     {
-        return $this->container['name'];
+        return $this->container['v2'];
     }
 
     /**
-     * Sets name
-     * @param string $name Name of the key
+     * Sets v2
+     * @param \SendinBlue\Client\Model\GetChildInfoApiKeysV2[] $v2
      * @return $this
      */
-    public function setName($name)
+    public function setV2($v2)
     {
-        $this->container['name'] = $name;
+        $this->container['v2'] = $v2;
 
         return $this;
     }
 
     /**
-     * Gets key
-     * @return string
+     * Gets v3
+     * @return \SendinBlue\Client\Model\GetChildInfoApiKeysV3[]
      */
-    public function getKey()
+    public function getV3()
     {
-        return $this->container['key'];
+        return $this->container['v3'];
     }
 
     /**
-     * Sets key
-     * @param string $key API Key
+     * Sets v3
+     * @param \SendinBlue\Client\Model\GetChildInfoApiKeysV3[] $v3
      * @return $this
      */
-    public function setKey($key)
+    public function setV3($v3)
     {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets secret
-     * @return string
-     */
-    public function getSecret()
-    {
-        return $this->container['secret'];
-    }
-
-    /**
-     * Sets secret
-     * @param string $secret Secret Key associated to the API Key (in case v1 Key is used only)
-     * @return $this
-     */
-    public function setSecret($secret)
-    {
-        $this->container['secret'] = $secret;
+        $this->container['v3'] = $v3;
 
         return $this;
     }
