@@ -58,7 +58,8 @@ class GetAccountPlan implements ArrayAccess
         'creditsType' => 'string',
         'credits' => 'float',
         'startDate' => '\DateTime',
-        'endDate' => '\DateTime'
+        'endDate' => '\DateTime',
+        'userLimit' => 'int'
     ];
 
     /**
@@ -70,7 +71,8 @@ class GetAccountPlan implements ArrayAccess
         'creditsType' => null,
         'credits' => 'float',
         'startDate' => 'date',
-        'endDate' => 'date'
+        'endDate' => 'date',
+        'userLimit' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class GetAccountPlan implements ArrayAccess
         'creditsType' => 'creditsType',
         'credits' => 'credits',
         'startDate' => 'startDate',
-        'endDate' => 'endDate'
+        'endDate' => 'endDate',
+        'userLimit' => 'userLimit'
     ];
 
 
@@ -105,7 +108,8 @@ class GetAccountPlan implements ArrayAccess
         'creditsType' => 'setCreditsType',
         'credits' => 'setCredits',
         'startDate' => 'setStartDate',
-        'endDate' => 'setEndDate'
+        'endDate' => 'setEndDate',
+        'userLimit' => 'setUserLimit'
     ];
 
 
@@ -118,7 +122,8 @@ class GetAccountPlan implements ArrayAccess
         'creditsType' => 'getCreditsType',
         'credits' => 'getCredits',
         'startDate' => 'getStartDate',
-        'endDate' => 'getEndDate'
+        'endDate' => 'getEndDate',
+        'userLimit' => 'getUserLimit'
     ];
 
     public static function attributeMap()
@@ -142,7 +147,6 @@ class GetAccountPlan implements ArrayAccess
     const TYPE_SUBSCRIPTION = 'subscription';
     const TYPE_SMS = 'sms';
     const TYPE_RESELLER = 'reseller';
-    const CREDITS_TYPE_USER_LIMIT = 'userLimit';
     const CREDITS_TYPE_SEND_LIMIT = 'sendLimit';
     
 
@@ -170,7 +174,6 @@ class GetAccountPlan implements ArrayAccess
     public function getCreditsTypeAllowableValues()
     {
         return [
-            self::CREDITS_TYPE_USER_LIMIT,
             self::CREDITS_TYPE_SEND_LIMIT,
         ];
     }
@@ -193,6 +196,7 @@ class GetAccountPlan implements ArrayAccess
         $this->container['credits'] = isset($data['credits']) ? $data['credits'] : null;
         $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
         $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
+        $this->container['userLimit'] = isset($data['userLimit']) ? $data['userLimit'] : null;
     }
 
     /**
@@ -303,7 +307,7 @@ class GetAccountPlan implements ArrayAccess
 
     /**
      * Sets creditsType
-     * @param string $creditsType This is the type of the credit, \"User Limit\" or \"Send Limit\" are two possible types of credit of a user. \"User Limit\" implies the total number of subscribers you can add to your account, and \"Send Limit\" implies the total number of emails you can send to the subscribers in your account.
+     * @param string $creditsType This is the type of the credit, \"Send Limit\" is one of the possible types of credit of a user. \"Send Limit\" implies the total number of emails you can send to the subscribers in your account.
      * @return $this
      */
     public function setCreditsType($creditsType)
@@ -333,7 +337,7 @@ class GetAccountPlan implements ArrayAccess
 
     /**
      * Sets credits
-     * @param float $credits Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.
+     * @param float $credits Remaining credits of the user
      * @return $this
      */
     public function setCredits($credits)
@@ -381,6 +385,27 @@ class GetAccountPlan implements ArrayAccess
     public function setEndDate($endDate)
     {
         $this->container['endDate'] = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets userLimit
+     * @return int
+     */
+    public function getUserLimit()
+    {
+        return $this->container['userLimit'];
+    }
+
+    /**
+     * Sets userLimit
+     * @param int $userLimit Only in case of reseller account. It implies the total number of child accounts you can add to your account.
+     * @return $this
+     */
+    public function setUserLimit($userLimit)
+    {
+        $this->container['userLimit'] = $userLimit;
 
         return $this;
     }

@@ -111,4 +111,11 @@ class GetAccountPlanTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEndDate()
     {
     }
+
+    /**
+     * Test attribute "userLimit"
+     */
+    public function testPropertyUserLimit()
+    {
+    }
 }
