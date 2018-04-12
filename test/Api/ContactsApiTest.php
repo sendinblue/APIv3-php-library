@@ -133,6 +133,16 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for deleteContact
+     *
+     * Deletes a contact.
+     *
+     */
+    public function testDeleteContact()
+    {
+    }
+
+    /**
      * Test case for deleteFolder
      *
      * Delete a folder (and all its lists).

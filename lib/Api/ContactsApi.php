@@ -675,6 +675,97 @@ class ContactsApi
     }
 
     /**
+     * Operation deleteContact
+     *
+     * Deletes a contact
+     *
+     * @param string $email Email (urlencoded) of the contact (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return void
+     */
+    public function deleteContact($email)
+    {
+        list($response) = $this->deleteContactWithHttpInfo($email);
+        return $response;
+    }
+
+    /**
+     * Operation deleteContactWithHttpInfo
+     *
+     * Deletes a contact
+     *
+     * @param string $email Email (urlencoded) of the contact (required)
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteContactWithHttpInfo($email)
+    {
+        // verify the required parameter 'email' is set
+        if ($email === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $email when calling deleteContact');
+        }
+        // parse inputs
+        $resourcePath = "/contacts/{email}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // path params
+        if ($email !== null) {
+            $resourcePath = str_replace(
+                "{" . "email" . "}",
+                $this->apiClient->getSerializer()->toPathValue($email),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/contacts/{email}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SendinBlue\Client\Model\ErrorModel', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation deleteFolder
      *
      * Delete a folder (and all its lists)
