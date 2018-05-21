@@ -4,11 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **string** | Tag of the campaign | [optional] 
-**sender** | [**\SendinBlue\Client\Model\CreateEmailCampaignSender**](CreateEmailCampaignSender.md) |  | [optional] 
+**sender** | [**\SendinBlue\Client\Model\CreateEmailCampaignSender**](CreateEmailCampaignSender.md) |  | 
 **name** | **string** | Name of the campaign | 
 **htmlContent** | **string** | Mandatory if htmlUrl is empty. Body of the message (HTML) | [optional] 
 **htmlUrl** | **string** | Mandatory if htmlContent is empty. Url to the message (HTML) | [optional] 
-**scheduledAt** | **\DateTime** | Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
+**scheduledAt** | [**\DateTime**] | Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
 **subject** | **string** | Subject of the campaign | 
 **replyTo** | **string** | Email on which the campaign recipients will be able to reply to | [optional] 
 **toField** | **string** | To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use {FNAME} {LNAME}. These attributes must already exist in your contact database | [optional] 

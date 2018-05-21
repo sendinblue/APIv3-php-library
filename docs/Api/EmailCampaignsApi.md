@@ -27,15 +27,20 @@ Create an email campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $emailCampaigns = new \SendinBlue\Client\Model\CreateEmailCampaign(); // \SendinBlue\Client\Model\CreateEmailCampaign | Values to create a campaign
 
 try {
-    $result = $api_instance->createEmailCampaign($emailCampaigns);
+    $result = $apiInstance->createEmailCampaign($emailCampaigns);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->createEmailCampaign: ', $e->getMessage(), PHP_EOL;
@@ -75,15 +80,20 @@ Delete an email campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the campaign
 
 try {
-    $api_instance->deleteEmailCampaign($campaignId);
+    $apiInstance->deleteEmailCampaign($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->deleteEmailCampaign: ', $e->getMessage(), PHP_EOL;
 }
@@ -122,16 +132,21 @@ Export the recipients of a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 $recipientExport = new \SendinBlue\Client\Model\EmailExportRecipients(); // \SendinBlue\Client\Model\EmailExportRecipients | Values to send for a recipient export request
 
 try {
-    $result = $api_instance->emailExportRecipients($campaignId, $recipientExport);
+    $result = $apiInstance->emailExportRecipients($campaignId, $recipientExport);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->emailExportRecipients: ', $e->getMessage(), PHP_EOL;
@@ -172,15 +187,20 @@ Get campaign informations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 
 try {
-    $result = $api_instance->getEmailCampaign($campaignId);
+    $result = $apiInstance->getEmailCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->getEmailCampaign: ', $e->getMessage(), PHP_EOL;
@@ -220,18 +240,23 @@ Return all your created campaigns
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $type = "type_example"; // string | Filter on the type of the campaigns
 $status = "status_example"; // string | Filter on the status of the campaign
 $limit = 500; // int | Number of documents per page
 $offset = 0; // int | Index of the first document in the page
 
 try {
-    $result = $api_instance->getEmailCampaigns($type, $status, $limit, $offset);
+    $result = $apiInstance->getEmailCampaigns($type, $status, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->getEmailCampaigns: ', $e->getMessage(), PHP_EOL;
@@ -274,15 +299,20 @@ Send an email campaign id of the campaign immediately
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 
 try {
-    $api_instance->sendEmailCampaignNow($campaignId);
+    $apiInstance->sendEmailCampaignNow($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->sendEmailCampaignNow: ', $e->getMessage(), PHP_EOL;
 }
@@ -323,16 +353,21 @@ A PDF will be sent to the specified email addresses
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 $sendReport = new \SendinBlue\Client\Model\SendReport(); // \SendinBlue\Client\Model\SendReport | Values for send a report
 
 try {
-    $api_instance->sendReport($campaignId, $sendReport);
+    $apiInstance->sendReport($campaignId, $sendReport);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->sendReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -372,16 +407,21 @@ Send an email campaign to your test list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 $emailTo = new \SendinBlue\Client\Model\SendTestEmail(); // \SendinBlue\Client\Model\SendTestEmail | 
 
 try {
-    $api_instance->sendTestEmail($campaignId, $emailTo);
+    $apiInstance->sendTestEmail($campaignId, $emailTo);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->sendTestEmail: ', $e->getMessage(), PHP_EOL;
 }
@@ -421,16 +461,21 @@ Update a campaign status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 $status = new \SendinBlue\Client\Model\UpdateCampaignStatus(); // \SendinBlue\Client\Model\UpdateCampaignStatus | Status of the campaign
 
 try {
-    $api_instance->updateCampaignStatus($campaignId, $status);
+    $apiInstance->updateCampaignStatus($campaignId, $status);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->updateCampaignStatus: ', $e->getMessage(), PHP_EOL;
 }
@@ -470,16 +515,21 @@ Update a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\EmailCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the campaign
 $emailCampaign = new \SendinBlue\Client\Model\UpdateEmailCampaign(); // \SendinBlue\Client\Model\UpdateEmailCampaign | Values to update a campaign
 
 try {
-    $api_instance->updateEmailCampaign($campaignId, $emailCampaign);
+    $apiInstance->updateEmailCampaign($campaignId, $emailCampaign);
 } catch (Exception $e) {
     echo 'Exception when calling EmailCampaignsApi->updateEmailCampaign: ', $e->getMessage(), PHP_EOL;
 }

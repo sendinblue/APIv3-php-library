@@ -14,7 +14,7 @@ For more information, please visit [https://account.sendinblue.com/support](http
 
 ## Requirements
 
-PHP 5.4.0 and later
+PHP 5.6 and later
 
 ## Installation & Usage
 ### Composer
@@ -42,7 +42,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/APIv3-php-library/autoload.php');
+    require_once('/path/to/APIv3-php-library/vendor/autoload.php');
 ```
 
 ## Tests
@@ -63,14 +63,19 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\AccountApi();
+$apiInstance = new SendinBlue\Client\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getAccount();
+    $result = $apiInstance->getAccount();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getAccount: ', $e->getMessage(), PHP_EOL;
@@ -249,7 +254,6 @@ Class | Method | HTTP request | Description
  - [GetEmailEventReportEvents](docs/Model/GetEmailEventReportEvents.md)
  - [GetExtendedCampaignOverviewSender](docs/Model/GetExtendedCampaignOverviewSender.md)
  - [GetExtendedCampaignStats](docs/Model/GetExtendedCampaignStats.md)
- - [GetExtendedCampaignStatsLinksStats](docs/Model/GetExtendedCampaignStatsLinksStats.md)
  - [GetExtendedClientAddress](docs/Model/GetExtendedClientAddress.md)
  - [GetExtendedContactDetailsStatistics](docs/Model/GetExtendedContactDetailsStatistics.md)
  - [GetExtendedContactDetailsStatisticsClicked](docs/Model/GetExtendedContactDetailsStatisticsClicked.md)

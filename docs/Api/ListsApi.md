@@ -26,16 +26,21 @@ Add existing contacts to a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $listId = 789; // int | Id of the list
 $contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses of the contacts
 
 try {
-    $result = $api_instance->addContactToList($listId, $contactEmails);
+    $result = $apiInstance->addContactToList($listId, $contactEmails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->addContactToList: ', $e->getMessage(), PHP_EOL;
@@ -76,15 +81,20 @@ Create a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $createList = new \SendinBlue\Client\Model\CreateList(); // \SendinBlue\Client\Model\CreateList | Values to create a list
 
 try {
-    $result = $api_instance->createList($createList);
+    $result = $apiInstance->createList($createList);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->createList: ', $e->getMessage(), PHP_EOL;
@@ -124,15 +134,20 @@ Delete a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $listId = 789; // int | Id of the list
 
 try {
-    $api_instance->deleteList($listId);
+    $apiInstance->deleteList($listId);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->deleteList: ', $e->getMessage(), PHP_EOL;
 }
@@ -171,18 +186,23 @@ Get the contacts in a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $listId = 789; // int | Id of the list
 $modifiedSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
 $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getContactsFromList($listId, $modifiedSince, $limit, $offset);
+    $result = $apiInstance->getContactsFromList($listId, $modifiedSince, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->getContactsFromList: ', $e->getMessage(), PHP_EOL;
@@ -225,17 +245,22 @@ Get the lists in a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $folderId = 789; // int | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getFolderLists($folderId, $limit, $offset);
+    $result = $apiInstance->getFolderLists($folderId, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->getFolderLists: ', $e->getMessage(), PHP_EOL;
@@ -277,15 +302,20 @@ Get the details of a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $listId = 789; // int | Id of the list
 
 try {
-    $result = $api_instance->getList($listId);
+    $result = $apiInstance->getList($listId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->getList: ', $e->getMessage(), PHP_EOL;
@@ -325,16 +355,21 @@ Get all the lists
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getLists($limit, $offset);
+    $result = $apiInstance->getLists($limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->getLists: ', $e->getMessage(), PHP_EOL;
@@ -375,16 +410,21 @@ Remove existing contacts from a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $listId = 789; // int | Id of the list
 $contactEmails = new \SendinBlue\Client\Model\RemoveContactFromList(); // \SendinBlue\Client\Model\RemoveContactFromList | Emails adresses of the contact
 
 try {
-    $result = $api_instance->removeContactFromList($listId, $contactEmails);
+    $result = $apiInstance->removeContactFromList($listId, $contactEmails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->removeContactFromList: ', $e->getMessage(), PHP_EOL;
@@ -425,16 +465,21 @@ Update a list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ListsApi();
+$apiInstance = new SendinBlue\Client\Api\ListsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $listId = 789; // int | Id of the list
 $updateList = new \SendinBlue\Client\Model\UpdateList(); // \SendinBlue\Client\Model\UpdateList | Values to update a list
 
 try {
-    $api_instance->updateList($listId, $updateList);
+    $apiInstance->updateList($listId, $updateList);
 } catch (Exception $e) {
     echo 'Exception when calling ListsApi->updateList: ', $e->getMessage(), PHP_EOL;
 }

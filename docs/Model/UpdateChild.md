@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **lastName** | **string** | New Last name to use to update the child account | [optional] 
 **companyName** | **string** | New Company name to use to update the child account | [optional] 
 **password** | **string** | New password for the child account to login | [optional] 
-**ips** | **int[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

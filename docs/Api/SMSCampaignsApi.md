@@ -27,15 +27,20 @@ Creates an SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $createSmsCampaign = new \SendinBlue\Client\Model\CreateSmsCampaign(); // \SendinBlue\Client\Model\CreateSmsCampaign | Values to create an SMS Campaign
 
 try {
-    $result = $api_instance->createSmsCampaign($createSmsCampaign);
+    $result = $apiInstance->createSmsCampaign($createSmsCampaign);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->createSmsCampaign: ', $e->getMessage(), PHP_EOL;
@@ -75,15 +80,20 @@ Delete the SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the SMS campaign
 
 try {
-    $api_instance->deleteSmsCampaign($campaignId);
+    $apiInstance->deleteSmsCampaign($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->deleteSmsCampaign: ', $e->getMessage(), PHP_EOL;
 }
@@ -122,16 +132,21 @@ Get an SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the SMS campaign
 $getSmsCampaign = new \SendinBlue\Client\Model\GetSmsCampaign(); // \SendinBlue\Client\Model\GetSmsCampaign | Values to update an SMS Campaign
 
 try {
-    $result = $api_instance->getSmsCampaign($campaignId, $getSmsCampaign);
+    $result = $apiInstance->getSmsCampaign($campaignId, $getSmsCampaign);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->getSmsCampaign: ', $e->getMessage(), PHP_EOL;
@@ -172,17 +187,22 @@ Returns the informations for all your created SMS campaigns
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $status = "status_example"; // string | Status of campaign.
 $limit = 500; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
 
 try {
-    $result = $api_instance->getSmsCampaigns($status, $limit, $offset);
+    $result = $apiInstance->getSmsCampaigns($status, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->getSmsCampaigns: ', $e->getMessage(), PHP_EOL;
@@ -226,16 +246,21 @@ It returns the background process ID which on completion calls the notify URL th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the campaign
 $recipientExport = new \SendinBlue\Client\Model\RequestSmsRecipientExport(); // \SendinBlue\Client\Model\RequestSmsRecipientExport | Values to send for a recipient export request
 
 try {
-    $result = $api_instance->requestSmsRecipientExport($campaignId, $recipientExport);
+    $result = $apiInstance->requestSmsRecipientExport($campaignId, $recipientExport);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->requestSmsRecipientExport: ', $e->getMessage(), PHP_EOL;
@@ -276,15 +301,20 @@ Send your SMS campaign immediately
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the campaign
 
 try {
-    $api_instance->sendSmsCampaignNow($campaignId);
+    $apiInstance->sendSmsCampaignNow($campaignId);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendSmsCampaignNow: ', $e->getMessage(), PHP_EOL;
 }
@@ -325,16 +355,21 @@ Send report of Sent and Archived campaign, to the specified email addresses, wit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the campaign
 $sendReport = new \SendinBlue\Client\Model\SendReport(); // \SendinBlue\Client\Model\SendReport | Values for send a report
 
 try {
-    $api_instance->sendSmsReport($campaignId, $sendReport);
+    $apiInstance->sendSmsReport($campaignId, $sendReport);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendSmsReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -374,16 +409,21 @@ Send an SMS
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | Id of the SMS campaign
 $sendTestSms = new \SendinBlue\Client\Model\SendTestSms(); // \SendinBlue\Client\Model\SendTestSms | Mobile number to which send the test
 
 try {
-    $api_instance->sendTestSms($campaignId, $sendTestSms);
+    $apiInstance->sendTestSms($campaignId, $sendTestSms);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendTestSms: ', $e->getMessage(), PHP_EOL;
 }
@@ -423,16 +463,21 @@ Updates an SMS campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the SMS campaign
 $updateSmsCampaign = new \SendinBlue\Client\Model\UpdateSmsCampaign(); // \SendinBlue\Client\Model\UpdateSmsCampaign | Values to update an SMS Campaign
 
 try {
-    $api_instance->updateSmsCampaign($campaignId, $updateSmsCampaign);
+    $apiInstance->updateSmsCampaign($campaignId, $updateSmsCampaign);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->updateSmsCampaign: ', $e->getMessage(), PHP_EOL;
 }
@@ -472,16 +517,21 @@ Update the campaign status
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SMSCampaignsApi();
+$apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $campaignId = 789; // int | id of the campaign
 $status = new \SendinBlue\Client\Model\UpdateCampaignStatus(); // \SendinBlue\Client\Model\UpdateCampaignStatus | Status of the campaign.
 
 try {
-    $api_instance->updateSmsCampaignStatus($campaignId, $status);
+    $apiInstance->updateSmsCampaignStatus($campaignId, $status);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->updateSmsCampaignStatus: ', $e->getMessage(), PHP_EOL;
 }

@@ -23,15 +23,20 @@ Create a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$apiInstance = new SendinBlue\Client\Api\FoldersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $createFolder = new \SendinBlue\Client\Model\CreateUpdateFolder(); // \SendinBlue\Client\Model\CreateUpdateFolder | Name of the folder
 
 try {
-    $result = $api_instance->createFolder($createFolder);
+    $result = $apiInstance->createFolder($createFolder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->createFolder: ', $e->getMessage(), PHP_EOL;
@@ -71,15 +76,20 @@ Delete a folder (and all its lists)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$apiInstance = new SendinBlue\Client\Api\FoldersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $folderId = 789; // int | Id of the folder
 
 try {
-    $api_instance->deleteFolder($folderId);
+    $apiInstance->deleteFolder($folderId);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->deleteFolder: ', $e->getMessage(), PHP_EOL;
 }
@@ -118,15 +128,20 @@ Returns folder details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$apiInstance = new SendinBlue\Client\Api\FoldersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $folderId = 789; // int | id of the folder
 
 try {
-    $result = $api_instance->getFolder($folderId);
+    $result = $apiInstance->getFolder($folderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->getFolder: ', $e->getMessage(), PHP_EOL;
@@ -166,17 +181,22 @@ Get the lists in a folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$apiInstance = new SendinBlue\Client\Api\FoldersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $folderId = 789; // int | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getFolderLists($folderId, $limit, $offset);
+    $result = $apiInstance->getFolderLists($folderId, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->getFolderLists: ', $e->getMessage(), PHP_EOL;
@@ -218,16 +238,21 @@ Get all the folders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$apiInstance = new SendinBlue\Client\Api\FoldersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
 
 try {
-    $result = $api_instance->getFolders($limit, $offset);
+    $result = $apiInstance->getFolders($limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->getFolders: ', $e->getMessage(), PHP_EOL;
@@ -268,16 +293,21 @@ Update a contact folder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\FoldersApi();
+$apiInstance = new SendinBlue\Client\Api\FoldersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $folderId = 789; // int | Id of the folder
 $updateFolder = new \SendinBlue\Client\Model\CreateUpdateFolder(); // \SendinBlue\Client\Model\CreateUpdateFolder | Name of the folder
 
 try {
-    $api_instance->updateFolder($folderId, $updateFolder);
+    $apiInstance->updateFolder($folderId, $updateFolder);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->updateFolder: ', $e->getMessage(), PHP_EOL;
 }

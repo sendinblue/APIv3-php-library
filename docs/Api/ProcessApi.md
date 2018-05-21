@@ -19,15 +19,20 @@ Return the informations for a process
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ProcessApi();
+$apiInstance = new SendinBlue\Client\Api\ProcessApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $processId = 789; // int | Id of the process
 
 try {
-    $result = $api_instance->getProcess($processId);
+    $result = $apiInstance->getProcess($processId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProcessApi->getProcess: ', $e->getMessage(), PHP_EOL;
@@ -67,16 +72,21 @@ Return all the processes for your account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ProcessApi();
+$apiInstance = new SendinBlue\Client\Api\ProcessApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 10; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
 
 try {
-    $result = $api_instance->getProcesses($limit, $offset);
+    $result = $apiInstance->getProcesses($limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProcessApi->getProcesses: ', $e->getMessage(), PHP_EOL;
