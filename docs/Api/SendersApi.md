@@ -23,15 +23,20 @@ Create a new sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SendersApi();
+$apiInstance = new SendinBlue\Client\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $sender = new \SendinBlue\Client\Model\CreateSender(); // \SendinBlue\Client\Model\CreateSender | sender's name
 
 try {
-    $result = $api_instance->createSender($sender);
+    $result = $apiInstance->createSender($sender);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->createSender: ', $e->getMessage(), PHP_EOL;
@@ -71,15 +76,20 @@ Delete a sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SendersApi();
+$apiInstance = new SendinBlue\Client\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $senderId = 789; // int | Id of the sender
 
 try {
-    $api_instance->deleteSender($senderId);
+    $apiInstance->deleteSender($senderId);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->deleteSender: ', $e->getMessage(), PHP_EOL;
 }
@@ -118,14 +128,19 @@ Return all the dedicated IPs for your account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SendersApi();
+$apiInstance = new SendinBlue\Client\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getIps();
+    $result = $apiInstance->getIps();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->getIps: ', $e->getMessage(), PHP_EOL;
@@ -162,15 +177,20 @@ Return all the dedicated IPs for a sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SendersApi();
+$apiInstance = new SendinBlue\Client\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $senderId = 789; // int | Id of the sender
 
 try {
-    $result = $api_instance->getIpsFromSender($senderId);
+    $result = $apiInstance->getIpsFromSender($senderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->getIpsFromSender: ', $e->getMessage(), PHP_EOL;
@@ -210,16 +230,21 @@ Get the list of all your senders
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SendersApi();
+$apiInstance = new SendinBlue\Client\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $ip = "ip_example"; // string | Filter your senders for a specific ip (available for dedicated IP usage only)
 $domain = "domain_example"; // string | Filter your senders for a specific domain
 
 try {
-    $result = $api_instance->getSenders($ip, $domain);
+    $result = $apiInstance->getSenders($ip, $domain);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->getSenders: ', $e->getMessage(), PHP_EOL;
@@ -260,16 +285,21 @@ Update a sender
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\SendersApi();
+$apiInstance = new SendinBlue\Client\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $senderId = 789; // int | Id of the sender
 $sender = new \SendinBlue\Client\Model\UpdateSender(); // \SendinBlue\Client\Model\UpdateSender | sender's name
 
 try {
-    $api_instance->updateSender($senderId, $sender);
+    $apiInstance->updateSender($senderId, $sender);
 } catch (Exception $e) {
     echo 'Exception when calling SendersApi->updateSender: ', $e->getMessage(), PHP_EOL;
 }

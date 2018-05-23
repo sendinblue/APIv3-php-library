@@ -21,17 +21,22 @@ Creates contact attribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\AttributesApi();
+$apiInstance = new SendinBlue\Client\Api\AttributesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $attributeCategory = "attributeCategory_example"; // string | Category of the attribute
 $attributeName = "attributeName_example"; // string | Name of the attribute
 $createAttribute = new \SendinBlue\Client\Model\CreateAttribute(); // \SendinBlue\Client\Model\CreateAttribute | Values to create an attribute
 
 try {
-    $api_instance->createAttribute($attributeCategory, $attributeName, $createAttribute);
+    $apiInstance->createAttribute($attributeCategory, $attributeName, $createAttribute);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->createAttribute: ', $e->getMessage(), PHP_EOL;
 }
@@ -72,16 +77,21 @@ Deletes an attribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\AttributesApi();
+$apiInstance = new SendinBlue\Client\Api\AttributesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $attributeCategory = "attributeCategory_example"; // string | Category of the attribute
 $attributeName = "attributeName_example"; // string | Name of the existing attribute
 
 try {
-    $api_instance->deleteAttribute($attributeCategory, $attributeName);
+    $apiInstance->deleteAttribute($attributeCategory, $attributeName);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->deleteAttribute: ', $e->getMessage(), PHP_EOL;
 }
@@ -121,14 +131,19 @@ Lists all attributes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\AttributesApi();
+$apiInstance = new SendinBlue\Client\Api\AttributesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getAttributes();
+    $result = $apiInstance->getAttributes();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->getAttributes: ', $e->getMessage(), PHP_EOL;
@@ -165,17 +180,22 @@ Updates contact attribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\AttributesApi();
+$apiInstance = new SendinBlue\Client\Api\AttributesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $attributeCategory = "attributeCategory_example"; // string | Category of the attribute
 $attributeName = "attributeName_example"; // string | Name of the existing attribute
 $updateAttribute = new \SendinBlue\Client\Model\UpdateAttribute(); // \SendinBlue\Client\Model\UpdateAttribute | Values to update an attribute
 
 try {
-    $api_instance->updateAttribute($attributeCategory, $attributeName, $updateAttribute);
+    $apiInstance->updateAttribute($attributeCategory, $attributeName, $updateAttribute);
 } catch (Exception $e) {
     echo 'Exception when calling AttributesApi->updateAttribute: ', $e->getMessage(), PHP_EOL;
 }

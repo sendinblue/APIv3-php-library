@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date** | **\DateTime** | Date of the statistics | 
+**date** | [**\DateTime**] | Date of the statistics | 
 **requests** | **int** | Number of requests for the date | 
 **delivered** | **int** | Number of delivered emails for the date | 
 **hardBounces** | **int** | Number of hardbounces for the date | 

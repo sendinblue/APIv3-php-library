@@ -26,16 +26,21 @@ Add Email and/or SMS credits to a specific child account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 $addCredits = new \SendinBlue\Client\Model\AddCredits(); // \SendinBlue\Client\Model\AddCredits | Values to post to add credit to a specific child account
 
 try {
-    $result = $api_instance->addCredits($childAuthKey, $addCredits);
+    $result = $apiInstance->addCredits($childAuthKey, $addCredits);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->addCredits: ', $e->getMessage(), PHP_EOL;
@@ -76,16 +81,21 @@ Associate a dedicated IP to the child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 $ip = new \SendinBlue\Client\Model\ManageIp(); // \SendinBlue\Client\Model\ManageIp | IP to associate
 
 try {
-    $api_instance->associateIpToChild($childAuthKey, $ip);
+    $apiInstance->associateIpToChild($childAuthKey, $ip);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->associateIpToChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -125,15 +135,20 @@ Creates a reseller child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $resellerChild = new \SendinBlue\Client\Model\CreateChild(); // \SendinBlue\Client\Model\CreateChild | reseller child to add
 
 try {
-    $result = $api_instance->createResellerChild($resellerChild);
+    $result = $apiInstance->createResellerChild($resellerChild);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->createResellerChild: ', $e->getMessage(), PHP_EOL;
@@ -173,15 +188,20 @@ Deletes a single reseller child based on the childAuthKey supplied
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 
 try {
-    $api_instance->deleteResellerChild($childAuthKey);
+    $apiInstance->deleteResellerChild($childAuthKey);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->deleteResellerChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -220,16 +240,21 @@ Dissociate a dedicated IP to the child
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 $ip = new \SendinBlue\Client\Model\ManageIp(); // \SendinBlue\Client\Model\ManageIp | IP to dissociate
 
 try {
-    $api_instance->dissociateIpFromChild($childAuthKey, $ip);
+    $apiInstance->dissociateIpFromChild($childAuthKey, $ip);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->dissociateIpFromChild: ', $e->getMessage(), PHP_EOL;
 }
@@ -269,15 +294,20 @@ Gets the info about a specific child account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 
 try {
-    $result = $api_instance->getChildInfo($childAuthKey);
+    $result = $apiInstance->getChildInfo($childAuthKey);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->getChildInfo: ', $e->getMessage(), PHP_EOL;
@@ -317,14 +347,19 @@ Gets the list of all reseller's children accounts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->getResellerChilds();
+    $result = $apiInstance->getResellerChilds();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->getResellerChilds: ', $e->getMessage(), PHP_EOL;
@@ -361,16 +396,21 @@ Remove Email and/or SMS credits from a specific child account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 $removeCredits = new \SendinBlue\Client\Model\RemoveCredits(); // \SendinBlue\Client\Model\RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
 try {
-    $result = $api_instance->removeCredits($childAuthKey, $removeCredits);
+    $result = $apiInstance->removeCredits($childAuthKey, $removeCredits);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->removeCredits: ', $e->getMessage(), PHP_EOL;
@@ -411,16 +451,21 @@ Updates infos of reseller's child based on the childAuthKey supplied
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: api-key
-SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
-$api_instance = new SendinBlue\Client\Api\ResellerApi();
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
 $resellerChild = new \SendinBlue\Client\Model\UpdateChild(); // \SendinBlue\Client\Model\UpdateChild | values to update in child profile
 
 try {
-    $api_instance->updateResellerChild($childAuthKey, $resellerChild);
+    $apiInstance->updateResellerChild($childAuthKey, $resellerChild);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->updateResellerChild: ', $e->getMessage(), PHP_EOL;
 }

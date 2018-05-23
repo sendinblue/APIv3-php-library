@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **string** | Tag of the template | [optional] 
-**sender** | [**\SendinBlue\Client\Model\CreateSmtpTemplateSender**](CreateSmtpTemplateSender.md) |  | [optional] 
+**sender** | [**\SendinBlue\Client\Model\CreateSmtpTemplateSender**](CreateSmtpTemplateSender.md) |  | 
 **templateName** | **string** | Name of the template | 
 **htmlContent** | **string** | Body of the message (HTML version). The field must have more than 10 characters. REQUIRED if htmlUrl is empty | [optional] 
 **htmlUrl** | **string** | Url which contents the body of the email message. REQUIRED if htmlContent is empty | [optional] 
