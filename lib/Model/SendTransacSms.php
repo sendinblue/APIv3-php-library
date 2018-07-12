@@ -247,10 +247,6 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         if ($this->container['content'] === null) {
             $invalidProperties[] = "'content' can't be null";
         }
-        if ((strlen($this->container['content']) > 160)) {
-            $invalidProperties[] = "invalid value for 'content', the character length must be smaller than or equal to 160.";
-        }
-
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -281,9 +277,6 @@ class SendTransacSms implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['content'] === null) {
-            return false;
-        }
-        if (strlen($this->container['content']) > 160) {
             return false;
         }
         $allowedValues = $this->getTypeAllowableValues();
@@ -359,16 +352,12 @@ class SendTransacSms implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param string $content Content of the message. If more than 160 characters long, multiple text messages will be sent
+     * @param string $content Content of the message. If more than 160 characters long, will be sent as multiple text messages
      *
      * @return $this
      */
     public function setContent($content)
     {
-        if ((strlen($content) > 160)) {
-            throw new \InvalidArgumentException('invalid length for $content when calling SendTransacSms., must be smaller than or equal to 160.');
-        }
-
         $this->container['content'] = $content;
 
         return $this;

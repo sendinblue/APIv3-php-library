@@ -19,23 +19,15 @@ PHP 5.6 and later
 ## Installation & Usage
 ### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
+To install the bindings via [Composer](http://getcomposer.org/):
 
 ```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/sendinblue/APIv3-php-library.git"
-    }
-  ],
-  "require": {
-    "sendinblue/api-v3-sdk": "*@dev"
-  }
-}
+composer require sendinblue/api-v3-sdk "^6.0.0"
 ```
 
-Then run `composer install`
+Further do:
+* run ``composer install`` to get these dependencies added to your vendor directory
+* add the autoloader to your application with this line: ``require("vendor/autoload.php")``
 
 ### Manual Installation
 
