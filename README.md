@@ -29,13 +29,6 @@ Further do:
 * run ``composer install`` to get these dependencies added to your vendor directory
 * add the autoloader to your application with this line: ``require("vendor/autoload.php")``
 
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-    require_once('/path/to/APIv3-php-library/vendor/autoload.php');
-```
 
 ## Tests
 
