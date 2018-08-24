@@ -171,6 +171,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
     const TYPE_TEXT = 'text';
     const TYPE_DATE = 'date';
     const TYPE_FLOAT = 'float';
+    const TYPE_BOOLEAN = 'boolean';
     const TYPE_ID = 'id';
     const TYPE_CATEGORY = 'category';
     
@@ -187,6 +188,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
             self::TYPE_TEXT,
             self::TYPE_DATE,
             self::TYPE_FLOAT,
+            self::TYPE_BOOLEAN,
             self::TYPE_ID,
             self::TYPE_CATEGORY,
         ];
@@ -311,7 +313,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type Type of the attribute. Use only if the attribute's category is 'normal', 'category' or 'transactional' ( type 'id' is only available if the category is 'transactional' attribute & type 'category' is only available if the category is 'category' attribute )
+     * @param string $type Type of the attribute. Use only if the attribute's category is 'normal', 'category' or 'transactional' ( type 'boolean' is only available if the category is 'normal' attribute, type 'id' is only available if the category is 'transactional' attribute & type 'category' is only available if the category is 'category' attribute )
      *
      * @return $this
      */
