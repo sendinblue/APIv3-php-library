@@ -77,6 +77,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
         'recurring' => 'bool',
+        'sentDate' => '\DateTime',
         'recipients' => 'object',
         'statistics' => 'object'
     ];
@@ -107,6 +108,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'inlineImageActivation' => null,
         'mirrorActive' => null,
         'recurring' => null,
+        'sentDate' => 'date-time',
         'recipients' => null,
         'statistics' => null
     ];
@@ -158,6 +160,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'inlineImageActivation',
         'mirrorActive' => 'mirrorActive',
         'recurring' => 'recurring',
+        'sentDate' => 'sentDate',
         'recipients' => 'recipients',
         'statistics' => 'statistics'
     ];
@@ -188,6 +191,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'setInlineImageActivation',
         'mirrorActive' => 'setMirrorActive',
         'recurring' => 'setRecurring',
+        'sentDate' => 'setSentDate',
         'recipients' => 'setRecipients',
         'statistics' => 'setStatistics'
     ];
@@ -218,6 +222,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'getInlineImageActivation',
         'mirrorActive' => 'getMirrorActive',
         'recurring' => 'getRecurring',
+        'sentDate' => 'getSentDate',
         'recipients' => 'getRecipients',
         'statistics' => 'getStatistics'
     ];
@@ -340,6 +345,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['inlineImageActivation'] = isset($data['inlineImageActivation']) ? $data['inlineImageActivation'] : null;
         $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
+        $this->container['sentDate'] = isset($data['sentDate']) ? $data['sentDate'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
@@ -989,6 +995,30 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
     public function setRecurring($recurring)
     {
         $this->container['recurring'] = $recurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets sentDate
+     *
+     * @return \DateTime
+     */
+    public function getSentDate()
+    {
+        return $this->container['sentDate'];
+    }
+
+    /**
+     * Sets sentDate
+     *
+     * @param \DateTime $sentDate Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'
+     *
+     * @return $this
+     */
+    public function setSentDate($sentDate)
+    {
+        $this->container['sentDate'] = $sentDate;
 
         return $this;
     }

@@ -76,7 +76,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'modifiedAt' => '\DateTime',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
-        'recurring' => 'bool'
+        'recurring' => 'bool',
+        'sentDate' => '\DateTime'
     ];
 
     /**
@@ -104,7 +105,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'modifiedAt' => 'date-time',
         'inlineImageActivation' => null,
         'mirrorActive' => null,
-        'recurring' => null
+        'recurring' => null,
+        'sentDate' => 'date-time'
     ];
 
     /**
@@ -153,7 +155,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'modifiedAt' => 'modifiedAt',
         'inlineImageActivation' => 'inlineImageActivation',
         'mirrorActive' => 'mirrorActive',
-        'recurring' => 'recurring'
+        'recurring' => 'recurring',
+        'sentDate' => 'sentDate'
     ];
 
     /**
@@ -181,7 +184,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'modifiedAt' => 'setModifiedAt',
         'inlineImageActivation' => 'setInlineImageActivation',
         'mirrorActive' => 'setMirrorActive',
-        'recurring' => 'setRecurring'
+        'recurring' => 'setRecurring',
+        'sentDate' => 'setSentDate'
     ];
 
     /**
@@ -209,7 +213,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'modifiedAt' => 'getModifiedAt',
         'inlineImageActivation' => 'getInlineImageActivation',
         'mirrorActive' => 'getMirrorActive',
-        'recurring' => 'getRecurring'
+        'recurring' => 'getRecurring',
+        'sentDate' => 'getSentDate'
     ];
 
     /**
@@ -330,6 +335,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         $this->container['inlineImageActivation'] = isset($data['inlineImageActivation']) ? $data['inlineImageActivation'] : null;
         $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
+        $this->container['sentDate'] = isset($data['sentDate']) ? $data['sentDate'] : null;
     }
 
     /**
@@ -965,6 +971,30 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setRecurring($recurring)
     {
         $this->container['recurring'] = $recurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets sentDate
+     *
+     * @return \DateTime
+     */
+    public function getSentDate()
+    {
+        return $this->container['sentDate'];
+    }
+
+    /**
+     * Sets sentDate
+     *
+     * @param \DateTime $sentDate Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'
+     *
+     * @return $this
+     */
+    public function setSentDate($sentDate)
+    {
+        $this->container['sentDate'] = $sentDate;
 
         return $this;
     }

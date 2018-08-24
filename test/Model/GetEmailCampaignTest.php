@@ -218,6 +218,13 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "sentDate"
+     */
+    public function testPropertySentDate()
+    {
+    }
+
+    /**
      * Test attribute "recipients"
      */
     public function testPropertyRecipients()
