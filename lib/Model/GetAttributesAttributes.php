@@ -186,6 +186,7 @@ class GetAttributesAttributes implements ModelInterface, ArrayAccess
     const TYPE_TEXT = 'text';
     const TYPE_DATE = 'date';
     const TYPE_FLOAT = 'float';
+    const TYPE_BOOL = 'boolean';
     const TYPE_ID = 'id';
     
 
@@ -217,6 +218,7 @@ class GetAttributesAttributes implements ModelInterface, ArrayAccess
             self::TYPE_TEXT,
             self::TYPE_DATE,
             self::TYPE_FLOAT,
+            self::TYPE_BOOL,
             self::TYPE_ID,
         ];
     }
