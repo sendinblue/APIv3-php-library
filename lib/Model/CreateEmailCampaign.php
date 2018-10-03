@@ -62,6 +62,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'name' => 'string',
         'htmlContent' => 'string',
         'htmlUrl' => 'string',
+        'templateId' => 'int',
         'scheduledAt' => '\DateTime',
         'subject' => 'string',
         'replyTo' => 'string',
@@ -74,7 +75,8 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'string',
         'footer' => 'string',
         'header' => 'string',
-        'utmCampaign' => 'string'
+        'utmCampaign' => 'string',
+        'params' => 'object'
     ];
 
     /**
@@ -88,6 +90,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'name' => null,
         'htmlContent' => null,
         'htmlUrl' => 'url',
+        'templateId' => 'int64',
         'scheduledAt' => 'date-time',
         'subject' => null,
         'replyTo' => 'email',
@@ -100,7 +103,8 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'type' => null,
         'footer' => null,
         'header' => null,
-        'utmCampaign' => null
+        'utmCampaign' => null,
+        'params' => null
     ];
 
     /**
@@ -135,6 +139,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'name' => 'name',
         'htmlContent' => 'htmlContent',
         'htmlUrl' => 'htmlUrl',
+        'templateId' => 'templateId',
         'scheduledAt' => 'scheduledAt',
         'subject' => 'subject',
         'replyTo' => 'replyTo',
@@ -147,7 +152,8 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'type',
         'footer' => 'footer',
         'header' => 'header',
-        'utmCampaign' => 'utmCampaign'
+        'utmCampaign' => 'utmCampaign',
+        'params' => 'params'
     ];
 
     /**
@@ -161,6 +167,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'htmlContent' => 'setHtmlContent',
         'htmlUrl' => 'setHtmlUrl',
+        'templateId' => 'setTemplateId',
         'scheduledAt' => 'setScheduledAt',
         'subject' => 'setSubject',
         'replyTo' => 'setReplyTo',
@@ -173,7 +180,8 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'footer' => 'setFooter',
         'header' => 'setHeader',
-        'utmCampaign' => 'setUtmCampaign'
+        'utmCampaign' => 'setUtmCampaign',
+        'params' => 'setParams'
     ];
 
     /**
@@ -187,6 +195,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'htmlContent' => 'getHtmlContent',
         'htmlUrl' => 'getHtmlUrl',
+        'templateId' => 'getTemplateId',
         'scheduledAt' => 'getScheduledAt',
         'subject' => 'getSubject',
         'replyTo' => 'getReplyTo',
@@ -199,7 +208,8 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'footer' => 'getFooter',
         'header' => 'getHeader',
-        'utmCampaign' => 'getUtmCampaign'
+        'utmCampaign' => 'getUtmCampaign',
+        'params' => 'getParams'
     ];
 
     /**
@@ -282,6 +292,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
         $this->container['htmlUrl'] = isset($data['htmlUrl']) ? $data['htmlUrl'] : null;
+        $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
         $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
         $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
@@ -295,6 +306,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['utmCampaign'] = isset($data['utmCampaign']) ? $data['utmCampaign'] : null;
+        $this->container['params'] = isset($data['params']) ? $data['params'] : null;
     }
 
     /**
@@ -443,7 +455,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets htmlContent
      *
-     * @param string $htmlContent Mandatory if htmlUrl is empty. Body of the message (HTML)
+     * @param string $htmlContent Mandatory if htmlUrl and templateId are empty. Body of the message (HTML)
      *
      * @return $this
      */
@@ -467,13 +479,37 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets htmlUrl
      *
-     * @param string $htmlUrl Mandatory if htmlContent is empty. Url to the message (HTML)
+     * @param string $htmlUrl Mandatory if htmlContent and templateId are empty. Url to the message (HTML)
      *
      * @return $this
      */
     public function setHtmlUrl($htmlUrl)
     {
         $this->container['htmlUrl'] = $htmlUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets templateId
+     *
+     * @return int
+     */
+    public function getTemplateId()
+    {
+        return $this->container['templateId'];
+    }
+
+    /**
+     * Sets templateId
+     *
+     * @param int $templateId Mandatory if htmlContent and htmlUrl are empty. Id of the SMTP template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.
+     *
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->container['templateId'] = $templateId;
 
         return $this;
     }
@@ -563,7 +599,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets toField
      *
-     * @param string $toField To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use {FNAME} {LNAME}. These attributes must already exist in your contact database
+     * @param string $toField To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization
      *
      * @return $this
      */
@@ -795,6 +831,30 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     public function setUtmCampaign($utmCampaign)
     {
         $this->container['utmCampaign'] = $utmCampaign;
+
+        return $this;
+    }
+
+    /**
+     * Gets params
+     *
+     * @return object
+     */
+    public function getParams()
+    {
+        return $this->container['params'];
+    }
+
+    /**
+     * Sets params
+     *
+     * @param object $params Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'
+     *
+     * @return $this
+     */
+    public function setParams($params)
+    {
+        $this->container['params'] = $params;
 
         return $this;
     }

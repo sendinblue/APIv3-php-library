@@ -113,6 +113,13 @@ class CreateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "templateId"
+     */
+    public function testPropertyTemplateId()
+    {
+    }
+
+    /**
      * Test attribute "scheduledAt"
      */
     public function testPropertyScheduledAt()
@@ -200,6 +207,13 @@ class CreateEmailCampaignTest extends \PHPUnit_Framework_TestCase
      * Test attribute "utmCampaign"
      */
     public function testPropertyUtmCampaign()
+    {
+    }
+
+    /**
+     * Test attribute "params"
+     */
+    public function testPropertyParams()
     {
     }
 }

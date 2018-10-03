@@ -73,7 +73,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'recurring' => 'bool',
         'footer' => 'string',
         'header' => 'string',
-        'utmCampaign' => 'string'
+        'utmCampaign' => 'string',
+        'params' => 'object'
     ];
 
     /**
@@ -98,7 +99,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'recurring' => null,
         'footer' => null,
         'header' => null,
-        'utmCampaign' => null
+        'utmCampaign' => null,
+        'params' => null
     ];
 
     /**
@@ -144,7 +146,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'recurring' => 'recurring',
         'footer' => 'footer',
         'header' => 'header',
-        'utmCampaign' => 'utmCampaign'
+        'utmCampaign' => 'utmCampaign',
+        'params' => 'params'
     ];
 
     /**
@@ -169,7 +172,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'recurring' => 'setRecurring',
         'footer' => 'setFooter',
         'header' => 'setHeader',
-        'utmCampaign' => 'setUtmCampaign'
+        'utmCampaign' => 'setUtmCampaign',
+        'params' => 'setParams'
     ];
 
     /**
@@ -194,7 +198,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'recurring' => 'getRecurring',
         'footer' => 'getFooter',
         'header' => 'getHeader',
-        'utmCampaign' => 'getUtmCampaign'
+        'utmCampaign' => 'getUtmCampaign',
+        'params' => 'getParams'
     ];
 
     /**
@@ -274,6 +279,7 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['utmCampaign'] = isset($data['utmCampaign']) ? $data['utmCampaign'] : null;
+        $this->container['params'] = isset($data['params']) ? $data['params'] : null;
     }
 
     /**
@@ -506,7 +512,7 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets toField
      *
-     * @param string $toField This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. To use the contact attributes here, these must already exist in SendinBlue account
+     * @param string $toField To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization
      *
      * @return $this
      */
@@ -705,6 +711,30 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
     public function setUtmCampaign($utmCampaign)
     {
         $this->container['utmCampaign'] = $utmCampaign;
+
+        return $this;
+    }
+
+    /**
+     * Gets params
+     *
+     * @return object
+     */
+    public function getParams()
+    {
+        return $this->container['params'];
+    }
+
+    /**
+     * Sets params
+     *
+     * @param object $params Pass the set of attributes to customize the type 'classic' campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}.
+     *
+     * @return $this
+     */
+    public function setParams($params)
+    {
+        $this->container['params'] = $params;
 
         return $this;
     }
