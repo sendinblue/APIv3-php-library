@@ -214,6 +214,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
     const EVENT_INVALID = 'invalid';
     const EVENT_DEFERRED = 'deferred';
     const EVENT_BLOCKED = 'blocked';
+    const EVENT_UNSUBSCRIBED = 'unsubscribed';
     
 
     
@@ -236,6 +237,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
             self::EVENT_INVALID,
             self::EVENT_DEFERRED,
             self::EVENT_BLOCKED,
+            self::EVENT_UNSUBSCRIBED,
         ];
     }
     

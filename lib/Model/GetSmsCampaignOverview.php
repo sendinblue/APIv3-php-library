@@ -62,7 +62,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         'status' => 'string',
         'content' => 'string',
         'scheduledAt' => '\DateTime',
-        'testSent' => 'bool',
         'sender' => 'string',
         'createdAt' => '\DateTime',
         'modifiedAt' => '\DateTime'
@@ -79,7 +78,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         'status' => null,
         'content' => null,
         'scheduledAt' => 'date-time',
-        'testSent' => null,
         'sender' => null,
         'createdAt' => 'date-time',
         'modifiedAt' => 'date-time'
@@ -117,7 +115,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         'status' => 'status',
         'content' => 'content',
         'scheduledAt' => 'scheduledAt',
-        'testSent' => 'testSent',
         'sender' => 'sender',
         'createdAt' => 'createdAt',
         'modifiedAt' => 'modifiedAt'
@@ -134,7 +131,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'content' => 'setContent',
         'scheduledAt' => 'setScheduledAt',
-        'testSent' => 'setTestSent',
         'sender' => 'setSender',
         'createdAt' => 'setCreatedAt',
         'modifiedAt' => 'setModifiedAt'
@@ -151,7 +147,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'content' => 'getContent',
         'scheduledAt' => 'getScheduledAt',
-        'testSent' => 'getTestSent',
         'sender' => 'getSender',
         'createdAt' => 'getCreatedAt',
         'modifiedAt' => 'getModifiedAt'
@@ -203,7 +198,7 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
     const STATUS_ARCHIVE = 'archive';
     const STATUS_QUEUED = 'queued';
     const STATUS_SUSPENDED = 'suspended';
-    const STATUS_IN_PROCESS = 'in_process';
+    const STATUS_IN_PROCESS = 'inProcess';
     
 
     
@@ -245,7 +240,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
-        $this->container['testSent'] = isset($data['testSent']) ? $data['testSent'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
@@ -282,9 +276,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         }
         if ($this->container['scheduledAt'] === null) {
             $invalidProperties[] = "'scheduledAt' can't be null";
-        }
-        if ($this->container['testSent'] === null) {
-            $invalidProperties[] = "'testSent' can't be null";
         }
         if ($this->container['sender'] === null) {
             $invalidProperties[] = "'sender' can't be null";
@@ -324,9 +315,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['scheduledAt'] === null) {
-            return false;
-        }
-        if ($this->container['testSent'] === null) {
             return false;
         }
         if ($this->container['sender'] === null) {
@@ -467,30 +455,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
     public function setScheduledAt($scheduledAt)
     {
         $this->container['scheduledAt'] = $scheduledAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets testSent
-     *
-     * @return bool
-     */
-    public function getTestSent()
-    {
-        return $this->container['testSent'];
-    }
-
-    /**
-     * Sets testSent
-     *
-     * @param bool $testSent Retrieved the status of test SMS sending. (true=Test SMS has been sent  false=Test SMS has not been sent)
-     *
-     * @return $this
-     */
-    public function setTestSent($testSent)
-    {
-        $this->container['testSent'] = $testSent;
 
         return $this;
     }

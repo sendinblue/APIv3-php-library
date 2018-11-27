@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **spamReports** | **int** | Number of complaint (spam report) for the timeframe | 
 **blocked** | **int** | Number of blocked contact emails for the timeframe | 
 **invalid** | **int** | Number of invalid emails for the timeframe | 
+**unsubscribed** | **int** | Number of unsubscribed emails for the timeframe | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

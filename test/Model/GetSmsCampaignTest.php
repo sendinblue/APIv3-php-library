@@ -113,13 +113,6 @@ class GetSmsCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "testSent"
-     */
-    public function testPropertyTestSent()
-    {
-    }
-
-    /**
      * Test attribute "sender"
      */
     public function testPropertySender()
