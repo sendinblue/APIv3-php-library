@@ -160,4 +160,11 @@ class GetReportsReportsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyInvalid()
     {
     }
+
+    /**
+     * Test attribute "unsubscribed"
+     */
+    public function testPropertyUnsubscribed()
+    {
+    }
 }

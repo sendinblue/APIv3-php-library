@@ -68,7 +68,8 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         'uniqueOpens' => 'int',
         'spamReports' => 'int',
         'blocked' => 'int',
-        'invalid' => 'int'
+        'invalid' => 'int',
+        'unsubscribed' => 'int'
     ];
 
     /**
@@ -88,7 +89,8 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         'uniqueOpens' => 'int64',
         'spamReports' => 'int64',
         'blocked' => 'int64',
-        'invalid' => 'int64'
+        'invalid' => 'int64',
+        'unsubscribed' => 'int64'
     ];
 
     /**
@@ -129,7 +131,8 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         'uniqueOpens' => 'uniqueOpens',
         'spamReports' => 'spamReports',
         'blocked' => 'blocked',
-        'invalid' => 'invalid'
+        'invalid' => 'invalid',
+        'unsubscribed' => 'unsubscribed'
     ];
 
     /**
@@ -149,7 +152,8 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         'uniqueOpens' => 'setUniqueOpens',
         'spamReports' => 'setSpamReports',
         'blocked' => 'setBlocked',
-        'invalid' => 'setInvalid'
+        'invalid' => 'setInvalid',
+        'unsubscribed' => 'setUnsubscribed'
     ];
 
     /**
@@ -169,7 +173,8 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         'uniqueOpens' => 'getUniqueOpens',
         'spamReports' => 'getSpamReports',
         'blocked' => 'getBlocked',
-        'invalid' => 'getInvalid'
+        'invalid' => 'getInvalid',
+        'unsubscribed' => 'getUnsubscribed'
     ];
 
     /**
@@ -244,6 +249,7 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         $this->container['spamReports'] = isset($data['spamReports']) ? $data['spamReports'] : null;
         $this->container['blocked'] = isset($data['blocked']) ? $data['blocked'] : null;
         $this->container['invalid'] = isset($data['invalid']) ? $data['invalid'] : null;
+        $this->container['unsubscribed'] = isset($data['unsubscribed']) ? $data['unsubscribed'] : null;
     }
 
     /**
@@ -291,6 +297,9 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
         if ($this->container['invalid'] === null) {
             $invalidProperties[] = "'invalid' can't be null";
         }
+        if ($this->container['unsubscribed'] === null) {
+            $invalidProperties[] = "'unsubscribed' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -337,6 +346,9 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['invalid'] === null) {
+            return false;
+        }
+        if ($this->container['unsubscribed'] === null) {
             return false;
         }
         return true;
@@ -627,6 +639,30 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
     public function setInvalid($invalid)
     {
         $this->container['invalid'] = $invalid;
+
+        return $this;
+    }
+
+    /**
+     * Gets unsubscribed
+     *
+     * @return int
+     */
+    public function getUnsubscribed()
+    {
+        return $this->container['unsubscribed'];
+    }
+
+    /**
+     * Sets unsubscribed
+     *
+     * @param int $unsubscribed Number of unsubscribed emails for the timeframe
+     *
+     * @return $this
+     */
+    public function setUnsubscribed($unsubscribed)
+    {
+        $this->container['unsubscribed'] = $unsubscribed;
 
         return $this;
     }

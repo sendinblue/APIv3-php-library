@@ -223,6 +223,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'sender', the character length must be smaller than or equal to 11.";
         }
 
+        if ($this->container['content'] === null) {
+            $invalidProperties[] = "'content' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -242,6 +245,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
             return false;
         }
         if (strlen($this->container['sender']) > 11) {
+            return false;
+        }
+        if ($this->container['content'] === null) {
             return false;
         }
         return true;

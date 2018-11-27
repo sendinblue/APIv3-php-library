@@ -198,9 +198,6 @@ class CreateSmsCampaignRecipients implements ModelInterface, ArrayAccess
         if ($this->container['listIds'] === null) {
             $invalidProperties[] = "'listIds' can't be null";
         }
-        if ($this->container['exclusionListIds'] === null) {
-            $invalidProperties[] = "'exclusionListIds' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -214,9 +211,6 @@ class CreateSmsCampaignRecipients implements ModelInterface, ArrayAccess
     {
 
         if ($this->container['listIds'] === null) {
-            return false;
-        }
-        if ($this->container['exclusionListIds'] === null) {
             return false;
         }
         return true;
