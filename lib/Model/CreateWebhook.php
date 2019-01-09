@@ -262,6 +262,9 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         if ($this->container['url'] === null) {
             $invalidProperties[] = "'url' can't be null";
         }
+        if ($this->container['events'] === null) {
+            $invalidProperties[] = "'events' can't be null";
+        }
         $allowedValues = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -283,6 +286,9 @@ class CreateWebhook implements ModelInterface, ArrayAccess
     {
 
         if ($this->container['url'] === null) {
+            return false;
+        }
+        if ($this->container['events'] === null) {
             return false;
         }
         $allowedValues = $this->getTypeAllowableValues();
@@ -361,7 +367,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
     public function setEvents($events)
     {
         $allowedValues = $this->getEventsAllowableValues();
-        if (!is_null($events) && array_diff($events, $allowedValues)) {
+        if (array_diff($events, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'events', must be one of '%s'",

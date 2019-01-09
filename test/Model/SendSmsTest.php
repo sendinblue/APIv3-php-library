@@ -90,4 +90,25 @@ class SendSmsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMessageId()
     {
     }
+
+    /**
+     * Test attribute "smsCount"
+     */
+    public function testPropertySmsCount()
+    {
+    }
+
+    /**
+     * Test attribute "usedCredits"
+     */
+    public function testPropertyUsedCredits()
+    {
+    }
+
+    /**
+     * Test attribute "remainingCredits"
+     */
+    public function testPropertyRemainingCredits()
+    {
+    }
 }

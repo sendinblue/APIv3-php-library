@@ -403,7 +403,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendTestSms**
-> sendTestSms($campaignId, $sendTestSms)
+> sendTestSms($campaignId, $phoneNumber)
 
 Send an SMS
 
@@ -424,10 +424,10 @@ $apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
     $config
 );
 $campaignId = 789; // int | Id of the SMS campaign
-$sendTestSms = new \SendinBlue\Client\Model\SendTestSms(); // \SendinBlue\Client\Model\SendTestSms | Mobile number to which send the test
+$phoneNumber = new \SendinBlue\Client\Model\SendTestSms(); // \SendinBlue\Client\Model\SendTestSms | Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted
 
 try {
-    $apiInstance->sendTestSms($campaignId, $sendTestSms);
+    $apiInstance->sendTestSms($campaignId, $phoneNumber);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->sendTestSms: ', $e->getMessage(), PHP_EOL;
 }
@@ -439,7 +439,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **int**| Id of the SMS campaign |
- **sendTestSms** | [**\SendinBlue\Client\Model\SendTestSms**](../Model/SendTestSms.md)| Mobile number to which send the test |
+ **phoneNumber** | [**\SendinBlue\Client\Model\SendTestSms**](../Model/SendTestSms.md)| Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted |
 
 ### Return type
 

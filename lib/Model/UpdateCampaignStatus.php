@@ -258,7 +258,7 @@ class UpdateCampaignStatus implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status Note:- replicateTemplate status will be available only for template type campaigns.
      *
      * @return $this
      */

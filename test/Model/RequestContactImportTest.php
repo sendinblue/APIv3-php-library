@@ -132,4 +132,11 @@ class RequestContactImportTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUpdateExistingContacts()
     {
     }
+
+    /**
+     * Test attribute "emptyContactsAttributes"
+     */
+    public function testPropertyEmptyContactsAttributes()
+    {
+    }
 }

@@ -248,7 +248,7 @@ class UpdateContact implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param object $attributes Pass the set of attributes to be updated. These attributes must be present in your account. For eg. {'FNAME':'Ellie', 'LNAME':'Roger'}
+     * @param object $attributes Pass the set of attributes to be updated. These attributes must be present in your account. To update existing email address of a contact with the new one please pass EMAIL in attribtes. For eg. { 'EMAIL':'newemail@domain.com', 'FNAME':'Ellie', 'LNAME':'Roger'}
      *
      * @return $this
      */

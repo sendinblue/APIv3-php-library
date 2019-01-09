@@ -2011,15 +2011,15 @@ class SMSCampaignsApi
      * Send an SMS
      *
      * @param  int $campaignId Id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function sendTestSms($campaignId, $sendTestSms)
+    public function sendTestSms($campaignId, $phoneNumber)
     {
-        $this->sendTestSmsWithHttpInfo($campaignId, $sendTestSms);
+        $this->sendTestSmsWithHttpInfo($campaignId, $phoneNumber);
     }
 
     /**
@@ -2028,16 +2028,16 @@ class SMSCampaignsApi
      * Send an SMS
      *
      * @param  int $campaignId Id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendTestSmsWithHttpInfo($campaignId, $sendTestSms)
+    public function sendTestSmsWithHttpInfo($campaignId, $phoneNumber)
     {
         $returnType = '';
-        $request = $this->sendTestSmsRequest($campaignId, $sendTestSms);
+        $request = $this->sendTestSmsRequest($campaignId, $phoneNumber);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2098,14 +2098,14 @@ class SMSCampaignsApi
      * Send an SMS
      *
      * @param  int $campaignId Id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendTestSmsAsync($campaignId, $sendTestSms)
+    public function sendTestSmsAsync($campaignId, $phoneNumber)
     {
-        return $this->sendTestSmsAsyncWithHttpInfo($campaignId, $sendTestSms)
+        return $this->sendTestSmsAsyncWithHttpInfo($campaignId, $phoneNumber)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2119,15 +2119,15 @@ class SMSCampaignsApi
      * Send an SMS
      *
      * @param  int $campaignId Id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendTestSmsAsyncWithHttpInfo($campaignId, $sendTestSms)
+    public function sendTestSmsAsyncWithHttpInfo($campaignId, $phoneNumber)
     {
         $returnType = '';
-        $request = $this->sendTestSmsRequest($campaignId, $sendTestSms);
+        $request = $this->sendTestSmsRequest($campaignId, $phoneNumber);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2156,12 +2156,12 @@ class SMSCampaignsApi
      * Create request for operation 'sendTestSms'
      *
      * @param  int $campaignId Id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\SendTestSms $sendTestSms Mobile number to which send the test (required)
+     * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sendTestSmsRequest($campaignId, $sendTestSms)
+    protected function sendTestSmsRequest($campaignId, $phoneNumber)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
@@ -2169,10 +2169,10 @@ class SMSCampaignsApi
                 'Missing the required parameter $campaignId when calling sendTestSms'
             );
         }
-        // verify the required parameter 'sendTestSms' is set
-        if ($sendTestSms === null) {
+        // verify the required parameter 'phoneNumber' is set
+        if ($phoneNumber === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sendTestSms when calling sendTestSms'
+                'Missing the required parameter $phoneNumber when calling sendTestSms'
             );
         }
 
@@ -2195,8 +2195,8 @@ class SMSCampaignsApi
 
         // body params
         $_tempBody = null;
-        if (isset($sendTestSms)) {
-            $_tempBody = $sendTestSms;
+        if (isset($phoneNumber)) {
+            $_tempBody = $phoneNumber;
         }
 
         if ($multipart) {
