@@ -57,7 +57,7 @@ class SendTestSms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'phoneNumbers' => 'string[]'
+        'phoneNumber' => 'string'
     ];
 
     /**
@@ -66,7 +66,7 @@ class SendTestSms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'phoneNumbers' => null
+        'phoneNumber' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class SendTestSms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'phoneNumbers' => 'phoneNumbers'
+        'phoneNumber' => 'phoneNumber'
     ];
 
     /**
@@ -105,7 +105,7 @@ class SendTestSms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'phoneNumbers' => 'setPhoneNumbers'
+        'phoneNumber' => 'setPhoneNumber'
     ];
 
     /**
@@ -114,7 +114,7 @@ class SendTestSms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'phoneNumbers' => 'getPhoneNumbers'
+        'phoneNumber' => 'getPhoneNumber'
     ];
 
     /**
@@ -177,7 +177,7 @@ class SendTestSms implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['phoneNumbers'] = isset($data['phoneNumbers']) ? $data['phoneNumbers'] : null;
+        $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
     }
 
     /**
@@ -206,25 +206,25 @@ class SendTestSms implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets phoneNumbers
+     * Gets phoneNumber
      *
-     * @return string[]
+     * @return string
      */
-    public function getPhoneNumbers()
+    public function getPhoneNumber()
     {
-        return $this->container['phoneNumbers'];
+        return $this->container['phoneNumber'];
     }
 
     /**
-     * Sets phoneNumbers
+     * Sets phoneNumber
      *
-     * @param string[] $phoneNumbers Mobile number with the country code to send test SMS. The mobile number defined here must belong to one of your contacts in SendinBlue account and must not be blacklisted
+     * @param string $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted
      *
      * @return $this
      */
-    public function setPhoneNumbers($phoneNumbers)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->container['phoneNumbers'] = $phoneNumbers;
+        $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
     }

@@ -488,7 +488,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets attachment
      *
-     * @param \SendinBlue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, [{'url':'https://attachment.domain.com/myAttachmentFromUrl.jpg', 'name':'My attachment 1'}, {'content':'base64 exmaple content', 'name':'My attachment 2'}]. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub and eps ( Ignored if 'templateId' is passed )
+     * @param \SendinBlue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, [{'url':'https://attachment.domain.com/myAttachmentFromUrl.jpg', 'name':'My attachment 1'}, {'content':'base64 exmaple content', 'name':'My attachment 2'}]. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps and odt ( Ignored if 'templateId' is passed )
      *
      * @return $this
      */

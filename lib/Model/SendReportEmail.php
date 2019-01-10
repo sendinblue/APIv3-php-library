@@ -220,7 +220,7 @@ class SendReportEmail implements ModelInterface, ArrayAccess
     {
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
         $this->container['to'] = isset($data['to']) ? $data['to'] : null;
-        $this->container['contentType'] = isset($data['contentType']) ? $data['contentType'] : null;
+        $this->container['contentType'] = isset($data['contentType']) ? $data['contentType'] : 'html';
         $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
         $this->container['cc'] = isset($data['cc']) ? $data['cc'] : null;
         $this->container['body'] = isset($data['body']) ? $data['body'] : null;
@@ -235,6 +235,12 @@ class SendReportEmail implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['subject'] === null) {
+            $invalidProperties[] = "'subject' can't be null";
+        }
+        if ($this->container['to'] === null) {
+            $invalidProperties[] = "'to' can't be null";
+        }
         $allowedValues = $this->getContentTypeAllowableValues();
         if (!in_array($this->container['contentType'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -243,6 +249,9 @@ class SendReportEmail implements ModelInterface, ArrayAccess
             );
         }
 
+        if ($this->container['body'] === null) {
+            $invalidProperties[] = "'body' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -255,8 +264,17 @@ class SendReportEmail implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if ($this->container['subject'] === null) {
+            return false;
+        }
+        if ($this->container['to'] === null) {
+            return false;
+        }
         $allowedValues = $this->getContentTypeAllowableValues();
         if (!in_array($this->container['contentType'], $allowedValues)) {
+            return false;
+        }
+        if ($this->container['body'] === null) {
             return false;
         }
         return true;

@@ -58,7 +58,10 @@ class SendSms implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'reference' => 'string',
-        'messageId' => 'int'
+        'messageId' => 'int',
+        'smsCount' => 'int',
+        'usedCredits' => 'float',
+        'remainingCredits' => 'float'
     ];
 
     /**
@@ -68,7 +71,10 @@ class SendSms implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'reference' => null,
-        'messageId' => 'int64'
+        'messageId' => 'int64',
+        'smsCount' => 'int64',
+        'usedCredits' => 'float',
+        'remainingCredits' => 'float'
     ];
 
     /**
@@ -99,7 +105,10 @@ class SendSms implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'reference' => 'reference',
-        'messageId' => 'messageId'
+        'messageId' => 'messageId',
+        'smsCount' => 'smsCount',
+        'usedCredits' => 'usedCredits',
+        'remainingCredits' => 'remainingCredits'
     ];
 
     /**
@@ -109,7 +118,10 @@ class SendSms implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'reference' => 'setReference',
-        'messageId' => 'setMessageId'
+        'messageId' => 'setMessageId',
+        'smsCount' => 'setSmsCount',
+        'usedCredits' => 'setUsedCredits',
+        'remainingCredits' => 'setRemainingCredits'
     ];
 
     /**
@@ -119,7 +131,10 @@ class SendSms implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'reference' => 'getReference',
-        'messageId' => 'getMessageId'
+        'messageId' => 'getMessageId',
+        'smsCount' => 'getSmsCount',
+        'usedCredits' => 'getUsedCredits',
+        'remainingCredits' => 'getRemainingCredits'
     ];
 
     /**
@@ -184,6 +199,9 @@ class SendSms implements ModelInterface, ArrayAccess
     {
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
+        $this->container['smsCount'] = isset($data['smsCount']) ? $data['smsCount'] : null;
+        $this->container['usedCredits'] = isset($data['usedCredits']) ? $data['usedCredits'] : null;
+        $this->container['remainingCredits'] = isset($data['remainingCredits']) ? $data['remainingCredits'] : null;
     }
 
     /**
@@ -267,6 +285,78 @@ class SendSms implements ModelInterface, ArrayAccess
     public function setMessageId($messageId)
     {
         $this->container['messageId'] = $messageId;
+
+        return $this;
+    }
+
+    /**
+     * Gets smsCount
+     *
+     * @return int
+     */
+    public function getSmsCount()
+    {
+        return $this->container['smsCount'];
+    }
+
+    /**
+     * Sets smsCount
+     *
+     * @param int $smsCount Count of SMS's to send multiple text messages
+     *
+     * @return $this
+     */
+    public function setSmsCount($smsCount)
+    {
+        $this->container['smsCount'] = $smsCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets usedCredits
+     *
+     * @return float
+     */
+    public function getUsedCredits()
+    {
+        return $this->container['usedCredits'];
+    }
+
+    /**
+     * Sets usedCredits
+     *
+     * @param float $usedCredits SMS credits used per text message
+     *
+     * @return $this
+     */
+    public function setUsedCredits($usedCredits)
+    {
+        $this->container['usedCredits'] = $usedCredits;
+
+        return $this;
+    }
+
+    /**
+     * Gets remainingCredits
+     *
+     * @return float
+     */
+    public function getRemainingCredits()
+    {
+        return $this->container['remainingCredits'];
+    }
+
+    /**
+     * Sets remainingCredits
+     *
+     * @param float $remainingCredits Remaining SMS credits of the user
+     *
+     * @return $this
+     */
+    public function setRemainingCredits($remainingCredits)
+    {
+        $this->container['remainingCredits'] = $remainingCredits;
 
         return $this;
     }

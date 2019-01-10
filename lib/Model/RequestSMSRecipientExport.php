@@ -206,7 +206,7 @@ class RequestSmsRecipientExport implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['notifyURL'] = isset($data['notifyURL']) ? $data['notifyURL'] : null;
-        $this->container['recipientsType'] = isset($data['recipientsType']) ? $data['recipientsType'] : 'all';
+        $this->container['recipientsType'] = isset($data['recipientsType']) ? $data['recipientsType'] : null;
     }
 
     /**

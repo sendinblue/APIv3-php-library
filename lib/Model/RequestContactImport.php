@@ -64,7 +64,8 @@ class RequestContactImport implements ModelInterface, ArrayAccess
         'newList' => '\SendinBlue\Client\Model\RequestContactImportNewList',
         'emailBlacklist' => 'bool',
         'smsBlacklist' => 'bool',
-        'updateExistingContacts' => 'bool'
+        'updateExistingContacts' => 'bool',
+        'emptyContactsAttributes' => 'bool'
     ];
 
     /**
@@ -80,7 +81,8 @@ class RequestContactImport implements ModelInterface, ArrayAccess
         'newList' => null,
         'emailBlacklist' => null,
         'smsBlacklist' => null,
-        'updateExistingContacts' => null
+        'updateExistingContacts' => null,
+        'emptyContactsAttributes' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class RequestContactImport implements ModelInterface, ArrayAccess
         'newList' => 'newList',
         'emailBlacklist' => 'emailBlacklist',
         'smsBlacklist' => 'smsBlacklist',
-        'updateExistingContacts' => 'updateExistingContacts'
+        'updateExistingContacts' => 'updateExistingContacts',
+        'emptyContactsAttributes' => 'emptyContactsAttributes'
     ];
 
     /**
@@ -133,7 +136,8 @@ class RequestContactImport implements ModelInterface, ArrayAccess
         'newList' => 'setNewList',
         'emailBlacklist' => 'setEmailBlacklist',
         'smsBlacklist' => 'setSmsBlacklist',
-        'updateExistingContacts' => 'setUpdateExistingContacts'
+        'updateExistingContacts' => 'setUpdateExistingContacts',
+        'emptyContactsAttributes' => 'setEmptyContactsAttributes'
     ];
 
     /**
@@ -149,7 +153,8 @@ class RequestContactImport implements ModelInterface, ArrayAccess
         'newList' => 'getNewList',
         'emailBlacklist' => 'getEmailBlacklist',
         'smsBlacklist' => 'getSmsBlacklist',
-        'updateExistingContacts' => 'getUpdateExistingContacts'
+        'updateExistingContacts' => 'getUpdateExistingContacts',
+        'emptyContactsAttributes' => 'getEmptyContactsAttributes'
     ];
 
     /**
@@ -220,6 +225,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
         $this->container['emailBlacklist'] = isset($data['emailBlacklist']) ? $data['emailBlacklist'] : false;
         $this->container['smsBlacklist'] = isset($data['smsBlacklist']) ? $data['smsBlacklist'] : false;
         $this->container['updateExistingContacts'] = isset($data['updateExistingContacts']) ? $data['updateExistingContacts'] : true;
+        $this->container['emptyContactsAttributes'] = isset($data['emptyContactsAttributes']) ? $data['emptyContactsAttributes'] : false;
     }
 
     /**
@@ -435,6 +441,30 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     public function setUpdateExistingContacts($updateExistingContacts)
     {
         $this->container['updateExistingContacts'] = $updateExistingContacts;
+
+        return $this;
+    }
+
+    /**
+     * Gets emptyContactsAttributes
+     *
+     * @return bool
+     */
+    public function getEmptyContactsAttributes()
+    {
+        return $this->container['emptyContactsAttributes'];
+    }
+
+    /**
+     * Sets emptyContactsAttributes
+     *
+     * @param bool $emptyContactsAttributes To facilitate the choice to erase any attribute of the existing contacts with empty value. emptyContactsAttributes = true means the empty fields in your import will erase any attribute that currently contain data in SendinBlue, & emptyContactsAttributes = false means the empty fields will not affect your existing data ( only available if `updateExistingContacts` set to true )
+     *
+     * @return $this
+     */
+    public function setEmptyContactsAttributes($emptyContactsAttributes)
+    {
+        $this->container['emptyContactsAttributes'] = $emptyContactsAttributes;
 
         return $this;
     }
