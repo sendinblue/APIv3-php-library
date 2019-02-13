@@ -106,6 +106,13 @@ class GetExtendedContactDetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "createdAt"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
      * Test attribute "modifiedAt"
      */
     public function testPropertyModifiedAt()

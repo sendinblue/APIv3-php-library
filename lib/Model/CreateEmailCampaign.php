@@ -71,12 +71,11 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'attachmentUrl' => 'string',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
-        'recurring' => 'bool',
-        'type' => 'string',
         'footer' => 'string',
         'header' => 'string',
         'utmCampaign' => 'string',
-        'params' => 'object'
+        'params' => 'object',
+        'sendAtBestTime' => 'bool'
     ];
 
     /**
@@ -99,12 +98,11 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'attachmentUrl' => 'url',
         'inlineImageActivation' => null,
         'mirrorActive' => null,
-        'recurring' => null,
-        'type' => null,
         'footer' => null,
         'header' => null,
         'utmCampaign' => null,
-        'params' => null
+        'params' => null,
+        'sendAtBestTime' => null
     ];
 
     /**
@@ -148,12 +146,11 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'attachmentUrl' => 'attachmentUrl',
         'inlineImageActivation' => 'inlineImageActivation',
         'mirrorActive' => 'mirrorActive',
-        'recurring' => 'recurring',
-        'type' => 'type',
         'footer' => 'footer',
         'header' => 'header',
         'utmCampaign' => 'utmCampaign',
-        'params' => 'params'
+        'params' => 'params',
+        'sendAtBestTime' => 'sendAtBestTime'
     ];
 
     /**
@@ -176,12 +173,11 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'attachmentUrl' => 'setAttachmentUrl',
         'inlineImageActivation' => 'setInlineImageActivation',
         'mirrorActive' => 'setMirrorActive',
-        'recurring' => 'setRecurring',
-        'type' => 'setType',
         'footer' => 'setFooter',
         'header' => 'setHeader',
         'utmCampaign' => 'setUtmCampaign',
-        'params' => 'setParams'
+        'params' => 'setParams',
+        'sendAtBestTime' => 'setSendAtBestTime'
     ];
 
     /**
@@ -204,12 +200,11 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'attachmentUrl' => 'getAttachmentUrl',
         'inlineImageActivation' => 'getInlineImageActivation',
         'mirrorActive' => 'getMirrorActive',
-        'recurring' => 'getRecurring',
-        'type' => 'getType',
         'footer' => 'getFooter',
         'header' => 'getHeader',
         'utmCampaign' => 'getUtmCampaign',
-        'params' => 'getParams'
+        'params' => 'getParams',
+        'sendAtBestTime' => 'getSendAtBestTime'
     ];
 
     /**
@@ -253,23 +248,8 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const TYPE_CLASSIC = 'classic';
-    const TYPE_TRIGGER = 'trigger';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_CLASSIC,
-            self::TYPE_TRIGGER,
-        ];
-    }
     
 
     /**
@@ -301,12 +281,11 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['attachmentUrl'] = isset($data['attachmentUrl']) ? $data['attachmentUrl'] : null;
         $this->container['inlineImageActivation'] = isset($data['inlineImageActivation']) ? $data['inlineImageActivation'] : false;
         $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
-        $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : false;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['utmCampaign'] = isset($data['utmCampaign']) ? $data['utmCampaign'] : null;
         $this->container['params'] = isset($data['params']) ? $data['params'] : null;
+        $this->container['sendAtBestTime'] = isset($data['sendAtBestTime']) ? $data['sendAtBestTime'] : false;
     }
 
     /**
@@ -327,17 +306,6 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         if ($this->container['subject'] === null) {
             $invalidProperties[] = "'subject' can't be null";
         }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -357,13 +325,6 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['subject'] === null) {
-            return false;
-        }
-        if ($this->container['type'] === null) {
-            return false;
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowedValues)) {
             return false;
         }
         return true;
@@ -527,7 +488,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets scheduledAt
      *
-     * @param \DateTime $scheduledAt Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+     * @param \DateTime $scheduledAt Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).
      *
      * @return $this
      */
@@ -707,63 +668,6 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets recurring
-     *
-     * @return bool
-     */
-    public function getRecurring()
-    {
-        return $this->container['recurring'];
-    }
-
-    /**
-     * Sets recurring
-     *
-     * @param bool $recurring For trigger campagins use false to make sure a contact receives the same campaign only once
-     *
-     * @return $this
-     */
-    public function setRecurring($recurring)
-    {
-        $this->container['recurring'] = $recurring;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type Type of the campaign
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
      * Gets footer
      *
      * @return string
@@ -855,6 +759,30 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     public function setParams($params)
     {
         $this->container['params'] = $params;
+
+        return $this;
+    }
+
+    /**
+     * Gets sendAtBestTime
+     *
+     * @return bool
+     */
+    public function getSendAtBestTime()
+    {
+        return $this->container['sendAtBestTime'];
+    }
+
+    /**
+     * Sets sendAtBestTime
+     *
+     * @param bool $sendAtBestTime Set this to true if you want to send your campaign at best time.
+     *
+     * @return $this
+     */
+    public function setSendAtBestTime($sendAtBestTime)
+    {
+        $this->container['sendAtBestTime'] = $sendAtBestTime;
 
         return $this;
     }

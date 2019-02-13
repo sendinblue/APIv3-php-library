@@ -90,4 +90,11 @@ class PostContactInfoContactsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyFailure()
     {
     }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
+    {
+    }
 }
