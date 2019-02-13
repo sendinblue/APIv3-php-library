@@ -22,7 +22,7 @@ PHP 5.6 and later
 To install the bindings via [Composer](http://getcomposer.org/):
 
 ```
-composer require sendinblue/api-v3-sdk "^6.0.0"
+composer require sendinblue/api-v3-sdk "^6.1.0"
 ```
 
 Further do:
@@ -51,6 +51,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -203,6 +207,7 @@ Class | Method | HTTP request | Description
  - [CreateSmtpEmail](docs/Model/CreateSmtpEmail.md)
  - [CreateSmtpTemplate](docs/Model/CreateSmtpTemplate.md)
  - [CreateSmtpTemplateSender](docs/Model/CreateSmtpTemplateSender.md)
+ - [CreateUpdateContactModel](docs/Model/CreateUpdateContactModel.md)
  - [CreateUpdateFolder](docs/Model/CreateUpdateFolder.md)
  - [CreateWebhook](docs/Model/CreateWebhook.md)
  - [CreatedProcessId](docs/Model/CreatedProcessId.md)
@@ -342,10 +347,12 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: api-key
 - **Location**: HTTP header
 
+## partner-key
 
-## Support and Feedback
+- **Type**: API key
+- **API key parameter name**: partner-key
+- **Location**: HTTP header
 
-Be sure to visit the SendinBlue official [documentation website](https://sendinblue.readme.io/docs ) for additional information about our API.
 
 If you find a bug, please post the issue on [Github](https://github.com/sendinblue/APIv3-php-library/issues).
 

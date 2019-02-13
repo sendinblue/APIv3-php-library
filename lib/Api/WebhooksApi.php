@@ -331,6 +331,11 @@ class WebhooksApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -576,6 +581,11 @@ class WebhooksApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -860,6 +870,11 @@ class WebhooksApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1125,6 +1140,11 @@ class WebhooksApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1384,6 +1404,11 @@ class WebhooksApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

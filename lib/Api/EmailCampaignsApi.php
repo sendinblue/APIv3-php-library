@@ -331,6 +331,11 @@ class EmailCampaignsApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -576,6 +581,11 @@ class EmailCampaignsApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -868,6 +878,11 @@ class EmailCampaignsApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1150,6 +1165,11 @@ class EmailCampaignsApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1465,6 +1485,11 @@ class EmailCampaignsApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1718,6 +1743,11 @@ class EmailCampaignsApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1979,6 +2009,11 @@ class EmailCampaignsApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2238,6 +2273,11 @@ class EmailCampaignsApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2499,6 +2539,11 @@ class EmailCampaignsApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2758,6 +2803,11 @@ class EmailCampaignsApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

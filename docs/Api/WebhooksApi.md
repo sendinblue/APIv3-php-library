@@ -25,6 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -55,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../../README.md#api-key)
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
 
 ### HTTP request headers
 
@@ -78,6 +82,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -107,7 +115,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../../README.md#api-key)
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
 
 ### HTTP request headers
 
@@ -130,6 +138,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -160,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../../README.md#api-key)
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
 
 ### HTTP request headers
 
@@ -183,6 +195,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -213,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../../README.md#api-key)
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
 
 ### HTTP request headers
 
@@ -236,6 +252,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -267,7 +287,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../../README.md#api-key)
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
 
 ### HTTP request headers
 

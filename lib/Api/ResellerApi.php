@@ -366,6 +366,11 @@ class ResellerApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -625,6 +630,11 @@ class ResellerApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -898,6 +908,11 @@ class ResellerApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1151,6 +1166,11 @@ class ResellerApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1411,6 +1431,11 @@ class ResellerApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1703,6 +1728,11 @@ class ResellerApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1958,6 +1988,11 @@ class ResellerApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2264,6 +2299,11 @@ class ResellerApi
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
         }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2531,6 +2571,11 @@ class ResellerApi
         $apiKey = $this->config->getApiKeyWithPrefix('api-key');
         if ($apiKey !== null) {
             $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

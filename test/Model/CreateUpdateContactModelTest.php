@@ -1,6 +1,6 @@
 <?php
 /**
- * GetContactDetailsTest
+ * CreateUpdateContactModelTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace SendinBlue\Client;
 
 /**
- * GetContactDetailsTest Class Doc Comment
+ * CreateUpdateContactModelTest Class Doc Comment
  *
  * @category    Class */
-// * @description GetContactDetails
+// * @description CreateUpdateContactModel
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetContactDetailsTest extends \PHPUnit_Framework_TestCase
+class CreateUpdateContactModelTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,9 @@ class GetContactDetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetContactDetails"
+     * Test "CreateUpdateContactModel"
      */
-    public function testGetContactDetails()
-    {
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
+    public function testCreateUpdateContactModel()
     {
     }
 
@@ -88,55 +81,6 @@ class GetContactDetailsTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "emailBlacklisted"
-     */
-    public function testPropertyEmailBlacklisted()
-    {
-    }
-
-    /**
-     * Test attribute "smsBlacklisted"
-     */
-    public function testPropertySmsBlacklisted()
-    {
-    }
-
-    /**
-     * Test attribute "createdAt"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "modifiedAt"
-     */
-    public function testPropertyModifiedAt()
-    {
-    }
-
-    /**
-     * Test attribute "listIds"
-     */
-    public function testPropertyListIds()
-    {
-    }
-
-    /**
-     * Test attribute "listUnsubscribed"
-     */
-    public function testPropertyListUnsubscribed()
-    {
-    }
-
-    /**
-     * Test attribute "attributes"
-     */
-    public function testPropertyAttributes()
     {
     }
 }

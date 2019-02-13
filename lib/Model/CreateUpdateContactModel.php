@@ -1,6 +1,6 @@
 <?php
 /**
- * PostContactInfoContacts
+ * CreateUpdateContactModel
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * PostContactInfoContacts Class Doc Comment
+ * CreateUpdateContactModel Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PostContactInfoContacts implements ModelInterface, ArrayAccess
+class CreateUpdateContactModel implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'postContactInfo_contacts';
+    protected static $swaggerModelName = 'createUpdateContactModel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'string[]',
-        'failure' => 'string[]',
-        'total' => 'int'
+        'id' => 'int'
     ];
 
     /**
@@ -68,9 +66,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => 'email',
-        'failure' => 'email',
-        'total' => 'int64'
+        'id' => 'int64'
     ];
 
     /**
@@ -100,9 +96,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'failure' => 'failure',
-        'total' => 'total'
+        'id' => 'id'
     ];
 
     /**
@@ -111,9 +105,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'failure' => 'setFailure',
-        'total' => 'setTotal'
+        'id' => 'setId'
     ];
 
     /**
@@ -122,9 +114,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'failure' => 'getFailure',
-        'total' => 'getTotal'
+        'id' => 'getId'
     ];
 
     /**
@@ -187,9 +177,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['failure'] = isset($data['failure']) ? $data['failure'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -218,73 +206,25 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return string[]
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param string[] $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets failure
-     *
-     * @return string[]
-     */
-    public function getFailure()
-    {
-        return $this->container['failure'];
-    }
-
-    /**
-     * Sets failure
-     *
-     * @param string[] $failure failure
-     *
-     * @return $this
-     */
-    public function setFailure($failure)
-    {
-        $this->container['failure'] = $failure;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
+     * Gets id
      *
      * @return int
      */
-    public function getTotal()
+    public function getId()
     {
-        return $this->container['total'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets total
+     * Sets id
      *
-     * @param int $total Displays the count of total number of contacts removed from list when user opts for \"all\" option.
+     * @param int $id ID of the contact when a new contact is created
      *
      * @return $this
      */
-    public function setTotal($total)
+    public function setId($id)
     {
-        $this->container['total'] = $total;
+        $this->container['id'] = $id;
 
         return $this;
     }

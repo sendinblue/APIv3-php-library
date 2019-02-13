@@ -74,7 +74,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'footer' => 'string',
         'header' => 'string',
         'utmCampaign' => 'string',
-        'params' => 'object'
+        'params' => 'object',
+        'sendAtBestTime' => 'bool'
     ];
 
     /**
@@ -100,7 +101,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'footer' => null,
         'header' => null,
         'utmCampaign' => null,
-        'params' => null
+        'params' => null,
+        'sendAtBestTime' => null
     ];
 
     /**
@@ -147,7 +149,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'footer' => 'footer',
         'header' => 'header',
         'utmCampaign' => 'utmCampaign',
-        'params' => 'params'
+        'params' => 'params',
+        'sendAtBestTime' => 'sendAtBestTime'
     ];
 
     /**
@@ -173,7 +176,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'footer' => 'setFooter',
         'header' => 'setHeader',
         'utmCampaign' => 'setUtmCampaign',
-        'params' => 'setParams'
+        'params' => 'setParams',
+        'sendAtBestTime' => 'setSendAtBestTime'
     ];
 
     /**
@@ -199,7 +203,8 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         'footer' => 'getFooter',
         'header' => 'getHeader',
         'utmCampaign' => 'getUtmCampaign',
-        'params' => 'getParams'
+        'params' => 'getParams',
+        'sendAtBestTime' => 'getSendAtBestTime'
     ];
 
     /**
@@ -280,6 +285,7 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['utmCampaign'] = isset($data['utmCampaign']) ? $data['utmCampaign'] : null;
         $this->container['params'] = isset($data['params']) ? $data['params'] : null;
+        $this->container['sendAtBestTime'] = isset($data['sendAtBestTime']) ? $data['sendAtBestTime'] : null;
     }
 
     /**
@@ -440,7 +446,7 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets scheduledAt
      *
-     * @param \DateTime $scheduledAt UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+     * @param \DateTime $scheduledAt UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).
      *
      * @return $this
      */
@@ -735,6 +741,30 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
     public function setParams($params)
     {
         $this->container['params'] = $params;
+
+        return $this;
+    }
+
+    /**
+     * Gets sendAtBestTime
+     *
+     * @return bool
+     */
+    public function getSendAtBestTime()
+    {
+        return $this->container['sendAtBestTime'];
+    }
+
+    /**
+     * Sets sendAtBestTime
+     *
+     * @param bool $sendAtBestTime Set this to true if you want to send your campaign at best time. Note:- if true, warmup ip will be disabled.
+     *
+     * @return $this
+     */
+    public function setSendAtBestTime($sendAtBestTime)
+    {
+        $this->container['sendAtBestTime'] = $sendAtBestTime;
 
         return $this;
     }

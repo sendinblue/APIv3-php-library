@@ -202,4 +202,11 @@ class UpdateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     public function testPropertyParams()
     {
     }
+
+    /**
+     * Test attribute "sendAtBestTime"
+     */
+    public function testPropertySendAtBestTime()
+    {
+    }
 }
