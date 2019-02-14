@@ -343,11 +343,15 @@ Class | Method | HTTP request | Description
 
 ## api-key
 
+The API key should be passed in the request headers as `api-key` for authentication.
+
 - **Type**: API key
 - **API key parameter name**: api-key
 - **Location**: HTTP header
 
 ## partner-key
+
+The partner key should be passed in the request headers as `partner-key` along with `api-key` pair for successful authentication of partner (Optional).
 
 - **Type**: API key
 - **API key parameter name**: partner-key
