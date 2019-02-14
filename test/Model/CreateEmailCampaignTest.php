@@ -176,20 +176,6 @@ class CreateEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "recurring"
-     */
-    public function testPropertyRecurring()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
-
-    /**
      * Test attribute "footer"
      */
     public function testPropertyFooter()
@@ -214,6 +200,13 @@ class CreateEmailCampaignTest extends \PHPUnit_Framework_TestCase
      * Test attribute "params"
      */
     public function testPropertyParams()
+    {
+    }
+
+    /**
+     * Test attribute "sendAtBestTime"
+     */
+    public function testPropertySendAtBestTime()
     {
     }
 }

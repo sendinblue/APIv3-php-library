@@ -61,6 +61,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         'id' => 'int',
         'emailBlacklisted' => 'bool',
         'smsBlacklisted' => 'bool',
+        'createdAt' => '\DateTime',
         'modifiedAt' => '\DateTime',
         'listIds' => 'int[]',
         'listUnsubscribed' => 'int[]',
@@ -78,6 +79,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         'id' => 'int64',
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
+        'createdAt' => 'date-time',
         'modifiedAt' => 'date-time',
         'listIds' => 'int64',
         'listUnsubscribed' => 'int64',
@@ -116,6 +118,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         'id' => 'id',
         'emailBlacklisted' => 'emailBlacklisted',
         'smsBlacklisted' => 'smsBlacklisted',
+        'createdAt' => 'createdAt',
         'modifiedAt' => 'modifiedAt',
         'listIds' => 'listIds',
         'listUnsubscribed' => 'listUnsubscribed',
@@ -133,6 +136,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'emailBlacklisted' => 'setEmailBlacklisted',
         'smsBlacklisted' => 'setSmsBlacklisted',
+        'createdAt' => 'setCreatedAt',
         'modifiedAt' => 'setModifiedAt',
         'listIds' => 'setListIds',
         'listUnsubscribed' => 'setListUnsubscribed',
@@ -150,6 +154,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'emailBlacklisted' => 'getEmailBlacklisted',
         'smsBlacklisted' => 'getSmsBlacklisted',
+        'createdAt' => 'getCreatedAt',
         'modifiedAt' => 'getModifiedAt',
         'listIds' => 'getListIds',
         'listUnsubscribed' => 'getListUnsubscribed',
@@ -221,6 +226,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['emailBlacklisted'] = isset($data['emailBlacklisted']) ? $data['emailBlacklisted'] : null;
         $this->container['smsBlacklisted'] = isset($data['smsBlacklisted']) ? $data['smsBlacklisted'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
         $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
         $this->container['listUnsubscribed'] = isset($data['listUnsubscribed']) ? $data['listUnsubscribed'] : null;
@@ -248,6 +254,9 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['smsBlacklisted'] === null) {
             $invalidProperties[] = "'smsBlacklisted' can't be null";
+        }
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
         }
         if ($this->container['modifiedAt'] === null) {
             $invalidProperties[] = "'modifiedAt' can't be null";
@@ -283,6 +292,9 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['smsBlacklisted'] === null) {
+            return false;
+        }
+        if ($this->container['createdAt'] === null) {
             return false;
         }
         if ($this->container['modifiedAt'] === null) {
@@ -393,6 +405,30 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
     public function setSmsBlacklisted($smsBlacklisted)
     {
         $this->container['smsBlacklisted'] = $smsBlacklisted;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime $createdAt Creation UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
