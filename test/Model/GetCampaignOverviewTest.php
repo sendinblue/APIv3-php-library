@@ -118,4 +118,53 @@ class GetCampaignOverviewTest extends \PHPUnit_Framework_TestCase
     public function testPropertyScheduledAt()
     {
     }
+
+    /**
+     * Test attribute "abTesting"
+     */
+    public function testPropertyAbTesting()
+    {
+    }
+
+    /**
+     * Test attribute "subjectA"
+     */
+    public function testPropertySubjectA()
+    {
+    }
+
+    /**
+     * Test attribute "subjectB"
+     */
+    public function testPropertySubjectB()
+    {
+    }
+
+    /**
+     * Test attribute "splitRule"
+     */
+    public function testPropertySplitRule()
+    {
+    }
+
+    /**
+     * Test attribute "winnerCriteria"
+     */
+    public function testPropertyWinnerCriteria()
+    {
+    }
+
+    /**
+     * Test attribute "winnerDelay"
+     */
+    public function testPropertyWinnerDelay()
+    {
+    }
+
+    /**
+     * Test attribute "sendAtBestTime"
+     */
+    public function testPropertySendAtBestTime()
+    {
+    }
 }

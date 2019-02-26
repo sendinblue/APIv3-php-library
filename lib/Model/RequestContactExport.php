@@ -260,7 +260,7 @@ class RequestContactExport implements ModelInterface, ArrayAccess
     /**
      * Sets contactFilter
      *
-     * @param object $contactFilter Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.
+     * @param object $contactFilter Set the filter for the contacts to be exported. For example, `{\"blacklisted\":true}` will export all the blacklisted contacts.
      *
      * @return $this
      */

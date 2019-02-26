@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * SendSmtpEmailReplyToTest Class Doc Comment
  *
  * @category    Class */
-// * @description Email (required), along with name (optional), on which transactional mail recipients will be able to reply back. For example, {&#39;email&#39;:&#39;ann6533@example.com&#39;, &#39;name&#39;:&#39;Ann&#39;}.
+// * @description Email (required), along with name (optional), on which transactional mail recipients will be able to reply back. For example, &#x60;{\&quot;email&#39;:&#39;ann6533@example.com&#39;, &#39;name&#39;:&#39;Ann&#39;}&#x60;
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team

@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * SendSmtpEmailSenderTest Class Doc Comment
  *
  * @category    Class */
-// * @description Mandatory if &#39;templateId&#39; is not passed. Pass name (optional) and email of sender from which emails will be sent. For example, {&#39;name&#39;:&#39;Mary from MyShop&#39;, &#39;email&#39;:&#39;no-reply@myshop.com&#39;}
+// * @description Mandatory if &#39;templateId&#39; is not passed. Pass name (optional) and email of sender from which emails will be sent. For example, &#x60;{\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;}&#x60;
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
