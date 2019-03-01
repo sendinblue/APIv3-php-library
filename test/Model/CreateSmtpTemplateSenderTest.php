@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * CreateSmtpTemplateSenderTest Class Doc Comment
  *
  * @category    Class */
-// * @description Sender details including email and name (optional). For example {&#39;name&#39;:&#39;xyz&#39; , &#39;email&#39;:&#39;example@abc.com&#39;}
+// * @description Sender details including email and name (optional). For example &#x60;{\&quot;name\&quot;:\&quot;xyz\&quot;, \&quot;email\&quot;:\&quot;example@abc.com\&quot;}&#x60;
 /**
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team

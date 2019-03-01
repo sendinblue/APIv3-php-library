@@ -63,6 +63,13 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'string',
         'status' => 'string',
         'scheduledAt' => '\DateTime',
+        'abTesting' => 'bool',
+        'subjectA' => 'string',
+        'subjectB' => 'string',
+        'splitRule' => 'int',
+        'winnerCriteria' => 'string',
+        'winnerDelay' => 'int',
+        'sendAtBestTime' => 'bool',
         'testSent' => 'bool',
         'header' => 'string',
         'footer' => 'string',
@@ -94,6 +101,13 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'type' => null,
         'status' => null,
         'scheduledAt' => 'date-time',
+        'abTesting' => null,
+        'subjectA' => null,
+        'subjectB' => null,
+        'splitRule' => null,
+        'winnerCriteria' => null,
+        'winnerDelay' => null,
+        'sendAtBestTime' => null,
         'testSent' => null,
         'header' => null,
         'footer' => null,
@@ -146,6 +160,13 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'type',
         'status' => 'status',
         'scheduledAt' => 'scheduledAt',
+        'abTesting' => 'abTesting',
+        'subjectA' => 'subjectA',
+        'subjectB' => 'subjectB',
+        'splitRule' => 'splitRule',
+        'winnerCriteria' => 'winnerCriteria',
+        'winnerDelay' => 'winnerDelay',
+        'sendAtBestTime' => 'sendAtBestTime',
         'testSent' => 'testSent',
         'header' => 'header',
         'footer' => 'footer',
@@ -177,6 +198,13 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'status' => 'setStatus',
         'scheduledAt' => 'setScheduledAt',
+        'abTesting' => 'setAbTesting',
+        'subjectA' => 'setSubjectA',
+        'subjectB' => 'setSubjectB',
+        'splitRule' => 'setSplitRule',
+        'winnerCriteria' => 'setWinnerCriteria',
+        'winnerDelay' => 'setWinnerDelay',
+        'sendAtBestTime' => 'setSendAtBestTime',
         'testSent' => 'setTestSent',
         'header' => 'setHeader',
         'footer' => 'setFooter',
@@ -208,6 +236,13 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'status' => 'getStatus',
         'scheduledAt' => 'getScheduledAt',
+        'abTesting' => 'getAbTesting',
+        'subjectA' => 'getSubjectA',
+        'subjectB' => 'getSubjectB',
+        'splitRule' => 'getSplitRule',
+        'winnerCriteria' => 'getWinnerCriteria',
+        'winnerDelay' => 'getWinnerDelay',
+        'sendAtBestTime' => 'getSendAtBestTime',
         'testSent' => 'getTestSent',
         'header' => 'getHeader',
         'footer' => 'getFooter',
@@ -331,6 +366,13 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
+        $this->container['abTesting'] = isset($data['abTesting']) ? $data['abTesting'] : null;
+        $this->container['subjectA'] = isset($data['subjectA']) ? $data['subjectA'] : null;
+        $this->container['subjectB'] = isset($data['subjectB']) ? $data['subjectB'] : null;
+        $this->container['splitRule'] = isset($data['splitRule']) ? $data['splitRule'] : null;
+        $this->container['winnerCriteria'] = isset($data['winnerCriteria']) ? $data['winnerCriteria'] : null;
+        $this->container['winnerDelay'] = isset($data['winnerDelay']) ? $data['winnerDelay'] : null;
+        $this->container['sendAtBestTime'] = isset($data['sendAtBestTime']) ? $data['sendAtBestTime'] : null;
         $this->container['testSent'] = isset($data['testSent']) ? $data['testSent'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
@@ -364,9 +406,6 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['subject'] === null) {
-            $invalidProperties[] = "'subject' can't be null";
         }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
@@ -442,9 +481,6 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['name'] === null) {
-            return false;
-        }
-        if ($this->container['subject'] === null) {
             return false;
         }
         if ($this->container['type'] === null) {
@@ -562,7 +598,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets subject
      *
-     * @param string $subject Subject of the campaign
+     * @param string $subject Subject of the campaign. Only available if `abTesting` flag of the campaign is `false`
      *
      * @return $this
      */
@@ -659,6 +695,174 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
     public function setScheduledAt($scheduledAt)
     {
         $this->container['scheduledAt'] = $scheduledAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets abTesting
+     *
+     * @return bool
+     */
+    public function getAbTesting()
+    {
+        return $this->container['abTesting'];
+    }
+
+    /**
+     * Sets abTesting
+     *
+     * @param bool $abTesting Status of A/B Test for the campaign. abTesting = false means it is disabled, & abTesting = true means it is enabled.
+     *
+     * @return $this
+     */
+    public function setAbTesting($abTesting)
+    {
+        $this->container['abTesting'] = $abTesting;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectA
+     *
+     * @return string
+     */
+    public function getSubjectA()
+    {
+        return $this->container['subjectA'];
+    }
+
+    /**
+     * Sets subjectA
+     *
+     * @param string $subjectA Subject A of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setSubjectA($subjectA)
+    {
+        $this->container['subjectA'] = $subjectA;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectB
+     *
+     * @return string
+     */
+    public function getSubjectB()
+    {
+        return $this->container['subjectB'];
+    }
+
+    /**
+     * Sets subjectB
+     *
+     * @param string $subjectB Subject B of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setSubjectB($subjectB)
+    {
+        $this->container['subjectB'] = $subjectB;
+
+        return $this;
+    }
+
+    /**
+     * Gets splitRule
+     *
+     * @return int
+     */
+    public function getSplitRule()
+    {
+        return $this->container['splitRule'];
+    }
+
+    /**
+     * Sets splitRule
+     *
+     * @param int $splitRule The size of your ab-test groups. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setSplitRule($splitRule)
+    {
+        $this->container['splitRule'] = $splitRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets winnerCriteria
+     *
+     * @return string
+     */
+    public function getWinnerCriteria()
+    {
+        return $this->container['winnerCriteria'];
+    }
+
+    /**
+     * Sets winnerCriteria
+     *
+     * @param string $winnerCriteria Criteria for the winning version. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setWinnerCriteria($winnerCriteria)
+    {
+        $this->container['winnerCriteria'] = $winnerCriteria;
+
+        return $this;
+    }
+
+    /**
+     * Gets winnerDelay
+     *
+     * @return int
+     */
+    public function getWinnerDelay()
+    {
+        return $this->container['winnerDelay'];
+    }
+
+    /**
+     * Sets winnerDelay
+     *
+     * @param int $winnerDelay The duration of the test in hours at the end of which the winning version will be sent. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setWinnerDelay($winnerDelay)
+    {
+        $this->container['winnerDelay'] = $winnerDelay;
+
+        return $this;
+    }
+
+    /**
+     * Gets sendAtBestTime
+     *
+     * @return bool
+     */
+    public function getSendAtBestTime()
+    {
+        return $this->container['sendAtBestTime'];
+    }
+
+    /**
+     * Sets sendAtBestTime
+     *
+     * @param bool $sendAtBestTime It is true if you have chosen to send your campaign at best time, otherwise it is false
+     *
+     * @return $this
+     */
+    public function setSendAtBestTime($sendAtBestTime)
+    {
+        $this->container['sendAtBestTime'] = $sendAtBestTime;
 
         return $this;
     }

@@ -75,7 +75,13 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'header' => 'string',
         'utmCampaign' => 'string',
         'params' => 'object',
-        'sendAtBestTime' => 'bool'
+        'sendAtBestTime' => 'bool',
+        'abTesting' => 'bool',
+        'subjectA' => 'string',
+        'subjectB' => 'string',
+        'splitRule' => 'int',
+        'winnerCriteria' => 'string',
+        'winnerDelay' => 'int'
     ];
 
     /**
@@ -102,7 +108,13 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'header' => null,
         'utmCampaign' => null,
         'params' => null,
-        'sendAtBestTime' => null
+        'sendAtBestTime' => null,
+        'abTesting' => null,
+        'subjectA' => null,
+        'subjectB' => null,
+        'splitRule' => 'int64',
+        'winnerCriteria' => null,
+        'winnerDelay' => 'int64'
     ];
 
     /**
@@ -150,7 +162,13 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'header' => 'header',
         'utmCampaign' => 'utmCampaign',
         'params' => 'params',
-        'sendAtBestTime' => 'sendAtBestTime'
+        'sendAtBestTime' => 'sendAtBestTime',
+        'abTesting' => 'abTesting',
+        'subjectA' => 'subjectA',
+        'subjectB' => 'subjectB',
+        'splitRule' => 'splitRule',
+        'winnerCriteria' => 'winnerCriteria',
+        'winnerDelay' => 'winnerDelay'
     ];
 
     /**
@@ -177,7 +195,13 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'header' => 'setHeader',
         'utmCampaign' => 'setUtmCampaign',
         'params' => 'setParams',
-        'sendAtBestTime' => 'setSendAtBestTime'
+        'sendAtBestTime' => 'setSendAtBestTime',
+        'abTesting' => 'setAbTesting',
+        'subjectA' => 'setSubjectA',
+        'subjectB' => 'setSubjectB',
+        'splitRule' => 'setSplitRule',
+        'winnerCriteria' => 'setWinnerCriteria',
+        'winnerDelay' => 'setWinnerDelay'
     ];
 
     /**
@@ -204,7 +228,13 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'header' => 'getHeader',
         'utmCampaign' => 'getUtmCampaign',
         'params' => 'getParams',
-        'sendAtBestTime' => 'getSendAtBestTime'
+        'sendAtBestTime' => 'getSendAtBestTime',
+        'abTesting' => 'getAbTesting',
+        'subjectA' => 'getSubjectA',
+        'subjectB' => 'getSubjectB',
+        'splitRule' => 'getSplitRule',
+        'winnerCriteria' => 'getWinnerCriteria',
+        'winnerDelay' => 'getWinnerDelay'
     ];
 
     /**
@@ -248,8 +278,23 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const WINNER_CRITERIA_OPEN = 'open';
+    const WINNER_CRITERIA_CLICK = 'click';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getWinnerCriteriaAllowableValues()
+    {
+        return [
+            self::WINNER_CRITERIA_OPEN,
+            self::WINNER_CRITERIA_CLICK,
+        ];
+    }
     
 
     /**
@@ -286,6 +331,12 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['utmCampaign'] = isset($data['utmCampaign']) ? $data['utmCampaign'] : null;
         $this->container['params'] = isset($data['params']) ? $data['params'] : null;
         $this->container['sendAtBestTime'] = isset($data['sendAtBestTime']) ? $data['sendAtBestTime'] : false;
+        $this->container['abTesting'] = isset($data['abTesting']) ? $data['abTesting'] : false;
+        $this->container['subjectA'] = isset($data['subjectA']) ? $data['subjectA'] : null;
+        $this->container['subjectB'] = isset($data['subjectB']) ? $data['subjectB'] : null;
+        $this->container['splitRule'] = isset($data['splitRule']) ? $data['splitRule'] : null;
+        $this->container['winnerCriteria'] = isset($data['winnerCriteria']) ? $data['winnerCriteria'] : null;
+        $this->container['winnerDelay'] = isset($data['winnerDelay']) ? $data['winnerDelay'] : null;
     }
 
     /**
@@ -303,9 +354,30 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['subject'] === null) {
-            $invalidProperties[] = "'subject' can't be null";
+        if (!is_null($this->container['splitRule']) && ($this->container['splitRule'] > 50)) {
+            $invalidProperties[] = "invalid value for 'splitRule', must be smaller than or equal to 50.";
         }
+
+        if (!is_null($this->container['splitRule']) && ($this->container['splitRule'] < 1)) {
+            $invalidProperties[] = "invalid value for 'splitRule', must be bigger than or equal to 1.";
+        }
+
+        $allowedValues = $this->getWinnerCriteriaAllowableValues();
+        if (!in_array($this->container['winnerCriteria'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'winnerCriteria', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['winnerDelay']) && ($this->container['winnerDelay'] > 168)) {
+            $invalidProperties[] = "invalid value for 'winnerDelay', must be smaller than or equal to 168.";
+        }
+
+        if (!is_null($this->container['winnerDelay']) && ($this->container['winnerDelay'] < 1)) {
+            $invalidProperties[] = "invalid value for 'winnerDelay', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -324,7 +396,20 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['subject'] === null) {
+        if ($this->container['splitRule'] > 50) {
+            return false;
+        }
+        if ($this->container['splitRule'] < 1) {
+            return false;
+        }
+        $allowedValues = $this->getWinnerCriteriaAllowableValues();
+        if (!in_array($this->container['winnerCriteria'], $allowedValues)) {
+            return false;
+        }
+        if ($this->container['winnerDelay'] > 168) {
+            return false;
+        }
+        if ($this->container['winnerDelay'] < 1) {
             return false;
         }
         return true;
@@ -512,7 +597,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets subject
      *
-     * @param string $subject Subject of the campaign
+     * @param string $subject Subject of the campaign. Mandatory if abTesting is false. Ignored if abTesting is true.
      *
      * @return $this
      */
@@ -560,7 +645,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets toField
      *
-     * @param string $toField To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization
+     * @param string $toField To personalize the «To» Field. If you want to include the first name and last name of your recipient, add `{FNAME} {LNAME}`. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use `{{contact.FNAME}} {{contact.LNAME}}` for personalization
      *
      * @return $this
      */
@@ -752,7 +837,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets params
      *
-     * @param object $params Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'
+     * @param object $params Pass the set of attributes to customize the type classic campaign. For example, `{\"FNAME\":\"Joe\", \"LNAME:\"Doe\"}`. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'
      *
      * @return $this
      */
@@ -783,6 +868,175 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     public function setSendAtBestTime($sendAtBestTime)
     {
         $this->container['sendAtBestTime'] = $sendAtBestTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets abTesting
+     *
+     * @return bool
+     */
+    public function getAbTesting()
+    {
+        return $this->container['abTesting'];
+    }
+
+    /**
+     * Sets abTesting
+     *
+     * @param bool $abTesting Status of A/B Test. abTesting = false means it is disabled, & abTesting = true means it is enabled. 'subjectA', 'subjectB', 'splitRule', 'winnerCriteria' & 'winnerDelay' will be considered when abTesting is set to true. 'subjectA' & 'subjectB' are mandatory together & 'subject' if passed is ignored. Can be set to true only if 'sendAtBestTime' is 'false'. You will be able to set up two subject lines for your campaign and send them to a random sample of your total recipients. Half of the test group will receive version A, and the other half will receive version B
+     *
+     * @return $this
+     */
+    public function setAbTesting($abTesting)
+    {
+        $this->container['abTesting'] = $abTesting;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectA
+     *
+     * @return string
+     */
+    public function getSubjectA()
+    {
+        return $this->container['subjectA'];
+    }
+
+    /**
+     * Sets subjectA
+     *
+     * @param string $subjectA Subject A of the campaign. Mandatory if abTesting = true. subjectA & subjectB should have unique value
+     *
+     * @return $this
+     */
+    public function setSubjectA($subjectA)
+    {
+        $this->container['subjectA'] = $subjectA;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectB
+     *
+     * @return string
+     */
+    public function getSubjectB()
+    {
+        return $this->container['subjectB'];
+    }
+
+    /**
+     * Sets subjectB
+     *
+     * @param string $subjectB Subject B of the campaign. Mandatory if abTesting = true. subjectA & subjectB should have unique value
+     *
+     * @return $this
+     */
+    public function setSubjectB($subjectB)
+    {
+        $this->container['subjectB'] = $subjectB;
+
+        return $this;
+    }
+
+    /**
+     * Gets splitRule
+     *
+     * @return int
+     */
+    public function getSplitRule()
+    {
+        return $this->container['splitRule'];
+    }
+
+    /**
+     * Sets splitRule
+     *
+     * @param int $splitRule Add the size of your test groups. Mandatory if abTesting = true & 'recipients' is passed. We'll send version A and B to a random sample of recipients, and then the winning version to everyone else
+     *
+     * @return $this
+     */
+    public function setSplitRule($splitRule)
+    {
+
+        if (!is_null($splitRule) && ($splitRule > 50)) {
+            throw new \InvalidArgumentException('invalid value for $splitRule when calling CreateEmailCampaign., must be smaller than or equal to 50.');
+        }
+        if (!is_null($splitRule) && ($splitRule < 1)) {
+            throw new \InvalidArgumentException('invalid value for $splitRule when calling CreateEmailCampaign., must be bigger than or equal to 1.');
+        }
+
+        $this->container['splitRule'] = $splitRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets winnerCriteria
+     *
+     * @return string
+     */
+    public function getWinnerCriteria()
+    {
+        return $this->container['winnerCriteria'];
+    }
+
+    /**
+     * Sets winnerCriteria
+     *
+     * @param string $winnerCriteria Choose the metrics that will determinate the winning version. Mandatory if 'splitRule' >= 1 and < 50. If splitRule = 50, 'winnerCriteria' is ignored if passed
+     *
+     * @return $this
+     */
+    public function setWinnerCriteria($winnerCriteria)
+    {
+        $allowedValues = $this->getWinnerCriteriaAllowableValues();
+        if (!is_null($winnerCriteria) && !in_array($winnerCriteria, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'winnerCriteria', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['winnerCriteria'] = $winnerCriteria;
+
+        return $this;
+    }
+
+    /**
+     * Gets winnerDelay
+     *
+     * @return int
+     */
+    public function getWinnerDelay()
+    {
+        return $this->container['winnerDelay'];
+    }
+
+    /**
+     * Sets winnerDelay
+     *
+     * @param int $winnerDelay Choose the duration of the test in hours. Maximum is 7 days, pass 24*7 = 168 hours. The winning version will be sent at the end of the test. Mandatory if 'splitRule' >= 1 and < 50. If splitRule = 50, 'winnerDelay' is ignored if passed
+     *
+     * @return $this
+     */
+    public function setWinnerDelay($winnerDelay)
+    {
+
+        if (!is_null($winnerDelay) && ($winnerDelay > 168)) {
+            throw new \InvalidArgumentException('invalid value for $winnerDelay when calling CreateEmailCampaign., must be smaller than or equal to 168.');
+        }
+        if (!is_null($winnerDelay) && ($winnerDelay < 1)) {
+            throw new \InvalidArgumentException('invalid value for $winnerDelay when calling CreateEmailCampaign., must be bigger than or equal to 1.');
+        }
+
+        $this->container['winnerDelay'] = $winnerDelay;
 
         return $this;
     }

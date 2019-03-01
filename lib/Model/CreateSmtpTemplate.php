@@ -458,7 +458,7 @@ class CreateSmtpTemplate implements ModelInterface, ArrayAccess
     /**
      * Sets toField
      *
-     * @param string $toField To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization
+     * @param string $toField To personalize the «To» Field. If you want to include the first name and last name of your recipient, add `{FNAME} {LNAME}`. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use `{{contact.FNAME}} {{contact.LNAME}}` for personalization
      *
      * @return $this
      */

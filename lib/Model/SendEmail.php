@@ -392,7 +392,7 @@ class SendEmail implements ModelInterface, ArrayAccess
     /**
      * Sets attachment
      *
-     * @param \SendinBlue\Client\Model\SendEmailAttachment[] $attachment Pass the list of content (base64 encoded) and name of the attachment. For example, [{'content':'base64 encoded content 1', 'name':'attcahment1'}, {'content':'base64 encoded content 2', 'name':'attcahment2'}].
+     * @param \SendinBlue\Client\Model\SendEmailAttachment[] $attachment Pass the list of content (base64 encoded) and name of the attachment. For example, `[{\"content\":\"base64 encoded content 1\", \"name\":\"attcahment1\"}, {\"content\":\"base64 encoded content 2\", \"name\":\"attcahment2\"}]`
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class SendEmail implements ModelInterface, ArrayAccess
     /**
      * Sets headers
      *
-     * @param object $headers Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'sender.ip':'1.2.3.4'}
+     * @param object $headers Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"Content-Type\":\"text/html\", \"charset\":\"iso-8859-1\", \"sender.ip\":\"1.2.3.4\"}`
      *
      * @return $this
      */
@@ -440,7 +440,7 @@ class SendEmail implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param object $attributes Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}
+     * @param object $attributes Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}
      *
      * @return $this
      */
