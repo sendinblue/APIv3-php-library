@@ -214,8 +214,8 @@ $apiInstance = new SendinBlue\Client\Api\SMTPApi(
     new GuzzleHttp\Client(),
     $config
 );
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Tag of the emails
 
@@ -232,8 +232,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **tag** | **string**| Tag of the emails | [optional]
 
@@ -279,8 +279,8 @@ $apiInstance = new SendinBlue\Client\Api\SMTPApi(
 );
 $limit = 50; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $email = "email_example"; // string | Filter the report for a specific email addresses
 $event = "event_example"; // string | Filter the report for a specific event type
@@ -303,8 +303,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 50]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **email** | **string**| Filter the report for a specific email addresses | [optional]
  **event** | **string**| Filter the report for a specific event type | [optional]
@@ -354,8 +354,8 @@ $apiInstance = new SendinBlue\Client\Api\SMTPApi(
 );
 $limit = 50; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document on the page
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Tag of the emails
 
@@ -374,8 +374,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **tag** | **string**| Tag of the emails | [optional]
 

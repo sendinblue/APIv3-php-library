@@ -36,8 +36,8 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalSMSApi(
     $config
 );
 $limit = 50; // int | Number of documents per page
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $offset = 0; // int | Index of the first document of the page
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $phoneNumber = "phoneNumber_example"; // string | Filter the report for a specific phone number
@@ -58,8 +58,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **phoneNumber** | **string**| Filter the report for a specific phone number | [optional]
@@ -106,8 +106,8 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalSMSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate
 $tag = "tag_example"; // string | Filter on a tag
 
@@ -124,8 +124,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with startDate and endDate | [optional]
  **tag** | **string**| Filter on a tag | [optional]
 
@@ -169,8 +169,8 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalSMSApi(
     new GuzzleHttp\Client(),
     $config
 );
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Filter on a tag
 
@@ -187,8 +187,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **tag** | **string**| Filter on a tag | [optional]
 

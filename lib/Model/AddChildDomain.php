@@ -1,6 +1,6 @@
 <?php
 /**
- * DeleteHardbounces
+ * AddChildDomain
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * DeleteHardbounces Class Doc Comment
+ * AddChildDomain Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DeleteHardbounces implements ModelInterface, ArrayAccess
+class AddChildDomain implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'deleteHardbounces';
+    protected static $swaggerModelName = 'addChildDomain';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'startDate' => 'string',
-        'endDate' => 'string',
-        'contactEmail' => 'string'
+        'domain' => 'string'
     ];
 
     /**
@@ -68,9 +66,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'startDate' => null,
-        'endDate' => null,
-        'contactEmail' => 'email'
+        'domain' => null
     ];
 
     /**
@@ -100,9 +96,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'startDate' => 'startDate',
-        'endDate' => 'endDate',
-        'contactEmail' => 'contactEmail'
+        'domain' => 'domain'
     ];
 
     /**
@@ -111,9 +105,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'startDate' => 'setStartDate',
-        'endDate' => 'setEndDate',
-        'contactEmail' => 'setContactEmail'
+        'domain' => 'setDomain'
     ];
 
     /**
@@ -122,9 +114,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'startDate' => 'getStartDate',
-        'endDate' => 'getEndDate',
-        'contactEmail' => 'getContactEmail'
+        'domain' => 'getDomain'
     ];
 
     /**
@@ -187,9 +177,7 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
-        $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
-        $this->container['contactEmail'] = isset($data['contactEmail']) ? $data['contactEmail'] : null;
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
     }
 
     /**
@@ -218,73 +206,25 @@ class DeleteHardbounces implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets startDate
+     * Gets domain
      *
      * @return string
      */
-    public function getStartDate()
+    public function getDomain()
     {
-        return $this->container['startDate'];
+        return $this->container['domain'];
     }
 
     /**
-     * Sets startDate
+     * Sets domain
      *
-     * @param string $startDate Starting date (YYYY-MM-DD) of the time period for deletion. The hardbounces occurred after this date will be deleted. Must be less than or equal to the endDate
+     * @param string $domain Sender domain to add for a specific child account
      *
      * @return $this
      */
-    public function setStartDate($startDate)
+    public function setDomain($domain)
     {
-        $this->container['startDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets endDate
-     *
-     * @return string
-     */
-    public function getEndDate()
-    {
-        return $this->container['endDate'];
-    }
-
-    /**
-     * Sets endDate
-     *
-     * @param string $endDate Ending date (YYYY-MM-DD) of the time period for deletion. The hardbounces until this date will be deleted. Must be greater than or equal to the startDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->container['endDate'] = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets contactEmail
-     *
-     * @return string
-     */
-    public function getContactEmail()
-    {
-        return $this->container['contactEmail'];
-    }
-
-    /**
-     * Sets contactEmail
-     *
-     * @param string $contactEmail Target a specific email address
-     *
-     * @return $this
-     */
-    public function setContactEmail($contactEmail)
-    {
-        $this->container['contactEmail'] = $contactEmail;
+        $this->container['domain'] = $domain;
 
         return $this;
     }

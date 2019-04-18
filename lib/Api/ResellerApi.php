@@ -658,6 +658,279 @@ class ResellerApi
     }
 
     /**
+     * Operation createChildDomain
+     *
+     * Creates a domain for a child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function createChildDomain($childAuthKey, $addChildDomain)
+    {
+        $this->createChildDomainWithHttpInfo($childAuthKey, $addChildDomain);
+    }
+
+    /**
+     * Operation createChildDomainWithHttpInfo
+     *
+     * Creates a domain for a child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createChildDomainWithHttpInfo($childAuthKey, $addChildDomain)
+    {
+        $returnType = '';
+        $request = $this->createChildDomainRequest($childAuthKey, $addChildDomain);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createChildDomainAsync
+     *
+     * Creates a domain for a child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createChildDomainAsync($childAuthKey, $addChildDomain)
+    {
+        return $this->createChildDomainAsyncWithHttpInfo($childAuthKey, $addChildDomain)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createChildDomainAsyncWithHttpInfo
+     *
+     * Creates a domain for a child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createChildDomainAsyncWithHttpInfo($childAuthKey, $addChildDomain)
+    {
+        $returnType = '';
+        $request = $this->createChildDomainRequest($childAuthKey, $addChildDomain);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createChildDomain'
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createChildDomainRequest($childAuthKey, $addChildDomain)
+    {
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $childAuthKey when calling createChildDomain'
+            );
+        }
+        // verify the required parameter 'addChildDomain' is set
+        if ($addChildDomain === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $addChildDomain when calling createChildDomain'
+            );
+        }
+
+        $resourcePath = '/reseller/children/{childAuthKey}/domains';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($childAuthKey !== null) {
+            $resourcePath = str_replace(
+                '{' . 'childAuthKey' . '}',
+                ObjectSerializer::toPathValue($childAuthKey),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($addChildDomain)) {
+            $_tempBody = $addChildDomain;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation createResellerChild
      *
      * Creates a reseller child
@@ -928,6 +1201,284 @@ class ResellerApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteChildDomain
+     *
+     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be deleted (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteChildDomain($childAuthKey, $domainName)
+    {
+        $this->deleteChildDomainWithHttpInfo($childAuthKey, $domainName);
+    }
+
+    /**
+     * Operation deleteChildDomainWithHttpInfo
+     *
+     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be deleted (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteChildDomainWithHttpInfo($childAuthKey, $domainName)
+    {
+        $returnType = '';
+        $request = $this->deleteChildDomainRequest($childAuthKey, $domainName);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteChildDomainAsync
+     *
+     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteChildDomainAsync($childAuthKey, $domainName)
+    {
+        return $this->deleteChildDomainAsyncWithHttpInfo($childAuthKey, $domainName)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteChildDomainAsyncWithHttpInfo
+     *
+     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteChildDomainAsyncWithHttpInfo($childAuthKey, $domainName)
+    {
+        $returnType = '';
+        $request = $this->deleteChildDomainRequest($childAuthKey, $domainName);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteChildDomain'
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function deleteChildDomainRequest($childAuthKey, $domainName)
+    {
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $childAuthKey when calling deleteChildDomain'
+            );
+        }
+        // verify the required parameter 'domainName' is set
+        if ($domainName === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $domainName when calling deleteChildDomain'
+            );
+        }
+
+        $resourcePath = '/reseller/children/{childAuthKey}/domains/{domainName}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($childAuthKey !== null) {
+            $resourcePath = str_replace(
+                '{' . 'childAuthKey' . '}',
+                ObjectSerializer::toPathValue($childAuthKey),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($domainName !== null) {
+            $resourcePath = str_replace(
+                '{' . 'domainName' . '}',
+                ObjectSerializer::toPathValue($domainName),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1452,6 +2003,302 @@ class ResellerApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getChildDomains
+     *
+     * Gets all the sender domains of a specific child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SendinBlue\Client\Model\GetChildDomains
+     */
+    public function getChildDomains($childAuthKey)
+    {
+        list($response) = $this->getChildDomainsWithHttpInfo($childAuthKey);
+        return $response;
+    }
+
+    /**
+     * Operation getChildDomainsWithHttpInfo
+     *
+     * Gets all the sender domains of a specific child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SendinBlue\Client\Model\GetChildDomains, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getChildDomainsWithHttpInfo($childAuthKey)
+    {
+        $returnType = '\SendinBlue\Client\Model\GetChildDomains';
+        $request = $this->getChildDomainsRequest($childAuthKey);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\GetChildDomains',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getChildDomainsAsync
+     *
+     * Gets all the sender domains of a specific child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChildDomainsAsync($childAuthKey)
+    {
+        return $this->getChildDomainsAsyncWithHttpInfo($childAuthKey)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getChildDomainsAsyncWithHttpInfo
+     *
+     * Gets all the sender domains of a specific child account
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getChildDomainsAsyncWithHttpInfo($childAuthKey)
+    {
+        $returnType = '\SendinBlue\Client\Model\GetChildDomains';
+        $request = $this->getChildDomainsRequest($childAuthKey);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getChildDomains'
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getChildDomainsRequest($childAuthKey)
+    {
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $childAuthKey when calling getChildDomains'
+            );
+        }
+
+        $resourcePath = '/reseller/children/{childAuthKey}/domains';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($childAuthKey !== null) {
+            $resourcePath = str_replace(
+                '{' . 'childAuthKey' . '}',
+                ObjectSerializer::toPathValue($childAuthKey),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2016,6 +2863,302 @@ class ResellerApi
     }
 
     /**
+     * Operation getSsoToken
+     *
+     * Generates a session token which will remain valid for a short period of time only.
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SendinBlue\Client\Model\GetSsoToken
+     */
+    public function getSsoToken($childAuthKey)
+    {
+        list($response) = $this->getSsoTokenWithHttpInfo($childAuthKey);
+        return $response;
+    }
+
+    /**
+     * Operation getSsoTokenWithHttpInfo
+     *
+     * Generates a session token which will remain valid for a short period of time only.
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SendinBlue\Client\Model\GetSsoToken, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSsoTokenWithHttpInfo($childAuthKey)
+    {
+        $returnType = '\SendinBlue\Client\Model\GetSsoToken';
+        $request = $this->getSsoTokenRequest($childAuthKey);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\GetSsoToken',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSsoTokenAsync
+     *
+     * Generates a session token which will remain valid for a short period of time only.
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSsoTokenAsync($childAuthKey)
+    {
+        return $this->getSsoTokenAsyncWithHttpInfo($childAuthKey)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getSsoTokenAsyncWithHttpInfo
+     *
+     * Generates a session token which will remain valid for a short period of time only.
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSsoTokenAsyncWithHttpInfo($childAuthKey)
+    {
+        $returnType = '\SendinBlue\Client\Model\GetSsoToken';
+        $request = $this->getSsoTokenRequest($childAuthKey);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getSsoToken'
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getSsoTokenRequest($childAuthKey)
+    {
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $childAuthKey when calling getSsoToken'
+            );
+        }
+
+        $resourcePath = '/reseller/children/{childAuthKey}/auth';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($childAuthKey !== null) {
+            $resourcePath = str_replace(
+                '{' . 'childAuthKey' . '}',
+                ObjectSerializer::toPathValue($childAuthKey),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation removeCredits
      *
      * Remove Email and/or SMS credits from a specific child account
@@ -2319,6 +3462,298 @@ class ResellerApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateChildDomain
+     *
+     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be updated (required)
+     * @param  \SendinBlue\Client\Model\UpdateChildDomain $updateChildDomain value to update for sender domain (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function updateChildDomain($childAuthKey, $domainName, $updateChildDomain)
+    {
+        $this->updateChildDomainWithHttpInfo($childAuthKey, $domainName, $updateChildDomain);
+    }
+
+    /**
+     * Operation updateChildDomainWithHttpInfo
+     *
+     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be updated (required)
+     * @param  \SendinBlue\Client\Model\UpdateChildDomain $updateChildDomain value to update for sender domain (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateChildDomainWithHttpInfo($childAuthKey, $domainName, $updateChildDomain)
+    {
+        $returnType = '';
+        $request = $this->updateChildDomainRequest($childAuthKey, $domainName, $updateChildDomain);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateChildDomainAsync
+     *
+     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be updated (required)
+     * @param  \SendinBlue\Client\Model\UpdateChildDomain $updateChildDomain value to update for sender domain (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateChildDomainAsync($childAuthKey, $domainName, $updateChildDomain)
+    {
+        return $this->updateChildDomainAsyncWithHttpInfo($childAuthKey, $domainName, $updateChildDomain)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateChildDomainAsyncWithHttpInfo
+     *
+     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be updated (required)
+     * @param  \SendinBlue\Client\Model\UpdateChildDomain $updateChildDomain value to update for sender domain (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateChildDomainAsyncWithHttpInfo($childAuthKey, $domainName, $updateChildDomain)
+    {
+        $returnType = '';
+        $request = $this->updateChildDomainRequest($childAuthKey, $domainName, $updateChildDomain);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateChildDomain'
+     *
+     * @param  string $childAuthKey auth key of reseller&#39;s child (required)
+     * @param  string $domainName Pass the existing domain that needs to be updated (required)
+     * @param  \SendinBlue\Client\Model\UpdateChildDomain $updateChildDomain value to update for sender domain (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateChildDomainRequest($childAuthKey, $domainName, $updateChildDomain)
+    {
+        // verify the required parameter 'childAuthKey' is set
+        if ($childAuthKey === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $childAuthKey when calling updateChildDomain'
+            );
+        }
+        // verify the required parameter 'domainName' is set
+        if ($domainName === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $domainName when calling updateChildDomain'
+            );
+        }
+        // verify the required parameter 'updateChildDomain' is set
+        if ($updateChildDomain === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $updateChildDomain when calling updateChildDomain'
+            );
+        }
+
+        $resourcePath = '/reseller/children/{childAuthKey}/domains/{domainName}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($childAuthKey !== null) {
+            $resourcePath = str_replace(
+                '{' . 'childAuthKey' . '}',
+                ObjectSerializer::toPathValue($childAuthKey),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($domainName !== null) {
+            $resourcePath = str_replace(
+                '{' . 'domainName' . '}',
+                ObjectSerializer::toPathValue($domainName),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($updateChildDomain)) {
+            $_tempBody = $updateChildDomain;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

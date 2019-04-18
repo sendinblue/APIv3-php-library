@@ -130,7 +130,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmsCampaign**
-> \SendinBlue\Client\Model\GetSmsCampaign getSmsCampaign($campaignId, $getSmsCampaign)
+> \SendinBlue\Client\Model\GetSmsCampaign getSmsCampaign($campaignId)
 
 Get an SMS campaign
 
@@ -155,10 +155,9 @@ $apiInstance = new SendinBlue\Client\Api\SMSCampaignsApi(
     $config
 );
 $campaignId = 789; // int | id of the SMS campaign
-$getSmsCampaign = new \SendinBlue\Client\Model\GetSmsCampaign(); // \SendinBlue\Client\Model\GetSmsCampaign | Values to update an SMS Campaign
 
 try {
-    $result = $apiInstance->getSmsCampaign($campaignId, $getSmsCampaign);
+    $result = $apiInstance->getSmsCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SMSCampaignsApi->getSmsCampaign: ', $e->getMessage(), PHP_EOL;
@@ -171,7 +170,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **int**| id of the SMS campaign |
- **getSmsCampaign** | [**\SendinBlue\Client\Model\GetSmsCampaign**](../Model/GetSmsCampaign.md)| Values to update an SMS Campaign |
 
 ### Return type
 

@@ -88,8 +88,8 @@ class TransactionalSMSApi
      * Get all the SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $phoneNumber Filter the report for a specific phone number (optional)
@@ -112,8 +112,8 @@ class TransactionalSMSApi
      * Get all the SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $phoneNumber Filter the report for a specific phone number (optional)
@@ -202,8 +202,8 @@ class TransactionalSMSApi
      * Get all the SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $phoneNumber Filter the report for a specific phone number (optional)
@@ -229,8 +229,8 @@ class TransactionalSMSApi
      * Get all the SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $phoneNumber Filter the report for a specific phone number (optional)
@@ -286,8 +286,8 @@ class TransactionalSMSApi
      * Create request for operation 'getSmsEvents'
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $phoneNumber Filter the report for a specific phone number (optional)
@@ -424,8 +424,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -444,8 +444,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -530,8 +530,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -553,8 +553,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -606,8 +606,8 @@ class TransactionalSMSApi
     /**
      * Create request for operation 'getTransacAggregatedSmsReport'
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -721,8 +721,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated per day
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -741,8 +741,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated per day
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -827,8 +827,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated per day
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -850,8 +850,8 @@ class TransactionalSMSApi
      *
      * Get your SMS activity aggregated per day
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Filter on a tag (optional)
      *
@@ -903,8 +903,8 @@ class TransactionalSMSApi
     /**
      * Create request for operation 'getTransacSmsReport'
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Filter on a tag (optional)
      *
