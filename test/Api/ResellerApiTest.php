@@ -92,12 +92,32 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for createChildDomain
+     *
+     * Creates a domain for a child account.
+     *
+     */
+    public function testCreateChildDomain()
+    {
+    }
+
+    /**
      * Test case for createResellerChild
      *
      * Creates a reseller child.
      *
      */
     public function testCreateResellerChild()
+    {
+    }
+
+    /**
+     * Test case for deleteChildDomain
+     *
+     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed.
+     *
+     */
+    public function testDeleteChildDomain()
     {
     }
 
@@ -122,6 +142,16 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getChildDomains
+     *
+     * Gets all the sender domains of a specific child account.
+     *
+     */
+    public function testGetChildDomains()
+    {
+    }
+
+    /**
      * Test case for getChildInfo
      *
      * Gets the info about a specific child account.
@@ -142,12 +172,32 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getSsoToken
+     *
+     * Generates a session token which will remain valid for a short period of time only..
+     *
+     */
+    public function testGetSsoToken()
+    {
+    }
+
+    /**
      * Test case for removeCredits
      *
      * Remove Email and/or SMS credits from a specific child account.
      *
      */
     public function testRemoveCredits()
+    {
+    }
+
+    /**
+     * Test case for updateChildDomain
+     *
+     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed.
+     *
+     */
+    public function testUpdateChildDomain()
     {
     }
 

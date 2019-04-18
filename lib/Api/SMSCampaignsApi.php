@@ -614,15 +614,14 @@ class SMSCampaignsApi
      * Get an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetSmsCampaign
      */
-    public function getSmsCampaign($campaignId, $getSmsCampaign)
+    public function getSmsCampaign($campaignId)
     {
-        list($response) = $this->getSmsCampaignWithHttpInfo($campaignId, $getSmsCampaign);
+        list($response) = $this->getSmsCampaignWithHttpInfo($campaignId);
         return $response;
     }
 
@@ -632,16 +631,15 @@ class SMSCampaignsApi
      * Get an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetSmsCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmsCampaignWithHttpInfo($campaignId, $getSmsCampaign)
+    public function getSmsCampaignWithHttpInfo($campaignId)
     {
         $returnType = '\SendinBlue\Client\Model\GetSmsCampaign';
-        $request = $this->getSmsCampaignRequest($campaignId, $getSmsCampaign);
+        $request = $this->getSmsCampaignRequest($campaignId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -724,14 +722,13 @@ class SMSCampaignsApi
      * Get an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmsCampaignAsync($campaignId, $getSmsCampaign)
+    public function getSmsCampaignAsync($campaignId)
     {
-        return $this->getSmsCampaignAsyncWithHttpInfo($campaignId, $getSmsCampaign)
+        return $this->getSmsCampaignAsyncWithHttpInfo($campaignId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -745,15 +742,14 @@ class SMSCampaignsApi
      * Get an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmsCampaignAsyncWithHttpInfo($campaignId, $getSmsCampaign)
+    public function getSmsCampaignAsyncWithHttpInfo($campaignId)
     {
         $returnType = '\SendinBlue\Client\Model\GetSmsCampaign';
-        $request = $this->getSmsCampaignRequest($campaignId, $getSmsCampaign);
+        $request = $this->getSmsCampaignRequest($campaignId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -796,23 +792,16 @@ class SMSCampaignsApi
      * Create request for operation 'getSmsCampaign'
      *
      * @param  int $campaignId id of the SMS campaign (required)
-     * @param  \SendinBlue\Client\Model\GetSmsCampaign $getSmsCampaign Values to update an SMS Campaign (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmsCampaignRequest($campaignId, $getSmsCampaign)
+    protected function getSmsCampaignRequest($campaignId)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $campaignId when calling getSmsCampaign'
-            );
-        }
-        // verify the required parameter 'getSmsCampaign' is set
-        if ($getSmsCampaign === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $getSmsCampaign when calling getSmsCampaign'
             );
         }
 
@@ -835,9 +824,6 @@ class SMSCampaignsApi
 
         // body params
         $_tempBody = null;
-        if (isset($getSmsCampaign)) {
-            $_tempBody = $getSmsCampaign;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

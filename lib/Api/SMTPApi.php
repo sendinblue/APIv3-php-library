@@ -845,8 +845,8 @@ class SMTPApi
      *
      * Get your SMTP activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -865,8 +865,8 @@ class SMTPApi
      *
      * Get your SMTP activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -951,8 +951,8 @@ class SMTPApi
      *
      * Get your SMTP activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -974,8 +974,8 @@ class SMTPApi
      *
      * Get your SMTP activity aggregated over a period of time
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -1027,8 +1027,8 @@ class SMTPApi
     /**
      * Create request for operation 'getAggregatedSmtpReport'
      *
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -1144,8 +1144,8 @@ class SMTPApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 50)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $email Filter the report for a specific email addresses (optional)
      * @param  string $event Filter the report for a specific event type (optional)
@@ -1170,8 +1170,8 @@ class SMTPApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 50)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $email Filter the report for a specific email addresses (optional)
      * @param  string $event Filter the report for a specific event type (optional)
@@ -1262,8 +1262,8 @@ class SMTPApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 50)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $email Filter the report for a specific email addresses (optional)
      * @param  string $event Filter the report for a specific event type (optional)
@@ -1291,8 +1291,8 @@ class SMTPApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 50)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $email Filter the report for a specific email addresses (optional)
      * @param  string $event Filter the report for a specific event type (optional)
@@ -1350,8 +1350,8 @@ class SMTPApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 50)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $email Filter the report for a specific email addresses (optional)
      * @param  string $event Filter the report for a specific event type (optional)
@@ -1499,8 +1499,8 @@ class SMTPApi
      *
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -1521,8 +1521,8 @@ class SMTPApi
      *
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -1609,8 +1609,8 @@ class SMTPApi
      *
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -1634,8 +1634,8 @@ class SMTPApi
      *
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *
@@ -1689,8 +1689,8 @@ class SMTPApi
      *
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
      *

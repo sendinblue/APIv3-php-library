@@ -139,12 +139,17 @@ Class | Method | HTTP request | Description
 *ProcessApi* | [**getProcesses**](docs/Api/ProcessApi.md#getprocesses) | **GET** /processes | Return all the processes for your account
 *ResellerApi* | [**addCredits**](docs/Api/ResellerApi.md#addcredits) | **POST** /reseller/children/{childAuthKey}/credits/add | Add Email and/or SMS credits to a specific child account
 *ResellerApi* | [**associateIpToChild**](docs/Api/ResellerApi.md#associateiptochild) | **POST** /reseller/children/{childAuthKey}/ips/associate | Associate a dedicated IP to the child
+*ResellerApi* | [**createChildDomain**](docs/Api/ResellerApi.md#createchilddomain) | **POST** /reseller/children/{childAuthKey}/domains | Creates a domain for a child account
 *ResellerApi* | [**createResellerChild**](docs/Api/ResellerApi.md#createresellerchild) | **POST** /reseller/children | Creates a reseller child
+*ResellerApi* | [**deleteChildDomain**](docs/Api/ResellerApi.md#deletechilddomain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
 *ResellerApi* | [**deleteResellerChild**](docs/Api/ResellerApi.md#deleteresellerchild) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
 *ResellerApi* | [**dissociateIpFromChild**](docs/Api/ResellerApi.md#dissociateipfromchild) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+*ResellerApi* | [**getChildDomains**](docs/Api/ResellerApi.md#getchilddomains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
 *ResellerApi* | [**getChildInfo**](docs/Api/ResellerApi.md#getchildinfo) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 *ResellerApi* | [**getResellerChilds**](docs/Api/ResellerApi.md#getresellerchilds) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
+*ResellerApi* | [**getSsoToken**](docs/Api/ResellerApi.md#getssotoken) | **GET** /reseller/children/{childAuthKey}/auth | Generates a session token which will remain valid for a short period of time only.
 *ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
+*ResellerApi* | [**updateChildDomain**](docs/Api/ResellerApi.md#updatechilddomain) | **PUT** /reseller/children/{childAuthKey}/domains/{domainName} | Updates the sender domain of reseller&#39;s child based on the childAuthKey and domainName passed
 *ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
 *SMSCampaignsApi* | [**createSmsCampaign**](docs/Api/SMSCampaignsApi.md#createsmscampaign) | **POST** /smsCampaigns | Creates an SMS campaign
 *SMSCampaignsApi* | [**deleteSmsCampaign**](docs/Api/SMSCampaignsApi.md#deletesmscampaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
@@ -187,6 +192,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddChildDomain](docs/Model/AddChildDomain.md)
  - [AddContactToList](docs/Model/AddContactToList.md)
  - [AddCredits](docs/Model/AddCredits.md)
  - [CreateAttribute](docs/Model/CreateAttribute.md)
@@ -225,6 +231,8 @@ Class | Method | HTTP request | Description
  - [GetCampaignOverview](docs/Model/GetCampaignOverview.md)
  - [GetCampaignRecipients](docs/Model/GetCampaignRecipients.md)
  - [GetCampaignStats](docs/Model/GetCampaignStats.md)
+ - [GetChildDomain](docs/Model/GetChildDomain.md)
+ - [GetChildDomains](docs/Model/GetChildDomains.md)
  - [GetChildInfoApiKeys](docs/Model/GetChildInfoApiKeys.md)
  - [GetChildInfoApiKeysV2](docs/Model/GetChildInfoApiKeysV2.md)
  - [GetChildInfoApiKeysV3](docs/Model/GetChildInfoApiKeysV3.md)
@@ -278,6 +286,7 @@ Class | Method | HTTP request | Description
  - [GetSmtpTemplateOverview](docs/Model/GetSmtpTemplateOverview.md)
  - [GetSmtpTemplateOverviewSender](docs/Model/GetSmtpTemplateOverviewSender.md)
  - [GetSmtpTemplates](docs/Model/GetSmtpTemplates.md)
+ - [GetSsoToken](docs/Model/GetSsoToken.md)
  - [GetStatsByDomain](docs/Model/GetStatsByDomain.md)
  - [GetTransacAggregatedSmsReport](docs/Model/GetTransacAggregatedSmsReport.md)
  - [GetTransacSmsReport](docs/Model/GetTransacSmsReport.md)
@@ -318,6 +327,7 @@ Class | Method | HTTP request | Description
  - [UpdateAttributeEnumeration](docs/Model/UpdateAttributeEnumeration.md)
  - [UpdateCampaignStatus](docs/Model/UpdateCampaignStatus.md)
  - [UpdateChild](docs/Model/UpdateChild.md)
+ - [UpdateChildDomain](docs/Model/UpdateChildDomain.md)
  - [UpdateContact](docs/Model/UpdateContact.md)
  - [UpdateEmailCampaign](docs/Model/UpdateEmailCampaign.md)
  - [UpdateEmailCampaignRecipients](docs/Model/UpdateEmailCampaignRecipients.md)
