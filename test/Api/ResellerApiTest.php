@@ -174,7 +174,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSsoToken
      *
-     * Generates a session token which will remain valid for a short period of time only..
+     * Get session token to access Sendinblue (SSO).
      *
      */
     public function testGetSsoToken()
@@ -188,6 +188,16 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testRemoveCredits()
+    {
+    }
+
+    /**
+     * Test case for updateChildAccountStatus
+     *
+     * Updates infos of reseller's child account status based on the childAuthKey supplied.
+     *
+     */
+    public function testUpdateChildAccountStatus()
     {
     }
 
