@@ -2782,7 +2782,7 @@ class ContactsApi
      *
      * Retrieves contact informations
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2799,7 +2799,7 @@ class ContactsApi
      *
      * Retrieves contact informations
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2890,7 +2890,7 @@ class ContactsApi
      *
      * Retrieves contact informations
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2910,7 +2910,7 @@ class ContactsApi
      *
      * Retrieves contact informations
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2960,7 +2960,7 @@ class ContactsApi
     /**
      * Create request for operation 'getContactInfo'
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -147,8 +147,9 @@ Class | Method | HTTP request | Description
 *ResellerApi* | [**getChildDomains**](docs/Api/ResellerApi.md#getchilddomains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
 *ResellerApi* | [**getChildInfo**](docs/Api/ResellerApi.md#getchildinfo) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 *ResellerApi* | [**getResellerChilds**](docs/Api/ResellerApi.md#getresellerchilds) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
-*ResellerApi* | [**getSsoToken**](docs/Api/ResellerApi.md#getssotoken) | **GET** /reseller/children/{childAuthKey}/auth | Generates a session token which will remain valid for a short period of time only.
+*ResellerApi* | [**getSsoToken**](docs/Api/ResellerApi.md#getssotoken) | **GET** /reseller/children/{childAuthKey}/auth | Get session token to access Sendinblue (SSO)
 *ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
+*ResellerApi* | [**updateChildAccountStatus**](docs/Api/ResellerApi.md#updatechildaccountstatus) | **PUT** /reseller/children/{childAuthKey}/accountStatus | Updates infos of reseller&#39;s child account status based on the childAuthKey supplied
 *ResellerApi* | [**updateChildDomain**](docs/Api/ResellerApi.md#updatechilddomain) | **PUT** /reseller/children/{childAuthKey}/domains/{domainName} | Updates the sender domain of reseller&#39;s child based on the childAuthKey and domainName passed
 *ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
 *SMSCampaignsApi* | [**createSmsCampaign**](docs/Api/SMSCampaignsApi.md#createsmscampaign) | **POST** /smsCampaigns | Creates an SMS campaign
@@ -327,6 +328,7 @@ Class | Method | HTTP request | Description
  - [UpdateAttributeEnumeration](docs/Model/UpdateAttributeEnumeration.md)
  - [UpdateCampaignStatus](docs/Model/UpdateCampaignStatus.md)
  - [UpdateChild](docs/Model/UpdateChild.md)
+ - [UpdateChildAccountStatus](docs/Model/UpdateChildAccountStatus.md)
  - [UpdateChildDomain](docs/Model/UpdateChildDomain.md)
  - [UpdateContact](docs/Model/UpdateContact.md)
  - [UpdateEmailCampaign](docs/Model/UpdateEmailCampaign.md)

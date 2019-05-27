@@ -626,7 +626,7 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$email = "email_example"; // string | Email (urlencoded) of the contact
+$email = "email_example"; // string | Email (urlencoded) of the contact OR its SMS attribute value
 
 try {
     $result = $apiInstance->getContactInfo($email);
@@ -641,7 +641,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string**| Email (urlencoded) of the contact |
+ **email** | **string**| Email (urlencoded) of the contact OR its SMS attribute value |
 
 ### Return type
 
