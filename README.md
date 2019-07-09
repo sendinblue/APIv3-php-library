@@ -73,6 +73,48 @@ try {
 ?>
 ```
 
+### Another example
+
+To send out an transactional e-mail based on a template, consider the following code:
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+
+$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+// Setup your email
+$mail = new SendinBlue\Client\Model\SendSmtpEmail();
+$mail->setSender(array("name" => "My Shop Name", "email" => "info@shopname.com"));
+$mail->setTo(array(array("name" => "My Customer Name", "email" => "my@customer.com")));
+$mail->setReplyTo(array("name" => "My Shop Support", "email" => "support@shopname.com"));
+$mail->setTemplateId(1234);
+$mail->setTags(array('your-tag1'));
+$mail->setParams(array("NAME" => "John Doe", "MERGETAG" => "Anything"));
+
+try {
+    $result = $apiInstance->sendTransacEmail($mail);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMTPApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
+}
+```
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.sendinblue.com/v3*
