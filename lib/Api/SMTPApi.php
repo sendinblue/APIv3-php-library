@@ -150,6 +150,10 @@ class SMTPApi
                 $content = $responseBody->getContents();
                 if ($returnType !== 'string') {
                     $content = json_decode($content);
+                    
+                    if ($content->result) {
+                        $content = $content->result;
+                    }
                 }
             }
 
