@@ -58,7 +58,8 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     $config
 );
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses of the contacts
+$obj = array('emails' => array(0 => "email@address.com"));
+$contactEmails = new \SendinBlue\Client\Model\AddContactToList($obj); // \SendinBlue\Client\Model\AddContactToList | Emails addresses of the contacts
 
 try {
     $result = $apiInstance->addContactToList($listId, $contactEmails);
@@ -176,7 +177,8 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$createContact = new \SendinBlue\Client\Model\CreateContact(); // \SendinBlue\Client\Model\CreateContact | Values to create a contact
+$obj = array('email'=>"email@address.com", 'attributes'=>array('SMS'=>"0500000000"));
+$createContact = new \SendinBlue\Client\Model\CreateContact($obj); // \SendinBlue\Client\Model\CreateContact | Values to create a contact
 
 try {
     $result = $apiInstance->createContact($createContact);
@@ -1395,7 +1397,8 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     $config
 );
 $email = "email_example"; // string | Email (urlencoded) of the contact
-$updateContact = new \SendinBlue\Client\Model\UpdateContact(); // \SendinBlue\Client\Model\UpdateContact | Values to update a contact
+$obj = array('attributes'=>array('SMS'=>"0501112233")); //Attribute to be modified + value
+$updateContact = new \SendinBlue\Client\Model\UpdateContact($obj); // \SendinBlue\Client\Model\UpdateContact | Values to update a contact
 
 try {
     $apiInstance->updateContact($email, $updateContact);
