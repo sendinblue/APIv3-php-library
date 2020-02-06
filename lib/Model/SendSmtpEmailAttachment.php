@@ -168,10 +168,6 @@ class SendSmtpEmailAttachment implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -201,8 +197,8 @@ class SendSmtpEmailAttachment implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['content']) && !preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['content'])) {
-            $invalidProperties[] = "invalid value for 'content', must be conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.";
+        if (!is_null($this->container['content']) && false !== base64_decode($this->container['content'], true)) {
+            $invalidProperties[] = "invalid value for 'content', unable to decode with base64_decode";
         }
 
         return $invalidProperties;
@@ -217,7 +213,7 @@ class SendSmtpEmailAttachment implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['content'])) {
+        if (false === base64_decode($this->container['content'], true)) {
             return false;
         }
         return true;
@@ -268,8 +264,8 @@ class SendSmtpEmailAttachment implements ModelInterface, ArrayAccess
     public function setContent($content)
     {
 
-        if (!is_null($content) && (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $content))) {
-            throw new \InvalidArgumentException("invalid value for $content when calling SendSmtpEmailAttachment., must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.");
+        if (!is_null($content) && (false !== base64_decode($this->container['content'], true))) {
+            throw new \InvalidArgumentException("invalid value for $content when calling SendSmtpEmailAttachment., unable to decode with base64_decode");
         }
 
         $this->container['content'] = $content;
