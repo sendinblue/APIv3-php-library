@@ -40,7 +40,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RequestSmsRecipientExport implements ModelInterface, ArrayAccess
+class RequestSMSRecipientExport implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
