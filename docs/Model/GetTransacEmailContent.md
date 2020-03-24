@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **subject** | **string** | Subject of the sent email | 
 **templateId** | **int** | Id of the template | [optional] 
 **date** | [**\DateTime**] | Date on which transactional email was sent | 
-**events** | **object[]** | Series of events which occurred on the transactional email | 
+**events** | [**\SendinBlue\Client\Model\GetTransacEmailContentEvents[]**](GetTransacEmailContentEvents.md) | Series of events which occurred on the transactional email | 
 **body** | **string** | Actual content of the transactional email that has been sent | 
 **attachmentCount** | **int** | Count of the attachments that were sent in the email | 
 

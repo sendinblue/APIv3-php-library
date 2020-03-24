@@ -165,12 +165,12 @@ Class | Method | HTTP request | Description
 *SMSCampaignsApi* | [**sendTestSms**](docs/Api/SMSCampaignsApi.md#sendtestsms) | **POST** /smsCampaigns/{campaignId}/sendTest | Send an SMS
 *SMSCampaignsApi* | [**updateSmsCampaign**](docs/Api/SMSCampaignsApi.md#updatesmscampaign) | **PUT** /smsCampaigns/{campaignId} | Updates an SMS campaign
 *SMSCampaignsApi* | [**updateSmsCampaignStatus**](docs/Api/SMSCampaignsApi.md#updatesmscampaignstatus) | **PUT** /smsCampaigns/{campaignId}/status | Update the campaign status
-*SMTPApi* | [**createSmtpTemplate**](docs/Api/SMTPApi.md#createsmtptemplate) | **POST** /smtp/templates | Create an smtp template
+*SMTPApi* | [**createSmtpTemplate**](docs/Api/SMTPApi.md#createsmtptemplate) | **POST** /smtp/templates | Create a transactional email template
 *SMTPApi* | [**deleteHardbounces**](docs/Api/SMTPApi.md#deletehardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
-*SMTPApi* | [**deleteSmtpTemplate**](docs/Api/SMTPApi.md#deletesmtptemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive smtp template
-*SMTPApi* | [**getAggregatedSmtpReport**](docs/Api/SMTPApi.md#getaggregatedsmtpreport) | **GET** /smtp/statistics/aggregatedReport | Get your SMTP activity aggregated over a period of time
-*SMTPApi* | [**getEmailEventReport**](docs/Api/SMTPApi.md#getemaileventreport) | **GET** /smtp/statistics/events | Get all your SMTP activity (unaggregated events)
-*SMTPApi* | [**getSmtpReport**](docs/Api/SMTPApi.md#getsmtpreport) | **GET** /smtp/statistics/reports | Get your SMTP activity aggregated per day
+*SMTPApi* | [**deleteSmtpTemplate**](docs/Api/SMTPApi.md#deletesmtptemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive transactional email template
+*SMTPApi* | [**getAggregatedSmtpReport**](docs/Api/SMTPApi.md#getaggregatedsmtpreport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
+*SMTPApi* | [**getEmailEventReport**](docs/Api/SMTPApi.md#getemaileventreport) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
+*SMTPApi* | [**getSmtpReport**](docs/Api/SMTPApi.md#getsmtpreport) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 *SMTPApi* | [**getSmtpTemplate**](docs/Api/SMTPApi.md#getsmtptemplate) | **GET** /smtp/templates/{templateId} | Returns the template informations
 *SMTPApi* | [**getSmtpTemplates**](docs/Api/SMTPApi.md#getsmtptemplates) | **GET** /smtp/templates | Get the list of transactional email templates
 *SMTPApi* | [**getTransacBlockedContacts**](docs/Api/SMTPApi.md#gettransacblockedcontacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
@@ -291,6 +291,7 @@ Class | Method | HTTP request | Description
  - [GetSendersList](docs/Model/GetSendersList.md)
  - [GetSendersListIps](docs/Model/GetSendersListIps.md)
  - [GetSendersListSenders](docs/Model/GetSendersListSenders.md)
+ - [GetSharedTemplateUrl](docs/Model/GetSharedTemplateUrl.md)
  - [GetSmsCampaignOverview](docs/Model/GetSmsCampaignOverview.md)
  - [GetSmsCampaignStats](docs/Model/GetSmsCampaignStats.md)
  - [GetSmsCampaigns](docs/Model/GetSmsCampaigns.md)
@@ -305,8 +306,12 @@ Class | Method | HTTP request | Description
  - [GetStatsByDomain](docs/Model/GetStatsByDomain.md)
  - [GetTransacAggregatedSmsReport](docs/Model/GetTransacAggregatedSmsReport.md)
  - [GetTransacBlockedContacts](docs/Model/GetTransacBlockedContacts.md)
+ - [GetTransacBlockedContactsContacts](docs/Model/GetTransacBlockedContactsContacts.md)
+ - [GetTransacBlockedContactsReason](docs/Model/GetTransacBlockedContactsReason.md)
  - [GetTransacEmailContent](docs/Model/GetTransacEmailContent.md)
+ - [GetTransacEmailContentEvents](docs/Model/GetTransacEmailContentEvents.md)
  - [GetTransacEmailsList](docs/Model/GetTransacEmailsList.md)
+ - [GetTransacEmailsListTransactionalEmails](docs/Model/GetTransacEmailsListTransactionalEmails.md)
  - [GetTransacSmsReport](docs/Model/GetTransacSmsReport.md)
  - [GetTransacSmsReportReports](docs/Model/GetTransacSmsReportReports.md)
  - [GetWebhook](docs/Model/GetWebhook.md)
@@ -322,6 +327,7 @@ Class | Method | HTTP request | Description
  - [RemoveContactFromList](docs/Model/RemoveContactFromList.md)
  - [RemoveCredits](docs/Model/RemoveCredits.md)
  - [RequestContactExport](docs/Model/RequestContactExport.md)
+ - [RequestContactExportCustomContactFilter](docs/Model/RequestContactExportCustomContactFilter.md)
  - [RequestContactImport](docs/Model/RequestContactImport.md)
  - [RequestContactImportNewList](docs/Model/RequestContactImportNewList.md)
  - [RequestSmsRecipientExport](docs/Model/RequestSmsRecipientExport.md)
