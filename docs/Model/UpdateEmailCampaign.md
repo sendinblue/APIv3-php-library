@@ -28,6 +28,9 @@ Name | Type | Description | Notes
 **splitRule** | **int** | Add the size of your test groups. Considered if abTesting &#x3D; true. We&#39;ll send version A and B to a random sample of recipients, and then the winning version to everyone else | [optional] 
 **winnerCriteria** | **string** | Choose the metrics that will determinate the winning version. Considered if &#39;splitRule&#39; &gt;&#x3D; 1 and &lt; 50. If splitRule &#x3D; 50, &#39;winnerCriteria&#39; is ignored if passed or alreday exist in record | [optional] 
 **winnerDelay** | **int** | Choose the duration of the test in hours. Maximum is 7 days, pass 24*7 &#x3D; 168 hours. The winning version will be sent at the end of the test. Considered if &#39;splitRule&#39; &gt;&#x3D; 1 and &lt; 50. If splitRule &#x3D; 50, &#39;winnerDelay&#39; is ignored if passed or alreday exist in record | [optional] 
+**ipWarmupEnable** | **bool** | Available for dedicated ip clients. Set this to true if you wish to warm up your ip. | [optional] [default to false]
+**initialQuota** | **int** | Set an initial quota greater than 1 for warming up your ip. We recommend you set a value of 3000. | [optional] 
+**increaseRate** | **int** | Set a percentage increase rate for warming up your ip. We recommend you set the increase rate to 30% per day. If you want to send the same number of emails every day, set the daily increase value to 0%. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

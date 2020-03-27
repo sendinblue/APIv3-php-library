@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**deleteChildDomain**](ResellerApi.md#deleteChildDomain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
 [**deleteResellerChild**](ResellerApi.md#deleteResellerChild) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
 [**dissociateIpFromChild**](ResellerApi.md#dissociateIpFromChild) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+[**getChildAccountCreationStatus**](ResellerApi.md#getChildAccountCreationStatus) | **GET** /reseller/children/{childAuthKey}/accountCreationStatus | Returns the status of reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
 [**getChildDomains**](ResellerApi.md#getChildDomains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
 [**getChildInfo**](ResellerApi.md#getChildInfo) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 [**getResellerChilds**](ResellerApi.md#getResellerChilds) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
@@ -164,7 +165,7 @@ $apiInstance = new SendinBlue\Client\Api\ResellerApi(
     $config
 );
 $childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
-$addChildDomain = new \SendinBlue\Client\Model\AddChildDomain(); // \SendinBlue\Client\Model\AddChildDomain | Sender domain to add for a specific child account
+$addChildDomain = new \SendinBlue\Client\Model\AddChildDomain(); // \SendinBlue\Client\Model\AddChildDomain | Sender domain to add for a specific child account. This will not be displayed to the parent account.
 
 try {
     $apiInstance->createChildDomain($childAuthKey, $addChildDomain);
@@ -179,7 +180,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **childAuthKey** | **string**| auth key of reseller&#39;s child |
- **addChildDomain** | [**\SendinBlue\Client\Model\AddChildDomain**](../Model/AddChildDomain.md)| Sender domain to add for a specific child account |
+ **addChildDomain** | [**\SendinBlue\Client\Model\AddChildDomain**](../Model/AddChildDomain.md)| Sender domain to add for a specific child account. This will not be displayed to the parent account. |
 
 ### Return type
 
@@ -425,6 +426,63 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getChildAccountCreationStatus**
+> \SendinBlue\Client\Model\GetChildAccountCreationStatus getChildAccountCreationStatus($childAuthKey)
+
+Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\ResellerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$childAuthKey = "childAuthKey_example"; // string | auth key of reseller's child
+
+try {
+    $result = $apiInstance->getChildAccountCreationStatus($childAuthKey);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ResellerApi->getChildAccountCreationStatus: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **childAuthKey** | **string**| auth key of reseller&#39;s child |
+
+### Return type
+
+[**\SendinBlue\Client\Model\GetChildAccountCreationStatus**](../Model/GetChildAccountCreationStatus.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getChildDomains**
 > \SendinBlue\Client\Model\GetChildDomains getChildDomains($childAuthKey)
 
@@ -540,7 +598,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getResellerChilds**
-> \SendinBlue\Client\Model\GetChildrenList getResellerChilds()
+> \SendinBlue\Client\Model\GetChildrenList getResellerChilds($limit, $offset)
 
 Gets the list of all reseller's children accounts
 
@@ -564,9 +622,11 @@ $apiInstance = new SendinBlue\Client\Api\ResellerApi(
     new GuzzleHttp\Client(),
     $config
 );
+$limit = 10; // int | Number of documents for child accounts information per page
+$offset = 0; // int | Index of the first document in the page
 
 try {
-    $result = $apiInstance->getResellerChilds();
+    $result = $apiInstance->getResellerChilds($limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResellerApi->getResellerChilds: ', $e->getMessage(), PHP_EOL;
@@ -575,7 +635,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Number of documents for child accounts information per page | [optional] [default to 10]
+ **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 
 ### Return type
 

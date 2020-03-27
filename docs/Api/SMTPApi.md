@@ -4,24 +4,29 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSmtpTemplate**](SMTPApi.md#createSmtpTemplate) | **POST** /smtp/templates | Create an smtp template
+[**createSmtpTemplate**](SMTPApi.md#createSmtpTemplate) | **POST** /smtp/templates | Create a transactional email template
 [**deleteHardbounces**](SMTPApi.md#deleteHardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
-[**deleteSmtpTemplate**](SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive smtp template
-[**getAggregatedSmtpReport**](SMTPApi.md#getAggregatedSmtpReport) | **GET** /smtp/statistics/aggregatedReport | Get your SMTP activity aggregated over a period of time
-[**getEmailEventReport**](SMTPApi.md#getEmailEventReport) | **GET** /smtp/statistics/events | Get all your SMTP activity (unaggregated events)
-[**getSmtpReport**](SMTPApi.md#getSmtpReport) | **GET** /smtp/statistics/reports | Get your SMTP activity aggregated per day
+[**deleteSmtpTemplate**](SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive transactional email template
+[**getAggregatedSmtpReport**](SMTPApi.md#getAggregatedSmtpReport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
+[**getEmailEventReport**](SMTPApi.md#getEmailEventReport) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
+[**getSmtpReport**](SMTPApi.md#getSmtpReport) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 [**getSmtpTemplate**](SMTPApi.md#getSmtpTemplate) | **GET** /smtp/templates/{templateId} | Returns the template informations
-[**getSmtpTemplates**](SMTPApi.md#getSmtpTemplates) | **GET** /smtp/templates | Get the list of SMTP templates
+[**getSmtpTemplates**](SMTPApi.md#getSmtpTemplates) | **GET** /smtp/templates | Get the list of transactional email templates
+[**getTransacBlockedContacts**](SMTPApi.md#getTransacBlockedContacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
+[**getTransacEmailContent**](SMTPApi.md#getTransacEmailContent) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
+[**getTransacEmailsList**](SMTPApi.md#getTransacEmailsList) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
 [**sendTemplate**](SMTPApi.md#sendTemplate) | **POST** /smtp/templates/{templateId}/send | Send a template
 [**sendTestTemplate**](SMTPApi.md#sendTestTemplate) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
 [**sendTransacEmail**](SMTPApi.md#sendTransacEmail) | **POST** /smtp/email | Send a transactional email
-[**updateSmtpTemplate**](SMTPApi.md#updateSmtpTemplate) | **PUT** /smtp/templates/{templateId} | Updates an smtp templates
+[**smtpBlockedContactsEmailDelete**](SMTPApi.md#smtpBlockedContactsEmailDelete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
+[**smtpLogMessageIdDelete**](SMTPApi.md#smtpLogMessageIdDelete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
+[**updateSmtpTemplate**](SMTPApi.md#updateSmtpTemplate) | **PUT** /smtp/templates/{templateId} | Updates a transactional email templates
 
 
 # **createSmtpTemplate**
 > \SendinBlue\Client\Model\CreateModel createSmtpTemplate($smtpTemplate)
 
-Create an smtp template
+Create a transactional email template
 
 ### Example
 ```php
@@ -43,7 +48,7 @@ $apiInstance = new SendinBlue\Client\Api\SMTPApi(
     new GuzzleHttp\Client(),
     $config
 );
-$smtpTemplate = new \SendinBlue\Client\Model\CreateSmtpTemplate(); // \SendinBlue\Client\Model\CreateSmtpTemplate | values to update in smtp template
+$smtpTemplate = new \SendinBlue\Client\Model\CreateSmtpTemplate(); // \SendinBlue\Client\Model\CreateSmtpTemplate | values to update in transactional email template
 
 try {
     $result = $apiInstance->createSmtpTemplate($smtpTemplate);
@@ -58,7 +63,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smtpTemplate** | [**\SendinBlue\Client\Model\CreateSmtpTemplate**](../Model/CreateSmtpTemplate.md)| values to update in smtp template |
+ **smtpTemplate** | [**\SendinBlue\Client\Model\CreateSmtpTemplate**](../Model/CreateSmtpTemplate.md)| values to update in transactional email template |
 
 ### Return type
 
@@ -136,7 +141,7 @@ void (empty response body)
 # **deleteSmtpTemplate**
 > deleteSmtpTemplate($templateId)
 
-Delete an inactive smtp template
+Delete an inactive transactional email template
 
 ### Example
 ```php
@@ -192,7 +197,7 @@ void (empty response body)
 # **getAggregatedSmtpReport**
 > \SendinBlue\Client\Model\GetAggregatedReport getAggregatedSmtpReport($startDate, $endDate, $days, $tag)
 
-Get your SMTP activity aggregated over a period of time
+Get your transactional email activity aggregated over a period of time
 
 ### Example
 ```php
@@ -255,7 +260,7 @@ Name | Type | Description  | Notes
 # **getEmailEventReport**
 > \SendinBlue\Client\Model\GetEmailEventReport getEmailEventReport($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId)
 
-Get all your SMTP activity (unaggregated events)
+Get all your transactional email activity (unaggregated events)
 
 ### Example
 ```php
@@ -330,7 +335,7 @@ Name | Type | Description  | Notes
 # **getSmtpReport**
 > \SendinBlue\Client\Model\GetReports getSmtpReport($limit, $offset, $startDate, $endDate, $days, $tag)
 
-Get your SMTP activity aggregated per day
+Get your transactional email activity aggregated per day
 
 ### Example
 ```php
@@ -352,7 +357,7 @@ $apiInstance = new SendinBlue\Client\Api\SMTPApi(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 50; // int | Number of documents returned per page
+$limit = 10; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document on the page
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
@@ -372,7 +377,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
  **startDate** | **string**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional]
  **endDate** | **string**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional]
@@ -454,7 +459,7 @@ Name | Type | Description  | Notes
 # **getSmtpTemplates**
 > \SendinBlue\Client\Model\GetSmtpTemplates getSmtpTemplates($templateStatus, $limit, $offset)
 
-Get the list of SMTP templates
+Get the list of transactional email templates
 
 ### Example
 ```php
@@ -500,6 +505,195 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SendinBlue\Client\Model\GetSmtpTemplates**](../Model/GetSmtpTemplates.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getTransacBlockedContacts**
+> \SendinBlue\Client\Model\GetTransacBlockedContacts getTransacBlockedContacts($startDate, $endDate, $limit, $offset, $senders)
+
+Get the list of blocked or unsubscribed transactional contacts
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the blocked or unsubscribed contacts
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the blocked or unsubscribed contacts
+$limit = 50; // int | Number of documents returned per page
+$offset = 0; // int | Index of the first document on the page
+$senders = array("senders_example"); // string[] | Comma separated list of emails of the senders from which contacts are blocked or unsubscribed
+
+try {
+    $result = $apiInstance->getTransacBlockedContacts($startDate, $endDate, $limit, $offset, $senders);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMTPApi->getTransacBlockedContacts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **string**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the blocked or unsubscribed contacts | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the blocked or unsubscribed contacts | [optional]
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
+ **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
+ **senders** | [**string[]**](../Model/string.md)| Comma separated list of emails of the senders from which contacts are blocked or unsubscribed | [optional]
+
+### Return type
+
+[**\SendinBlue\Client\Model\GetTransacBlockedContacts**](../Model/GetTransacBlockedContacts.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getTransacEmailContent**
+> \SendinBlue\Client\Model\GetTransacEmailContent getTransacEmailContent($uuid)
+
+Get the personalized content of a sent transactional email
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$uuid = "uuid_example"; // string | Unique id of the transactional email that has been sent to a particular contact
+
+try {
+    $result = $apiInstance->getTransacEmailContent($uuid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMTPApi->getTransacEmailContent: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **string**| Unique id of the transactional email that has been sent to a particular contact |
+
+### Return type
+
+[**\SendinBlue\Client\Model\GetTransacEmailContent**](../Model/GetTransacEmailContent.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getTransacEmailsList**
+> \SendinBlue\Client\Model\GetTransacEmailsList getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate)
+
+Get the list of transactional emails on the basis of allowed filters
+
+This endpoint will show the list of emails for past 30 days by default. To retrieve emails before that time, please pass startDate and endDate in query filters.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$email = "email_example"; // string | Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
+$templateId = 789; // int | Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
+$messageId = "messageId_example"; // string | Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+
+try {
+    $result = $apiInstance->getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SMTPApi->getTransacEmailsList: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**| Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. | [optional]
+ **templateId** | **int**| Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. | [optional]
+ **messageId** | **string**| Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
+ **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
+
+### Return type
+
+[**\SendinBlue\Client\Model\GetTransacEmailsList**](../Model/GetTransacEmailsList.md)
 
 ### Authorization
 
@@ -688,10 +882,122 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **smtpBlockedContactsEmailDelete**
+> smtpBlockedContactsEmailDelete($email)
+
+Unblock or resubscribe a transactional contact
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$email = "email_example"; // string | contact email (urlencoded) to unblock.
+
+try {
+    $apiInstance->smtpBlockedContactsEmailDelete($email);
+} catch (Exception $e) {
+    echo 'Exception when calling SMTPApi->smtpBlockedContactsEmailDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**| contact email (urlencoded) to unblock. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **smtpLogMessageIdDelete**
+> smtpLogMessageIdDelete($messageId)
+
+Delete an SMTP transactional log
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$messageId = "messageId_example"; // string | MessageId of the transactional log to delete
+
+try {
+    $apiInstance->smtpLogMessageIdDelete($messageId);
+} catch (Exception $e) {
+    echo 'Exception when calling SMTPApi->smtpLogMessageIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **messageId** | **string**| MessageId of the transactional log to delete |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **updateSmtpTemplate**
 > updateSmtpTemplate($templateId, $smtpTemplate)
 
-Updates an smtp templates
+Updates a transactional email templates
 
 ### Example
 ```php
@@ -714,7 +1020,7 @@ $apiInstance = new SendinBlue\Client\Api\SMTPApi(
     $config
 );
 $templateId = 789; // int | id of the template
-$smtpTemplate = new \SendinBlue\Client\Model\UpdateSmtpTemplate(); // \SendinBlue\Client\Model\UpdateSmtpTemplate | values to update in smtp template
+$smtpTemplate = new \SendinBlue\Client\Model\UpdateSmtpTemplate(); // \SendinBlue\Client\Model\UpdateSmtpTemplate | values to update in transactional email template
 
 try {
     $apiInstance->updateSmtpTemplate($templateId, $smtpTemplate);
@@ -729,7 +1035,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **int**| id of the template |
- **smtpTemplate** | [**\SendinBlue\Client\Model\UpdateSmtpTemplate**](../Model/UpdateSmtpTemplate.md)| values to update in smtp template |
+ **smtpTemplate** | [**\SendinBlue\Client\Model\UpdateSmtpTemplate**](../Model/UpdateSmtpTemplate.md)| values to update in transactional email template |
 
 ### Return type
 
