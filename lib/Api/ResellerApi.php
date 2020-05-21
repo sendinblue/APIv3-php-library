@@ -679,7 +679,7 @@ class ResellerApi
     /**
      * Operation createChildDomain
      *
-     * Creates a domain for a child account
+     * Create a domain for a child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account. This will not be displayed to the parent account. (required)
@@ -696,7 +696,7 @@ class ResellerApi
     /**
      * Operation createChildDomainWithHttpInfo
      *
-     * Creates a domain for a child account
+     * Create a domain for a child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account. This will not be displayed to the parent account. (required)
@@ -774,7 +774,7 @@ class ResellerApi
     /**
      * Operation createChildDomainAsync
      *
-     * Creates a domain for a child account
+     * Create a domain for a child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account. This will not be displayed to the parent account. (required)
@@ -795,7 +795,7 @@ class ResellerApi
     /**
      * Operation createChildDomainAsyncWithHttpInfo
      *
-     * Creates a domain for a child account
+     * Create a domain for a child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\AddChildDomain $addChildDomain Sender domain to add for a specific child account. This will not be displayed to the parent account. (required)
@@ -1243,7 +1243,7 @@ class ResellerApi
     /**
      * Operation deleteChildDomain
      *
-     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     * Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be deleted (required)
@@ -1260,7 +1260,7 @@ class ResellerApi
     /**
      * Operation deleteChildDomainWithHttpInfo
      *
-     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     * Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be deleted (required)
@@ -1338,7 +1338,7 @@ class ResellerApi
     /**
      * Operation deleteChildDomainAsync
      *
-     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     * Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be deleted (required)
@@ -1359,7 +1359,7 @@ class ResellerApi
     /**
      * Operation deleteChildDomainAsyncWithHttpInfo
      *
-     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+     * Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be deleted (required)
@@ -1528,7 +1528,7 @@ class ResellerApi
     /**
      * Operation deleteResellerChild
      *
-     * Deletes a single reseller child based on the childAuthKey supplied
+     * Delete a single reseller child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -1544,7 +1544,7 @@ class ResellerApi
     /**
      * Operation deleteResellerChildWithHttpInfo
      *
-     * Deletes a single reseller child based on the childAuthKey supplied
+     * Delete a single reseller child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -1621,7 +1621,7 @@ class ResellerApi
     /**
      * Operation deleteResellerChildAsync
      *
-     * Deletes a single reseller child based on the childAuthKey supplied
+     * Delete a single reseller child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -1641,7 +1641,7 @@ class ResellerApi
     /**
      * Operation deleteResellerChildAsyncWithHttpInfo
      *
-     * Deletes a single reseller child based on the childAuthKey supplied
+     * Delete a single reseller child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2066,7 +2066,7 @@ class ResellerApi
     /**
      * Operation getChildAccountCreationStatus
      *
-     * Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+     * Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2083,7 +2083,7 @@ class ResellerApi
     /**
      * Operation getChildAccountCreationStatusWithHttpInfo
      *
-     * Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+     * Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2182,7 +2182,7 @@ class ResellerApi
     /**
      * Operation getChildAccountCreationStatusAsync
      *
-     * Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+     * Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2202,7 +2202,7 @@ class ResellerApi
     /**
      * Operation getChildAccountCreationStatusAsyncWithHttpInfo
      *
-     * Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+     * Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2369,7 +2369,7 @@ class ResellerApi
     /**
      * Operation getChildDomains
      *
-     * Gets all the sender domains of a specific child account
+     * Get all sender domains for a specific child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2386,7 +2386,7 @@ class ResellerApi
     /**
      * Operation getChildDomainsWithHttpInfo
      *
-     * Gets all the sender domains of a specific child account
+     * Get all sender domains for a specific child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2485,7 +2485,7 @@ class ResellerApi
     /**
      * Operation getChildDomainsAsync
      *
-     * Gets all the sender domains of a specific child account
+     * Get all sender domains for a specific child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2505,7 +2505,7 @@ class ResellerApi
     /**
      * Operation getChildDomainsAsyncWithHttpInfo
      *
-     * Gets all the sender domains of a specific child account
+     * Get all sender domains for a specific child account
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2672,7 +2672,7 @@ class ResellerApi
     /**
      * Operation getChildInfo
      *
-     * Gets the info about a specific child account
+     * Get a child account's details
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2689,7 +2689,7 @@ class ResellerApi
     /**
      * Operation getChildInfoWithHttpInfo
      *
-     * Gets the info about a specific child account
+     * Get a child account's details
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2788,7 +2788,7 @@ class ResellerApi
     /**
      * Operation getChildInfoAsync
      *
-     * Gets the info about a specific child account
+     * Get a child account's details
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2808,7 +2808,7 @@ class ResellerApi
     /**
      * Operation getChildInfoAsyncWithHttpInfo
      *
-     * Gets the info about a specific child account
+     * Get a child account's details
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      *
@@ -2975,7 +2975,7 @@ class ResellerApi
     /**
      * Operation getResellerChilds
      *
-     * Gets the list of all reseller's children accounts
+     * Get the list of all children accounts
      *
      * @param  int $limit Number of documents for child accounts information per page (optional, default to 10)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
@@ -2993,7 +2993,7 @@ class ResellerApi
     /**
      * Operation getResellerChildsWithHttpInfo
      *
-     * Gets the list of all reseller's children accounts
+     * Get the list of all children accounts
      *
      * @param  int $limit Number of documents for child accounts information per page (optional, default to 10)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
@@ -3077,7 +3077,7 @@ class ResellerApi
     /**
      * Operation getResellerChildsAsync
      *
-     * Gets the list of all reseller's children accounts
+     * Get the list of all children accounts
      *
      * @param  int $limit Number of documents for child accounts information per page (optional, default to 10)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
@@ -3098,7 +3098,7 @@ class ResellerApi
     /**
      * Operation getResellerChildsAsyncWithHttpInfo
      *
-     * Gets the list of all reseller's children accounts
+     * Get the list of all children accounts
      *
      * @param  int $limit Number of documents for child accounts information per page (optional, default to 10)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
@@ -3885,7 +3885,7 @@ class ResellerApi
     /**
      * Operation updateChildAccountStatus
      *
-     * Updates infos of reseller's child account status based on the childAuthKey supplied
+     * Update info of reseller's child account status based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChildAccountStatus $updateChildAccountStatus values to update in child account status (required)
@@ -3902,7 +3902,7 @@ class ResellerApi
     /**
      * Operation updateChildAccountStatusWithHttpInfo
      *
-     * Updates infos of reseller's child account status based on the childAuthKey supplied
+     * Update info of reseller's child account status based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChildAccountStatus $updateChildAccountStatus values to update in child account status (required)
@@ -3980,7 +3980,7 @@ class ResellerApi
     /**
      * Operation updateChildAccountStatusAsync
      *
-     * Updates infos of reseller's child account status based on the childAuthKey supplied
+     * Update info of reseller's child account status based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChildAccountStatus $updateChildAccountStatus values to update in child account status (required)
@@ -4001,7 +4001,7 @@ class ResellerApi
     /**
      * Operation updateChildAccountStatusAsyncWithHttpInfo
      *
-     * Updates infos of reseller's child account status based on the childAuthKey supplied
+     * Update info of reseller's child account status based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChildAccountStatus $updateChildAccountStatus values to update in child account status (required)
@@ -4165,7 +4165,7 @@ class ResellerApi
     /**
      * Operation updateChildDomain
      *
-     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     * Update the sender domain of reseller's child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be updated (required)
@@ -4183,7 +4183,7 @@ class ResellerApi
     /**
      * Operation updateChildDomainWithHttpInfo
      *
-     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     * Update the sender domain of reseller's child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be updated (required)
@@ -4262,7 +4262,7 @@ class ResellerApi
     /**
      * Operation updateChildDomainAsync
      *
-     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     * Update the sender domain of reseller's child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be updated (required)
@@ -4284,7 +4284,7 @@ class ResellerApi
     /**
      * Operation updateChildDomainAsyncWithHttpInfo
      *
-     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+     * Update the sender domain of reseller's child based on the childAuthKey and domainName passed
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  string $domainName Pass the existing domain that needs to be updated (required)
@@ -4464,7 +4464,7 @@ class ResellerApi
     /**
      * Operation updateResellerChild
      *
-     * Updates infos of reseller's child based on the childAuthKey supplied
+     * Update info of reseller's child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
@@ -4481,7 +4481,7 @@ class ResellerApi
     /**
      * Operation updateResellerChildWithHttpInfo
      *
-     * Updates infos of reseller's child based on the childAuthKey supplied
+     * Update info of reseller's child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
@@ -4559,7 +4559,7 @@ class ResellerApi
     /**
      * Operation updateResellerChildAsync
      *
-     * Updates infos of reseller's child based on the childAuthKey supplied
+     * Update info of reseller's child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)
@@ -4580,7 +4580,7 @@ class ResellerApi
     /**
      * Operation updateResellerChildAsyncWithHttpInfo
      *
-     * Updates infos of reseller's child based on the childAuthKey supplied
+     * Update info of reseller's child based on the childAuthKey supplied
      *
      * @param  string $childAuthKey auth key of reseller&#39;s child (required)
      * @param  \SendinBlue\Client\Model\UpdateChild $resellerChild values to update in child profile (required)

@@ -223,7 +223,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
     /**
      * Sets emails
      *
-     * @param string[] $emails Required if 'all' is false. Emails to remove from a list
+     * @param string[] $emails Required if 'all' is false. Emails to remove from a list. You can pass a maximum of 150 emails for removal in one request.
      *
      * @return $this
      */

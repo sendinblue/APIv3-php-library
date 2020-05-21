@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContactToList
+ * CreateDoiContact
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * AddContactToList Class Doc Comment
+ * CreateDoiContact Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddContactToList implements ModelInterface, ArrayAccess
+class CreateDoiContact implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddContactToList implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'addContactToList';
+    protected static $swaggerModelName = 'createDoiContact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,12 @@ class AddContactToList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emails' => 'string[]'
+        'email' => 'string',
+        'attributes' => 'object',
+        'includeListIds' => 'int[]',
+        'excludeListIds' => 'int[]',
+        'templateId' => 'int',
+        'redirectionUrl' => 'string'
     ];
 
     /**
@@ -66,7 +71,12 @@ class AddContactToList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emails' => 'email'
+        'email' => 'email',
+        'attributes' => null,
+        'includeListIds' => 'int64',
+        'excludeListIds' => 'int64',
+        'templateId' => 'int64',
+        'redirectionUrl' => 'url'
     ];
 
     /**
@@ -96,7 +106,12 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emails' => 'emails'
+        'email' => 'email',
+        'attributes' => 'attributes',
+        'includeListIds' => 'includeListIds',
+        'excludeListIds' => 'excludeListIds',
+        'templateId' => 'templateId',
+        'redirectionUrl' => 'redirectionUrl'
     ];
 
     /**
@@ -105,7 +120,12 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emails' => 'setEmails'
+        'email' => 'setEmail',
+        'attributes' => 'setAttributes',
+        'includeListIds' => 'setIncludeListIds',
+        'excludeListIds' => 'setExcludeListIds',
+        'templateId' => 'setTemplateId',
+        'redirectionUrl' => 'setRedirectionUrl'
     ];
 
     /**
@@ -114,7 +134,12 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emails' => 'getEmails'
+        'email' => 'getEmail',
+        'attributes' => 'getAttributes',
+        'includeListIds' => 'getIncludeListIds',
+        'excludeListIds' => 'getExcludeListIds',
+        'templateId' => 'getTemplateId',
+        'redirectionUrl' => 'getRedirectionUrl'
     ];
 
     /**
@@ -177,7 +202,12 @@ class AddContactToList implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['emails'] = isset($data['emails']) ? $data['emails'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
+        $this->container['includeListIds'] = isset($data['includeListIds']) ? $data['includeListIds'] : null;
+        $this->container['excludeListIds'] = isset($data['excludeListIds']) ? $data['excludeListIds'] : null;
+        $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
+        $this->container['redirectionUrl'] = isset($data['redirectionUrl']) ? $data['redirectionUrl'] : null;
     }
 
     /**
@@ -189,6 +219,15 @@ class AddContactToList implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ($this->container['includeListIds'] === null) {
+            $invalidProperties[] = "'includeListIds' can't be null";
+        }
+        if ($this->container['templateId'] === null) {
+            $invalidProperties[] = "'templateId' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,25 +244,145 @@ class AddContactToList implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets emails
+     * Gets email
      *
-     * @return string[]
+     * @return string
      */
-    public function getEmails()
+    public function getEmail()
     {
-        return $this->container['emails'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets emails
+     * Sets email
      *
-     * @param string[] $emails Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.
+     * @param string $email Email address where the confirmation email will be sent. This email address will be the identifier for all other contact attributes.
      *
      * @return $this
      */
-    public function setEmails($emails)
+    public function setEmail($email)
     {
-        $this->container['emails'] = $emails;
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets attributes
+     *
+     * @return object
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param object $attributes Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {'FNAME':'Elly', 'LNAME':'Roger'}
+     *
+     * @return $this
+     */
+    public function setAttributes($attributes)
+    {
+        $this->container['attributes'] = $attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets includeListIds
+     *
+     * @return int[]
+     */
+    public function getIncludeListIds()
+    {
+        return $this->container['includeListIds'];
+    }
+
+    /**
+     * Sets includeListIds
+     *
+     * @param int[] $includeListIds Lists under user account where contact should be added
+     *
+     * @return $this
+     */
+    public function setIncludeListIds($includeListIds)
+    {
+        $this->container['includeListIds'] = $includeListIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludeListIds
+     *
+     * @return int[]
+     */
+    public function getExcludeListIds()
+    {
+        return $this->container['excludeListIds'];
+    }
+
+    /**
+     * Sets excludeListIds
+     *
+     * @param int[] $excludeListIds Lists under user account where contact should not be added
+     *
+     * @return $this
+     */
+    public function setExcludeListIds($excludeListIds)
+    {
+        $this->container['excludeListIds'] = $excludeListIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets templateId
+     *
+     * @return int
+     */
+    public function getTemplateId()
+    {
+        return $this->container['templateId'];
+    }
+
+    /**
+     * Sets templateId
+     *
+     * @param int $templateId Id of the DOI template
+     *
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->container['templateId'] = $templateId;
+
+        return $this;
+    }
+
+    /**
+     * Gets redirectionUrl
+     *
+     * @return string
+     */
+    public function getRedirectionUrl()
+    {
+        return $this->container['redirectionUrl'];
+    }
+
+    /**
+     * Sets redirectionUrl
+     *
+     * @param string $redirectionUrl URL of the web page that user will be redirected to after clicking on the double opt in URL.
+     *
+     * @return $this
+     */
+    public function setRedirectionUrl($redirectionUrl)
+    {
+        $this->container['redirectionUrl'] = $redirectionUrl;
 
         return $this;
     }

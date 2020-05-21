@@ -94,7 +94,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createChildDomain
      *
-     * Creates a domain for a child account.
+     * Create a domain for a child account.
      *
      */
     public function testCreateChildDomain()
@@ -114,7 +114,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteChildDomain
      *
-     * Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed.
+     * Delete the sender domain of the reseller child based on the childAuthKey and domainName passed.
      *
      */
     public function testDeleteChildDomain()
@@ -124,7 +124,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteResellerChild
      *
-     * Deletes a single reseller child based on the childAuthKey supplied.
+     * Delete a single reseller child based on the childAuthKey supplied.
      *
      */
     public function testDeleteResellerChild()
@@ -144,7 +144,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getChildAccountCreationStatus
      *
-     * Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied.
+     * Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied.
      *
      */
     public function testGetChildAccountCreationStatus()
@@ -154,7 +154,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getChildDomains
      *
-     * Gets all the sender domains of a specific child account.
+     * Get all sender domains for a specific child account.
      *
      */
     public function testGetChildDomains()
@@ -164,7 +164,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getChildInfo
      *
-     * Gets the info about a specific child account.
+     * Get a child account's details.
      *
      */
     public function testGetChildInfo()
@@ -174,7 +174,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getResellerChilds
      *
-     * Gets the list of all reseller's children accounts.
+     * Get the list of all children accounts.
      *
      */
     public function testGetResellerChilds()
@@ -204,7 +204,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateChildAccountStatus
      *
-     * Updates infos of reseller's child account status based on the childAuthKey supplied.
+     * Update info of reseller's child account status based on the childAuthKey supplied.
      *
      */
     public function testUpdateChildAccountStatus()
@@ -214,7 +214,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateChildDomain
      *
-     * Updates the sender domain of reseller's child based on the childAuthKey and domainName passed.
+     * Update the sender domain of reseller's child based on the childAuthKey and domainName passed.
      *
      */
     public function testUpdateChildDomain()
@@ -224,7 +224,7 @@ class ResellerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateResellerChild
      *
-     * Updates infos of reseller's child based on the childAuthKey supplied.
+     * Update info of reseller's child based on the childAuthKey supplied.
      *
      */
     public function testUpdateResellerChild()

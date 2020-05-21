@@ -624,7 +624,7 @@ class SendersApi
     /**
      * Operation getIps
      *
-     * Return all the dedicated IPs for your account
+     * Get all the dedicated IPs for your account
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -640,7 +640,7 @@ class SendersApi
     /**
      * Operation getIpsWithHttpInfo
      *
-     * Return all the dedicated IPs for your account
+     * Get all the dedicated IPs for your account
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -714,7 +714,7 @@ class SendersApi
     /**
      * Operation getIpsAsync
      *
-     * Return all the dedicated IPs for your account
+     * Get all the dedicated IPs for your account
      *
      *
      * @throws \InvalidArgumentException
@@ -733,7 +733,7 @@ class SendersApi
     /**
      * Operation getIpsAsyncWithHttpInfo
      *
-     * Return all the dedicated IPs for your account
+     * Get all the dedicated IPs for your account
      *
      *
      * @throws \InvalidArgumentException
@@ -884,7 +884,7 @@ class SendersApi
     /**
      * Operation getIpsFromSender
      *
-     * Return all the dedicated IPs for a sender
+     * Get all the dedicated IPs for a sender
      *
      * @param  int $senderId Id of the sender (required)
      *
@@ -901,7 +901,7 @@ class SendersApi
     /**
      * Operation getIpsFromSenderWithHttpInfo
      *
-     * Return all the dedicated IPs for a sender
+     * Get all the dedicated IPs for a sender
      *
      * @param  int $senderId Id of the sender (required)
      *
@@ -992,7 +992,7 @@ class SendersApi
     /**
      * Operation getIpsFromSenderAsync
      *
-     * Return all the dedicated IPs for a sender
+     * Get all the dedicated IPs for a sender
      *
      * @param  int $senderId Id of the sender (required)
      *
@@ -1012,7 +1012,7 @@ class SendersApi
     /**
      * Operation getIpsFromSenderAsyncWithHttpInfo
      *
-     * Return all the dedicated IPs for a sender
+     * Get all the dedicated IPs for a sender
      *
      * @param  int $senderId Id of the sender (required)
      *

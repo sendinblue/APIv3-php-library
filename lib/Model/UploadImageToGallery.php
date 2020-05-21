@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContactToList
+ * UploadImageToGallery
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * AddContactToList Class Doc Comment
+ * UploadImageToGallery Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddContactToList implements ModelInterface, ArrayAccess
+class UploadImageToGallery implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddContactToList implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'addContactToList';
+    protected static $swaggerModelName = 'uploadImageToGallery';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emails' => 'string[]'
+        'imageUrl' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emails' => 'email'
+        'imageUrl' => null,
+        'name' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emails' => 'emails'
+        'imageUrl' => 'imageUrl',
+        'name' => 'name'
     ];
 
     /**
@@ -105,7 +108,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emails' => 'setEmails'
+        'imageUrl' => 'setImageUrl',
+        'name' => 'setName'
     ];
 
     /**
@@ -114,7 +118,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emails' => 'getEmails'
+        'imageUrl' => 'getImageUrl',
+        'name' => 'getName'
     ];
 
     /**
@@ -177,7 +182,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['emails'] = isset($data['emails']) ? $data['emails'] : null;
+        $this->container['imageUrl'] = isset($data['imageUrl']) ? $data['imageUrl'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -189,6 +195,9 @@ class AddContactToList implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['imageUrl'] === null) {
+            $invalidProperties[] = "'imageUrl' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,25 +214,49 @@ class AddContactToList implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets emails
+     * Gets imageUrl
      *
-     * @return string[]
+     * @return string
      */
-    public function getEmails()
+    public function getImageUrl()
     {
-        return $this->container['emails'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets emails
+     * Sets imageUrl
      *
-     * @param string[] $emails Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.
+     * @param string $imageUrl The absolute url of the image (no local file). Maximum allowed size for image is 2MB. Allowed extensions for images are - jpeg, jpg, png, bmp, gif.
      *
      * @return $this
      */
-    public function setEmails($emails)
+    public function setImageUrl($imageUrl)
     {
-        $this->container['emails'] = $emails;
+        $this->container['imageUrl'] = $imageUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Name of the image.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

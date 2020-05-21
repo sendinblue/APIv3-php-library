@@ -939,7 +939,7 @@ class ListsApi
     /**
      * Operation getContactsFromList
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -959,7 +959,7 @@ class ListsApi
     /**
      * Operation getContactsFromListWithHttpInfo
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -1053,7 +1053,7 @@ class ListsApi
     /**
      * Operation getContactsFromListAsync
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -1076,7 +1076,7 @@ class ListsApi
     /**
      * Operation getContactsFromListAsyncWithHttpInfo
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -1265,7 +1265,7 @@ class ListsApi
     /**
      * Operation getFolderLists
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1284,7 +1284,7 @@ class ListsApi
     /**
      * Operation getFolderListsWithHttpInfo
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1377,7 +1377,7 @@ class ListsApi
     /**
      * Operation getFolderListsAsync
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1399,7 +1399,7 @@ class ListsApi
     /**
      * Operation getFolderListsAsyncWithHttpInfo
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1582,7 +1582,7 @@ class ListsApi
     /**
      * Operation getList
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -1599,7 +1599,7 @@ class ListsApi
     /**
      * Operation getListWithHttpInfo
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -1690,7 +1690,7 @@ class ListsApi
     /**
      * Operation getListAsync
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -1710,7 +1710,7 @@ class ListsApi
     /**
      * Operation getListAsyncWithHttpInfo
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -2167,7 +2167,7 @@ class ListsApi
     /**
      * Operation removeContactFromList
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -2185,7 +2185,7 @@ class ListsApi
     /**
      * Operation removeContactFromListWithHttpInfo
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -2277,7 +2277,7 @@ class ListsApi
     /**
      * Operation removeContactFromListAsync
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -2298,7 +2298,7 @@ class ListsApi
     /**
      * Operation removeContactFromListAsyncWithHttpInfo
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)

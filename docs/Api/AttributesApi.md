@@ -4,16 +4,16 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAttribute**](AttributesApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
-[**deleteAttribute**](AttributesApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
-[**getAttributes**](AttributesApi.md#getAttributes) | **GET** /contacts/attributes | Lists all attributes
-[**updateAttribute**](AttributesApi.md#updateAttribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
+[**createAttribute**](AttributesApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
+[**deleteAttribute**](AttributesApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
+[**getAttributes**](AttributesApi.md#getAttributes) | **GET** /contacts/attributes | List all attributes
+[**updateAttribute**](AttributesApi.md#updateAttribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
 
 
 # **createAttribute**
 > createAttribute($attributeCategory, $attributeName, $createAttribute)
 
-Creates contact attribute
+Create contact attribute
 
 ### Example
 ```php
@@ -73,7 +73,7 @@ void (empty response body)
 # **deleteAttribute**
 > deleteAttribute($attributeCategory, $attributeName)
 
-Deletes an attribute
+Delete an attribute
 
 ### Example
 ```php
@@ -131,7 +131,7 @@ void (empty response body)
 # **getAttributes**
 > \SendinBlue\Client\Model\GetAttributes getAttributes()
 
-Lists all attributes
+List all attributes
 
 ### Example
 ```php
@@ -184,7 +184,7 @@ This endpoint does not need any parameter.
 # **updateAttribute**
 > updateAttribute($attributeCategory, $attributeName, $updateAttribute)
 
-Updates contact attribute
+Update contact attribute
 
 ### Example
 ```php

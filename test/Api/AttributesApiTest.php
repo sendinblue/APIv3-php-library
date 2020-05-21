@@ -74,7 +74,7 @@ class AttributesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createAttribute
      *
-     * Creates contact attribute.
+     * Create contact attribute.
      *
      */
     public function testCreateAttribute()
@@ -84,7 +84,7 @@ class AttributesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteAttribute
      *
-     * Deletes an attribute.
+     * Delete an attribute.
      *
      */
     public function testDeleteAttribute()
@@ -94,7 +94,7 @@ class AttributesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAttributes
      *
-     * Lists all attributes.
+     * List all attributes.
      *
      */
     public function testGetAttributes()
@@ -104,7 +104,7 @@ class AttributesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateAttribute
      *
-     * Updates contact attribute.
+     * Update contact attribute.
      *
      */
     public function testUpdateAttribute()

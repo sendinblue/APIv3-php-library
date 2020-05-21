@@ -57,8 +57,8 @@ class RemainingCreditModelReseller implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'sms' => 'int',
-        'email' => 'int'
+        'sms' => 'double',
+        'email' => 'double'
     ];
 
     /**
@@ -67,8 +67,8 @@ class RemainingCreditModelReseller implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'sms' => 'int64',
-        'email' => 'int64'
+        'sms' => 'double',
+        'email' => 'double'
     ];
 
     /**
@@ -219,7 +219,7 @@ class RemainingCreditModelReseller implements ModelInterface, ArrayAccess
     /**
      * Gets sms
      *
-     * @return int
+     * @return double
      */
     public function getSms()
     {
@@ -229,7 +229,7 @@ class RemainingCreditModelReseller implements ModelInterface, ArrayAccess
     /**
      * Sets sms
      *
-     * @param int $sms SMS Credits remaining for reseller account
+     * @param double $sms SMS Credits remaining for reseller account
      *
      * @return $this
      */
@@ -243,7 +243,7 @@ class RemainingCreditModelReseller implements ModelInterface, ArrayAccess
     /**
      * Gets email
      *
-     * @return int
+     * @return double
      */
     public function getEmail()
     {
@@ -253,7 +253,7 @@ class RemainingCreditModelReseller implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param int $email Email Credits remaining for reseller account
+     * @param double $email Email Credits remaining for reseller account
      *
      * @return $this
      */

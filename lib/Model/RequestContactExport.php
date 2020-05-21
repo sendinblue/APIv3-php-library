@@ -259,7 +259,7 @@ class RequestContactExport implements ModelInterface, ArrayAccess
     /**
      * Sets contactFilter
      *
-     * @param object $contactFilter This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.
+     * @param object $contactFilter This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {\"blacklisted\":true} will export all the blacklisted contacts.
      *
      * @return $this
      */

@@ -94,7 +94,7 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for emailExportRecipients
      *
-     * Export the recipients of a campaign.
+     * Export the recipients of an email campaign.
      *
      */
     public function testEmailExportRecipients()
@@ -104,7 +104,7 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAbTestCampaignResult
      *
-     * Get A/B test email campaign result.
+     * Get an A/B test email campaign results.
      *
      */
     public function testGetAbTestCampaignResult()
@@ -114,7 +114,7 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getEmailCampaign
      *
-     * Get campaign informations.
+     * Get an email campaign report.
      *
      */
     public function testGetEmailCampaign()
@@ -124,7 +124,7 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getEmailCampaigns
      *
-     * Return all your created campaigns.
+     * Return all your created email campaigns.
      *
      */
     public function testGetEmailCampaigns()
@@ -154,7 +154,7 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sendReport
      *
-     * Send the report of a campaigns.
+     * Send the report of a campaign.
      *
      */
     public function testSendReport()
@@ -174,7 +174,7 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateCampaignStatus
      *
-     * Update a campaign status.
+     * Update an email campaign status.
      *
      */
     public function testUpdateCampaignStatus()
@@ -184,10 +184,20 @@ class EmailCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateEmailCampaign
      *
-     * Update a campaign.
+     * Update an email campaign.
      *
      */
     public function testUpdateEmailCampaign()
+    {
+    }
+
+    /**
+     * Test case for uploadImageToGallery
+     *
+     * Upload an image to your account's image gallery.
+     *
+     */
+    public function testUploadImageToGallery()
     {
     }
 }
