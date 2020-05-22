@@ -84,7 +84,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteSmsCampaign
      *
-     * Delete the SMS campaign.
+     * Delete an SMS campaign.
      *
      */
     public function testDeleteSmsCampaign()
@@ -104,7 +104,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSmsCampaigns
      *
-     * Returns the informations for all your created SMS campaigns.
+     * Returns the information for all your created SMS campaigns.
      *
      */
     public function testGetSmsCampaigns()
@@ -114,7 +114,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for requestSmsRecipientExport
      *
-     * Exports the recipients of the specified campaign..
+     * Export an SMS campaign's recipients.
      *
      */
     public function testRequestSmsRecipientExport()
@@ -134,7 +134,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sendSmsReport
      *
-     * Send report of SMS campaigns.
+     * Send an SMS campaign's report.
      *
      */
     public function testSendSmsReport()
@@ -144,7 +144,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sendTestSms
      *
-     * Send an SMS.
+     * Send a test SMS campaign.
      *
      */
     public function testSendTestSms()
@@ -154,7 +154,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateSmsCampaign
      *
-     * Updates an SMS campaign.
+     * Update an SMS campaign.
      *
      */
     public function testUpdateSmsCampaign()
@@ -164,7 +164,7 @@ class SMSCampaignsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateSmsCampaignStatus
      *
-     * Update the campaign status.
+     * Update a campaign's status.
      *
      */
     public function testUpdateSmsCampaignStatus()

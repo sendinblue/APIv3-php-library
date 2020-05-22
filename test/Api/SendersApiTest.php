@@ -94,7 +94,7 @@ class SendersApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getIps
      *
-     * Return all the dedicated IPs for your account.
+     * Get all the dedicated IPs for your account.
      *
      */
     public function testGetIps()
@@ -104,7 +104,7 @@ class SendersApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getIpsFromSender
      *
-     * Return all the dedicated IPs for a sender.
+     * Get all the dedicated IPs for a sender.
      *
      */
     public function testGetIpsFromSender()

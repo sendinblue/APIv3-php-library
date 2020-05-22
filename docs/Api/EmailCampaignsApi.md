@@ -6,16 +6,17 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createEmailCampaign**](EmailCampaignsApi.md#createEmailCampaign) | **POST** /emailCampaigns | Create an email campaign
 [**deleteEmailCampaign**](EmailCampaignsApi.md#deleteEmailCampaign) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
-[**emailExportRecipients**](EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of a campaign
-[**getAbTestCampaignResult**](EmailCampaignsApi.md#getAbTestCampaignResult) | **GET** /emailCampaigns/{campaignId}/abTestCampaignResult | Get A/B test email campaign result
-[**getEmailCampaign**](EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns/{campaignId} | Get campaign informations
-[**getEmailCampaigns**](EmailCampaignsApi.md#getEmailCampaigns) | **GET** /emailCampaigns | Return all your created campaigns
+[**emailExportRecipients**](EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of an email campaign
+[**getAbTestCampaignResult**](EmailCampaignsApi.md#getAbTestCampaignResult) | **GET** /emailCampaigns/{campaignId}/abTestCampaignResult | Get an A/B test email campaign results
+[**getEmailCampaign**](EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns/{campaignId} | Get an email campaign report
+[**getEmailCampaigns**](EmailCampaignsApi.md#getEmailCampaigns) | **GET** /emailCampaigns | Return all your created email campaigns
 [**getSharedTemplateUrl**](EmailCampaignsApi.md#getSharedTemplateUrl) | **GET** /emailCampaigns/{campaignId}/sharedUrl | Get a shared template url
 [**sendEmailCampaignNow**](EmailCampaignsApi.md#sendEmailCampaignNow) | **POST** /emailCampaigns/{campaignId}/sendNow | Send an email campaign immediately, based on campaignId
-[**sendReport**](EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns/{campaignId}/sendReport | Send the report of a campaigns
+[**sendReport**](EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns/{campaignId}/sendReport | Send the report of a campaign
 [**sendTestEmail**](EmailCampaignsApi.md#sendTestEmail) | **POST** /emailCampaigns/{campaignId}/sendTest | Send an email campaign to your test list
-[**updateCampaignStatus**](EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns/{campaignId}/status | Update a campaign status
-[**updateEmailCampaign**](EmailCampaignsApi.md#updateEmailCampaign) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
+[**updateCampaignStatus**](EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns/{campaignId}/status | Update an email campaign status
+[**updateEmailCampaign**](EmailCampaignsApi.md#updateEmailCampaign) | **PUT** /emailCampaigns/{campaignId} | Update an email campaign
+[**uploadImageToGallery**](EmailCampaignsApi.md#uploadImageToGallery) | **POST** /emailCampaigns/images | Upload an image to your account&#39;s image gallery
 
 
 # **createEmailCampaign**
@@ -134,7 +135,7 @@ void (empty response body)
 # **emailExportRecipients**
 > \SendinBlue\Client\Model\CreatedProcessId emailExportRecipients($campaignId, $recipientExport)
 
-Export the recipients of a campaign
+Export the recipients of an email campaign
 
 ### Example
 ```php
@@ -193,7 +194,7 @@ Name | Type | Description  | Notes
 # **getAbTestCampaignResult**
 > \SendinBlue\Client\Model\AbTestCampaignResult getAbTestCampaignResult($campaignId)
 
-Get A/B test email campaign result
+Get an A/B test email campaign results
 
 Obtain winning version of an A/B test email campaign
 
@@ -252,7 +253,7 @@ Name | Type | Description  | Notes
 # **getEmailCampaign**
 > \SendinBlue\Client\Model\GetEmailCampaign getEmailCampaign($campaignId)
 
-Get campaign informations
+Get an email campaign report
 
 ### Example
 ```php
@@ -309,7 +310,7 @@ Name | Type | Description  | Notes
 # **getEmailCampaigns**
 > \SendinBlue\Client\Model\GetEmailCampaigns getEmailCampaigns($type, $status, $startDate, $endDate, $limit, $offset)
 
-Return all your created campaigns
+Return all your created email campaigns
 
 ### Example
 ```php
@@ -491,7 +492,7 @@ void (empty response body)
 # **sendReport**
 > sendReport($campaignId, $sendReport)
 
-Send the report of a campaigns
+Send the report of a campaign
 
 A PDF will be sent to the specified email addresses
 
@@ -609,7 +610,7 @@ void (empty response body)
 # **updateCampaignStatus**
 > updateCampaignStatus($campaignId, $status)
 
-Update a campaign status
+Update an email campaign status
 
 ### Example
 ```php
@@ -667,7 +668,7 @@ void (empty response body)
 # **updateEmailCampaign**
 > updateEmailCampaign($campaignId, $emailCampaign)
 
-Update a campaign
+Update an email campaign
 
 ### Example
 ```php
@@ -706,6 +707,62 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **int**| Id of the campaign |
  **emailCampaign** | [**\SendinBlue\Client\Model\UpdateEmailCampaign**](../Model/UpdateEmailCampaign.md)| Values to update a campaign |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **uploadImageToGallery**
+> uploadImageToGallery($uploadImage)
+
+Upload an image to your account's image gallery
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\EmailCampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$uploadImage = new \SendinBlue\Client\Model\UploadImageToGallery(); // \SendinBlue\Client\Model\UploadImageToGallery | Parameters to upload an image
+
+try {
+    $apiInstance->uploadImageToGallery($uploadImage);
+} catch (Exception $e) {
+    echo 'Exception when calling EmailCampaignsApi->uploadImageToGallery: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uploadImage** | [**\SendinBlue\Client\Model\UploadImageToGallery**](../Model/UploadImageToGallery.md)| Parameters to upload an image |
 
 ### Return type
 

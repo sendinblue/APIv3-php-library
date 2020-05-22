@@ -74,7 +74,7 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createSmtpTemplate
      *
-     * Create a transactional email template.
+     * Create an email template.
      *
      */
     public function testCreateSmtpTemplate()
@@ -94,7 +94,7 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteSmtpTemplate
      *
-     * Delete an inactive transactional email template.
+     * Delete an inactive email template.
      *
      */
     public function testDeleteSmtpTemplate()
@@ -134,7 +134,7 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSmtpTemplate
      *
-     * Returns the template informations.
+     * Returns the template information.
      *
      */
     public function testGetSmtpTemplate()
@@ -144,7 +144,7 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSmtpTemplates
      *
-     * Get the list of transactional email templates.
+     * Get the list of email templates.
      *
      */
     public function testGetSmtpTemplates()
@@ -234,7 +234,7 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateSmtpTemplate
      *
-     * Updates a transactional email templates.
+     * Update an email template.
      *
      */
     public function testUpdateSmtpTemplate()

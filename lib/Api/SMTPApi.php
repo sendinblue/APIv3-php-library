@@ -90,7 +90,7 @@ class SMTPApi
     /**
      * Operation createSmtpTemplate
      *
-     * Create a transactional email template
+     * Create an email template
      *
      * @param  \SendinBlue\Client\Model\CreateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
      *
@@ -107,7 +107,7 @@ class SMTPApi
     /**
      * Operation createSmtpTemplateWithHttpInfo
      *
-     * Create a transactional email template
+     * Create an email template
      *
      * @param  \SendinBlue\Client\Model\CreateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
      *
@@ -190,7 +190,7 @@ class SMTPApi
     /**
      * Operation createSmtpTemplateAsync
      *
-     * Create a transactional email template
+     * Create an email template
      *
      * @param  \SendinBlue\Client\Model\CreateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
      *
@@ -210,7 +210,7 @@ class SMTPApi
     /**
      * Operation createSmtpTemplateAsyncWithHttpInfo
      *
-     * Create a transactional email template
+     * Create an email template
      *
      * @param  \SendinBlue\Client\Model\CreateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
      *
@@ -611,7 +611,7 @@ class SMTPApi
     /**
      * Operation deleteSmtpTemplate
      *
-     * Delete an inactive transactional email template
+     * Delete an inactive email template
      *
      * @param  int $templateId id of the template (required)
      *
@@ -627,7 +627,7 @@ class SMTPApi
     /**
      * Operation deleteSmtpTemplateWithHttpInfo
      *
-     * Delete an inactive transactional email template
+     * Delete an inactive email template
      *
      * @param  int $templateId id of the template (required)
      *
@@ -696,7 +696,7 @@ class SMTPApi
     /**
      * Operation deleteSmtpTemplateAsync
      *
-     * Delete an inactive transactional email template
+     * Delete an inactive email template
      *
      * @param  int $templateId id of the template (required)
      *
@@ -716,7 +716,7 @@ class SMTPApi
     /**
      * Operation deleteSmtpTemplateAsyncWithHttpInfo
      *
-     * Delete an inactive transactional email template
+     * Delete an inactive email template
      *
      * @param  int $templateId id of the template (required)
      *
@@ -1861,7 +1861,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplate
      *
-     * Returns the template informations
+     * Returns the template information
      *
      * @param  int $templateId id of the template (required)
      *
@@ -1878,7 +1878,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplateWithHttpInfo
      *
-     * Returns the template informations
+     * Returns the template information
      *
      * @param  int $templateId id of the template (required)
      *
@@ -1969,7 +1969,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplateAsync
      *
-     * Returns the template informations
+     * Returns the template information
      *
      * @param  int $templateId id of the template (required)
      *
@@ -1989,7 +1989,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplateAsyncWithHttpInfo
      *
-     * Returns the template informations
+     * Returns the template information
      *
      * @param  int $templateId id of the template (required)
      *
@@ -2156,7 +2156,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplates
      *
-     * Get the list of transactional email templates
+     * Get the list of email templates
      *
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
@@ -2175,7 +2175,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplatesWithHttpInfo
      *
-     * Get the list of transactional email templates
+     * Get the list of email templates
      *
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
@@ -2260,7 +2260,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplatesAsync
      *
-     * Get the list of transactional email templates
+     * Get the list of email templates
      *
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
@@ -2282,7 +2282,7 @@ class SMTPApi
     /**
      * Operation getSmtpTemplatesAsyncWithHttpInfo
      *
-     * Get the list of transactional email templates
+     * Get the list of email templates
      *
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
@@ -3059,7 +3059,7 @@ class SMTPApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -3080,7 +3080,7 @@ class SMTPApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -3167,7 +3167,7 @@ class SMTPApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3191,7 +3191,7 @@ class SMTPApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3245,7 +3245,7 @@ class SMTPApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4746,7 +4746,7 @@ class SMTPApi
     /**
      * Operation updateSmtpTemplate
      *
-     * Updates a transactional email templates
+     * Update an email template
      *
      * @param  int $templateId id of the template (required)
      * @param  \SendinBlue\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
@@ -4763,7 +4763,7 @@ class SMTPApi
     /**
      * Operation updateSmtpTemplateWithHttpInfo
      *
-     * Updates a transactional email templates
+     * Update an email template
      *
      * @param  int $templateId id of the template (required)
      * @param  \SendinBlue\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
@@ -4833,7 +4833,7 @@ class SMTPApi
     /**
      * Operation updateSmtpTemplateAsync
      *
-     * Updates a transactional email templates
+     * Update an email template
      *
      * @param  int $templateId id of the template (required)
      * @param  \SendinBlue\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in transactional email template (required)
@@ -4854,7 +4854,7 @@ class SMTPApi
     /**
      * Operation updateSmtpTemplateAsyncWithHttpInfo
      *
-     * Updates a transactional email templates
+     * Update an email template
      *
      * @param  int $templateId id of the template (required)
      * @param  \SendinBlue\Client\Model\UpdateSmtpTemplate $smtpTemplate values to update in transactional email template (required)

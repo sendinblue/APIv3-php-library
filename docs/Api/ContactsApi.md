@@ -5,30 +5,31 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addContactToList**](ContactsApi.md#addContactToList) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
-[**createAttribute**](ContactsApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
+[**createAttribute**](ContactsApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 [**createContact**](ContactsApi.md#createContact) | **POST** /contacts | Create a contact
+[**createDoiContact**](ContactsApi.md#createDoiContact) | **POST** /contacts/doubleOptinConfirmation | Create a contact to trigger the DOI workflow from a Landing Page form
 [**createFolder**](ContactsApi.md#createFolder) | **POST** /contacts/folders | Create a folder
 [**createList**](ContactsApi.md#createList) | **POST** /contacts/lists | Create a list
-[**deleteAttribute**](ContactsApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
-[**deleteContact**](ContactsApi.md#deleteContact) | **DELETE** /contacts/{email} | Deletes a contact
+[**deleteAttribute**](ContactsApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
+[**deleteContact**](ContactsApi.md#deleteContact) | **DELETE** /contacts/{email} | Delete a contact
 [**deleteFolder**](ContactsApi.md#deleteFolder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
 [**deleteList**](ContactsApi.md#deleteList) | **DELETE** /contacts/lists/{listId} | Delete a list
-[**getAttributes**](ContactsApi.md#getAttributes) | **GET** /contacts/attributes | Lists all attributes
-[**getContactInfo**](ContactsApi.md#getContactInfo) | **GET** /contacts/{email} | Retrieves contact informations
-[**getContactStats**](ContactsApi.md#getContactStats) | **GET** /contacts/{email}/campaignStats | Get the campaigns statistics for a contact
+[**getAttributes**](ContactsApi.md#getAttributes) | **GET** /contacts/attributes | List all attributes
+[**getContactInfo**](ContactsApi.md#getContactInfo) | **GET** /contacts/{email} | Get a contact&#39;s details
+[**getContactStats**](ContactsApi.md#getContactStats) | **GET** /contacts/{email}/campaignStats | Get email campaigns&#39; statistics for a contact
 [**getContacts**](ContactsApi.md#getContacts) | **GET** /contacts | Get all the contacts
-[**getContactsFromList**](ContactsApi.md#getContactsFromList) | **GET** /contacts/lists/{listId}/contacts | Get the contacts in a list
-[**getFolder**](ContactsApi.md#getFolder) | **GET** /contacts/folders/{folderId} | Returns folder details
-[**getFolderLists**](ContactsApi.md#getFolderLists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
-[**getFolders**](ContactsApi.md#getFolders) | **GET** /contacts/folders | Get all the folders
-[**getList**](ContactsApi.md#getList) | **GET** /contacts/lists/{listId} | Get the details of a list
+[**getContactsFromList**](ContactsApi.md#getContactsFromList) | **GET** /contacts/lists/{listId}/contacts | Get contacts in a list
+[**getFolder**](ContactsApi.md#getFolder) | **GET** /contacts/folders/{folderId} | Returns a folder&#39;s details
+[**getFolderLists**](ContactsApi.md#getFolderLists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
+[**getFolders**](ContactsApi.md#getFolders) | **GET** /contacts/folders | Get all folders
+[**getList**](ContactsApi.md#getList) | **GET** /contacts/lists/{listId} | Get a list&#39;s details
 [**getLists**](ContactsApi.md#getLists) | **GET** /contacts/lists | Get all the lists
 [**importContacts**](ContactsApi.md#importContacts) | **POST** /contacts/import | Import contacts
-[**removeContactFromList**](ContactsApi.md#removeContactFromList) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+[**removeContactFromList**](ContactsApi.md#removeContactFromList) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 [**requestContactExport**](ContactsApi.md#requestContactExport) | **POST** /contacts/export | Export contacts
-[**updateAttribute**](ContactsApi.md#updateAttribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
-[**updateContact**](ContactsApi.md#updateContact) | **PUT** /contacts/{email} | Updates a contact
-[**updateFolder**](ContactsApi.md#updateFolder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
+[**updateAttribute**](ContactsApi.md#updateAttribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
+[**updateContact**](ContactsApi.md#updateContact) | **PUT** /contacts/{email} | Update a contact
+[**updateFolder**](ContactsApi.md#updateFolder) | **PUT** /contacts/folders/{folderId} | Update a folder
 [**updateList**](ContactsApi.md#updateList) | **PUT** /contacts/lists/{listId} | Update a list
 
 
@@ -94,7 +95,7 @@ Name | Type | Description  | Notes
 # **createAttribute**
 > createAttribute($attributeCategory, $attributeName, $createAttribute)
 
-Creates contact attribute
+Create contact attribute
 
 ### Example
 ```php
@@ -196,6 +197,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SendinBlue\Client\Model\CreateUpdateContactModel**](../Model/CreateUpdateContactModel.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createDoiContact**
+> createDoiContact($createDoiContact)
+
+Create a contact to trigger the DOI workflow from a Landing Page form
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\ContactsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$createDoiContact = new \SendinBlue\Client\Model\CreateDoiContact(); // \SendinBlue\Client\Model\CreateDoiContact | Values to create the DOI contact
+
+try {
+    $apiInstance->createDoiContact($createDoiContact);
+} catch (Exception $e) {
+    echo 'Exception when calling ContactsApi->createDoiContact: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createDoiContact** | [**\SendinBlue\Client\Model\CreateDoiContact**](../Model/CreateDoiContact.md)| Values to create the DOI contact |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -325,7 +382,7 @@ Name | Type | Description  | Notes
 # **deleteAttribute**
 > deleteAttribute($attributeCategory, $attributeName)
 
-Deletes an attribute
+Delete an attribute
 
 ### Example
 ```php
@@ -383,7 +440,7 @@ void (empty response body)
 # **deleteContact**
 > deleteContact($email)
 
-Deletes a contact
+Delete a contact
 
 ### Example
 ```php
@@ -551,7 +608,7 @@ void (empty response body)
 # **getAttributes**
 > \SendinBlue\Client\Model\GetAttributes getAttributes()
 
-Lists all attributes
+List all attributes
 
 ### Example
 ```php
@@ -604,7 +661,7 @@ This endpoint does not need any parameter.
 # **getContactInfo**
 > \SendinBlue\Client\Model\GetExtendedContactDetails getContactInfo($email)
 
-Retrieves contact informations
+Get a contact's details
 
 ### Example
 ```php
@@ -659,9 +716,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactStats**
-> \SendinBlue\Client\Model\GetContactCampaignStats getContactStats($email)
+> \SendinBlue\Client\Model\GetContactCampaignStats getContactStats($email, $startDate, $endDate)
 
-Get the campaigns statistics for a contact
+Get email campaigns' statistics for a contact
 
 ### Example
 ```php
@@ -684,9 +741,11 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     $config
 );
 $email = "email_example"; // string | Email address (urlencoded) of the contact
+$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
+$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
 
 try {
-    $result = $apiInstance->getContactStats($email);
+    $result = $apiInstance->getContactStats($email, $startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getContactStats: ', $e->getMessage(), PHP_EOL;
@@ -699,6 +758,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **string**| Email address (urlencoded) of the contact |
+ **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate | [optional]
+ **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate | [optional]
 
 ### Return type
 
@@ -779,7 +840,7 @@ Name | Type | Description  | Notes
 # **getContactsFromList**
 > \SendinBlue\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
 
-Get the contacts in a list
+Get contacts in a list
 
 ### Example
 ```php
@@ -842,7 +903,7 @@ Name | Type | Description  | Notes
 # **getFolder**
 > \SendinBlue\Client\Model\GetFolder getFolder($folderId)
 
-Returns folder details
+Returns a folder's details
 
 ### Example
 ```php
@@ -899,7 +960,7 @@ Name | Type | Description  | Notes
 # **getFolderLists**
 > \SendinBlue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
-Get the lists in a folder
+Get lists in a folder
 
 ### Example
 ```php
@@ -960,7 +1021,7 @@ Name | Type | Description  | Notes
 # **getFolders**
 > \SendinBlue\Client\Model\GetFolders getFolders($limit, $offset)
 
-Get all the folders
+Get all folders
 
 ### Example
 ```php
@@ -1019,7 +1080,7 @@ Name | Type | Description  | Notes
 # **getList**
 > \SendinBlue\Client\Model\GetExtendedList getList($listId)
 
-Get the details of a list
+Get a list's details
 
 ### Example
 ```php
@@ -1194,7 +1255,7 @@ Name | Type | Description  | Notes
 # **removeContactFromList**
 > \SendinBlue\Client\Model\PostContactInfo removeContactFromList($listId, $contactEmails)
 
-Remove existing contacts from a list
+Delete a contact from a list
 
 ### Example
 ```php
@@ -1312,7 +1373,7 @@ Name | Type | Description  | Notes
 # **updateAttribute**
 > updateAttribute($attributeCategory, $attributeName, $updateAttribute)
 
-Updates contact attribute
+Update contact attribute
 
 ### Example
 ```php
@@ -1372,7 +1433,7 @@ void (empty response body)
 # **updateContact**
 > updateContact($email, $updateContact)
 
-Updates a contact
+Update a contact
 
 ### Example
 ```php
@@ -1430,7 +1491,7 @@ void (empty response body)
 # **updateFolder**
 > updateFolder($folderId, $updateFolder)
 
-Update a contact folder
+Update a folder
 
 ### Example
 ```php

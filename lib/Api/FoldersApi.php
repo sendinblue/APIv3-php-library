@@ -630,7 +630,7 @@ class FoldersApi
     /**
      * Operation getFolder
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -647,7 +647,7 @@ class FoldersApi
     /**
      * Operation getFolderWithHttpInfo
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -738,7 +738,7 @@ class FoldersApi
     /**
      * Operation getFolderAsync
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -758,7 +758,7 @@ class FoldersApi
     /**
      * Operation getFolderAsyncWithHttpInfo
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -925,7 +925,7 @@ class FoldersApi
     /**
      * Operation getFolderLists
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -944,7 +944,7 @@ class FoldersApi
     /**
      * Operation getFolderListsWithHttpInfo
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1037,7 +1037,7 @@ class FoldersApi
     /**
      * Operation getFolderListsAsync
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1059,7 +1059,7 @@ class FoldersApi
     /**
      * Operation getFolderListsAsyncWithHttpInfo
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -1242,7 +1242,7 @@ class FoldersApi
     /**
      * Operation getFolders
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -1260,7 +1260,7 @@ class FoldersApi
     /**
      * Operation getFoldersWithHttpInfo
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -1344,7 +1344,7 @@ class FoldersApi
     /**
      * Operation getFoldersAsync
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -1365,7 +1365,7 @@ class FoldersApi
     /**
      * Operation getFoldersAsyncWithHttpInfo
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -1544,7 +1544,7 @@ class FoldersApi
     /**
      * Operation updateFolder
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
@@ -1561,7 +1561,7 @@ class FoldersApi
     /**
      * Operation updateFolderWithHttpInfo
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
@@ -1631,7 +1631,7 @@ class FoldersApi
     /**
      * Operation updateFolderAsync
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
@@ -1652,7 +1652,7 @@ class FoldersApi
     /**
      * Operation updateFolderAsyncWithHttpInfo
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)

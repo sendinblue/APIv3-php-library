@@ -84,7 +84,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createAttribute
      *
-     * Creates contact attribute.
+     * Create contact attribute.
      *
      */
     public function testCreateAttribute()
@@ -98,6 +98,16 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCreateContact()
+    {
+    }
+
+    /**
+     * Test case for createDoiContact
+     *
+     * Create a contact to trigger the DOI workflow from a Landing Page form.
+     *
+     */
+    public function testCreateDoiContact()
     {
     }
 
@@ -124,7 +134,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteAttribute
      *
-     * Deletes an attribute.
+     * Delete an attribute.
      *
      */
     public function testDeleteAttribute()
@@ -134,7 +144,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteContact
      *
-     * Deletes a contact.
+     * Delete a contact.
      *
      */
     public function testDeleteContact()
@@ -164,7 +174,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAttributes
      *
-     * Lists all attributes.
+     * List all attributes.
      *
      */
     public function testGetAttributes()
@@ -174,7 +184,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getContactInfo
      *
-     * Retrieves contact informations.
+     * Get a contact's details.
      *
      */
     public function testGetContactInfo()
@@ -184,7 +194,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getContactStats
      *
-     * Get the campaigns statistics for a contact.
+     * Get email campaigns' statistics for a contact.
      *
      */
     public function testGetContactStats()
@@ -204,7 +214,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getContactsFromList
      *
-     * Get the contacts in a list.
+     * Get contacts in a list.
      *
      */
     public function testGetContactsFromList()
@@ -214,7 +224,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolder
      *
-     * Returns folder details.
+     * Returns a folder's details.
      *
      */
     public function testGetFolder()
@@ -224,7 +234,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolderLists
      *
-     * Get the lists in a folder.
+     * Get lists in a folder.
      *
      */
     public function testGetFolderLists()
@@ -234,7 +244,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolders
      *
-     * Get all the folders.
+     * Get all folders.
      *
      */
     public function testGetFolders()
@@ -244,7 +254,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getList
      *
-     * Get the details of a list.
+     * Get a list's details.
      *
      */
     public function testGetList()
@@ -274,7 +284,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for removeContactFromList
      *
-     * Remove existing contacts from a list.
+     * Delete a contact from a list.
      *
      */
     public function testRemoveContactFromList()
@@ -294,7 +304,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateAttribute
      *
-     * Updates contact attribute.
+     * Update contact attribute.
      *
      */
     public function testUpdateAttribute()
@@ -304,7 +314,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateContact
      *
-     * Updates a contact.
+     * Update a contact.
      *
      */
     public function testUpdateContact()
@@ -314,7 +324,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateFolder
      *
-     * Update a contact folder.
+     * Update a folder.
      *
      */
     public function testUpdateFolder()

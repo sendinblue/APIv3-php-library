@@ -94,7 +94,7 @@ class FoldersApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolder
      *
-     * Returns folder details.
+     * Returns a folder's details.
      *
      */
     public function testGetFolder()
@@ -104,7 +104,7 @@ class FoldersApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolderLists
      *
-     * Get the lists in a folder.
+     * Get lists in a folder.
      *
      */
     public function testGetFolderLists()
@@ -114,7 +114,7 @@ class FoldersApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolders
      *
-     * Get all the folders.
+     * Get all folders.
      *
      */
     public function testGetFolders()
@@ -124,7 +124,7 @@ class FoldersApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for updateFolder
      *
-     * Update a contact folder.
+     * Update a folder.
      *
      */
     public function testUpdateFolder()

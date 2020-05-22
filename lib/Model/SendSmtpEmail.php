@@ -316,7 +316,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param \SendinBlue\Client\Model\SendSmtpEmailTo[] $to List of email addresses and names (optional) of the recipients. For example, [{'name':'Jimmy', 'email':'jimmy98@example.com'}, {'name':'Joe', 'email':'joe@example.com'}]
+     * @param \SendinBlue\Client\Model\SendSmtpEmailTo[] $to List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]
      *
      * @return $this
      */
@@ -508,7 +508,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets headers
      *
-     * @param object $headers Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.
+     * @param object $headers Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. Headers are allowed in `This-Case-Only` (i.e. words separated by hyphen with first letter of each word in capital letter), they will be converted to such case styling if not in this format in the request payload. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.
      *
      * @return $this
      */
@@ -556,7 +556,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets params
      *
-     * @param object $params Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. It's considered only if template is in New Template Language format. Alternatively, you can pass the set of attributes to customize the template for each recipient. For this the email will be the key and its value will be a JSON containing attributes specific to each recipient. For example, `{'abc@example.com':{'name':'ABC', 'age':21}, 'xyz@example.com':{'name':'XYZ', 'age':25}}`
+     * @param object $params Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. It's considered only if template is in New Template Language format.
      *
      * @return $this
      */

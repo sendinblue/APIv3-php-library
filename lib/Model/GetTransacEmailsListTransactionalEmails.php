@@ -62,7 +62,9 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'int',
         'messageId' => 'string',
         'uuid' => 'string',
-        'date' => '\DateTime'
+        'date' => '\DateTime',
+        'from' => 'string',
+        'tags' => 'string[]'
     ];
 
     /**
@@ -76,7 +78,9 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'int64',
         'messageId' => null,
         'uuid' => null,
-        'date' => 'date-time'
+        'date' => 'date-time',
+        'from' => 'email',
+        'tags' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'templateId',
         'messageId' => 'messageId',
         'uuid' => 'uuid',
-        'date' => 'date'
+        'date' => 'date',
+        'from' => 'from',
+        'tags' => 'tags'
     ];
 
     /**
@@ -125,7 +131,9 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'setTemplateId',
         'messageId' => 'setMessageId',
         'uuid' => 'setUuid',
-        'date' => 'setDate'
+        'date' => 'setDate',
+        'from' => 'setFrom',
+        'tags' => 'setTags'
     ];
 
     /**
@@ -139,7 +147,9 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'getTemplateId',
         'messageId' => 'getMessageId',
         'uuid' => 'getUuid',
-        'date' => 'getDate'
+        'date' => 'getDate',
+        'from' => 'getFrom',
+        'tags' => 'getTags'
     ];
 
     /**
@@ -208,6 +218,8 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
         $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
     }
 
     /**
@@ -389,6 +401,54 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets from
+     *
+     * @return string
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param string $from Email address of the sender from which the email was sent
+     *
+     * @return $this
+     */
+    public function setFrom($from)
+    {
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets tags
+     *
+     * @return string[]
+     */
+    public function getTags()
+    {
+        return $this->container['tags'];
+    }
+
+    /**
+     * Sets tags
+     *
+     * @param string[] $tags Tags used for your email
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->container['tags'] = $tags;
 
         return $this;
     }

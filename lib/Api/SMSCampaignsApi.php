@@ -372,7 +372,7 @@ class SMSCampaignsApi
     /**
      * Operation deleteSmsCampaign
      *
-     * Delete the SMS campaign
+     * Delete an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      *
@@ -388,7 +388,7 @@ class SMSCampaignsApi
     /**
      * Operation deleteSmsCampaignWithHttpInfo
      *
-     * Delete the SMS campaign
+     * Delete an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      *
@@ -457,7 +457,7 @@ class SMSCampaignsApi
     /**
      * Operation deleteSmsCampaignAsync
      *
-     * Delete the SMS campaign
+     * Delete an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      *
@@ -477,7 +477,7 @@ class SMSCampaignsApi
     /**
      * Operation deleteSmsCampaignAsyncWithHttpInfo
      *
-     * Delete the SMS campaign
+     * Delete an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      *
@@ -925,7 +925,7 @@ class SMSCampaignsApi
     /**
      * Operation getSmsCampaigns
      *
-     * Returns the informations for all your created SMS campaigns
+     * Returns the information for all your created SMS campaigns
      *
      * @param  string $status Status of campaign. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
@@ -946,7 +946,7 @@ class SMSCampaignsApi
     /**
      * Operation getSmsCampaignsWithHttpInfo
      *
-     * Returns the informations for all your created SMS campaigns
+     * Returns the information for all your created SMS campaigns
      *
      * @param  string $status Status of campaign. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
@@ -1033,7 +1033,7 @@ class SMSCampaignsApi
     /**
      * Operation getSmsCampaignsAsync
      *
-     * Returns the informations for all your created SMS campaigns
+     * Returns the information for all your created SMS campaigns
      *
      * @param  string $status Status of campaign. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
@@ -1057,7 +1057,7 @@ class SMSCampaignsApi
     /**
      * Operation getSmsCampaignsAsyncWithHttpInfo
      *
-     * Returns the informations for all your created SMS campaigns
+     * Returns the information for all your created SMS campaigns
      *
      * @param  string $status Status of campaign. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
@@ -1242,7 +1242,7 @@ class SMSCampaignsApi
     /**
      * Operation requestSmsRecipientExport
      *
-     * Exports the recipients of the specified campaign.
+     * Export an SMS campaign's recipients
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\RequestSmsRecipientExport $recipientExport Values to send for a recipient export request (optional)
@@ -1260,7 +1260,7 @@ class SMSCampaignsApi
     /**
      * Operation requestSmsRecipientExportWithHttpInfo
      *
-     * Exports the recipients of the specified campaign.
+     * Export an SMS campaign's recipients
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\RequestSmsRecipientExport $recipientExport Values to send for a recipient export request (optional)
@@ -1352,7 +1352,7 @@ class SMSCampaignsApi
     /**
      * Operation requestSmsRecipientExportAsync
      *
-     * Exports the recipients of the specified campaign.
+     * Export an SMS campaign's recipients
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\RequestSmsRecipientExport $recipientExport Values to send for a recipient export request (optional)
@@ -1373,7 +1373,7 @@ class SMSCampaignsApi
     /**
      * Operation requestSmsRecipientExportAsyncWithHttpInfo
      *
-     * Exports the recipients of the specified campaign.
+     * Export an SMS campaign's recipients
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\RequestSmsRecipientExport $recipientExport Values to send for a recipient export request (optional)
@@ -1811,7 +1811,7 @@ class SMSCampaignsApi
     /**
      * Operation sendSmsReport
      *
-     * Send report of SMS campaigns
+     * Send an SMS campaign's report
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
@@ -1828,7 +1828,7 @@ class SMSCampaignsApi
     /**
      * Operation sendSmsReportWithHttpInfo
      *
-     * Send report of SMS campaigns
+     * Send an SMS campaign's report
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
@@ -1898,7 +1898,7 @@ class SMSCampaignsApi
     /**
      * Operation sendSmsReportAsync
      *
-     * Send report of SMS campaigns
+     * Send an SMS campaign's report
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
@@ -1919,7 +1919,7 @@ class SMSCampaignsApi
     /**
      * Operation sendSmsReportAsyncWithHttpInfo
      *
-     * Send report of SMS campaigns
+     * Send an SMS campaign's report
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\SendReport $sendReport Values for send a report (required)
@@ -2083,7 +2083,7 @@ class SMSCampaignsApi
     /**
      * Operation sendTestSms
      *
-     * Send an SMS
+     * Send a test SMS campaign
      *
      * @param  int $campaignId Id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
@@ -2100,7 +2100,7 @@ class SMSCampaignsApi
     /**
      * Operation sendTestSmsWithHttpInfo
      *
-     * Send an SMS
+     * Send a test SMS campaign
      *
      * @param  int $campaignId Id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
@@ -2170,7 +2170,7 @@ class SMSCampaignsApi
     /**
      * Operation sendTestSmsAsync
      *
-     * Send an SMS
+     * Send a test SMS campaign
      *
      * @param  int $campaignId Id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
@@ -2191,7 +2191,7 @@ class SMSCampaignsApi
     /**
      * Operation sendTestSmsAsyncWithHttpInfo
      *
-     * Send an SMS
+     * Send a test SMS campaign
      *
      * @param  int $campaignId Id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\SendTestSms $phoneNumber Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
@@ -2355,7 +2355,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaign
      *
-     * Updates an SMS campaign
+     * Update an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
@@ -2372,7 +2372,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignWithHttpInfo
      *
-     * Updates an SMS campaign
+     * Update an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
@@ -2442,7 +2442,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignAsync
      *
-     * Updates an SMS campaign
+     * Update an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
@@ -2463,7 +2463,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignAsyncWithHttpInfo
      *
-     * Updates an SMS campaign
+     * Update an SMS campaign
      *
      * @param  int $campaignId id of the SMS campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateSmsCampaign $updateSmsCampaign Values to update an SMS Campaign (required)
@@ -2627,7 +2627,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignStatus
      *
-     * Update the campaign status
+     * Update a campaign's status
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
@@ -2644,7 +2644,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignStatusWithHttpInfo
      *
-     * Update the campaign status
+     * Update a campaign's status
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
@@ -2714,7 +2714,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignStatusAsync
      *
-     * Update the campaign status
+     * Update a campaign's status
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)
@@ -2735,7 +2735,7 @@ class SMSCampaignsApi
     /**
      * Operation updateSmsCampaignStatusAsyncWithHttpInfo
      *
-     * Update the campaign status
+     * Update a campaign's status
      *
      * @param  int $campaignId id of the campaign (required)
      * @param  \SendinBlue\Client\Model\UpdateCampaignStatus $status Status of the campaign. (required)

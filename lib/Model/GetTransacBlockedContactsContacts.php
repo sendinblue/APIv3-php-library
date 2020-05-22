@@ -72,7 +72,7 @@ class GetTransacBlockedContactsContacts implements ModelInterface, ArrayAccess
         'email' => 'email',
         'senderEmail' => 'email',
         'reason' => null,
-        'blockedAt' => 'date'
+        'blockedAt' => 'date-time'
     ];
 
     /**

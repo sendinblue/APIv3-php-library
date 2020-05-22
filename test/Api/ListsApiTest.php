@@ -104,7 +104,7 @@ class ListsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getContactsFromList
      *
-     * Get the contacts in a list.
+     * Get contacts in a list.
      *
      */
     public function testGetContactsFromList()
@@ -114,7 +114,7 @@ class ListsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFolderLists
      *
-     * Get the lists in a folder.
+     * Get lists in a folder.
      *
      */
     public function testGetFolderLists()
@@ -124,7 +124,7 @@ class ListsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getList
      *
-     * Get the details of a list.
+     * Get a list's details.
      *
      */
     public function testGetList()
@@ -144,7 +144,7 @@ class ListsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for removeContactFromList
      *
-     * Remove existing contacts from a list.
+     * Delete a contact from a list.
      *
      */
     public function testRemoveContactFromList()

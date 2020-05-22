@@ -74,7 +74,7 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAccount
      *
-     * Get your account informations, plans and credits details.
+     * Get your account information, plan and credits details.
      *
      */
     public function testGetAccount()

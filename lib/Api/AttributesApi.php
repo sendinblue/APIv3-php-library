@@ -60,6 +60,11 @@ class AttributesApi
     protected $config;
 
     /**
+     * @var HeaderSelector
+     */
+    protected $headerSelector;
+
+    /**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -85,7 +90,7 @@ class AttributesApi
     /**
      * Operation createAttribute
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -103,7 +108,7 @@ class AttributesApi
     /**
      * Operation createAttributeWithHttpInfo
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -166,7 +171,7 @@ class AttributesApi
     /**
      * Operation createAttributeAsync
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -188,7 +193,7 @@ class AttributesApi
     /**
      * Operation createAttributeAsyncWithHttpInfo
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -368,7 +373,7 @@ class AttributesApi
     /**
      * Operation deleteAttribute
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -385,7 +390,7 @@ class AttributesApi
     /**
      * Operation deleteAttributeWithHttpInfo
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -455,7 +460,7 @@ class AttributesApi
     /**
      * Operation deleteAttributeAsync
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -476,7 +481,7 @@ class AttributesApi
     /**
      * Operation deleteAttributeAsyncWithHttpInfo
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -645,7 +650,7 @@ class AttributesApi
     /**
      * Operation getAttributes
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -661,7 +666,7 @@ class AttributesApi
     /**
      * Operation getAttributesWithHttpInfo
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -735,7 +740,7 @@ class AttributesApi
     /**
      * Operation getAttributesAsync
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \InvalidArgumentException
@@ -754,7 +759,7 @@ class AttributesApi
     /**
      * Operation getAttributesAsyncWithHttpInfo
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \InvalidArgumentException
@@ -905,7 +910,7 @@ class AttributesApi
     /**
      * Operation updateAttribute
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -923,7 +928,7 @@ class AttributesApi
     /**
      * Operation updateAttributeWithHttpInfo
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -994,7 +999,7 @@ class AttributesApi
     /**
      * Operation updateAttributeAsync
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -1016,7 +1021,7 @@ class AttributesApi
     /**
      * Operation updateAttributeAsyncWithHttpInfo
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)

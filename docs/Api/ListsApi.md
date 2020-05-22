@@ -7,11 +7,11 @@ Method | HTTP request | Description
 [**addContactToList**](ListsApi.md#addContactToList) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 [**createList**](ListsApi.md#createList) | **POST** /contacts/lists | Create a list
 [**deleteList**](ListsApi.md#deleteList) | **DELETE** /contacts/lists/{listId} | Delete a list
-[**getContactsFromList**](ListsApi.md#getContactsFromList) | **GET** /contacts/lists/{listId}/contacts | Get the contacts in a list
-[**getFolderLists**](ListsApi.md#getFolderLists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
-[**getList**](ListsApi.md#getList) | **GET** /contacts/lists/{listId} | Get the details of a list
+[**getContactsFromList**](ListsApi.md#getContactsFromList) | **GET** /contacts/lists/{listId}/contacts | Get contacts in a list
+[**getFolderLists**](ListsApi.md#getFolderLists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
+[**getList**](ListsApi.md#getList) | **GET** /contacts/lists/{listId} | Get a list&#39;s details
 [**getLists**](ListsApi.md#getLists) | **GET** /contacts/lists | Get all the lists
-[**removeContactFromList**](ListsApi.md#removeContactFromList) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+[**removeContactFromList**](ListsApi.md#removeContactFromList) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 [**updateList**](ListsApi.md#updateList) | **PUT** /contacts/lists/{listId} | Update a list
 
 
@@ -190,7 +190,7 @@ void (empty response body)
 # **getContactsFromList**
 > \SendinBlue\Client\Model\GetContacts getContactsFromList($listId, $modifiedSince, $limit, $offset)
 
-Get the contacts in a list
+Get contacts in a list
 
 ### Example
 ```php
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 # **getFolderLists**
 > \SendinBlue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
 
-Get the lists in a folder
+Get lists in a folder
 
 ### Example
 ```php
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 # **getList**
 > \SendinBlue\Client\Model\GetExtendedList getList($listId)
 
-Get the details of a list
+Get a list's details
 
 ### Example
 ```php
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 # **removeContactFromList**
 > \SendinBlue\Client\Model\PostContactInfo removeContactFromList($listId, $contactEmails)
 
-Remove existing contacts from a list
+Delete a contact from a list
 
 ### Example
 ```php

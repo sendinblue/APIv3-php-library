@@ -399,7 +399,7 @@ class ContactsApi
     /**
      * Operation createAttribute
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -417,7 +417,7 @@ class ContactsApi
     /**
      * Operation createAttributeWithHttpInfo
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -480,7 +480,7 @@ class ContactsApi
     /**
      * Operation createAttributeAsync
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -502,7 +502,7 @@ class ContactsApi
     /**
      * Operation createAttributeAsyncWithHttpInfo
      *
-     * Creates contact attribute
+     * Create contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the attribute (required)
@@ -889,6 +889,251 @@ class ContactsApi
         $_tempBody = null;
         if (isset($createContact)) {
             $_tempBody = $createContact;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createDoiContact
+     *
+     * Create a contact to trigger the DOI workflow from a Landing Page form
+     *
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function createDoiContact($createDoiContact)
+    {
+        $this->createDoiContactWithHttpInfo($createDoiContact);
+    }
+
+    /**
+     * Operation createDoiContactWithHttpInfo
+     *
+     * Create a contact to trigger the DOI workflow from a Landing Page form
+     *
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createDoiContactWithHttpInfo($createDoiContact)
+    {
+        $returnType = '';
+        $request = $this->createDoiContactRequest($createDoiContact);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createDoiContactAsync
+     *
+     * Create a contact to trigger the DOI workflow from a Landing Page form
+     *
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createDoiContactAsync($createDoiContact)
+    {
+        return $this->createDoiContactAsyncWithHttpInfo($createDoiContact)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createDoiContactAsyncWithHttpInfo
+     *
+     * Create a contact to trigger the DOI workflow from a Landing Page form
+     *
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createDoiContactAsyncWithHttpInfo($createDoiContact)
+    {
+        $returnType = '';
+        $request = $this->createDoiContactRequest($createDoiContact);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createDoiContact'
+     *
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createDoiContactRequest($createDoiContact)
+    {
+        // verify the required parameter 'createDoiContact' is set
+        if ($createDoiContact === null || (is_array($createDoiContact) && count($createDoiContact) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $createDoiContact when calling createDoiContact'
+            );
+        }
+
+        $resourcePath = '/contacts/doubleOptinConfirmation';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($createDoiContact)) {
+            $_tempBody = $createDoiContact;
         }
 
         if ($multipart) {
@@ -1536,7 +1781,7 @@ class ContactsApi
     /**
      * Operation deleteAttribute
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -1553,7 +1798,7 @@ class ContactsApi
     /**
      * Operation deleteAttributeWithHttpInfo
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -1623,7 +1868,7 @@ class ContactsApi
     /**
      * Operation deleteAttributeAsync
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -1644,7 +1889,7 @@ class ContactsApi
     /**
      * Operation deleteAttributeAsyncWithHttpInfo
      *
-     * Deletes an attribute
+     * Delete an attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -1813,7 +2058,7 @@ class ContactsApi
     /**
      * Operation deleteContact
      *
-     * Deletes a contact
+     * Delete a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      *
@@ -1829,7 +2074,7 @@ class ContactsApi
     /**
      * Operation deleteContactWithHttpInfo
      *
-     * Deletes a contact
+     * Delete a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      *
@@ -1906,7 +2151,7 @@ class ContactsApi
     /**
      * Operation deleteContactAsync
      *
-     * Deletes a contact
+     * Delete a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      *
@@ -1926,7 +2171,7 @@ class ContactsApi
     /**
      * Operation deleteContactAsyncWithHttpInfo
      *
-     * Deletes a contact
+     * Delete a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      *
@@ -2595,7 +2840,7 @@ class ContactsApi
     /**
      * Operation getAttributes
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -2611,7 +2856,7 @@ class ContactsApi
     /**
      * Operation getAttributesWithHttpInfo
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -2685,7 +2930,7 @@ class ContactsApi
     /**
      * Operation getAttributesAsync
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \InvalidArgumentException
@@ -2704,7 +2949,7 @@ class ContactsApi
     /**
      * Operation getAttributesAsyncWithHttpInfo
      *
-     * Lists all attributes
+     * List all attributes
      *
      *
      * @throws \InvalidArgumentException
@@ -2855,7 +3100,7 @@ class ContactsApi
     /**
      * Operation getContactInfo
      *
-     * Retrieves contact informations
+     * Get a contact's details
      *
      * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
@@ -2872,7 +3117,7 @@ class ContactsApi
     /**
      * Operation getContactInfoWithHttpInfo
      *
-     * Retrieves contact informations
+     * Get a contact's details
      *
      * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
@@ -2963,7 +3208,7 @@ class ContactsApi
     /**
      * Operation getContactInfoAsync
      *
-     * Retrieves contact informations
+     * Get a contact's details
      *
      * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
@@ -2983,7 +3228,7 @@ class ContactsApi
     /**
      * Operation getContactInfoAsyncWithHttpInfo
      *
-     * Retrieves contact informations
+     * Get a contact's details
      *
      * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
      *
@@ -3150,35 +3395,39 @@ class ContactsApi
     /**
      * Operation getContactStats
      *
-     * Get the campaigns statistics for a contact
+     * Get email campaigns' statistics for a contact
      *
      * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetContactCampaignStats
      */
-    public function getContactStats($email)
+    public function getContactStats($email, $startDate = null, $endDate = null)
     {
-        list($response) = $this->getContactStatsWithHttpInfo($email);
+        list($response) = $this->getContactStatsWithHttpInfo($email, $startDate, $endDate);
         return $response;
     }
 
     /**
      * Operation getContactStatsWithHttpInfo
      *
-     * Get the campaigns statistics for a contact
+     * Get email campaigns' statistics for a contact
      *
      * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetContactCampaignStats, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactStatsWithHttpInfo($email)
+    public function getContactStatsWithHttpInfo($email, $startDate = null, $endDate = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetContactCampaignStats';
-        $request = $this->getContactStatsRequest($email);
+        $request = $this->getContactStatsRequest($email, $startDate, $endDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3258,16 +3507,18 @@ class ContactsApi
     /**
      * Operation getContactStatsAsync
      *
-     * Get the campaigns statistics for a contact
+     * Get email campaigns' statistics for a contact
      *
      * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactStatsAsync($email)
+    public function getContactStatsAsync($email, $startDate = null, $endDate = null)
     {
-        return $this->getContactStatsAsyncWithHttpInfo($email)
+        return $this->getContactStatsAsyncWithHttpInfo($email, $startDate, $endDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3278,17 +3529,19 @@ class ContactsApi
     /**
      * Operation getContactStatsAsyncWithHttpInfo
      *
-     * Get the campaigns statistics for a contact
+     * Get email campaigns' statistics for a contact
      *
      * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactStatsAsyncWithHttpInfo($email)
+    public function getContactStatsAsyncWithHttpInfo($email, $startDate = null, $endDate = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetContactCampaignStats';
-        $request = $this->getContactStatsRequest($email);
+        $request = $this->getContactStatsRequest($email, $startDate, $endDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3331,11 +3584,13 @@ class ContactsApi
      * Create request for operation 'getContactStats'
      *
      * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getContactStatsRequest($email)
+    protected function getContactStatsRequest($email, $startDate = null, $endDate = null)
     {
         // verify the required parameter 'email' is set
         if ($email === null || (is_array($email) && count($email) === 0)) {
@@ -3351,6 +3606,14 @@ class ContactsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($startDate !== null) {
+            $queryParams['startDate'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['endDate'] = ObjectSerializer::toQueryValue($endDate);
+        }
 
         // path params
         if ($email !== null) {
@@ -3744,7 +4007,7 @@ class ContactsApi
     /**
      * Operation getContactsFromList
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -3764,7 +4027,7 @@ class ContactsApi
     /**
      * Operation getContactsFromListWithHttpInfo
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -3858,7 +4121,7 @@ class ContactsApi
     /**
      * Operation getContactsFromListAsync
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -3881,7 +4144,7 @@ class ContactsApi
     /**
      * Operation getContactsFromListAsyncWithHttpInfo
      *
-     * Get the contacts in a list
+     * Get contacts in a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
@@ -4070,7 +4333,7 @@ class ContactsApi
     /**
      * Operation getFolder
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -4087,7 +4350,7 @@ class ContactsApi
     /**
      * Operation getFolderWithHttpInfo
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -4178,7 +4441,7 @@ class ContactsApi
     /**
      * Operation getFolderAsync
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -4198,7 +4461,7 @@ class ContactsApi
     /**
      * Operation getFolderAsyncWithHttpInfo
      *
-     * Returns folder details
+     * Returns a folder's details
      *
      * @param  int $folderId id of the folder (required)
      *
@@ -4365,7 +4628,7 @@ class ContactsApi
     /**
      * Operation getFolderLists
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -4384,7 +4647,7 @@ class ContactsApi
     /**
      * Operation getFolderListsWithHttpInfo
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -4477,7 +4740,7 @@ class ContactsApi
     /**
      * Operation getFolderListsAsync
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -4499,7 +4762,7 @@ class ContactsApi
     /**
      * Operation getFolderListsAsyncWithHttpInfo
      *
-     * Get the lists in a folder
+     * Get lists in a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
@@ -4682,7 +4945,7 @@ class ContactsApi
     /**
      * Operation getFolders
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -4700,7 +4963,7 @@ class ContactsApi
     /**
      * Operation getFoldersWithHttpInfo
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -4784,7 +5047,7 @@ class ContactsApi
     /**
      * Operation getFoldersAsync
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -4805,7 +5068,7 @@ class ContactsApi
     /**
      * Operation getFoldersAsyncWithHttpInfo
      *
-     * Get all the folders
+     * Get all folders
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
@@ -4984,7 +5247,7 @@ class ContactsApi
     /**
      * Operation getList
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -5001,7 +5264,7 @@ class ContactsApi
     /**
      * Operation getListWithHttpInfo
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -5092,7 +5355,7 @@ class ContactsApi
     /**
      * Operation getListAsync
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -5112,7 +5375,7 @@ class ContactsApi
     /**
      * Operation getListAsyncWithHttpInfo
      *
-     * Get the details of a list
+     * Get a list's details
      *
      * @param  int $listId Id of the list (required)
      *
@@ -5851,7 +6114,7 @@ class ContactsApi
     /**
      * Operation removeContactFromList
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -5869,7 +6132,7 @@ class ContactsApi
     /**
      * Operation removeContactFromListWithHttpInfo
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -5961,7 +6224,7 @@ class ContactsApi
     /**
      * Operation removeContactFromListAsync
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -5982,7 +6245,7 @@ class ContactsApi
     /**
      * Operation removeContactFromListAsyncWithHttpInfo
      *
-     * Remove existing contacts from a list
+     * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
      * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
@@ -6442,7 +6705,7 @@ class ContactsApi
     /**
      * Operation updateAttribute
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -6460,7 +6723,7 @@ class ContactsApi
     /**
      * Operation updateAttributeWithHttpInfo
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -6531,7 +6794,7 @@ class ContactsApi
     /**
      * Operation updateAttributeAsync
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -6553,7 +6816,7 @@ class ContactsApi
     /**
      * Operation updateAttributeAsyncWithHttpInfo
      *
-     * Updates contact attribute
+     * Update contact attribute
      *
      * @param  string $attributeCategory Category of the attribute (required)
      * @param  string $attributeName Name of the existing attribute (required)
@@ -6733,7 +6996,7 @@ class ContactsApi
     /**
      * Operation updateContact
      *
-     * Updates a contact
+     * Update a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
@@ -6750,7 +7013,7 @@ class ContactsApi
     /**
      * Operation updateContactWithHttpInfo
      *
-     * Updates a contact
+     * Update a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
@@ -6820,7 +7083,7 @@ class ContactsApi
     /**
      * Operation updateContactAsync
      *
-     * Updates a contact
+     * Update a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
@@ -6841,7 +7104,7 @@ class ContactsApi
     /**
      * Operation updateContactAsyncWithHttpInfo
      *
-     * Updates a contact
+     * Update a contact
      *
      * @param  string $email Email (urlencoded) of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
@@ -7005,7 +7268,7 @@ class ContactsApi
     /**
      * Operation updateFolder
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
@@ -7022,7 +7285,7 @@ class ContactsApi
     /**
      * Operation updateFolderWithHttpInfo
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
@@ -7092,7 +7355,7 @@ class ContactsApi
     /**
      * Operation updateFolderAsync
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)
@@ -7113,7 +7376,7 @@ class ContactsApi
     /**
      * Operation updateFolderAsyncWithHttpInfo
      *
-     * Update a contact folder
+     * Update a folder
      *
      * @param  int $folderId Id of the folder (required)
      * @param  \SendinBlue\Client\Model\CreateUpdateFolder $updateFolder Name of the folder (required)

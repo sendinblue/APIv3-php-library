@@ -117,4 +117,18 @@ class GetTransacEmailsListTransactionalEmailsTest extends \PHPUnit_Framework_Tes
     public function testPropertyDate()
     {
     }
+
+    /**
+     * Test attribute "from"
+     */
+    public function testPropertyFrom()
+    {
+    }
+
+    /**
+     * Test attribute "tags"
+     */
+    public function testPropertyTags()
+    {
+    }
 }

@@ -5,15 +5,15 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createSmsCampaign**](SMSCampaignsApi.md#createSmsCampaign) | **POST** /smsCampaigns | Creates an SMS campaign
-[**deleteSmsCampaign**](SMSCampaignsApi.md#deleteSmsCampaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
+[**deleteSmsCampaign**](SMSCampaignsApi.md#deleteSmsCampaign) | **DELETE** /smsCampaigns/{campaignId} | Delete an SMS campaign
 [**getSmsCampaign**](SMSCampaignsApi.md#getSmsCampaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
-[**getSmsCampaigns**](SMSCampaignsApi.md#getSmsCampaigns) | **GET** /smsCampaigns | Returns the informations for all your created SMS campaigns
-[**requestSmsRecipientExport**](SMSCampaignsApi.md#requestSmsRecipientExport) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Exports the recipients of the specified campaign.
+[**getSmsCampaigns**](SMSCampaignsApi.md#getSmsCampaigns) | **GET** /smsCampaigns | Returns the information for all your created SMS campaigns
+[**requestSmsRecipientExport**](SMSCampaignsApi.md#requestSmsRecipientExport) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Export an SMS campaign&#39;s recipients
 [**sendSmsCampaignNow**](SMSCampaignsApi.md#sendSmsCampaignNow) | **POST** /smsCampaigns/{campaignId}/sendNow | Send your SMS campaign immediately
-[**sendSmsReport**](SMSCampaignsApi.md#sendSmsReport) | **POST** /smsCampaigns/{campaignId}/sendReport | Send report of SMS campaigns
-[**sendTestSms**](SMSCampaignsApi.md#sendTestSms) | **POST** /smsCampaigns/{campaignId}/sendTest | Send an SMS
-[**updateSmsCampaign**](SMSCampaignsApi.md#updateSmsCampaign) | **PUT** /smsCampaigns/{campaignId} | Updates an SMS campaign
-[**updateSmsCampaignStatus**](SMSCampaignsApi.md#updateSmsCampaignStatus) | **PUT** /smsCampaigns/{campaignId}/status | Update the campaign status
+[**sendSmsReport**](SMSCampaignsApi.md#sendSmsReport) | **POST** /smsCampaigns/{campaignId}/sendReport | Send an SMS campaign&#39;s report
+[**sendTestSms**](SMSCampaignsApi.md#sendTestSms) | **POST** /smsCampaigns/{campaignId}/sendTest | Send a test SMS campaign
+[**updateSmsCampaign**](SMSCampaignsApi.md#updateSmsCampaign) | **PUT** /smsCampaigns/{campaignId} | Update an SMS campaign
+[**updateSmsCampaignStatus**](SMSCampaignsApi.md#updateSmsCampaignStatus) | **PUT** /smsCampaigns/{campaignId}/status | Update a campaign&#39;s status
 
 
 # **createSmsCampaign**
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 # **deleteSmsCampaign**
 > deleteSmsCampaign($campaignId)
 
-Delete the SMS campaign
+Delete an SMS campaign
 
 ### Example
 ```php
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 # **getSmsCampaigns**
 > \SendinBlue\Client\Model\GetSmsCampaigns getSmsCampaigns($status, $startDate, $endDate, $limit, $offset)
 
-Returns the informations for all your created SMS campaigns
+Returns the information for all your created SMS campaigns
 
 ### Example
 ```php
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 # **requestSmsRecipientExport**
 > \SendinBlue\Client\Model\CreatedProcessId requestSmsRecipientExport($campaignId, $recipientExport)
 
-Exports the recipients of the specified campaign.
+Export an SMS campaign's recipients
 
 It returns the background process ID which on completion calls the notify URL that you have set in the input.
 
@@ -371,7 +371,7 @@ void (empty response body)
 # **sendSmsReport**
 > sendSmsReport($campaignId, $sendReport)
 
-Send report of SMS campaigns
+Send an SMS campaign's report
 
 Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.
 
@@ -431,7 +431,7 @@ void (empty response body)
 # **sendTestSms**
 > sendTestSms($campaignId, $phoneNumber)
 
-Send an SMS
+Send a test SMS campaign
 
 ### Example
 ```php
@@ -489,7 +489,7 @@ void (empty response body)
 # **updateSmsCampaign**
 > updateSmsCampaign($campaignId, $updateSmsCampaign)
 
-Updates an SMS campaign
+Update an SMS campaign
 
 ### Example
 ```php
@@ -547,7 +547,7 @@ void (empty response body)
 # **updateSmsCampaignStatus**
 > updateSmsCampaignStatus($campaignId, $status)
 
-Update the campaign status
+Update a campaign's status
 
 ### Example
 ```php

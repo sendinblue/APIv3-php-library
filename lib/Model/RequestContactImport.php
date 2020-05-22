@@ -289,7 +289,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     /**
      * Sets fileBody
      *
-     * @param string $fileBody Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes
+     * @param string $fileBody Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.
      *
      * @return $this
      */

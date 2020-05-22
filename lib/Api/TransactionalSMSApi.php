@@ -90,7 +90,7 @@ class TransactionalSMSApi
     /**
      * Operation getSmsEvents
      *
-     * Get all the SMS activity (unaggregated events)
+     * Get all your SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
@@ -114,7 +114,7 @@ class TransactionalSMSApi
     /**
      * Operation getSmsEventsWithHttpInfo
      *
-     * Get all the SMS activity (unaggregated events)
+     * Get all your SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
@@ -204,7 +204,7 @@ class TransactionalSMSApi
     /**
      * Operation getSmsEventsAsync
      *
-     * Get all the SMS activity (unaggregated events)
+     * Get all your SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
@@ -231,7 +231,7 @@ class TransactionalSMSApi
     /**
      * Operation getSmsEventsAsyncWithHttpInfo
      *
-     * Get all the SMS activity (unaggregated events)
+     * Get all your SMS activity (unaggregated events)
      *
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
@@ -1042,7 +1042,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSms
      *
-     * Send the SMS campaign to the specified mobile number
+     * Send the SMS campaign to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *
@@ -1059,7 +1059,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSmsWithHttpInfo
      *
-     * Send the SMS campaign to the specified mobile number
+     * Send the SMS campaign to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *
@@ -1150,7 +1150,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSmsAsync
      *
-     * Send the SMS campaign to the specified mobile number
+     * Send the SMS campaign to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *
@@ -1170,7 +1170,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSmsAsyncWithHttpInfo
      *
-     * Send the SMS campaign to the specified mobile number
+     * Send the SMS campaign to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *

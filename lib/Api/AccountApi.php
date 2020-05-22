@@ -90,7 +90,7 @@ class AccountApi
     /**
      * Operation getAccount
      *
-     * Get your account informations, plans and credits details
+     * Get your account information, plan and credits details
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -106,7 +106,7 @@ class AccountApi
     /**
      * Operation getAccountWithHttpInfo
      *
-     * Get your account informations, plans and credits details
+     * Get your account information, plan and credits details
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -180,7 +180,7 @@ class AccountApi
     /**
      * Operation getAccountAsync
      *
-     * Get your account informations, plans and credits details
+     * Get your account information, plan and credits details
      *
      *
      * @throws \InvalidArgumentException
@@ -199,7 +199,7 @@ class AccountApi
     /**
      * Operation getAccountAsyncWithHttpInfo
      *
-     * Get your account informations, plans and credits details
+     * Get your account information, plan and credits details
      *
      *
      * @throws \InvalidArgumentException
