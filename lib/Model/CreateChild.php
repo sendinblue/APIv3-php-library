@@ -61,7 +61,8 @@ class CreateChild implements ModelInterface, ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'companyName' => 'string',
-        'password' => 'string'
+        'password' => 'string',
+        'language' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class CreateChild implements ModelInterface, ArrayAccess
         'firstName' => null,
         'lastName' => null,
         'companyName' => null,
-        'password' => 'password'
+        'password' => 'password',
+        'language' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class CreateChild implements ModelInterface, ArrayAccess
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'companyName' => 'companyName',
-        'password' => 'password'
+        'password' => 'password',
+        'language' => 'language'
     ];
 
     /**
@@ -121,7 +124,8 @@ class CreateChild implements ModelInterface, ArrayAccess
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'companyName' => 'setCompanyName',
-        'password' => 'setPassword'
+        'password' => 'setPassword',
+        'language' => 'setLanguage'
     ];
 
     /**
@@ -134,7 +138,8 @@ class CreateChild implements ModelInterface, ArrayAccess
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'companyName' => 'getCompanyName',
-        'password' => 'getPassword'
+        'password' => 'getPassword',
+        'language' => 'getLanguage'
     ];
 
     /**
@@ -178,8 +183,31 @@ class CreateChild implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const LANGUAGE_FR = 'fr';
+    const LANGUAGE_ES = 'es';
+    const LANGUAGE_PT = 'pt';
+    const LANGUAGE_IT = 'it';
+    const LANGUAGE_DE = 'de';
+    const LANGUAGE_EN = 'en';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLanguageAllowableValues()
+    {
+        return [
+            self::LANGUAGE_FR,
+            self::LANGUAGE_ES,
+            self::LANGUAGE_PT,
+            self::LANGUAGE_IT,
+            self::LANGUAGE_DE,
+            self::LANGUAGE_EN,
+        ];
+    }
     
 
     /**
@@ -202,6 +230,7 @@ class CreateChild implements ModelInterface, ArrayAccess
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
     }
 
     /**
@@ -228,6 +257,14 @@ class CreateChild implements ModelInterface, ArrayAccess
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
+        $allowedValues = $this->getLanguageAllowableValues();
+        if (!is_null($this->container['language']) && !in_array($this->container['language'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'language', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -359,6 +396,39 @@ class CreateChild implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string $language Language of the child account
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $allowedValues = $this->getLanguageAllowableValues();
+        if (!is_null($language) && !in_array($language, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'language', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['language'] = $language;
 
         return $this;
     }

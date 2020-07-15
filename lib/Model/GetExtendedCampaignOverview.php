@@ -84,7 +84,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
         'recurring' => 'bool',
-        'sentDate' => '\DateTime'
+        'sentDate' => '\DateTime',
+        'returnBounce' => 'int'
     ];
 
     /**
@@ -120,7 +121,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'inlineImageActivation' => null,
         'mirrorActive' => null,
         'recurring' => null,
-        'sentDate' => 'date-time'
+        'sentDate' => 'date-time',
+        'returnBounce' => 'int64'
     ];
 
     /**
@@ -177,7 +179,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'inlineImageActivation',
         'mirrorActive' => 'mirrorActive',
         'recurring' => 'recurring',
-        'sentDate' => 'sentDate'
+        'sentDate' => 'sentDate',
+        'returnBounce' => 'returnBounce'
     ];
 
     /**
@@ -213,7 +216,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'setInlineImageActivation',
         'mirrorActive' => 'setMirrorActive',
         'recurring' => 'setRecurring',
-        'sentDate' => 'setSentDate'
+        'sentDate' => 'setSentDate',
+        'returnBounce' => 'setReturnBounce'
     ];
 
     /**
@@ -249,7 +253,8 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'inlineImageActivation' => 'getInlineImageActivation',
         'mirrorActive' => 'getMirrorActive',
         'recurring' => 'getRecurring',
-        'sentDate' => 'getSentDate'
+        'sentDate' => 'getSentDate',
+        'returnBounce' => 'getReturnBounce'
     ];
 
     /**
@@ -378,6 +383,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
         $this->container['sentDate'] = isset($data['sentDate']) ? $data['sentDate'] : null;
+        $this->container['returnBounce'] = isset($data['returnBounce']) ? $data['returnBounce'] : null;
     }
 
     /**
@@ -1148,6 +1154,30 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setSentDate($sentDate)
     {
         $this->container['sentDate'] = $sentDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnBounce
+     *
+     * @return int
+     */
+    public function getReturnBounce()
+    {
+        return $this->container['returnBounce'];
+    }
+
+    /**
+     * Sets returnBounce
+     *
+     * @param int $returnBounce Total number of non-delivered campaigns for a particular campaign id.
+     *
+     * @return $this
+     */
+    public function setReturnBounce($returnBounce)
+    {
+        $this->container['returnBounce'] = $returnBounce;
 
         return $this;
     }

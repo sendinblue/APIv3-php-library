@@ -1042,7 +1042,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSms
      *
-     * Send the SMS campaign to a mobile number
+     * Send SMS message to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *
@@ -1059,7 +1059,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSmsWithHttpInfo
      *
-     * Send the SMS campaign to a mobile number
+     * Send SMS message to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *
@@ -1150,7 +1150,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSmsAsync
      *
-     * Send the SMS campaign to a mobile number
+     * Send SMS message to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *
@@ -1170,7 +1170,7 @@ class TransactionalSMSApi
     /**
      * Operation sendTransacSmsAsyncWithHttpInfo
      *
-     * Send the SMS campaign to a mobile number
+     * Send SMS message to a mobile number
      *
      * @param  \SendinBlue\Client\Model\SendTransacSms $sendTransacSms Values to send a transactional SMS (required)
      *

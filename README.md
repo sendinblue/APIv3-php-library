@@ -87,7 +87,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**addContactToList**](docs/Api/ContactsApi.md#addcontacttolist) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 *ContactsApi* | [**createAttribute**](docs/Api/ContactsApi.md#createattribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 *ContactsApi* | [**createContact**](docs/Api/ContactsApi.md#createcontact) | **POST** /contacts | Create a contact
-*ContactsApi* | [**createDoiContact**](docs/Api/ContactsApi.md#createdoicontact) | **POST** /contacts/doubleOptinConfirmation | Create a contact to trigger the DOI workflow from a Landing Page form
+*ContactsApi* | [**createDoiContact**](docs/Api/ContactsApi.md#createdoicontact) | **POST** /contacts/doubleOptinConfirmation | Create Contact via DOI (Double-Opt-In) Flow
 *ContactsApi* | [**createFolder**](docs/Api/ContactsApi.md#createfolder) | **POST** /contacts/folders | Create a folder
 *ContactsApi* | [**createList**](docs/Api/ContactsApi.md#createlist) | **POST** /contacts/lists | Create a list
 *ContactsApi* | [**deleteAttribute**](docs/Api/ContactsApi.md#deleteattribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
@@ -141,22 +141,22 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**updateList**](docs/Api/ListsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
 *ProcessApi* | [**getProcess**](docs/Api/ProcessApi.md#getprocess) | **GET** /processes/{processId} | Return the informations for a process
 *ProcessApi* | [**getProcesses**](docs/Api/ProcessApi.md#getprocesses) | **GET** /processes | Return all the processes for your account
-*ResellerApi* | [**addCredits**](docs/Api/ResellerApi.md#addcredits) | **POST** /reseller/children/{childAuthKey}/credits/add | Add Email and/or SMS credits to a specific child account
-*ResellerApi* | [**associateIpToChild**](docs/Api/ResellerApi.md#associateiptochild) | **POST** /reseller/children/{childAuthKey}/ips/associate | Associate a dedicated IP to the child
-*ResellerApi* | [**createChildDomain**](docs/Api/ResellerApi.md#createchilddomain) | **POST** /reseller/children/{childAuthKey}/domains | Create a domain for a child account
+*ResellerApi* | [**addCredits**](docs/Api/ResellerApi.md#addcredits) | **POST** /reseller/children/{childIdentifier}/credits/add | Add Email and/or SMS credits to a specific child account
+*ResellerApi* | [**associateIpToChild**](docs/Api/ResellerApi.md#associateiptochild) | **POST** /reseller/children/{childIdentifier}/ips/associate | Associate a dedicated IP to the child
+*ResellerApi* | [**createChildDomain**](docs/Api/ResellerApi.md#createchilddomain) | **POST** /reseller/children/{childIdentifier}/domains | Create a domain for a child account
 *ResellerApi* | [**createResellerChild**](docs/Api/ResellerApi.md#createresellerchild) | **POST** /reseller/children | Creates a reseller child
-*ResellerApi* | [**deleteChildDomain**](docs/Api/ResellerApi.md#deletechilddomain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
-*ResellerApi* | [**deleteResellerChild**](docs/Api/ResellerApi.md#deleteresellerchild) | **DELETE** /reseller/children/{childAuthKey} | Delete a single reseller child based on the childAuthKey supplied
-*ResellerApi* | [**dissociateIpFromChild**](docs/Api/ResellerApi.md#dissociateipfromchild) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
-*ResellerApi* | [**getChildAccountCreationStatus**](docs/Api/ResellerApi.md#getchildaccountcreationstatus) | **GET** /reseller/children/{childAuthKey}/accountCreationStatus | Get the status of a reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
-*ResellerApi* | [**getChildDomains**](docs/Api/ResellerApi.md#getchilddomains) | **GET** /reseller/children/{childAuthKey}/domains | Get all sender domains for a specific child account
-*ResellerApi* | [**getChildInfo**](docs/Api/ResellerApi.md#getchildinfo) | **GET** /reseller/children/{childAuthKey} | Get a child account&#39;s details
+*ResellerApi* | [**deleteChildDomain**](docs/Api/ResellerApi.md#deletechilddomain) | **DELETE** /reseller/children/{childIdentifier}/domains/{domainName} | Delete the sender domain of the reseller child based on the childIdentifier and domainName passed
+*ResellerApi* | [**deleteResellerChild**](docs/Api/ResellerApi.md#deleteresellerchild) | **DELETE** /reseller/children/{childIdentifier} | Delete a single reseller child based on the child identifier supplied
+*ResellerApi* | [**dissociateIpFromChild**](docs/Api/ResellerApi.md#dissociateipfromchild) | **POST** /reseller/children/{childIdentifier}/ips/dissociate | Dissociate a dedicated IP to the child
+*ResellerApi* | [**getChildAccountCreationStatus**](docs/Api/ResellerApi.md#getchildaccountcreationstatus) | **GET** /reseller/children/{childIdentifier}/accountCreationStatus | Get the status of a reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the identifier supplied
+*ResellerApi* | [**getChildDomains**](docs/Api/ResellerApi.md#getchilddomains) | **GET** /reseller/children/{childIdentifier}/domains | Get all sender domains for a specific child account
+*ResellerApi* | [**getChildInfo**](docs/Api/ResellerApi.md#getchildinfo) | **GET** /reseller/children/{childIdentifier} | Get a child account&#39;s details
 *ResellerApi* | [**getResellerChilds**](docs/Api/ResellerApi.md#getresellerchilds) | **GET** /reseller/children | Get the list of all children accounts
-*ResellerApi* | [**getSsoToken**](docs/Api/ResellerApi.md#getssotoken) | **GET** /reseller/children/{childAuthKey}/auth | Get session token to access Sendinblue (SSO)
-*ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
-*ResellerApi* | [**updateChildAccountStatus**](docs/Api/ResellerApi.md#updatechildaccountstatus) | **PUT** /reseller/children/{childAuthKey}/accountStatus | Update info of reseller&#39;s child account status based on the childAuthKey supplied
-*ResellerApi* | [**updateChildDomain**](docs/Api/ResellerApi.md#updatechilddomain) | **PUT** /reseller/children/{childAuthKey}/domains/{domainName} | Update the sender domain of reseller&#39;s child based on the childAuthKey and domainName passed
-*ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childAuthKey} | Update info of reseller&#39;s child based on the childAuthKey supplied
+*ResellerApi* | [**getSsoToken**](docs/Api/ResellerApi.md#getssotoken) | **GET** /reseller/children/{childIdentifier}/auth | Get session token to access Sendinblue (SSO)
+*ResellerApi* | [**removeCredits**](docs/Api/ResellerApi.md#removecredits) | **POST** /reseller/children/{childIdentifier}/credits/remove | Remove Email and/or SMS credits from a specific child account
+*ResellerApi* | [**updateChildAccountStatus**](docs/Api/ResellerApi.md#updatechildaccountstatus) | **PUT** /reseller/children/{childIdentifier}/accountStatus | Update info of reseller&#39;s child account status based on the childIdentifier supplied
+*ResellerApi* | [**updateChildDomain**](docs/Api/ResellerApi.md#updatechilddomain) | **PUT** /reseller/children/{childIdentifier}/domains/{domainName} | Update the sender domain of reseller&#39;s child based on the childIdentifier and domainName passed
+*ResellerApi* | [**updateResellerChild**](docs/Api/ResellerApi.md#updateresellerchild) | **PUT** /reseller/children/{childIdentifier} | Update info of reseller&#39;s child based on the child identifier supplied
 *SMSCampaignsApi* | [**createSmsCampaign**](docs/Api/SMSCampaignsApi.md#createsmscampaign) | **POST** /smsCampaigns | Creates an SMS campaign
 *SMSCampaignsApi* | [**deleteSmsCampaign**](docs/Api/SMSCampaignsApi.md#deletesmscampaign) | **DELETE** /smsCampaigns/{campaignId} | Delete an SMS campaign
 *SMSCampaignsApi* | [**getSmsCampaign**](docs/Api/SMSCampaignsApi.md#getsmscampaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
@@ -193,7 +193,7 @@ Class | Method | HTTP request | Description
 *TransactionalSMSApi* | [**getSmsEvents**](docs/Api/TransactionalSMSApi.md#getsmsevents) | **GET** /transactionalSMS/statistics/events | Get all your SMS activity (unaggregated events)
 *TransactionalSMSApi* | [**getTransacAggregatedSmsReport**](docs/Api/TransactionalSMSApi.md#gettransacaggregatedsmsreport) | **GET** /transactionalSMS/statistics/aggregatedReport | Get your SMS activity aggregated over a period of time
 *TransactionalSMSApi* | [**getTransacSmsReport**](docs/Api/TransactionalSMSApi.md#gettransacsmsreport) | **GET** /transactionalSMS/statistics/reports | Get your SMS activity aggregated per day
-*TransactionalSMSApi* | [**sendTransacSms**](docs/Api/TransactionalSMSApi.md#sendtransacsms) | **POST** /transactionalSMS/sms | Send the SMS campaign to a mobile number
+*TransactionalSMSApi* | [**sendTransacSms**](docs/Api/TransactionalSMSApi.md#sendtransacsms) | **POST** /transactionalSMS/sms | Send SMS message to a mobile number
 *WebhooksApi* | [**createWebhook**](docs/Api/WebhooksApi.md#createwebhook) | **POST** /webhooks | Create a webhook
 *WebhooksApi* | [**deleteWebhook**](docs/Api/WebhooksApi.md#deletewebhook) | **DELETE** /webhooks/{webhookId} | Delete a webhook
 *WebhooksApi* | [**getWebhook**](docs/Api/WebhooksApi.md#getwebhook) | **GET** /webhooks/{webhookId} | Get a webhook details

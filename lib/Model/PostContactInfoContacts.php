@@ -59,7 +59,8 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'success' => 'string[]',
         'failure' => 'string[]',
-        'total' => 'int'
+        'total' => 'int',
+        'processId' => 'int'
     ];
 
     /**
@@ -70,7 +71,8 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'success' => 'email',
         'failure' => 'email',
-        'total' => 'int64'
+        'total' => 'int64',
+        'processId' => 'int64'
     ];
 
     /**
@@ -102,7 +104,8 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'success' => 'success',
         'failure' => 'failure',
-        'total' => 'total'
+        'total' => 'total',
+        'processId' => 'processId'
     ];
 
     /**
@@ -113,7 +116,8 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
     protected static $setters = [
         'success' => 'setSuccess',
         'failure' => 'setFailure',
-        'total' => 'setTotal'
+        'total' => 'setTotal',
+        'processId' => 'setProcessId'
     ];
 
     /**
@@ -124,7 +128,8 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
     protected static $getters = [
         'success' => 'getSuccess',
         'failure' => 'getFailure',
-        'total' => 'getTotal'
+        'total' => 'getTotal',
+        'processId' => 'getProcessId'
     ];
 
     /**
@@ -190,6 +195,7 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['failure'] = isset($data['failure']) ? $data['failure'] : null;
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['processId'] = isset($data['processId']) ? $data['processId'] : null;
     }
 
     /**
@@ -284,6 +290,30 @@ class PostContactInfoContacts implements ModelInterface, ArrayAccess
     public function setTotal($total)
     {
         $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets processId
+     *
+     * @return int
+     */
+    public function getProcessId()
+    {
+        return $this->container['processId'];
+    }
+
+    /**
+     * Sets processId
+     *
+     * @param int $processId Id of the process created to remove contacts from list when user opts for \"all\" option.
+     *
+     * @return $this
+     */
+    public function setProcessId($processId)
+    {
+        $this->container['processId'] = $processId;
 
         return $this;
     }

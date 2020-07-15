@@ -173,6 +173,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const EVENTS_SENT = 'sent';
     const EVENTS_HARD_BOUNCE = 'hardBounce';
     const EVENTS_SOFT_BOUNCE = 'softBounce';
     const EVENTS_BLOCKED = 'blocked';
@@ -201,6 +202,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
     public function getEventsAllowableValues()
     {
         return [
+            self::EVENTS_SENT,
             self::EVENTS_HARD_BOUNCE,
             self::EVENTS_SOFT_BOUNCE,
             self::EVENTS_BLOCKED,
@@ -353,7 +355,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
     /**
      * Sets events
      *
-     * @param string[] $events Events triggering the webhook. Possible values for Transactional type webhook – request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered
+     * @param string[] $events Events triggering the webhook. Possible values for Transactional type webhook – sent, request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered
      *
      * @return $this
      */

@@ -104,7 +104,7 @@ class TransactionalSMSApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for sendTransacSms
      *
-     * Send the SMS campaign to a mobile number.
+     * Send SMS message to a mobile number.
      *
      */
     public function testSendTransacSms()

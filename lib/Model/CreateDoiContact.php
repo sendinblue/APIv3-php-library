@@ -352,7 +352,7 @@ class CreateDoiContact implements ModelInterface, ArrayAccess
     /**
      * Sets templateId
      *
-     * @param int $templateId Id of the DOI template
+     * @param int $templateId Id of the Double opt-in (DOI) template
      *
      * @return $this
      */
@@ -376,7 +376,7 @@ class CreateDoiContact implements ModelInterface, ArrayAccess
     /**
      * Sets redirectionUrl
      *
-     * @param string $redirectionUrl URL of the web page that user will be redirected to after clicking on the double opt in URL.
+     * @param string $redirectionUrl URL of the web page that user will be redirected to after clicking on the double opt in URL. When editing your DOI template you can reference this URL by using the tag {{ params.DOIurl }}.
      *
      * @return $this
      */

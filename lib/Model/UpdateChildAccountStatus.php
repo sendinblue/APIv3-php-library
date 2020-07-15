@@ -59,7 +59,8 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'transactionalEmail' => 'bool',
         'transactionalSms' => 'bool',
-        'marketingAutomation' => 'bool'
+        'marketingAutomation' => 'bool',
+        'smsCampaign' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'transactionalEmail' => null,
         'transactionalSms' => null,
-        'marketingAutomation' => null
+        'marketingAutomation' => null,
+        'smsCampaign' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'transactionalEmail' => 'transactionalEmail',
         'transactionalSms' => 'transactionalSms',
-        'marketingAutomation' => 'marketingAutomation'
+        'marketingAutomation' => 'marketingAutomation',
+        'smsCampaign' => 'smsCampaign'
     ];
 
     /**
@@ -113,7 +116,8 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
     protected static $setters = [
         'transactionalEmail' => 'setTransactionalEmail',
         'transactionalSms' => 'setTransactionalSms',
-        'marketingAutomation' => 'setMarketingAutomation'
+        'marketingAutomation' => 'setMarketingAutomation',
+        'smsCampaign' => 'setSmsCampaign'
     ];
 
     /**
@@ -124,7 +128,8 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
     protected static $getters = [
         'transactionalEmail' => 'getTransactionalEmail',
         'transactionalSms' => 'getTransactionalSms',
-        'marketingAutomation' => 'getMarketingAutomation'
+        'marketingAutomation' => 'getMarketingAutomation',
+        'smsCampaign' => 'getSmsCampaign'
     ];
 
     /**
@@ -190,6 +195,7 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
         $this->container['transactionalEmail'] = isset($data['transactionalEmail']) ? $data['transactionalEmail'] : null;
         $this->container['transactionalSms'] = isset($data['transactionalSms']) ? $data['transactionalSms'] : null;
         $this->container['marketingAutomation'] = isset($data['marketingAutomation']) ? $data['marketingAutomation'] : null;
+        $this->container['smsCampaign'] = isset($data['smsCampaign']) ? $data['smsCampaign'] : null;
     }
 
     /**
@@ -284,6 +290,30 @@ class UpdateChildAccountStatus implements ModelInterface, ArrayAccess
     public function setMarketingAutomation($marketingAutomation)
     {
         $this->container['marketingAutomation'] = $marketingAutomation;
+
+        return $this;
+    }
+
+    /**
+     * Gets smsCampaign
+     *
+     * @return bool
+     */
+    public function getSmsCampaign()
+    {
+        return $this->container['smsCampaign'];
+    }
+
+    /**
+     * Sets smsCampaign
+     *
+     * @param bool $smsCampaign Status of SMS Campaign Platform activation for your account (true=enabled, false=disabled)
+     *
+     * @return $this
+     */
+    public function setSmsCampaign($smsCampaign)
+    {
+        $this->container['smsCampaign'] = $smsCampaign;
 
         return $this;
     }

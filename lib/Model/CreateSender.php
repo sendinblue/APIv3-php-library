@@ -259,7 +259,7 @@ class CreateSender implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email From Email to use for the sender
+     * @param string $email From email to use for the sender. A verification email will be sent to this address.
      *
      * @return $this
      */

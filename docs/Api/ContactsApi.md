@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**addContactToList**](ContactsApi.md#addContactToList) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 [**createAttribute**](ContactsApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 [**createContact**](ContactsApi.md#createContact) | **POST** /contacts | Create a contact
-[**createDoiContact**](ContactsApi.md#createDoiContact) | **POST** /contacts/doubleOptinConfirmation | Create a contact to trigger the DOI workflow from a Landing Page form
+[**createDoiContact**](ContactsApi.md#createDoiContact) | **POST** /contacts/doubleOptinConfirmation | Create Contact via DOI (Double-Opt-In) Flow
 [**createFolder**](ContactsApi.md#createFolder) | **POST** /contacts/folders | Create a folder
 [**createList**](ContactsApi.md#createList) | **POST** /contacts/lists | Create a list
 [**deleteAttribute**](ContactsApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 # **createDoiContact**
 > createDoiContact($createDoiContact)
 
-Create a contact to trigger the DOI workflow from a Landing Page form
+Create Contact via DOI (Double-Opt-In) Flow
 
 ### Example
 ```php
@@ -234,7 +234,7 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$createDoiContact = new \SendinBlue\Client\Model\CreateDoiContact(); // \SendinBlue\Client\Model\CreateDoiContact | Values to create the DOI contact
+$createDoiContact = new \SendinBlue\Client\Model\CreateDoiContact(); // \SendinBlue\Client\Model\CreateDoiContact | Values to create the Double opt-in (DOI) contact
 
 try {
     $apiInstance->createDoiContact($createDoiContact);
@@ -248,7 +248,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createDoiContact** | [**\SendinBlue\Client\Model\CreateDoiContact**](../Model/CreateDoiContact.md)| Values to create the DOI contact |
+ **createDoiContact** | [**\SendinBlue\Client\Model\CreateDoiContact**](../Model/CreateDoiContact.md)| Values to create the Double opt-in (DOI) contact |
 
 ### Return type
 

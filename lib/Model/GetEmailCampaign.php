@@ -85,6 +85,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'mirrorActive' => 'bool',
         'recurring' => 'bool',
         'sentDate' => '\DateTime',
+        'returnBounce' => 'int',
         'recipients' => 'object',
         'statistics' => 'object'
     ];
@@ -123,6 +124,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'mirrorActive' => null,
         'recurring' => null,
         'sentDate' => 'date-time',
+        'returnBounce' => 'int64',
         'recipients' => null,
         'statistics' => null
     ];
@@ -182,6 +184,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'mirrorActive' => 'mirrorActive',
         'recurring' => 'recurring',
         'sentDate' => 'sentDate',
+        'returnBounce' => 'returnBounce',
         'recipients' => 'recipients',
         'statistics' => 'statistics'
     ];
@@ -220,6 +223,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'mirrorActive' => 'setMirrorActive',
         'recurring' => 'setRecurring',
         'sentDate' => 'setSentDate',
+        'returnBounce' => 'setReturnBounce',
         'recipients' => 'setRecipients',
         'statistics' => 'setStatistics'
     ];
@@ -258,6 +262,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         'mirrorActive' => 'getMirrorActive',
         'recurring' => 'getRecurring',
         'sentDate' => 'getSentDate',
+        'returnBounce' => 'getReturnBounce',
         'recipients' => 'getRecipients',
         'statistics' => 'getStatistics'
     ];
@@ -388,6 +393,7 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         $this->container['mirrorActive'] = isset($data['mirrorActive']) ? $data['mirrorActive'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
         $this->container['sentDate'] = isset($data['sentDate']) ? $data['sentDate'] : null;
+        $this->container['returnBounce'] = isset($data['returnBounce']) ? $data['returnBounce'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
@@ -1166,6 +1172,30 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
     public function setSentDate($sentDate)
     {
         $this->container['sentDate'] = $sentDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnBounce
+     *
+     * @return int
+     */
+    public function getReturnBounce()
+    {
+        return $this->container['returnBounce'];
+    }
+
+    /**
+     * Sets returnBounce
+     *
+     * @param int $returnBounce Total number of non-delivered campaigns for a particular campaign id.
+     *
+     * @return $this
+     */
+    public function setReturnBounce($returnBounce)
+    {
+        $this->container['returnBounce'] = $returnBounce;
 
         return $this;
     }

@@ -82,4 +82,11 @@ class CreateResellerTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAuthKey()
     {
     }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
 }

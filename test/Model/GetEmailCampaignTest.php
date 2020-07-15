@@ -273,6 +273,13 @@ class GetEmailCampaignTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "returnBounce"
+     */
+    public function testPropertyReturnBounce()
+    {
+    }
+
+    /**
      * Test attribute "recipients"
      */
     public function testPropertyRecipients()

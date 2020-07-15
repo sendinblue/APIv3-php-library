@@ -247,7 +247,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
     /**
      * Sets all
      *
-     * @param bool $all Required if 'emails' is empty. Remove all existing contacts from a list
+     * @param bool $all Required if 'emails' is empty. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress
      *
      * @return $this
      */
