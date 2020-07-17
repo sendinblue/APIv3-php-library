@@ -337,7 +337,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     /**
      * Sets notifyUrl
      *
-     * @param string $notifyUrl URL that will be called once the export process is finished
+     * @param string $notifyUrl URL that will be called once the import process is finished. For reference, https://help.sendinblue.com/hc/en-us/articles/360007666479
      *
      * @return $this
      */

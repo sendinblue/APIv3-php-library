@@ -68,7 +68,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'tag' => 'string',
         'htmlContent' => 'string',
         'createdAt' => '\DateTime',
-        'modifiedAt' => '\DateTime'
+        'modifiedAt' => '\DateTime',
+        'doiTemplate' => 'bool'
     ];
 
     /**
@@ -88,7 +89,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'tag' => null,
         'htmlContent' => null,
         'createdAt' => 'date-time',
-        'modifiedAt' => 'date-time'
+        'modifiedAt' => 'date-time',
+        'doiTemplate' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'tag' => 'tag',
         'htmlContent' => 'htmlContent',
         'createdAt' => 'createdAt',
-        'modifiedAt' => 'modifiedAt'
+        'modifiedAt' => 'modifiedAt',
+        'doiTemplate' => 'doiTemplate'
     ];
 
     /**
@@ -149,7 +152,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'tag' => 'setTag',
         'htmlContent' => 'setHtmlContent',
         'createdAt' => 'setCreatedAt',
-        'modifiedAt' => 'setModifiedAt'
+        'modifiedAt' => 'setModifiedAt',
+        'doiTemplate' => 'setDoiTemplate'
     ];
 
     /**
@@ -169,7 +173,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'tag' => 'getTag',
         'htmlContent' => 'getHtmlContent',
         'createdAt' => 'getCreatedAt',
-        'modifiedAt' => 'getModifiedAt'
+        'modifiedAt' => 'getModifiedAt',
+        'doiTemplate' => 'getDoiTemplate'
     ];
 
     /**
@@ -244,6 +249,7 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         $this->container['htmlContent'] = isset($data['htmlContent']) ? $data['htmlContent'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
+        $this->container['doiTemplate'] = isset($data['doiTemplate']) ? $data['doiTemplate'] : null;
     }
 
     /**
@@ -590,6 +596,30 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
     public function setModifiedAt($modifiedAt)
     {
         $this->container['modifiedAt'] = $modifiedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets doiTemplate
+     *
+     * @return bool
+     */
+    public function getDoiTemplate()
+    {
+        return $this->container['doiTemplate'];
+    }
+
+    /**
+     * Sets doiTemplate
+     *
+     * @param bool $doiTemplate It is true if template is a valid Double opt-in (DOI) template, otherwise it is false. This field will be available only in case of single template detail call.
+     *
+     * @return $this
+     */
+    public function setDoiTemplate($doiTemplate)
+    {
+        $this->container['doiTemplate'] = $doiTemplate;
 
         return $this;
     }

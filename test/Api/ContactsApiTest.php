@@ -104,7 +104,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createDoiContact
      *
-     * Create a contact to trigger the DOI workflow from a Landing Page form.
+     * Create Contact via DOI (Double-Opt-In) Flow.
      *
      */
     public function testCreateDoiContact()

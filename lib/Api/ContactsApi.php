@@ -972,9 +972,9 @@ class ContactsApi
     /**
      * Operation createDoiContact
      *
-     * Create a contact to trigger the DOI workflow from a Landing Page form
+     * Create Contact via DOI (Double-Opt-In) Flow
      *
-     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the Double opt-in (DOI) contact (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -988,9 +988,9 @@ class ContactsApi
     /**
      * Operation createDoiContactWithHttpInfo
      *
-     * Create a contact to trigger the DOI workflow from a Landing Page form
+     * Create Contact via DOI (Double-Opt-In) Flow
      *
-     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the Double opt-in (DOI) contact (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1049,9 +1049,9 @@ class ContactsApi
     /**
      * Operation createDoiContactAsync
      *
-     * Create a contact to trigger the DOI workflow from a Landing Page form
+     * Create Contact via DOI (Double-Opt-In) Flow
      *
-     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the Double opt-in (DOI) contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1069,9 +1069,9 @@ class ContactsApi
     /**
      * Operation createDoiContactAsyncWithHttpInfo
      *
-     * Create a contact to trigger the DOI workflow from a Landing Page form
+     * Create Contact via DOI (Double-Opt-In) Flow
      *
-     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the Double opt-in (DOI) contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1107,7 +1107,7 @@ class ContactsApi
     /**
      * Create request for operation 'createDoiContact'
      *
-     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the DOI contact (required)
+     * @param  \SendinBlue\Client\Model\CreateDoiContact $createDoiContact Values to create the Double opt-in (DOI) contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

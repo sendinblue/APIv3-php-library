@@ -110,4 +110,11 @@ class CreateChildTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPassword()
     {
     }
+
+    /**
+     * Test attribute "language"
+     */
+    public function testPropertyLanguage()
+    {
+    }
 }

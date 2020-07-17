@@ -57,7 +57,8 @@ class CreateReseller implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'authKey' => 'string'
+        'authKey' => 'string',
+        'id' => 'int'
     ];
 
     /**
@@ -66,7 +67,8 @@ class CreateReseller implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'authKey' => null
+        'authKey' => null,
+        'id' => 'int64'
     ];
 
     /**
@@ -96,7 +98,8 @@ class CreateReseller implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'authKey' => 'authKey'
+        'authKey' => 'authKey',
+        'id' => 'id'
     ];
 
     /**
@@ -105,7 +108,8 @@ class CreateReseller implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'authKey' => 'setAuthKey'
+        'authKey' => 'setAuthKey',
+        'id' => 'setId'
     ];
 
     /**
@@ -114,7 +118,8 @@ class CreateReseller implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'authKey' => 'getAuthKey'
+        'authKey' => 'getAuthKey',
+        'id' => 'getId'
     ];
 
     /**
@@ -178,6 +183,7 @@ class CreateReseller implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['authKey'] = isset($data['authKey']) ? $data['authKey'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -227,6 +233,30 @@ class CreateReseller implements ModelInterface, ArrayAccess
     public function setAuthKey($authKey)
     {
         $this->container['authKey'] = $authKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id Id of Reseller child created
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

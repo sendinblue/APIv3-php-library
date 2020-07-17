@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**getSmsEvents**](TransactionalSMSApi.md#getSmsEvents) | **GET** /transactionalSMS/statistics/events | Get all your SMS activity (unaggregated events)
 [**getTransacAggregatedSmsReport**](TransactionalSMSApi.md#getTransacAggregatedSmsReport) | **GET** /transactionalSMS/statistics/aggregatedReport | Get your SMS activity aggregated over a period of time
 [**getTransacSmsReport**](TransactionalSMSApi.md#getTransacSmsReport) | **GET** /transactionalSMS/statistics/reports | Get your SMS activity aggregated per day
-[**sendTransacSms**](TransactionalSMSApi.md#sendTransacSms) | **POST** /transactionalSMS/sms | Send the SMS campaign to a mobile number
+[**sendTransacSms**](TransactionalSMSApi.md#sendTransacSms) | **POST** /transactionalSMS/sms | Send SMS message to a mobile number
 
 
 # **getSmsEvents**
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 # **sendTransacSms**
 > \SendinBlue\Client\Model\SendSms sendTransacSms($sendTransacSms)
 
-Send the SMS campaign to a mobile number
+Send SMS message to a mobile number
 
 ### Example
 ```php

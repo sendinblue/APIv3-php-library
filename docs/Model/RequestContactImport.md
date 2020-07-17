@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **fileUrl** | **string** | Mandatory if fileBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv | [optional] 
 **fileBody** | **string** | Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files. | [optional] 
 **listIds** | **int[]** | Mandatory if newList is not defined. Ids of the lists in which the contacts shall be imported. For example, [2, 4, 7]. | [optional] 
-**notifyUrl** | **string** | URL that will be called once the export process is finished | [optional] 
+**notifyUrl** | **string** | URL that will be called once the import process is finished. For reference, https://help.sendinblue.com/hc/en-us/articles/360007666479 | [optional] 
 **newList** | [**\SendinBlue\Client\Model\RequestContactImportNewList**](RequestContactImportNewList.md) |  | [optional] 
 **emailBlacklist** | **bool** | To blacklist all the contacts for email | [optional] [default to false]
 **smsBlacklist** | **bool** | To blacklist all the contacts for sms | [optional] [default to false]

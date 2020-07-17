@@ -261,7 +261,7 @@ class EmailExportRecipients implements ModelInterface, ArrayAccess
     /**
      * Sets notifyURL
      *
-     * @param string $notifyURL Webhook called once the export process is finished
+     * @param string $notifyURL Webhook called once the export process is finished. For reference, https://help.sendinblue.com/hc/en-us/articles/360007666479
      *
      * @return $this
      */
