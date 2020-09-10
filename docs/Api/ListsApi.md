@@ -41,7 +41,7 @@ $apiInstance = new SendinBlue\Client\Api\ListsApi(
     $config
 );
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses of the contacts
+$contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses OR IDs of the contacts
 
 try {
     $result = $apiInstance->addContactToList($listId, $contactEmails);
@@ -57,7 +57,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **int**| Id of the list |
- **contactEmails** | [**\SendinBlue\Client\Model\AddContactToList**](../Model/AddContactToList.md)| Emails addresses of the contacts |
+ **contactEmails** | [**\SendinBlue\Client\Model\AddContactToList**](../Model/AddContactToList.md)| Emails addresses OR IDs of the contacts |
 
 ### Return type
 
@@ -453,7 +453,7 @@ $apiInstance = new SendinBlue\Client\Api\ListsApi(
     $config
 );
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\RemoveContactFromList(); // \SendinBlue\Client\Model\RemoveContactFromList | Emails adresses of the contact
+$contactEmails = new \SendinBlue\Client\Model\RemoveContactFromList(); // \SendinBlue\Client\Model\RemoveContactFromList | Emails addresses OR IDs of the contacts
 
 try {
     $result = $apiInstance->removeContactFromList($listId, $contactEmails);
@@ -469,7 +469,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **int**| Id of the list |
- **contactEmails** | [**\SendinBlue\Client\Model\RemoveContactFromList**](../Model/RemoveContactFromList.md)| Emails adresses of the contact |
+ **contactEmails** | [**\SendinBlue\Client\Model\RemoveContactFromList**](../Model/RemoveContactFromList.md)| Emails addresses OR IDs of the contacts |
 
 ### Return type
 

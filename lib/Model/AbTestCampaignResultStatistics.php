@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailSender
+ * AbTestCampaignResultStatistics
  *
  * PHP version 5
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SendSmtpEmailSender Class Doc Comment
+ * AbTestCampaignResultStatistics Class Doc Comment
  *
  * @category Class
- * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass name (optional) and email or id of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailSender implements ModelInterface, ArrayAccess
+class AbTestCampaignResultStatistics implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'sendSmtpEmail_sender';
+    protected static $swaggerModelName = 'abTestCampaignResult_statistics';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +57,12 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'email' => 'string',
-        'id' => 'int'
+        'openers' => '\SendinBlue\Client\Model\AbTestVersionStats',
+        'clicks' => '\SendinBlue\Client\Model\AbTestVersionStats',
+        'unsubscribed' => '\SendinBlue\Client\Model\AbTestVersionStats',
+        'hardBounces' => '\SendinBlue\Client\Model\AbTestVersionStats',
+        'softBounces' => '\SendinBlue\Client\Model\AbTestVersionStats',
+        'complaints' => '\SendinBlue\Client\Model\AbTestVersionStats'
     ];
 
     /**
@@ -69,9 +71,12 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'email' => 'email',
-        'id' => 'int64'
+        'openers' => null,
+        'clicks' => null,
+        'unsubscribed' => null,
+        'hardBounces' => null,
+        'softBounces' => null,
+        'complaints' => null
     ];
 
     /**
@@ -101,9 +106,12 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'email' => 'email',
-        'id' => 'id'
+        'openers' => 'openers',
+        'clicks' => 'clicks',
+        'unsubscribed' => 'unsubscribed',
+        'hardBounces' => 'hardBounces',
+        'softBounces' => 'softBounces',
+        'complaints' => 'complaints'
     ];
 
     /**
@@ -112,9 +120,12 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'email' => 'setEmail',
-        'id' => 'setId'
+        'openers' => 'setOpeners',
+        'clicks' => 'setClicks',
+        'unsubscribed' => 'setUnsubscribed',
+        'hardBounces' => 'setHardBounces',
+        'softBounces' => 'setSoftBounces',
+        'complaints' => 'setComplaints'
     ];
 
     /**
@@ -123,9 +134,12 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'email' => 'getEmail',
-        'id' => 'getId'
+        'openers' => 'getOpeners',
+        'clicks' => 'getClicks',
+        'unsubscribed' => 'getUnsubscribed',
+        'hardBounces' => 'getHardBounces',
+        'softBounces' => 'getSoftBounces',
+        'complaints' => 'getComplaints'
     ];
 
     /**
@@ -188,9 +202,12 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['openers'] = isset($data['openers']) ? $data['openers'] : null;
+        $this->container['clicks'] = isset($data['clicks']) ? $data['clicks'] : null;
+        $this->container['unsubscribed'] = isset($data['unsubscribed']) ? $data['unsubscribed'] : null;
+        $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
+        $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
+        $this->container['complaints'] = isset($data['complaints']) ? $data['complaints'] : null;
     }
 
     /**
@@ -202,8 +219,23 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+        if ($this->container['openers'] === null) {
+            $invalidProperties[] = "'openers' can't be null";
+        }
+        if ($this->container['clicks'] === null) {
+            $invalidProperties[] = "'clicks' can't be null";
+        }
+        if ($this->container['unsubscribed'] === null) {
+            $invalidProperties[] = "'unsubscribed' can't be null";
+        }
+        if ($this->container['hardBounces'] === null) {
+            $invalidProperties[] = "'hardBounces' can't be null";
+        }
+        if ($this->container['softBounces'] === null) {
+            $invalidProperties[] = "'softBounces' can't be null";
+        }
+        if ($this->container['complaints'] === null) {
+            $invalidProperties[] = "'complaints' can't be null";
         }
         return $invalidProperties;
     }
@@ -221,73 +253,145 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets openers
      *
-     * @return string
+     * @return \SendinBlue\Client\Model\AbTestVersionStats
      */
-    public function getName()
+    public function getOpeners()
     {
-        return $this->container['name'];
+        return $this->container['openers'];
     }
 
     /**
-     * Sets name
+     * Sets openers
      *
-     * @param string $name Name of the sender from which the emails will be sent. Maximum allowed characters are 70.
+     * @param \SendinBlue\Client\Model\AbTestVersionStats $openers openers
      *
      * @return $this
      */
-    public function setName($name)
+    public function setOpeners($openers)
     {
-        $this->container['name'] = $name;
+        $this->container['openers'] = $openers;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets clicks
      *
-     * @return string
+     * @return \SendinBlue\Client\Model\AbTestVersionStats
      */
-    public function getEmail()
+    public function getClicks()
     {
-        return $this->container['email'];
+        return $this->container['clicks'];
     }
 
     /**
-     * Sets email
+     * Sets clicks
      *
-     * @param string $email Email of the sender from which the emails will be sent
+     * @param \SendinBlue\Client\Model\AbTestVersionStats $clicks clicks
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setClicks($clicks)
     {
-        $this->container['email'] = $email;
+        $this->container['clicks'] = $clicks;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets unsubscribed
      *
-     * @return int
+     * @return \SendinBlue\Client\Model\AbTestVersionStats
      */
-    public function getId()
+    public function getUnsubscribed()
     {
-        return $this->container['id'];
+        return $this->container['unsubscribed'];
     }
 
     /**
-     * Sets id
+     * Sets unsubscribed
      *
-     * @param int $id Id of the sender from which the emails will be sent
+     * @param \SendinBlue\Client\Model\AbTestVersionStats $unsubscribed unsubscribed
      *
      * @return $this
      */
-    public function setId($id)
+    public function setUnsubscribed($unsubscribed)
     {
-        $this->container['id'] = $id;
+        $this->container['unsubscribed'] = $unsubscribed;
+
+        return $this;
+    }
+
+    /**
+     * Gets hardBounces
+     *
+     * @return \SendinBlue\Client\Model\AbTestVersionStats
+     */
+    public function getHardBounces()
+    {
+        return $this->container['hardBounces'];
+    }
+
+    /**
+     * Sets hardBounces
+     *
+     * @param \SendinBlue\Client\Model\AbTestVersionStats $hardBounces hardBounces
+     *
+     * @return $this
+     */
+    public function setHardBounces($hardBounces)
+    {
+        $this->container['hardBounces'] = $hardBounces;
+
+        return $this;
+    }
+
+    /**
+     * Gets softBounces
+     *
+     * @return \SendinBlue\Client\Model\AbTestVersionStats
+     */
+    public function getSoftBounces()
+    {
+        return $this->container['softBounces'];
+    }
+
+    /**
+     * Sets softBounces
+     *
+     * @param \SendinBlue\Client\Model\AbTestVersionStats $softBounces softBounces
+     *
+     * @return $this
+     */
+    public function setSoftBounces($softBounces)
+    {
+        $this->container['softBounces'] = $softBounces;
+
+        return $this;
+    }
+
+    /**
+     * Gets complaints
+     *
+     * @return \SendinBlue\Client\Model\AbTestVersionStats
+     */
+    public function getComplaints()
+    {
+        return $this->container['complaints'];
+    }
+
+    /**
+     * Sets complaints
+     *
+     * @param \SendinBlue\Client\Model\AbTestVersionStats $complaints complaints
+     *
+     * @return $this
+     */
+    public function setComplaints($complaints)
+    {
+        $this->container['complaints'] = $complaints;
 
         return $this;
     }

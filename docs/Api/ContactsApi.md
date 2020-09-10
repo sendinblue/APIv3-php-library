@@ -11,12 +11,12 @@ Method | HTTP request | Description
 [**createFolder**](ContactsApi.md#createFolder) | **POST** /contacts/folders | Create a folder
 [**createList**](ContactsApi.md#createList) | **POST** /contacts/lists | Create a list
 [**deleteAttribute**](ContactsApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
-[**deleteContact**](ContactsApi.md#deleteContact) | **DELETE** /contacts/{email} | Delete a contact
+[**deleteContact**](ContactsApi.md#deleteContact) | **DELETE** /contacts/{identifier} | Delete a contact
 [**deleteFolder**](ContactsApi.md#deleteFolder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
 [**deleteList**](ContactsApi.md#deleteList) | **DELETE** /contacts/lists/{listId} | Delete a list
 [**getAttributes**](ContactsApi.md#getAttributes) | **GET** /contacts/attributes | List all attributes
-[**getContactInfo**](ContactsApi.md#getContactInfo) | **GET** /contacts/{email} | Get a contact&#39;s details
-[**getContactStats**](ContactsApi.md#getContactStats) | **GET** /contacts/{email}/campaignStats | Get email campaigns&#39; statistics for a contact
+[**getContactInfo**](ContactsApi.md#getContactInfo) | **GET** /contacts/{identifier} | Get a contact&#39;s details
+[**getContactStats**](ContactsApi.md#getContactStats) | **GET** /contacts/{identifier}/campaignStats | Get email campaigns&#39; statistics for a contact
 [**getContacts**](ContactsApi.md#getContacts) | **GET** /contacts | Get all the contacts
 [**getContactsFromList**](ContactsApi.md#getContactsFromList) | **GET** /contacts/lists/{listId}/contacts | Get contacts in a list
 [**getFolder**](ContactsApi.md#getFolder) | **GET** /contacts/folders/{folderId} | Returns a folder&#39;s details
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 [**removeContactFromList**](ContactsApi.md#removeContactFromList) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 [**requestContactExport**](ContactsApi.md#requestContactExport) | **POST** /contacts/export | Export contacts
 [**updateAttribute**](ContactsApi.md#updateAttribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
-[**updateContact**](ContactsApi.md#updateContact) | **PUT** /contacts/{email} | Update a contact
+[**updateContact**](ContactsApi.md#updateContact) | **PUT** /contacts/{identifier} | Update a contact
 [**updateFolder**](ContactsApi.md#updateFolder) | **PUT** /contacts/folders/{folderId} | Update a folder
 [**updateList**](ContactsApi.md#updateList) | **PUT** /contacts/lists/{listId} | Update a list
 
@@ -59,7 +59,7 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     $config
 );
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses of the contacts
+$contactEmails = new \SendinBlue\Client\Model\AddContactToList(); // \SendinBlue\Client\Model\AddContactToList | Emails addresses OR IDs of the contacts
 
 try {
     $result = $apiInstance->addContactToList($listId, $contactEmails);
@@ -75,7 +75,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **int**| Id of the list |
- **contactEmails** | [**\SendinBlue\Client\Model\AddContactToList**](../Model/AddContactToList.md)| Emails addresses of the contacts |
+ **contactEmails** | [**\SendinBlue\Client\Model\AddContactToList**](../Model/AddContactToList.md)| Emails addresses OR IDs of the contacts |
 
 ### Return type
 
@@ -438,7 +438,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteContact**
-> deleteContact($email)
+> deleteContact($identifier)
 
 Delete a contact
 
@@ -462,10 +462,10 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$email = "email_example"; // string | Email (urlencoded) of the contact
+$identifier = "identifier_example"; // string | Email (urlencoded) OR ID of the contact
 
 try {
-    $apiInstance->deleteContact($email);
+    $apiInstance->deleteContact($identifier);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->deleteContact: ', $e->getMessage(), PHP_EOL;
 }
@@ -476,7 +476,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string**| Email (urlencoded) of the contact |
+ **identifier** | **string**| Email (urlencoded) OR ID of the contact |
 
 ### Return type
 
@@ -659,7 +659,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactInfo**
-> \SendinBlue\Client\Model\GetExtendedContactDetails getContactInfo($email)
+> \SendinBlue\Client\Model\GetExtendedContactDetails getContactInfo($identifier)
 
 Get a contact's details
 
@@ -683,10 +683,10 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$email = "email_example"; // string | Email (urlencoded) of the contact OR its SMS attribute value
+$identifier = "identifier_example"; // string | Email (urlencoded) OR ID of the contact OR its SMS attribute value
 
 try {
-    $result = $apiInstance->getContactInfo($email);
+    $result = $apiInstance->getContactInfo($identifier);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getContactInfo: ', $e->getMessage(), PHP_EOL;
@@ -698,7 +698,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string**| Email (urlencoded) of the contact OR its SMS attribute value |
+ **identifier** | **string**| Email (urlencoded) OR ID of the contact OR its SMS attribute value |
 
 ### Return type
 
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactStats**
-> \SendinBlue\Client\Model\GetContactCampaignStats getContactStats($email, $startDate, $endDate)
+> \SendinBlue\Client\Model\GetContactCampaignStats getContactStats($identifier, $startDate, $endDate)
 
 Get email campaigns' statistics for a contact
 
@@ -740,12 +740,12 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$email = "email_example"; // string | Email address (urlencoded) of the contact
+$identifier = "identifier_example"; // string | Email (urlencoded) OR ID of the contact
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
 
 try {
-    $result = $apiInstance->getContactStats($email, $startDate, $endDate);
+    $result = $apiInstance->getContactStats($identifier, $startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->getContactStats: ', $e->getMessage(), PHP_EOL;
@@ -757,7 +757,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string**| Email address (urlencoded) of the contact |
+ **identifier** | **string**| Email (urlencoded) OR ID of the contact |
  **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate | [optional]
  **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate | [optional]
 
@@ -1278,7 +1278,7 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     $config
 );
 $listId = 789; // int | Id of the list
-$contactEmails = new \SendinBlue\Client\Model\RemoveContactFromList(); // \SendinBlue\Client\Model\RemoveContactFromList | Emails adresses of the contact
+$contactEmails = new \SendinBlue\Client\Model\RemoveContactFromList(); // \SendinBlue\Client\Model\RemoveContactFromList | Emails addresses OR IDs of the contacts
 
 try {
     $result = $apiInstance->removeContactFromList($listId, $contactEmails);
@@ -1294,7 +1294,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **int**| Id of the list |
- **contactEmails** | [**\SendinBlue\Client\Model\RemoveContactFromList**](../Model/RemoveContactFromList.md)| Emails adresses of the contact |
+ **contactEmails** | [**\SendinBlue\Client\Model\RemoveContactFromList**](../Model/RemoveContactFromList.md)| Emails addresses OR IDs of the contacts |
 
 ### Return type
 
@@ -1431,7 +1431,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateContact**
-> updateContact($email, $updateContact)
+> updateContact($identifier, $updateContact)
 
 Update a contact
 
@@ -1455,11 +1455,11 @@ $apiInstance = new SendinBlue\Client\Api\ContactsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$email = "email_example"; // string | Email (urlencoded) of the contact
+$identifier = "identifier_example"; // string | Email (urlencoded) OR ID of the contact
 $updateContact = new \SendinBlue\Client\Model\UpdateContact(); // \SendinBlue\Client\Model\UpdateContact | Values to update a contact
 
 try {
-    $apiInstance->updateContact($email, $updateContact);
+    $apiInstance->updateContact($identifier, $updateContact);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->updateContact: ', $e->getMessage(), PHP_EOL;
 }
@@ -1470,7 +1470,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string**| Email (urlencoded) of the contact |
+ **identifier** | **string**| Email (urlencoded) OR ID of the contact |
  **updateContact** | [**\SendinBlue\Client\Model\UpdateContact**](../Model/UpdateContact.md)| Values to update a contact |
 
 ### Return type

@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **openRate** | **string** | Open rate for current winning version | [optional] 
 **clickRate** | **string** | Click rate for current winning version | [optional] 
 **winningVersionRate** | **string** | Open/Click rate for the winner version | [optional] 
+**statistics** | [**\SendinBlue\Client\Model\AbTestCampaignResultStatistics**](AbTestCampaignResultStatistics.md) |  | [optional] 
+**clickedLinks** | [**\SendinBlue\Client\Model\AbTestCampaignResultClickedLinks**](AbTestCampaignResultClickedLinks.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
 

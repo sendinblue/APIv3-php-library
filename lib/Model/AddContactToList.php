@@ -57,7 +57,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emails' => 'string[]'
+        'emails' => 'string[]',
+        'ids' => 'int[]'
     ];
 
     /**
@@ -66,7 +67,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emails' => 'email'
+        'emails' => 'email',
+        'ids' => 'int64'
     ];
 
     /**
@@ -96,7 +98,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emails' => 'emails'
+        'emails' => 'emails',
+        'ids' => 'ids'
     ];
 
     /**
@@ -105,7 +108,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emails' => 'setEmails'
+        'emails' => 'setEmails',
+        'ids' => 'setIds'
     ];
 
     /**
@@ -114,7 +118,8 @@ class AddContactToList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emails' => 'getEmails'
+        'emails' => 'getEmails',
+        'ids' => 'getIds'
     ];
 
     /**
@@ -178,6 +183,7 @@ class AddContactToList implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['emails'] = isset($data['emails']) ? $data['emails'] : null;
+        $this->container['ids'] = isset($data['ids']) ? $data['ids'] : null;
     }
 
     /**
@@ -217,13 +223,37 @@ class AddContactToList implements ModelInterface, ArrayAccess
     /**
      * Sets emails
      *
-     * @param string[] $emails Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.
+     * @param string[] $emails Mandatory if IDs are not passed, ignored otherwise. Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.
      *
      * @return $this
      */
     public function setEmails($emails)
     {
         $this->container['emails'] = $emails;
+
+        return $this;
+    }
+
+    /**
+     * Gets ids
+     *
+     * @return int[]
+     */
+    public function getIds()
+    {
+        return $this->container['ids'];
+    }
+
+    /**
+     * Sets ids
+     *
+     * @param int[] $ids Mandatory if Emails are not passed, ignored otherwise. Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.
+     *
+     * @return $this
+     */
+    public function setIds($ids)
+    {
+        $this->container['ids'] = $ids;
 
         return $this;
     }

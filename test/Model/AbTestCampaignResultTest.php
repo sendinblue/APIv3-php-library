@@ -117,4 +117,18 @@ class AbTestCampaignResultTest extends \PHPUnit_Framework_TestCase
     public function testPropertyWinningVersionRate()
     {
     }
+
+    /**
+     * Test attribute "statistics"
+     */
+    public function testPropertyStatistics()
+    {
+    }
+
+    /**
+     * Test attribute "clickedLinks"
+     */
+    public function testPropertyClickedLinks()
+    {
+    }
 }

@@ -84,6 +84,13 @@ class RemoveContactFromListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "ids"
+     */
+    public function testPropertyIds()
+    {
+    }
+
+    /**
      * Test attribute "all"
      */
     public function testPropertyAll()

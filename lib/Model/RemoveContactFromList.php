@@ -58,6 +58,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'emails' => 'string[]',
+        'ids' => 'int[]',
         'all' => 'bool'
     ];
 
@@ -67,7 +68,8 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emails' => 'email',
+        'emails' => null,
+        'ids' => 'int64',
         'all' => null
     ];
 
@@ -99,6 +101,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'emails' => 'emails',
+        'ids' => 'ids',
         'all' => 'all'
     ];
 
@@ -109,6 +112,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'emails' => 'setEmails',
+        'ids' => 'setIds',
         'all' => 'setAll'
     ];
 
@@ -119,6 +123,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'emails' => 'getEmails',
+        'ids' => 'getIds',
         'all' => 'getAll'
     ];
 
@@ -183,6 +188,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['emails'] = isset($data['emails']) ? $data['emails'] : null;
+        $this->container['ids'] = isset($data['ids']) ? $data['ids'] : null;
         $this->container['all'] = isset($data['all']) ? $data['all'] : null;
     }
 
@@ -235,6 +241,30 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets ids
+     *
+     * @return int[]
+     */
+    public function getIds()
+    {
+        return $this->container['ids'];
+    }
+
+    /**
+     * Sets ids
+     *
+     * @param int[] $ids Mandatory if Emails are not passed, ignored otherwise. Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.
+     *
+     * @return $this
+     */
+    public function setIds($ids)
+    {
+        $this->container['ids'] = $ids;
+
+        return $this;
+    }
+
+    /**
      * Gets all
      *
      * @return bool
@@ -247,7 +277,7 @@ class RemoveContactFromList implements ModelInterface, ArrayAccess
     /**
      * Sets all
      *
-     * @param bool $all Required if 'emails' is empty. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress
+     * @param bool $all Required if none of 'emails' or 'ids' are passed. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress
      *
      * @return $this
      */

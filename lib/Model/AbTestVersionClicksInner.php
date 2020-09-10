@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailSender
+ * AbTestVersionClicksInner
  *
  * PHP version 5
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SendSmtpEmailSender Class Doc Comment
+ * AbTestVersionClicksInner Class Doc Comment
  *
  * @category Class
- * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass name (optional) and email or id of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailSender implements ModelInterface, ArrayAccess
+class AbTestVersionClicksInner implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'sendSmtpEmail_sender';
+    protected static $swaggerModelName = 'abTestVersionClicks_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +57,9 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'email' => 'string',
-        'id' => 'int'
+        'link' => 'string',
+        'clicksCount' => 'float',
+        'clickRate' => 'string'
     ];
 
     /**
@@ -69,9 +68,9 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'email' => 'email',
-        'id' => 'int64'
+        'link' => null,
+        'clicksCount' => 'int64',
+        'clickRate' => null
     ];
 
     /**
@@ -101,9 +100,9 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'email' => 'email',
-        'id' => 'id'
+        'link' => 'link',
+        'clicksCount' => 'clicksCount',
+        'clickRate' => 'clickRate'
     ];
 
     /**
@@ -112,9 +111,9 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'email' => 'setEmail',
-        'id' => 'setId'
+        'link' => 'setLink',
+        'clicksCount' => 'setClicksCount',
+        'clickRate' => 'setClickRate'
     ];
 
     /**
@@ -123,9 +122,9 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'email' => 'getEmail',
-        'id' => 'getId'
+        'link' => 'getLink',
+        'clicksCount' => 'getClicksCount',
+        'clickRate' => 'getClickRate'
     ];
 
     /**
@@ -188,9 +187,9 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['clicksCount'] = isset($data['clicksCount']) ? $data['clicksCount'] : null;
+        $this->container['clickRate'] = isset($data['clickRate']) ? $data['clickRate'] : null;
     }
 
     /**
@@ -202,8 +201,14 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+        if ($this->container['link'] === null) {
+            $invalidProperties[] = "'link' can't be null";
+        }
+        if ($this->container['clicksCount'] === null) {
+            $invalidProperties[] = "'clicksCount' can't be null";
+        }
+        if ($this->container['clickRate'] === null) {
+            $invalidProperties[] = "'clickRate' can't be null";
         }
         return $invalidProperties;
     }
@@ -221,73 +226,73 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets link
      *
      * @return string
      */
-    public function getName()
+    public function getLink()
     {
-        return $this->container['name'];
+        return $this->container['link'];
     }
 
     /**
-     * Sets name
+     * Sets link
      *
-     * @param string $name Name of the sender from which the emails will be sent. Maximum allowed characters are 70.
+     * @param string $link URL of the link
      *
      * @return $this
      */
-    public function setName($name)
+    public function setLink($link)
     {
-        $this->container['name'] = $name;
+        $this->container['link'] = $link;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets clicksCount
      *
-     * @return string
+     * @return float
      */
-    public function getEmail()
+    public function getClicksCount()
     {
-        return $this->container['email'];
+        return $this->container['clicksCount'];
     }
 
     /**
-     * Sets email
+     * Sets clicksCount
      *
-     * @param string $email Email of the sender from which the emails will be sent
+     * @param float $clicksCount Number of times a link is clicked
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setClicksCount($clicksCount)
     {
-        $this->container['email'] = $email;
+        $this->container['clicksCount'] = $clicksCount;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets clickRate
      *
-     * @return int
+     * @return string
      */
-    public function getId()
+    public function getClickRate()
     {
-        return $this->container['id'];
+        return $this->container['clickRate'];
     }
 
     /**
-     * Sets id
+     * Sets clickRate
      *
-     * @param int $id Id of the sender from which the emails will be sent
+     * @param string $clickRate Percentage of clicks of link with respect to total clicks
      *
      * @return $this
      */
-    public function setId($id)
+    public function setClickRate($clickRate)
     {
-        $this->container['id'] = $id;
+        $this->container['clickRate'] = $clickRate;
 
         return $this;
     }

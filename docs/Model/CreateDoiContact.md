@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **includeListIds** | **int[]** | Lists under user account where contact should be added | 
 **excludeListIds** | **int[]** | Lists under user account where contact should not be added | [optional] 
 **templateId** | **int** | Id of the Double opt-in (DOI) template | 
-**redirectionUrl** | **string** | URL of the web page that user will be redirected to after clicking on the double opt in URL. When editing your DOI template you can reference this URL by using the tag {{ params.DOIurl }}. | [optional] 
+**redirectionUrl** | **string** | URL of the web page that user will be redirected to after clicking on the double opt in URL. When editing your DOI template you can reference this URL by using the tag {{ params.DOIurl }}. | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

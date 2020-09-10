@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **unsubscriptions** | **int** | Number of unsubscription for the campaign | 
 **viewed** | **int** | Number of openings for the campaign | 
 **deferred** | **int** | Number of deferred emails for the campaign | [optional] 
+**returnBounce** | **int** | Total number of non-delivered campaigns for a particular campaign id. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
