@@ -261,45 +261,6 @@ class GetAggregatedReport implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
-        }
-        if ($this->container['requests'] === null) {
-            $invalidProperties[] = "'requests' can't be null";
-        }
-        if ($this->container['delivered'] === null) {
-            $invalidProperties[] = "'delivered' can't be null";
-        }
-        if ($this->container['hardBounces'] === null) {
-            $invalidProperties[] = "'hardBounces' can't be null";
-        }
-        if ($this->container['softBounces'] === null) {
-            $invalidProperties[] = "'softBounces' can't be null";
-        }
-        if ($this->container['clicks'] === null) {
-            $invalidProperties[] = "'clicks' can't be null";
-        }
-        if ($this->container['uniqueClicks'] === null) {
-            $invalidProperties[] = "'uniqueClicks' can't be null";
-        }
-        if ($this->container['opens'] === null) {
-            $invalidProperties[] = "'opens' can't be null";
-        }
-        if ($this->container['uniqueOpens'] === null) {
-            $invalidProperties[] = "'uniqueOpens' can't be null";
-        }
-        if ($this->container['spamReports'] === null) {
-            $invalidProperties[] = "'spamReports' can't be null";
-        }
-        if ($this->container['blocked'] === null) {
-            $invalidProperties[] = "'blocked' can't be null";
-        }
-        if ($this->container['invalid'] === null) {
-            $invalidProperties[] = "'invalid' can't be null";
-        }
-        if ($this->container['unsubscribed'] === null) {
-            $invalidProperties[] = "'unsubscribed' can't be null";
-        }
         return $invalidProperties;
     }
 

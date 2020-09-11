@@ -93,7 +93,7 @@ class ContactsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -111,7 +111,7 @@ class ContactsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -203,7 +203,7 @@ class ContactsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -224,7 +224,7 @@ class ContactsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -275,7 +275,7 @@ class ContactsApi
      * Create request for operation 'addContactToList'
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2060,15 +2060,15 @@ class ContactsApi
      *
      * Delete a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteContact($email)
+    public function deleteContact($identifier)
     {
-        $this->deleteContactWithHttpInfo($email);
+        $this->deleteContactWithHttpInfo($identifier);
     }
 
     /**
@@ -2076,16 +2076,16 @@ class ContactsApi
      *
      * Delete a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteContactWithHttpInfo($email)
+    public function deleteContactWithHttpInfo($identifier)
     {
         $returnType = '';
-        $request = $this->deleteContactRequest($email);
+        $request = $this->deleteContactRequest($identifier);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2153,14 +2153,14 @@ class ContactsApi
      *
      * Delete a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteContactAsync($email)
+    public function deleteContactAsync($identifier)
     {
-        return $this->deleteContactAsyncWithHttpInfo($email)
+        return $this->deleteContactAsyncWithHttpInfo($identifier)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2173,15 +2173,15 @@ class ContactsApi
      *
      * Delete a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteContactAsyncWithHttpInfo($email)
+    public function deleteContactAsyncWithHttpInfo($identifier)
     {
         $returnType = '';
-        $request = $this->deleteContactRequest($email);
+        $request = $this->deleteContactRequest($identifier);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2209,21 +2209,21 @@ class ContactsApi
     /**
      * Create request for operation 'deleteContact'
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteContactRequest($email)
+    protected function deleteContactRequest($identifier)
     {
-        // verify the required parameter 'email' is set
-        if ($email === null || (is_array($email) && count($email) === 0)) {
+        // verify the required parameter 'identifier' is set
+        if ($identifier === null || (is_array($identifier) && count($identifier) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling deleteContact'
+                'Missing the required parameter $identifier when calling deleteContact'
             );
         }
 
-        $resourcePath = '/contacts/{email}';
+        $resourcePath = '/contacts/{identifier}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2232,10 +2232,10 @@ class ContactsApi
 
 
         // path params
-        if ($email !== null) {
+        if ($identifier !== null) {
             $resourcePath = str_replace(
-                '{' . 'email' . '}',
-                ObjectSerializer::toPathValue($email),
+                '{' . 'identifier' . '}',
+                ObjectSerializer::toPathValue($identifier),
                 $resourcePath
             );
         }
@@ -3102,15 +3102,15 @@ class ContactsApi
      *
      * Get a contact's details
      *
-     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetExtendedContactDetails
      */
-    public function getContactInfo($email)
+    public function getContactInfo($identifier)
     {
-        list($response) = $this->getContactInfoWithHttpInfo($email);
+        list($response) = $this->getContactInfoWithHttpInfo($identifier);
         return $response;
     }
 
@@ -3119,16 +3119,16 @@ class ContactsApi
      *
      * Get a contact's details
      *
-     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetExtendedContactDetails, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactInfoWithHttpInfo($email)
+    public function getContactInfoWithHttpInfo($identifier)
     {
         $returnType = '\SendinBlue\Client\Model\GetExtendedContactDetails';
-        $request = $this->getContactInfoRequest($email);
+        $request = $this->getContactInfoRequest($identifier);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3210,14 +3210,14 @@ class ContactsApi
      *
      * Get a contact's details
      *
-     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactInfoAsync($email)
+    public function getContactInfoAsync($identifier)
     {
-        return $this->getContactInfoAsyncWithHttpInfo($email)
+        return $this->getContactInfoAsyncWithHttpInfo($identifier)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3230,15 +3230,15 @@ class ContactsApi
      *
      * Get a contact's details
      *
-     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactInfoAsyncWithHttpInfo($email)
+    public function getContactInfoAsyncWithHttpInfo($identifier)
     {
         $returnType = '\SendinBlue\Client\Model\GetExtendedContactDetails';
-        $request = $this->getContactInfoRequest($email);
+        $request = $this->getContactInfoRequest($identifier);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3280,21 +3280,21 @@ class ContactsApi
     /**
      * Create request for operation 'getContactInfo'
      *
-     * @param  string $email Email (urlencoded) of the contact OR its SMS attribute value (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getContactInfoRequest($email)
+    protected function getContactInfoRequest($identifier)
     {
-        // verify the required parameter 'email' is set
-        if ($email === null || (is_array($email) && count($email) === 0)) {
+        // verify the required parameter 'identifier' is set
+        if ($identifier === null || (is_array($identifier) && count($identifier) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling getContactInfo'
+                'Missing the required parameter $identifier when calling getContactInfo'
             );
         }
 
-        $resourcePath = '/contacts/{email}';
+        $resourcePath = '/contacts/{identifier}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3303,10 +3303,10 @@ class ContactsApi
 
 
         // path params
-        if ($email !== null) {
+        if ($identifier !== null) {
             $resourcePath = str_replace(
-                '{' . 'email' . '}',
-                ObjectSerializer::toPathValue($email),
+                '{' . 'identifier' . '}',
+                ObjectSerializer::toPathValue($identifier),
                 $resourcePath
             );
         }
@@ -3397,7 +3397,7 @@ class ContactsApi
      *
      * Get email campaigns' statistics for a contact
      *
-     * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
@@ -3405,9 +3405,9 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetContactCampaignStats
      */
-    public function getContactStats($email, $startDate = null, $endDate = null)
+    public function getContactStats($identifier, $startDate = null, $endDate = null)
     {
-        list($response) = $this->getContactStatsWithHttpInfo($email, $startDate, $endDate);
+        list($response) = $this->getContactStatsWithHttpInfo($identifier, $startDate, $endDate);
         return $response;
     }
 
@@ -3416,7 +3416,7 @@ class ContactsApi
      *
      * Get email campaigns' statistics for a contact
      *
-     * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
@@ -3424,10 +3424,10 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetContactCampaignStats, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactStatsWithHttpInfo($email, $startDate = null, $endDate = null)
+    public function getContactStatsWithHttpInfo($identifier, $startDate = null, $endDate = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetContactCampaignStats';
-        $request = $this->getContactStatsRequest($email, $startDate, $endDate);
+        $request = $this->getContactStatsRequest($identifier, $startDate, $endDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3509,16 +3509,16 @@ class ContactsApi
      *
      * Get email campaigns' statistics for a contact
      *
-     * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactStatsAsync($email, $startDate = null, $endDate = null)
+    public function getContactStatsAsync($identifier, $startDate = null, $endDate = null)
     {
-        return $this->getContactStatsAsyncWithHttpInfo($email, $startDate, $endDate)
+        return $this->getContactStatsAsyncWithHttpInfo($identifier, $startDate, $endDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3531,17 +3531,17 @@ class ContactsApi
      *
      * Get email campaigns' statistics for a contact
      *
-     * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactStatsAsyncWithHttpInfo($email, $startDate = null, $endDate = null)
+    public function getContactStatsAsyncWithHttpInfo($identifier, $startDate = null, $endDate = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetContactCampaignStats';
-        $request = $this->getContactStatsRequest($email, $startDate, $endDate);
+        $request = $this->getContactStatsRequest($identifier, $startDate, $endDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3583,23 +3583,23 @@ class ContactsApi
     /**
      * Create request for operation 'getContactStats'
      *
-     * @param  string $email Email address (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getContactStatsRequest($email, $startDate = null, $endDate = null)
+    protected function getContactStatsRequest($identifier, $startDate = null, $endDate = null)
     {
-        // verify the required parameter 'email' is set
-        if ($email === null || (is_array($email) && count($email) === 0)) {
+        // verify the required parameter 'identifier' is set
+        if ($identifier === null || (is_array($identifier) && count($identifier) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling getContactStats'
+                'Missing the required parameter $identifier when calling getContactStats'
             );
         }
 
-        $resourcePath = '/contacts/{email}/campaignStats';
+        $resourcePath = '/contacts/{identifier}/campaignStats';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3616,10 +3616,10 @@ class ContactsApi
         }
 
         // path params
-        if ($email !== null) {
+        if ($identifier !== null) {
             $resourcePath = str_replace(
-                '{' . 'email' . '}',
-                ObjectSerializer::toPathValue($email),
+                '{' . 'identifier' . '}',
+                ObjectSerializer::toPathValue($identifier),
                 $resourcePath
             );
         }
@@ -6117,7 +6117,7 @@ class ContactsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6135,7 +6135,7 @@ class ContactsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6227,7 +6227,7 @@ class ContactsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6248,7 +6248,7 @@ class ContactsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6299,7 +6299,7 @@ class ContactsApi
      * Create request for operation 'removeContactFromList'
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6998,16 +6998,16 @@ class ContactsApi
      *
      * Update a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateContact($email, $updateContact)
+    public function updateContact($identifier, $updateContact)
     {
-        $this->updateContactWithHttpInfo($email, $updateContact);
+        $this->updateContactWithHttpInfo($identifier, $updateContact);
     }
 
     /**
@@ -7015,17 +7015,17 @@ class ContactsApi
      *
      * Update a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateContactWithHttpInfo($email, $updateContact)
+    public function updateContactWithHttpInfo($identifier, $updateContact)
     {
         $returnType = '';
-        $request = $this->updateContactRequest($email, $updateContact);
+        $request = $this->updateContactRequest($identifier, $updateContact);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7085,15 +7085,15 @@ class ContactsApi
      *
      * Update a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateContactAsync($email, $updateContact)
+    public function updateContactAsync($identifier, $updateContact)
     {
-        return $this->updateContactAsyncWithHttpInfo($email, $updateContact)
+        return $this->updateContactAsyncWithHttpInfo($identifier, $updateContact)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7106,16 +7106,16 @@ class ContactsApi
      *
      * Update a contact
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateContactAsyncWithHttpInfo($email, $updateContact)
+    public function updateContactAsyncWithHttpInfo($identifier, $updateContact)
     {
         $returnType = '';
-        $request = $this->updateContactRequest($email, $updateContact);
+        $request = $this->updateContactRequest($identifier, $updateContact);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7143,18 +7143,18 @@ class ContactsApi
     /**
      * Create request for operation 'updateContact'
      *
-     * @param  string $email Email (urlencoded) of the contact (required)
+     * @param  string $identifier Email (urlencoded) OR ID of the contact (required)
      * @param  \SendinBlue\Client\Model\UpdateContact $updateContact Values to update a contact (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateContactRequest($email, $updateContact)
+    protected function updateContactRequest($identifier, $updateContact)
     {
-        // verify the required parameter 'email' is set
-        if ($email === null || (is_array($email) && count($email) === 0)) {
+        // verify the required parameter 'identifier' is set
+        if ($identifier === null || (is_array($identifier) && count($identifier) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling updateContact'
+                'Missing the required parameter $identifier when calling updateContact'
             );
         }
         // verify the required parameter 'updateContact' is set
@@ -7164,7 +7164,7 @@ class ContactsApi
             );
         }
 
-        $resourcePath = '/contacts/{email}';
+        $resourcePath = '/contacts/{identifier}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -7173,10 +7173,10 @@ class ContactsApi
 
 
         // path params
-        if ($email !== null) {
+        if ($identifier !== null) {
             $resourcePath = str_replace(
-                '{' . 'email' . '}',
-                ObjectSerializer::toPathValue($email),
+                '{' . 'identifier' . '}',
+                ObjectSerializer::toPathValue($identifier),
                 $resourcePath
             );
         }

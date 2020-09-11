@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailSenderTest
+ * AbTestCampaignResultClickedLinksTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * SendSmtpEmailSenderTest Class Doc Comment
+ * AbTestCampaignResultClickedLinksTest Class Doc Comment
  *
  * @category    Class
- * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass name (optional) and email or id of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
+ * @description AbTestCampaignResultClickedLinks
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailSenderTest extends \PHPUnit_Framework_TestCase
+class AbTestCampaignResultClickedLinksTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,30 +70,23 @@ class SendSmtpEmailSenderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SendSmtpEmailSender"
+     * Test "AbTestCampaignResultClickedLinks"
      */
-    public function testSendSmtpEmailSender()
+    public function testAbTestCampaignResultClickedLinks()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "versionA"
      */
-    public function testPropertyName()
+    public function testPropertyVersionA()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "versionB"
      */
-    public function testPropertyEmail()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testPropertyVersionB()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SMTPApiTest
+ * TransactionalEmailsApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \SendinBlue\Client\ApiException;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SMTPApiTest Class Doc Comment
+ * TransactionalEmailsApiTest Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SMTPApiTest extends \PHPUnit_Framework_TestCase
+class TransactionalEmailsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailSender
+ * AbTestVersionClicks
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SendSmtpEmailSender Class Doc Comment
+ * AbTestVersionClicks Class Doc Comment
  *
  * @category Class
- * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass name (optional) and email or id of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
+ * @description Information on clicked links for a particular version
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailSender implements ModelInterface, ArrayAccess
+class AbTestVersionClicks implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'sendSmtpEmail_sender';
+    protected static $swaggerModelName = 'abTestVersionClicks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'email' => 'string',
-        'id' => 'int'
+        
     ];
 
     /**
@@ -69,9 +67,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'email' => 'email',
-        'id' => 'int64'
+        
     ];
 
     /**
@@ -101,9 +97,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'email' => 'email',
-        'id' => 'id'
+        
     ];
 
     /**
@@ -112,9 +106,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'email' => 'setEmail',
-        'id' => 'setId'
+        
     ];
 
     /**
@@ -123,9 +115,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'email' => 'getEmail',
-        'id' => 'getId'
+        
     ];
 
     /**
@@ -188,9 +178,6 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -200,11 +187,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -219,78 +203,6 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Name of the sender from which the emails will be sent. Maximum allowed characters are 70.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email Email of the sender from which the emails will be sent
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id Id of the sender from which the emails will be sent
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

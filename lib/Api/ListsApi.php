@@ -93,7 +93,7 @@ class ListsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -111,7 +111,7 @@ class ListsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -203,7 +203,7 @@ class ListsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -224,7 +224,7 @@ class ListsApi
      * Add existing contacts to a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -275,7 +275,7 @@ class ListsApi
      * Create request for operation 'addContactToList'
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses of the contacts (required)
+     * @param  \SendinBlue\Client\Model\AddContactToList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2170,7 +2170,7 @@ class ListsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2188,7 +2188,7 @@ class ListsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2280,7 +2280,7 @@ class ListsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2301,7 +2301,7 @@ class ListsApi
      * Delete a contact from a list
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2352,7 +2352,7 @@ class ListsApi
      * Create request for operation 'removeContactFromList'
      *
      * @param  int $listId Id of the list (required)
-     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails adresses of the contact (required)
+     * @param  \SendinBlue\Client\Model\RemoveContactFromList $contactEmails Emails addresses OR IDs of the contacts (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

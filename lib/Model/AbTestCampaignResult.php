@@ -62,7 +62,9 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
         'winningSubjectLine' => 'string',
         'openRate' => 'string',
         'clickRate' => 'string',
-        'winningVersionRate' => 'string'
+        'winningVersionRate' => 'string',
+        'statistics' => '\SendinBlue\Client\Model\AbTestCampaignResultStatistics',
+        'clickedLinks' => '\SendinBlue\Client\Model\AbTestCampaignResultClickedLinks'
     ];
 
     /**
@@ -76,7 +78,9 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
         'winningSubjectLine' => null,
         'openRate' => null,
         'clickRate' => null,
-        'winningVersionRate' => null
+        'winningVersionRate' => null,
+        'statistics' => null,
+        'clickedLinks' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
         'winningSubjectLine' => 'winningSubjectLine',
         'openRate' => 'openRate',
         'clickRate' => 'clickRate',
-        'winningVersionRate' => 'winningVersionRate'
+        'winningVersionRate' => 'winningVersionRate',
+        'statistics' => 'statistics',
+        'clickedLinks' => 'clickedLinks'
     ];
 
     /**
@@ -125,7 +131,9 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
         'winningSubjectLine' => 'setWinningSubjectLine',
         'openRate' => 'setOpenRate',
         'clickRate' => 'setClickRate',
-        'winningVersionRate' => 'setWinningVersionRate'
+        'winningVersionRate' => 'setWinningVersionRate',
+        'statistics' => 'setStatistics',
+        'clickedLinks' => 'setClickedLinks'
     ];
 
     /**
@@ -139,7 +147,9 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
         'winningSubjectLine' => 'getWinningSubjectLine',
         'openRate' => 'getOpenRate',
         'clickRate' => 'getClickRate',
-        'winningVersionRate' => 'getWinningVersionRate'
+        'winningVersionRate' => 'getWinningVersionRate',
+        'statistics' => 'getStatistics',
+        'clickedLinks' => 'getClickedLinks'
     ];
 
     /**
@@ -244,6 +254,8 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
         $this->container['openRate'] = isset($data['openRate']) ? $data['openRate'] : null;
         $this->container['clickRate'] = isset($data['clickRate']) ? $data['clickRate'] : null;
         $this->container['winningVersionRate'] = isset($data['winningVersionRate']) ? $data['winningVersionRate'] : null;
+        $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
+        $this->container['clickedLinks'] = isset($data['clickedLinks']) ? $data['clickedLinks'] : null;
     }
 
     /**
@@ -444,6 +456,54 @@ class AbTestCampaignResult implements ModelInterface, ArrayAccess
     public function setWinningVersionRate($winningVersionRate)
     {
         $this->container['winningVersionRate'] = $winningVersionRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets statistics
+     *
+     * @return \SendinBlue\Client\Model\AbTestCampaignResultStatistics
+     */
+    public function getStatistics()
+    {
+        return $this->container['statistics'];
+    }
+
+    /**
+     * Sets statistics
+     *
+     * @param \SendinBlue\Client\Model\AbTestCampaignResultStatistics $statistics statistics
+     *
+     * @return $this
+     */
+    public function setStatistics($statistics)
+    {
+        $this->container['statistics'] = $statistics;
+
+        return $this;
+    }
+
+    /**
+     * Gets clickedLinks
+     *
+     * @return \SendinBlue\Client\Model\AbTestCampaignResultClickedLinks
+     */
+    public function getClickedLinks()
+    {
+        return $this->container['clickedLinks'];
+    }
+
+    /**
+     * Sets clickedLinks
+     *
+     * @param \SendinBlue\Client\Model\AbTestCampaignResultClickedLinks $clickedLinks clickedLinks
+     *
+     * @return $this
+     */
+    public function setClickedLinks($clickedLinks)
+    {
+        $this->container['clickedLinks'] = $clickedLinks;
 
         return $this;
     }

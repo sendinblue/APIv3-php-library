@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailSender
+ * AbTestVersionStats
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SendSmtpEmailSender Class Doc Comment
+ * AbTestVersionStats Class Doc Comment
  *
  * @category Class
- * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass name (optional) and email or id of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
+ * @description Percentage of a particular event for both versions
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailSender implements ModelInterface, ArrayAccess
+class AbTestVersionStats implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'sendSmtpEmail_sender';
+    protected static $swaggerModelName = 'abTestVersionStats';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'email' => 'string',
-        'id' => 'int'
+        'versionA' => 'string',
+        'versionB' => 'string'
     ];
 
     /**
@@ -69,9 +68,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'email' => 'email',
-        'id' => 'int64'
+        'versionA' => null,
+        'versionB' => null
     ];
 
     /**
@@ -101,9 +99,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'email' => 'email',
-        'id' => 'id'
+        'versionA' => 'Version A',
+        'versionB' => 'Version B'
     ];
 
     /**
@@ -112,9 +109,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'email' => 'setEmail',
-        'id' => 'setId'
+        'versionA' => 'setVersionA',
+        'versionB' => 'setVersionB'
     ];
 
     /**
@@ -123,9 +119,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'email' => 'getEmail',
-        'id' => 'getId'
+        'versionA' => 'getVersionA',
+        'versionB' => 'getVersionB'
     ];
 
     /**
@@ -188,9 +183,8 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['versionA'] = isset($data['versionA']) ? $data['versionA'] : null;
+        $this->container['versionB'] = isset($data['versionB']) ? $data['versionB'] : null;
     }
 
     /**
@@ -202,8 +196,11 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+        if ($this->container['versionA'] === null) {
+            $invalidProperties[] = "'versionA' can't be null";
+        }
+        if ($this->container['versionB'] === null) {
+            $invalidProperties[] = "'versionB' can't be null";
         }
         return $invalidProperties;
     }
@@ -221,73 +218,49 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets versionA
      *
      * @return string
      */
-    public function getName()
+    public function getVersionA()
     {
-        return $this->container['name'];
+        return $this->container['versionA'];
     }
 
     /**
-     * Sets name
+     * Sets versionA
      *
-     * @param string $name Name of the sender from which the emails will be sent. Maximum allowed characters are 70.
+     * @param string $versionA percentage of an event for version A
      *
      * @return $this
      */
-    public function setName($name)
+    public function setVersionA($versionA)
     {
-        $this->container['name'] = $name;
+        $this->container['versionA'] = $versionA;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets versionB
      *
      * @return string
      */
-    public function getEmail()
+    public function getVersionB()
     {
-        return $this->container['email'];
+        return $this->container['versionB'];
     }
 
     /**
-     * Sets email
+     * Sets versionB
      *
-     * @param string $email Email of the sender from which the emails will be sent
+     * @param string $versionB percentage of an event for version B
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setVersionB($versionB)
     {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id Id of the sender from which the emails will be sent
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
+        $this->container['versionB'] = $versionB;
 
         return $this;
     }

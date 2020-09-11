@@ -1,10 +1,11 @@
-# GetTransacEmailContentEvents
+# AbTestVersionClicksInner
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Name of the event that occurred on the sent email | 
-**time** | [**\DateTime**] | Time at which the event occurred | 
+**link** | **string** | URL of the link | 
+**clicksCount** | **float** | Number of times a link is clicked | 
+**clickRate** | **string** | Percentage of clicks of link with respect to total clicks | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

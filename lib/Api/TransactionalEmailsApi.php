@@ -1,6 +1,6 @@
 <?php
 /**
- * SMTPApi
+ * TransactionalEmailsApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use SendinBlue\Client\HeaderSelector;
 use SendinBlue\Client\ObjectSerializer;
 
 /**
- * SMTPApi Class Doc Comment
+ * TransactionalEmailsApi Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SMTPApi
+class TransactionalEmailsApi
 {
     /**
      * @var ClientInterface
@@ -1398,7 +1398,7 @@ class SMTPApi
     protected function getEmailEventReportRequest($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
     {
         if ($limit !== null && $limit > 100) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getEmailEventReport, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getEmailEventReport, must be smaller than or equal to 100.');
         }
 
 
@@ -1740,7 +1740,7 @@ class SMTPApi
     protected function getSmtpReportRequest($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
     {
         if ($limit !== null && $limit > 30) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getSmtpReport, must be smaller than or equal to 30.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getSmtpReport, must be smaller than or equal to 30.');
         }
 
 
@@ -2346,7 +2346,7 @@ class SMTPApi
     protected function getSmtpTemplatesRequest($templateStatus = null, $limit = '50', $offset = '0')
     {
         if ($limit !== null && $limit > 1000) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getSmtpTemplates, must be smaller than or equal to 1000.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getSmtpTemplates, must be smaller than or equal to 1000.');
         }
 
 
@@ -2655,7 +2655,7 @@ class SMTPApi
     protected function getTransacBlockedContactsRequest($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null)
     {
         if ($limit !== null && $limit > 100) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling SMTPApi.getTransacBlockedContacts, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getTransacBlockedContacts, must be smaller than or equal to 100.');
         }
 
 

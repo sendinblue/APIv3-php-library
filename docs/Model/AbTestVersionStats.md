@@ -1,10 +1,10 @@
-# GetTransacEmailContentEvents
+# AbTestVersionStats
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Name of the event that occurred on the sent email | 
-**time** | [**\DateTime**] | Time at which the event occurred | 
+**versionA** | **string** | percentage of an event for version A | 
+**versionB** | **string** | percentage of an event for version B | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -1,26 +1,26 @@
-# SendinBlue\Client\SMTPApi
+# SendinBlue\Client\TransactionalEmailsApi
 
 All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSmtpTemplate**](SMTPApi.md#createSmtpTemplate) | **POST** /smtp/templates | Create an email template
-[**deleteHardbounces**](SMTPApi.md#deleteHardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
-[**deleteSmtpTemplate**](SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
-[**getAggregatedSmtpReport**](SMTPApi.md#getAggregatedSmtpReport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
-[**getEmailEventReport**](SMTPApi.md#getEmailEventReport) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
-[**getSmtpReport**](SMTPApi.md#getSmtpReport) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
-[**getSmtpTemplate**](SMTPApi.md#getSmtpTemplate) | **GET** /smtp/templates/{templateId} | Returns the template information
-[**getSmtpTemplates**](SMTPApi.md#getSmtpTemplates) | **GET** /smtp/templates | Get the list of email templates
-[**getTransacBlockedContacts**](SMTPApi.md#getTransacBlockedContacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
-[**getTransacEmailContent**](SMTPApi.md#getTransacEmailContent) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
-[**getTransacEmailsList**](SMTPApi.md#getTransacEmailsList) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
-[**sendTemplate**](SMTPApi.md#sendTemplate) | **POST** /smtp/templates/{templateId}/send | Send a template
-[**sendTestTemplate**](SMTPApi.md#sendTestTemplate) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
-[**sendTransacEmail**](SMTPApi.md#sendTransacEmail) | **POST** /smtp/email | Send a transactional email
-[**smtpBlockedContactsEmailDelete**](SMTPApi.md#smtpBlockedContactsEmailDelete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
-[**smtpLogMessageIdDelete**](SMTPApi.md#smtpLogMessageIdDelete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
-[**updateSmtpTemplate**](SMTPApi.md#updateSmtpTemplate) | **PUT** /smtp/templates/{templateId} | Update an email template
+[**createSmtpTemplate**](TransactionalEmailsApi.md#createSmtpTemplate) | **POST** /smtp/templates | Create an email template
+[**deleteHardbounces**](TransactionalEmailsApi.md#deleteHardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
+[**deleteSmtpTemplate**](TransactionalEmailsApi.md#deleteSmtpTemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
+[**getAggregatedSmtpReport**](TransactionalEmailsApi.md#getAggregatedSmtpReport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
+[**getEmailEventReport**](TransactionalEmailsApi.md#getEmailEventReport) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
+[**getSmtpReport**](TransactionalEmailsApi.md#getSmtpReport) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
+[**getSmtpTemplate**](TransactionalEmailsApi.md#getSmtpTemplate) | **GET** /smtp/templates/{templateId} | Returns the template information
+[**getSmtpTemplates**](TransactionalEmailsApi.md#getSmtpTemplates) | **GET** /smtp/templates | Get the list of email templates
+[**getTransacBlockedContacts**](TransactionalEmailsApi.md#getTransacBlockedContacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
+[**getTransacEmailContent**](TransactionalEmailsApi.md#getTransacEmailContent) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
+[**getTransacEmailsList**](TransactionalEmailsApi.md#getTransacEmailsList) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
+[**sendTemplate**](TransactionalEmailsApi.md#sendTemplate) | **POST** /smtp/templates/{templateId}/send | Send a template
+[**sendTestTemplate**](TransactionalEmailsApi.md#sendTestTemplate) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
+[**sendTransacEmail**](TransactionalEmailsApi.md#sendTransacEmail) | **POST** /smtp/email | Send a transactional email
+[**smtpBlockedContactsEmailDelete**](TransactionalEmailsApi.md#smtpBlockedContactsEmailDelete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
+[**smtpLogMessageIdDelete**](TransactionalEmailsApi.md#smtpLogMessageIdDelete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
+[**updateSmtpTemplate**](TransactionalEmailsApi.md#updateSmtpTemplate) | **PUT** /smtp/templates/{templateId} | Update an email template
 
 
 # **createSmtpTemplate**
@@ -42,7 +42,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -54,7 +54,7 @@ try {
     $result = $apiInstance->createSmtpTemplate($smtpTemplate);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->createSmtpTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->createSmtpTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -101,7 +101,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -112,7 +112,7 @@ $deleteHardbounces = new \SendinBlue\Client\Model\DeleteHardbounces(); // \Sendi
 try {
     $apiInstance->deleteHardbounces($deleteHardbounces);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->deleteHardbounces: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->deleteHardbounces: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -157,7 +157,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -168,7 +168,7 @@ $templateId = 789; // int | id of the template
 try {
     $apiInstance->deleteSmtpTemplate($templateId);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->deleteSmtpTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->deleteSmtpTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -213,7 +213,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -228,7 +228,7 @@ try {
     $result = $apiInstance->getAggregatedSmtpReport($startDate, $endDate, $days, $tag);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getAggregatedSmtpReport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getAggregatedSmtpReport: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -276,7 +276,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -297,7 +297,7 @@ try {
     $result = $apiInstance->getEmailEventReport($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getEmailEventReport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getEmailEventReport: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -351,7 +351,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -368,7 +368,7 @@ try {
     $result = $apiInstance->getSmtpReport($limit, $offset, $startDate, $endDate, $days, $tag);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getSmtpReport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getSmtpReport: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -418,7 +418,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -430,7 +430,7 @@ try {
     $result = $apiInstance->getSmtpTemplate($templateId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getSmtpTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getSmtpTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -475,7 +475,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -489,7 +489,7 @@ try {
     $result = $apiInstance->getSmtpTemplates($templateStatus, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getSmtpTemplates: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getSmtpTemplates: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -536,7 +536,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -552,7 +552,7 @@ try {
     $result = $apiInstance->getTransacBlockedContacts($startDate, $endDate, $limit, $offset, $senders);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getTransacBlockedContacts: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getTransacBlockedContacts: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -601,7 +601,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -613,7 +613,7 @@ try {
     $result = $apiInstance->getTransacEmailContent($uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getTransacEmailContent: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getTransacEmailContent: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -660,7 +660,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -676,7 +676,7 @@ try {
     $result = $apiInstance->getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getTransacEmailsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->getTransacEmailsList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -727,7 +727,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -740,7 +740,7 @@ try {
     $result = $apiInstance->sendTemplate($templateId, $sendEmail);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->sendTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->sendTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -786,7 +786,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -798,7 +798,7 @@ $sendTestEmail = new \SendinBlue\Client\Model\SendTestEmail(); // \SendinBlue\Cl
 try {
     $apiInstance->sendTestTemplate($templateId, $sendTestEmail);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->sendTestTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->sendTestTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -844,7 +844,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -856,7 +856,7 @@ try {
     $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->sendTransacEmail: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -901,7 +901,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -912,7 +912,7 @@ $email = "email_example"; // string | contact email (urlencoded) to unblock.
 try {
     $apiInstance->smtpBlockedContactsEmailDelete($email);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->smtpBlockedContactsEmailDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->smtpBlockedContactsEmailDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -957,7 +957,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -968,7 +968,7 @@ $messageId = "messageId_example"; // string | MessageId of the transactional log
 try {
     $apiInstance->smtpLogMessageIdDelete($messageId);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->smtpLogMessageIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->smtpLogMessageIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1013,7 +1013,7 @@ $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey(
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
 
-$apiInstance = new SendinBlue\Client\Api\SMTPApi(
+$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1025,7 +1025,7 @@ $smtpTemplate = new \SendinBlue\Client\Model\UpdateSmtpTemplate(); // \SendinBlu
 try {
     $apiInstance->updateSmtpTemplate($templateId, $smtpTemplate);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->updateSmtpTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionalEmailsApi->updateSmtpTemplate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

@@ -68,7 +68,8 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'uniqueViews' => 'int',
         'unsubscriptions' => 'int',
         'viewed' => 'int',
-        'deferred' => 'int'
+        'deferred' => 'int',
+        'returnBounce' => 'int'
     ];
 
     /**
@@ -88,7 +89,8 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'uniqueViews' => 'int64',
         'unsubscriptions' => 'int64',
         'viewed' => 'int64',
-        'deferred' => 'int64'
+        'deferred' => 'int64',
+        'returnBounce' => 'int64'
     ];
 
     /**
@@ -129,7 +131,8 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'uniqueViews' => 'uniqueViews',
         'unsubscriptions' => 'unsubscriptions',
         'viewed' => 'viewed',
-        'deferred' => 'deferred'
+        'deferred' => 'deferred',
+        'returnBounce' => 'returnBounce'
     ];
 
     /**
@@ -149,7 +152,8 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'uniqueViews' => 'setUniqueViews',
         'unsubscriptions' => 'setUnsubscriptions',
         'viewed' => 'setViewed',
-        'deferred' => 'setDeferred'
+        'deferred' => 'setDeferred',
+        'returnBounce' => 'setReturnBounce'
     ];
 
     /**
@@ -169,7 +173,8 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'uniqueViews' => 'getUniqueViews',
         'unsubscriptions' => 'getUnsubscriptions',
         'viewed' => 'getViewed',
-        'deferred' => 'getDeferred'
+        'deferred' => 'getDeferred',
+        'returnBounce' => 'getReturnBounce'
     ];
 
     /**
@@ -244,6 +249,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         $this->container['unsubscriptions'] = isset($data['unsubscriptions']) ? $data['unsubscriptions'] : null;
         $this->container['viewed'] = isset($data['viewed']) ? $data['viewed'] : null;
         $this->container['deferred'] = isset($data['deferred']) ? $data['deferred'] : null;
+        $this->container['returnBounce'] = isset($data['returnBounce']) ? $data['returnBounce'] : null;
     }
 
     /**
@@ -584,6 +590,30 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
     public function setDeferred($deferred)
     {
         $this->container['deferred'] = $deferred;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnBounce
+     *
+     * @return int
+     */
+    public function getReturnBounce()
+    {
+        return $this->container['returnBounce'];
+    }
+
+    /**
+     * Sets returnBounce
+     *
+     * @param int $returnBounce Total number of non-delivered campaigns for a particular campaign id.
+     *
+     * @return $this
+     */
+    public function setReturnBounce($returnBounce)
+    {
+        $this->container['returnBounce'] = $returnBounce;
 
         return $this;
     }
