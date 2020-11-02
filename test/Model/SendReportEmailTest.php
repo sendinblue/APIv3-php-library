@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * SendReportEmailTest Class Doc Comment
  *
  * @category    Class
- * @description Email sending credentials including subject, body, to, cc etc.
+ * @description Custom attributes for the report email.
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -77,37 +77,9 @@ class SendReportEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subject"
-     */
-    public function testPropertySubject()
-    {
-    }
-
-    /**
      * Test attribute "to"
      */
     public function testPropertyTo()
-    {
-    }
-
-    /**
-     * Test attribute "contentType"
-     */
-    public function testPropertyContentType()
-    {
-    }
-
-    /**
-     * Test attribute "bcc"
-     */
-    public function testPropertyBcc()
-    {
-    }
-
-    /**
-     * Test attribute "cc"
-     */
-    public function testPropertyCc()
     {
     }
 
