@@ -840,7 +840,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets params
      *
-     * @param object $params Pass the set of attributes to customize the type classic campaign. For example, `{\"FNAME\":\"Joe\", \"LNAME:\"Doe\"}`. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'
+     * @param object $params Pass the set of attributes to customize the type classic campaign. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'
      *
      * @return $this
      */

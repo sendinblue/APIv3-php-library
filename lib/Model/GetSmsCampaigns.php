@@ -195,9 +195,6 @@ class GetSmsCampaigns implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['count'] === null) {
-            $invalidProperties[] = "'count' can't be null";
-        }
         return $invalidProperties;
     }
 

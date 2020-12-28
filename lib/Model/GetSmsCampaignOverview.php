@@ -274,9 +274,6 @@ class GetSmsCampaignOverview implements ModelInterface, ArrayAccess
         if ($this->container['content'] === null) {
             $invalidProperties[] = "'content' can't be null";
         }
-        if ($this->container['scheduledAt'] === null) {
-            $invalidProperties[] = "'scheduledAt' can't be null";
-        }
         if ($this->container['sender'] === null) {
             $invalidProperties[] = "'sender' can't be null";
         }

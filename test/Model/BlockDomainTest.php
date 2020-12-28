@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContactToListTest
+ * BlockDomainTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * AddContactToListTest Class Doc Comment
+ * BlockDomainTest Class Doc Comment
  *
  * @category    Class
- * @description AddContactToList
+ * @description BlockDomain
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AddContactToListTest extends \PHPUnit_Framework_TestCase
+class BlockDomainTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,23 +70,16 @@ class AddContactToListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AddContactToList"
+     * Test "BlockDomain"
      */
-    public function testAddContactToList()
+    public function testBlockDomain()
     {
     }
 
     /**
-     * Test attribute "emails"
+     * Test attribute "domain"
      */
-    public function testPropertyEmails()
-    {
-    }
-
-    /**
-     * Test attribute "ids"
-     */
-    public function testPropertyIds()
+    public function testPropertyDomain()
     {
     }
 }

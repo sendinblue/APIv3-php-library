@@ -96,4 +96,11 @@ class UpdateChildAccountStatusTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMarketingAutomation()
     {
     }
+
+    /**
+     * Test attribute "smsCampaign"
+     */
+    public function testPropertySmsCampaign()
+    {
+    }
 }

@@ -271,4 +271,11 @@ class GetExtendedCampaignOverviewTest extends \PHPUnit_Framework_TestCase
     public function testPropertySentDate()
     {
     }
+
+    /**
+     * Test attribute "returnBounce"
+     */
+    public function testPropertyReturnBounce()
+    {
+    }
 }

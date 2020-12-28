@@ -96,4 +96,11 @@ class PostContactInfoContactsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTotal()
     {
     }
+
+    /**
+     * Test attribute "processId"
+     */
+    public function testPropertyProcessId()
+    {
+    }
 }

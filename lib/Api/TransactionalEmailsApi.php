@@ -88,6 +88,251 @@ class TransactionalEmailsApi
     }
 
     /**
+     * Operation blockNewDomain
+     *
+     * Add a new domain to the list of blocked domains
+     *
+     * @param  \SendinBlue\Client\Model\BlockDomain $blockDomain blockDomain (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function blockNewDomain($blockDomain)
+    {
+        $this->blockNewDomainWithHttpInfo($blockDomain);
+    }
+
+    /**
+     * Operation blockNewDomainWithHttpInfo
+     *
+     * Add a new domain to the list of blocked domains
+     *
+     * @param  \SendinBlue\Client\Model\BlockDomain $blockDomain (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function blockNewDomainWithHttpInfo($blockDomain)
+    {
+        $returnType = '';
+        $request = $this->blockNewDomainRequest($blockDomain);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation blockNewDomainAsync
+     *
+     * Add a new domain to the list of blocked domains
+     *
+     * @param  \SendinBlue\Client\Model\BlockDomain $blockDomain (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function blockNewDomainAsync($blockDomain)
+    {
+        return $this->blockNewDomainAsyncWithHttpInfo($blockDomain)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation blockNewDomainAsyncWithHttpInfo
+     *
+     * Add a new domain to the list of blocked domains
+     *
+     * @param  \SendinBlue\Client\Model\BlockDomain $blockDomain (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function blockNewDomainAsyncWithHttpInfo($blockDomain)
+    {
+        $returnType = '';
+        $request = $this->blockNewDomainRequest($blockDomain);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'blockNewDomain'
+     *
+     * @param  \SendinBlue\Client\Model\BlockDomain $blockDomain (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function blockNewDomainRequest($blockDomain)
+    {
+        // verify the required parameter 'blockDomain' is set
+        if ($blockDomain === null || (is_array($blockDomain) && count($blockDomain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockDomain when calling blockNewDomain'
+            );
+        }
+
+        $resourcePath = '/smtp/blockedDomains';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($blockDomain)) {
+            $_tempBody = $blockDomain;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation createSmtpTemplate
      *
      * Create an email template
@@ -363,6 +608,256 @@ class TransactionalEmailsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteBlockedDomain
+     *
+     * Unblock an existing domain from the list of blocked domains
+     *
+     * @param  string $domain The name of the domain to be deleted (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteBlockedDomain($domain)
+    {
+        $this->deleteBlockedDomainWithHttpInfo($domain);
+    }
+
+    /**
+     * Operation deleteBlockedDomainWithHttpInfo
+     *
+     * Unblock an existing domain from the list of blocked domains
+     *
+     * @param  string $domain The name of the domain to be deleted (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteBlockedDomainWithHttpInfo($domain)
+    {
+        $returnType = '';
+        $request = $this->deleteBlockedDomainRequest($domain);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteBlockedDomainAsync
+     *
+     * Unblock an existing domain from the list of blocked domains
+     *
+     * @param  string $domain The name of the domain to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBlockedDomainAsync($domain)
+    {
+        return $this->deleteBlockedDomainAsyncWithHttpInfo($domain)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteBlockedDomainAsyncWithHttpInfo
+     *
+     * Unblock an existing domain from the list of blocked domains
+     *
+     * @param  string $domain The name of the domain to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBlockedDomainAsyncWithHttpInfo($domain)
+    {
+        $returnType = '';
+        $request = $this->deleteBlockedDomainRequest($domain);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteBlockedDomain'
+     *
+     * @param  string $domain The name of the domain to be deleted (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function deleteBlockedDomainRequest($domain)
+    {
+        // verify the required parameter 'domain' is set
+        if ($domain === null || (is_array($domain) && count($domain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $domain when calling deleteBlockedDomain'
+            );
+        }
+
+        $resourcePath = '/smtp/blockedDomains/{domain}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($domain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'domain' . '}',
+                ObjectSerializer::toPathValue($domain),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1171,6 +1666,266 @@ class TransactionalEmailsApi
     }
 
     /**
+     * Operation getBlockedDomains
+     *
+     * Get the list of blocked domains
+     *
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SendinBlue\Client\Model\GetBlockedDomains
+     */
+    public function getBlockedDomains()
+    {
+        list($response) = $this->getBlockedDomainsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getBlockedDomainsWithHttpInfo
+     *
+     * Get the list of blocked domains
+     *
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SendinBlue\Client\Model\GetBlockedDomains, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getBlockedDomainsWithHttpInfo()
+    {
+        $returnType = '\SendinBlue\Client\Model\GetBlockedDomains';
+        $request = $this->getBlockedDomainsRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\GetBlockedDomains',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getBlockedDomainsAsync
+     *
+     * Get the list of blocked domains
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBlockedDomainsAsync()
+    {
+        return $this->getBlockedDomainsAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getBlockedDomainsAsyncWithHttpInfo
+     *
+     * Get the list of blocked domains
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBlockedDomainsAsyncWithHttpInfo()
+    {
+        $returnType = '\SendinBlue\Client\Model\GetBlockedDomains';
+        $request = $this->getBlockedDomainsRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getBlockedDomains'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getBlockedDomainsRequest()
+    {
+
+        $resourcePath = '/smtp/blockedDomains';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getEmailEventReport
      *
      * Get all your transactional email activity (unaggregated events)
@@ -1185,14 +1940,15 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetEmailEventReport
      */
-    public function getEmailEventReport($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
+    public function getEmailEventReport($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null, $sort = 'desc')
     {
-        list($response) = $this->getEmailEventReportWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId);
+        list($response) = $this->getEmailEventReportWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId, $sort);
         return $response;
     }
 
@@ -1211,15 +1967,16 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetEmailEventReport, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailEventReportWithHttpInfo($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
+    public function getEmailEventReportWithHttpInfo($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailEventReport';
-        $request = $this->getEmailEventReportRequest($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId);
+        $request = $this->getEmailEventReportRequest($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1303,13 +2060,14 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailEventReportAsync($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
+    public function getEmailEventReportAsync($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null, $sort = 'desc')
     {
-        return $this->getEmailEventReportAsyncWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId)
+        return $this->getEmailEventReportAsyncWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1332,14 +2090,15 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailEventReportAsyncWithHttpInfo($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
+    public function getEmailEventReportAsyncWithHttpInfo($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailEventReport';
-        $request = $this->getEmailEventReportRequest($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId);
+        $request = $this->getEmailEventReportRequest($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1391,11 +2150,12 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailEventReportRequest($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null)
+    protected function getEmailEventReportRequest($limit = '50', $offset = '0', $startDate = null, $endDate = null, $days = null, $email = null, $event = null, $tags = null, $messageId = null, $templateId = null, $sort = 'desc')
     {
         if ($limit !== null && $limit > 100) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getEmailEventReport, must be smaller than or equal to 100.');
@@ -1448,6 +2208,10 @@ class TransactionalEmailsApi
         // query params
         if ($templateId !== null) {
             $queryParams['templateId'] = ObjectSerializer::toQueryValue($templateId);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 
@@ -1543,14 +2307,15 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetReports
      */
-    public function getSmtpReport($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
+    public function getSmtpReport($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null, $sort = 'desc')
     {
-        list($response) = $this->getSmtpReportWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $tag);
+        list($response) = $this->getSmtpReportWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $tag, $sort);
         return $response;
     }
 
@@ -1565,15 +2330,16 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetReports, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmtpReportWithHttpInfo($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
+    public function getSmtpReportWithHttpInfo($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetReports';
-        $request = $this->getSmtpReportRequest($limit, $offset, $startDate, $endDate, $days, $tag);
+        $request = $this->getSmtpReportRequest($limit, $offset, $startDate, $endDate, $days, $tag, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1653,13 +2419,14 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmtpReportAsync($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
+    public function getSmtpReportAsync($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null, $sort = 'desc')
     {
-        return $this->getSmtpReportAsyncWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $tag)
+        return $this->getSmtpReportAsyncWithHttpInfo($limit, $offset, $startDate, $endDate, $days, $tag, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1678,14 +2445,15 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmtpReportAsyncWithHttpInfo($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
+    public function getSmtpReportAsyncWithHttpInfo($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetReports';
-        $request = $this->getSmtpReportRequest($limit, $offset, $startDate, $endDate, $days, $tag);
+        $request = $this->getSmtpReportRequest($limit, $offset, $startDate, $endDate, $days, $tag, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1733,11 +2501,12 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmtpReportRequest($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null)
+    protected function getSmtpReportRequest($limit = '10', $offset = '0', $startDate = null, $endDate = null, $days = null, $tag = null, $sort = 'desc')
     {
         if ($limit !== null && $limit > 30) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getSmtpReport, must be smaller than or equal to 30.');
@@ -1774,6 +2543,10 @@ class TransactionalEmailsApi
         // query params
         if ($tag !== null) {
             $queryParams['tag'] = ObjectSerializer::toQueryValue($tag);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 
@@ -2161,14 +2934,15 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetSmtpTemplates
      */
-    public function getSmtpTemplates($templateStatus = null, $limit = '50', $offset = '0')
+    public function getSmtpTemplates($templateStatus = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
-        list($response) = $this->getSmtpTemplatesWithHttpInfo($templateStatus, $limit, $offset);
+        list($response) = $this->getSmtpTemplatesWithHttpInfo($templateStatus, $limit, $offset, $sort);
         return $response;
     }
 
@@ -2180,15 +2954,16 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetSmtpTemplates, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSmtpTemplatesWithHttpInfo($templateStatus = null, $limit = '50', $offset = '0')
+    public function getSmtpTemplatesWithHttpInfo($templateStatus = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetSmtpTemplates';
-        $request = $this->getSmtpTemplatesRequest($templateStatus, $limit, $offset);
+        $request = $this->getSmtpTemplatesRequest($templateStatus, $limit, $offset, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2265,13 +3040,14 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmtpTemplatesAsync($templateStatus = null, $limit = '50', $offset = '0')
+    public function getSmtpTemplatesAsync($templateStatus = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
-        return $this->getSmtpTemplatesAsyncWithHttpInfo($templateStatus, $limit, $offset)
+        return $this->getSmtpTemplatesAsyncWithHttpInfo($templateStatus, $limit, $offset, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2287,14 +3063,15 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmtpTemplatesAsyncWithHttpInfo($templateStatus = null, $limit = '50', $offset = '0')
+    public function getSmtpTemplatesAsyncWithHttpInfo($templateStatus = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetSmtpTemplates';
-        $request = $this->getSmtpTemplatesRequest($templateStatus, $limit, $offset);
+        $request = $this->getSmtpTemplatesRequest($templateStatus, $limit, $offset, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2339,11 +3116,12 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmtpTemplatesRequest($templateStatus = null, $limit = '50', $offset = '0')
+    protected function getSmtpTemplatesRequest($templateStatus = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
         if ($limit !== null && $limit > 1000) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getSmtpTemplates, must be smaller than or equal to 1000.');
@@ -2368,6 +3146,10 @@ class TransactionalEmailsApi
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 
@@ -2462,14 +3244,15 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetTransacBlockedContacts
      */
-    public function getTransacBlockedContacts($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null)
+    public function getTransacBlockedContacts($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null, $sort = 'desc')
     {
-        list($response) = $this->getTransacBlockedContactsWithHttpInfo($startDate, $endDate, $limit, $offset, $senders);
+        list($response) = $this->getTransacBlockedContactsWithHttpInfo($startDate, $endDate, $limit, $offset, $senders, $sort);
         return $response;
     }
 
@@ -2483,15 +3266,16 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetTransacBlockedContacts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransacBlockedContactsWithHttpInfo($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null)
+    public function getTransacBlockedContactsWithHttpInfo($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetTransacBlockedContacts';
-        $request = $this->getTransacBlockedContactsRequest($startDate, $endDate, $limit, $offset, $senders);
+        $request = $this->getTransacBlockedContactsRequest($startDate, $endDate, $limit, $offset, $senders, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2570,13 +3354,14 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransacBlockedContactsAsync($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null)
+    public function getTransacBlockedContactsAsync($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null, $sort = 'desc')
     {
-        return $this->getTransacBlockedContactsAsyncWithHttpInfo($startDate, $endDate, $limit, $offset, $senders)
+        return $this->getTransacBlockedContactsAsyncWithHttpInfo($startDate, $endDate, $limit, $offset, $senders, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2594,14 +3379,15 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransacBlockedContactsAsyncWithHttpInfo($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null)
+    public function getTransacBlockedContactsAsyncWithHttpInfo($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetTransacBlockedContacts';
-        $request = $this->getTransacBlockedContactsRequest($startDate, $endDate, $limit, $offset, $senders);
+        $request = $this->getTransacBlockedContactsRequest($startDate, $endDate, $limit, $offset, $senders, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2648,11 +3434,12 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransacBlockedContactsRequest($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null)
+    protected function getTransacBlockedContactsRequest($startDate = null, $endDate = null, $limit = '50', $offset = '0', $senders = null, $sort = 'desc')
     {
         if ($limit !== null && $limit > 100) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getTransacBlockedContacts, must be smaller than or equal to 100.');
@@ -2688,6 +3475,10 @@ class TransactionalEmailsApi
         } else
         if ($senders !== null) {
             $queryParams['senders'] = ObjectSerializer::toQueryValue($senders);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 
@@ -3061,14 +3852,15 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetTransacEmailsList
      */
-    public function getTransacEmailsList($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null)
+    public function getTransacEmailsList($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
     {
-        list($response) = $this->getTransacEmailsListWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate);
+        list($response) = $this->getTransacEmailsListWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate, $sort);
         return $response;
     }
 
@@ -3082,15 +3874,16 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetTransacEmailsList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransacEmailsListWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null)
+    public function getTransacEmailsListWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetTransacEmailsList';
-        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate);
+        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3169,13 +3962,14 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransacEmailsListAsync($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null)
+    public function getTransacEmailsListAsync($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
     {
-        return $this->getTransacEmailsListAsyncWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate)
+        return $this->getTransacEmailsListAsyncWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3193,14 +3987,15 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransacEmailsListAsyncWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null)
+    public function getTransacEmailsListAsyncWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetTransacEmailsList';
-        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate);
+        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3247,11 +4042,12 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransacEmailsListRequest($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null)
+    protected function getTransacEmailsListRequest($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
     {
 
         $resourcePath = '/smtp/emails';
@@ -3280,6 +4076,10 @@ class TransactionalEmailsApi
         // query params
         if ($endDate !== null) {
             $queryParams['endDate'] = ObjectSerializer::toQueryValue($endDate);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 

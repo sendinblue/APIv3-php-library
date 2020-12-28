@@ -159,4 +159,11 @@ class GetSmtpTemplateOverviewTest extends \PHPUnit_Framework_TestCase
     public function testPropertyModifiedAt()
     {
     }
+
+    /**
+     * Test attribute "doiTemplate"
+     */
+    public function testPropertyDoiTemplate()
+    {
+    }
 }

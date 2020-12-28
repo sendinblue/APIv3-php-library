@@ -159,4 +159,11 @@ class GetCampaignStatsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDeferred()
     {
     }
+
+    /**
+     * Test attribute "returnBounce"
+     */
+    public function testPropertyReturnBounce()
+    {
+    }
 }

@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProcesses**
-> \SendinBlue\Client\Model\GetProcesses getProcesses($limit, $offset)
+> \SendinBlue\Client\Model\GetProcesses getProcesses($limit, $offset, $sort)
 
 Return all the processes for your account
 
@@ -92,9 +92,10 @@ $apiInstance = new SendinBlue\Client\Api\ProcessApi(
 );
 $limit = 10; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
 
 try {
-    $result = $apiInstance->getProcesses($limit, $offset);
+    $result = $apiInstance->getProcesses($limit, $offset, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProcessApi->getProcesses: ', $e->getMessage(), PHP_EOL;
@@ -108,6 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 10]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 
