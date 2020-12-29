@@ -37,6 +37,9 @@ namespace SendinBlue\Client;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
+
+$GLOBALS['version'] = '7.3.0';
+
 class Configuration
 {
     private static $defaultConfiguration;
@@ -84,13 +87,6 @@ class Configuration
     protected $host = 'https://api.sendinblue.com/v3';
 
     /**
-     * User agent of the HTTP request, set to "PHP-Swagger" by default
-     *
-     * @var string
-     */
-    protected $userAgent = 'Swagger-Codegen/1.0.0/php';
-
-    /**
      * Debug switch (default set to false)
      *
      * @var bool
@@ -117,6 +113,7 @@ class Configuration
     public function __construct()
     {
         $this->tempFolderPath = sys_get_temp_dir();
+        $this->userAgent = 'sendinblue_clientAPI/v' . $GLOBALS['version'] . '/php'; 
     }
 
     /**
@@ -277,6 +274,12 @@ class Configuration
             throw new \InvalidArgumentException('User-agent must be a string.');
         }
 
+        if(strpos($userAgent, 'sendinblue_') !== false) {
+            if(strpos($userAgent, '#') !== false) {
+                $userAgent = str_replace('#', $GLOBALS['version'], $userAgent);  
+            }
+        }
+
         $this->userAgent = $userAgent;
         return $this;
     }
@@ -370,7 +373,6 @@ class Configuration
         if (self::$defaultConfiguration === null) {
             self::$defaultConfiguration = new Configuration();
         }
-
         return self::$defaultConfiguration;
     }
 

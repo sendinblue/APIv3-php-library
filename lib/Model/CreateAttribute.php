@@ -284,7 +284,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
     /**
      * Sets enumeration
      *
-     * @param \SendinBlue\Client\Model\CreateAttributeEnumeration[] $enumeration List of values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, `[{\"value\":1, \"label\":\"male\"}, {\"value\":2, \"label\":\"female\"}]`
+     * @param \SendinBlue\Client\Model\CreateAttributeEnumeration[] $enumeration List of values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, [{\"value\":1, \"label\":\"male\"}, {\"value\":2, \"label\":\"female\"}]
      *
      * @return $this
      */

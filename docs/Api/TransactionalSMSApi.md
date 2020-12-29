@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getSmsEvents**
-> \SendinBlue\Client\Model\GetSmsEventReport getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags)
+> \SendinBlue\Client\Model\GetSmsEventReport getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags, $sort)
 
 Get all your SMS activity (unaggregated events)
 
@@ -43,9 +43,10 @@ $days = 56; // int | Number of days in the past including today (positive intege
 $phoneNumber = "phoneNumber_example"; // string | Filter the report for a specific phone number
 $event = "event_example"; // string | Filter the report for specific events
 $tags = "tags_example"; // string | Filter the report for specific tags passed as a serialized urlencoded array
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
 
 try {
-    $result = $apiInstance->getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags);
+    $result = $apiInstance->getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalSMSApi->getSmsEvents: ', $e->getMessage(), PHP_EOL;
@@ -65,6 +66,7 @@ Name | Type | Description  | Notes
  **phoneNumber** | **string**| Filter the report for a specific phone number | [optional]
  **event** | **string**| Filter the report for specific events | [optional]
  **tags** | **string**| Filter the report for specific tags passed as a serialized urlencoded array | [optional]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 
@@ -145,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransacSmsReport**
-> \SendinBlue\Client\Model\GetTransacSmsReport getTransacSmsReport($startDate, $endDate, $days, $tag)
+> \SendinBlue\Client\Model\GetTransacSmsReport getTransacSmsReport($startDate, $endDate, $days, $tag, $sort)
 
 Get your SMS activity aggregated per day
 
@@ -173,9 +175,10 @@ $startDate = "startDate_example"; // string | Mandatory if endDate is used. Star
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Filter on a tag
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
 
 try {
-    $result = $apiInstance->getTransacSmsReport($startDate, $endDate, $days, $tag);
+    $result = $apiInstance->getTransacSmsReport($startDate, $endDate, $days, $tag, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalSMSApi->getTransacSmsReport: ', $e->getMessage(), PHP_EOL;
@@ -191,6 +194,7 @@ Name | Type | Description  | Notes
  **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **tag** | **string**| Filter on a tag | [optional]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 

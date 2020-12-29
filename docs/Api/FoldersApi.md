@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolderLists**
-> \SendinBlue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset)
+> \SendinBlue\Client\Model\GetFolderLists getFolderLists($folderId, $limit, $offset, $sort)
 
 Get lists in a folder
 
@@ -210,9 +210,10 @@ $apiInstance = new SendinBlue\Client\Api\FoldersApi(
 $folderId = 789; // int | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
 
 try {
-    $result = $apiInstance->getFolderLists($folderId, $limit, $offset);
+    $result = $apiInstance->getFolderLists($folderId, $limit, $offset, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->getFolderLists: ', $e->getMessage(), PHP_EOL;
@@ -227,6 +228,7 @@ Name | Type | Description  | Notes
  **folderId** | **int**| Id of the folder |
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 
@@ -244,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFolders**
-> \SendinBlue\Client\Model\GetFolders getFolders($limit, $offset)
+> \SendinBlue\Client\Model\GetFolders getFolders($limit, $offset, $sort)
 
 Get all folders
 
@@ -270,9 +272,10 @@ $apiInstance = new SendinBlue\Client\Api\FoldersApi(
 );
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
 
 try {
-    $result = $apiInstance->getFolders($limit, $offset);
+    $result = $apiInstance->getFolders($limit, $offset, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FoldersApi->getFolders: ', $e->getMessage(), PHP_EOL;
@@ -286,6 +289,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [default to 10]
  **offset** | **int**| Index of the first document of the page | [default to 0]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 

@@ -277,7 +277,7 @@ class CreateContact implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param object $attributes Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. `{\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}`
+     * @param object $attributes Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}
      *
      * @return $this
      */

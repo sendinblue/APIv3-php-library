@@ -66,7 +66,8 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
         'tag' => 'string',
         'ip' => 'string',
         'link' => 'string',
-        'from' => 'string'
+        'from' => 'string',
+        'templateId' => 'int'
     ];
 
     /**
@@ -84,7 +85,8 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
         'tag' => null,
         'ip' => null,
         'link' => null,
-        'from' => 'email'
+        'from' => 'email',
+        'templateId' => 'int64'
     ];
 
     /**
@@ -123,7 +125,8 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
         'tag' => 'tag',
         'ip' => 'ip',
         'link' => 'link',
-        'from' => 'from'
+        'from' => 'from',
+        'templateId' => 'templateId'
     ];
 
     /**
@@ -141,7 +144,8 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
         'tag' => 'setTag',
         'ip' => 'setIp',
         'link' => 'setLink',
-        'from' => 'setFrom'
+        'from' => 'setFrom',
+        'templateId' => 'setTemplateId'
     ];
 
     /**
@@ -159,7 +163,8 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
         'tag' => 'getTag',
         'ip' => 'getIp',
         'link' => 'getLink',
-        'from' => 'getFrom'
+        'from' => 'getFrom',
+        'templateId' => 'getTemplateId'
     ];
 
     /**
@@ -215,6 +220,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
     const EVENT_DEFERRED = 'deferred';
     const EVENT_BLOCKED = 'blocked';
     const EVENT_UNSUBSCRIBED = 'unsubscribed';
+    const EVENT_ERROR = 'error';
     
 
     
@@ -238,6 +244,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
             self::EVENT_DEFERRED,
             self::EVENT_BLOCKED,
             self::EVENT_UNSUBSCRIBED,
+            self::EVENT_ERROR,
         ];
     }
     
@@ -267,6 +274,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
         $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
     }
 
     /**
@@ -558,6 +566,30 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
     public function setFrom($from)
     {
         $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets templateId
+     *
+     * @return int
+     */
+    public function getTemplateId()
+    {
+        return $this->container['templateId'];
+    }
+
+    /**
+     * Sets templateId
+     *
+     * @param int $templateId ID of the template (only available if the email is template based)
+     *
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->container['templateId'] = $templateId;
 
         return $this;
     }

@@ -450,14 +450,8 @@ class GetEmailCampaign implements ModelInterface, ArrayAccess
         if ($this->container['replyTo'] === null) {
             $invalidProperties[] = "'replyTo' can't be null";
         }
-        if ($this->container['toField'] === null) {
-            $invalidProperties[] = "'toField' can't be null";
-        }
         if ($this->container['htmlContent'] === null) {
             $invalidProperties[] = "'htmlContent' can't be null";
-        }
-        if ($this->container['tag'] === null) {
-            $invalidProperties[] = "'tag' can't be null";
         }
         if ($this->container['createdAt'] === null) {
             $invalidProperties[] = "'createdAt' can't be null";

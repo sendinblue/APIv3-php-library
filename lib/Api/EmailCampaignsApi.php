@@ -1539,14 +1539,15 @@ class EmailCampaignsApi
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 500)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetEmailCampaigns
      */
-    public function getEmailCampaigns($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0')
+    public function getEmailCampaigns($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0', $sort = 'desc')
     {
-        list($response) = $this->getEmailCampaignsWithHttpInfo($type, $status, $startDate, $endDate, $limit, $offset);
+        list($response) = $this->getEmailCampaignsWithHttpInfo($type, $status, $startDate, $endDate, $limit, $offset, $sort);
         return $response;
     }
 
@@ -1561,15 +1562,16 @@ class EmailCampaignsApi
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 500)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetEmailCampaigns, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailCampaignsWithHttpInfo($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0')
+    public function getEmailCampaignsWithHttpInfo($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailCampaigns';
-        $request = $this->getEmailCampaignsRequest($type, $status, $startDate, $endDate, $limit, $offset);
+        $request = $this->getEmailCampaignsRequest($type, $status, $startDate, $endDate, $limit, $offset, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1649,13 +1651,14 @@ class EmailCampaignsApi
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 500)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailCampaignsAsync($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0')
+    public function getEmailCampaignsAsync($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0', $sort = 'desc')
     {
-        return $this->getEmailCampaignsAsyncWithHttpInfo($type, $status, $startDate, $endDate, $limit, $offset)
+        return $this->getEmailCampaignsAsyncWithHttpInfo($type, $status, $startDate, $endDate, $limit, $offset, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1674,14 +1677,15 @@ class EmailCampaignsApi
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 500)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailCampaignsAsyncWithHttpInfo($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0')
+    public function getEmailCampaignsAsyncWithHttpInfo($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailCampaigns';
-        $request = $this->getEmailCampaignsRequest($type, $status, $startDate, $endDate, $limit, $offset);
+        $request = $this->getEmailCampaignsRequest($type, $status, $startDate, $endDate, $limit, $offset, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1729,11 +1733,12 @@ class EmailCampaignsApi
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 500)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailCampaignsRequest($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0')
+    protected function getEmailCampaignsRequest($type = null, $status = null, $startDate = null, $endDate = null, $limit = '500', $offset = '0', $sort = 'desc')
     {
         if ($limit !== null && $limit > 1000) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EmailCampaignsApi.getEmailCampaigns, must be smaller than or equal to 1000.');
@@ -1770,6 +1775,10 @@ class EmailCampaignsApi
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 

@@ -195,12 +195,6 @@ class GetChildDomain implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['domain'] === null) {
-            $invalidProperties[] = "'domain' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
         return $invalidProperties;
     }
 

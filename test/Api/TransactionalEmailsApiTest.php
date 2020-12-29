@@ -72,12 +72,32 @@ class TransactionalEmailsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for blockNewDomain
+     *
+     * Add a new domain to the list of blocked domains.
+     *
+     */
+    public function testBlockNewDomain()
+    {
+    }
+
+    /**
      * Test case for createSmtpTemplate
      *
      * Create an email template.
      *
      */
     public function testCreateSmtpTemplate()
+    {
+    }
+
+    /**
+     * Test case for deleteBlockedDomain
+     *
+     * Unblock an existing domain from the list of blocked domains.
+     *
+     */
+    public function testDeleteBlockedDomain()
     {
     }
 
@@ -108,6 +128,16 @@ class TransactionalEmailsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testGetAggregatedSmtpReport()
+    {
+    }
+
+    /**
+     * Test case for getBlockedDomains
+     *
+     * Get the list of blocked domains.
+     *
+     */
+    public function testGetBlockedDomains()
     {
     }
 

@@ -243,36 +243,6 @@ class GetTransacSmsReportReports implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['requests'] === null) {
-            $invalidProperties[] = "'requests' can't be null";
-        }
-        if ($this->container['delivered'] === null) {
-            $invalidProperties[] = "'delivered' can't be null";
-        }
-        if ($this->container['hardBounces'] === null) {
-            $invalidProperties[] = "'hardBounces' can't be null";
-        }
-        if ($this->container['softBounces'] === null) {
-            $invalidProperties[] = "'softBounces' can't be null";
-        }
-        if ($this->container['blocked'] === null) {
-            $invalidProperties[] = "'blocked' can't be null";
-        }
-        if ($this->container['unsubscribed'] === null) {
-            $invalidProperties[] = "'unsubscribed' can't be null";
-        }
-        if ($this->container['replied'] === null) {
-            $invalidProperties[] = "'replied' can't be null";
-        }
-        if ($this->container['accepted'] === null) {
-            $invalidProperties[] = "'accepted' can't be null";
-        }
-        if ($this->container['rejected'] === null) {
-            $invalidProperties[] = "'rejected' can't be null";
-        }
         return $invalidProperties;
     }
 
