@@ -43,7 +43,7 @@ $days = 56; // int | Number of days in the past including today (positive intege
 $phoneNumber = "phoneNumber_example"; // string | Filter the report for a specific phone number
 $event = "event_example"; // string | Filter the report for specific events
 $tags = "tags_example"; // string | Filter the report for specific tags passed as a serialized urlencoded array
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getSmsEvents($limit, $startDate, $endDate, $offset, $days, $phoneNumber, $event, $tags, $sort);
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
  **phoneNumber** | **string**| Filter the report for a specific phone number | [optional]
  **event** | **string**| Filter the report for specific events | [optional]
  **tags** | **string**| Filter the report for specific tags passed as a serialized urlencoded array | [optional]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -175,7 +175,7 @@ $startDate = "startDate_example"; // string | Mandatory if endDate is used. Star
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Filter on a tag
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getTransacSmsReport($startDate, $endDate, $days, $tag, $sort);
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
  **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **tag** | **string**| Filter on a tag | [optional]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

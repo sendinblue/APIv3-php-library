@@ -69,6 +69,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'headers' => 'object',
         'templateId' => 'int',
         'params' => 'object',
+        'messageVersions' => '\SendinBlue\Client\Model\SendSmtpEmailMessageVersions[]',
         'tags' => 'string[]'
     ];
 
@@ -90,6 +91,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'headers' => null,
         'templateId' => 'int64',
         'params' => null,
+        'messageVersions' => null,
         'tags' => null
     ];
 
@@ -132,6 +134,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'headers' => 'headers',
         'templateId' => 'templateId',
         'params' => 'params',
+        'messageVersions' => 'messageVersions',
         'tags' => 'tags'
     ];
 
@@ -153,6 +156,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'headers' => 'setHeaders',
         'templateId' => 'setTemplateId',
         'params' => 'setParams',
+        'messageVersions' => 'setMessageVersions',
         'tags' => 'setTags'
     ];
 
@@ -174,6 +178,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'headers' => 'getHeaders',
         'templateId' => 'getTemplateId',
         'params' => 'getParams',
+        'messageVersions' => 'getMessageVersions',
         'tags' => 'getTags'
     ];
 
@@ -249,6 +254,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
         $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
         $this->container['params'] = isset($data['params']) ? $data['params'] : null;
+        $this->container['messageVersions'] = isset($data['messageVersions']) ? $data['messageVersions'] : null;
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
     }
 
@@ -261,9 +267,6 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['to'] === null) {
-            $invalidProperties[] = "'to' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,7 +319,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param \SendinBlue\Client\Model\SendSmtpEmailTo[] $to List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]
+     * @param \SendinBlue\Client\Model\SendSmtpEmailTo[] $to Mandatory if messageVersions are not passed, ignored if messageVersions are passed. List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]
      *
      * @return $this
      */
@@ -532,7 +535,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets templateId
      *
-     * @param int $templateId Id of the template
+     * @param int $templateId Id of the template. Mandatory if messageVersions are passed
      *
      * @return $this
      */
@@ -563,6 +566,30 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     public function setParams($params)
     {
         $this->container['params'] = $params;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageVersions
+     *
+     * @return \SendinBlue\Client\Model\SendSmtpEmailMessageVersions[]
+     */
+    public function getMessageVersions()
+    {
+        return $this->container['messageVersions'];
+    }
+
+    /**
+     * Sets messageVersions
+     *
+     * @param \SendinBlue\Client\Model\SendSmtpEmailMessageVersions[] $messageVersions You can customize and send out multiple versions of a templateId. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version. The size of individual params in all the messageVersions shall not exceed 100 KB limit and that of cumulative params shall not exceed 1000 KB. This feature is currently in its beta version. You can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - https://developers.sendinblue.com/docs/batch-send-transactional-emails
+     *
+     * @return $this
+     */
+    public function setMessageVersions($messageVersions)
+    {
+        $this->container['messageVersions'] = $messageVersions;
 
         return $this;
     }

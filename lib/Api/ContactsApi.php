@@ -3713,7 +3713,7 @@ class ContactsApi
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3733,7 +3733,7 @@ class ContactsApi
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3819,7 +3819,7 @@ class ContactsApi
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3842,7 +3842,7 @@ class ContactsApi
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3895,7 +3895,7 @@ class ContactsApi
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4022,7 +4022,7 @@ class ContactsApi
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4043,7 +4043,7 @@ class ContactsApi
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4138,7 +4138,7 @@ class ContactsApi
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4162,7 +4162,7 @@ class ContactsApi
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4216,7 +4216,7 @@ class ContactsApi
      * @param  \DateTime $modifiedSince Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4651,7 +4651,7 @@ class ContactsApi
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4671,7 +4671,7 @@ class ContactsApi
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4765,7 +4765,7 @@ class ContactsApi
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4788,7 +4788,7 @@ class ContactsApi
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4841,7 +4841,7 @@ class ContactsApi
      * @param  int $folderId Id of the folder (required)
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4976,7 +4976,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4995,7 +4995,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5080,7 +5080,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5102,7 +5102,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5154,7 +5154,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (required)
      * @param  int $offset Index of the first document of the page (required)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5582,7 +5582,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5601,7 +5601,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5686,7 +5686,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5708,7 +5708,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5760,7 +5760,7 @@ class ContactsApi
      *
      * @param  int $limit Number of documents per page (optional, default to 10)
      * @param  int $offset Index of the first document of the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

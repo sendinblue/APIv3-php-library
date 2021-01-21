@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailTest
+ * SendSmtpEmailTo1Test
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * SendSmtpEmailTest Class Doc Comment
+ * SendSmtpEmailTo1Test Class Doc Comment
  *
  * @category    Class
- * @description SendSmtpEmail
+ * @description SendSmtpEmailTo1
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
+class SendSmtpEmailTo1Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,107 +70,23 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SendSmtpEmail"
+     * Test "SendSmtpEmailTo1"
      */
-    public function testSendSmtpEmail()
+    public function testSendSmtpEmailTo1()
     {
     }
 
     /**
-     * Test attribute "sender"
+     * Test attribute "email"
      */
-    public function testPropertySender()
+    public function testPropertyEmail()
     {
     }
 
     /**
-     * Test attribute "to"
+     * Test attribute "name"
      */
-    public function testPropertyTo()
-    {
-    }
-
-    /**
-     * Test attribute "bcc"
-     */
-    public function testPropertyBcc()
-    {
-    }
-
-    /**
-     * Test attribute "cc"
-     */
-    public function testPropertyCc()
-    {
-    }
-
-    /**
-     * Test attribute "htmlContent"
-     */
-    public function testPropertyHtmlContent()
-    {
-    }
-
-    /**
-     * Test attribute "textContent"
-     */
-    public function testPropertyTextContent()
-    {
-    }
-
-    /**
-     * Test attribute "subject"
-     */
-    public function testPropertySubject()
-    {
-    }
-
-    /**
-     * Test attribute "replyTo"
-     */
-    public function testPropertyReplyTo()
-    {
-    }
-
-    /**
-     * Test attribute "attachment"
-     */
-    public function testPropertyAttachment()
-    {
-    }
-
-    /**
-     * Test attribute "headers"
-     */
-    public function testPropertyHeaders()
-    {
-    }
-
-    /**
-     * Test attribute "templateId"
-     */
-    public function testPropertyTemplateId()
-    {
-    }
-
-    /**
-     * Test attribute "params"
-     */
-    public function testPropertyParams()
-    {
-    }
-
-    /**
-     * Test attribute "messageVersions"
-     */
-    public function testPropertyMessageVersions()
-    {
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
+    public function testPropertyName()
     {
     }
 }

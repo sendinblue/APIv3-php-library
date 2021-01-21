@@ -36,7 +36,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * SendSmtpEmailSender Class Doc Comment
  *
  * @category Class
- * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass name (optional) and email or id of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
+ * @description Mandatory if &#x60;templateId&#x60; is not passed. Pass &#x60;name&#x60; (optional) and &#x60;email&#x60; OR &#x60;id&#x60; of sender from which emails will be sent. &#x60;name&#x60; will be ignored if passed along with sender &#x60;id&#x60;. For example, {\&quot;name\&quot;:\&quot;Mary from MyShop\&quot;, \&quot;email\&quot;:\&quot;no-reply@myshop.com\&quot;} or {\&quot;id\&quot;:2}
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -202,9 +202,6 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -233,7 +230,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name Name of the sender from which the emails will be sent. Maximum allowed characters are 70.
+     * @param string $name Name of the sender from which the emails will be sent. Maximum allowed characters are 70. Applicable only when email is passed.
      *
      * @return $this
      */
@@ -257,7 +254,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email Email of the sender from which the emails will be sent
+     * @param string $email Email of the sender from which the emails will be sent. Mandatory if sender id is not passed.
      *
      * @return $this
      */
@@ -281,7 +278,7 @@ class SendSmtpEmailSender implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id Id of the sender from which the emails will be sent
+     * @param int $id Id of the sender from which the emails will be sent. In order to select a sender with specific pool of IP’s, dedicated ip users shall pass id (instead of email). Mandatory if email is not passed.
      *
      * @return $this
      */

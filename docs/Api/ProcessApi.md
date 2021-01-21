@@ -92,7 +92,7 @@ $apiInstance = new SendinBlue\Client\Api\ProcessApi(
 );
 $limit = 10; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getProcesses($limit, $offset, $sort);
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 10]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

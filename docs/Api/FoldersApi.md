@@ -210,7 +210,7 @@ $apiInstance = new SendinBlue\Client\Api\FoldersApi(
 $folderId = 789; // int | Id of the folder
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getFolderLists($folderId, $limit, $offset, $sort);
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
  **folderId** | **int**| Id of the folder |
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -272,7 +272,7 @@ $apiInstance = new SendinBlue\Client\Api\FoldersApi(
 );
 $limit = 10; // int | Number of documents per page
 $offset = 0; // int | Index of the first document of the page
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getFolders($limit, $offset, $sort);
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [default to 10]
  **offset** | **int**| Index of the first document of the page | [default to 0]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

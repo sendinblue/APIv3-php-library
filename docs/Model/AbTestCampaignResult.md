@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**winningVersion** | **string** | Winning Campaign Info. pending &#x3D; Campaign has been picked for sending and winning version is yet to be decided, tie &#x3D; A tie happened between both the versions, notAvailable &#x3D; Campaign has not yet been picked for sending. | [optional] 
+**winningVersion** | **string** | Winning Campaign Info. pending = Campaign has been picked for sending and winning version is yet to be decided, tie = A tie happened between both the versions, notAvailable = Campaign has not yet been picked for sending. | [optional] 
 **winningCriteria** | **string** | Criteria choosen for winning version (Open/Click) | [optional] 
 **winningSubjectLine** | **string** | Subject Line of current winning version | [optional] 
 **openRate** | **string** | Open rate for current winning version | [optional] 

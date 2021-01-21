@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailTest
+ * SendSmtpEmailReplyTo1Test
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * SendSmtpEmailTest Class Doc Comment
+ * SendSmtpEmailReplyTo1Test Class Doc Comment
  *
  * @category    Class
- * @description SendSmtpEmail
+ * @description Email (required), along with name (optional), on which transactional mail recipients will be able to reply back. For example, {\&quot;email\&quot;:\&quot;ann6533@example.com\&quot;, \&quot;name\&quot;:\&quot;Ann\&quot;}
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
+class SendSmtpEmailReplyTo1Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,107 +70,23 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SendSmtpEmail"
+     * Test "SendSmtpEmailReplyTo1"
      */
-    public function testSendSmtpEmail()
+    public function testSendSmtpEmailReplyTo1()
     {
     }
 
     /**
-     * Test attribute "sender"
+     * Test attribute "email"
      */
-    public function testPropertySender()
+    public function testPropertyEmail()
     {
     }
 
     /**
-     * Test attribute "to"
+     * Test attribute "name"
      */
-    public function testPropertyTo()
-    {
-    }
-
-    /**
-     * Test attribute "bcc"
-     */
-    public function testPropertyBcc()
-    {
-    }
-
-    /**
-     * Test attribute "cc"
-     */
-    public function testPropertyCc()
-    {
-    }
-
-    /**
-     * Test attribute "htmlContent"
-     */
-    public function testPropertyHtmlContent()
-    {
-    }
-
-    /**
-     * Test attribute "textContent"
-     */
-    public function testPropertyTextContent()
-    {
-    }
-
-    /**
-     * Test attribute "subject"
-     */
-    public function testPropertySubject()
-    {
-    }
-
-    /**
-     * Test attribute "replyTo"
-     */
-    public function testPropertyReplyTo()
-    {
-    }
-
-    /**
-     * Test attribute "attachment"
-     */
-    public function testPropertyAttachment()
-    {
-    }
-
-    /**
-     * Test attribute "headers"
-     */
-    public function testPropertyHeaders()
-    {
-    }
-
-    /**
-     * Test attribute "templateId"
-     */
-    public function testPropertyTemplateId()
-    {
-    }
-
-    /**
-     * Test attribute "params"
-     */
-    public function testPropertyParams()
-    {
-    }
-
-    /**
-     * Test attribute "messageVersions"
-     */
-    public function testPropertyMessageVersions()
-    {
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
+    public function testPropertyName()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmtpEmail
+ * GetBlockedDomains
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * CreateSmtpEmail Class Doc Comment
+ * GetBlockedDomains Class Doc Comment
  *
  * @category Class
+ * @description list of blocked domains
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmtpEmail implements ModelInterface, ArrayAccess
+class GetBlockedDomains implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'createSmtpEmail';
+    protected static $swaggerModelName = 'getBlockedDomains';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messageId' => 'string',
-        'messageIds' => 'string[]'
+        'domains' => 'string[]'
     ];
 
     /**
@@ -67,8 +67,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messageId' => null,
-        'messageIds' => null
+        'domains' => null
     ];
 
     /**
@@ -98,8 +97,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messageId' => 'messageId',
-        'messageIds' => 'messageIds'
+        'domains' => 'domains'
     ];
 
     /**
@@ -108,8 +106,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messageId' => 'setMessageId',
-        'messageIds' => 'setMessageIds'
+        'domains' => 'setDomains'
     ];
 
     /**
@@ -118,8 +115,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messageId' => 'getMessageId',
-        'messageIds' => 'getMessageIds'
+        'domains' => 'getDomains'
     ];
 
     /**
@@ -182,8 +178,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
-        $this->container['messageIds'] = isset($data['messageIds']) ? $data['messageIds'] : null;
+        $this->container['domains'] = isset($data['domains']) ? $data['domains'] : null;
     }
 
     /**
@@ -195,6 +190,9 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['domains'] === null) {
+            $invalidProperties[] = "'domains' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -211,49 +209,25 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messageId
-     *
-     * @return string
-     */
-    public function getMessageId()
-    {
-        return $this->container['messageId'];
-    }
-
-    /**
-     * Sets messageId
-     *
-     * @param string $messageId Message ID of the transactional email sent
-     *
-     * @return $this
-     */
-    public function setMessageId($messageId)
-    {
-        $this->container['messageId'] = $messageId;
-
-        return $this;
-    }
-
-    /**
-     * Gets messageIds
+     * Gets domains
      *
      * @return string[]
      */
-    public function getMessageIds()
+    public function getDomains()
     {
-        return $this->container['messageIds'];
+        return $this->container['domains'];
     }
 
     /**
-     * Sets messageIds
+     * Sets domains
      *
-     * @param string[] $messageIds messageIds
+     * @param string[] $domains List of all blocked domains
      *
      * @return $this
      */
-    public function setMessageIds($messageIds)
+    public function setDomains($domains)
     {
-        $this->container['messageIds'] = $messageIds;
+        $this->container['domains'] = $domains;
 
         return $this;
     }

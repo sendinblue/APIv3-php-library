@@ -36,7 +36,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * SendSmtpEmailReplyTo Class Doc Comment
  *
  * @category Class
- * @description Email (required), along with name (optional), on which transactional mail recipients will be able to reply back. For example, {&#39;email&#39;:&#39;ann6533@example.com&#39;, &#39;name&#39;:&#39;Ann&#39;}.
+ * @description Email (required), along with name (optional), on which transactional mail recipients will be able to reply back. For example, {\&quot;email\&quot;:\&quot;ann6533@example.com\&quot;, \&quot;name\&quot;:\&quot;Ann\&quot;}.
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

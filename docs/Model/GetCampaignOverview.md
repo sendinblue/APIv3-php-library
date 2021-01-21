@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **type** | **string** | Type of campaign | 
 **status** | **string** | Status of the campaign | 
 **scheduledAt** | [**\DateTime**] | UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
-**abTesting** | **bool** | Status of A/B Test for the campaign. abTesting &#x3D; false means it is disabled, &amp; abTesting &#x3D; true means it is enabled. | [optional] 
+**abTesting** | **bool** | Status of A/B Test for the campaign. abTesting = false means it is disabled, &amp; abTesting = true means it is enabled. | [optional] 
 **subjectA** | **string** | Subject A of the ab-test campaign. Only available if &#x60;abTesting&#x60; flag of the campaign is &#x60;true&#x60; | [optional] 
 **subjectB** | **string** | Subject B of the ab-test campaign. Only available if &#x60;abTesting&#x60; flag of the campaign is &#x60;true&#x60; | [optional] 
 **splitRule** | **int** | The size of your ab-test groups. Only available if &#x60;abTesting&#x60; flag of the campaign is &#x60;true&#x60; | [optional] 
