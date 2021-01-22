@@ -1940,7 +1940,7 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1967,7 +1967,7 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2060,7 +2060,7 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2090,7 +2090,7 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2150,7 +2150,7 @@ class TransactionalEmailsApi
      * @param  string $tags Filter the report for tags (serialized and urlencoded array) (optional)
      * @param  string $messageId Filter on a specific message id (optional)
      * @param  int $templateId Filter on a specific template id (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2307,7 +2307,7 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2330,7 +2330,7 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2419,7 +2419,7 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2445,7 +2445,7 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2501,7 +2501,7 @@ class TransactionalEmailsApi
      * @param  string $endDate Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
      * @param  int $days Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; (optional)
      * @param  string $tag Tag of the emails (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2934,7 +2934,7 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2954,7 +2954,7 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3040,7 +3040,7 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3063,7 +3063,7 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3116,7 +3116,7 @@ class TransactionalEmailsApi
      * @param  bool $templateStatus Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false (optional)
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document in the page (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3244,7 +3244,7 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3266,7 +3266,7 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3354,7 +3354,7 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3379,7 +3379,7 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3434,7 +3434,7 @@ class TransactionalEmailsApi
      * @param  int $limit Number of documents returned per page (optional, default to 50)
      * @param  int $offset Index of the first document on the page (optional, default to 0)
      * @param  string[] $senders Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3852,7 +3852,7 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3874,7 +3874,7 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3962,7 +3962,7 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3987,7 +3987,7 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4042,7 +4042,7 @@ class TransactionalEmailsApi
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
      * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -82,4 +82,11 @@ class CreateSmtpEmailTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMessageId()
     {
     }
+
+    /**
+     * Test attribute "messageIds"
+     */
+    public function testPropertyMessageIds()
+    {
+    }
 }

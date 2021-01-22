@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmtpTemplateSenderTest
+ * SendSmtpEmailMessageVersionsTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * CreateSmtpTemplateSenderTest Class Doc Comment
+ * SendSmtpEmailMessageVersionsTest Class Doc Comment
  *
  * @category    Class
- * @description Sender details including id or email and name (optional). Only one of either Sender&#39;s email or Sender&#39;s ID shall be passed in one request at a time. For example &#x60;{\"name\":\"xyz\", \"email\":\"example@abc.com\"}&#x60; , &#x60;{\"name\":\"xyz\", \"id\":123}&#x60;
+ * @description SendSmtpEmailMessageVersions
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmtpTemplateSenderTest extends \PHPUnit_Framework_TestCase
+class SendSmtpEmailMessageVersionsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,30 +70,51 @@ class CreateSmtpTemplateSenderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateSmtpTemplateSender"
+     * Test "SendSmtpEmailMessageVersions"
      */
-    public function testCreateSmtpTemplateSender()
+    public function testSendSmtpEmailMessageVersions()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "to"
      */
-    public function testPropertyName()
+    public function testPropertyTo()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "params"
      */
-    public function testPropertyEmail()
+    public function testPropertyParams()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "bcc"
      */
-    public function testPropertyId()
+    public function testPropertyBcc()
+    {
+    }
+
+    /**
+     * Test attribute "cc"
+     */
+    public function testPropertyCc()
+    {
+    }
+
+    /**
+     * Test attribute "replyTo"
+     */
+    public function testPropertyReplyTo()
+    {
+    }
+
+    /**
+     * Test attribute "subject"
+     */
+    public function testPropertySubject()
     {
     }
 }

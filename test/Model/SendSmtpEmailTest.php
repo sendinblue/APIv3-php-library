@@ -161,6 +161,13 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "messageVersions"
+     */
+    public function testPropertyMessageVersions()
+    {
+    }
+
+    /**
      * Test attribute "tags"
      */
     public function testPropertyTags()

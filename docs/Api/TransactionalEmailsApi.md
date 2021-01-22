@@ -466,7 +466,7 @@ $event = "event_example"; // string | Filter the report for a specific event typ
 $tags = "tags_example"; // string | Filter the report for tags (serialized and urlencoded array)
 $messageId = "messageId_example"; // string | Filter on a specific message id
 $templateId = 789; // int | Filter on a specific template id
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getEmailEventReport($limit, $offset, $startDate, $endDate, $days, $email, $event, $tags, $messageId, $templateId, $sort);
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
  **tags** | **string**| Filter the report for tags (serialized and urlencoded array) | [optional]
  **messageId** | **string**| Filter on a specific message id | [optional]
  **templateId** | **int**| Filter on a specific template id | [optional]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -539,7 +539,7 @@ $startDate = "startDate_example"; // string | Mandatory if endDate is used. Star
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
 $days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Tag of the emails
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getSmtpReport($limit, $offset, $startDate, $endDate, $days, $tag, $sort);
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
  **endDate** | **string**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional]
  **tag** | **string**| Tag of the emails | [optional]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -662,7 +662,7 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
 $templateStatus = true; // bool | Filter on the status of the template. Active = true, inactive = false
 $limit = 50; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document in the page
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getSmtpTemplates($templateStatus, $limit, $offset, $sort);
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
  **templateStatus** | **bool**| Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false | [optional]
  **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -727,7 +727,7 @@ $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending
 $limit = 50; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document on the page
 $senders = array("senders_example"); // string[] | Comma separated list of emails of the senders from which contacts are blocked or unsubscribed
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getTransacBlockedContacts($startDate, $endDate, $limit, $offset, $senders, $sort);
@@ -747,7 +747,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
  **senders** | [**string[]**](../Model/string.md)| Comma separated list of emails of the senders from which contacts are blocked or unsubscribed | [optional]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -853,7 +853,7 @@ $templateId = 789; // int | Mandatory if email and messageId are not passed in q
 $messageId = "messageId_example"; // string | Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
-$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation
+$sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
 try {
     $result = $apiInstance->getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate, $sort);
@@ -873,7 +873,7 @@ Name | Type | Description  | Notes
  **messageId** | **string**| Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. | [optional]
  **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
  **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
- **sort** | **string**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

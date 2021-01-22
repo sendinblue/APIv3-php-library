@@ -389,7 +389,7 @@ class ProcessApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 10)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -408,7 +408,7 @@ class ProcessApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 10)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -493,7 +493,7 @@ class ProcessApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 10)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -515,7 +515,7 @@ class ProcessApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 10)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -567,7 +567,7 @@ class ProcessApi
      *
      * @param  int $limit Number limitation for the result returned (optional, default to 10)
      * @param  int $offset Beginning point in the list to retrieve from. (optional, default to 0)
-     * @param  string $sort Sort the results in the ascending/descending order of record creation (optional, default to desc)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

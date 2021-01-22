@@ -38,7 +38,7 @@ namespace SendinBlue\Client;
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
-$GLOBALS['version'] = '7.3.0';
+$GLOBALS['version'] = '7.4.0';
 
 class Configuration
 {
@@ -275,12 +275,9 @@ class Configuration
         }
 
         if(strpos($userAgent, 'sendinblue_') !== false) {
-            if(strpos($userAgent, '#') !== false) {
-                $userAgent = str_replace('#', $GLOBALS['version'], $userAgent);  
-            }
+            $this->userAgent = $userAgent;
         }
 
-        $this->userAgent = $userAgent;
         return $this;
     }
 

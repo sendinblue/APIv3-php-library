@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **emailBlacklist** | **bool** | To blacklist all the contacts for email | [optional] [default to false]
 **smsBlacklist** | **bool** | To blacklist all the contacts for sms | [optional] [default to false]
 **updateExistingContacts** | **bool** | To facilitate the choice to update the existing contacts | [optional] [default to true]
-**emptyContactsAttributes** | **bool** | To facilitate the choice to erase any attribute of the existing contacts with empty value. emptyContactsAttributes &#x3D; true means the empty fields in your import will erase any attribute that currently contain data in SendinBlue, &amp; emptyContactsAttributes &#x3D; false means the empty fields will not affect your existing data ( only available if &#x60;updateExistingContacts&#x60; set to true ) | [optional] [default to false]
+**emptyContactsAttributes** | **bool** | To facilitate the choice to erase any attribute of the existing contacts with empty value. emptyContactsAttributes = true means the empty fields in your import will erase any attribute that currently contain data in SendinBlue, &amp; emptyContactsAttributes = false means the empty fields will not affect your existing data ( only available if &#x60;updateExistingContacts&#x60; set to true ) | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

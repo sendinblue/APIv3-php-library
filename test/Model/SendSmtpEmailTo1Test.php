@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmtpTemplateSenderTest
+ * SendSmtpEmailTo1Test
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * CreateSmtpTemplateSenderTest Class Doc Comment
+ * SendSmtpEmailTo1Test Class Doc Comment
  *
  * @category    Class
- * @description Sender details including id or email and name (optional). Only one of either Sender&#39;s email or Sender&#39;s ID shall be passed in one request at a time. For example &#x60;{\"name\":\"xyz\", \"email\":\"example@abc.com\"}&#x60; , &#x60;{\"name\":\"xyz\", \"id\":123}&#x60;
+ * @description SendSmtpEmailTo1
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmtpTemplateSenderTest extends \PHPUnit_Framework_TestCase
+class SendSmtpEmailTo1Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,9 @@ class CreateSmtpTemplateSenderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateSmtpTemplateSender"
+     * Test "SendSmtpEmailTo1"
      */
-    public function testCreateSmtpTemplateSender()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
+    public function testSendSmtpEmailTo1()
     {
     }
 
@@ -91,9 +84,9 @@ class CreateSmtpTemplateSenderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "name"
      */
-    public function testPropertyId()
+    public function testPropertyName()
     {
     }
 }

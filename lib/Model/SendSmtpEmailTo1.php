@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmtpEmail
+ * SendSmtpEmailTo1
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * CreateSmtpEmail Class Doc Comment
+ * SendSmtpEmailTo1 Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmtpEmail implements ModelInterface, ArrayAccess
+class SendSmtpEmailTo1 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'createSmtpEmail';
+    protected static $swaggerModelName = 'sendSmtpEmail_to_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messageId' => 'string',
-        'messageIds' => 'string[]'
+        'email' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messageId' => null,
-        'messageIds' => null
+        'email' => 'email',
+        'name' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messageId' => 'messageId',
-        'messageIds' => 'messageIds'
+        'email' => 'email',
+        'name' => 'name'
     ];
 
     /**
@@ -108,8 +108,8 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messageId' => 'setMessageId',
-        'messageIds' => 'setMessageIds'
+        'email' => 'setEmail',
+        'name' => 'setName'
     ];
 
     /**
@@ -118,8 +118,8 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messageId' => 'getMessageId',
-        'messageIds' => 'getMessageIds'
+        'email' => 'getEmail',
+        'name' => 'getName'
     ];
 
     /**
@@ -182,8 +182,8 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
-        $this->container['messageIds'] = isset($data['messageIds']) ? $data['messageIds'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -195,6 +195,9 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -211,49 +214,49 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messageId
+     * Gets email
      *
      * @return string
      */
-    public function getMessageId()
+    public function getEmail()
     {
-        return $this->container['messageId'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets messageId
+     * Sets email
      *
-     * @param string $messageId Message ID of the transactional email sent
+     * @param string $email Email address of the recipient
      *
      * @return $this
      */
-    public function setMessageId($messageId)
+    public function setEmail($email)
     {
-        $this->container['messageId'] = $messageId;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets messageIds
+     * Gets name
      *
-     * @return string[]
+     * @return string
      */
-    public function getMessageIds()
+    public function getName()
     {
-        return $this->container['messageIds'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets messageIds
+     * Sets name
      *
-     * @param string[] $messageIds messageIds
+     * @param string $name Name of the recipient. **Maximum allowed characters are 70**.
      *
      * @return $this
      */
-    public function setMessageIds($messageIds)
+    public function setName($name)
     {
-        $this->container['messageIds'] = $messageIds;
+        $this->container['name'] = $name;
 
         return $this;
     }

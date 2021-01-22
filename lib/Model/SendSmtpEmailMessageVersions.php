@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSmtpEmail
+ * SendSmtpEmailMessageVersions
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * CreateSmtpEmail Class Doc Comment
+ * SendSmtpEmailMessageVersions Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateSmtpEmail implements ModelInterface, ArrayAccess
+class SendSmtpEmailMessageVersions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'createSmtpEmail';
+    protected static $swaggerModelName = 'sendSmtpEmail_messageVersions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,12 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'messageId' => 'string',
-        'messageIds' => 'string[]'
+        'to' => '\SendinBlue\Client\Model\SendSmtpEmailTo1[]',
+        'params' => 'map[string,object]',
+        'bcc' => '\SendinBlue\Client\Model\SendSmtpEmailBcc[]',
+        'cc' => '\SendinBlue\Client\Model\SendSmtpEmailCc[]',
+        'replyTo' => '\SendinBlue\Client\Model\SendSmtpEmailReplyTo1',
+        'subject' => 'string'
     ];
 
     /**
@@ -67,8 +71,12 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'messageId' => null,
-        'messageIds' => null
+        'to' => null,
+        'params' => null,
+        'bcc' => null,
+        'cc' => null,
+        'replyTo' => null,
+        'subject' => null
     ];
 
     /**
@@ -98,8 +106,12 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'messageId' => 'messageId',
-        'messageIds' => 'messageIds'
+        'to' => 'to',
+        'params' => 'params',
+        'bcc' => 'bcc',
+        'cc' => 'cc',
+        'replyTo' => 'replyTo',
+        'subject' => 'subject'
     ];
 
     /**
@@ -108,8 +120,12 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'messageId' => 'setMessageId',
-        'messageIds' => 'setMessageIds'
+        'to' => 'setTo',
+        'params' => 'setParams',
+        'bcc' => 'setBcc',
+        'cc' => 'setCc',
+        'replyTo' => 'setReplyTo',
+        'subject' => 'setSubject'
     ];
 
     /**
@@ -118,8 +134,12 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'messageId' => 'getMessageId',
-        'messageIds' => 'getMessageIds'
+        'to' => 'getTo',
+        'params' => 'getParams',
+        'bcc' => 'getBcc',
+        'cc' => 'getCc',
+        'replyTo' => 'getReplyTo',
+        'subject' => 'getSubject'
     ];
 
     /**
@@ -182,8 +202,12 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['messageId'] = isset($data['messageId']) ? $data['messageId'] : null;
-        $this->container['messageIds'] = isset($data['messageIds']) ? $data['messageIds'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['params'] = isset($data['params']) ? $data['params'] : null;
+        $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
+        $this->container['cc'] = isset($data['cc']) ? $data['cc'] : null;
+        $this->container['replyTo'] = isset($data['replyTo']) ? $data['replyTo'] : null;
+        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
     }
 
     /**
@@ -195,6 +219,9 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['to'] === null) {
+            $invalidProperties[] = "'to' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -211,49 +238,145 @@ class CreateSmtpEmail implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets messageId
+     * Gets to
      *
-     * @return string
+     * @return \SendinBlue\Client\Model\SendSmtpEmailTo1[]
      */
-    public function getMessageId()
+    public function getTo()
     {
-        return $this->container['messageId'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets messageId
+     * Sets to
      *
-     * @param string $messageId Message ID of the transactional email sent
+     * @param \SendinBlue\Client\Model\SendSmtpEmailTo1[] $to List of email addresses and names (_optional_) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]
      *
      * @return $this
      */
-    public function setMessageId($messageId)
+    public function setTo($to)
     {
-        $this->container['messageId'] = $messageId;
+        $this->container['to'] = $to;
 
         return $this;
     }
 
     /**
-     * Gets messageIds
+     * Gets params
      *
-     * @return string[]
+     * @return map[string,object]
      */
-    public function getMessageIds()
+    public function getParams()
     {
-        return $this->container['messageIds'];
+        return $this->container['params'];
     }
 
     /**
-     * Sets messageIds
+     * Sets params
      *
-     * @param string[] $messageIds messageIds
+     * @param map[string,object] $params Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. It's considered only if template is in New Template Language format.
      *
      * @return $this
      */
-    public function setMessageIds($messageIds)
+    public function setParams($params)
     {
-        $this->container['messageIds'] = $messageIds;
+        $this->container['params'] = $params;
+
+        return $this;
+    }
+
+    /**
+     * Gets bcc
+     *
+     * @return \SendinBlue\Client\Model\SendSmtpEmailBcc[]
+     */
+    public function getBcc()
+    {
+        return $this->container['bcc'];
+    }
+
+    /**
+     * Sets bcc
+     *
+     * @param \SendinBlue\Client\Model\SendSmtpEmailBcc[] $bcc List of email addresses and names (optional) of the recipients in bcc
+     *
+     * @return $this
+     */
+    public function setBcc($bcc)
+    {
+        $this->container['bcc'] = $bcc;
+
+        return $this;
+    }
+
+    /**
+     * Gets cc
+     *
+     * @return \SendinBlue\Client\Model\SendSmtpEmailCc[]
+     */
+    public function getCc()
+    {
+        return $this->container['cc'];
+    }
+
+    /**
+     * Sets cc
+     *
+     * @param \SendinBlue\Client\Model\SendSmtpEmailCc[] $cc List of email addresses and names (optional) of the recipients in cc
+     *
+     * @return $this
+     */
+    public function setCc($cc)
+    {
+        $this->container['cc'] = $cc;
+
+        return $this;
+    }
+
+    /**
+     * Gets replyTo
+     *
+     * @return \SendinBlue\Client\Model\SendSmtpEmailReplyTo1
+     */
+    public function getReplyTo()
+    {
+        return $this->container['replyTo'];
+    }
+
+    /**
+     * Sets replyTo
+     *
+     * @param \SendinBlue\Client\Model\SendSmtpEmailReplyTo1 $replyTo replyTo
+     *
+     * @return $this
+     */
+    public function setReplyTo($replyTo)
+    {
+        $this->container['replyTo'] = $replyTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets subject
+     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->container['subject'];
+    }
+
+    /**
+     * Sets subject
+     *
+     * @param string $subject Custom subject specific to message version
+     *
+     * @return $this
+     */
+    public function setSubject($subject)
+    {
+        $this->container['subject'] = $subject;
 
         return $this;
     }
