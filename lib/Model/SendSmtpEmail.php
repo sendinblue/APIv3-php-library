@@ -357,7 +357,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Gets cc
      *
-     * @return \SendinBlue\Client\Model\SendSmtpEmailCc[]
+     * @return \SendinBlue\Client\Model\SendSmtpEmailCc[]|null
      */
     public function getCc()
     {
