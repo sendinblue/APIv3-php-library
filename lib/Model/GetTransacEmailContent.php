@@ -60,7 +60,7 @@ class GetTransacEmailContent implements ModelInterface, ArrayAccess
         'email' => 'string',
         'subject' => 'string',
         'templateId' => 'int',
-        'date' => '\DateTime',
+        'date' => 'string',
         'events' => '\SendinBlue\Client\Model\GetTransacEmailContentEvents[]',
         'body' => 'string',
         'attachmentCount' => 'int'
@@ -75,7 +75,7 @@ class GetTransacEmailContent implements ModelInterface, ArrayAccess
         'email' => 'email',
         'subject' => null,
         'templateId' => 'int64',
-        'date' => 'date-time',
+        'date' => null,
         'events' => null,
         'body' => null,
         'attachmentCount' => 'int64'
@@ -333,7 +333,7 @@ class GetTransacEmailContent implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -343,7 +343,7 @@ class GetTransacEmailContent implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date Date on which transactional email was sent
+     * @param string $date Date on which transactional email was sent
      *
      * @return $this
      */

@@ -58,7 +58,7 @@ class GetExtendedContactDetailsStatisticsLinks implements ModelInterface, ArrayA
       */
     protected static $swaggerTypes = [
         'count' => 'int',
-        'eventTime' => '\DateTime',
+        'eventTime' => 'string',
         'ip' => 'string',
         'url' => 'string'
     ];
@@ -70,7 +70,7 @@ class GetExtendedContactDetailsStatisticsLinks implements ModelInterface, ArrayA
       */
     protected static $swaggerFormats = [
         'count' => 'int64',
-        'eventTime' => 'date-time',
+        'eventTime' => null,
         'ip' => null,
         'url' => null
     ];
@@ -261,7 +261,7 @@ class GetExtendedContactDetailsStatisticsLinks implements ModelInterface, ArrayA
     /**
      * Gets eventTime
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEventTime()
     {
@@ -271,7 +271,7 @@ class GetExtendedContactDetailsStatisticsLinks implements ModelInterface, ArrayA
     /**
      * Sets eventTime
      *
-     * @param \DateTime $eventTime UTC date-time of the event
+     * @param string $eventTime UTC date-time of the event
      *
      * @return $this
      */

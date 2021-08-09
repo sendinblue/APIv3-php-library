@@ -105,6 +105,13 @@ class GetExtendedListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "uniqueSubscribers"
+     */
+    public function testPropertyUniqueSubscribers()
+    {
+    }
+
+    /**
      * Test attribute "folderId"
      */
     public function testPropertyFolderId()

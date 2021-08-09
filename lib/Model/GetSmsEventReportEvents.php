@@ -58,7 +58,7 @@ class GetSmsEventReportEvents implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'phoneNumber' => 'string',
-        'date' => '\DateTime',
+        'date' => 'string',
         'messageId' => 'string',
         'event' => 'string',
         'reason' => 'string',
@@ -73,7 +73,7 @@ class GetSmsEventReportEvents implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'phoneNumber' => null,
-        'date' => 'date-time',
+        'date' => null,
         'messageId' => null,
         'event' => null,
         'reason' => null,
@@ -304,7 +304,7 @@ class GetSmsEventReportEvents implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -314,7 +314,7 @@ class GetSmsEventReportEvents implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date UTC date-time on which the event has been generated
+     * @param string $date UTC date-time on which the event has been generated
      *
      * @return $this
      */

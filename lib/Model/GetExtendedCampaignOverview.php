@@ -62,7 +62,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'subject' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'scheduledAt' => '\DateTime',
+        'scheduledAt' => 'string',
         'abTesting' => 'bool',
         'subjectA' => 'string',
         'subjectB' => 'string',
@@ -79,12 +79,12 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'htmlContent' => 'string',
         'shareLink' => 'string',
         'tag' => 'string',
-        'createdAt' => '\DateTime',
-        'modifiedAt' => '\DateTime',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string',
         'inlineImageActivation' => 'bool',
         'mirrorActive' => 'bool',
         'recurring' => 'bool',
-        'sentDate' => '\DateTime',
+        'sentDate' => 'string',
         'returnBounce' => 'int'
     ];
 
@@ -99,7 +99,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'subject' => null,
         'type' => null,
         'status' => null,
-        'scheduledAt' => 'date-time',
+        'scheduledAt' => null,
         'abTesting' => null,
         'subjectA' => null,
         'subjectB' => null,
@@ -116,12 +116,12 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'htmlContent' => null,
         'shareLink' => 'url',
         'tag' => null,
-        'createdAt' => 'date-time',
-        'modifiedAt' => 'date-time',
+        'createdAt' => null,
+        'modifiedAt' => null,
         'inlineImageActivation' => null,
         'mirrorActive' => null,
         'recurring' => null,
-        'sentDate' => 'date-time',
+        'sentDate' => null,
         'returnBounce' => 'int64'
     ];
 
@@ -603,7 +603,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Gets scheduledAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getScheduledAt()
     {
@@ -613,7 +613,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Sets scheduledAt
      *
-     * @param \DateTime $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */
@@ -1011,7 +1011,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedAt()
     {
@@ -1021,7 +1021,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param \DateTime $createdAt Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $createdAt Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */
@@ -1035,7 +1035,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getModifiedAt()
     {
@@ -1045,7 +1045,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param \DateTime $modifiedAt UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $modifiedAt UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */
@@ -1131,7 +1131,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Gets sentDate
      *
-     * @return \DateTime
+     * @return string
      */
     public function getSentDate()
     {
@@ -1141,7 +1141,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Sets sentDate
      *
-     * @param \DateTime $sentDate Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'
+     * @param string $sentDate Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'
      *
      * @return $this
      */

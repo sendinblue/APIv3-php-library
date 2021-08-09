@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \SendinBlue\Client\Model\GetWebhooks getWebhooks($type)
+> \SendinBlue\Client\Model\GetWebhooks getWebhooks($type, $sort)
 
 Get all webhooks
 
@@ -207,9 +207,10 @@ $apiInstance = new SendinBlue\Client\Api\WebhooksApi(
     $config
 );
 $type = "transactional"; // string | Filter on webhook type
+$sort = "desc"; // string | Sort the results in the ascending/descending order of webhook creation
 
 try {
-    $result = $apiInstance->getWebhooks($type);
+    $result = $apiInstance->getWebhooks($type, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhooksApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -222,6 +223,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **string**| Filter on webhook type | [optional] [default to transactional]
+ **sort** | **string**| Sort the results in the ascending/descending order of webhook creation | [optional] [default to desc]
 
 ### Return type
 

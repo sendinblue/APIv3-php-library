@@ -212,16 +212,6 @@ class TransactionalEmailsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for sendTemplate
-     *
-     * Send a template.
-     *
-     */
-    public function testSendTemplate()
-    {
-    }
-
-    /**
      * Test case for sendTestTemplate
      *
      * Send a template to your test list.

@@ -62,7 +62,7 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'int',
         'messageId' => 'string',
         'uuid' => 'string',
-        'date' => '\DateTime',
+        'date' => 'string',
         'from' => 'string',
         'tags' => 'string[]'
     ];
@@ -78,7 +78,7 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
         'templateId' => 'int64',
         'messageId' => null,
         'uuid' => null,
-        'date' => 'date-time',
+        'date' => null,
         'from' => 'email',
         'tags' => null
     ];
@@ -384,7 +384,7 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -394,7 +394,7 @@ class GetTransacEmailsListTransactionalEmails implements ModelInterface, ArrayAc
     /**
      * Sets date
      *
-     * @param \DateTime $date Date on which transactional email was sent
+     * @param string $date Date on which transactional email was sent
      *
      * @return $this
      */

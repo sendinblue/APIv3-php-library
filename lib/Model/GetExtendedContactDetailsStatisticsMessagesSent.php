@@ -58,7 +58,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ModelInterface,
       */
     protected static $swaggerTypes = [
         'campaignId' => 'int',
-        'eventTime' => '\DateTime'
+        'eventTime' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ModelInterface,
       */
     protected static $swaggerFormats = [
         'campaignId' => 'int64',
-        'eventTime' => 'date-time'
+        'eventTime' => null
     ];
 
     /**
@@ -243,7 +243,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ModelInterface,
     /**
      * Gets eventTime
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEventTime()
     {
@@ -253,7 +253,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent implements ModelInterface,
     /**
      * Sets eventTime
      *
-     * @param \DateTime $eventTime UTC date-time of the event
+     * @param string $eventTime UTC date-time of the event
      *
      * @return $this
      */

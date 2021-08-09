@@ -60,7 +60,8 @@ class GetList implements ModelInterface, ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'totalBlacklisted' => 'int',
-        'totalSubscribers' => 'int'
+        'totalSubscribers' => 'int',
+        'uniqueSubscribers' => 'int'
     ];
 
     /**
@@ -72,7 +73,8 @@ class GetList implements ModelInterface, ArrayAccess
         'id' => 'int64',
         'name' => null,
         'totalBlacklisted' => 'int64',
-        'totalSubscribers' => 'int64'
+        'totalSubscribers' => 'int64',
+        'uniqueSubscribers' => 'int64'
     ];
 
     /**
@@ -105,7 +107,8 @@ class GetList implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'totalBlacklisted' => 'totalBlacklisted',
-        'totalSubscribers' => 'totalSubscribers'
+        'totalSubscribers' => 'totalSubscribers',
+        'uniqueSubscribers' => 'uniqueSubscribers'
     ];
 
     /**
@@ -117,7 +120,8 @@ class GetList implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'totalBlacklisted' => 'setTotalBlacklisted',
-        'totalSubscribers' => 'setTotalSubscribers'
+        'totalSubscribers' => 'setTotalSubscribers',
+        'uniqueSubscribers' => 'setUniqueSubscribers'
     ];
 
     /**
@@ -129,7 +133,8 @@ class GetList implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'totalBlacklisted' => 'getTotalBlacklisted',
-        'totalSubscribers' => 'getTotalSubscribers'
+        'totalSubscribers' => 'getTotalSubscribers',
+        'uniqueSubscribers' => 'getUniqueSubscribers'
     ];
 
     /**
@@ -196,6 +201,7 @@ class GetList implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['totalBlacklisted'] = isset($data['totalBlacklisted']) ? $data['totalBlacklisted'] : null;
         $this->container['totalSubscribers'] = isset($data['totalSubscribers']) ? $data['totalSubscribers'] : null;
+        $this->container['uniqueSubscribers'] = isset($data['uniqueSubscribers']) ? $data['uniqueSubscribers'] : null;
     }
 
     /**
@@ -218,6 +224,9 @@ class GetList implements ModelInterface, ArrayAccess
         }
         if ($this->container['totalSubscribers'] === null) {
             $invalidProperties[] = "'totalSubscribers' can't be null";
+        }
+        if ($this->container['uniqueSubscribers'] === null) {
+            $invalidProperties[] = "'uniqueSubscribers' can't be null";
         }
         return $invalidProperties;
     }
@@ -326,6 +335,30 @@ class GetList implements ModelInterface, ArrayAccess
     public function setTotalSubscribers($totalSubscribers)
     {
         $this->container['totalSubscribers'] = $totalSubscribers;
+
+        return $this;
+    }
+
+    /**
+     * Gets uniqueSubscribers
+     *
+     * @return int
+     */
+    public function getUniqueSubscribers()
+    {
+        return $this->container['uniqueSubscribers'];
+    }
+
+    /**
+     * Sets uniqueSubscribers
+     *
+     * @param int $uniqueSubscribers Number of unique contacts in the list
+     *
+     * @return $this
+     */
+    public function setUniqueSubscribers($uniqueSubscribers)
+    {
+        $this->container['uniqueSubscribers'] = $uniqueSubscribers;
 
         return $this;
     }

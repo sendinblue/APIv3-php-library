@@ -928,14 +928,15 @@ class WebhooksApi
      * Get all webhooks
      *
      * @param  string $type Filter on webhook type (optional, default to transactional)
+     * @param  string $sort Sort the results in the ascending/descending order of webhook creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetWebhooks
      */
-    public function getWebhooks($type = 'transactional')
+    public function getWebhooks($type = 'transactional', $sort = 'desc')
     {
-        list($response) = $this->getWebhooksWithHttpInfo($type);
+        list($response) = $this->getWebhooksWithHttpInfo($type, $sort);
         return $response;
     }
 
@@ -945,15 +946,16 @@ class WebhooksApi
      * Get all webhooks
      *
      * @param  string $type Filter on webhook type (optional, default to transactional)
+     * @param  string $sort Sort the results in the ascending/descending order of webhook creation (optional, default to desc)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetWebhooks, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWebhooksWithHttpInfo($type = 'transactional')
+    public function getWebhooksWithHttpInfo($type = 'transactional', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetWebhooks';
-        $request = $this->getWebhooksRequest($type);
+        $request = $this->getWebhooksRequest($type, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1028,13 +1030,14 @@ class WebhooksApi
      * Get all webhooks
      *
      * @param  string $type Filter on webhook type (optional, default to transactional)
+     * @param  string $sort Sort the results in the ascending/descending order of webhook creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebhooksAsync($type = 'transactional')
+    public function getWebhooksAsync($type = 'transactional', $sort = 'desc')
     {
-        return $this->getWebhooksAsyncWithHttpInfo($type)
+        return $this->getWebhooksAsyncWithHttpInfo($type, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1048,14 +1051,15 @@ class WebhooksApi
      * Get all webhooks
      *
      * @param  string $type Filter on webhook type (optional, default to transactional)
+     * @param  string $sort Sort the results in the ascending/descending order of webhook creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getWebhooksAsyncWithHttpInfo($type = 'transactional')
+    public function getWebhooksAsyncWithHttpInfo($type = 'transactional', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetWebhooks';
-        $request = $this->getWebhooksRequest($type);
+        $request = $this->getWebhooksRequest($type, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1098,11 +1102,12 @@ class WebhooksApi
      * Create request for operation 'getWebhooks'
      *
      * @param  string $type Filter on webhook type (optional, default to transactional)
+     * @param  string $sort Sort the results in the ascending/descending order of webhook creation (optional, default to desc)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getWebhooksRequest($type = 'transactional')
+    protected function getWebhooksRequest($type = 'transactional', $sort = 'desc')
     {
 
         $resourcePath = '/webhooks';
@@ -1115,6 +1120,10 @@ class WebhooksApi
         // query params
         if ($type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
         }
 
 

@@ -3850,17 +3850,19 @@ class TransactionalEmailsApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  int $limit Number of documents returned per page (optional, default to 500)
+     * @param  int $offset Index of the first document in the page (optional, default to 0)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetTransacEmailsList
      */
-    public function getTransacEmailsList($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
+    public function getTransacEmailsList($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc', $limit = '500', $offset = '0')
     {
-        list($response) = $this->getTransacEmailsListWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate, $sort);
+        list($response) = $this->getTransacEmailsListWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate, $sort, $limit, $offset);
         return $response;
     }
 
@@ -3872,18 +3874,20 @@ class TransactionalEmailsApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  int $limit Number of documents returned per page (optional, default to 500)
+     * @param  int $offset Index of the first document in the page (optional, default to 0)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetTransacEmailsList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransacEmailsListWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
+    public function getTransacEmailsListWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc', $limit = '500', $offset = '0')
     {
         $returnType = '\SendinBlue\Client\Model\GetTransacEmailsList';
-        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate, $sort);
+        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate, $sort, $limit, $offset);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3960,16 +3964,18 @@ class TransactionalEmailsApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  int $limit Number of documents returned per page (optional, default to 500)
+     * @param  int $offset Index of the first document in the page (optional, default to 0)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransacEmailsListAsync($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
+    public function getTransacEmailsListAsync($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc', $limit = '500', $offset = '0')
     {
-        return $this->getTransacEmailsListAsyncWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate, $sort)
+        return $this->getTransacEmailsListAsyncWithHttpInfo($email, $templateId, $messageId, $startDate, $endDate, $sort, $limit, $offset)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3985,17 +3991,19 @@ class TransactionalEmailsApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  int $limit Number of documents returned per page (optional, default to 500)
+     * @param  int $offset Index of the first document in the page (optional, default to 0)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransacEmailsListAsyncWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
+    public function getTransacEmailsListAsyncWithHttpInfo($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc', $limit = '500', $offset = '0')
     {
         $returnType = '\SendinBlue\Client\Model\GetTransacEmailsList';
-        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate, $sort);
+        $request = $this->getTransacEmailsListRequest($email, $templateId, $messageId, $startDate, $endDate, $sort, $limit, $offset);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4040,15 +4048,21 @@ class TransactionalEmailsApi
      * @param  string $email Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
      * @param  int $templateId Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
      * @param  string $messageId Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  int $limit Number of documents returned per page (optional, default to 500)
+     * @param  int $offset Index of the first document in the page (optional, default to 0)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransacEmailsListRequest($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc')
+    protected function getTransacEmailsListRequest($email = null, $templateId = null, $messageId = null, $startDate = null, $endDate = null, $sort = 'desc', $limit = '500', $offset = '0')
     {
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getTransacEmailsList, must be smaller than or equal to 1000.');
+        }
+
 
         $resourcePath = '/smtp/emails';
         $formParams = [];
@@ -4080,6 +4094,14 @@ class TransactionalEmailsApi
         // query params
         if ($sort !== null) {
             $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
         }
 
 
@@ -4158,315 +4180,6 @@ class TransactionalEmailsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation sendTemplate
-     *
-     * Send a template
-     *
-     * @param  int $templateId Id of the template (required)
-     * @param  \SendinBlue\Client\Model\SendEmail $sendEmail sendEmail (required)
-     *
-     * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \SendinBlue\Client\Model\SendTemplateEmail
-     */
-    public function sendTemplate($templateId, $sendEmail)
-    {
-        list($response) = $this->sendTemplateWithHttpInfo($templateId, $sendEmail);
-        return $response;
-    }
-
-    /**
-     * Operation sendTemplateWithHttpInfo
-     *
-     * Send a template
-     *
-     * @param  int $templateId Id of the template (required)
-     * @param  \SendinBlue\Client\Model\SendEmail $sendEmail (required)
-     *
-     * @throws \SendinBlue\Client\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \SendinBlue\Client\Model\SendTemplateEmail, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function sendTemplateWithHttpInfo($templateId, $sendEmail)
-    {
-        $returnType = '\SendinBlue\Client\Model\SendTemplateEmail';
-        $request = $this->sendTemplateRequest($templateId, $sendEmail);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 201:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SendinBlue\Client\Model\SendTemplateEmail',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SendinBlue\Client\Model\PostSendFailed',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SendinBlue\Client\Model\ErrorModel',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation sendTemplateAsync
-     *
-     * Send a template
-     *
-     * @param  int $templateId Id of the template (required)
-     * @param  \SendinBlue\Client\Model\SendEmail $sendEmail (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sendTemplateAsync($templateId, $sendEmail)
-    {
-        return $this->sendTemplateAsyncWithHttpInfo($templateId, $sendEmail)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation sendTemplateAsyncWithHttpInfo
-     *
-     * Send a template
-     *
-     * @param  int $templateId Id of the template (required)
-     * @param  \SendinBlue\Client\Model\SendEmail $sendEmail (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function sendTemplateAsyncWithHttpInfo($templateId, $sendEmail)
-    {
-        $returnType = '\SendinBlue\Client\Model\SendTemplateEmail';
-        $request = $this->sendTemplateRequest($templateId, $sendEmail);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'sendTemplate'
-     *
-     * @param  int $templateId Id of the template (required)
-     * @param  \SendinBlue\Client\Model\SendEmail $sendEmail (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function sendTemplateRequest($templateId, $sendEmail)
-    {
-        // verify the required parameter 'templateId' is set
-        if ($templateId === null || (is_array($templateId) && count($templateId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $templateId when calling sendTemplate'
-            );
-        }
-        // verify the required parameter 'sendEmail' is set
-        if ($sendEmail === null || (is_array($sendEmail) && count($sendEmail) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $sendEmail when calling sendTemplate'
-            );
-        }
-
-        $resourcePath = '/smtp/templates/{templateId}/send';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($templateId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'templateId' . '}',
-                ObjectSerializer::toPathValue($templateId),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($sendEmail)) {
-            $_tempBody = $sendEmail;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
-        if ($apiKey !== null) {
-            $headers['api-key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
-        if ($apiKey !== null) {
-            $headers['partner-key'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

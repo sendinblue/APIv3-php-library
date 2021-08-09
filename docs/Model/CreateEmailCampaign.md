@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **htmlContent** | **string** | Mandatory if htmlUrl and templateId are empty. Body of the message (HTML) | [optional] 
 **htmlUrl** | **string** | Mandatory if htmlContent and templateId are empty. Url to the message (HTML) | [optional] 
 **templateId** | **int** | Mandatory if htmlContent and htmlUrl are empty. Id of the transactional email template with status &#39;active&#39;. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature. | [optional] 
-**scheduledAt** | [**\DateTime**] | Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part). | [optional] 
+**scheduledAt** | **string** | Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part). | [optional] 
 **subject** | **string** | Subject of the campaign. Mandatory if abTesting is false. Ignored if abTesting is true. | [optional] 
 **replyTo** | **string** | Email on which the campaign recipients will be able to reply to | [optional] 
 **toField** | **string** | To personalize the «To» Field. If you want to include the first name and last name of your recipient, add &#x60;{FNAME} {LNAME}&#x60;. These contact attributes must already exist in your SendinBlue account. If input parameter &#39;params&#39; used please use &#x60;{{contact.FNAME}} {{contact.LNAME}}&#x60; for personalization | [optional] 

@@ -58,7 +58,7 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription imple
       */
     protected static $swaggerTypes = [
         'campaignId' => 'int',
-        'eventTime' => '\DateTime',
+        'eventTime' => 'string',
         'ip' => 'string'
     ];
 
@@ -69,7 +69,7 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription imple
       */
     protected static $swaggerFormats = [
         'campaignId' => 'int64',
-        'eventTime' => 'date-time',
+        'eventTime' => null,
         'ip' => null
     ];
 
@@ -249,7 +249,7 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription imple
     /**
      * Gets eventTime
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEventTime()
     {
@@ -259,7 +259,7 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription imple
     /**
      * Sets eventTime
      *
-     * @param \DateTime $eventTime UTC date-time of the event
+     * @param string $eventTime UTC date-time of the event
      *
      * @return $this
      */

@@ -57,6 +57,7 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'count' => 'int',
         'transactionalEmails' => '\SendinBlue\Client\Model\GetTransacEmailsListTransactionalEmails[]'
     ];
 
@@ -66,6 +67,7 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'count' => 'int64',
         'transactionalEmails' => null
     ];
 
@@ -96,6 +98,7 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'count' => 'count',
         'transactionalEmails' => 'transactionalEmails'
     ];
 
@@ -105,6 +108,7 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'count' => 'setCount',
         'transactionalEmails' => 'setTransactionalEmails'
     ];
 
@@ -114,6 +118,7 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'count' => 'getCount',
         'transactionalEmails' => 'getTransactionalEmails'
     ];
 
@@ -177,6 +182,7 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['transactionalEmails'] = isset($data['transactionalEmails']) ? $data['transactionalEmails'] : null;
     }
 
@@ -203,6 +209,30 @@ class GetTransacEmailsList implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count Total number of transactional emails available on your account according to the passed filter
+     *
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
 
     /**
      * Gets transactionalEmails

@@ -62,7 +62,7 @@ class GetCampaignOverview implements ModelInterface, ArrayAccess
         'subject' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'scheduledAt' => '\DateTime',
+        'scheduledAt' => 'string',
         'abTesting' => 'bool',
         'subjectA' => 'string',
         'subjectB' => 'string',
@@ -83,7 +83,7 @@ class GetCampaignOverview implements ModelInterface, ArrayAccess
         'subject' => null,
         'type' => null,
         'status' => null,
-        'scheduledAt' => 'date-time',
+        'scheduledAt' => null,
         'abTesting' => null,
         'subjectA' => null,
         'subjectB' => null,
@@ -483,7 +483,7 @@ class GetCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Gets scheduledAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getScheduledAt()
     {
@@ -493,7 +493,7 @@ class GetCampaignOverview implements ModelInterface, ArrayAccess
     /**
      * Sets scheduledAt
      *
-     * @param \DateTime $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */
