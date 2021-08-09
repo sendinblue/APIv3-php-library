@@ -39,7 +39,7 @@ $limit = 50; // int | Number of documents per page
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
 $offset = 0; // int | Index of the first document of the page
-$days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
+$days = 789; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $phoneNumber = "phoneNumber_example"; // string | Filter the report for a specific phone number
 $event = "event_example"; // string | Filter the report for specific events
 $tags = "tags_example"; // string | Filter the report for specific tags passed as a serialized urlencoded array
@@ -110,7 +110,7 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalSMSApi(
 );
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
-$days = 56; // int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate
+$days = 789; // int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate
 $tag = "tag_example"; // string | Filter on a tag
 
 try {
@@ -173,7 +173,7 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalSMSApi(
 );
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
-$days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
+$days = 789; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Filter on a tag
 $sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 

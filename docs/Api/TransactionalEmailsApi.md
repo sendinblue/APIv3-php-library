@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**getTransacBlockedContacts**](TransactionalEmailsApi.md#getTransacBlockedContacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
 [**getTransacEmailContent**](TransactionalEmailsApi.md#getTransacEmailContent) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
 [**getTransacEmailsList**](TransactionalEmailsApi.md#getTransacEmailsList) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
-[**sendTemplate**](TransactionalEmailsApi.md#sendTemplate) | **POST** /smtp/templates/{templateId}/send | Send a template
 [**sendTestTemplate**](TransactionalEmailsApi.md#sendTestTemplate) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
 [**sendTransacEmail**](TransactionalEmailsApi.md#sendTransacEmail) | **POST** /smtp/email | Send a transactional email
 [**smtpBlockedContactsEmailDelete**](TransactionalEmailsApi.md#smtpBlockedContactsEmailDelete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
@@ -318,6 +317,8 @@ void (empty response body)
 
 Get your transactional email activity aggregated over a period of time
 
+This endpoint will show the aggregated stats for past 90 days by default if `startDate` and `endDate` OR `days` is not passed. The date range can not exceed 90 days
+
 ### Example
 ```php
 <?php
@@ -340,7 +341,7 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
 );
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
-$days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
+$days = 789; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Tag of the emails
 
 try {
@@ -436,6 +437,8 @@ This endpoint does not need any parameter.
 
 Get all your transactional email activity (unaggregated events)
 
+This endpoint will show the aggregated stats for past 30 days by default if `startDate` and `endDate` OR `days` is not passed. The date range can not exceed 90 days
+
 ### Example
 ```php
 <?php
@@ -460,7 +463,7 @@ $limit = 50; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
-$days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
+$days = 789; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $email = "email_example"; // string | Filter the report for a specific email addresses
 $event = "event_example"; // string | Filter the report for a specific event type
 $tags = "tags_example"; // string | Filter the report for tags (serialized and urlencoded array)
@@ -537,7 +540,7 @@ $limit = 10; // int | Number of documents returned per page
 $offset = 0; // int | Index of the first document on the page
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
-$days = 56; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
+$days = 789; // int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
 $tag = "tag_example"; // string | Tag of the emails
 $sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 
@@ -822,7 +825,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransacEmailsList**
-> \SendinBlue\Client\Model\GetTransacEmailsList getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate, $sort)
+> \SendinBlue\Client\Model\GetTransacEmailsList getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate, $sort, $limit, $offset)
 
 Get the list of transactional emails on the basis of allowed filters
 
@@ -851,12 +854,14 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
 $email = "email_example"; // string | Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
 $templateId = 789; // int | Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
 $messageId = "messageId_example"; // string | Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
-$startDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
-$endDate = new \DateTime("2013-10-20"); // \DateTime | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+$startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+$endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
 $sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
+$limit = 500; // int | Number of documents returned per page
+$offset = 0; // int | Index of the first document in the page
 
 try {
-    $result = $apiInstance->getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate, $sort);
+    $result = $apiInstance->getTransacEmailsList($email, $templateId, $messageId, $startDate, $endDate, $sort, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionalEmailsApi->getTransacEmailsList: ', $e->getMessage(), PHP_EOL;
@@ -871,74 +876,15 @@ Name | Type | Description  | Notes
  **email** | **string**| Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. | [optional]
  **templateId** | **int**| Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. | [optional]
  **messageId** | **string**| Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. | [optional]
- **startDate** | **\DateTime**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
- **endDate** | **\DateTime**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
+ **startDate** | **string**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
+ **endDate** | **string**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional]
  **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 500]
+ **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 
 ### Return type
 
 [**\SendinBlue\Client\Model\GetTransacEmailsList**](../Model/GetTransacEmailsList.md)
-
-### Authorization
-
-[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sendTemplate**
-> \SendinBlue\Client\Model\SendTemplateEmail sendTemplate($templateId, $sendEmail)
-
-Send a template
-
-This endpoint is deprecated. Prefer v3/smtp/email instead.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-// Configure API key authorization: partner-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
-
-$apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$templateId = 789; // int | Id of the template
-$sendEmail = new \SendinBlue\Client\Model\SendEmail(); // \SendinBlue\Client\Model\SendEmail | 
-
-try {
-    $result = $apiInstance->sendTemplate($templateId, $sendEmail);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling TransactionalEmailsApi->sendTemplate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **int**| Id of the template |
- **sendEmail** | [**\SendinBlue\Client\Model\SendEmail**](../Model/SendEmail.md)|  |
-
-### Return type
-
-[**\SendinBlue\Client\Model\SendTemplateEmail**](../Model/SendTemplateEmail.md)
 
 ### Authorization
 

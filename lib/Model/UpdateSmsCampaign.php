@@ -61,7 +61,7 @@ class UpdateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => 'string',
         'content' => 'string',
         'recipients' => '\SendinBlue\Client\Model\CreateSmsCampaignRecipients',
-        'scheduledAt' => '\DateTime'
+        'scheduledAt' => 'string'
     ];
 
     /**
@@ -74,7 +74,7 @@ class UpdateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => null,
         'content' => null,
         'recipients' => null,
-        'scheduledAt' => 'date-time'
+        'scheduledAt' => null
     ];
 
     /**
@@ -335,7 +335,7 @@ class UpdateSmsCampaign implements ModelInterface, ArrayAccess
     /**
      * Gets scheduledAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getScheduledAt()
     {
@@ -345,7 +345,7 @@ class UpdateSmsCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets scheduledAt
      *
-     * @param \DateTime $scheduledAt UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+     * @param string $scheduledAt UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
      *
      * @return $this
      */

@@ -60,7 +60,7 @@ class GetTransacBlockedContactsContacts implements ModelInterface, ArrayAccess
         'email' => 'string',
         'senderEmail' => 'string',
         'reason' => '\SendinBlue\Client\Model\GetTransacBlockedContactsReason',
-        'blockedAt' => '\DateTime'
+        'blockedAt' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class GetTransacBlockedContactsContacts implements ModelInterface, ArrayAccess
         'email' => 'email',
         'senderEmail' => 'email',
         'reason' => null,
-        'blockedAt' => 'date-time'
+        'blockedAt' => null
     ];
 
     /**
@@ -309,7 +309,7 @@ class GetTransacBlockedContactsContacts implements ModelInterface, ArrayAccess
     /**
      * Gets blockedAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getBlockedAt()
     {
@@ -319,7 +319,7 @@ class GetTransacBlockedContactsContacts implements ModelInterface, ArrayAccess
     /**
      * Sets blockedAt
      *
-     * @param \DateTime $blockedAt Date when the contact was blocked or unsubscribed on
+     * @param string $blockedAt Date when the contact was blocked or unsubscribed on
      *
      * @return $this
      */

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** | Name of the list | 
 **totalBlacklisted** | **int** | Number of blacklisted contacts in the list | 
 **totalSubscribers** | **int** | Number of contacts in the list | 
+**uniqueSubscribers** | **int** | Number of unique contacts in the list | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

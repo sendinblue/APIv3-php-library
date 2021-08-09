@@ -58,7 +58,7 @@ class GetTransacEmailContentEvents implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'time' => '\DateTime'
+        'time' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class GetTransacEmailContentEvents implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'time' => 'date-time'
+        'time' => null
     ];
 
     /**
@@ -243,7 +243,7 @@ class GetTransacEmailContentEvents implements ModelInterface, ArrayAccess
     /**
      * Gets time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getTime()
     {
@@ -253,7 +253,7 @@ class GetTransacEmailContentEvents implements ModelInterface, ArrayAccess
     /**
      * Sets time
      *
-     * @param \DateTime $time Time at which the event occurred
+     * @param string $time Time at which the event occurred
      *
      * @return $this
      */

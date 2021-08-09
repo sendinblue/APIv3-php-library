@@ -67,8 +67,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'toField' => 'string',
         'tag' => 'string',
         'htmlContent' => 'string',
-        'createdAt' => '\DateTime',
-        'modifiedAt' => '\DateTime',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string',
         'doiTemplate' => 'bool'
     ];
 
@@ -88,8 +88,8 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
         'toField' => null,
         'tag' => null,
         'htmlContent' => null,
-        'createdAt' => 'date-time',
-        'modifiedAt' => 'date-time',
+        'createdAt' => null,
+        'modifiedAt' => null,
         'doiTemplate' => null
     ];
 
@@ -555,7 +555,7 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedAt()
     {
@@ -565,7 +565,7 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param \DateTime $createdAt Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $createdAt Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getModifiedAt()
     {
@@ -589,7 +589,7 @@ class GetSmtpTemplateOverview implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param \DateTime $modifiedAt Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $modifiedAt Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */

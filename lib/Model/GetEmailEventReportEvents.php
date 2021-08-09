@@ -58,7 +58,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'email' => 'string',
-        'date' => '\DateTime',
+        'date' => 'string',
         'subject' => 'string',
         'messageId' => 'string',
         'event' => 'string',
@@ -77,7 +77,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-        'date' => 'date-time',
+        'date' => null,
         'subject' => null,
         'messageId' => null,
         'event' => null,
@@ -348,7 +348,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -358,7 +358,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date UTC date-time on which the event has been generated
+     * @param string $date UTC date-time on which the event has been generated
      *
      * @return $this
      */

@@ -63,7 +63,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'htmlContent' => 'string',
         'htmlUrl' => 'string',
         'templateId' => 'int',
-        'scheduledAt' => '\DateTime',
+        'scheduledAt' => 'string',
         'subject' => 'string',
         'replyTo' => 'string',
         'toField' => 'string',
@@ -99,7 +99,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
         'htmlContent' => null,
         'htmlUrl' => 'url',
         'templateId' => 'int64',
-        'scheduledAt' => 'date-time',
+        'scheduledAt' => null,
         'subject' => null,
         'replyTo' => 'email',
         'toField' => null,
@@ -566,7 +566,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Gets scheduledAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getScheduledAt()
     {
@@ -576,7 +576,7 @@ class CreateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets scheduledAt
      *
-     * @param \DateTime $scheduledAt Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).
+     * @param string $scheduledAt Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).
      *
      * @return $this
      */

@@ -61,8 +61,8 @@ class GetContactDetails implements ModelInterface, ArrayAccess
         'id' => 'int',
         'emailBlacklisted' => 'bool',
         'smsBlacklisted' => 'bool',
-        'createdAt' => '\DateTime',
-        'modifiedAt' => '\DateTime',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string',
         'listIds' => 'int[]',
         'listUnsubscribed' => 'int[]',
         'attributes' => 'object'
@@ -78,8 +78,8 @@ class GetContactDetails implements ModelInterface, ArrayAccess
         'id' => 'int64',
         'emailBlacklisted' => null,
         'smsBlacklisted' => null,
-        'createdAt' => 'date-time',
-        'modifiedAt' => 'date-time',
+        'createdAt' => null,
+        'modifiedAt' => null,
         'listIds' => 'int64',
         'listUnsubscribed' => 'int64',
         'attributes' => null
@@ -375,7 +375,7 @@ class GetContactDetails implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedAt()
     {
@@ -385,7 +385,7 @@ class GetContactDetails implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param \DateTime $createdAt Creation UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $createdAt Creation UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */
@@ -399,7 +399,7 @@ class GetContactDetails implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getModifiedAt()
     {
@@ -409,7 +409,7 @@ class GetContactDetails implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param \DateTime $modifiedAt Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $modifiedAt Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */

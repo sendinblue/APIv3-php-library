@@ -61,8 +61,9 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         'name' => 'string',
         'totalBlacklisted' => 'int',
         'totalSubscribers' => 'int',
+        'uniqueSubscribers' => 'int',
         'folderId' => 'int',
-        'createdAt' => '\DateTime',
+        'createdAt' => 'string',
         'campaignStats' => '\SendinBlue\Client\Model\GetExtendedListCampaignStats[]',
         'dynamicList' => 'bool'
     ];
@@ -77,8 +78,9 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         'name' => null,
         'totalBlacklisted' => 'int64',
         'totalSubscribers' => 'int64',
+        'uniqueSubscribers' => 'int64',
         'folderId' => 'int64',
-        'createdAt' => 'date-time',
+        'createdAt' => null,
         'campaignStats' => null,
         'dynamicList' => null
     ];
@@ -114,6 +116,7 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         'name' => 'name',
         'totalBlacklisted' => 'totalBlacklisted',
         'totalSubscribers' => 'totalSubscribers',
+        'uniqueSubscribers' => 'uniqueSubscribers',
         'folderId' => 'folderId',
         'createdAt' => 'createdAt',
         'campaignStats' => 'campaignStats',
@@ -130,6 +133,7 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'totalBlacklisted' => 'setTotalBlacklisted',
         'totalSubscribers' => 'setTotalSubscribers',
+        'uniqueSubscribers' => 'setUniqueSubscribers',
         'folderId' => 'setFolderId',
         'createdAt' => 'setCreatedAt',
         'campaignStats' => 'setCampaignStats',
@@ -146,6 +150,7 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'totalBlacklisted' => 'getTotalBlacklisted',
         'totalSubscribers' => 'getTotalSubscribers',
+        'uniqueSubscribers' => 'getUniqueSubscribers',
         'folderId' => 'getFolderId',
         'createdAt' => 'getCreatedAt',
         'campaignStats' => 'getCampaignStats',
@@ -216,6 +221,7 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['totalBlacklisted'] = isset($data['totalBlacklisted']) ? $data['totalBlacklisted'] : null;
         $this->container['totalSubscribers'] = isset($data['totalSubscribers']) ? $data['totalSubscribers'] : null;
+        $this->container['uniqueSubscribers'] = isset($data['uniqueSubscribers']) ? $data['uniqueSubscribers'] : null;
         $this->container['folderId'] = isset($data['folderId']) ? $data['folderId'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['campaignStats'] = isset($data['campaignStats']) ? $data['campaignStats'] : null;
@@ -242,6 +248,9 @@ class GetExtendedList implements ModelInterface, ArrayAccess
         }
         if ($this->container['totalSubscribers'] === null) {
             $invalidProperties[] = "'totalSubscribers' can't be null";
+        }
+        if ($this->container['uniqueSubscribers'] === null) {
+            $invalidProperties[] = "'uniqueSubscribers' can't be null";
         }
         if ($this->container['folderId'] === null) {
             $invalidProperties[] = "'folderId' can't be null";
@@ -361,6 +370,30 @@ class GetExtendedList implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets uniqueSubscribers
+     *
+     * @return int
+     */
+    public function getUniqueSubscribers()
+    {
+        return $this->container['uniqueSubscribers'];
+    }
+
+    /**
+     * Sets uniqueSubscribers
+     *
+     * @param int $uniqueSubscribers Number of unique contacts in the list
+     *
+     * @return $this
+     */
+    public function setUniqueSubscribers($uniqueSubscribers)
+    {
+        $this->container['uniqueSubscribers'] = $uniqueSubscribers;
+
+        return $this;
+    }
+
+    /**
      * Gets folderId
      *
      * @return int
@@ -387,7 +420,7 @@ class GetExtendedList implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedAt()
     {
@@ -397,7 +430,7 @@ class GetExtendedList implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param \DateTime $createdAt Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     * @param string $createdAt Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
      *
      * @return $this
      */

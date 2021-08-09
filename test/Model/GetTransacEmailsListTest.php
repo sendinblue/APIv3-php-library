@@ -77,6 +77,13 @@ class GetTransacEmailsListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "count"
+     */
+    public function testPropertyCount()
+    {
+    }
+
+    /**
      * Test attribute "transactionalEmails"
      */
     public function testPropertyTransactionalEmails()
