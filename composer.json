@@ -34,5 +34,10 @@
     },
     "autoload-dev": {
         "psr-4": { "SendinBlue\\Client\\" : "test/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "7.x.x-dev"
+        }
     }
 }
