@@ -426,7 +426,7 @@ class CreateContact implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset):mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -465,7 +465,7 @@ class CreateContact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
+    public function __toString():string
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
