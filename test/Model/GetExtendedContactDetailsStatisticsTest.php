@@ -131,4 +131,11 @@ class GetExtendedContactDetailsStatisticsTest extends \PHPUnit_Framework_TestCas
     public function testPropertyTransacAttributes()
     {
     }
+
+    /**
+     * Test attribute "delivered"
+     */
+    public function testPropertyDelivered()
+    {
+    }
 }

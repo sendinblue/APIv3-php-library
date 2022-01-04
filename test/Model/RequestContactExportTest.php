@@ -84,13 +84,6 @@ class RequestContactExportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "contactFilter"
-     */
-    public function testPropertyContactFilter()
-    {
-    }
-
-    /**
      * Test attribute "customContactFilter"
      */
     public function testPropertyCustomContactFilter()

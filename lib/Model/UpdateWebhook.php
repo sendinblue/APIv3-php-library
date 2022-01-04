@@ -59,7 +59,8 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'url' => 'string',
         'description' => 'string',
-        'events' => 'string[]'
+        'events' => 'string[]',
+        'domain' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'url' => 'url',
         'description' => null,
-        'events' => null
+        'events' => null,
+        'domain' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'url' => 'url',
         'description' => 'description',
-        'events' => 'events'
+        'events' => 'events',
+        'domain' => 'domain'
     ];
 
     /**
@@ -113,7 +116,8 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     protected static $setters = [
         'url' => 'setUrl',
         'description' => 'setDescription',
-        'events' => 'setEvents'
+        'events' => 'setEvents',
+        'domain' => 'setDomain'
     ];
 
     /**
@@ -124,7 +128,8 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     protected static $getters = [
         'url' => 'getUrl',
         'description' => 'getDescription',
-        'events' => 'getEvents'
+        'events' => 'getEvents',
+        'domain' => 'getDomain'
     ];
 
     /**
@@ -168,6 +173,7 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const EVENTS_SENT = 'sent';
     const EVENTS_HARD_BOUNCE = 'hardBounce';
     const EVENTS_SOFT_BOUNCE = 'softBounce';
     const EVENTS_BLOCKED = 'blocked';
@@ -183,6 +189,7 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     const EVENTS_LIST_ADDITION = 'listAddition';
     const EVENTS_CONTACT_UPDATED = 'contactUpdated';
     const EVENTS_CONTACT_DELETED = 'contactDeleted';
+    const EVENTS_INBOUND_EMAIL_PROCESSED = 'inboundEmailProcessed';
     
 
     
@@ -194,6 +201,7 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     public function getEventsAllowableValues()
     {
         return [
+            self::EVENTS_SENT,
             self::EVENTS_HARD_BOUNCE,
             self::EVENTS_SOFT_BOUNCE,
             self::EVENTS_BLOCKED,
@@ -209,6 +217,7 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
             self::EVENTS_LIST_ADDITION,
             self::EVENTS_CONTACT_UPDATED,
             self::EVENTS_CONTACT_DELETED,
+            self::EVENTS_INBOUND_EMAIL_PROCESSED,
         ];
     }
     
@@ -231,6 +240,7 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['events'] = isset($data['events']) ? $data['events'] : null;
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
     }
 
     /**
@@ -318,7 +328,7 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
     /**
      * Sets events
      *
-     * @param string[] $events Events triggering the webhook. Possible values for Transactional type webhook – `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` and possible values for Marketing type webhook – `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` and `delivered`
+     * @param string[] $events - Events triggering the webhook. Possible values for **Transactional** type webhook: #### `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` - Possible values for **Marketing** type webhook: #### `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` & `delivered` - Possible values for **Inbound** type webhook: #### `inboundEmailProcessed`
      *
      * @return $this
      */
@@ -334,6 +344,30 @@ class UpdateWebhook implements ModelInterface, ArrayAccess
             );
         }
         $this->container['events'] = $events;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->container['domain'];
+    }
+
+    /**
+     * Sets domain
+     *
+     * @param string $domain Inbound domain of webhook, used in case of event type `inbound`
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->container['domain'] = $domain;
 
         return $this;
     }

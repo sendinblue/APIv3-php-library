@@ -312,6 +312,16 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for updateBatchContacts
+     *
+     * Update multiple contacts.
+     *
+     */
+    public function testUpdateBatchContacts()
+    {
+    }
+
+    /**
      * Test case for updateContact
      *
      * Update a contact.

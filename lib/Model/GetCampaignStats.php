@@ -66,6 +66,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'softBounces' => 'int',
         'hardBounces' => 'int',
         'uniqueViews' => 'int',
+        'trackableViews' => 'int',
         'unsubscriptions' => 'int',
         'viewed' => 'int',
         'deferred' => 'int',
@@ -87,6 +88,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'softBounces' => 'int64',
         'hardBounces' => 'int64',
         'uniqueViews' => 'int64',
+        'trackableViews' => 'int64',
         'unsubscriptions' => 'int64',
         'viewed' => 'int64',
         'deferred' => 'int64',
@@ -129,6 +131,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'softBounces' => 'softBounces',
         'hardBounces' => 'hardBounces',
         'uniqueViews' => 'uniqueViews',
+        'trackableViews' => 'trackableViews',
         'unsubscriptions' => 'unsubscriptions',
         'viewed' => 'viewed',
         'deferred' => 'deferred',
@@ -150,6 +153,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'softBounces' => 'setSoftBounces',
         'hardBounces' => 'setHardBounces',
         'uniqueViews' => 'setUniqueViews',
+        'trackableViews' => 'setTrackableViews',
         'unsubscriptions' => 'setUnsubscriptions',
         'viewed' => 'setViewed',
         'deferred' => 'setDeferred',
@@ -171,6 +175,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         'softBounces' => 'getSoftBounces',
         'hardBounces' => 'getHardBounces',
         'uniqueViews' => 'getUniqueViews',
+        'trackableViews' => 'getTrackableViews',
         'unsubscriptions' => 'getUnsubscriptions',
         'viewed' => 'getViewed',
         'deferred' => 'getDeferred',
@@ -246,6 +251,7 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         $this->container['softBounces'] = isset($data['softBounces']) ? $data['softBounces'] : null;
         $this->container['hardBounces'] = isset($data['hardBounces']) ? $data['hardBounces'] : null;
         $this->container['uniqueViews'] = isset($data['uniqueViews']) ? $data['uniqueViews'] : null;
+        $this->container['trackableViews'] = isset($data['trackableViews']) ? $data['trackableViews'] : null;
         $this->container['unsubscriptions'] = isset($data['unsubscriptions']) ? $data['unsubscriptions'] : null;
         $this->container['viewed'] = isset($data['viewed']) ? $data['viewed'] : null;
         $this->container['deferred'] = isset($data['deferred']) ? $data['deferred'] : null;
@@ -284,6 +290,9 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
         }
         if ($this->container['uniqueViews'] === null) {
             $invalidProperties[] = "'uniqueViews' can't be null";
+        }
+        if ($this->container['trackableViews'] === null) {
+            $invalidProperties[] = "'trackableViews' can't be null";
         }
         if ($this->container['unsubscriptions'] === null) {
             $invalidProperties[] = "'unsubscriptions' can't be null";
@@ -518,6 +527,30 @@ class GetCampaignStats implements ModelInterface, ArrayAccess
     public function setUniqueViews($uniqueViews)
     {
         $this->container['uniqueViews'] = $uniqueViews;
+
+        return $this;
+    }
+
+    /**
+     * Gets trackableViews
+     *
+     * @return int
+     */
+    public function getTrackableViews()
+    {
+        return $this->container['trackableViews'];
+    }
+
+    /**
+     * Sets trackableViews
+     *
+     * @param int $trackableViews Recipients without any privacy protection option enabled in their email client
+     *
+     * @return $this
+     */
+    public function setTrackableViews($trackableViews)
+    {
+        $this->container['trackableViews'] = $trackableViews;
 
         return $this;
     }

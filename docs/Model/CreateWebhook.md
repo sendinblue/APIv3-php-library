@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **description** | **string** | Description of the webhook | [optional] 
 **events** | **string[]** | Events triggering the webhook. Possible values for Transactional type webhook – sent, request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition &amp; delivered | 
 **type** | **string** | Type of the webhook | [optional] [default to 'transactional']
+**domain** | **string** | Inbound domain of webhook, required in case of event type &#x60;inbound&#x60; | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

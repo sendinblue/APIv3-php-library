@@ -61,7 +61,8 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => 'string',
         'content' => 'string',
         'recipients' => '\SendinBlue\Client\Model\CreateSmsCampaignRecipients',
-        'scheduledAt' => 'string'
+        'scheduledAt' => 'string',
+        'unicodeEnabled' => 'bool'
     ];
 
     /**
@@ -74,7 +75,8 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => null,
         'content' => null,
         'recipients' => null,
-        'scheduledAt' => null
+        'scheduledAt' => null,
+        'unicodeEnabled' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => 'sender',
         'content' => 'content',
         'recipients' => 'recipients',
-        'scheduledAt' => 'scheduledAt'
+        'scheduledAt' => 'scheduledAt',
+        'unicodeEnabled' => 'unicodeEnabled'
     ];
 
     /**
@@ -121,7 +124,8 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => 'setSender',
         'content' => 'setContent',
         'recipients' => 'setRecipients',
-        'scheduledAt' => 'setScheduledAt'
+        'scheduledAt' => 'setScheduledAt',
+        'unicodeEnabled' => 'setUnicodeEnabled'
     ];
 
     /**
@@ -134,7 +138,8 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'sender' => 'getSender',
         'content' => 'getContent',
         'recipients' => 'getRecipients',
-        'scheduledAt' => 'getScheduledAt'
+        'scheduledAt' => 'getScheduledAt',
+        'unicodeEnabled' => 'getUnicodeEnabled'
     ];
 
     /**
@@ -202,6 +207,7 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
+        $this->container['unicodeEnabled'] = isset($data['unicodeEnabled']) ? $data['unicodeEnabled'] : false;
     }
 
     /**
@@ -361,6 +367,30 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
     public function setScheduledAt($scheduledAt)
     {
         $this->container['scheduledAt'] = $scheduledAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets unicodeEnabled
+     *
+     * @return bool
+     */
+    public function getUnicodeEnabled()
+    {
+        return $this->container['unicodeEnabled'];
+    }
+
+    /**
+     * Sets unicodeEnabled
+     *
+     * @param bool $unicodeEnabled Format of the message. It indicates whether the content should be treated as unicode or not.
+     *
+     * @return $this
+     */
+    public function setUnicodeEnabled($unicodeEnabled)
+    {
+        $this->container['unicodeEnabled'] = $unicodeEnabled;
 
         return $this;
     }

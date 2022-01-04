@@ -103,4 +103,11 @@ class CreateWebhookTest extends \PHPUnit_Framework_TestCase
     public function testPropertyType()
     {
     }
+
+    /**
+     * Test attribute "domain"
+     */
+    public function testPropertyDomain()
+    {
+    }
 }

@@ -38,7 +38,7 @@ namespace SendinBlue\Client;
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
-$GLOBALS['version'] = '7.4.3';
+$GLOBALS['version'] = '7.5.0';
 
 class Configuration
 {

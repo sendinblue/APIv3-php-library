@@ -140,6 +140,13 @@ class GetCampaignStatsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "trackableViews"
+     */
+    public function testPropertyTrackableViews()
+    {
+    }
+
+    /**
      * Test attribute "unsubscriptions"
      */
     public function testPropertyUnsubscriptions()
