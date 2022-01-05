@@ -103,4 +103,11 @@ class GetListTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTotalSubscribers()
     {
     }
+
+    /**
+     * Test attribute "uniqueSubscribers"
+     */
+    public function testPropertyUniqueSubscribers()
+    {
+    }
 }

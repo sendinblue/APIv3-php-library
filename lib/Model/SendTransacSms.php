@@ -62,7 +62,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'content' => 'string',
         'type' => 'string',
         'tag' => 'string',
-        'webUrl' => 'string'
+        'webUrl' => 'string',
+        'unicodeEnabled' => 'bool'
     ];
 
     /**
@@ -76,7 +77,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'content' => null,
         'type' => null,
         'tag' => null,
-        'webUrl' => 'url'
+        'webUrl' => 'url',
+        'unicodeEnabled' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'content' => 'content',
         'type' => 'type',
         'tag' => 'tag',
-        'webUrl' => 'webUrl'
+        'webUrl' => 'webUrl',
+        'unicodeEnabled' => 'unicodeEnabled'
     ];
 
     /**
@@ -125,7 +128,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'content' => 'setContent',
         'type' => 'setType',
         'tag' => 'setTag',
-        'webUrl' => 'setWebUrl'
+        'webUrl' => 'setWebUrl',
+        'unicodeEnabled' => 'setUnicodeEnabled'
     ];
 
     /**
@@ -139,7 +143,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'content' => 'getContent',
         'type' => 'getType',
         'tag' => 'getTag',
-        'webUrl' => 'getWebUrl'
+        'webUrl' => 'getWebUrl',
+        'unicodeEnabled' => 'getUnicodeEnabled'
     ];
 
     /**
@@ -223,6 +228,7 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : 'transactional';
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['webUrl'] = isset($data['webUrl']) ? $data['webUrl'] : null;
+        $this->container['unicodeEnabled'] = isset($data['unicodeEnabled']) ? $data['unicodeEnabled'] : false;
     }
 
     /**
@@ -423,6 +429,30 @@ class SendTransacSms implements ModelInterface, ArrayAccess
     public function setWebUrl($webUrl)
     {
         $this->container['webUrl'] = $webUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets unicodeEnabled
+     *
+     * @return bool
+     */
+    public function getUnicodeEnabled()
+    {
+        return $this->container['unicodeEnabled'];
+    }
+
+    /**
+     * Sets unicodeEnabled
+     *
+     * @param bool $unicodeEnabled Format of the message. It indicates whether the content should be treated as unicode or not.
+     *
+     * @return $this
+     */
+    public function setUnicodeEnabled($unicodeEnabled)
+    {
+        $this->container['unicodeEnabled'] = $unicodeEnabled;
 
         return $this;
     }

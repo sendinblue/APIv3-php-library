@@ -131,4 +131,11 @@ class GetContactCampaignStatsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTransacAttributes()
     {
     }
+
+    /**
+     * Test attribute "delivered"
+     */
+    public function testPropertyDelivered()
+    {
+    }
 }

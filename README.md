@@ -84,6 +84,18 @@ Class | Method | HTTP request | Description
 *AttributesApi* | [**deleteAttribute**](docs/Api/AttributesApi.md#deleteattribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
 *AttributesApi* | [**getAttributes**](docs/Api/AttributesApi.md#getattributes) | **GET** /contacts/attributes | List all attributes
 *AttributesApi* | [**updateAttribute**](docs/Api/AttributesApi.md#updateattribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
+*CRMApi* | [**crmFilesIdDataGet**](docs/Api/CRMApi.md#crmfilesiddataget) | **GET** /crm/files/{id}/data | Get file data by id.
+*CRMApi* | [**crmFilesIdDelete**](docs/Api/CRMApi.md#crmfilesiddelete) | **DELETE** /crm/files/{id} | Delete file.
+*CRMApi* | [**crmFilesIdGet**](docs/Api/CRMApi.md#crmfilesidget) | **GET** /crm/files/{id} | Download file by id.
+*CRMApi* | [**crmFilesPost**](docs/Api/CRMApi.md#crmfilespost) | **POST** /crm/files | Upload and create file.
+*CRMApi* | [**crmNotesIdDelete**](docs/Api/CRMApi.md#crmnotesiddelete) | **DELETE** /crm/notes/{id} | Delete Note by ID
+*CRMApi* | [**crmNotesIdGet**](docs/Api/CRMApi.md#crmnotesidget) | **GET** /crm/notes/{id} | Get one Note by ID
+*CRMApi* | [**crmNotesIdPatch**](docs/Api/CRMApi.md#crmnotesidpatch) | **PATCH** /crm/notes/{id} | Update a note
+*CRMApi* | [**crmNotesPost**](docs/Api/CRMApi.md#crmnotespost) | **POST** /crm/notes | Create a new Note
+*CRMApi* | [**crmTasksIdDelete**](docs/Api/CRMApi.md#crmtasksiddelete) | **DELETE** /crm/tasks/{id} | Delete Task by id
+*CRMApi* | [**crmTasksIdGet**](docs/Api/CRMApi.md#crmtasksidget) | **GET** /crm/tasks/{id} | Get one Task by ID
+*CRMApi* | [**crmTasksIdPatch**](docs/Api/CRMApi.md#crmtasksidpatch) | **PATCH** /crm/tasks/{id} | Update partial existing task
+*CRMApi* | [**crmTasksPost**](docs/Api/CRMApi.md#crmtaskspost) | **POST** /crm/tasks | Create a new Task
 *ContactsApi* | [**addContactToList**](docs/Api/ContactsApi.md#addcontacttolist) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 *ContactsApi* | [**createAttribute**](docs/Api/ContactsApi.md#createattribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 *ContactsApi* | [**createContact**](docs/Api/ContactsApi.md#createcontact) | **POST** /contacts | Create a contact
@@ -108,6 +120,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**removeContactFromList**](docs/Api/ContactsApi.md#removecontactfromlist) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 *ContactsApi* | [**requestContactExport**](docs/Api/ContactsApi.md#requestcontactexport) | **POST** /contacts/export | Export contacts
 *ContactsApi* | [**updateAttribute**](docs/Api/ContactsApi.md#updateattribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
+*ContactsApi* | [**updateBatchContacts**](docs/Api/ContactsApi.md#updatebatchcontacts) | **POST** /contacts/batch | Update multiple contacts
 *ContactsApi* | [**updateContact**](docs/Api/ContactsApi.md#updatecontact) | **PUT** /contacts/{identifier} | Update a contact
 *ContactsApi* | [**updateFolder**](docs/Api/ContactsApi.md#updatefolder) | **PUT** /contacts/folders/{folderId} | Update a folder
 *ContactsApi* | [**updateList**](docs/Api/ContactsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
@@ -130,6 +143,8 @@ Class | Method | HTTP request | Description
 *FoldersApi* | [**getFolderLists**](docs/Api/FoldersApi.md#getfolderlists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
 *FoldersApi* | [**getFolders**](docs/Api/FoldersApi.md#getfolders) | **GET** /contacts/folders | Get all folders
 *FoldersApi* | [**updateFolder**](docs/Api/FoldersApi.md#updatefolder) | **PUT** /contacts/folders/{folderId} | Update a folder
+*InboundParsingApi* | [**getInboundEmailEvents**](docs/Api/InboundParsingApi.md#getinboundemailevents) | **GET** /inbound/events | Get the list of all the events for the received emails.
+*InboundParsingApi* | [**getInboundEmailEventsByUuid**](docs/Api/InboundParsingApi.md#getinboundemaileventsbyuuid) | **GET** /inbound/events/{uuid} | Fetch all events history for one particular received email.
 *ListsApi* | [**addContactToList**](docs/Api/ListsApi.md#addcontacttolist) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 *ListsApi* | [**createList**](docs/Api/ListsApi.md#createlist) | **POST** /contacts/lists | Create a list
 *ListsApi* | [**deleteList**](docs/Api/ListsApi.md#deletelist) | **DELETE** /contacts/lists/{listId} | Delete a list
@@ -139,6 +154,12 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**getLists**](docs/Api/ListsApi.md#getlists) | **GET** /contacts/lists | Get all the lists
 *ListsApi* | [**removeContactFromList**](docs/Api/ListsApi.md#removecontactfromlist) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 *ListsApi* | [**updateList**](docs/Api/ListsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
+*MasterAccountApi* | [**corporateMasterAccountGet**](docs/Api/MasterAccountApi.md#corporatemasteraccountget) | **GET** /corporate/masterAccount | Get the details of requested master account
+*MasterAccountApi* | [**corporateSubAccountGet**](docs/Api/MasterAccountApi.md#corporatesubaccountget) | **GET** /corporate/subAccount | Get the list of all the sub-accounts of the master account.
+*MasterAccountApi* | [**corporateSubAccountIdGet**](docs/Api/MasterAccountApi.md#corporatesubaccountidget) | **GET** /corporate/subAccount/{id} | Get sub-account details
+*MasterAccountApi* | [**corporateSubAccountIdPlanPut**](docs/Api/MasterAccountApi.md#corporatesubaccountidplanput) | **PUT** /corporate/subAccount/{id}/plan | Update sub-account plan
+*MasterAccountApi* | [**corporateSubAccountPost**](docs/Api/MasterAccountApi.md#corporatesubaccountpost) | **POST** /corporate/subAccount | Create a new sub-account under a master account.
+*MasterAccountApi* | [**corporateSubAccountSsoTokenPost**](docs/Api/MasterAccountApi.md#corporatesubaccountssotokenpost) | **POST** /corporate/subAccount/ssoToken | Generate SSO token to access Sendinblue
 *ProcessApi* | [**getProcess**](docs/Api/ProcessApi.md#getprocess) | **GET** /processes/{processId} | Return the informations for a process
 *ProcessApi* | [**getProcesses**](docs/Api/ProcessApi.md#getprocesses) | **GET** /processes | Return all the processes for your account
 *ResellerApi* | [**addCredits**](docs/Api/ResellerApi.md#addcredits) | **POST** /reseller/children/{childIdentifier}/credits/add | Add Email and/or SMS credits to a specific child account
@@ -173,10 +194,13 @@ Class | Method | HTTP request | Description
 *SendersApi* | [**getIpsFromSender**](docs/Api/SendersApi.md#getipsfromsender) | **GET** /senders/{senderId}/ips | Get all the dedicated IPs for a sender
 *SendersApi* | [**getSenders**](docs/Api/SendersApi.md#getsenders) | **GET** /senders | Get the list of all your senders
 *SendersApi* | [**updateSender**](docs/Api/SendersApi.md#updatesender) | **PUT** /senders/{senderId} | Update a sender
+*TransactionalEmailsApi* | [**blockNewDomain**](docs/Api/TransactionalEmailsApi.md#blocknewdomain) | **POST** /smtp/blockedDomains | Add a new domain to the list of blocked domains
 *TransactionalEmailsApi* | [**createSmtpTemplate**](docs/Api/TransactionalEmailsApi.md#createsmtptemplate) | **POST** /smtp/templates | Create an email template
+*TransactionalEmailsApi* | [**deleteBlockedDomain**](docs/Api/TransactionalEmailsApi.md#deleteblockeddomain) | **DELETE** /smtp/blockedDomains/{domain} | Unblock an existing domain from the list of blocked domains
 *TransactionalEmailsApi* | [**deleteHardbounces**](docs/Api/TransactionalEmailsApi.md#deletehardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
 *TransactionalEmailsApi* | [**deleteSmtpTemplate**](docs/Api/TransactionalEmailsApi.md#deletesmtptemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
 *TransactionalEmailsApi* | [**getAggregatedSmtpReport**](docs/Api/TransactionalEmailsApi.md#getaggregatedsmtpreport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
+*TransactionalEmailsApi* | [**getBlockedDomains**](docs/Api/TransactionalEmailsApi.md#getblockeddomains) | **GET** /smtp/blockedDomains | Get the list of blocked domains
 *TransactionalEmailsApi* | [**getEmailEventReport**](docs/Api/TransactionalEmailsApi.md#getemaileventreport) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
 *TransactionalEmailsApi* | [**getSmtpReport**](docs/Api/TransactionalEmailsApi.md#getsmtpreport) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 *TransactionalEmailsApi* | [**getSmtpTemplate**](docs/Api/TransactionalEmailsApi.md#getsmtptemplate) | **GET** /smtp/templates/{templateId} | Returns the template information
@@ -184,7 +208,6 @@ Class | Method | HTTP request | Description
 *TransactionalEmailsApi* | [**getTransacBlockedContacts**](docs/Api/TransactionalEmailsApi.md#gettransacblockedcontacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
 *TransactionalEmailsApi* | [**getTransacEmailContent**](docs/Api/TransactionalEmailsApi.md#gettransacemailcontent) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
 *TransactionalEmailsApi* | [**getTransacEmailsList**](docs/Api/TransactionalEmailsApi.md#gettransacemailslist) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
-*TransactionalEmailsApi* | [**sendTemplate**](docs/Api/TransactionalEmailsApi.md#sendtemplate) | **POST** /smtp/templates/{templateId}/send | Send a template
 *TransactionalEmailsApi* | [**sendTestTemplate**](docs/Api/TransactionalEmailsApi.md#sendtesttemplate) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
 *TransactionalEmailsApi* | [**sendTransacEmail**](docs/Api/TransactionalEmailsApi.md#sendtransacemail) | **POST** /smtp/email | Send a transactional email
 *TransactionalEmailsApi* | [**smtpBlockedContactsEmailDelete**](docs/Api/TransactionalEmailsApi.md#smtpblockedcontactsemaildelete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
@@ -212,6 +235,10 @@ Class | Method | HTTP request | Description
  - [AddChildDomain](docs/Model/AddChildDomain.md)
  - [AddContactToList](docs/Model/AddContactToList.md)
  - [AddCredits](docs/Model/AddCredits.md)
+ - [BlockDomain](docs/Model/BlockDomain.md)
+ - [Body](docs/Model/Body.md)
+ - [Body1](docs/Model/Body1.md)
+ - [Contact](docs/Model/Contact.md)
  - [CreateAttribute](docs/Model/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/Model/CreateAttributeEnumeration.md)
  - [CreateChild](docs/Model/CreateChild.md)
@@ -231,6 +258,7 @@ Class | Method | HTTP request | Description
  - [CreateSmtpEmail](docs/Model/CreateSmtpEmail.md)
  - [CreateSmtpTemplate](docs/Model/CreateSmtpTemplate.md)
  - [CreateSmtpTemplateSender](docs/Model/CreateSmtpTemplateSender.md)
+ - [CreateSubAccount](docs/Model/CreateSubAccount.md)
  - [CreateUpdateContactModel](docs/Model/CreateUpdateContactModel.md)
  - [CreateUpdateFolder](docs/Model/CreateUpdateFolder.md)
  - [CreateWebhook](docs/Model/CreateWebhook.md)
@@ -238,6 +266,7 @@ Class | Method | HTTP request | Description
  - [DeleteHardbounces](docs/Model/DeleteHardbounces.md)
  - [EmailExportRecipients](docs/Model/EmailExportRecipients.md)
  - [ErrorModel](docs/Model/ErrorModel.md)
+ - [FileData](docs/Model/FileData.md)
  - [GetAccountMarketingAutomation](docs/Model/GetAccountMarketingAutomation.md)
  - [GetAccountPlan](docs/Model/GetAccountPlan.md)
  - [GetAccountRelay](docs/Model/GetAccountRelay.md)
@@ -246,6 +275,7 @@ Class | Method | HTTP request | Description
  - [GetAttributes](docs/Model/GetAttributes.md)
  - [GetAttributesAttributes](docs/Model/GetAttributesAttributes.md)
  - [GetAttributesEnumeration](docs/Model/GetAttributesEnumeration.md)
+ - [GetBlockedDomains](docs/Model/GetBlockedDomains.md)
  - [GetCampaignOverview](docs/Model/GetCampaignOverview.md)
  - [GetCampaignRecipients](docs/Model/GetCampaignRecipients.md)
  - [GetCampaignStats](docs/Model/GetCampaignStats.md)
@@ -275,6 +305,7 @@ Class | Method | HTTP request | Description
  - [GetExtendedClientAddress](docs/Model/GetExtendedClientAddress.md)
  - [GetExtendedContactDetailsStatistics](docs/Model/GetExtendedContactDetailsStatistics.md)
  - [GetExtendedContactDetailsStatisticsClicked](docs/Model/GetExtendedContactDetailsStatisticsClicked.md)
+ - [GetExtendedContactDetailsStatisticsDelivered](docs/Model/GetExtendedContactDetailsStatisticsDelivered.md)
  - [GetExtendedContactDetailsStatisticsLinks](docs/Model/GetExtendedContactDetailsStatisticsLinks.md)
  - [GetExtendedContactDetailsStatisticsMessagesSent](docs/Model/GetExtendedContactDetailsStatisticsMessagesSent.md)
  - [GetExtendedContactDetailsStatisticsOpened](docs/Model/GetExtendedContactDetailsStatisticsOpened.md)
@@ -285,6 +316,11 @@ Class | Method | HTTP request | Description
  - [GetFolder](docs/Model/GetFolder.md)
  - [GetFolderLists](docs/Model/GetFolderLists.md)
  - [GetFolders](docs/Model/GetFolders.md)
+ - [GetInboundEmailEvents](docs/Model/GetInboundEmailEvents.md)
+ - [GetInboundEmailEventsByUuid](docs/Model/GetInboundEmailEventsByUuid.md)
+ - [GetInboundEmailEventsByUuidAttachments](docs/Model/GetInboundEmailEventsByUuidAttachments.md)
+ - [GetInboundEmailEventsByUuidLogs](docs/Model/GetInboundEmailEventsByUuidLogs.md)
+ - [GetInboundEmailEventsEvents](docs/Model/GetInboundEmailEventsEvents.md)
  - [GetIp](docs/Model/GetIp.md)
  - [GetIpFromSender](docs/Model/GetIpFromSender.md)
  - [GetIps](docs/Model/GetIps.md)
@@ -324,6 +360,14 @@ Class | Method | HTTP request | Description
  - [GetWebhook](docs/Model/GetWebhook.md)
  - [GetWebhooks](docs/Model/GetWebhooks.md)
  - [ManageIp](docs/Model/ManageIp.md)
+ - [MasterDetailsResponse](docs/Model/MasterDetailsResponse.md)
+ - [MasterDetailsResponseBillingInfo](docs/Model/MasterDetailsResponseBillingInfo.md)
+ - [MasterDetailsResponseBillingInfoAddress](docs/Model/MasterDetailsResponseBillingInfoAddress.md)
+ - [MasterDetailsResponseBillingInfoName](docs/Model/MasterDetailsResponseBillingInfoName.md)
+ - [MasterDetailsResponsePlanInfo](docs/Model/MasterDetailsResponsePlanInfo.md)
+ - [MasterDetailsResponsePlanInfoFeatures](docs/Model/MasterDetailsResponsePlanInfoFeatures.md)
+ - [Note](docs/Model/Note.md)
+ - [NoteData](docs/Model/NoteData.md)
  - [PostContactInfo](docs/Model/PostContactInfo.md)
  - [PostContactInfoContacts](docs/Model/PostContactInfoContacts.md)
  - [PostSendFailed](docs/Model/PostSendFailed.md)
@@ -338,8 +382,6 @@ Class | Method | HTTP request | Description
  - [RequestContactImport](docs/Model/RequestContactImport.md)
  - [RequestContactImportNewList](docs/Model/RequestContactImportNewList.md)
  - [RequestSmsRecipientExport](docs/Model/RequestSmsRecipientExport.md)
- - [SendEmail](docs/Model/SendEmail.md)
- - [SendEmailAttachment](docs/Model/SendEmailAttachment.md)
  - [SendReport](docs/Model/SendReport.md)
  - [SendReportEmail](docs/Model/SendReportEmail.md)
  - [SendSms](docs/Model/SendSms.md)
@@ -347,15 +389,36 @@ Class | Method | HTTP request | Description
  - [SendSmtpEmailAttachment](docs/Model/SendSmtpEmailAttachment.md)
  - [SendSmtpEmailBcc](docs/Model/SendSmtpEmailBcc.md)
  - [SendSmtpEmailCc](docs/Model/SendSmtpEmailCc.md)
+ - [SendSmtpEmailMessageVersions](docs/Model/SendSmtpEmailMessageVersions.md)
  - [SendSmtpEmailReplyTo](docs/Model/SendSmtpEmailReplyTo.md)
+ - [SendSmtpEmailReplyTo1](docs/Model/SendSmtpEmailReplyTo1.md)
  - [SendSmtpEmailSender](docs/Model/SendSmtpEmailSender.md)
  - [SendSmtpEmailTo](docs/Model/SendSmtpEmailTo.md)
- - [SendTemplateEmail](docs/Model/SendTemplateEmail.md)
+ - [SendSmtpEmailTo1](docs/Model/SendSmtpEmailTo1.md)
  - [SendTestEmail](docs/Model/SendTestEmail.md)
  - [SendTestSms](docs/Model/SendTestSms.md)
  - [SendTransacSms](docs/Model/SendTransacSms.md)
+ - [SsoTokenRequest](docs/Model/SsoTokenRequest.md)
+ - [SubAccountDetailsResponse](docs/Model/SubAccountDetailsResponse.md)
+ - [SubAccountDetailsResponsePlanInfo](docs/Model/SubAccountDetailsResponsePlanInfo.md)
+ - [SubAccountDetailsResponsePlanInfoCredits](docs/Model/SubAccountDetailsResponsePlanInfoCredits.md)
+ - [SubAccountDetailsResponsePlanInfoCreditsEmails](docs/Model/SubAccountDetailsResponsePlanInfoCreditsEmails.md)
+ - [SubAccountDetailsResponsePlanInfoFeatures](docs/Model/SubAccountDetailsResponsePlanInfoFeatures.md)
+ - [SubAccountDetailsResponsePlanInfoFeaturesInbox](docs/Model/SubAccountDetailsResponsePlanInfoFeaturesInbox.md)
+ - [SubAccountDetailsResponsePlanInfoFeaturesLandingPage](docs/Model/SubAccountDetailsResponsePlanInfoFeaturesLandingPage.md)
+ - [SubAccountDetailsResponsePlanInfoFeaturesUsers](docs/Model/SubAccountDetailsResponsePlanInfoFeaturesUsers.md)
+ - [SubAccountUpdatePlanRequest](docs/Model/SubAccountUpdatePlanRequest.md)
+ - [SubAccountUpdatePlanRequestCredits](docs/Model/SubAccountUpdatePlanRequestCredits.md)
+ - [SubAccountUpdatePlanRequestFeatures](docs/Model/SubAccountUpdatePlanRequestFeatures.md)
+ - [SubAccountsResponse](docs/Model/SubAccountsResponse.md)
+ - [SubAccountsResponseSubAccounts](docs/Model/SubAccountsResponseSubAccounts.md)
+ - [Task](docs/Model/Task.md)
+ - [TaskReminder](docs/Model/TaskReminder.md)
  - [UpdateAttribute](docs/Model/UpdateAttribute.md)
  - [UpdateAttributeEnumeration](docs/Model/UpdateAttributeEnumeration.md)
+ - [UpdateBatchContacts](docs/Model/UpdateBatchContacts.md)
+ - [UpdateBatchContactsContacts](docs/Model/UpdateBatchContactsContacts.md)
+ - [UpdateBatchContactsModel](docs/Model/UpdateBatchContactsModel.md)
  - [UpdateCampaignStatus](docs/Model/UpdateCampaignStatus.md)
  - [UpdateChild](docs/Model/UpdateChild.md)
  - [UpdateChildAccountStatus](docs/Model/UpdateChildAccountStatus.md)

@@ -58,7 +58,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'exportAttributes' => 'string[]',
-        'contactFilter' => 'object',
         'customContactFilter' => '\SendinBlue\Client\Model\RequestContactExportCustomContactFilter',
         'notifyUrl' => 'string'
     ];
@@ -70,7 +69,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'exportAttributes' => null,
-        'contactFilter' => null,
         'customContactFilter' => null,
         'notifyUrl' => 'url'
     ];
@@ -103,7 +101,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'exportAttributes' => 'exportAttributes',
-        'contactFilter' => 'contactFilter',
         'customContactFilter' => 'customContactFilter',
         'notifyUrl' => 'notifyUrl'
     ];
@@ -115,7 +112,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'exportAttributes' => 'setExportAttributes',
-        'contactFilter' => 'setContactFilter',
         'customContactFilter' => 'setCustomContactFilter',
         'notifyUrl' => 'setNotifyUrl'
     ];
@@ -127,7 +123,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'exportAttributes' => 'getExportAttributes',
-        'contactFilter' => 'getContactFilter',
         'customContactFilter' => 'getCustomContactFilter',
         'notifyUrl' => 'getNotifyUrl'
     ];
@@ -193,7 +188,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['exportAttributes'] = isset($data['exportAttributes']) ? $data['exportAttributes'] : null;
-        $this->container['contactFilter'] = isset($data['contactFilter']) ? $data['contactFilter'] : null;
         $this->container['customContactFilter'] = isset($data['customContactFilter']) ? $data['customContactFilter'] : null;
         $this->container['notifyUrl'] = isset($data['notifyUrl']) ? $data['notifyUrl'] : null;
     }
@@ -207,6 +201,9 @@ class RequestContactExport implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['customContactFilter'] === null) {
+            $invalidProperties[] = "'customContactFilter' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -242,30 +239,6 @@ class RequestContactExport implements ModelInterface, ArrayAccess
     public function setExportAttributes($exportAttributes)
     {
         $this->container['exportAttributes'] = $exportAttributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets contactFilter
-     *
-     * @return object
-     */
-    public function getContactFilter()
-    {
-        return $this->container['contactFilter'];
-    }
-
-    /**
-     * Sets contactFilter
-     *
-     * @param object $contactFilter This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {\"blacklisted\":true} will export all the blacklisted contacts.
-     *
-     * @return $this
-     */
-    public function setContactFilter($contactFilter)
-    {
-        $this->container['contactFilter'] = $contactFilter;
 
         return $this;
     }

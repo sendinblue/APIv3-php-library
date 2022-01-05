@@ -65,7 +65,8 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
         'unsubscriptions' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsUnsubscriptions',
         'opened' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsOpened[]',
         'clicked' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsClicked[]',
-        'transacAttributes' => 'object[]'
+        'transacAttributes' => 'object[]',
+        'delivered' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsDelivered[]'
     ];
 
     /**
@@ -81,7 +82,8 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
         'unsubscriptions' => null,
         'opened' => null,
         'clicked' => null,
-        'transacAttributes' => null
+        'transacAttributes' => null,
+        'delivered' => null
     ];
 
     /**
@@ -118,7 +120,8 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
         'unsubscriptions' => 'unsubscriptions',
         'opened' => 'opened',
         'clicked' => 'clicked',
-        'transacAttributes' => 'transacAttributes'
+        'transacAttributes' => 'transacAttributes',
+        'delivered' => 'delivered'
     ];
 
     /**
@@ -134,7 +137,8 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
         'unsubscriptions' => 'setUnsubscriptions',
         'opened' => 'setOpened',
         'clicked' => 'setClicked',
-        'transacAttributes' => 'setTransacAttributes'
+        'transacAttributes' => 'setTransacAttributes',
+        'delivered' => 'setDelivered'
     ];
 
     /**
@@ -150,7 +154,8 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
         'unsubscriptions' => 'getUnsubscriptions',
         'opened' => 'getOpened',
         'clicked' => 'getClicked',
-        'transacAttributes' => 'getTransacAttributes'
+        'transacAttributes' => 'getTransacAttributes',
+        'delivered' => 'getDelivered'
     ];
 
     /**
@@ -221,6 +226,7 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
         $this->container['opened'] = isset($data['opened']) ? $data['opened'] : null;
         $this->container['clicked'] = isset($data['clicked']) ? $data['clicked'] : null;
         $this->container['transacAttributes'] = isset($data['transacAttributes']) ? $data['transacAttributes'] : null;
+        $this->container['delivered'] = isset($data['delivered']) ? $data['delivered'] : null;
     }
 
     /**
@@ -435,6 +441,30 @@ class GetExtendedContactDetailsStatistics implements ModelInterface, ArrayAccess
     public function setTransacAttributes($transacAttributes)
     {
         $this->container['transacAttributes'] = $transacAttributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivered
+     *
+     * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsDelivered[]
+     */
+    public function getDelivered()
+    {
+        return $this->container['delivered'];
+    }
+
+    /**
+     * Sets delivered
+     *
+     * @param \SendinBlue\Client\Model\GetExtendedContactDetailsStatisticsDelivered[] $delivered Listing of the delivered campaign for the contact
+     *
+     * @return $this
+     */
+    public function setDelivered($delivered)
+    {
+        $this->container['delivered'] = $delivered;
 
         return $this;
     }

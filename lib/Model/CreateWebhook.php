@@ -60,7 +60,8 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         'url' => 'string',
         'description' => 'string',
         'events' => 'string[]',
-        'type' => 'string'
+        'type' => 'string',
+        'domain' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         'url' => 'url',
         'description' => null,
         'events' => null,
-        'type' => null
+        'type' => null,
+        'domain' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         'url' => 'url',
         'description' => 'description',
         'events' => 'events',
-        'type' => 'type'
+        'type' => 'type',
+        'domain' => 'domain'
     ];
 
     /**
@@ -117,7 +120,8 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         'url' => 'setUrl',
         'description' => 'setDescription',
         'events' => 'setEvents',
-        'type' => 'setType'
+        'type' => 'setType',
+        'domain' => 'setDomain'
     ];
 
     /**
@@ -129,7 +133,8 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         'url' => 'getUrl',
         'description' => 'getDescription',
         'events' => 'getEvents',
-        'type' => 'getType'
+        'type' => 'getType',
+        'domain' => 'getDomain'
     ];
 
     /**
@@ -189,8 +194,10 @@ class CreateWebhook implements ModelInterface, ArrayAccess
     const EVENTS_LIST_ADDITION = 'listAddition';
     const EVENTS_CONTACT_UPDATED = 'contactUpdated';
     const EVENTS_CONTACT_DELETED = 'contactDeleted';
+    const EVENTS_INBOUND_EMAIL_PROCESSED = 'inboundEmailProcessed';
     const TYPE_TRANSACTIONAL = 'transactional';
     const TYPE_MARKETING = 'marketing';
+    const TYPE_INBOUND = 'inbound';
     
 
     
@@ -218,6 +225,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
             self::EVENTS_LIST_ADDITION,
             self::EVENTS_CONTACT_UPDATED,
             self::EVENTS_CONTACT_DELETED,
+            self::EVENTS_INBOUND_EMAIL_PROCESSED,
         ];
     }
     
@@ -231,6 +239,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         return [
             self::TYPE_TRANSACTIONAL,
             self::TYPE_MARKETING,
+            self::TYPE_INBOUND,
         ];
     }
     
@@ -254,6 +263,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['events'] = isset($data['events']) ? $data['events'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : 'transactional';
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
     }
 
     /**
@@ -355,7 +365,7 @@ class CreateWebhook implements ModelInterface, ArrayAccess
     /**
      * Sets events
      *
-     * @param string[] $events Events triggering the webhook. Possible values for Transactional type webhook – sent, request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered
+     * @param string[] $events - Events triggering the webhook. Possible values for **Transactional** type webhook: #### `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` - Possible values for **Marketing** type webhook: #### `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` & `delivered` - Possible values for **Inbound** type webhook: #### `inboundEmailProcessed`
      *
      * @return $this
      */
@@ -404,6 +414,30 @@ class CreateWebhook implements ModelInterface, ArrayAccess
             );
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->container['domain'];
+    }
+
+    /**
+     * Sets domain
+     *
+     * @param string $domain Inbound domain of webhook, required in case of event type `inbound`
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->container['domain'] = $domain;
 
         return $this;
     }

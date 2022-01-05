@@ -96,4 +96,11 @@ class UpdateWebhookTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEvents()
     {
     }
+
+    /**
+     * Test attribute "domain"
+     */
+    public function testPropertyDomain()
+    {
+    }
 }

@@ -110,4 +110,11 @@ class CreateSmsCampaignTest extends \PHPUnit_Framework_TestCase
     public function testPropertyScheduledAt()
     {
     }
+
+    /**
+     * Test attribute "unicodeEnabled"
+     */
+    public function testPropertyUnicodeEnabled()
+    {
+    }
 }

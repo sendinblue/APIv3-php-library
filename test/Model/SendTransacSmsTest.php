@@ -117,4 +117,11 @@ class SendTransacSmsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyWebUrl()
     {
     }
+
+    /**
+     * Test attribute "unicodeEnabled"
+     */
+    public function testPropertyUnicodeEnabled()
+    {
+    }
 }
