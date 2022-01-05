@@ -22,7 +22,7 @@ PHP 5.6 and later
 To install the bindings via [Composer](http://getcomposer.org/):
 
 ```
-composer require sendinblue/api-v3-sdk "7.x.x"
+composer require sendinblue/api-v3-sdk "8.x.x"
 ```
 
 Further do:
