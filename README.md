@@ -84,18 +84,19 @@ Class | Method | HTTP request | Description
 *AttributesApi* | [**deleteAttribute**](docs/Api/AttributesApi.md#deleteattribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
 *AttributesApi* | [**getAttributes**](docs/Api/AttributesApi.md#getattributes) | **GET** /contacts/attributes | List all attributes
 *AttributesApi* | [**updateAttribute**](docs/Api/AttributesApi.md#updateattribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
-*CRMApi* | [**crmFilesIdDataGet**](docs/Api/CRMApi.md#crmfilesiddataget) | **GET** /crm/files/{id}/data | Get file data by id.
-*CRMApi* | [**crmFilesIdDelete**](docs/Api/CRMApi.md#crmfilesiddelete) | **DELETE** /crm/files/{id} | Delete file.
-*CRMApi* | [**crmFilesIdGet**](docs/Api/CRMApi.md#crmfilesidget) | **GET** /crm/files/{id} | Download file by id.
-*CRMApi* | [**crmFilesPost**](docs/Api/CRMApi.md#crmfilespost) | **POST** /crm/files | Upload and create file.
-*CRMApi* | [**crmNotesIdDelete**](docs/Api/CRMApi.md#crmnotesiddelete) | **DELETE** /crm/notes/{id} | Delete Note by ID
-*CRMApi* | [**crmNotesIdGet**](docs/Api/CRMApi.md#crmnotesidget) | **GET** /crm/notes/{id} | Get one Note by ID
+*CRMApi* | [**crmFilesIdDataGet**](docs/Api/CRMApi.md#crmfilesiddataget) | **GET** /crm/files/{id}/data | Get file details
+*CRMApi* | [**crmFilesIdDelete**](docs/Api/CRMApi.md#crmfilesiddelete) | **DELETE** /crm/files/{id} | Delete a file
+*CRMApi* | [**crmFilesIdGet**](docs/Api/CRMApi.md#crmfilesidget) | **GET** /crm/files/{id} | Download a file
+*CRMApi* | [**crmFilesPost**](docs/Api/CRMApi.md#crmfilespost) | **POST** /crm/files | Upload a file
+*CRMApi* | [**crmNotesIdDelete**](docs/Api/CRMApi.md#crmnotesiddelete) | **DELETE** /crm/notes/{id} | Delete a note
+*CRMApi* | [**crmNotesIdGet**](docs/Api/CRMApi.md#crmnotesidget) | **GET** /crm/notes/{id} | Get a note
 *CRMApi* | [**crmNotesIdPatch**](docs/Api/CRMApi.md#crmnotesidpatch) | **PATCH** /crm/notes/{id} | Update a note
-*CRMApi* | [**crmNotesPost**](docs/Api/CRMApi.md#crmnotespost) | **POST** /crm/notes | Create a new Note
-*CRMApi* | [**crmTasksIdDelete**](docs/Api/CRMApi.md#crmtasksiddelete) | **DELETE** /crm/tasks/{id} | Delete Task by id
-*CRMApi* | [**crmTasksIdGet**](docs/Api/CRMApi.md#crmtasksidget) | **GET** /crm/tasks/{id} | Get one Task by ID
-*CRMApi* | [**crmTasksIdPatch**](docs/Api/CRMApi.md#crmtasksidpatch) | **PATCH** /crm/tasks/{id} | Update partial existing task
-*CRMApi* | [**crmTasksPost**](docs/Api/CRMApi.md#crmtaskspost) | **POST** /crm/tasks | Create a new Task
+*CRMApi* | [**crmNotesPost**](docs/Api/CRMApi.md#crmnotespost) | **POST** /crm/notes | Create a note
+*CRMApi* | [**crmTasksIdDelete**](docs/Api/CRMApi.md#crmtasksiddelete) | **DELETE** /crm/tasks/{id} | Delete a task
+*CRMApi* | [**crmTasksIdGet**](docs/Api/CRMApi.md#crmtasksidget) | **GET** /crm/tasks/{id} | Get a task
+*CRMApi* | [**crmTasksIdPatch**](docs/Api/CRMApi.md#crmtasksidpatch) | **PATCH** /crm/tasks/{id} | Update a task
+*CRMApi* | [**crmTasksPost**](docs/Api/CRMApi.md#crmtaskspost) | **POST** /crm/tasks | Create a task
+*CRMApi* | [**crmTasktypesGet**](docs/Api/CRMApi.md#crmtasktypesget) | **GET** /crm/tasktypes | Get all task types
 *ContactsApi* | [**addContactToList**](docs/Api/ContactsApi.md#addcontacttolist) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 *ContactsApi* | [**createAttribute**](docs/Api/ContactsApi.md#createattribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 *ContactsApi* | [**createContact**](docs/Api/ContactsApi.md#createcontact) | **POST** /contacts | Create a contact
@@ -156,6 +157,7 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**updateList**](docs/Api/ListsApi.md#updatelist) | **PUT** /contacts/lists/{listId} | Update a list
 *MasterAccountApi* | [**corporateMasterAccountGet**](docs/Api/MasterAccountApi.md#corporatemasteraccountget) | **GET** /corporate/masterAccount | Get the details of requested master account
 *MasterAccountApi* | [**corporateSubAccountGet**](docs/Api/MasterAccountApi.md#corporatesubaccountget) | **GET** /corporate/subAccount | Get the list of all the sub-accounts of the master account.
+*MasterAccountApi* | [**corporateSubAccountIdDelete**](docs/Api/MasterAccountApi.md#corporatesubaccountiddelete) | **DELETE** /corporate/subAccount/{id} | Delete a sub-account
 *MasterAccountApi* | [**corporateSubAccountIdGet**](docs/Api/MasterAccountApi.md#corporatesubaccountidget) | **GET** /corporate/subAccount/{id} | Get sub-account details
 *MasterAccountApi* | [**corporateSubAccountIdPlanPut**](docs/Api/MasterAccountApi.md#corporatesubaccountidplanput) | **PUT** /corporate/subAccount/{id}/plan | Update sub-account plan
 *MasterAccountApi* | [**corporateSubAccountPost**](docs/Api/MasterAccountApi.md#corporatesubaccountpost) | **POST** /corporate/subAccount | Create a new sub-account under a master account.
@@ -414,6 +416,7 @@ Class | Method | HTTP request | Description
  - [SubAccountsResponseSubAccounts](docs/Model/SubAccountsResponseSubAccounts.md)
  - [Task](docs/Model/Task.md)
  - [TaskReminder](docs/Model/TaskReminder.md)
+ - [TaskTypes](docs/Model/TaskTypes.md)
  - [UpdateAttribute](docs/Model/UpdateAttribute.md)
  - [UpdateAttributeEnumeration](docs/Model/UpdateAttributeEnumeration.md)
  - [UpdateBatchContacts](docs/Model/UpdateBatchContacts.md)

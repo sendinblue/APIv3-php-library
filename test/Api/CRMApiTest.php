@@ -74,7 +74,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmFilesIdDataGet
      *
-     * Get file data by id..
+     * Get file details.
      *
      */
     public function testCrmFilesIdDataGet()
@@ -84,7 +84,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmFilesIdDelete
      *
-     * Delete file..
+     * Delete a file.
      *
      */
     public function testCrmFilesIdDelete()
@@ -94,7 +94,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmFilesIdGet
      *
-     * Download file by id..
+     * Download a file.
      *
      */
     public function testCrmFilesIdGet()
@@ -104,7 +104,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmFilesPost
      *
-     * Upload and create file..
+     * Upload a file.
      *
      */
     public function testCrmFilesPost()
@@ -114,7 +114,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmNotesIdDelete
      *
-     * Delete Note by ID.
+     * Delete a note.
      *
      */
     public function testCrmNotesIdDelete()
@@ -124,7 +124,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmNotesIdGet
      *
-     * Get one Note by ID.
+     * Get a note.
      *
      */
     public function testCrmNotesIdGet()
@@ -144,7 +144,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmNotesPost
      *
-     * Create a new Note.
+     * Create a note.
      *
      */
     public function testCrmNotesPost()
@@ -154,7 +154,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmTasksIdDelete
      *
-     * Delete Task by id.
+     * Delete a task.
      *
      */
     public function testCrmTasksIdDelete()
@@ -164,7 +164,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmTasksIdGet
      *
-     * Get one Task by ID.
+     * Get a task.
      *
      */
     public function testCrmTasksIdGet()
@@ -174,7 +174,7 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmTasksIdPatch
      *
-     * Update partial existing task.
+     * Update a task.
      *
      */
     public function testCrmTasksIdPatch()
@@ -184,10 +184,20 @@ class CRMApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for crmTasksPost
      *
-     * Create a new Task.
+     * Create a task.
      *
      */
     public function testCrmTasksPost()
+    {
+    }
+
+    /**
+     * Test case for crmTasktypesGet
+     *
+     * Get all task types.
+     *
+     */
+    public function testCrmTasktypesGet()
     {
     }
 }

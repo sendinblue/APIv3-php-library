@@ -221,6 +221,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
     const EVENT_BLOCKED = 'blocked';
     const EVENT_UNSUBSCRIBED = 'unsubscribed';
     const EVENT_ERROR = 'error';
+    const EVENT_LOADED_BY_PROXY = 'loadedByProxy';
     
 
     
@@ -245,6 +246,7 @@ class GetEmailEventReportEvents implements ModelInterface, ArrayAccess
             self::EVENT_BLOCKED,
             self::EVENT_UNSUBSCRIBED,
             self::EVENT_ERROR,
+            self::EVENT_LOADED_BY_PROXY,
         ];
     }
     
