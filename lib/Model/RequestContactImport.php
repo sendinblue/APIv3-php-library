@@ -59,6 +59,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'fileUrl' => 'string',
         'fileBody' => 'string',
+        'jsonBody' => 'map[string,object][]',
         'listIds' => 'int[]',
         'notifyUrl' => 'string',
         'newList' => '\SendinBlue\Client\Model\RequestContactImportNewList',
@@ -76,6 +77,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'fileUrl' => 'url',
         'fileBody' => null,
+        'jsonBody' => null,
         'listIds' => 'int64',
         'notifyUrl' => 'url',
         'newList' => null,
@@ -114,6 +116,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'fileUrl' => 'fileUrl',
         'fileBody' => 'fileBody',
+        'jsonBody' => 'jsonBody',
         'listIds' => 'listIds',
         'notifyUrl' => 'notifyUrl',
         'newList' => 'newList',
@@ -131,6 +134,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     protected static $setters = [
         'fileUrl' => 'setFileUrl',
         'fileBody' => 'setFileBody',
+        'jsonBody' => 'setJsonBody',
         'listIds' => 'setListIds',
         'notifyUrl' => 'setNotifyUrl',
         'newList' => 'setNewList',
@@ -148,6 +152,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     protected static $getters = [
         'fileUrl' => 'getFileUrl',
         'fileBody' => 'getFileBody',
+        'jsonBody' => 'getJsonBody',
         'listIds' => 'getListIds',
         'notifyUrl' => 'getNotifyUrl',
         'newList' => 'getNewList',
@@ -219,6 +224,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     {
         $this->container['fileUrl'] = isset($data['fileUrl']) ? $data['fileUrl'] : null;
         $this->container['fileBody'] = isset($data['fileBody']) ? $data['fileBody'] : null;
+        $this->container['jsonBody'] = isset($data['jsonBody']) ? $data['jsonBody'] : null;
         $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
         $this->container['notifyUrl'] = isset($data['notifyUrl']) ? $data['notifyUrl'] : null;
         $this->container['newList'] = isset($data['newList']) ? $data['newList'] : null;
@@ -265,7 +271,7 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     /**
      * Sets fileUrl
      *
-     * @param string $fileUrl Mandatory if fileBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv
+     * @param string $fileUrl Mandatory if fileBody or jsonBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv, .json
      *
      * @return $this
      */
@@ -289,13 +295,37 @@ class RequestContactImport implements ModelInterface, ArrayAccess
     /**
      * Sets fileBody
      *
-     * @param string $fileBody Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.
+     * @param string $fileBody Mandatory if fileUrl and jsonBody is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.
      *
      * @return $this
      */
     public function setFileBody($fileBody)
     {
         $this->container['fileBody'] = $fileBody;
+
+        return $this;
+    }
+
+    /**
+     * Gets jsonBody
+     *
+     * @return map[string,object][]
+     */
+    public function getJsonBody()
+    {
+        return $this->container['jsonBody'];
+    }
+
+    /**
+     * Sets jsonBody
+     *
+     * @param map[string,object][] $jsonBody **Mandatory if fileUrl and fileBody is not defined.** JSON content to be imported. **Maximum allowed json body size is 10MB** . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of json body size while parsing. Please use fileUrl instead to import bigger files.
+     *
+     * @return $this
+     */
+    public function setJsonBody($jsonBody)
+    {
+        $this->container['jsonBody'] = $jsonBody;
 
         return $this;
     }

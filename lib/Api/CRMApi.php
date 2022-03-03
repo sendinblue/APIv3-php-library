@@ -90,7 +90,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDataGet
      *
-     * Get file data by id.
+     * Get file details
      *
      * @param  string $id File id to get file data. (required)
      *
@@ -107,7 +107,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDataGetWithHttpInfo
      *
-     * Get file data by id.
+     * Get file details
      *
      * @param  string $id File id to get file data. (required)
      *
@@ -198,7 +198,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDataGetAsync
      *
-     * Get file data by id.
+     * Get file details
      *
      * @param  string $id File id to get file data. (required)
      *
@@ -218,7 +218,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDataGetAsyncWithHttpInfo
      *
-     * Get file data by id.
+     * Get file details
      *
      * @param  string $id File id to get file data. (required)
      *
@@ -385,7 +385,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDelete
      *
-     * Delete file.
+     * Delete a file
      *
      * @param  string $id File id to delete. (required)
      *
@@ -401,7 +401,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDeleteWithHttpInfo
      *
-     * Delete file.
+     * Delete a file
      *
      * @param  string $id File id to delete. (required)
      *
@@ -470,7 +470,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDeleteAsync
      *
-     * Delete file.
+     * Delete a file
      *
      * @param  string $id File id to delete. (required)
      *
@@ -490,7 +490,7 @@ class CRMApi
     /**
      * Operation crmFilesIdDeleteAsyncWithHttpInfo
      *
-     * Delete file.
+     * Delete a file
      *
      * @param  string $id File id to delete. (required)
      *
@@ -643,7 +643,7 @@ class CRMApi
     /**
      * Operation crmFilesIdGet
      *
-     * Download file by id.
+     * Download a file
      *
      * @param  string $id File id to download. (required)
      *
@@ -659,7 +659,7 @@ class CRMApi
     /**
      * Operation crmFilesIdGetWithHttpInfo
      *
-     * Download file by id.
+     * Download a file
      *
      * @param  string $id File id to download. (required)
      *
@@ -728,7 +728,7 @@ class CRMApi
     /**
      * Operation crmFilesIdGetAsync
      *
-     * Download file by id.
+     * Download a file
      *
      * @param  string $id File id to download. (required)
      *
@@ -748,7 +748,7 @@ class CRMApi
     /**
      * Operation crmFilesIdGetAsyncWithHttpInfo
      *
-     * Download file by id.
+     * Download a file
      *
      * @param  string $id File id to download. (required)
      *
@@ -901,7 +901,7 @@ class CRMApi
     /**
      * Operation crmFilesPost
      *
-     * Upload and create file.
+     * Upload a file
      *
      * @param  \SplFileObject $file File data to create a file. (required)
      * @param  string[] $dealsIds Deal ids linked to a file (optional)
@@ -919,7 +919,7 @@ class CRMApi
     /**
      * Operation crmFilesPostWithHttpInfo
      *
-     * Upload and create file.
+     * Upload a file
      *
      * @param  \SplFileObject $file File data to create a file. (required)
      * @param  string[] $dealsIds Deal ids linked to a file (optional)
@@ -1003,7 +1003,7 @@ class CRMApi
     /**
      * Operation crmFilesPostAsync
      *
-     * Upload and create file.
+     * Upload a file
      *
      * @param  \SplFileObject $file File data to create a file. (required)
      * @param  string[] $dealsIds Deal ids linked to a file (optional)
@@ -1024,7 +1024,7 @@ class CRMApi
     /**
      * Operation crmFilesPostAsyncWithHttpInfo
      *
-     * Upload and create file.
+     * Upload a file
      *
      * @param  \SplFileObject $file File data to create a file. (required)
      * @param  string[] $dealsIds Deal ids linked to a file (optional)
@@ -1194,7 +1194,7 @@ class CRMApi
     /**
      * Operation crmNotesIdDelete
      *
-     * Delete Note by ID
+     * Delete a note
      *
      * @param  string $id Note ID to delete (required)
      *
@@ -1210,7 +1210,7 @@ class CRMApi
     /**
      * Operation crmNotesIdDeleteWithHttpInfo
      *
-     * Delete Note by ID
+     * Delete a note
      *
      * @param  string $id Note ID to delete (required)
      *
@@ -1279,7 +1279,7 @@ class CRMApi
     /**
      * Operation crmNotesIdDeleteAsync
      *
-     * Delete Note by ID
+     * Delete a note
      *
      * @param  string $id Note ID to delete (required)
      *
@@ -1299,7 +1299,7 @@ class CRMApi
     /**
      * Operation crmNotesIdDeleteAsyncWithHttpInfo
      *
-     * Delete Note by ID
+     * Delete a note
      *
      * @param  string $id Note ID to delete (required)
      *
@@ -1452,7 +1452,7 @@ class CRMApi
     /**
      * Operation crmNotesIdGet
      *
-     * Get one Note by ID
+     * Get a note
      *
      * @param  string $id Note ID to get (required)
      *
@@ -1469,7 +1469,7 @@ class CRMApi
     /**
      * Operation crmNotesIdGetWithHttpInfo
      *
-     * Get one Note by ID
+     * Get a note
      *
      * @param  string $id Note ID to get (required)
      *
@@ -1560,7 +1560,7 @@ class CRMApi
     /**
      * Operation crmNotesIdGetAsync
      *
-     * Get one Note by ID
+     * Get a note
      *
      * @param  string $id Note ID to get (required)
      *
@@ -1580,7 +1580,7 @@ class CRMApi
     /**
      * Operation crmNotesIdGetAsyncWithHttpInfo
      *
-     * Get one Note by ID
+     * Get a note
      *
      * @param  string $id Note ID to get (required)
      *
@@ -2064,7 +2064,7 @@ class CRMApi
     /**
      * Operation crmNotesPost
      *
-     * Create a new Note
+     * Create a note
      *
      * @param  \SendinBlue\Client\Model\NoteData $body Note data to create a note. (required)
      *
@@ -2081,7 +2081,7 @@ class CRMApi
     /**
      * Operation crmNotesPostWithHttpInfo
      *
-     * Create a new Note
+     * Create a note
      *
      * @param  \SendinBlue\Client\Model\NoteData $body Note data to create a note. (required)
      *
@@ -2172,7 +2172,7 @@ class CRMApi
     /**
      * Operation crmNotesPostAsync
      *
-     * Create a new Note
+     * Create a note
      *
      * @param  \SendinBlue\Client\Model\NoteData $body Note data to create a note. (required)
      *
@@ -2192,7 +2192,7 @@ class CRMApi
     /**
      * Operation crmNotesPostAsyncWithHttpInfo
      *
-     * Create a new Note
+     * Create a note
      *
      * @param  \SendinBlue\Client\Model\NoteData $body Note data to create a note. (required)
      *
@@ -2354,7 +2354,7 @@ class CRMApi
     /**
      * Operation crmTasksIdDelete
      *
-     * Delete Task by id
+     * Delete a task
      *
      * @param  string $id id (required)
      *
@@ -2370,7 +2370,7 @@ class CRMApi
     /**
      * Operation crmTasksIdDeleteWithHttpInfo
      *
-     * Delete Task by id
+     * Delete a task
      *
      * @param  string $id (required)
      *
@@ -2439,7 +2439,7 @@ class CRMApi
     /**
      * Operation crmTasksIdDeleteAsync
      *
-     * Delete Task by id
+     * Delete a task
      *
      * @param  string $id (required)
      *
@@ -2459,7 +2459,7 @@ class CRMApi
     /**
      * Operation crmTasksIdDeleteAsyncWithHttpInfo
      *
-     * Delete Task by id
+     * Delete a task
      *
      * @param  string $id (required)
      *
@@ -2612,7 +2612,7 @@ class CRMApi
     /**
      * Operation crmTasksIdGet
      *
-     * Get one Task by ID
+     * Get a task
      *
      * @param  string $id id (required)
      *
@@ -2629,7 +2629,7 @@ class CRMApi
     /**
      * Operation crmTasksIdGetWithHttpInfo
      *
-     * Get one Task by ID
+     * Get a task
      *
      * @param  string $id (required)
      *
@@ -2720,7 +2720,7 @@ class CRMApi
     /**
      * Operation crmTasksIdGetAsync
      *
-     * Get one Task by ID
+     * Get a task
      *
      * @param  string $id (required)
      *
@@ -2740,7 +2740,7 @@ class CRMApi
     /**
      * Operation crmTasksIdGetAsyncWithHttpInfo
      *
-     * Get one Task by ID
+     * Get a task
      *
      * @param  string $id (required)
      *
@@ -2907,7 +2907,7 @@ class CRMApi
     /**
      * Operation crmTasksIdPatch
      *
-     * Update partial existing task
+     * Update a task
      *
      * @param  string $id id (required)
      * @param  \SendinBlue\Client\Model\Body1 $body Updated task details. (required)
@@ -2925,7 +2925,7 @@ class CRMApi
     /**
      * Operation crmTasksIdPatchWithHttpInfo
      *
-     * Update partial existing task
+     * Update a task
      *
      * @param  string $id (required)
      * @param  \SendinBlue\Client\Model\Body1 $body Updated task details. (required)
@@ -3017,7 +3017,7 @@ class CRMApi
     /**
      * Operation crmTasksIdPatchAsync
      *
-     * Update partial existing task
+     * Update a task
      *
      * @param  string $id (required)
      * @param  \SendinBlue\Client\Model\Body1 $body Updated task details. (required)
@@ -3038,7 +3038,7 @@ class CRMApi
     /**
      * Operation crmTasksIdPatchAsyncWithHttpInfo
      *
-     * Update partial existing task
+     * Update a task
      *
      * @param  string $id (required)
      * @param  \SendinBlue\Client\Model\Body1 $body Updated task details. (required)
@@ -3216,7 +3216,7 @@ class CRMApi
     /**
      * Operation crmTasksPost
      *
-     * Create a new Task
+     * Create a task
      *
      * @param  \SendinBlue\Client\Model\Body $body Task name. (required)
      *
@@ -3233,7 +3233,7 @@ class CRMApi
     /**
      * Operation crmTasksPostWithHttpInfo
      *
-     * Create a new Task
+     * Create a task
      *
      * @param  \SendinBlue\Client\Model\Body $body Task name. (required)
      *
@@ -3308,7 +3308,7 @@ class CRMApi
     /**
      * Operation crmTasksPostAsync
      *
-     * Create a new Task
+     * Create a task
      *
      * @param  \SendinBlue\Client\Model\Body $body Task name. (required)
      *
@@ -3328,7 +3328,7 @@ class CRMApi
     /**
      * Operation crmTasksPostAsyncWithHttpInfo
      *
-     * Create a new Task
+     * Create a task
      *
      * @param  \SendinBlue\Client\Model\Body $body Task name. (required)
      *
@@ -3481,6 +3481,266 @@ class CRMApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation crmTasktypesGet
+     *
+     * Get all task types
+     *
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SendinBlue\Client\Model\TaskTypes
+     */
+    public function crmTasktypesGet()
+    {
+        list($response) = $this->crmTasktypesGetWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation crmTasktypesGetWithHttpInfo
+     *
+     * Get all task types
+     *
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SendinBlue\Client\Model\TaskTypes, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function crmTasktypesGetWithHttpInfo()
+    {
+        $returnType = '\SendinBlue\Client\Model\TaskTypes';
+        $request = $this->crmTasktypesGetRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\TaskTypes',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation crmTasktypesGetAsync
+     *
+     * Get all task types
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function crmTasktypesGetAsync()
+    {
+        return $this->crmTasktypesGetAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation crmTasktypesGetAsyncWithHttpInfo
+     *
+     * Get all task types
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function crmTasktypesGetAsyncWithHttpInfo()
+    {
+        $returnType = '\SendinBlue\Client\Model\TaskTypes';
+        $request = $this->crmTasktypesGetRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'crmTasktypesGet'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function crmTasktypesGetRequest()
+    {
+
+        $resourcePath = '/crm/tasktypes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

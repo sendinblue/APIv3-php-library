@@ -91,6 +91,13 @@ class RequestContactImportTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "jsonBody"
+     */
+    public function testPropertyJsonBody()
+    {
+    }
+
+    /**
      * Test attribute "listIds"
      */
     public function testPropertyListIds()

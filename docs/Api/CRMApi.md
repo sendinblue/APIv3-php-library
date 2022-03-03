@@ -4,24 +4,25 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**crmFilesIdDataGet**](CRMApi.md#crmFilesIdDataGet) | **GET** /crm/files/{id}/data | Get file data by id.
-[**crmFilesIdDelete**](CRMApi.md#crmFilesIdDelete) | **DELETE** /crm/files/{id} | Delete file.
-[**crmFilesIdGet**](CRMApi.md#crmFilesIdGet) | **GET** /crm/files/{id} | Download file by id.
-[**crmFilesPost**](CRMApi.md#crmFilesPost) | **POST** /crm/files | Upload and create file.
-[**crmNotesIdDelete**](CRMApi.md#crmNotesIdDelete) | **DELETE** /crm/notes/{id} | Delete Note by ID
-[**crmNotesIdGet**](CRMApi.md#crmNotesIdGet) | **GET** /crm/notes/{id} | Get one Note by ID
+[**crmFilesIdDataGet**](CRMApi.md#crmFilesIdDataGet) | **GET** /crm/files/{id}/data | Get file details
+[**crmFilesIdDelete**](CRMApi.md#crmFilesIdDelete) | **DELETE** /crm/files/{id} | Delete a file
+[**crmFilesIdGet**](CRMApi.md#crmFilesIdGet) | **GET** /crm/files/{id} | Download a file
+[**crmFilesPost**](CRMApi.md#crmFilesPost) | **POST** /crm/files | Upload a file
+[**crmNotesIdDelete**](CRMApi.md#crmNotesIdDelete) | **DELETE** /crm/notes/{id} | Delete a note
+[**crmNotesIdGet**](CRMApi.md#crmNotesIdGet) | **GET** /crm/notes/{id} | Get a note
 [**crmNotesIdPatch**](CRMApi.md#crmNotesIdPatch) | **PATCH** /crm/notes/{id} | Update a note
-[**crmNotesPost**](CRMApi.md#crmNotesPost) | **POST** /crm/notes | Create a new Note
-[**crmTasksIdDelete**](CRMApi.md#crmTasksIdDelete) | **DELETE** /crm/tasks/{id} | Delete Task by id
-[**crmTasksIdGet**](CRMApi.md#crmTasksIdGet) | **GET** /crm/tasks/{id} | Get one Task by ID
-[**crmTasksIdPatch**](CRMApi.md#crmTasksIdPatch) | **PATCH** /crm/tasks/{id} | Update partial existing task
-[**crmTasksPost**](CRMApi.md#crmTasksPost) | **POST** /crm/tasks | Create a new Task
+[**crmNotesPost**](CRMApi.md#crmNotesPost) | **POST** /crm/notes | Create a note
+[**crmTasksIdDelete**](CRMApi.md#crmTasksIdDelete) | **DELETE** /crm/tasks/{id} | Delete a task
+[**crmTasksIdGet**](CRMApi.md#crmTasksIdGet) | **GET** /crm/tasks/{id} | Get a task
+[**crmTasksIdPatch**](CRMApi.md#crmTasksIdPatch) | **PATCH** /crm/tasks/{id} | Update a task
+[**crmTasksPost**](CRMApi.md#crmTasksPost) | **POST** /crm/tasks | Create a task
+[**crmTasktypesGet**](CRMApi.md#crmTasktypesGet) | **GET** /crm/tasktypes | Get all task types
 
 
 # **crmFilesIdDataGet**
 > \SendinBlue\Client\Model\FileData crmFilesIdDataGet($id)
 
-Get file data by id.
+Get file details
 
 ### Example
 ```php
@@ -78,7 +79,7 @@ Name | Type | Description  | Notes
 # **crmFilesIdDelete**
 > crmFilesIdDelete($id)
 
-Delete file.
+Delete a file
 
 ### Example
 ```php
@@ -134,7 +135,7 @@ void (empty response body)
 # **crmFilesIdGet**
 > crmFilesIdGet($id)
 
-Download file by id.
+Download a file
 
 ### Example
 ```php
@@ -190,7 +191,7 @@ void (empty response body)
 # **crmFilesPost**
 > \SendinBlue\Client\Model\FileData crmFilesPost($file, $dealsIds)
 
-Upload and create file.
+Upload a file
 
 ### Example
 ```php
@@ -249,7 +250,7 @@ Name | Type | Description  | Notes
 # **crmNotesIdDelete**
 > crmNotesIdDelete($id)
 
-Delete Note by ID
+Delete a note
 
 ### Example
 ```php
@@ -305,7 +306,7 @@ void (empty response body)
 # **crmNotesIdGet**
 > \SendinBlue\Client\Model\Note crmNotesIdGet($id)
 
-Get one Note by ID
+Get a note
 
 ### Example
 ```php
@@ -421,7 +422,7 @@ Name | Type | Description  | Notes
 # **crmNotesPost**
 > \SendinBlue\Client\Model\Note crmNotesPost($body)
 
-Create a new Note
+Create a note
 
 ### Example
 ```php
@@ -478,7 +479,7 @@ Name | Type | Description  | Notes
 # **crmTasksIdDelete**
 > crmTasksIdDelete($id)
 
-Delete Task by id
+Delete a task
 
 ### Example
 ```php
@@ -534,7 +535,7 @@ void (empty response body)
 # **crmTasksIdGet**
 > \SendinBlue\Client\Model\Task crmTasksIdGet($id)
 
-Get one Task by ID
+Get a task
 
 ### Example
 ```php
@@ -591,7 +592,7 @@ Name | Type | Description  | Notes
 # **crmTasksIdPatch**
 > \SendinBlue\Client\Model\Task crmTasksIdPatch($id, $body)
 
-Update partial existing task
+Update a task
 
 ### Example
 ```php
@@ -650,7 +651,7 @@ Name | Type | Description  | Notes
 # **crmTasksPost**
 > \SendinBlue\Client\Model\Task crmTasksPost($body)
 
-Create a new Task
+Create a task
 
 ### Example
 ```php
@@ -692,6 +693,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SendinBlue\Client\Model\Task**](../Model/Task.md)
+
+### Authorization
+
+[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **crmTasktypesGet**
+> \SendinBlue\Client\Model\TaskTypes crmTasktypesGet()
+
+Get all task types
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: api-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: partner-key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+
+$apiInstance = new SendinBlue\Client\Api\CRMApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->crmTasktypesGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CRMApi->crmTasktypesGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\SendinBlue\Client\Model\TaskTypes**](../Model/TaskTypes.md)
 
 ### Authorization
 

@@ -92,6 +92,16 @@ class MasterAccountApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for corporateSubAccountIdDelete
+     *
+     * Delete a sub-account.
+     *
+     */
+    public function testCorporateSubAccountIdDelete()
+    {
+    }
+
+    /**
      * Test case for corporateSubAccountIdGet
      *
      * Get sub-account details.
