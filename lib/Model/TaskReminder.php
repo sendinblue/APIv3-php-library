@@ -323,7 +323,7 @@ class TaskReminder implements ModelInterface, ArrayAccess
     /**
      * Sets types
      *
-     * @param string[] $types Type of task reminder
+     * @param string[] $types Type of task reminder e.g email, push
      *
      * @return $this
      */

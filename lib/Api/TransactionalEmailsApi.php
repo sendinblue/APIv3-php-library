@@ -2297,6 +2297,930 @@ class TransactionalEmailsApi
     }
 
     /**
+     * Operation getScheduledEmailByBatchId
+     *
+     * Fetch scheduled emails by batchId
+     *
+     * @param  string $batchId The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+     * @param  \DateTime $startDate Mandatory if &#x60;endDate&#x60; is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if &#x60;startDate&#x60; is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  string $status Filter the records by &#x60;status&#x60; of the scheduled email batch or message. (optional)
+     * @param  int $limit Number of documents returned per page (optional, default to 100)
+     * @param  int $offset Index of the first document on the page (optional, default to 0)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SendinBlue\Client\Model\GetScheduledEmailByBatchId
+     */
+    public function getScheduledEmailByBatchId($batchId, $startDate = null, $endDate = null, $sort = 'desc', $status = null, $limit = '100', $offset = '0')
+    {
+        list($response) = $this->getScheduledEmailByBatchIdWithHttpInfo($batchId, $startDate, $endDate, $sort, $status, $limit, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation getScheduledEmailByBatchIdWithHttpInfo
+     *
+     * Fetch scheduled emails by batchId
+     *
+     * @param  string $batchId The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+     * @param  \DateTime $startDate Mandatory if &#x60;endDate&#x60; is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if &#x60;startDate&#x60; is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  string $status Filter the records by &#x60;status&#x60; of the scheduled email batch or message. (optional)
+     * @param  int $limit Number of documents returned per page (optional, default to 100)
+     * @param  int $offset Index of the first document on the page (optional, default to 0)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SendinBlue\Client\Model\GetScheduledEmailByBatchId, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getScheduledEmailByBatchIdWithHttpInfo($batchId, $startDate = null, $endDate = null, $sort = 'desc', $status = null, $limit = '100', $offset = '0')
+    {
+        $returnType = '\SendinBlue\Client\Model\GetScheduledEmailByBatchId';
+        $request = $this->getScheduledEmailByBatchIdRequest($batchId, $startDate, $endDate, $sort, $status, $limit, $offset);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\GetScheduledEmailByBatchId',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getScheduledEmailByBatchIdAsync
+     *
+     * Fetch scheduled emails by batchId
+     *
+     * @param  string $batchId The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+     * @param  \DateTime $startDate Mandatory if &#x60;endDate&#x60; is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if &#x60;startDate&#x60; is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  string $status Filter the records by &#x60;status&#x60; of the scheduled email batch or message. (optional)
+     * @param  int $limit Number of documents returned per page (optional, default to 100)
+     * @param  int $offset Index of the first document on the page (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getScheduledEmailByBatchIdAsync($batchId, $startDate = null, $endDate = null, $sort = 'desc', $status = null, $limit = '100', $offset = '0')
+    {
+        return $this->getScheduledEmailByBatchIdAsyncWithHttpInfo($batchId, $startDate, $endDate, $sort, $status, $limit, $offset)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getScheduledEmailByBatchIdAsyncWithHttpInfo
+     *
+     * Fetch scheduled emails by batchId
+     *
+     * @param  string $batchId The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+     * @param  \DateTime $startDate Mandatory if &#x60;endDate&#x60; is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if &#x60;startDate&#x60; is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  string $status Filter the records by &#x60;status&#x60; of the scheduled email batch or message. (optional)
+     * @param  int $limit Number of documents returned per page (optional, default to 100)
+     * @param  int $offset Index of the first document on the page (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getScheduledEmailByBatchIdAsyncWithHttpInfo($batchId, $startDate = null, $endDate = null, $sort = 'desc', $status = null, $limit = '100', $offset = '0')
+    {
+        $returnType = '\SendinBlue\Client\Model\GetScheduledEmailByBatchId';
+        $request = $this->getScheduledEmailByBatchIdRequest($batchId, $startDate, $endDate, $sort, $status, $limit, $offset);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getScheduledEmailByBatchId'
+     *
+     * @param  string $batchId The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+     * @param  \DateTime $startDate Mandatory if &#x60;endDate&#x60; is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if &#x60;startDate&#x60; is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
+     * @param  string $status Filter the records by &#x60;status&#x60; of the scheduled email batch or message. (optional)
+     * @param  int $limit Number of documents returned per page (optional, default to 100)
+     * @param  int $offset Index of the first document on the page (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getScheduledEmailByBatchIdRequest($batchId, $startDate = null, $endDate = null, $sort = 'desc', $status = null, $limit = '100', $offset = '0')
+    {
+        // verify the required parameter 'batchId' is set
+        if ($batchId === null || (is_array($batchId) && count($batchId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $batchId when calling getScheduledEmailByBatchId'
+            );
+        }
+        if ($limit !== null && $limit > 500) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling TransactionalEmailsApi.getScheduledEmailByBatchId, must be smaller than or equal to 500.');
+        }
+
+
+        $resourcePath = '/smtp/emailStatus/{batchId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($startDate !== null) {
+            $queryParams['startDate'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['endDate'] = ObjectSerializer::toQueryValue($endDate);
+        }
+        // query params
+        if ($sort !== null) {
+            $queryParams['sort'] = ObjectSerializer::toQueryValue($sort);
+        }
+        // query params
+        if ($status !== null) {
+            $queryParams['status'] = ObjectSerializer::toQueryValue($status);
+        }
+        // query params
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toQueryValue($limit);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = ObjectSerializer::toQueryValue($offset);
+        }
+
+        // path params
+        if ($batchId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'batchId' . '}',
+                ObjectSerializer::toPathValue($batchId),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getScheduledEmailById
+     *
+     * Delete scheduled emails by batchId or messageId
+     *
+     * @param  string $identifier The &#x60;batchId&#x60; of scheduled emails batch (Should be a valid UUIDv4) or the &#x60;messageId&#x60; of scheduled email. (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getScheduledEmailById($identifier)
+    {
+        $this->getScheduledEmailByIdWithHttpInfo($identifier);
+    }
+
+    /**
+     * Operation getScheduledEmailByIdWithHttpInfo
+     *
+     * Delete scheduled emails by batchId or messageId
+     *
+     * @param  string $identifier The &#x60;batchId&#x60; of scheduled emails batch (Should be a valid UUIDv4) or the &#x60;messageId&#x60; of scheduled email. (required)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getScheduledEmailByIdWithHttpInfo($identifier)
+    {
+        $returnType = '';
+        $request = $this->getScheduledEmailByIdRequest($identifier);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getScheduledEmailByIdAsync
+     *
+     * Delete scheduled emails by batchId or messageId
+     *
+     * @param  string $identifier The &#x60;batchId&#x60; of scheduled emails batch (Should be a valid UUIDv4) or the &#x60;messageId&#x60; of scheduled email. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getScheduledEmailByIdAsync($identifier)
+    {
+        return $this->getScheduledEmailByIdAsyncWithHttpInfo($identifier)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getScheduledEmailByIdAsyncWithHttpInfo
+     *
+     * Delete scheduled emails by batchId or messageId
+     *
+     * @param  string $identifier The &#x60;batchId&#x60; of scheduled emails batch (Should be a valid UUIDv4) or the &#x60;messageId&#x60; of scheduled email. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getScheduledEmailByIdAsyncWithHttpInfo($identifier)
+    {
+        $returnType = '';
+        $request = $this->getScheduledEmailByIdRequest($identifier);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getScheduledEmailById'
+     *
+     * @param  string $identifier The &#x60;batchId&#x60; of scheduled emails batch (Should be a valid UUIDv4) or the &#x60;messageId&#x60; of scheduled email. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getScheduledEmailByIdRequest($identifier)
+    {
+        // verify the required parameter 'identifier' is set
+        if ($identifier === null || (is_array($identifier) && count($identifier) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $identifier when calling getScheduledEmailById'
+            );
+        }
+
+        $resourcePath = '/smtp/email/{identifier}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($identifier !== null) {
+            $resourcePath = str_replace(
+                '{' . 'identifier' . '}',
+                ObjectSerializer::toPathValue($identifier),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getScheduledEmailByMessageId
+     *
+     * Fetch scheduled email by messageId
+     *
+     * @param  string $messageId The messageId of scheduled email (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SendinBlue\Client\Model\GetScheduledEmailByMessageId
+     */
+    public function getScheduledEmailByMessageId($messageId, $startDate = null, $endDate = null)
+    {
+        list($response) = $this->getScheduledEmailByMessageIdWithHttpInfo($messageId, $startDate, $endDate);
+        return $response;
+    }
+
+    /**
+     * Operation getScheduledEmailByMessageIdWithHttpInfo
+     *
+     * Fetch scheduled email by messageId
+     *
+     * @param  string $messageId The messageId of scheduled email (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     *
+     * @throws \SendinBlue\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SendinBlue\Client\Model\GetScheduledEmailByMessageId, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getScheduledEmailByMessageIdWithHttpInfo($messageId, $startDate = null, $endDate = null)
+    {
+        $returnType = '\SendinBlue\Client\Model\GetScheduledEmailByMessageId';
+        $request = $this->getScheduledEmailByMessageIdRequest($messageId, $startDate, $endDate);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\GetScheduledEmailByMessageId',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getScheduledEmailByMessageIdAsync
+     *
+     * Fetch scheduled email by messageId
+     *
+     * @param  string $messageId The messageId of scheduled email (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getScheduledEmailByMessageIdAsync($messageId, $startDate = null, $endDate = null)
+    {
+        return $this->getScheduledEmailByMessageIdAsyncWithHttpInfo($messageId, $startDate, $endDate)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getScheduledEmailByMessageIdAsyncWithHttpInfo
+     *
+     * Fetch scheduled email by messageId
+     *
+     * @param  string $messageId The messageId of scheduled email (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getScheduledEmailByMessageIdAsyncWithHttpInfo($messageId, $startDate = null, $endDate = null)
+    {
+        $returnType = '\SendinBlue\Client\Model\GetScheduledEmailByMessageId';
+        $request = $this->getScheduledEmailByMessageIdRequest($messageId, $startDate, $endDate);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getScheduledEmailByMessageId'
+     *
+     * @param  string $messageId The messageId of scheduled email (required)
+     * @param  \DateTime $startDate Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+     * @param  \DateTime $endDate Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getScheduledEmailByMessageIdRequest($messageId, $startDate = null, $endDate = null)
+    {
+        // verify the required parameter 'messageId' is set
+        if ($messageId === null || (is_array($messageId) && count($messageId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $messageId when calling getScheduledEmailByMessageId'
+            );
+        }
+
+        $resourcePath = '/smtp/emailStatus/{messageId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($startDate !== null) {
+            $queryParams['startDate'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['endDate'] = ObjectSerializer::toQueryValue($endDate);
+        }
+
+        // path params
+        if ($messageId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'messageId' . '}',
+                ObjectSerializer::toPathValue($messageId),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getSmtpReport
      *
      * Get your transactional email activity aggregated per day

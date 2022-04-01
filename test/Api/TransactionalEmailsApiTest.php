@@ -152,6 +152,36 @@ class TransactionalEmailsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getScheduledEmailByBatchId
+     *
+     * Fetch scheduled emails by batchId.
+     *
+     */
+    public function testGetScheduledEmailByBatchId()
+    {
+    }
+
+    /**
+     * Test case for getScheduledEmailById
+     *
+     * Delete scheduled emails by batchId or messageId.
+     *
+     */
+    public function testGetScheduledEmailById()
+    {
+    }
+
+    /**
+     * Test case for getScheduledEmailByMessageId
+     *
+     * Fetch scheduled email by messageId.
+     *
+     */
+    public function testGetScheduledEmailByMessageId()
+    {
+    }
+
+    /**
      * Test case for getSmtpReport
      *
      * Get your transactional email activity aggregated per day.

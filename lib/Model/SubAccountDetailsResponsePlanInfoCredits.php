@@ -36,7 +36,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * SubAccountDetailsResponsePlanInfoCredits Class Doc Comment
  *
  * @category Class
- * @description Sub-account messaging quota details
+ * @description Credits quota and remaining credits on the sub-account
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -224,7 +224,7 @@ class SubAccountDetailsResponsePlanInfoCredits implements ModelInterface, ArrayA
     /**
      * Sets sms
      *
-     * @param int $sms Sms quota of the sub-account
+     * @param int $sms SMS credits remaining on the sub-account
      *
      * @return $this
      */

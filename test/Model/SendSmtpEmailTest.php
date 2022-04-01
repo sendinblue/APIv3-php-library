@@ -173,4 +173,11 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTags()
     {
     }
+
+    /**
+     * Test attribute "scheduledAt"
+     */
+    public function testPropertyScheduledAt()
+    {
+    }
 }

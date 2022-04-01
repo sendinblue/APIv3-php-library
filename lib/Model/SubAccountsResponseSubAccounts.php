@@ -247,7 +247,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id client id of sub-account organization
+     * @param int $id id of the sub-account
      *
      * @return $this
      */
@@ -271,7 +271,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Sets companyName
      *
-     * @param string $companyName Name of sub-account organization
+     * @param string $companyName Name of the sub-account company
      *
      * @return $this
      */
@@ -295,7 +295,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Sets active
      *
-     * @param bool $active Whether organization is active or not
+     * @param bool $active Whether the sub-account is active or not
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param int $createdAt timestamp when the organization was created
+     * @param int $createdAt Timestamp when the sub-account was created
      *
      * @return $this
      */

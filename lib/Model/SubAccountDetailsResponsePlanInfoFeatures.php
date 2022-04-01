@@ -36,7 +36,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * SubAccountDetailsResponsePlanInfoFeatures Class Doc Comment
  *
  * @category Class
- * @description Sub-account features and addons quota details
+ * @description Features available on the sub-account
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

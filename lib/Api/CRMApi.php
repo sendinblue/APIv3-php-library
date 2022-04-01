@@ -352,14 +352,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
-        if ($apiKey !== null) {
-            $headers['api-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
+        if ($api-Key !== null) {
+            $headers['api-Key'] = $api-Key;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
-        if ($apiKey !== null) {
-            $headers['partner-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
+        if ($api-Key !== null) {
+            $headers['partnerKey'] = $api-Key;
         }
 
         $defaultHeaders = [];
@@ -610,14 +610,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
-        if ($apiKey !== null) {
-            $headers['api-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
+        if ($api-Key !== null) {
+            $headers['api-Key'] = $api-Key;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
-        if ($apiKey !== null) {
-            $headers['partner-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
+        if ($api-Key !== null) {
+            $headers['partnerKey'] = $api-Key;
         }
 
         $defaultHeaders = [];
@@ -868,14 +868,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
-        if ($apiKey !== null) {
-            $headers['api-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
+        if ($api-Key !== null) {
+            $headers['api-Key'] = $api-Key;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
-        if ($apiKey !== null) {
-            $headers['partner-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
+        if ($api-Key !== null) {
+            $headers['partnerKey'] = $api-Key;
         }
 
         $defaultHeaders = [];
@@ -1161,14 +1161,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
-        if ($apiKey !== null) {
-            $headers['api-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
+        if ($api-Key !== null) {
+            $headers['api-Key'] = $api-Key;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
-        if ($apiKey !== null) {
-            $headers['partner-key'] = $apiKey;
+        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
+        if ($api-Key !== null) {
+            $headers['partnerKey'] = $api-Key;
         }
 
         $defaultHeaders = [];
@@ -3222,7 +3222,7 @@ class CRMApi
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SendinBlue\Client\Model\Task
+     * @return \SendinBlue\Client\Model\InlineResponse201
      */
     public function crmTasksPost($body)
     {
@@ -3239,11 +3239,11 @@ class CRMApi
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SendinBlue\Client\Model\Task, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SendinBlue\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmTasksPostWithHttpInfo($body)
     {
-        $returnType = '\SendinBlue\Client\Model\Task';
+        $returnType = '\SendinBlue\Client\Model\InlineResponse201';
         $request = $this->crmTasksPostRequest($body);
 
         try {
@@ -3295,7 +3295,7 @@ class CRMApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SendinBlue\Client\Model\Task',
+                        '\SendinBlue\Client\Model\InlineResponse201',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3337,7 +3337,7 @@ class CRMApi
      */
     public function crmTasksPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\SendinBlue\Client\Model\Task';
+        $returnType = '\SendinBlue\Client\Model\InlineResponse201';
         $request = $this->crmTasksPostRequest($body);
 
         return $this->client

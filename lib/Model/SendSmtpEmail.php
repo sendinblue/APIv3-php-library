@@ -70,7 +70,8 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'templateId' => 'int',
         'params' => 'object',
         'messageVersions' => '\SendinBlue\Client\Model\SendSmtpEmailMessageVersions[]',
-        'tags' => 'string[]'
+        'tags' => 'string[]',
+        'scheduledAt' => '\DateTime'
     ];
 
     /**
@@ -92,7 +93,8 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'templateId' => 'int64',
         'params' => null,
         'messageVersions' => null,
-        'tags' => null
+        'tags' => null,
+        'scheduledAt' => 'date-time'
     ];
 
     /**
@@ -135,7 +137,8 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'templateId' => 'templateId',
         'params' => 'params',
         'messageVersions' => 'messageVersions',
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'scheduledAt' => 'scheduledAt'
     ];
 
     /**
@@ -157,7 +160,8 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'templateId' => 'setTemplateId',
         'params' => 'setParams',
         'messageVersions' => 'setMessageVersions',
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'scheduledAt' => 'setScheduledAt'
     ];
 
     /**
@@ -179,7 +183,8 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         'templateId' => 'getTemplateId',
         'params' => 'getParams',
         'messageVersions' => 'getMessageVersions',
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'scheduledAt' => 'getScheduledAt'
     ];
 
     /**
@@ -256,6 +261,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
         $this->container['params'] = isset($data['params']) ? $data['params'] : null;
         $this->container['messageVersions'] = isset($data['messageVersions']) ? $data['messageVersions'] : null;
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
     }
 
     /**
@@ -487,7 +493,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets attachment
      *
-     * @param \SendinBlue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"myAttachmentFromUrl.jpg\"}, {\"content\":\"base64 example content\", \"name\":\"myAttachmentFromBase64.jpg\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg and wmv ( If 'templateId' is passed and is in New Template Language format then both attachment url and content are accepted. If template is in Old template Language format, then 'attachment' is ignored )
+     * @param \SendinBlue\Client\Model\SendSmtpEmailAttachment[] $attachment Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"myAttachmentFromUrl.jpg\"}, {\"content\":\"base64 example content\", \"name\":\"myAttachmentFromBase64.jpg\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg, wmv, pkpass and xlsm ( If 'templateId' is passed and is in New Template Language format then both attachment url and content are accepted. If template is in Old template Language format, then 'attachment' is ignored )
      *
      * @return $this
      */
@@ -511,7 +517,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets headers
      *
-     * @param object $headers Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. Headers are allowed in `This-Case-Only` (i.e. words separated by hyphen with first letter of each word in capital letter), they will be converted to such case styling if not in this format in the request payload. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.
+     * @param object $headers Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. Headers are allowed in `This-Case-Only` (i.e. words separated by hyphen with first letter of each word in capital letter), they will be converted to such case styling if not in this format in the request payload. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\", \"idempotencyKey\":\"abc-123\"}`.
      *
      * @return $this
      */
@@ -535,7 +541,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets templateId
      *
-     * @param int $templateId Id of the template. Mandatory if messageVersions are passed
+     * @param int $templateId Id of the template.
      *
      * @return $this
      */
@@ -583,7 +589,7 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     /**
      * Sets messageVersions
      *
-     * @param \SendinBlue\Client\Model\SendSmtpEmailMessageVersions[] $messageVersions You can customize and send out multiple versions of a templateId. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version. The size of individual params in all the messageVersions shall not exceed 100 KB limit and that of cumulative params shall not exceed 1000 KB. This feature is currently in its beta version. You can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - https://developers.sendinblue.com/docs/batch-send-transactional-emails
+     * @param \SendinBlue\Client\Model\SendSmtpEmailMessageVersions[] $messageVersions You can customize and send out multiple versions of a mail. templateId can be customized only if global parameter contains templateId. htmlContent and textContent can be customized only if any of the two, htmlContent or textContent, is present in global parameters. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version. Total number of recipients in one API request must not exceed 2000. However, you can still pass upto 99 recipients maximum in one message version. The size of individual params in all the messageVersions shall not exceed 100 KB limit and that of cumulative params shall not exceed 1000 KB. You can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - https://developers.sendinblue.com/docs/batch-send-transactional-emails
      *
      * @return $this
      */
@@ -614,6 +620,30 @@ class SendSmtpEmail implements ModelInterface, ArrayAccess
     public function setTags($tags)
     {
         $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets scheduledAt
+     *
+     * @return \DateTime
+     */
+    public function getScheduledAt()
+    {
+        return $this->container['scheduledAt'];
+    }
+
+    /**
+     * Sets scheduledAt
+     *
+     * @param \DateTime $scheduledAt UTC date-time on which the email has to schedule (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+     *
+     * @return $this
+     */
+    public function setScheduledAt($scheduledAt)
+    {
+        $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
     }

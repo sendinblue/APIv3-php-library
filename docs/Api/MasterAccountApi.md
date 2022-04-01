@@ -95,7 +95,7 @@ $apiInstance = new SendinBlue\Client\Api\MasterAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 56; // int | Page number of sub-accounts listing
+$offset = 56; // int | Index of the first sub-account in the page
 $limit = 56; // int | Number of sub-accounts to be displayed on each page
 
 try {
@@ -111,7 +111,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **int**| Page number of sub-accounts listing |
+ **offset** | **int**| Index of the first sub-account in the page |
  **limit** | **int**| Number of sub-accounts to be displayed on each page |
 
 ### Return type
@@ -190,7 +190,7 @@ void (empty response body)
 
 Get sub-account details
 
-This endpoint will provide the details of specified sub-account organization
+This endpoint will provide the details for the specified sub-account company
 
 ### Example
 ```php
@@ -305,7 +305,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **corporateSubAccountPost**
-> \SendinBlue\Client\Model\CreateModel corporateSubAccountPost($subAccountCreate)
+> \SendinBlue\Client\Model\CreateSubAccountResponse corporateSubAccountPost($subAccountCreate)
 
 Create a new sub-account under a master account.
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SendinBlue\Client\Model\CreateModel**](../Model/CreateModel.md)
+[**\SendinBlue\Client\Model\CreateSubAccountResponse**](../Model/CreateSubAccountResponse.md)
 
 ### Authorization
 
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 Generate SSO token to access Sendinblue
 
-This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced with actual token.
+This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.
 
 ### Example
 ```php

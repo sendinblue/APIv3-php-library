@@ -310,7 +310,7 @@ class Body1 implements ModelInterface, ArrayAccess
     /**
      * Sets duration
      *
-     * @param int $duration Duration of task
+     * @param int $duration Duration of task in milliseconds [1 minute = 60000 ms]
      *
      * @return $this
      */

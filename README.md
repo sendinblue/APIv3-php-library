@@ -204,6 +204,9 @@ Class | Method | HTTP request | Description
 *TransactionalEmailsApi* | [**getAggregatedSmtpReport**](docs/Api/TransactionalEmailsApi.md#getaggregatedsmtpreport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
 *TransactionalEmailsApi* | [**getBlockedDomains**](docs/Api/TransactionalEmailsApi.md#getblockeddomains) | **GET** /smtp/blockedDomains | Get the list of blocked domains
 *TransactionalEmailsApi* | [**getEmailEventReport**](docs/Api/TransactionalEmailsApi.md#getemaileventreport) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
+*TransactionalEmailsApi* | [**getScheduledEmailByBatchId**](docs/Api/TransactionalEmailsApi.md#getscheduledemailbybatchid) | **GET** /smtp/emailStatus/{batchId} | Fetch scheduled emails by batchId
+*TransactionalEmailsApi* | [**getScheduledEmailById**](docs/Api/TransactionalEmailsApi.md#getscheduledemailbyid) | **DELETE** /smtp/email/{identifier} | Delete scheduled emails by batchId or messageId
+*TransactionalEmailsApi* | [**getScheduledEmailByMessageId**](docs/Api/TransactionalEmailsApi.md#getscheduledemailbymessageid) | **GET** /smtp/emailStatus/{messageId} | Fetch scheduled email by messageId
 *TransactionalEmailsApi* | [**getSmtpReport**](docs/Api/TransactionalEmailsApi.md#getsmtpreport) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 *TransactionalEmailsApi* | [**getSmtpTemplate**](docs/Api/TransactionalEmailsApi.md#getsmtptemplate) | **GET** /smtp/templates/{templateId} | Returns the template information
 *TransactionalEmailsApi* | [**getSmtpTemplates**](docs/Api/TransactionalEmailsApi.md#getsmtptemplates) | **GET** /smtp/templates | Get the list of email templates
@@ -261,6 +264,7 @@ Class | Method | HTTP request | Description
  - [CreateSmtpTemplate](docs/Model/CreateSmtpTemplate.md)
  - [CreateSmtpTemplateSender](docs/Model/CreateSmtpTemplateSender.md)
  - [CreateSubAccount](docs/Model/CreateSubAccount.md)
+ - [CreateSubAccountResponse](docs/Model/CreateSubAccountResponse.md)
  - [CreateUpdateContactModel](docs/Model/CreateUpdateContactModel.md)
  - [CreateUpdateFolder](docs/Model/CreateUpdateFolder.md)
  - [CreateWebhook](docs/Model/CreateWebhook.md)
@@ -333,6 +337,9 @@ Class | Method | HTTP request | Description
  - [GetProcesses](docs/Model/GetProcesses.md)
  - [GetReports](docs/Model/GetReports.md)
  - [GetReportsReports](docs/Model/GetReportsReports.md)
+ - [GetScheduledEmailByBatchId](docs/Model/GetScheduledEmailByBatchId.md)
+ - [GetScheduledEmailByBatchIdBatches](docs/Model/GetScheduledEmailByBatchIdBatches.md)
+ - [GetScheduledEmailByMessageId](docs/Model/GetScheduledEmailByMessageId.md)
  - [GetSendersList](docs/Model/GetSendersList.md)
  - [GetSendersListIps](docs/Model/GetSendersListIps.md)
  - [GetSendersListSenders](docs/Model/GetSendersListSenders.md)
@@ -361,6 +368,7 @@ Class | Method | HTTP request | Description
  - [GetTransacSmsReportReports](docs/Model/GetTransacSmsReportReports.md)
  - [GetWebhook](docs/Model/GetWebhook.md)
  - [GetWebhooks](docs/Model/GetWebhooks.md)
+ - [InlineResponse201](docs/Model/InlineResponse201.md)
  - [ManageIp](docs/Model/ManageIp.md)
  - [MasterDetailsResponse](docs/Model/MasterDetailsResponse.md)
  - [MasterDetailsResponseBillingInfo](docs/Model/MasterDetailsResponseBillingInfo.md)

@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * SubAccountDetailsResponsePlanInfoCreditsTest Class Doc Comment
  *
  * @category    Class
- * @description Sub-account messaging quota details
+ * @description Credits quota and remaining credits on the sub-account
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

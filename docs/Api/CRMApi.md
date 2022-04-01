@@ -29,14 +29,14 @@ Get file details
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Configure API key authorization: api-Key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('api-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-// Configure API key authorization: partner-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('api-Key', 'Bearer');
+// Configure API key authorization: partnerKey
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('partnerKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('partnerKey', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\CRMApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+[api-Key](../../README.md#api-Key), [partnerKey](../../README.md#partnerKey)
 
 ### HTTP request headers
 
@@ -86,14 +86,14 @@ Delete a file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Configure API key authorization: api-Key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('api-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-// Configure API key authorization: partner-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('api-Key', 'Bearer');
+// Configure API key authorization: partnerKey
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('partnerKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('partnerKey', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\CRMApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -123,7 +123,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+[api-Key](../../README.md#api-Key), [partnerKey](../../README.md#partnerKey)
 
 ### HTTP request headers
 
@@ -142,14 +142,14 @@ Download a file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Configure API key authorization: api-Key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('api-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-// Configure API key authorization: partner-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('api-Key', 'Bearer');
+// Configure API key authorization: partnerKey
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('partnerKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('partnerKey', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\CRMApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -179,7 +179,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+[api-Key](../../README.md#api-Key), [partnerKey](../../README.md#partnerKey)
 
 ### HTTP request headers
 
@@ -198,14 +198,14 @@ Upload a file
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: api-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Configure API key authorization: api-Key
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('api-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-// Configure API key authorization: partner-key
-$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey('partner-key', 'YOUR_API_KEY');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('api-Key', 'Bearer');
+// Configure API key authorization: partnerKey
+$config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-Key('partnerKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('partner-key', 'Bearer');
+// $config = SendinBlue\Client\Configuration::getDefaultConfiguration()->setapi-KeyPrefix('partnerKey', 'Bearer');
 
 $apiInstance = new SendinBlue\Client\Api\CRMApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../../README.md#api-key), [partner-key](../../README.md#partner-key)
+[api-Key](../../README.md#api-Key), [partnerKey](../../README.md#partnerKey)
 
 ### HTTP request headers
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **crmTasksPost**
-> \SendinBlue\Client\Model\Task crmTasksPost($body)
+> \SendinBlue\Client\Model\InlineResponse201 crmTasksPost($body)
 
 Create a task
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SendinBlue\Client\Model\Task**](../Model/Task.md)
+[**\SendinBlue\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
 
 ### Authorization
 

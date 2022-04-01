@@ -220,7 +220,7 @@ class GetSsoToken implements ModelInterface, ArrayAccess
     /**
      * Sets token
      *
-     * @param string $token Session token. It will remain valid for a short period of time only.
+     * @param string $token Session token, it will remain valid for 15 days.
      *
      * @return $this
      */
