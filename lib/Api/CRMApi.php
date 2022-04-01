@@ -352,14 +352,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
-        if ($api-Key !== null) {
-            $headers['api-Key'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
-        if ($api-Key !== null) {
-            $headers['partnerKey'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -610,14 +610,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
-        if ($api-Key !== null) {
-            $headers['api-Key'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
-        if ($api-Key !== null) {
-            $headers['partnerKey'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -868,14 +868,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
-        if ($api-Key !== null) {
-            $headers['api-Key'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
-        if ($api-Key !== null) {
-            $headers['partnerKey'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1161,14 +1161,14 @@ class CRMApi
         }
 
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('api-Key');
-        if ($api-Key !== null) {
-            $headers['api-Key'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('api-key');
+        if ($apiKey !== null) {
+            $headers['api-key'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $api-Key = $this->config->getapi-KeyWithPrefix('partnerKey');
-        if ($api-Key !== null) {
-            $headers['partnerKey'] = $api-Key;
+        $apiKey = $this->config->getApiKeyWithPrefix('partner-key');
+        if ($apiKey !== null) {
+            $headers['partner-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
