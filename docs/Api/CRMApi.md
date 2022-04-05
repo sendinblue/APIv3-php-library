@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **crmTasksPost**
-> \SendinBlue\Client\Model\Task crmTasksPost($body)
+> \SendinBlue\Client\Model\InlineResponse201 crmTasksPost($body)
 
 Create a task
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SendinBlue\Client\Model\Task**](../Model/Task.md)
+[**\SendinBlue\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
 
 ### Authorization
 

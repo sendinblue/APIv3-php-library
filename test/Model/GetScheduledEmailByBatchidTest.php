@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailTest
+ * GetScheduledEmailByBatchIdTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * SendSmtpEmailTest Class Doc Comment
+ * GetScheduledEmailByBatchIdTest Class Doc Comment
  *
  * @category    Class
- * @description SendSmtpEmail
+ * @description GetScheduledEmailByBatchId
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
+class GetScheduledEmailByBatchIdTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,114 +70,23 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SendSmtpEmail"
+     * Test "GetScheduledEmailByBatchId"
      */
-    public function testSendSmtpEmail()
+    public function testGetScheduledEmailByBatchId()
     {
     }
 
     /**
-     * Test attribute "sender"
+     * Test attribute "count"
      */
-    public function testPropertySender()
+    public function testPropertyCount()
     {
     }
 
     /**
-     * Test attribute "to"
+     * Test attribute "batches"
      */
-    public function testPropertyTo()
-    {
-    }
-
-    /**
-     * Test attribute "bcc"
-     */
-    public function testPropertyBcc()
-    {
-    }
-
-    /**
-     * Test attribute "cc"
-     */
-    public function testPropertyCc()
-    {
-    }
-
-    /**
-     * Test attribute "htmlContent"
-     */
-    public function testPropertyHtmlContent()
-    {
-    }
-
-    /**
-     * Test attribute "textContent"
-     */
-    public function testPropertyTextContent()
-    {
-    }
-
-    /**
-     * Test attribute "subject"
-     */
-    public function testPropertySubject()
-    {
-    }
-
-    /**
-     * Test attribute "replyTo"
-     */
-    public function testPropertyReplyTo()
-    {
-    }
-
-    /**
-     * Test attribute "attachment"
-     */
-    public function testPropertyAttachment()
-    {
-    }
-
-    /**
-     * Test attribute "headers"
-     */
-    public function testPropertyHeaders()
-    {
-    }
-
-    /**
-     * Test attribute "templateId"
-     */
-    public function testPropertyTemplateId()
-    {
-    }
-
-    /**
-     * Test attribute "params"
-     */
-    public function testPropertyParams()
-    {
-    }
-
-    /**
-     * Test attribute "messageVersions"
-     */
-    public function testPropertyMessageVersions()
-    {
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
-    {
-    }
-
-    /**
-     * Test attribute "scheduledAt"
-     */
-    public function testPropertyScheduledAt()
+    public function testPropertyBatches()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SubAccountsResponseSubAccounts
+ * GetScheduledEmailByBatchId
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SubAccountsResponseSubAccounts Class Doc Comment
+ * GetScheduledEmailByBatchId Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
+class GetScheduledEmailByBatchId implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'subAccountsResponse_subAccounts';
+    protected static $swaggerModelName = 'getScheduledEmailByBatchId';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'companyName' => 'string',
-        'active' => 'bool',
-        'createdAt' => 'int'
+        'count' => 'int',
+        'batches' => '\SendinBlue\Client\Model\GetScheduledEmailByBatchIdBatches[]'
     ];
 
     /**
@@ -69,10 +67,8 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'companyName' => null,
-        'active' => null,
-        'createdAt' => 'int64'
+        'count' => null,
+        'batches' => null
     ];
 
     /**
@@ -102,10 +98,8 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'companyName' => 'companyName',
-        'active' => 'active',
-        'createdAt' => 'createdAt'
+        'count' => 'count',
+        'batches' => 'batches'
     ];
 
     /**
@@ -114,10 +108,8 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'companyName' => 'setCompanyName',
-        'active' => 'setActive',
-        'createdAt' => 'setCreatedAt'
+        'count' => 'setCount',
+        'batches' => 'setBatches'
     ];
 
     /**
@@ -126,10 +118,8 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'companyName' => 'getCompanyName',
-        'active' => 'getActive',
-        'createdAt' => 'getCreatedAt'
+        'count' => 'getCount',
+        'batches' => 'getBatches'
     ];
 
     /**
@@ -192,10 +182,8 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
-        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['batches'] = isset($data['batches']) ? $data['batches'] : null;
     }
 
     /**
@@ -207,18 +195,6 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['companyName'] === null) {
-            $invalidProperties[] = "'companyName' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -235,97 +211,49 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets count
      *
      * @return int
      */
-    public function getId()
+    public function getCount()
     {
-        return $this->container['id'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets id
+     * Sets count
      *
-     * @param int $id id of the sub-account
+     * @param int $count Total number of batches
      *
      * @return $this
      */
-    public function setId($id)
+    public function setCount($count)
     {
-        $this->container['id'] = $id;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets companyName
+     * Gets batches
      *
-     * @return string
+     * @return \SendinBlue\Client\Model\GetScheduledEmailByBatchIdBatches[]
      */
-    public function getCompanyName()
+    public function getBatches()
     {
-        return $this->container['companyName'];
+        return $this->container['batches'];
     }
 
     /**
-     * Sets companyName
+     * Sets batches
      *
-     * @param string $companyName Name of the sub-account company
+     * @param \SendinBlue\Client\Model\GetScheduledEmailByBatchIdBatches[] $batches batches
      *
      * @return $this
      */
-    public function setCompanyName($companyName)
+    public function setBatches($batches)
     {
-        $this->container['companyName'] = $companyName;
-
-        return $this;
-    }
-
-    /**
-     * Gets active
-     *
-     * @return bool
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool $active Whether the sub-account is active or not
-     *
-     * @return $this
-     */
-    public function setActive($active)
-    {
-        $this->container['active'] = $active;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return int
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param int $createdAt Timestamp when the sub-account was created
-     *
-     * @return $this
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->container['createdAt'] = $createdAt;
+        $this->container['batches'] = $batches;
 
         return $this;
     }

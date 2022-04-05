@@ -252,6 +252,10 @@ class Body implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        if (!is_null($this->container['duration']) && ($this->container['duration'] < 0)) {
+            $invalidProperties[] = "invalid value for 'duration', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['taskTypeId'] === null) {
             $invalidProperties[] = "'taskTypeId' can't be null";
         }
@@ -310,12 +314,17 @@ class Body implements ModelInterface, ArrayAccess
     /**
      * Sets duration
      *
-     * @param int $duration Duration of task
+     * @param int $duration Duration of task in milliseconds [1 minute = 60000 ms]
      *
      * @return $this
      */
     public function setDuration($duration)
     {
+
+        if (!is_null($duration) && ($duration < 0)) {
+            throw new \InvalidArgumentException('invalid value for $duration when calling Body., must be bigger than or equal to 0.');
+        }
+
         $this->container['duration'] = $duration;
 
         return $this;
@@ -358,7 +367,7 @@ class Body implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date Task date/time
+     * @param \DateTime $date Task due date and time
      *
      * @return $this
      */

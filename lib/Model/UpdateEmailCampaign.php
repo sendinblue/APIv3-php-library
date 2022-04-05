@@ -498,7 +498,7 @@ class UpdateEmailCampaign implements ModelInterface, ArrayAccess
     /**
      * Sets htmlContent
      *
-     * @param string $htmlContent Body of the message (HTML version). REQUIRED if htmlUrl is empty
+     * @param string $htmlContent Body of the message (HTML version). If the campaign is designed using Drag & Drop editor via HTML content, then the design page will not have Drag & Drop editor access for that campaign. REQUIRED if htmlUrl is empty
      *
      * @return $this
      */

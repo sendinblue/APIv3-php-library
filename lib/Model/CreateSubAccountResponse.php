@@ -1,6 +1,6 @@
 <?php
 /**
- * SubAccountsResponseSubAccounts
+ * CreateSubAccountResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SubAccountsResponseSubAccounts Class Doc Comment
+ * CreateSubAccountResponse Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
+class CreateSubAccountResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'subAccountsResponse_subAccounts';
+    protected static $swaggerModelName = 'createSubAccountResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'companyName' => 'string',
-        'active' => 'bool',
-        'createdAt' => 'int'
+        'id' => 'int'
     ];
 
     /**
@@ -69,10 +66,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'companyName' => null,
-        'active' => null,
-        'createdAt' => 'int64'
+        'id' => 'int64'
     ];
 
     /**
@@ -102,10 +96,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'companyName' => 'companyName',
-        'active' => 'active',
-        'createdAt' => 'createdAt'
+        'id' => 'id'
     ];
 
     /**
@@ -114,10 +105,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'companyName' => 'setCompanyName',
-        'active' => 'setActive',
-        'createdAt' => 'setCreatedAt'
+        'id' => 'setId'
     ];
 
     /**
@@ -126,10 +114,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'companyName' => 'getCompanyName',
-        'active' => 'getActive',
-        'createdAt' => 'getCreatedAt'
+        'id' => 'getId'
     ];
 
     /**
@@ -193,9 +178,6 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
-        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
     }
 
     /**
@@ -209,15 +191,6 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['companyName'] === null) {
-            $invalidProperties[] = "'companyName' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -247,85 +220,13 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id of the sub-account
+     * @param int $id ID of the sub-account created
      *
      * @return $this
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets companyName
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['companyName'];
-    }
-
-    /**
-     * Sets companyName
-     *
-     * @param string $companyName Name of the sub-account company
-     *
-     * @return $this
-     */
-    public function setCompanyName($companyName)
-    {
-        $this->container['companyName'] = $companyName;
-
-        return $this;
-    }
-
-    /**
-     * Gets active
-     *
-     * @return bool
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool $active Whether the sub-account is active or not
-     *
-     * @return $this
-     */
-    public function setActive($active)
-    {
-        $this->container['active'] = $active;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return int
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param int $createdAt Timestamp when the sub-account was created
-     *
-     * @return $this
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

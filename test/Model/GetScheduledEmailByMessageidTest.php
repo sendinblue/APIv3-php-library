@@ -1,6 +1,6 @@
 <?php
 /**
- * SendSmtpEmailTest
+ * GetScheduledEmailByMessageIdTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * SendSmtpEmailTest Class Doc Comment
+ * GetScheduledEmailByMessageIdTest Class Doc Comment
  *
  * @category    Class
- * @description SendSmtpEmail
+ * @description GetScheduledEmailByMessageId
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
+class GetScheduledEmailByMessageIdTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,107 +70,9 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SendSmtpEmail"
+     * Test "GetScheduledEmailByMessageId"
      */
-    public function testSendSmtpEmail()
-    {
-    }
-
-    /**
-     * Test attribute "sender"
-     */
-    public function testPropertySender()
-    {
-    }
-
-    /**
-     * Test attribute "to"
-     */
-    public function testPropertyTo()
-    {
-    }
-
-    /**
-     * Test attribute "bcc"
-     */
-    public function testPropertyBcc()
-    {
-    }
-
-    /**
-     * Test attribute "cc"
-     */
-    public function testPropertyCc()
-    {
-    }
-
-    /**
-     * Test attribute "htmlContent"
-     */
-    public function testPropertyHtmlContent()
-    {
-    }
-
-    /**
-     * Test attribute "textContent"
-     */
-    public function testPropertyTextContent()
-    {
-    }
-
-    /**
-     * Test attribute "subject"
-     */
-    public function testPropertySubject()
-    {
-    }
-
-    /**
-     * Test attribute "replyTo"
-     */
-    public function testPropertyReplyTo()
-    {
-    }
-
-    /**
-     * Test attribute "attachment"
-     */
-    public function testPropertyAttachment()
-    {
-    }
-
-    /**
-     * Test attribute "headers"
-     */
-    public function testPropertyHeaders()
-    {
-    }
-
-    /**
-     * Test attribute "templateId"
-     */
-    public function testPropertyTemplateId()
-    {
-    }
-
-    /**
-     * Test attribute "params"
-     */
-    public function testPropertyParams()
-    {
-    }
-
-    /**
-     * Test attribute "messageVersions"
-     */
-    public function testPropertyMessageVersions()
-    {
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
+    public function testGetScheduledEmailByMessageId()
     {
     }
 
@@ -178,6 +80,20 @@ class SendSmtpEmailTest extends \PHPUnit_Framework_TestCase
      * Test attribute "scheduledAt"
      */
     public function testPropertyScheduledAt()
+    {
+    }
+
+    /**
+     * Test attribute "createdAt"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
     {
     }
 }

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | Name of task | 
-**duration** | **int** | Duration of task | [optional] 
+**duration** | **int** | Duration of task in milliseconds [1 minute &#x3D; 60000 ms] | [optional] 
 **taskTypeId** | **string** | Id for type of task e.g Call / Email / Meeting etc. | 
 **date** | [**\DateTime**] | Task date/time | 
 **notes** | **string** | Notes added to a task | [optional] 

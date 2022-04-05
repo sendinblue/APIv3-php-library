@@ -58,6 +58,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'companyName' => 'string',
+        'email' => 'string',
         'language' => 'string',
         'timezone' => 'string'
     ];
@@ -69,6 +70,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'companyName' => null,
+        'email' => null,
         'language' => null,
         'timezone' => null
     ];
@@ -101,6 +103,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'companyName' => 'companyName',
+        'email' => 'email',
         'language' => 'language',
         'timezone' => 'timezone'
     ];
@@ -112,6 +115,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'companyName' => 'setCompanyName',
+        'email' => 'setEmail',
         'language' => 'setLanguage',
         'timezone' => 'setTimezone'
     ];
@@ -123,6 +127,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'companyName' => 'getCompanyName',
+        'email' => 'getEmail',
         'language' => 'getLanguage',
         'timezone' => 'getTimezone'
     ];
@@ -211,6 +216,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['language'] = isset($data['language']) ? $data['language'] : null;
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
     }
@@ -226,6 +232,9 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
 
         if ($this->container['companyName'] === null) {
             $invalidProperties[] = "'companyName' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
         }
         $allowedValues = $this->getLanguageAllowableValues();
         if (!is_null($this->container['language']) && !in_array($this->container['language'], $allowedValues, true)) {
@@ -263,13 +272,37 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
     /**
      * Sets companyName
      *
-     * @param string $companyName Name of the organization
+     * @param string $companyName Set the name of the sub-account company
      *
      * @return $this
      */
     public function setCompanyName($companyName)
     {
         $this->container['companyName'] = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email Email address for the organization
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }
@@ -287,7 +320,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
     /**
      * Sets language
      *
-     * @param string $language Language for identifying localization information
+     * @param string $language Set the language of the sub-account
      *
      * @return $this
      */
@@ -320,7 +353,7 @@ class CreateSubAccount implements ModelInterface, ArrayAccess
     /**
      * Sets timezone
      *
-     * @param string $timezone Request timezone of the client
+     * @param string $timezone Set the timezone of the sub-account
      *
      * @return $this
      */

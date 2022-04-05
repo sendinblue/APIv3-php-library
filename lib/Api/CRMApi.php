@@ -3222,7 +3222,7 @@ class CRMApi
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SendinBlue\Client\Model\Task
+     * @return \SendinBlue\Client\Model\InlineResponse201
      */
     public function crmTasksPost($body)
     {
@@ -3239,11 +3239,11 @@ class CRMApi
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SendinBlue\Client\Model\Task, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SendinBlue\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
      */
     public function crmTasksPostWithHttpInfo($body)
     {
-        $returnType = '\SendinBlue\Client\Model\Task';
+        $returnType = '\SendinBlue\Client\Model\InlineResponse201';
         $request = $this->crmTasksPostRequest($body);
 
         try {
@@ -3295,7 +3295,7 @@ class CRMApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SendinBlue\Client\Model\Task',
+                        '\SendinBlue\Client\Model\InlineResponse201',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3337,7 +3337,7 @@ class CRMApi
      */
     public function crmTasksPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\SendinBlue\Client\Model\Task';
+        $returnType = '\SendinBlue\Client\Model\InlineResponse201';
         $request = $this->crmTasksPostRequest($body);
 
         return $this->client

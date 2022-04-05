@@ -360,7 +360,7 @@ class MasterAccountApi
      *
      * Get the list of all the sub-accounts of the master account.
      *
-     * @param  int $offset Page number of sub-accounts listing (required)
+     * @param  int $offset Index of the first sub-account in the page (required)
      * @param  int $limit Number of sub-accounts to be displayed on each page (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -378,7 +378,7 @@ class MasterAccountApi
      *
      * Get the list of all the sub-accounts of the master account.
      *
-     * @param  int $offset Page number of sub-accounts listing (required)
+     * @param  int $offset Index of the first sub-account in the page (required)
      * @param  int $limit Number of sub-accounts to be displayed on each page (required)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -462,7 +462,7 @@ class MasterAccountApi
      *
      * Get the list of all the sub-accounts of the master account.
      *
-     * @param  int $offset Page number of sub-accounts listing (required)
+     * @param  int $offset Index of the first sub-account in the page (required)
      * @param  int $limit Number of sub-accounts to be displayed on each page (required)
      *
      * @throws \InvalidArgumentException
@@ -483,7 +483,7 @@ class MasterAccountApi
      *
      * Get the list of all the sub-accounts of the master account.
      *
-     * @param  int $offset Page number of sub-accounts listing (required)
+     * @param  int $offset Index of the first sub-account in the page (required)
      * @param  int $limit Number of sub-accounts to be displayed on each page (required)
      *
      * @throws \InvalidArgumentException
@@ -534,7 +534,7 @@ class MasterAccountApi
     /**
      * Create request for operation 'corporateSubAccountGet'
      *
-     * @param  int $offset Page number of sub-accounts listing (required)
+     * @param  int $offset Index of the first sub-account in the page (required)
      * @param  int $limit Number of sub-accounts to be displayed on each page (required)
      *
      * @throws \InvalidArgumentException
@@ -1455,7 +1455,7 @@ class MasterAccountApi
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SendinBlue\Client\Model\CreateModel
+     * @return \SendinBlue\Client\Model\CreateSubAccountResponse
      */
     public function corporateSubAccountPost($subAccountCreate)
     {
@@ -1472,11 +1472,11 @@ class MasterAccountApi
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SendinBlue\Client\Model\CreateModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SendinBlue\Client\Model\CreateSubAccountResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function corporateSubAccountPostWithHttpInfo($subAccountCreate)
     {
-        $returnType = '\SendinBlue\Client\Model\CreateModel';
+        $returnType = '\SendinBlue\Client\Model\CreateSubAccountResponse';
         $request = $this->corporateSubAccountPostRequest($subAccountCreate);
 
         try {
@@ -1528,7 +1528,7 @@ class MasterAccountApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SendinBlue\Client\Model\CreateModel',
+                        '\SendinBlue\Client\Model\CreateSubAccountResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1578,7 +1578,7 @@ class MasterAccountApi
      */
     public function corporateSubAccountPostAsyncWithHttpInfo($subAccountCreate)
     {
-        $returnType = '\SendinBlue\Client\Model\CreateModel';
+        $returnType = '\SendinBlue\Client\Model\CreateSubAccountResponse';
         $request = $this->corporateSubAccountPostRequest($subAccountCreate);
 
         return $this->client

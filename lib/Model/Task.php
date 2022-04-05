@@ -65,16 +65,7 @@ class Task implements ModelInterface, ArrayAccess
         'contactsIds' => 'int[]',
         'contacts' => '\SendinBlue\Client\Model\Contact[]',
         'dealsIds' => 'string[]',
-        'companiesIds' => 'string[]',
-        'assignToId' => 'string',
-        'date' => '\DateTime',
-        'duration' => 'int',
-        'notes' => 'string',
-        'done' => 'bool',
-        'reminder' => '\SendinBlue\Client\Model\TaskReminder',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
-        'refs' => 'object'
+        'companiesIds' => 'string[]'
     ];
 
     /**
@@ -90,16 +81,7 @@ class Task implements ModelInterface, ArrayAccess
         'contactsIds' => null,
         'contacts' => null,
         'dealsIds' => null,
-        'companiesIds' => null,
-        'assignToId' => null,
-        'date' => 'date-time',
-        'duration' => null,
-        'notes' => null,
-        'done' => null,
-        'reminder' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
-        'refs' => null
+        'companiesIds' => null
     ];
 
     /**
@@ -136,16 +118,7 @@ class Task implements ModelInterface, ArrayAccess
         'contactsIds' => 'contactsIds',
         'contacts' => 'contacts',
         'dealsIds' => 'dealsIds',
-        'companiesIds' => 'companiesIds',
-        'assignToId' => 'assignToId',
-        'date' => 'date',
-        'duration' => 'duration',
-        'notes' => 'notes',
-        'done' => 'done',
-        'reminder' => 'reminder',
-        'createdAt' => 'createdAt',
-        'updatedAt' => 'updatedAt',
-        'refs' => 'refs'
+        'companiesIds' => 'companiesIds'
     ];
 
     /**
@@ -161,16 +134,7 @@ class Task implements ModelInterface, ArrayAccess
         'contactsIds' => 'setContactsIds',
         'contacts' => 'setContacts',
         'dealsIds' => 'setDealsIds',
-        'companiesIds' => 'setCompaniesIds',
-        'assignToId' => 'setAssignToId',
-        'date' => 'setDate',
-        'duration' => 'setDuration',
-        'notes' => 'setNotes',
-        'done' => 'setDone',
-        'reminder' => 'setReminder',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
-        'refs' => 'setRefs'
+        'companiesIds' => 'setCompaniesIds'
     ];
 
     /**
@@ -186,16 +150,7 @@ class Task implements ModelInterface, ArrayAccess
         'contactsIds' => 'getContactsIds',
         'contacts' => 'getContacts',
         'dealsIds' => 'getDealsIds',
-        'companiesIds' => 'getCompaniesIds',
-        'assignToId' => 'getAssignToId',
-        'date' => 'getDate',
-        'duration' => 'getDuration',
-        'notes' => 'getNotes',
-        'done' => 'getDone',
-        'reminder' => 'getReminder',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
-        'refs' => 'getRefs'
+        'companiesIds' => 'getCompaniesIds'
     ];
 
     /**

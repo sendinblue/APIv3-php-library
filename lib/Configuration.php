@@ -87,6 +87,13 @@ class Configuration
     protected $host = 'https://api.sendinblue.com/v3';
 
     /**
+     * User agent of the HTTP request, set to "PHP-Swagger" by default
+     *
+     * @var string
+     */
+    protected $userAgent = 'Swagger-Codegen/1.0.0/php';
+
+    /**
      * Debug switch (default set to false)
      *
      * @var bool
@@ -274,10 +281,7 @@ class Configuration
             throw new \InvalidArgumentException('User-agent must be a string.');
         }
 
-        if(strpos($userAgent, 'sendinblue_') !== false) {
-            $this->userAgent = $userAgent;
-        }
-
+        $this->userAgent = $userAgent;
         return $this;
     }
 
@@ -370,6 +374,7 @@ class Configuration
         if (self::$defaultConfiguration === null) {
             self::$defaultConfiguration = new Configuration();
         }
+
         return self::$defaultConfiguration;
     }
 

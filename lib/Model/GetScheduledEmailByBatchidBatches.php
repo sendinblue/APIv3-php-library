@@ -1,6 +1,6 @@
 <?php
 /**
- * SubAccountsResponseSubAccounts
+ * GetScheduledEmailByBatchIdBatches
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
- * SubAccountsResponseSubAccounts Class Doc Comment
+ * GetScheduledEmailByBatchIdBatches Class Doc Comment
  *
  * @category Class
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
+class GetScheduledEmailByBatchIdBatches implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'subAccountsResponse_subAccounts';
+    protected static $swaggerModelName = 'getScheduledEmailByBatchId_batches';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,9 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'companyName' => 'string',
-        'active' => 'bool',
-        'createdAt' => 'int'
+        'scheduledAt' => '\DateTime',
+        'createdAt' => '\DateTime',
+        'status' => 'string'
     ];
 
     /**
@@ -69,10 +68,9 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'companyName' => null,
-        'active' => null,
-        'createdAt' => 'int64'
+        'scheduledAt' => 'date-time',
+        'createdAt' => 'date-time',
+        'status' => null
     ];
 
     /**
@@ -102,10 +100,9 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'companyName' => 'companyName',
-        'active' => 'active',
-        'createdAt' => 'createdAt'
+        'scheduledAt' => 'scheduledAt',
+        'createdAt' => 'createdAt',
+        'status' => 'status'
     ];
 
     /**
@@ -114,10 +111,9 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'companyName' => 'setCompanyName',
-        'active' => 'setActive',
-        'createdAt' => 'setCreatedAt'
+        'scheduledAt' => 'setScheduledAt',
+        'createdAt' => 'setCreatedAt',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -126,10 +122,9 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'companyName' => 'getCompanyName',
-        'active' => 'getActive',
-        'createdAt' => 'getCreatedAt'
+        'scheduledAt' => 'getScheduledAt',
+        'createdAt' => 'getCreatedAt',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -173,8 +168,27 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const STATUS_IN_PROGRESS = 'inProgress';
+    const STATUS_QUEUED = 'queued';
+    const STATUS_PROCESSED = 'processed';
+    const STATUS_ERROR = 'error';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_IN_PROGRESS,
+            self::STATUS_QUEUED,
+            self::STATUS_PROCESSED,
+            self::STATUS_ERROR,
+        ];
+    }
     
 
     /**
@@ -192,10 +206,9 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
     /**
@@ -207,18 +220,23 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['companyName'] === null) {
-            $invalidProperties[] = "'companyName' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
+        if ($this->container['scheduledAt'] === null) {
+            $invalidProperties[] = "'scheduledAt' can't be null";
         }
         if ($this->container['createdAt'] === null) {
             $invalidProperties[] = "'createdAt' can't be null";
         }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -235,73 +253,25 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets scheduledAt
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getId()
+    public function getScheduledAt()
     {
-        return $this->container['id'];
+        return $this->container['scheduledAt'];
     }
 
     /**
-     * Sets id
+     * Sets scheduledAt
      *
-     * @param int $id id of the sub-account
+     * @param \DateTime $scheduledAt Datetime for which the batch was scheduled
      *
      * @return $this
      */
-    public function setId($id)
+    public function setScheduledAt($scheduledAt)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets companyName
-     *
-     * @return string
-     */
-    public function getCompanyName()
-    {
-        return $this->container['companyName'];
-    }
-
-    /**
-     * Sets companyName
-     *
-     * @param string $companyName Name of the sub-account company
-     *
-     * @return $this
-     */
-    public function setCompanyName($companyName)
-    {
-        $this->container['companyName'] = $companyName;
-
-        return $this;
-    }
-
-    /**
-     * Gets active
-     *
-     * @return bool
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool $active Whether the sub-account is active or not
-     *
-     * @return $this
-     */
-    public function setActive($active)
-    {
-        $this->container['active'] = $active;
+        $this->container['scheduledAt'] = $scheduledAt;
 
         return $this;
     }
@@ -309,7 +279,7 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return int
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -319,13 +289,46 @@ class SubAccountsResponseSubAccounts implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param int $createdAt Timestamp when the sub-account was created
+     * @param \DateTime $createdAt Datetime on which the batch was scheduled
      *
      * @return $this
      */
     public function setCreatedAt($createdAt)
     {
         $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status Current status of the scheduled batch
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }

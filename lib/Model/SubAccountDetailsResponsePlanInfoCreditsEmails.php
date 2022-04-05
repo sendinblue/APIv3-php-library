@@ -36,7 +36,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * SubAccountDetailsResponsePlanInfoCreditsEmails Class Doc Comment
  *
  * @category Class
- * @description Email quota details of the sub-account
+ * @description Email credits remaining on the sub-account
  * @package  SendinBlue\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

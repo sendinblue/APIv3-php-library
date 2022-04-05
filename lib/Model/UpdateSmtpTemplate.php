@@ -343,7 +343,7 @@ class UpdateSmtpTemplate implements ModelInterface, ArrayAccess
     /**
      * Sets htmlContent
      *
-     * @param string $htmlContent Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters)
+     * @param string $htmlContent Required if htmlUrl is empty. If the template is designed using Drag & Drop editor via HTML content, then the design page will not have Drag & Drop editor access for that template. Body of the message (HTML must have more than 10 characters)
      *
      * @return $this
      */
