@@ -33,7 +33,7 @@ namespace SendinBlue\Client;
  * UpdateEmailCampaignSenderTest Class Doc Comment
  *
  * @category    Class
- * @description Sender details including id or email and name (optional). Only one of either Sender&#39;s email or Sender&#39;s ID shall be passed in one request at a time. For example &#x60;{\&quot;name\&quot;:\&quot;xyz\&quot;, \&quot;email\&quot;:\&quot;example@abc.com\&quot;}&#x60; , &#x60;{\&quot;name\&quot;:\&quot;xyz\&quot;, \&quot;id\&quot;:123}&#x60;
+ * @description Sender details including id or email and name (optional). Only one of either Sender&#39;s email or Sender&#39;s ID shall be passed in one request at a time. For example &#x60;{\"name\":\"xyz\", \"email\":\"example@abc.com\"}&#x60; , &#x60;{\"name\":\"xyz\", \"id\":123}&#x60;
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

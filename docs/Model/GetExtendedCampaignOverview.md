@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **header** | **string** | Header of the campaign | 
 **footer** | **string** | Footer of the campaign | 
 **sender** | [**\SendinBlue\Client\Model\GetExtendedCampaignOverviewSender**](GetExtendedCampaignOverviewSender.md) |  | 
-**replyTo** | **string** | Email defined as the \&quot;Reply to\&quot; of the campaign | 
-**toField** | **string** | Customisation of the \&quot;to\&quot; field of the campaign | [optional] 
+**replyTo** | **string** | Email defined as the \"Reply to\" of the campaign | 
+**toField** | **string** | Customisation of the \"to\" field of the campaign | [optional] 
 **htmlContent** | **string** | HTML content of the campaign | 
 **shareLink** | **string** | Link to share the campaign on social medias | [optional] 
 **tag** | **string** | Tag of the campaign | [optional] 
