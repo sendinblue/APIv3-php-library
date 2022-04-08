@@ -403,4 +403,3 @@ class GetScheduledEmailByMessageId implements ModelInterface, ArrayAccess
     }
 }
 
-

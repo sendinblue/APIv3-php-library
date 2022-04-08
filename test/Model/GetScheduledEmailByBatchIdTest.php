@@ -1,6 +1,6 @@
 <?php
 /**
- * GetScheduledEmailByMessageIdTest
+ * GetScheduledEmailByBatchIdTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace SendinBlue\Client;
 
 /**
- * GetScheduledEmailByMessageIdTest Class Doc Comment
+ * GetScheduledEmailByBatchIdTest Class Doc Comment
  *
  * @category    Class
- * @description GetScheduledEmailByMessageId
+ * @description GetScheduledEmailByBatchId
  * @package     SendinBlue\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetScheduledEmailByMessageIdTest extends \PHPUnit_Framework_TestCase
+class GetScheduledEmailByBatchIdTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,30 +70,24 @@ class GetScheduledEmailByMessageIdTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GetScheduledEmailByMessageId"
+     * Test "GetScheduledEmailByBatchId"
      */
-    public function testGetScheduledEmailByMessageId()
+    public function testGetScheduledEmailByBatchId()
     {
     }
 
     /**
-     * Test attribute "scheduledAt"
+     * Test attribute "count"
      */
-    public function testPropertyScheduledAt()
+    public function testPropertyCount()
     {
     }
 
     /**
-     * Test attribute "createdAt"
+     * Test attribute "batches"
      */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
+    public function testPropertyBatches()
     {
     }
 }
+
