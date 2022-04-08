@@ -97,3 +97,4 @@ class GetScheduledEmailByMessageIdTest extends \PHPUnit_Framework_TestCase
     {
     }
 }
+

@@ -328,4 +328,3 @@ class GetScheduledEmailByBatchId implements ModelInterface, ArrayAccess
     }
 }
 
-
