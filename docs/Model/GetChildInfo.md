@@ -3,10 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** | Login Email | 
-**firstName** | **string** | First Name | 
-**lastName** | **string** | Last Name | 
-**companyName** | **string** | Name of the company | 
 **credits** | [**\SendinBlue\Client\Model\GetChildInfoCredits**](GetChildInfoCredits.md) |  | [optional] 
 **statistics** | [**\SendinBlue\Client\Model\GetChildInfoStatistics**](GetChildInfoStatistics.md) |  | [optional] 
 **password** | **string** | The encrypted password of child account | 
