@@ -3,11 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | ID of the list | 
-**name** | **string** | Name of the list | 
-**totalBlacklisted** | **int** | Number of blacklisted contacts in the list | 
-**totalSubscribers** | **int** | Number of contacts in the list | 
-**uniqueSubscribers** | **int** | Number of unique contacts in the list | 
 **folderId** | **int** | ID of the folder | 
 **createdAt** | **string** | Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **campaignStats** | [**\SendinBlue\Client\Model\GetExtendedListCampaignStats[]**](GetExtendedListCampaignStats.md) |  | [optional] 

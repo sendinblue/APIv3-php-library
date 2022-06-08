@@ -84,14 +84,12 @@ Class | Method | HTTP request | Description
 *AttributesApi* | [**deleteAttribute**](docs/Api/AttributesApi.md#deleteattribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
 *AttributesApi* | [**getAttributes**](docs/Api/AttributesApi.md#getattributes) | **GET** /contacts/attributes | List all attributes
 *AttributesApi* | [**updateAttribute**](docs/Api/AttributesApi.md#updateattribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
-*CRMApi* | [**crmFilesIdDataGet**](docs/Api/CRMApi.md#crmfilesiddataget) | **GET** /crm/files/{id}/data | Get file details
-*CRMApi* | [**crmFilesIdDelete**](docs/Api/CRMApi.md#crmfilesiddelete) | **DELETE** /crm/files/{id} | Delete a file
-*CRMApi* | [**crmFilesIdGet**](docs/Api/CRMApi.md#crmfilesidget) | **GET** /crm/files/{id} | Download a file
-*CRMApi* | [**crmFilesPost**](docs/Api/CRMApi.md#crmfilespost) | **POST** /crm/files | Upload a file
+*CRMApi* | [**crmNotesGet**](docs/Api/CRMApi.md#crmnotesget) | **GET** /crm/notes | Get all notes
 *CRMApi* | [**crmNotesIdDelete**](docs/Api/CRMApi.md#crmnotesiddelete) | **DELETE** /crm/notes/{id} | Delete a note
 *CRMApi* | [**crmNotesIdGet**](docs/Api/CRMApi.md#crmnotesidget) | **GET** /crm/notes/{id} | Get a note
 *CRMApi* | [**crmNotesIdPatch**](docs/Api/CRMApi.md#crmnotesidpatch) | **PATCH** /crm/notes/{id} | Update a note
 *CRMApi* | [**crmNotesPost**](docs/Api/CRMApi.md#crmnotespost) | **POST** /crm/notes | Create a note
+*CRMApi* | [**crmTasksGet**](docs/Api/CRMApi.md#crmtasksget) | **GET** /crm/tasks | Get all tasks
 *CRMApi* | [**crmTasksIdDelete**](docs/Api/CRMApi.md#crmtasksiddelete) | **DELETE** /crm/tasks/{id} | Delete a task
 *CRMApi* | [**crmTasksIdGet**](docs/Api/CRMApi.md#crmtasksidget) | **GET** /crm/tasks/{id} | Get a task
 *CRMApi* | [**crmTasksIdPatch**](docs/Api/CRMApi.md#crmtasksidpatch) | **PATCH** /crm/tasks/{id} | Update a task
@@ -200,6 +198,7 @@ Class | Method | HTTP request | Description
 *TransactionalEmailsApi* | [**createSmtpTemplate**](docs/Api/TransactionalEmailsApi.md#createsmtptemplate) | **POST** /smtp/templates | Create an email template
 *TransactionalEmailsApi* | [**deleteBlockedDomain**](docs/Api/TransactionalEmailsApi.md#deleteblockeddomain) | **DELETE** /smtp/blockedDomains/{domain} | Unblock an existing domain from the list of blocked domains
 *TransactionalEmailsApi* | [**deleteHardbounces**](docs/Api/TransactionalEmailsApi.md#deletehardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
+*TransactionalEmailsApi* | [**deleteScheduledEmailById**](docs/Api/TransactionalEmailsApi.md#deletescheduledemailbyid) | **DELETE** /smtp/email/{identifier} | Delete scheduled emails by batchId or messageId
 *TransactionalEmailsApi* | [**deleteSmtpTemplate**](docs/Api/TransactionalEmailsApi.md#deletesmtptemplate) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
 *TransactionalEmailsApi* | [**getAggregatedSmtpReport**](docs/Api/TransactionalEmailsApi.md#getaggregatedsmtpreport) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
 *TransactionalEmailsApi* | [**getBlockedDomains**](docs/Api/TransactionalEmailsApi.md#getblockeddomains) | **GET** /smtp/blockedDomains | Get the list of blocked domains
@@ -272,7 +271,7 @@ Class | Method | HTTP request | Description
  - [DeleteHardbounces](docs/Model/DeleteHardbounces.md)
  - [EmailExportRecipients](docs/Model/EmailExportRecipients.md)
  - [ErrorModel](docs/Model/ErrorModel.md)
- - [FileData](docs/Model/FileData.md)
+ - [GetAccount](docs/Model/GetAccount.md)
  - [GetAccountMarketingAutomation](docs/Model/GetAccountMarketingAutomation.md)
  - [GetAccountPlan](docs/Model/GetAccountPlan.md)
  - [GetAccountRelay](docs/Model/GetAccountRelay.md)
@@ -288,6 +287,7 @@ Class | Method | HTTP request | Description
  - [GetChildAccountCreationStatus](docs/Model/GetChildAccountCreationStatus.md)
  - [GetChildDomain](docs/Model/GetChildDomain.md)
  - [GetChildDomains](docs/Model/GetChildDomains.md)
+ - [GetChildInfo](docs/Model/GetChildInfo.md)
  - [GetChildInfoApiKeys](docs/Model/GetChildInfoApiKeys.md)
  - [GetChildInfoApiKeysV2](docs/Model/GetChildInfoApiKeysV2.md)
  - [GetChildInfoApiKeysV3](docs/Model/GetChildInfoApiKeysV3.md)
@@ -303,12 +303,17 @@ Class | Method | HTTP request | Description
  - [GetContactDetails](docs/Model/GetContactDetails.md)
  - [GetContacts](docs/Model/GetContacts.md)
  - [GetDeviceBrowserStats](docs/Model/GetDeviceBrowserStats.md)
+ - [GetEmailCampaign](docs/Model/GetEmailCampaign.md)
  - [GetEmailCampaigns](docs/Model/GetEmailCampaigns.md)
  - [GetEmailEventReport](docs/Model/GetEmailEventReport.md)
  - [GetEmailEventReportEvents](docs/Model/GetEmailEventReportEvents.md)
+ - [GetExtendedCampaignOverview](docs/Model/GetExtendedCampaignOverview.md)
  - [GetExtendedCampaignOverviewSender](docs/Model/GetExtendedCampaignOverviewSender.md)
  - [GetExtendedCampaignStats](docs/Model/GetExtendedCampaignStats.md)
+ - [GetExtendedCampaignStatsGlobalStats](docs/Model/GetExtendedCampaignStatsGlobalStats.md)
+ - [GetExtendedClient](docs/Model/GetExtendedClient.md)
  - [GetExtendedClientAddress](docs/Model/GetExtendedClientAddress.md)
+ - [GetExtendedContactDetails](docs/Model/GetExtendedContactDetails.md)
  - [GetExtendedContactDetailsStatistics](docs/Model/GetExtendedContactDetailsStatistics.md)
  - [GetExtendedContactDetailsStatisticsClicked](docs/Model/GetExtendedContactDetailsStatisticsClicked.md)
  - [GetExtendedContactDetailsStatisticsDelivered](docs/Model/GetExtendedContactDetailsStatisticsDelivered.md)
@@ -318,6 +323,7 @@ Class | Method | HTTP request | Description
  - [GetExtendedContactDetailsStatisticsUnsubscriptions](docs/Model/GetExtendedContactDetailsStatisticsUnsubscriptions.md)
  - [GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription](docs/Model/GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription.md)
  - [GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription](docs/Model/GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.md)
+ - [GetExtendedList](docs/Model/GetExtendedList.md)
  - [GetExtendedListCampaignStats](docs/Model/GetExtendedListCampaignStats.md)
  - [GetFolder](docs/Model/GetFolder.md)
  - [GetFolderLists](docs/Model/GetFolderLists.md)
@@ -344,7 +350,9 @@ Class | Method | HTTP request | Description
  - [GetSendersListIps](docs/Model/GetSendersListIps.md)
  - [GetSendersListSenders](docs/Model/GetSendersListSenders.md)
  - [GetSharedTemplateUrl](docs/Model/GetSharedTemplateUrl.md)
+ - [GetSmsCampaign](docs/Model/GetSmsCampaign.md)
  - [GetSmsCampaignOverview](docs/Model/GetSmsCampaignOverview.md)
+ - [GetSmsCampaignRecipients](docs/Model/GetSmsCampaignRecipients.md)
  - [GetSmsCampaignStats](docs/Model/GetSmsCampaignStats.md)
  - [GetSmsCampaigns](docs/Model/GetSmsCampaigns.md)
  - [GetSmsEventReport](docs/Model/GetSmsEventReport.md)
@@ -378,6 +386,8 @@ Class | Method | HTTP request | Description
  - [MasterDetailsResponsePlanInfoFeatures](docs/Model/MasterDetailsResponsePlanInfoFeatures.md)
  - [Note](docs/Model/Note.md)
  - [NoteData](docs/Model/NoteData.md)
+ - [NoteId](docs/Model/NoteId.md)
+ - [NoteList](docs/Model/NoteList.md)
  - [PostContactInfo](docs/Model/PostContactInfo.md)
  - [PostContactInfoContacts](docs/Model/PostContactInfoContacts.md)
  - [PostSendFailed](docs/Model/PostSendFailed.md)
@@ -392,6 +402,7 @@ Class | Method | HTTP request | Description
  - [RequestContactImport](docs/Model/RequestContactImport.md)
  - [RequestContactImportNewList](docs/Model/RequestContactImportNewList.md)
  - [RequestSmsRecipientExport](docs/Model/RequestSmsRecipientExport.md)
+ - [ScheduleSmtpEmail](docs/Model/ScheduleSmtpEmail.md)
  - [SendReport](docs/Model/SendReport.md)
  - [SendReportEmail](docs/Model/SendReportEmail.md)
  - [SendSms](docs/Model/SendSms.md)
@@ -423,6 +434,7 @@ Class | Method | HTTP request | Description
  - [SubAccountsResponse](docs/Model/SubAccountsResponse.md)
  - [SubAccountsResponseSubAccounts](docs/Model/SubAccountsResponseSubAccounts.md)
  - [Task](docs/Model/Task.md)
+ - [TaskList](docs/Model/TaskList.md)
  - [TaskReminder](docs/Model/TaskReminder.md)
  - [TaskTypes](docs/Model/TaskTypes.md)
  - [UpdateAttribute](docs/Model/UpdateAttribute.md)
