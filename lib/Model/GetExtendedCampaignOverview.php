@@ -9,7 +9,6 @@
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-
 /**
  * SendinBlue API
  *
@@ -28,6 +27,8 @@
  */
 
 namespace SendinBlue\Client\Model;
+
+use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
@@ -38,7 +39,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetExtendedCampaignOverview extends GetCampaignOverview 
+class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,13 +49,25 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
       * @var string
       */
     protected static $swaggerModelName = 'getExtendedCampaignOverview';
-
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'int',
+        'name' => 'string',
+        'subject' => 'string',
+        'type' => 'string',
+        'status' => 'string',
+        'scheduledAt' => 'string',
+        'abTesting' => 'bool',
+        'subjectA' => 'string',
+        'subjectB' => 'string',
+        'splitRule' => 'int',
+        'winnerCriteria' => 'string',
+        'winnerDelay' => 'int',
+        'sendAtBestTime' => 'bool',
         'testSent' => 'bool',
         'header' => 'string',
         'footer' => 'string',
@@ -72,13 +85,25 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         'sentDate' => 'string',
         'returnBounce' => 'int'
     ];
-
     /**
       * Array of property to format mappings. Used for (de)serialization
       *
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'id' => 'int64',
+        'name' => null,
+        'subject' => null,
+        'type' => null,
+        'status' => null,
+        'scheduledAt' => null,
+        'abTesting' => null,
+        'subjectA' => null,
+        'subjectB' => null,
+        'splitRule' => null,
+        'winnerCriteria' => null,
+        'winnerDelay' => null,
+        'sendAtBestTime' => null,
         'testSent' => null,
         'header' => null,
         'footer' => null,
@@ -96,7 +121,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         'sentDate' => null,
         'returnBounce' => 'int64'
     ];
-
     /**
      * Array of property to type mappings. Used for (de)serialization
      *
@@ -104,7 +128,7 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -114,7 +138,7 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -124,6 +148,19 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'name' => 'name',
+        'subject' => 'subject',
+        'type' => 'type',
+        'status' => 'status',
+        'scheduledAt' => 'scheduledAt',
+        'abTesting' => 'abTesting',
+        'subjectA' => 'subjectA',
+        'subjectB' => 'subjectB',
+        'splitRule' => 'splitRule',
+        'winnerCriteria' => 'winnerCriteria',
+        'winnerDelay' => 'winnerDelay',
+        'sendAtBestTime' => 'sendAtBestTime',
         'testSent' => 'testSent',
         'header' => 'header',
         'footer' => 'footer',
@@ -141,13 +178,25 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         'sentDate' => 'sentDate',
         'returnBounce' => 'returnBounce'
     ];
-
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'name' => 'setName',
+        'subject' => 'setSubject',
+        'type' => 'setType',
+        'status' => 'setStatus',
+        'scheduledAt' => 'setScheduledAt',
+        'abTesting' => 'setAbTesting',
+        'subjectA' => 'setSubjectA',
+        'subjectB' => 'setSubjectB',
+        'splitRule' => 'setSplitRule',
+        'winnerCriteria' => 'setWinnerCriteria',
+        'winnerDelay' => 'setWinnerDelay',
+        'sendAtBestTime' => 'setSendAtBestTime',
         'testSent' => 'setTestSent',
         'header' => 'setHeader',
         'footer' => 'setFooter',
@@ -165,13 +214,25 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         'sentDate' => 'setSentDate',
         'returnBounce' => 'setReturnBounce'
     ];
-
     /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'name' => 'getName',
+        'subject' => 'getSubject',
+        'type' => 'getType',
+        'status' => 'getStatus',
+        'scheduledAt' => 'getScheduledAt',
+        'abTesting' => 'getAbTesting',
+        'subjectA' => 'getSubjectA',
+        'subjectB' => 'getSubjectB',
+        'splitRule' => 'getSplitRule',
+        'winnerCriteria' => 'getWinnerCriteria',
+        'winnerDelay' => 'getWinnerDelay',
+        'sendAtBestTime' => 'getSendAtBestTime',
         'testSent' => 'getTestSent',
         'header' => 'getHeader',
         'footer' => 'getFooter',
@@ -189,7 +250,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         'sentDate' => 'getSentDate',
         'returnBounce' => 'getReturnBounce'
     ];
-
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
@@ -198,7 +258,7 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -208,7 +268,7 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -218,7 +278,7 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -231,10 +291,54 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         return self::$swaggerModelName;
     }
 
-    
+    const TYPE_CLASSIC = 'classic';
+    const TYPE_TRIGGER = 'trigger';
+    const STATUS_DRAFT = 'draft';
+    const STATUS_SENT = 'sent';
+    const STATUS_ARCHIVE = 'archive';
+    const STATUS_QUEUED = 'queued';
+    const STATUS_SUSPENDED = 'suspended';
+    const STATUS_IN_PROCESS = 'in_process';
 
-    
 
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_CLASSIC,
+            self::TYPE_TRIGGER,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_DRAFT,
+            self::STATUS_SENT,
+            self::STATUS_ARCHIVE,
+            self::STATUS_QUEUED,
+            self::STATUS_SUSPENDED,
+            self::STATUS_IN_PROCESS,
+        ];
+    }
+
+
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -244,8 +348,19 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
+        $this->container['abTesting'] = isset($data['abTesting']) ? $data['abTesting'] : null;
+        $this->container['subjectA'] = isset($data['subjectA']) ? $data['subjectA'] : null;
+        $this->container['subjectB'] = isset($data['subjectB']) ? $data['subjectB'] : null;
+        $this->container['splitRule'] = isset($data['splitRule']) ? $data['splitRule'] : null;
+        $this->container['winnerCriteria'] = isset($data['winnerCriteria']) ? $data['winnerCriteria'] : null;
+        $this->container['winnerDelay'] = isset($data['winnerDelay']) ? $data['winnerDelay'] : null;
+        $this->container['sendAtBestTime'] = isset($data['sendAtBestTime']) ? $data['sendAtBestTime'] : null;
         $this->container['testSent'] = isset($data['testSent']) ? $data['testSent'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
@@ -263,7 +378,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         $this->container['sentDate'] = isset($data['sentDate']) ? $data['sentDate'] : null;
         $this->container['returnBounce'] = isset($data['returnBounce']) ? $data['returnBounce'] : null;
     }
-
     /**
      * Show all the invalid properties with reasons.
      *
@@ -271,7 +385,35 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
+
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         if ($this->container['testSent'] === null) {
             $invalidProperties[] = "'testSent' can't be null";
@@ -299,7 +441,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
         }
         return $invalidProperties;
     }
-
     /**
      * Validate all the properties in the model
      * return true if all passed
@@ -313,6 +454,336 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
 
 
     /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id ID of the campaign
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Name of the campaign
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets subject
+     *
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->container['subject'];
+    }
+
+    /**
+     * Sets subject
+     *
+     * @param string $subject Subject of the campaign. Only available if `abTesting` flag of the campaign is `false`
+     *
+     * @return $this
+     */
+    public function setSubject($subject)
+    {
+        $this->container['subject'] = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Type of campaign
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status Status of the campaign
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets scheduledAt
+     *
+     * @return string
+     */
+    public function getScheduledAt()
+    {
+        return $this->container['scheduledAt'];
+    }
+
+    /**
+     * Sets scheduledAt
+     *
+     * @param string $scheduledAt UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     *
+     * @return $this
+     */
+    public function setScheduledAt($scheduledAt)
+    {
+        $this->container['scheduledAt'] = $scheduledAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets abTesting
+     *
+     * @return bool
+     */
+    public function getAbTesting()
+    {
+        return $this->container['abTesting'];
+    }
+
+    /**
+     * Sets abTesting
+     *
+     * @param bool $abTesting Status of A/B Test for the campaign. abTesting = false means it is disabled, & abTesting = true means it is enabled.
+     *
+     * @return $this
+     */
+    public function setAbTesting($abTesting)
+    {
+        $this->container['abTesting'] = $abTesting;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectA
+     *
+     * @return string
+     */
+    public function getSubjectA()
+    {
+        return $this->container['subjectA'];
+    }
+
+    /**
+     * Sets subjectA
+     *
+     * @param string $subjectA Subject A of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setSubjectA($subjectA)
+    {
+        $this->container['subjectA'] = $subjectA;
+
+        return $this;
+    }
+
+    /**
+     * Gets subjectB
+     *
+     * @return string
+     */
+    public function getSubjectB()
+    {
+        return $this->container['subjectB'];
+    }
+
+    /**
+     * Sets subjectB
+     *
+     * @param string $subjectB Subject B of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setSubjectB($subjectB)
+    {
+        $this->container['subjectB'] = $subjectB;
+
+        return $this;
+    }
+
+    /**
+     * Gets splitRule
+     *
+     * @return int
+     */
+    public function getSplitRule()
+    {
+        return $this->container['splitRule'];
+    }
+
+    /**
+     * Sets splitRule
+     *
+     * @param int $splitRule The size of your ab-test groups. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setSplitRule($splitRule)
+    {
+        $this->container['splitRule'] = $splitRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets winnerCriteria
+     *
+     * @return string
+     */
+    public function getWinnerCriteria()
+    {
+        return $this->container['winnerCriteria'];
+    }
+
+    /**
+     * Sets winnerCriteria
+     *
+     * @param string $winnerCriteria Criteria for the winning version. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setWinnerCriteria($winnerCriteria)
+    {
+        $this->container['winnerCriteria'] = $winnerCriteria;
+
+        return $this;
+    }
+
+    /**
+     * Gets winnerDelay
+     *
+     * @return int
+     */
+    public function getWinnerDelay()
+    {
+        return $this->container['winnerDelay'];
+    }
+
+    /**
+     * Sets winnerDelay
+     *
+     * @param int $winnerDelay The duration of the test in hours at the end of which the winning version will be sent. Only available if `abTesting` flag of the campaign is `true`
+     *
+     * @return $this
+     */
+    public function setWinnerDelay($winnerDelay)
+    {
+        $this->container['winnerDelay'] = $winnerDelay;
+
+        return $this;
+    }
+
+    /**
+     * Gets sendAtBestTime
+     *
+     * @return bool
+     */
+    public function getSendAtBestTime()
+    {
+        return $this->container['sendAtBestTime'];
+    }
+
+    /**
+     * Sets sendAtBestTime
+     *
+     * @param bool $sendAtBestTime It is true if you have chosen to send your campaign at best time, otherwise it is false
+     *
+     * @return $this
+     */
+    public function setSendAtBestTime($sendAtBestTime)
+    {
+        $this->container['sendAtBestTime'] = $sendAtBestTime;
+
+        return $this;
+    }
+
+    /**
      * Gets testSent
      *
      * @return bool
@@ -321,7 +792,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['testSent'];
     }
-
     /**
      * Sets testSent
      *
@@ -332,10 +802,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setTestSent($testSent)
     {
         $this->container['testSent'] = $testSent;
-
         return $this;
     }
-
     /**
      * Gets header
      *
@@ -345,7 +813,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['header'];
     }
-
     /**
      * Sets header
      *
@@ -356,10 +823,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setHeader($header)
     {
         $this->container['header'] = $header;
-
         return $this;
     }
-
     /**
      * Gets footer
      *
@@ -369,7 +834,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['footer'];
     }
-
     /**
      * Sets footer
      *
@@ -380,10 +844,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setFooter($footer)
     {
         $this->container['footer'] = $footer;
-
         return $this;
     }
-
     /**
      * Gets sender
      *
@@ -393,7 +855,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['sender'];
     }
-
     /**
      * Sets sender
      *
@@ -404,10 +865,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setSender($sender)
     {
         $this->container['sender'] = $sender;
-
         return $this;
     }
-
     /**
      * Gets replyTo
      *
@@ -417,7 +876,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['replyTo'];
     }
-
     /**
      * Sets replyTo
      *
@@ -428,10 +886,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setReplyTo($replyTo)
     {
         $this->container['replyTo'] = $replyTo;
-
         return $this;
     }
-
     /**
      * Gets toField
      *
@@ -441,7 +897,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['toField'];
     }
-
     /**
      * Sets toField
      *
@@ -452,10 +907,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setToField($toField)
     {
         $this->container['toField'] = $toField;
-
         return $this;
     }
-
     /**
      * Gets htmlContent
      *
@@ -465,7 +918,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['htmlContent'];
     }
-
     /**
      * Sets htmlContent
      *
@@ -476,10 +928,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setHtmlContent($htmlContent)
     {
         $this->container['htmlContent'] = $htmlContent;
-
         return $this;
     }
-
     /**
      * Gets shareLink
      *
@@ -489,7 +939,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['shareLink'];
     }
-
     /**
      * Sets shareLink
      *
@@ -500,10 +949,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setShareLink($shareLink)
     {
         $this->container['shareLink'] = $shareLink;
-
         return $this;
     }
-
     /**
      * Gets tag
      *
@@ -513,7 +960,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['tag'];
     }
-
     /**
      * Sets tag
      *
@@ -524,10 +970,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setTag($tag)
     {
         $this->container['tag'] = $tag;
-
         return $this;
     }
-
     /**
      * Gets createdAt
      *
@@ -537,7 +981,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['createdAt'];
     }
-
     /**
      * Sets createdAt
      *
@@ -548,10 +991,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setCreatedAt($createdAt)
     {
         $this->container['createdAt'] = $createdAt;
-
         return $this;
     }
-
     /**
      * Gets modifiedAt
      *
@@ -561,7 +1002,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['modifiedAt'];
     }
-
     /**
      * Sets modifiedAt
      *
@@ -572,10 +1012,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setModifiedAt($modifiedAt)
     {
         $this->container['modifiedAt'] = $modifiedAt;
-
         return $this;
     }
-
     /**
      * Gets inlineImageActivation
      *
@@ -585,7 +1023,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['inlineImageActivation'];
     }
-
     /**
      * Sets inlineImageActivation
      *
@@ -596,10 +1033,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setInlineImageActivation($inlineImageActivation)
     {
         $this->container['inlineImageActivation'] = $inlineImageActivation;
-
         return $this;
     }
-
     /**
      * Gets mirrorActive
      *
@@ -609,7 +1044,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['mirrorActive'];
     }
-
     /**
      * Sets mirrorActive
      *
@@ -620,10 +1054,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setMirrorActive($mirrorActive)
     {
         $this->container['mirrorActive'] = $mirrorActive;
-
         return $this;
     }
-
     /**
      * Gets recurring
      *
@@ -633,7 +1065,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['recurring'];
     }
-
     /**
      * Sets recurring
      *
@@ -644,10 +1075,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setRecurring($recurring)
     {
         $this->container['recurring'] = $recurring;
-
         return $this;
     }
-
     /**
      * Gets sentDate
      *
@@ -657,7 +1086,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['sentDate'];
     }
-
     /**
      * Sets sentDate
      *
@@ -668,10 +1096,8 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setSentDate($sentDate)
     {
         $this->container['sentDate'] = $sentDate;
-
         return $this;
     }
-
     /**
      * Gets returnBounce
      *
@@ -681,7 +1107,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return $this->container['returnBounce'];
     }
-
     /**
      * Sets returnBounce
      *
@@ -692,7 +1117,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     public function setReturnBounce($returnBounce)
     {
         $this->container['returnBounce'] = $returnBounce;
-
         return $this;
     }
     /**
@@ -706,7 +1130,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return isset($this->container[$offset]);
     }
-
     /**
      * Gets offset.
      *
@@ -718,7 +1141,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
     /**
      * Sets value based on offset.
      *
@@ -735,7 +1157,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
             $this->container[$offset] = $value;
         }
     }
-
     /**
      * Unsets offset.
      *
@@ -747,7 +1168,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
     {
         unset($this->container[$offset]);
     }
-
     /**
      * Gets the string presentation of the object
      *
@@ -761,9 +1181,6 @@ class GetExtendedCampaignOverview extends GetCampaignOverview
                 JSON_PRETTY_PRINT
             );
         }
-
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
