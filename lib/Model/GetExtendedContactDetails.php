@@ -9,7 +9,6 @@
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-
 /**
  * SendinBlue API
  *
@@ -28,6 +27,8 @@
  */
 
 namespace SendinBlue\Client\Model;
+
+use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
@@ -38,7 +39,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetExtendedContactDetails extends GetContactDetails 
+class GetExtendedContactDetails implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,13 +49,21 @@ class GetExtendedContactDetails extends GetContactDetails
       * @var string
       */
     protected static $swaggerModelName = 'getExtendedContactDetails';
-
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'email' => 'string',
+        'id' => 'int',
+        'emailBlacklisted' => 'bool',
+        'smsBlacklisted' => 'bool',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string',
+        'listIds' => 'int[]',
+        'listUnsubscribed' => 'int[]',
+        'attributes' => 'object',
         'statistics' => '\SendinBlue\Client\Model\GetExtendedContactDetailsStatistics'
     ];
 
@@ -64,6 +73,15 @@ class GetExtendedContactDetails extends GetContactDetails
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'email' => 'email',
+        'id' => 'int64',
+        'emailBlacklisted' => null,
+        'smsBlacklisted' => null,
+        'createdAt' => null,
+        'modifiedAt' => null,
+        'listIds' => 'int64',
+        'listUnsubscribed' => 'int64',
+        'attributes' => null,
         'statistics' => null
     ];
 
@@ -74,7 +92,7 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -84,7 +102,7 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -94,6 +112,15 @@ class GetExtendedContactDetails extends GetContactDetails
      * @var string[]
      */
     protected static $attributeMap = [
+        'email' => 'email',
+        'id' => 'id',
+        'emailBlacklisted' => 'emailBlacklisted',
+        'smsBlacklisted' => 'smsBlacklisted',
+        'createdAt' => 'createdAt',
+        'modifiedAt' => 'modifiedAt',
+        'listIds' => 'listIds',
+        'listUnsubscribed' => 'listUnsubscribed',
+        'attributes' => 'attributes',
         'statistics' => 'statistics'
     ];
 
@@ -103,6 +130,15 @@ class GetExtendedContactDetails extends GetContactDetails
      * @var string[]
      */
     protected static $setters = [
+        'email' => 'setEmail',
+        'id' => 'setId',
+        'emailBlacklisted' => 'setEmailBlacklisted',
+        'smsBlacklisted' => 'setSmsBlacklisted',
+        'createdAt' => 'setCreatedAt',
+        'modifiedAt' => 'setModifiedAt',
+        'listIds' => 'setListIds',
+        'listUnsubscribed' => 'setListUnsubscribed',
+        'attributes' => 'setAttributes',
         'statistics' => 'setStatistics'
     ];
 
@@ -112,6 +148,15 @@ class GetExtendedContactDetails extends GetContactDetails
      * @var string[]
      */
     protected static $getters = [
+        'email' => 'getEmail',
+        'id' => 'getId',
+        'emailBlacklisted' => 'getEmailBlacklisted',
+        'smsBlacklisted' => 'getSmsBlacklisted',
+        'createdAt' => 'getCreatedAt',
+        'modifiedAt' => 'getModifiedAt',
+        'listIds' => 'getListIds',
+        'listUnsubscribed' => 'getListUnsubscribed',
+        'attributes' => 'getAttributes',
         'statistics' => 'getStatistics'
     ];
 
@@ -123,7 +168,7 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -133,7 +178,7 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -143,7 +188,7 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -155,11 +200,16 @@ class GetExtendedContactDetails extends GetContactDetails
     {
         return self::$swaggerModelName;
     }
-
     
 
-    
 
+
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -169,8 +219,15 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['emailBlacklisted'] = isset($data['emailBlacklisted']) ? $data['emailBlacklisted'] : null;
+        $this->container['smsBlacklisted'] = isset($data['smsBlacklisted']) ? $data['smsBlacklisted'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
+        $this->container['listIds'] = isset($data['listIds']) ? $data['listIds'] : null;
+        $this->container['listUnsubscribed'] = isset($data['listUnsubscribed']) ? $data['listUnsubscribed'] : null;
+        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
         $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
 
@@ -181,14 +238,37 @@ class GetExtendedContactDetails extends GetContactDetails
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['emailBlacklisted'] === null) {
+            $invalidProperties[] = "'emailBlacklisted' can't be null";
+        }
+        if ($this->container['smsBlacklisted'] === null) {
+            $invalidProperties[] = "'smsBlacklisted' can't be null";
+        }
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
+        }
+        if ($this->container['modifiedAt'] === null) {
+            $invalidProperties[] = "'modifiedAt' can't be null";
+        }
+        if ($this->container['listIds'] === null) {
+            $invalidProperties[] = "'listIds' can't be null";
+        }
+        if ($this->container['attributes'] === null) {
+            $invalidProperties[] = "'attributes' can't be null";
+        }
         if ($this->container['statistics'] === null) {
             $invalidProperties[] = "'statistics' can't be null";
         }
         return $invalidProperties;
     }
-
     /**
      * Validate all the properties in the model
      * return true if all passed
@@ -202,6 +282,222 @@ class GetExtendedContactDetails extends GetContactDetails
 
 
     /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email Email address of the contact for which you requested the details
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id ID of the contact for which you requested the details
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets emailBlacklisted
+     *
+     * @return bool
+     */
+    public function getEmailBlacklisted()
+    {
+        return $this->container['emailBlacklisted'];
+    }
+
+    /**
+     * Sets emailBlacklisted
+     *
+     * @param bool $emailBlacklisted Blacklist status for email campaigns (true=blacklisted, false=not blacklisted)
+     *
+     * @return $this
+     */
+    public function setEmailBlacklisted($emailBlacklisted)
+    {
+        $this->container['emailBlacklisted'] = $emailBlacklisted;
+
+        return $this;
+    }
+
+    /**
+     * Gets smsBlacklisted
+     *
+     * @return bool
+     */
+    public function getSmsBlacklisted()
+    {
+        return $this->container['smsBlacklisted'];
+    }
+
+    /**
+     * Sets smsBlacklisted
+     *
+     * @param bool $smsBlacklisted Blacklist status for SMS campaigns (true=blacklisted, false=not blacklisted)
+     *
+     * @return $this
+     */
+    public function setSmsBlacklisted($smsBlacklisted)
+    {
+        $this->container['smsBlacklisted'] = $smsBlacklisted;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param string $createdAt Creation UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifiedAt
+     *
+     * @return string
+     */
+    public function getModifiedAt()
+    {
+        return $this->container['modifiedAt'];
+    }
+
+    /**
+     * Sets modifiedAt
+     *
+     * @param string $modifiedAt Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     *
+     * @return $this
+     */
+    public function setModifiedAt($modifiedAt)
+    {
+        $this->container['modifiedAt'] = $modifiedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets listIds
+     *
+     * @return int[]
+     */
+    public function getListIds()
+    {
+        return $this->container['listIds'];
+    }
+
+    /**
+     * Sets listIds
+     *
+     * @param int[] $listIds listIds
+     *
+     * @return $this
+     */
+    public function setListIds($listIds)
+    {
+        $this->container['listIds'] = $listIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets listUnsubscribed
+     *
+     * @return int[]
+     */
+    public function getListUnsubscribed()
+    {
+        return $this->container['listUnsubscribed'];
+    }
+
+    /**
+     * Sets listUnsubscribed
+     *
+     * @param int[] $listUnsubscribed listUnsubscribed
+     *
+     * @return $this
+     */
+    public function setListUnsubscribed($listUnsubscribed)
+    {
+        $this->container['listUnsubscribed'] = $listUnsubscribed;
+
+        return $this;
+    }
+
+    /**
+     * Gets attributes
+     *
+     * @return object
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param object $attributes Set of attributes of the contact
+     *
+     * @return $this
+     */
+    public function setAttributes($attributes)
+    {
+        $this->container['attributes'] = $attributes;
+
+        return $this;
+    }
+
+    /**
      * Gets statistics
      *
      * @return \SendinBlue\Client\Model\GetExtendedContactDetailsStatistics
@@ -210,7 +506,6 @@ class GetExtendedContactDetails extends GetContactDetails
     {
         return $this->container['statistics'];
     }
-
     /**
      * Sets statistics
      *
@@ -221,7 +516,6 @@ class GetExtendedContactDetails extends GetContactDetails
     public function setStatistics($statistics)
     {
         $this->container['statistics'] = $statistics;
-
         return $this;
     }
     /**
@@ -235,7 +529,6 @@ class GetExtendedContactDetails extends GetContactDetails
     {
         return isset($this->container[$offset]);
     }
-
     /**
      * Gets offset.
      *
@@ -247,7 +540,6 @@ class GetExtendedContactDetails extends GetContactDetails
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
     /**
      * Sets value based on offset.
      *
@@ -264,7 +556,6 @@ class GetExtendedContactDetails extends GetContactDetails
             $this->container[$offset] = $value;
         }
     }
-
     /**
      * Unsets offset.
      *
@@ -276,7 +567,6 @@ class GetExtendedContactDetails extends GetContactDetails
     {
         unset($this->container[$offset]);
     }
-
     /**
      * Gets the string presentation of the object
      *
@@ -290,9 +580,6 @@ class GetExtendedContactDetails extends GetContactDetails
                 JSON_PRETTY_PRINT
             );
         }
-
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

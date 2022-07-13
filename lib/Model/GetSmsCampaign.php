@@ -9,7 +9,6 @@
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-
 /**
  * SendinBlue API
  *
@@ -28,6 +27,8 @@
  */
 
 namespace SendinBlue\Client\Model;
+
+use \ArrayAccess;
 use \SendinBlue\Client\ObjectSerializer;
 
 /**
@@ -38,7 +39,7 @@ use \SendinBlue\Client\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetSmsCampaign extends GetSmsCampaignOverview 
+class GetSmsCampaign implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,27 +49,40 @@ class GetSmsCampaign extends GetSmsCampaignOverview
       * @var string
       */
     protected static $swaggerModelName = 'getSmsCampaign';
-
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'recipients' => '\SendinBlue\Client\Model\GetSmsCampaignRecipients',
-        'statistics' => '\SendinBlue\Client\Model\GetSmsCampaignRecipients'
+        'id' => 'int',
+        'name' => 'string',
+        'status' => 'string',
+        'content' => 'string',
+        'scheduledAt' => 'string',
+        'sender' => 'string',
+        'createdAt' => 'string',
+        'modifiedAt' => 'string',
+        'recipients' => 'object',
+        'statistics' => 'object'
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
+	@@ -75,14 +65,6 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'id' => 'int64',
+        'name' => null,
+        'status' => null,
+        'content' => null,
+        'scheduledAt' => null,
+        'sender' => null,
+        'createdAt' => null,
+        'modifiedAt' => null,
         'recipients' => null,
         'statistics' => null
     ];
-
     /**
      * Array of property to type mappings. Used for (de)serialization
      *
@@ -76,7 +90,7 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -86,7 +100,7 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -96,30 +110,51 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'name' => 'name',
+        'status' => 'status',
+        'content' => 'content',
+        'scheduledAt' => 'scheduledAt',
+        'sender' => 'sender',
+        'createdAt' => 'createdAt',
+        'modifiedAt' => 'modifiedAt',
         'recipients' => 'recipients',
         'statistics' => 'statistics'
     ];
-
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'name' => 'setName',
+        'status' => 'setStatus',
+        'content' => 'setContent',
+        'scheduledAt' => 'setScheduledAt',
+        'sender' => 'setSender',
+        'createdAt' => 'setCreatedAt',
+        'modifiedAt' => 'setModifiedAt',
         'recipients' => 'setRecipients',
         'statistics' => 'setStatistics'
     ];
-
     /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'name' => 'getName',
+        'status' => 'getStatus',
+        'content' => 'getContent',
+        'scheduledAt' => 'getScheduledAt',
+        'sender' => 'getSender',
+        'createdAt' => 'getCreatedAt',
+        'modifiedAt' => 'getModifiedAt',
         'recipients' => 'getRecipients',
         'statistics' => 'getStatistics'
     ];
-
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
@@ -128,7 +163,7 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -138,7 +173,7 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -148,7 +183,7 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -161,10 +196,39 @@ class GetSmsCampaign extends GetSmsCampaignOverview
         return self::$swaggerModelName;
     }
 
-    
+    const STATUS_DRAFT = 'draft';
+    const STATUS_SENT = 'sent';
+    const STATUS_ARCHIVE = 'archive';
+    const STATUS_QUEUED = 'queued';
+    const STATUS_SUSPENDED = 'suspended';
+    const STATUS_IN_PROCESS = 'inProcess';
 
-    
 
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_DRAFT,
+            self::STATUS_SENT,
+            self::STATUS_ARCHIVE,
+            self::STATUS_QUEUED,
+            self::STATUS_SUSPENDED,
+            self::STATUS_IN_PROCESS,
+        ];
+    }
+
+
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -174,12 +238,17 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
+        $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
-
     /**
      * Show all the invalid properties with reasons.
      *
@@ -187,8 +256,37 @@ class GetSmsCampaign extends GetSmsCampaignOverview
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['content'] === null) {
+            $invalidProperties[] = "'content' can't be null";
+        }
+        if ($this->container['sender'] === null) {
+            $invalidProperties[] = "'sender' can't be null";
+        }
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
+        }
+        if ($this->container['modifiedAt'] === null) {
+            $invalidProperties[] = "'modifiedAt' can't be null";
+        }
         if ($this->container['recipients'] === null) {
             $invalidProperties[] = "'recipients' can't be null";
         }
@@ -197,7 +295,6 @@ class GetSmsCampaign extends GetSmsCampaignOverview
         }
         return $invalidProperties;
     }
-
     /**
      * Validate all the properties in the model
      * return true if all passed
@@ -211,50 +308,246 @@ class GetSmsCampaign extends GetSmsCampaignOverview
 
 
     /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id ID of the SMS Campaign
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Name of the SMS Campaign
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status Status of the SMS Campaign
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     *
+     * @param string $content Content of the SMS Campaign
+     *
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets scheduledAt
+     *
+     * @return string
+     */
+    public function getScheduledAt()
+    {
+        return $this->container['scheduledAt'];
+    }
+
+    /**
+     * Sets scheduledAt
+     *
+     * @param string $scheduledAt UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
+     *
+     * @return $this
+     */
+    public function setScheduledAt($scheduledAt)
+    {
+        $this->container['scheduledAt'] = $scheduledAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets sender
+     *
+     * @return string
+     */
+    public function getSender()
+    {
+        return $this->container['sender'];
+    }
+
+    /**
+     * Sets sender
+     *
+     * @param string $sender Sender of the SMS Campaign
+     *
+     * @return $this
+     */
+    public function setSender($sender)
+    {
+        $this->container['sender'] = $sender;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param string $createdAt Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifiedAt
+     *
+     * @return string
+     */
+    public function getModifiedAt()
+    {
+        return $this->container['modifiedAt'];
+    }
+
+    /**
+     * Sets modifiedAt
+     *
+     * @param string $modifiedAt UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+     *
+     * @return $this
+     */
+    public function setModifiedAt($modifiedAt)
+    {
+        $this->container['modifiedAt'] = $modifiedAt;
+
+        return $this;
+    }
+
+    /**
      * Gets recipients
      *
-     * @return \SendinBlue\Client\Model\GetSmsCampaignRecipients
+     * @return object
      */
     public function getRecipients()
     {
         return $this->container['recipients'];
     }
-
     /**
      * Sets recipients
      *
-     * @param \SendinBlue\Client\Model\GetSmsCampaignRecipients $recipients recipients
+     * @param object $recipients recipients
      *
      * @return $this
      */
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
-
         return $this;
     }
-
     /**
      * Gets statistics
      *
-     * @return \SendinBlue\Client\Model\GetSmsCampaignRecipients
+     * @return object
      */
     public function getStatistics()
     {
         return $this->container['statistics'];
     }
-
     /**
      * Sets statistics
      *
-     * @param \SendinBlue\Client\Model\GetSmsCampaignRecipients $statistics statistics
+     * @param object $statistics statistics
      *
      * @return $this
      */
     public function setStatistics($statistics)
     {
         $this->container['statistics'] = $statistics;
-
         return $this;
     }
     /**
@@ -268,7 +561,6 @@ class GetSmsCampaign extends GetSmsCampaignOverview
     {
         return isset($this->container[$offset]);
     }
-
     /**
      * Gets offset.
      *
@@ -280,7 +572,6 @@ class GetSmsCampaign extends GetSmsCampaignOverview
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
     /**
      * Sets value based on offset.
      *
@@ -297,7 +588,6 @@ class GetSmsCampaign extends GetSmsCampaignOverview
             $this->container[$offset] = $value;
         }
     }
-
     /**
      * Unsets offset.
      *
@@ -309,7 +599,6 @@ class GetSmsCampaign extends GetSmsCampaignOverview
     {
         unset($this->container[$offset]);
     }
-
     /**
      * Gets the string presentation of the object
      *
@@ -323,9 +612,6 @@ class GetSmsCampaign extends GetSmsCampaignOverview
                 JSON_PRETTY_PRINT
             );
         }
-
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
