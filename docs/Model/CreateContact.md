@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **string** | Email address of the user. Mandatory if \"SMS\" field is not passed in \"attributes\" parameter. Mobile Number in \"SMS\" field should be passed with proper country code. For example {&#39;SMS&#39;:&#39;+91xxxxxxxxxx&#39;} or {&#39;SMS&#39;:&#39;0091xxxxxxxxxx&#39;} | [optional] 
-**attributes** | **object** | Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. &#x60;{\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}&#x60; | [optional] 
+**attributes** | **object** | Pass the set of attributes and their values. The attribute&#39;s parameter should be passed in capital letter while creating a contact. These attributes must be present in your SendinBlue account. For eg. &#x60;{\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}&#x60; | [optional] 
 **emailBlacklisted** | **bool** | Set this field to blacklist the contact for emails (emailBlacklisted &#x3D; true) | [optional] 
 **smsBlacklisted** | **bool** | Set this field to blacklist the contact for SMS (smsBlacklisted &#x3D; true) | [optional] 
 **listIds** | **int[]** | Ids of the lists to add the contact to | [optional] 
