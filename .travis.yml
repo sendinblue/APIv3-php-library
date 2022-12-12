@@ -8,4 +8,4 @@ php:
     - 8.0
     - 8.1
 before_install: "composer install"
-# script: "vendor/bin/phpunit"
+script: "vendor/bin/phpunit"
