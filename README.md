@@ -21,6 +21,17 @@ PHP 5.6 and later
 
 To install the bindings via [Composer](http://getcomposer.org/):
 
+Create a ```composer.json``` file in any directory & add below code in composer.json file.
+
+```
+{
+"require": {
+"sendinblue/api-v3-sdk": "8.x.x"
+}
+}
+```
+
+Then run below commands in the same directory
 ```
 composer require sendinblue/api-v3-sdk "8.x.x"
 ```
