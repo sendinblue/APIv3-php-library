@@ -62,7 +62,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'content' => 'string',
         'recipients' => '\SendinBlue\Client\Model\CreateSmsCampaignRecipients',
         'scheduledAt' => 'string',
-        'unicodeEnabled' => 'bool'
+        'unicodeEnabled' => 'bool',
+        'organisationPrefix' => 'string',
+        'unsubscribeInstruction' => 'string'
     ];
 
     /**
@@ -76,7 +78,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'content' => null,
         'recipients' => null,
         'scheduledAt' => null,
-        'unicodeEnabled' => null
+        'unicodeEnabled' => null,
+        'organisationPrefix' => null,
+        'unsubscribeInstruction' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'content' => 'content',
         'recipients' => 'recipients',
         'scheduledAt' => 'scheduledAt',
-        'unicodeEnabled' => 'unicodeEnabled'
+        'unicodeEnabled' => 'unicodeEnabled',
+        'organisationPrefix' => 'organisationPrefix',
+        'unsubscribeInstruction' => 'unsubscribeInstruction'
     ];
 
     /**
@@ -125,7 +131,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'content' => 'setContent',
         'recipients' => 'setRecipients',
         'scheduledAt' => 'setScheduledAt',
-        'unicodeEnabled' => 'setUnicodeEnabled'
+        'unicodeEnabled' => 'setUnicodeEnabled',
+        'organisationPrefix' => 'setOrganisationPrefix',
+        'unsubscribeInstruction' => 'setUnsubscribeInstruction'
     ];
 
     /**
@@ -139,7 +147,9 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         'content' => 'getContent',
         'recipients' => 'getRecipients',
         'scheduledAt' => 'getScheduledAt',
-        'unicodeEnabled' => 'getUnicodeEnabled'
+        'unicodeEnabled' => 'getUnicodeEnabled',
+        'organisationPrefix' => 'getOrganisationPrefix',
+        'unsubscribeInstruction' => 'getUnsubscribeInstruction'
     ];
 
     /**
@@ -208,6 +218,8 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['scheduledAt'] = isset($data['scheduledAt']) ? $data['scheduledAt'] : null;
         $this->container['unicodeEnabled'] = isset($data['unicodeEnabled']) ? $data['unicodeEnabled'] : false;
+        $this->container['organisationPrefix'] = isset($data['organisationPrefix']) ? $data['organisationPrefix'] : null;
+        $this->container['unsubscribeInstruction'] = isset($data['unsubscribeInstruction']) ? $data['unsubscribeInstruction'] : null;
     }
 
     /**
@@ -391,6 +403,54 @@ class CreateSmsCampaign implements ModelInterface, ArrayAccess
     public function setUnicodeEnabled($unicodeEnabled)
     {
         $this->container['unicodeEnabled'] = $unicodeEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets organisationPrefix
+     *
+     * @return string
+     */
+    public function getOrganisationPrefix()
+    {
+        return $this->container['organisationPrefix'];
+    }
+
+    /**
+     * Sets organisationPrefix
+     *
+     * @param string $organisationPrefix A recognizable prefix will ensure your audience knows who you are. Recommended by U.S. carriers. This will be added as your Brand Name before the message content. **Prefer verifying maximum length of 160 characters including this prefix in message content to avoid multiple sending of same sms.**
+     *
+     * @return $this
+     */
+    public function setOrganisationPrefix($organisationPrefix)
+    {
+        $this->container['organisationPrefix'] = $organisationPrefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets unsubscribeInstruction
+     *
+     * @return string
+     */
+    public function getUnsubscribeInstruction()
+    {
+        return $this->container['unsubscribeInstruction'];
+    }
+
+    /**
+     * Sets unsubscribeInstruction
+     *
+     * @param string $unsubscribeInstruction Instructions to unsubscribe from future communications. Recommended by U.S. carriers. Must include **STOP** keyword. This will be added as instructions after the end of message content. **Prefer verifying maximum length of 160 characters including this instructions in message content to avoid multiple sending of same sms.**
+     *
+     * @return $this
+     */
+    public function setUnsubscribeInstruction($unsubscribeInstruction)
+    {
+        $this->container['unsubscribeInstruction'] = $unsubscribeInstruction;
 
         return $this;
     }

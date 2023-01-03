@@ -58,6 +58,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'value' => 'string',
+        'isRecurring' => 'bool',
         'enumeration' => '\SendinBlue\Client\Model\CreateAttributeEnumeration[]',
         'type' => 'string'
     ];
@@ -69,6 +70,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'value' => null,
+        'isRecurring' => null,
         'enumeration' => null,
         'type' => null
     ];
@@ -101,6 +103,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'value' => 'value',
+        'isRecurring' => 'isRecurring',
         'enumeration' => 'enumeration',
         'type' => 'type'
     ];
@@ -112,6 +115,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'value' => 'setValue',
+        'isRecurring' => 'setIsRecurring',
         'enumeration' => 'setEnumeration',
         'type' => 'setType'
     ];
@@ -123,6 +127,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'value' => 'getValue',
+        'isRecurring' => 'getIsRecurring',
         'enumeration' => 'getEnumeration',
         'type' => 'getType'
     ];
@@ -211,6 +216,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['isRecurring'] = isset($data['isRecurring']) ? $data['isRecurring'] : null;
         $this->container['enumeration'] = isset($data['enumeration']) ? $data['enumeration'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
@@ -267,6 +273,30 @@ class CreateAttribute implements ModelInterface, ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets isRecurring
+     *
+     * @return bool
+     */
+    public function getIsRecurring()
+    {
+        return $this->container['isRecurring'];
+    }
+
+    /**
+     * Sets isRecurring
+     *
+     * @param bool $isRecurring Type of the calculated attribute. Use only if the attribute's category is 'calculated'
+     *
+     * @return $this
+     */
+    public function setIsRecurring($isRecurring)
+    {
+        $this->container['isRecurring'] = $isRecurring;
 
         return $this;
     }

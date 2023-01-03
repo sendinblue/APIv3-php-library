@@ -117,4 +117,18 @@ class CreateSmsCampaignTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUnicodeEnabled()
     {
     }
+
+    /**
+     * Test attribute "organisationPrefix"
+     */
+    public function testPropertyOrganisationPrefix()
+    {
+    }
+
+    /**
+     * Test attribute "unsubscribeInstruction"
+     */
+    public function testPropertyUnsubscribeInstruction()
+    {
+    }
 }

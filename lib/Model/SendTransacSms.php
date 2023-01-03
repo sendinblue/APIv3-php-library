@@ -63,7 +63,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'type' => 'string',
         'tag' => 'string',
         'webUrl' => 'string',
-        'unicodeEnabled' => 'bool'
+        'unicodeEnabled' => 'bool',
+        'organisationPrefix' => 'string'
     ];
 
     /**
@@ -78,7 +79,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'type' => null,
         'tag' => null,
         'webUrl' => 'url',
-        'unicodeEnabled' => null
+        'unicodeEnabled' => null,
+        'organisationPrefix' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'type' => 'type',
         'tag' => 'tag',
         'webUrl' => 'webUrl',
-        'unicodeEnabled' => 'unicodeEnabled'
+        'unicodeEnabled' => 'unicodeEnabled',
+        'organisationPrefix' => 'organisationPrefix'
     ];
 
     /**
@@ -129,7 +132,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'tag' => 'setTag',
         'webUrl' => 'setWebUrl',
-        'unicodeEnabled' => 'setUnicodeEnabled'
+        'unicodeEnabled' => 'setUnicodeEnabled',
+        'organisationPrefix' => 'setOrganisationPrefix'
     ];
 
     /**
@@ -144,7 +148,8 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'tag' => 'getTag',
         'webUrl' => 'getWebUrl',
-        'unicodeEnabled' => 'getUnicodeEnabled'
+        'unicodeEnabled' => 'getUnicodeEnabled',
+        'organisationPrefix' => 'getOrganisationPrefix'
     ];
 
     /**
@@ -229,6 +234,7 @@ class SendTransacSms implements ModelInterface, ArrayAccess
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
         $this->container['webUrl'] = isset($data['webUrl']) ? $data['webUrl'] : null;
         $this->container['unicodeEnabled'] = isset($data['unicodeEnabled']) ? $data['unicodeEnabled'] : false;
+        $this->container['organisationPrefix'] = isset($data['organisationPrefix']) ? $data['organisationPrefix'] : null;
     }
 
     /**
@@ -453,6 +459,30 @@ class SendTransacSms implements ModelInterface, ArrayAccess
     public function setUnicodeEnabled($unicodeEnabled)
     {
         $this->container['unicodeEnabled'] = $unicodeEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets organisationPrefix
+     *
+     * @return string
+     */
+    public function getOrganisationPrefix()
+    {
+        return $this->container['organisationPrefix'];
+    }
+
+    /**
+     * Sets organisationPrefix
+     *
+     * @param string $organisationPrefix A recognizable prefix will ensure your audience knows who you are. Recommended by U.S. carriers. This will be added as your Brand Name before the message content. **Prefer verifying maximum length of 160 characters including this prefix in message content to avoid multiple sending of same sms.**
+     *
+     * @return $this
+     */
+    public function setOrganisationPrefix($organisationPrefix)
+    {
+        $this->container['organisationPrefix'] = $organisationPrefix;
 
         return $this;
     }

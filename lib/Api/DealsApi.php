@@ -352,9 +352,9 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filterAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
-     * @param  string $filterLinkedCompaniesIds Filter by linked companies ids (optional)
-     * @param  string $filterLinkedContactsIds Filter by linked companies ids (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
+     * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $sort Sort the results in the ascending/descending order. Default order is **descending** by creation if &#x60;sort&#x60; is not passed (optional)
@@ -364,9 +364,9 @@ class DealsApi
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\DealsList
      */
-    public function crmDealsGet($filterAttributes = null, $filterLinkedCompaniesIds = null, $filterLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
+    public function crmDealsGet($filtersAttributes = null, $filtersLinkedCompaniesIds = null, $filtersLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
     {
-        list($response) = $this->crmDealsGetWithHttpInfo($filterAttributes, $filterLinkedCompaniesIds, $filterLinkedContactsIds, $offset, $limit, $sort, $sortBy);
+        list($response) = $this->crmDealsGetWithHttpInfo($filtersAttributes, $filtersLinkedCompaniesIds, $filtersLinkedContactsIds, $offset, $limit, $sort, $sortBy);
         return $response;
     }
 
@@ -375,9 +375,9 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filterAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
-     * @param  string $filterLinkedCompaniesIds Filter by linked companies ids (optional)
-     * @param  string $filterLinkedContactsIds Filter by linked companies ids (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
+     * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $sort Sort the results in the ascending/descending order. Default order is **descending** by creation if &#x60;sort&#x60; is not passed (optional)
@@ -387,10 +387,10 @@ class DealsApi
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\DealsList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function crmDealsGetWithHttpInfo($filterAttributes = null, $filterLinkedCompaniesIds = null, $filterLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
+    public function crmDealsGetWithHttpInfo($filtersAttributes = null, $filtersLinkedCompaniesIds = null, $filtersLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
     {
         $returnType = '\SendinBlue\Client\Model\DealsList';
-        $request = $this->crmDealsGetRequest($filterAttributes, $filterLinkedCompaniesIds, $filterLinkedContactsIds, $offset, $limit, $sort, $sortBy);
+        $request = $this->crmDealsGetRequest($filtersAttributes, $filtersLinkedCompaniesIds, $filtersLinkedContactsIds, $offset, $limit, $sort, $sortBy);
 
         try {
             $options = $this->createHttpClientOption();
@@ -464,9 +464,9 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filterAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
-     * @param  string $filterLinkedCompaniesIds Filter by linked companies ids (optional)
-     * @param  string $filterLinkedContactsIds Filter by linked companies ids (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
+     * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $sort Sort the results in the ascending/descending order. Default order is **descending** by creation if &#x60;sort&#x60; is not passed (optional)
@@ -475,9 +475,9 @@ class DealsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function crmDealsGetAsync($filterAttributes = null, $filterLinkedCompaniesIds = null, $filterLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
+    public function crmDealsGetAsync($filtersAttributes = null, $filtersLinkedCompaniesIds = null, $filtersLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
     {
-        return $this->crmDealsGetAsyncWithHttpInfo($filterAttributes, $filterLinkedCompaniesIds, $filterLinkedContactsIds, $offset, $limit, $sort, $sortBy)
+        return $this->crmDealsGetAsyncWithHttpInfo($filtersAttributes, $filtersLinkedCompaniesIds, $filtersLinkedContactsIds, $offset, $limit, $sort, $sortBy)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -490,9 +490,9 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filterAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
-     * @param  string $filterLinkedCompaniesIds Filter by linked companies ids (optional)
-     * @param  string $filterLinkedContactsIds Filter by linked companies ids (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
+     * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $sort Sort the results in the ascending/descending order. Default order is **descending** by creation if &#x60;sort&#x60; is not passed (optional)
@@ -501,10 +501,10 @@ class DealsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function crmDealsGetAsyncWithHttpInfo($filterAttributes = null, $filterLinkedCompaniesIds = null, $filterLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
+    public function crmDealsGetAsyncWithHttpInfo($filtersAttributes = null, $filtersLinkedCompaniesIds = null, $filtersLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
     {
         $returnType = '\SendinBlue\Client\Model\DealsList';
-        $request = $this->crmDealsGetRequest($filterAttributes, $filterLinkedCompaniesIds, $filterLinkedContactsIds, $offset, $limit, $sort, $sortBy);
+        $request = $this->crmDealsGetRequest($filtersAttributes, $filtersLinkedCompaniesIds, $filtersLinkedContactsIds, $offset, $limit, $sort, $sortBy);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -546,9 +546,9 @@ class DealsApi
     /**
      * Create request for operation 'crmDealsGet'
      *
-     * @param  string $filterAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
-     * @param  string $filterLinkedCompaniesIds Filter by linked companies ids (optional)
-     * @param  string $filterLinkedContactsIds Filter by linked companies ids (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
+     * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
      * @param  string $sort Sort the results in the ascending/descending order. Default order is **descending** by creation if &#x60;sort&#x60; is not passed (optional)
@@ -557,7 +557,7 @@ class DealsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function crmDealsGetRequest($filterAttributes = null, $filterLinkedCompaniesIds = null, $filterLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
+    protected function crmDealsGetRequest($filtersAttributes = null, $filtersLinkedCompaniesIds = null, $filtersLinkedContactsIds = null, $offset = null, $limit = '50', $sort = null, $sortBy = null)
     {
 
         $resourcePath = '/crm/deals';
@@ -568,16 +568,16 @@ class DealsApi
         $multipart = false;
 
         // query params
-        if ($filterAttributes !== null) {
-            $queryParams['filter[attributes]'] = ObjectSerializer::toQueryValue($filterAttributes);
+        if ($filtersAttributes !== null) {
+            $queryParams['filters[attributes]'] = ObjectSerializer::toQueryValue($filtersAttributes);
         }
         // query params
-        if ($filterLinkedCompaniesIds !== null) {
-            $queryParams['filter[linkedCompaniesIds]'] = ObjectSerializer::toQueryValue($filterLinkedCompaniesIds);
+        if ($filtersLinkedCompaniesIds !== null) {
+            $queryParams['filters[linkedCompaniesIds]'] = ObjectSerializer::toQueryValue($filtersLinkedCompaniesIds);
         }
         // query params
-        if ($filterLinkedContactsIds !== null) {
-            $queryParams['filter[linkedContactsIds]'] = ObjectSerializer::toQueryValue($filterLinkedContactsIds);
+        if ($filtersLinkedContactsIds !== null) {
+            $queryParams['filters[linkedContactsIds]'] = ObjectSerializer::toQueryValue($filtersLinkedContactsIds);
         }
         // query params
         if ($offset !== null) {

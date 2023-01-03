@@ -91,6 +91,13 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountApi* | [**getAccount**](docs/Api/AccountApi.md#getaccount) | **GET** /account | Get your account information, plan and credits details
+*CompaniesApi* | [**companiesAttributesGet**](docs/Api/CompaniesApi.md#companiesattributesget) | **GET** /companies/attributes | Get company attributes
+*CompaniesApi* | [**companiesGet**](docs/Api/CompaniesApi.md#companiesget) | **GET** /companies | Get all companies
+*CompaniesApi* | [**companiesIdDelete**](docs/Api/CompaniesApi.md#companiesiddelete) | **DELETE** /companies/{id} | Delete a company
+*CompaniesApi* | [**companiesIdGet**](docs/Api/CompaniesApi.md#companiesidget) | **GET** /companies/{id} | Get a company
+*CompaniesApi* | [**companiesIdPatch**](docs/Api/CompaniesApi.md#companiesidpatch) | **PATCH** /companies/{id} | Update a company
+*CompaniesApi* | [**companiesLinkUnlinkIdPatch**](docs/Api/CompaniesApi.md#companieslinkunlinkidpatch) | **PATCH** /companies/link-unlink/{id} | Link and Unlink company with contacts and deals
+*CompaniesApi* | [**companiesPost**](docs/Api/CompaniesApi.md#companiespost) | **POST** /companies | Create a company
 *AttributesApi* | [**createAttribute**](docs/Api/AttributesApi.md#createattribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 *AttributesApi* | [**deleteAttribute**](docs/Api/AttributesApi.md#deleteattribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
 *AttributesApi* | [**getAttributes**](docs/Api/AttributesApi.md#getattributes) | **GET** /contacts/attributes | List all attributes
@@ -151,6 +158,17 @@ Class | Method | HTTP request | Description
 *DealsApi* | [**crmDealsLinkUnlinkIdPatch**](docs/Api/DealsApi.md#crmdealslinkunlinkidpatch) | **PATCH** /crm/deals/link-unlink/{id} | Link and Unlink a deal with contacts and companies
 *DealsApi* | [**crmDealsPost**](docs/Api/DealsApi.md#crmdealspost) | **POST** /crm/deals | Create a deal
 *DealsApi* | [**crmPipelineDetailsGet**](docs/Api/DealsApi.md#crmpipelinedetailsget) | **GET** /crm/pipeline/details | Get pipeline stages
+*EcommerceApi* | [**createBatchOrder**](docs/Api/EcommerceApi.md#createbatchorder) | **POST** /orders/status/batch | Maintains a batch of orders
+*EcommerceApi* | [**createOrder**](docs/Api/EcommerceApi.md#createorder) | **POST** /orders/status | Maintains every transactional status of the order
+*EcommerceApi* | [**createUpdateBatchCategory**](docs/Api/EcommerceApi.md#createupdatebatchcategory) | **POST** /categories/batch | Create the categories in a batch
+*EcommerceApi* | [**createUpdateBatchProducts**](docs/Api/EcommerceApi.md#createupdatebatchproducts) | **POST** /products/batch | Creates the products in a batch
+*EcommerceApi* | [**createUpdateCategory**](docs/Api/EcommerceApi.md#createupdatecategory) | **POST** /categories | Create/Update a category
+*EcommerceApi* | [**createUpdateProduct**](docs/Api/EcommerceApi.md#createupdateproduct) | **POST** /products | Create/Update a product
+*EcommerceApi* | [**ecommerceActivatePost**](docs/Api/EcommerceApi.md#ecommerceactivatepost) | **POST** /ecommerce/activate | **Fulfills the eCommerce pre-requisites**
+*EcommerceApi* | [**getCategories**](docs/Api/EcommerceApi.md#getcategories) | **GET** /categories | Return all your categories
+*EcommerceApi* | [**getCategoryInfo**](docs/Api/EcommerceApi.md#getcategoryinfo) | **GET** /categories/{id} | Get a category details
+*EcommerceApi* | [**getProductInfo**](docs/Api/EcommerceApi.md#getproductinfo) | **GET** /products/{id} | Get a product&#39;s details
+*EcommerceApi* | [**getProducts**](docs/Api/EcommerceApi.md#getproducts) | **GET** /products | Return all your products
 *EmailCampaignsApi* | [**createEmailCampaign**](docs/Api/EmailCampaignsApi.md#createemailcampaign) | **POST** /emailCampaigns | Create an email campaign
 *EmailCampaignsApi* | [**deleteEmailCampaign**](docs/Api/EmailCampaignsApi.md#deleteemailcampaign) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
 *EmailCampaignsApi* | [**emailExportRecipients**](docs/Api/EmailCampaignsApi.md#emailexportrecipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of an email campaign
@@ -170,6 +188,12 @@ Class | Method | HTTP request | Description
 *FoldersApi* | [**getFolderLists**](docs/Api/FoldersApi.md#getfolderlists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
 *FoldersApi* | [**getFolders**](docs/Api/FoldersApi.md#getfolders) | **GET** /contacts/folders | Get all folders
 *FoldersApi* | [**updateFolder**](docs/Api/FoldersApi.md#updatefolder) | **PUT** /contacts/folders/{folderId} | Update a folder
+*FilesApi* | [**crmFilesGet**](docs/Api/FilesApi.md#crmfilesget) | **GET** /crm/files | Get all files
+*FilesApi* | [**crmFilesIdDataGet**](docs/Api/FilesApi.md#crmfilesiddataget) | **GET** /crm/files/{id}/data | Get file details
+*FilesApi* | [**crmFilesIdDelete**](docs/Api/FilesApi.md#crmfilesiddelete) | **DELETE** /crm/files/{id} | Delete a file
+*FilesApi* | [**crmFilesIdGet**](docs/Api/FilesApi.md#crmfilesidget) | **GET** /crm/files/{id} | Download a file
+*FilesApi* | [**crmFilesPost**](docs/Api/FilesApi.md#crmfilespost) | **POST** /crm/files | Upload a file
+*InboundParsingApi* | [**getInboundEmailAttachment**](docs/Api/InboundParsingApi.md#getinboundemailattachment) | **GET** /inbound/attachments/{downloadToken} | Retrieve inbound attachment with download token.
 *InboundParsingApi* | [**getInboundEmailEvents**](docs/Api/InboundParsingApi.md#getinboundemailevents) | **GET** /inbound/events | Get the list of all the events for the received emails.
 *InboundParsingApi* | [**getInboundEmailEventsByUuid**](docs/Api/InboundParsingApi.md#getinboundemaileventsbyuuid) | **GET** /inbound/events/{uuid} | Fetch all events history for one particular received email.
 *ListsApi* | [**addContactToList**](docs/Api/ListsApi.md#addcontacttolist) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
@@ -301,6 +325,7 @@ Class | Method | HTTP request | Description
  - [ConversationsMessageFileImageInfo](docs/Model/ConversationsMessageFileImageInfo.md)
  - [CreateAttribute](docs/Model/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/Model/CreateAttributeEnumeration.md)
+ - [CreateCategoryModel](docs/Model/CreateCategoryModel.md)
  - [CreateChild](docs/Model/CreateChild.md)
  - [CreateContact](docs/Model/CreateContact.md)
  - [CreateDoiContact](docs/Model/CreateDoiContact.md)
@@ -309,6 +334,7 @@ Class | Method | HTTP request | Description
  - [CreateEmailCampaignSender](docs/Model/CreateEmailCampaignSender.md)
  - [CreateList](docs/Model/CreateList.md)
  - [CreateModel](docs/Model/CreateModel.md)
+ - [CreateProductModel](docs/Model/CreateProductModel.md)
  - [CreateReseller](docs/Model/CreateReseller.md)
  - [CreateSender](docs/Model/CreateSender.md)
  - [CreateSenderIps](docs/Model/CreateSenderIps.md)
@@ -320,9 +346,18 @@ Class | Method | HTTP request | Description
  - [CreateSmtpTemplateSender](docs/Model/CreateSmtpTemplateSender.md)
  - [CreateSubAccount](docs/Model/CreateSubAccount.md)
  - [CreateSubAccountResponse](docs/Model/CreateSubAccountResponse.md)
+ - [CreateUpdateBatchCategory](docs/Model/CreateUpdateBatchCategory.md)
+ - [CreateUpdateBatchCategoryModel](docs/Model/CreateUpdateBatchCategoryModel.md)
+ - [CreateUpdateBatchProducts](docs/Model/CreateUpdateBatchProducts.md)
+ - [CreateUpdateBatchProductsModel](docs/Model/CreateUpdateBatchProductsModel.md)
+ - [CreateUpdateCategories](docs/Model/CreateUpdateCategories.md)
+ - [CreateUpdateCategory](docs/Model/CreateUpdateCategory.md)
  - [CreateUpdateContactModel](docs/Model/CreateUpdateContactModel.md)
  - [CreateUpdateFolder](docs/Model/CreateUpdateFolder.md)
+ - [CreateUpdateProduct](docs/Model/CreateUpdateProduct.md)
+ - [CreateUpdateProducts](docs/Model/CreateUpdateProducts.md)
  - [CreateWebhook](docs/Model/CreateWebhook.md)
+ - [CreatedBatchId](docs/Model/CreatedBatchId.md)
  - [CreatedProcessId](docs/Model/CreatedProcessId.md)
  - [Deal](docs/Model/Deal.md)
  - [DealAttributes](docs/Model/DealAttributes.md)
@@ -347,6 +382,8 @@ Class | Method | HTTP request | Description
  - [GetCampaignOverview](docs/Model/GetCampaignOverview.md)
  - [GetCampaignRecipients](docs/Model/GetCampaignRecipients.md)
  - [GetCampaignStats](docs/Model/GetCampaignStats.md)
+ - [GetCategories](docs/Model/GetCategories.md)
+ - [GetCategoryDetails](docs/Model/GetCategoryDetails.md)
  - [GetChildAccountCreationStatus](docs/Model/GetChildAccountCreationStatus.md)
  - [GetChildDomain](docs/Model/GetChildDomain.md)
  - [GetChildDomains](docs/Model/GetChildDomains.md)
@@ -404,6 +441,8 @@ Class | Method | HTTP request | Description
  - [GetLists](docs/Model/GetLists.md)
  - [GetProcess](docs/Model/GetProcess.md)
  - [GetProcesses](docs/Model/GetProcesses.md)
+ - [GetProductDetails](docs/Model/GetProductDetails.md)
+ - [GetProducts](docs/Model/GetProducts.md)
  - [GetReports](docs/Model/GetReports.md)
  - [GetReportsReports](docs/Model/GetReportsReports.md)
  - [GetScheduledEmailByBatchId](docs/Model/GetScheduledEmailByBatchId.md)
@@ -453,6 +492,10 @@ Class | Method | HTTP request | Description
  - [NoteData](docs/Model/NoteData.md)
  - [NoteId](docs/Model/NoteId.md)
  - [NoteList](docs/Model/NoteList.md)
+ - [Order](docs/Model/Order.md)
+ - [OrderBatch](docs/Model/OrderBatch.md)
+ - [OrderBilling](docs/Model/OrderBilling.md)
+ - [OrderProducts](docs/Model/OrderProducts.md)
  - [Pipeline](docs/Model/Pipeline.md)
  - [PipelineStage](docs/Model/PipelineStage.md)
  - [PostContactInfo](docs/Model/PostContactInfo.md)

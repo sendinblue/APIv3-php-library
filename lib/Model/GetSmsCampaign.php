@@ -50,6 +50,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
       * @var string
       */
     protected static $swaggerModelName = 'getSmsCampaign';
+
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
@@ -84,6 +85,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
         'recipients' => null,
         'statistics' => null
     ];
+
     /**
      * Array of property to type mappings. Used for (de)serialization
      *
@@ -122,6 +124,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
         'recipients' => 'recipients',
         'statistics' => 'statistics'
     ];
+
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
@@ -139,6 +142,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
         'recipients' => 'setRecipients',
         'statistics' => 'setStatistics'
     ];
+
     /**
      * Array of attributes to getter functions (for serialization of requests)
      *
@@ -156,6 +160,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
         'recipients' => 'getRecipients',
         'statistics' => 'getStatistics'
     ];
+
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
@@ -204,6 +209,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
     const STATUS_SUSPENDED = 'suspended';
     const STATUS_IN_PROCESS = 'inProcess';
 
+    
 
 
     /**
@@ -250,6 +256,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['statistics'] = isset($data['statistics']) ? $data['statistics'] : null;
     }
+
     /**
      * Show all the invalid properties with reasons.
      *
@@ -296,6 +303,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
         }
         return $invalidProperties;
     }
+
     /**
      * Validate all the properties in the model
      * return true if all passed
@@ -518,6 +526,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
     {
         return $this->container['recipients'];
     }
+
     /**
      * Sets recipients
      *
@@ -528,8 +537,10 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
     public function setRecipients($recipients)
     {
         $this->container['recipients'] = $recipients;
+
         return $this;
     }
+
     /**
      * Gets statistics
      *
@@ -539,6 +550,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
     {
         return $this->container['statistics'];
     }
+
     /**
      * Sets statistics
      *
@@ -549,6 +561,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
     public function setStatistics($statistics)
     {
         $this->container['statistics'] = $statistics;
+
         return $this;
     }
     /**
@@ -558,10 +571,12 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
+
     /**
      * Gets offset.
      *
@@ -569,10 +584,12 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
+
     /**
      * Sets value based on offset.
      *
@@ -581,6 +598,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -589,6 +607,7 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
+
     /**
      * Unsets offset.
      *
@@ -596,10 +615,12 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
+
     /**
      * Gets the string presentation of the object
      *
@@ -613,6 +634,9 @@ class GetSmsCampaign implements ModelInterface, ArrayAccess
                 JSON_PRETTY_PRINT
             );
         }
+
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

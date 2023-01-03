@@ -68,7 +68,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **crmDealsGet**
-> \SendinBlue\Client\Model\DealsList crmDealsGet($filterAttributes, $filterLinkedCompaniesIds, $filterLinkedContactsIds, $offset, $limit, $sort, $sortBy)
+> \SendinBlue\Client\Model\DealsList crmDealsGet($filtersAttributes, $filtersLinkedCompaniesIds, $filtersLinkedContactsIds, $offset, $limit, $sort, $sortBy)
 
 Get all deals
 
@@ -92,16 +92,16 @@ $apiInstance = new SendinBlue\Client\Api\DealsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filterAttributes = "filterAttributes_example"; // string | Filter by attrbutes. If you have filter for owner on your side please send it as `attributes.owner`.\"
-$filterLinkedCompaniesIds = "filterLinkedCompaniesIds_example"; // string | Filter by linked companies ids
-$filterLinkedContactsIds = "filterLinkedContactsIds_example"; // string | Filter by linked companies ids
+$filtersAttributes = "filtersAttributes_example"; // string | Filter by attrbutes. If you have filter for owner on your side please send it as `attributes.owner`.\"
+$filtersLinkedCompaniesIds = "filtersLinkedCompaniesIds_example"; // string | Filter by linked companies ids
+$filtersLinkedContactsIds = "filtersLinkedContactsIds_example"; // string | Filter by linked companies ids
 $offset = 789; // int | Index of the first document of the page
 $limit = 50; // int | Number of documents per page
 $sort = "sort_example"; // string | Sort the results in the ascending/descending order. Default order is **descending** by creation if `sort` is not passed
 $sortBy = "sortBy_example"; // string | The field used to sort field names.
 
 try {
-    $result = $apiInstance->crmDealsGet($filterAttributes, $filterLinkedCompaniesIds, $filterLinkedContactsIds, $offset, $limit, $sort, $sortBy);
+    $result = $apiInstance->crmDealsGet($filtersAttributes, $filtersLinkedCompaniesIds, $filtersLinkedContactsIds, $offset, $limit, $sort, $sortBy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DealsApi->crmDealsGet: ', $e->getMessage(), PHP_EOL;
@@ -113,9 +113,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterAttributes** | **string**| Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; | [optional]
- **filterLinkedCompaniesIds** | **string**| Filter by linked companies ids | [optional]
- **filterLinkedContactsIds** | **string**| Filter by linked companies ids | [optional]
+ **filtersAttributes** | **string**| Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; | [optional]
+ **filtersLinkedCompaniesIds** | **string**| Filter by linked companies ids | [optional]
+ **filtersLinkedContactsIds** | **string**| Filter by linked companies ids | [optional]
  **offset** | **int**| Index of the first document of the page | [optional]
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **sort** | **string**| Sort the results in the ascending/descending order. Default order is **descending** by creation if &#x60;sort&#x60; is not passed | [optional]

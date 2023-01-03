@@ -84,6 +84,13 @@ class CreateAttributeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "isRecurring"
+     */
+    public function testPropertyIsRecurring()
+    {
+    }
+
+    /**
      * Test attribute "enumeration"
      */
     public function testPropertyEnumeration()

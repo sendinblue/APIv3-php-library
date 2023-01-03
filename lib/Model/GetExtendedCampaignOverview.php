@@ -50,6 +50,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
       * @var string
       */
     protected static $swaggerModelName = 'getExtendedCampaignOverview';
+
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
@@ -86,6 +87,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'sentDate' => 'string',
         'returnBounce' => 'int'
     ];
+
     /**
       * Array of property to format mappings. Used for (de)serialization
       *
@@ -122,6 +124,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'sentDate' => null,
         'returnBounce' => 'int64'
     ];
+
     /**
      * Array of property to type mappings. Used for (de)serialization
      *
@@ -179,6 +182,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'sentDate' => 'sentDate',
         'returnBounce' => 'returnBounce'
     ];
+
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
@@ -215,6 +219,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'sentDate' => 'setSentDate',
         'returnBounce' => 'setReturnBounce'
     ];
+
     /**
      * Array of attributes to getter functions (for serialization of requests)
      *
@@ -251,6 +256,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         'sentDate' => 'getSentDate',
         'returnBounce' => 'getReturnBounce'
     ];
+
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
@@ -301,6 +307,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     const STATUS_SUSPENDED = 'suspended';
     const STATUS_IN_PROCESS = 'in_process';
 
+    
 
 
     /**
@@ -379,6 +386,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         $this->container['sentDate'] = isset($data['sentDate']) ? $data['sentDate'] : null;
         $this->container['returnBounce'] = isset($data['returnBounce']) ? $data['returnBounce'] : null;
     }
+
     /**
      * Show all the invalid properties with reasons.
      *
@@ -442,6 +450,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
         }
         return $invalidProperties;
     }
+
     /**
      * Validate all the properties in the model
      * return true if all passed
@@ -793,6 +802,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['testSent'];
     }
+
     /**
      * Sets testSent
      *
@@ -803,8 +813,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setTestSent($testSent)
     {
         $this->container['testSent'] = $testSent;
+
         return $this;
     }
+
     /**
      * Gets header
      *
@@ -814,6 +826,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['header'];
     }
+
     /**
      * Sets header
      *
@@ -824,8 +837,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setHeader($header)
     {
         $this->container['header'] = $header;
+
         return $this;
     }
+
     /**
      * Gets footer
      *
@@ -835,6 +850,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['footer'];
     }
+
     /**
      * Sets footer
      *
@@ -845,8 +861,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setFooter($footer)
     {
         $this->container['footer'] = $footer;
+
         return $this;
     }
+
     /**
      * Gets sender
      *
@@ -856,6 +874,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['sender'];
     }
+
     /**
      * Sets sender
      *
@@ -866,8 +885,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setSender($sender)
     {
         $this->container['sender'] = $sender;
+
         return $this;
     }
+
     /**
      * Gets replyTo
      *
@@ -877,6 +898,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['replyTo'];
     }
+
     /**
      * Sets replyTo
      *
@@ -887,8 +909,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setReplyTo($replyTo)
     {
         $this->container['replyTo'] = $replyTo;
+
         return $this;
     }
+
     /**
      * Gets toField
      *
@@ -898,6 +922,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['toField'];
     }
+
     /**
      * Sets toField
      *
@@ -908,8 +933,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setToField($toField)
     {
         $this->container['toField'] = $toField;
+
         return $this;
     }
+
     /**
      * Gets htmlContent
      *
@@ -919,6 +946,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['htmlContent'];
     }
+
     /**
      * Sets htmlContent
      *
@@ -929,8 +957,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setHtmlContent($htmlContent)
     {
         $this->container['htmlContent'] = $htmlContent;
+
         return $this;
     }
+
     /**
      * Gets shareLink
      *
@@ -940,6 +970,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['shareLink'];
     }
+
     /**
      * Sets shareLink
      *
@@ -950,8 +981,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setShareLink($shareLink)
     {
         $this->container['shareLink'] = $shareLink;
+
         return $this;
     }
+
     /**
      * Gets tag
      *
@@ -961,6 +994,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['tag'];
     }
+
     /**
      * Sets tag
      *
@@ -971,8 +1005,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setTag($tag)
     {
         $this->container['tag'] = $tag;
+
         return $this;
     }
+
     /**
      * Gets createdAt
      *
@@ -982,6 +1018,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['createdAt'];
     }
+
     /**
      * Sets createdAt
      *
@@ -992,8 +1029,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setCreatedAt($createdAt)
     {
         $this->container['createdAt'] = $createdAt;
+
         return $this;
     }
+
     /**
      * Gets modifiedAt
      *
@@ -1003,6 +1042,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['modifiedAt'];
     }
+
     /**
      * Sets modifiedAt
      *
@@ -1013,8 +1053,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setModifiedAt($modifiedAt)
     {
         $this->container['modifiedAt'] = $modifiedAt;
+
         return $this;
     }
+
     /**
      * Gets inlineImageActivation
      *
@@ -1024,6 +1066,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['inlineImageActivation'];
     }
+
     /**
      * Sets inlineImageActivation
      *
@@ -1034,8 +1077,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setInlineImageActivation($inlineImageActivation)
     {
         $this->container['inlineImageActivation'] = $inlineImageActivation;
+
         return $this;
     }
+
     /**
      * Gets mirrorActive
      *
@@ -1045,6 +1090,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['mirrorActive'];
     }
+
     /**
      * Sets mirrorActive
      *
@@ -1055,8 +1101,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setMirrorActive($mirrorActive)
     {
         $this->container['mirrorActive'] = $mirrorActive;
+
         return $this;
     }
+
     /**
      * Gets recurring
      *
@@ -1066,6 +1114,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['recurring'];
     }
+
     /**
      * Sets recurring
      *
@@ -1076,8 +1125,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setRecurring($recurring)
     {
         $this->container['recurring'] = $recurring;
+
         return $this;
     }
+
     /**
      * Gets sentDate
      *
@@ -1087,6 +1138,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['sentDate'];
     }
+
     /**
      * Sets sentDate
      *
@@ -1097,8 +1149,10 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setSentDate($sentDate)
     {
         $this->container['sentDate'] = $sentDate;
+
         return $this;
     }
+
     /**
      * Gets returnBounce
      *
@@ -1108,6 +1162,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     {
         return $this->container['returnBounce'];
     }
+
     /**
      * Sets returnBounce
      *
@@ -1118,6 +1173,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
     public function setReturnBounce($returnBounce)
     {
         $this->container['returnBounce'] = $returnBounce;
+
         return $this;
     }
     /**
@@ -1127,10 +1183,12 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
+
     /**
      * Gets offset.
      *
@@ -1138,10 +1196,12 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
+
     /**
      * Sets value based on offset.
      *
@@ -1150,6 +1210,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -1158,6 +1219,7 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
+
     /**
      * Unsets offset.
      *
@@ -1165,10 +1227,12 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
+
     /**
      * Gets the string presentation of the object
      *
@@ -1182,6 +1246,9 @@ class GetExtendedCampaignOverview implements ModelInterface, ArrayAccess
                 JSON_PRETTY_PRINT
             );
         }
+
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

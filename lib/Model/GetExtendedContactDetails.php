@@ -50,6 +50,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
       * @var string
       */
     protected static $swaggerModelName = 'getExtendedContactDetails';
+
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
@@ -201,8 +202,10 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
     {
         return self::$swaggerModelName;
     }
+
     
 
+    
 
 
     /**
@@ -270,6 +273,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
         }
         return $invalidProperties;
     }
+
     /**
      * Validate all the properties in the model
      * return true if all passed
@@ -507,6 +511,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
     {
         return $this->container['statistics'];
     }
+
     /**
      * Sets statistics
      *
@@ -517,6 +522,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
     public function setStatistics($statistics)
     {
         $this->container['statistics'] = $statistics;
+
         return $this;
     }
     /**
@@ -526,10 +532,12 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
+
     /**
      * Gets offset.
      *
@@ -537,10 +545,12 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
+
     /**
      * Sets value based on offset.
      *
@@ -549,6 +559,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -557,6 +568,7 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
+
     /**
      * Unsets offset.
      *
@@ -564,10 +576,12 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
+
     /**
      * Gets the string presentation of the object
      *
@@ -581,6 +595,9 @@ class GetExtendedContactDetails implements ModelInterface, ArrayAccess
                 JSON_PRETTY_PRINT
             );
         }
+
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+
