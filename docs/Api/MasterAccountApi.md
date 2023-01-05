@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 Generate SSO token to access Sendinblue
 
-This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.
+This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://account-app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.
 
 ### Example
 ```php

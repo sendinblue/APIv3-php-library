@@ -520,7 +520,7 @@ $apiInstance = new SendinBlue\Client\Api\TransactionalEmailsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 50; // int | Number limitation for the result returned
+$limit = 2500; // int | Number limitation for the result returned
 $offset = 0; // int | Beginning point in the list to retrieve from.
 $startDate = "startDate_example"; // string | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
 $endDate = "endDate_example"; // string | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
@@ -545,7 +545,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number limitation for the result returned | [optional] [default to 50]
+ **limit** | **int**| Number limitation for the result returned | [optional] [default to 2500]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
  **startDate** | **string**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional]
  **endDate** | **string**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional]
