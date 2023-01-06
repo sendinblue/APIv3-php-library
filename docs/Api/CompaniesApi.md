@@ -112,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **string**| Filter by attrbutes. If you have filter for owner on your side please send it as {\&quot;attributes.owner\&quot;:\&quot;5b1a17d914b73d35a76ca0c7\&quot;} | [optional]
+ **filters** | **string**| Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"5b1a17d914b73d35a76ca0c7\"} | [optional]
  **linkedContactsIds** | **int**| Filter by linked contacts ids | [optional]
  **linkedDealsIds** | **string**| Filter by linked deals ids | [optional]
  **page** | **int**| Index of the first document of the page | [optional]
