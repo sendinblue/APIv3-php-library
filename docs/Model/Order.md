@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **status** | **string** | State of the order. | 
 **amount** | **float** | Total amount of the order, including all shipping expenses, tax and the price of items. | 
 **products** | [**\SendinBlue\Client\Model\OrderProducts[]**](OrderProducts.md) |  | 
-**email** | **string** | Email of the contact, Mandatory if \&quot;phone\&quot; field is not passed in \&quot;billing\&quot; parameter. | [optional] 
+**email** | **string** | Email of the contact, Mandatory if \"phone\" field is not passed in \"billing\" parameter. | [optional] 
 **billing** | [**\SendinBlue\Client\Model\OrderBilling**](OrderBilling.md) |  | [optional] 
 **coupons** | **string[]** | Coupons applied to the order. Stored case insensitive. | [optional] 
 

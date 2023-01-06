@@ -113,7 +113,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filtersAttributes** | **string**| Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; | [optional]
+ **filtersAttributes** | **string**| Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\" | [optional]
  **filtersLinkedCompaniesIds** | **string**| Filter by linked companies ids | [optional]
  **filtersLinkedContactsIds** | **string**| Filter by linked companies ids | [optional]
  **offset** | **int**| Index of the first document of the page | [optional]
