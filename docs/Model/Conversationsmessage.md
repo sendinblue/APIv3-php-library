@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Message ID. It can be used for further manipulations with the message. | [optional] 
-**type** | **string** | &#x60;\&quot;agent\&quot;&#x60; for agents’ messages, &#x60;\&quot;visitor\&quot;&#x60; for visitors’ messages. | [optional] 
+**type** | **string** | &#x60;\"agent\"&#x60; for agents’ messages, &#x60;\"visitor\"&#x60; for visitors’ messages. | [optional] 
 **text** | **string** | Message text or name of the attached file | [optional] 
 **visitorId** | **string** | visitor’s ID | [optional] 
 **agentId** | **string** | ID of the agent on whose behalf the message was sent (only in messages sent by an agent). | [optional] 

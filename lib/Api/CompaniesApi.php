@@ -352,7 +352,7 @@ class CompaniesApi
      *
      * Get all companies
      *
-     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\&quot;attributes.owner\&quot;:\&quot;5b1a17d914b73d35a76ca0c7\&quot;} (optional)
+     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"5b1a17d914b73d35a76ca0c7\"} (optional)
      * @param  int $linkedContactsIds Filter by linked contacts ids (optional)
      * @param  string $linkedDealsIds Filter by linked deals ids (optional)
      * @param  int $page Index of the first document of the page (optional)
@@ -375,7 +375,7 @@ class CompaniesApi
      *
      * Get all companies
      *
-     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\&quot;attributes.owner\&quot;:\&quot;5b1a17d914b73d35a76ca0c7\&quot;} (optional)
+     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"5b1a17d914b73d35a76ca0c7\"} (optional)
      * @param  int $linkedContactsIds Filter by linked contacts ids (optional)
      * @param  string $linkedDealsIds Filter by linked deals ids (optional)
      * @param  int $page Index of the first document of the page (optional)
@@ -464,7 +464,7 @@ class CompaniesApi
      *
      * Get all companies
      *
-     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\&quot;attributes.owner\&quot;:\&quot;5b1a17d914b73d35a76ca0c7\&quot;} (optional)
+     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"5b1a17d914b73d35a76ca0c7\"} (optional)
      * @param  int $linkedContactsIds Filter by linked contacts ids (optional)
      * @param  string $linkedDealsIds Filter by linked deals ids (optional)
      * @param  int $page Index of the first document of the page (optional)
@@ -490,7 +490,7 @@ class CompaniesApi
      *
      * Get all companies
      *
-     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\&quot;attributes.owner\&quot;:\&quot;5b1a17d914b73d35a76ca0c7\&quot;} (optional)
+     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"5b1a17d914b73d35a76ca0c7\"} (optional)
      * @param  int $linkedContactsIds Filter by linked contacts ids (optional)
      * @param  string $linkedDealsIds Filter by linked deals ids (optional)
      * @param  int $page Index of the first document of the page (optional)
@@ -546,7 +546,7 @@ class CompaniesApi
     /**
      * Create request for operation 'companiesGet'
      *
-     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\&quot;attributes.owner\&quot;:\&quot;5b1a17d914b73d35a76ca0c7\&quot;} (optional)
+     * @param  string $filters Filter by attrbutes. If you have filter for owner on your side please send it as {\"attributes.owner\":\"5b1a17d914b73d35a76ca0c7\"} (optional)
      * @param  int $linkedContactsIds Filter by linked contacts ids (optional)
      * @param  string $linkedDealsIds Filter by linked deals ids (optional)
      * @param  int $page Index of the first document of the page (optional)

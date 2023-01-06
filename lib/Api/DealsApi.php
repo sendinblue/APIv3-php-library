@@ -352,7 +352,7 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\" (optional)
      * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
      * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
@@ -375,7 +375,7 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\" (optional)
      * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
      * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
@@ -464,7 +464,7 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\" (optional)
      * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
      * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
@@ -490,7 +490,7 @@ class DealsApi
      *
      * Get all deals
      *
-     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\" (optional)
      * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
      * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
@@ -546,7 +546,7 @@ class DealsApi
     /**
      * Create request for operation 'crmDealsGet'
      *
-     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\&quot; (optional)
+     * @param  string $filtersAttributes Filter by attrbutes. If you have filter for owner on your side please send it as &#x60;attributes.owner&#x60;.\" (optional)
      * @param  string $filtersLinkedCompaniesIds Filter by linked companies ids (optional)
      * @param  string $filtersLinkedContactsIds Filter by linked companies ids (optional)
      * @param  int $offset Index of the first document of the page (optional)
