@@ -290,7 +290,7 @@ class CreateAttribute implements ModelInterface, ArrayAccess
     /**
      * Sets isRecurring
      *
-     * @param bool $isRecurring Type of the calculated attribute. Use only if the attribute's category is 'calculated'
+     * @param bool $isRecurring Type of the attribute. Use only if the attribute's category is 'calculated' or 'global'
      *
      * @return $this
      */

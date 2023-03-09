@@ -110,4 +110,11 @@ class GetCategoryDetailsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUrl()
     {
     }
+
+    /**
+     * Test attribute "isDeleted"
+     */
+    public function testPropertyIsDeleted()
+    {
+    }
 }

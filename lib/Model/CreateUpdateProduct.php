@@ -65,7 +65,9 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         'price' => 'float',
         'categories' => 'string[]',
         'parentId' => 'string',
-        'updateEnabled' => 'bool'
+        'metaInfo' => 'map[string,string]',
+        'updateEnabled' => 'bool',
+        'deletedAt' => 'string'
     ];
 
     /**
@@ -82,7 +84,9 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         'price' => 'float',
         'categories' => null,
         'parentId' => 'string',
-        'updateEnabled' => null
+        'metaInfo' => null,
+        'updateEnabled' => null,
+        'deletedAt' => null
     ];
 
     /**
@@ -120,7 +124,9 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         'price' => 'price',
         'categories' => 'categories',
         'parentId' => 'parentId',
-        'updateEnabled' => 'updateEnabled'
+        'metaInfo' => 'metaInfo',
+        'updateEnabled' => 'updateEnabled',
+        'deletedAt' => 'deletedAt'
     ];
 
     /**
@@ -137,7 +143,9 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         'price' => 'setPrice',
         'categories' => 'setCategories',
         'parentId' => 'setParentId',
-        'updateEnabled' => 'setUpdateEnabled'
+        'metaInfo' => 'setMetaInfo',
+        'updateEnabled' => 'setUpdateEnabled',
+        'deletedAt' => 'setDeletedAt'
     ];
 
     /**
@@ -154,7 +162,9 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         'price' => 'getPrice',
         'categories' => 'getCategories',
         'parentId' => 'getParentId',
-        'updateEnabled' => 'getUpdateEnabled'
+        'metaInfo' => 'getMetaInfo',
+        'updateEnabled' => 'getUpdateEnabled',
+        'deletedAt' => 'getDeletedAt'
     ];
 
     /**
@@ -225,7 +235,9 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['categories'] = isset($data['categories']) ? $data['categories'] : null;
         $this->container['parentId'] = isset($data['parentId']) ? $data['parentId'] : null;
+        $this->container['metaInfo'] = isset($data['metaInfo']) ? $data['metaInfo'] : null;
         $this->container['updateEnabled'] = isset($data['updateEnabled']) ? $data['updateEnabled'] : false;
+        $this->container['deletedAt'] = isset($data['deletedAt']) ? $data['deletedAt'] : null;
     }
 
     /**
@@ -451,6 +463,30 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets metaInfo
+     *
+     * @return map[string,string]
+     */
+    public function getMetaInfo()
+    {
+        return $this->container['metaInfo'];
+    }
+
+    /**
+     * Sets metaInfo
+     *
+     * @param map[string,string] $metaInfo Meta data of product such as description, vendor, producer, stock level. The size of cumulative metaInfo shall not exceed **1000 KB**. Maximum length of metaInfo object can be 10.
+     *
+     * @return $this
+     */
+    public function setMetaInfo($metaInfo)
+    {
+        $this->container['metaInfo'] = $metaInfo;
+
+        return $this;
+    }
+
+    /**
      * Gets updateEnabled
      *
      * @return bool
@@ -470,6 +506,30 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
     public function setUpdateEnabled($updateEnabled)
     {
         $this->container['updateEnabled'] = $updateEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets deletedAt
+     *
+     * @return string
+     */
+    public function getDeletedAt()
+    {
+        return $this->container['deletedAt'];
+    }
+
+    /**
+     * Sets deletedAt
+     *
+     * @param string $deletedAt UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of the product deleted from the shop's database
+     *
+     * @return $this
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->container['deletedAt'] = $deletedAt;
 
         return $this;
     }
@@ -547,6 +607,5 @@ class CreateUpdateProduct implements ModelInterface, ArrayAccess
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
 
 

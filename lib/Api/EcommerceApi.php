@@ -90,7 +90,7 @@ class EcommerceApi
     /**
      * Operation createBatchOrder
      *
-     * Maintains a batch of orders
+     * Create orders in batch
      *
      * @param  \SendinBlue\Client\Model\OrderBatch $orderBatch orderBatch (required)
      *
@@ -106,7 +106,7 @@ class EcommerceApi
     /**
      * Operation createBatchOrderWithHttpInfo
      *
-     * Maintains a batch of orders
+     * Create orders in batch
      *
      * @param  \SendinBlue\Client\Model\OrderBatch $orderBatch (required)
      *
@@ -167,7 +167,7 @@ class EcommerceApi
     /**
      * Operation createBatchOrderAsync
      *
-     * Maintains a batch of orders
+     * Create orders in batch
      *
      * @param  \SendinBlue\Client\Model\OrderBatch $orderBatch (required)
      *
@@ -187,7 +187,7 @@ class EcommerceApi
     /**
      * Operation createBatchOrderAsyncWithHttpInfo
      *
-     * Maintains a batch of orders
+     * Create orders in batch
      *
      * @param  \SendinBlue\Client\Model\OrderBatch $orderBatch (required)
      *
@@ -335,7 +335,7 @@ class EcommerceApi
     /**
      * Operation createOrder
      *
-     * Maintains every transactional status of the order
+     * Managing the status of the order
      *
      * @param  \SendinBlue\Client\Model\Order $order order (required)
      *
@@ -351,7 +351,7 @@ class EcommerceApi
     /**
      * Operation createOrderWithHttpInfo
      *
-     * Maintains every transactional status of the order
+     * Managing the status of the order
      *
      * @param  \SendinBlue\Client\Model\Order $order (required)
      *
@@ -412,7 +412,7 @@ class EcommerceApi
     /**
      * Operation createOrderAsync
      *
-     * Maintains every transactional status of the order
+     * Managing the status of the order
      *
      * @param  \SendinBlue\Client\Model\Order $order (required)
      *
@@ -432,7 +432,7 @@ class EcommerceApi
     /**
      * Operation createOrderAsyncWithHttpInfo
      *
-     * Maintains every transactional status of the order
+     * Managing the status of the order
      *
      * @param  \SendinBlue\Client\Model\Order $order (required)
      *
@@ -580,7 +580,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchCategory
      *
-     * Create the categories in a batch
+     * Create categories in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchCategory $createUpdateBatchCategory Values to create a batch of categories (required)
      *
@@ -597,7 +597,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchCategoryWithHttpInfo
      *
-     * Create the categories in a batch
+     * Create categories in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchCategory $createUpdateBatchCategory Values to create a batch of categories (required)
      *
@@ -680,7 +680,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchCategoryAsync
      *
-     * Create the categories in a batch
+     * Create categories in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchCategory $createUpdateBatchCategory Values to create a batch of categories (required)
      *
@@ -700,7 +700,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchCategoryAsyncWithHttpInfo
      *
-     * Create the categories in a batch
+     * Create categories in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchCategory $createUpdateBatchCategory Values to create a batch of categories (required)
      *
@@ -862,7 +862,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchProducts
      *
-     * Creates the products in a batch
+     * Create products in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchProducts $createUpdateBatchProducts Values to create a batch of products (required)
      *
@@ -879,7 +879,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchProductsWithHttpInfo
      *
-     * Creates the products in a batch
+     * Create products in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchProducts $createUpdateBatchProducts Values to create a batch of products (required)
      *
@@ -946,6 +946,14 @@ class EcommerceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -954,7 +962,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchProductsAsync
      *
-     * Creates the products in a batch
+     * Create products in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchProducts $createUpdateBatchProducts Values to create a batch of products (required)
      *
@@ -974,7 +982,7 @@ class EcommerceApi
     /**
      * Operation createUpdateBatchProductsAsyncWithHttpInfo
      *
-     * Creates the products in a batch
+     * Create products in batch
      *
      * @param  \SendinBlue\Client\Model\CreateUpdateBatchProducts $createUpdateBatchProducts Values to create a batch of products (required)
      *
@@ -1216,6 +1224,14 @@ class EcommerceApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\SendinBlue\Client\Model\CreateCategoryModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1494,6 +1510,14 @@ class EcommerceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1684,7 +1708,7 @@ class EcommerceApi
     /**
      * Operation ecommerceActivatePost
      *
-     * **Fulfills the eCommerce pre-requisites**
+     * Activate the eCommerce app
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -1699,7 +1723,7 @@ class EcommerceApi
     /**
      * Operation ecommerceActivatePostWithHttpInfo
      *
-     * **Fulfills the eCommerce pre-requisites**
+     * Activate the eCommerce app
      *
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
@@ -1751,6 +1775,14 @@ class EcommerceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SendinBlue\Client\Model\ErrorModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1759,7 +1791,7 @@ class EcommerceApi
     /**
      * Operation ecommerceActivatePostAsync
      *
-     * **Fulfills the eCommerce pre-requisites**
+     * Activate the eCommerce app
      *
      *
      * @throws \InvalidArgumentException
@@ -1778,7 +1810,7 @@ class EcommerceApi
     /**
      * Operation ecommerceActivatePostAsyncWithHttpInfo
      *
-     * **Fulfills the eCommerce pre-requisites**
+     * Activate the eCommerce app
      *
      *
      * @throws \InvalidArgumentException
@@ -1921,14 +1953,15 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by category ids (optional)
+     * @param  string $name Filter by category name (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetCategories
      */
-    public function getCategories($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getCategories($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null)
     {
-        list($response) = $this->getCategoriesWithHttpInfo($limit, $offset, $sort, $ids);
+        list($response) = $this->getCategoriesWithHttpInfo($limit, $offset, $sort, $ids, $name);
         return $response;
     }
 
@@ -1941,15 +1974,16 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by category ids (optional)
+     * @param  string $name Filter by category name (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetCategories, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCategoriesWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getCategoriesWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetCategories';
-        $request = $this->getCategoriesRequest($limit, $offset, $sort, $ids);
+        $request = $this->getCategoriesRequest($limit, $offset, $sort, $ids, $name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2027,13 +2061,14 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by category ids (optional)
+     * @param  string $name Filter by category name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesAsync($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getCategoriesAsync($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null)
     {
-        return $this->getCategoriesAsyncWithHttpInfo($limit, $offset, $sort, $ids)
+        return $this->getCategoriesAsyncWithHttpInfo($limit, $offset, $sort, $ids, $name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2050,14 +2085,15 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by category ids (optional)
+     * @param  string $name Filter by category name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesAsyncWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getCategoriesAsyncWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetCategories';
-        $request = $this->getCategoriesRequest($limit, $offset, $sort, $ids);
+        $request = $this->getCategoriesRequest($limit, $offset, $sort, $ids, $name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2103,11 +2139,12 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by category ids (optional)
+     * @param  string $name Filter by category name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCategoriesRequest($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    protected function getCategoriesRequest($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null)
     {
         if ($limit !== null && $limit > 100) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EcommerceApi.getCategories, must be smaller than or equal to 100.');
@@ -2139,6 +2176,10 @@ class EcommerceApi
         } else
         if ($ids !== null) {
             $queryParams['ids'] = ObjectSerializer::toQueryValue($ids);
+        }
+        // query params
+        if ($name !== null) {
+            $queryParams['name'] = ObjectSerializer::toQueryValue($name);
         }
 
 
@@ -2822,14 +2863,17 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by product ids (optional)
+     * @param  string $name Filter by product name, minimum 3 characters should be present for search (optional)
+     * @param  string[] $price Filter by product price, like price[lte] (optional)
+     * @param  string[] $categories Filter by category ids (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetProducts
      */
-    public function getProducts($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getProducts($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null, $price = null, $categories = null)
     {
-        list($response) = $this->getProductsWithHttpInfo($limit, $offset, $sort, $ids);
+        list($response) = $this->getProductsWithHttpInfo($limit, $offset, $sort, $ids, $name, $price, $categories);
         return $response;
     }
 
@@ -2842,15 +2886,18 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by product ids (optional)
+     * @param  string $name Filter by product name, minimum 3 characters should be present for search (optional)
+     * @param  string[] $price Filter by product price, like price[lte] (optional)
+     * @param  string[] $categories Filter by category ids (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetProducts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductsWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getProductsWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null, $price = null, $categories = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetProducts';
-        $request = $this->getProductsRequest($limit, $offset, $sort, $ids);
+        $request = $this->getProductsRequest($limit, $offset, $sort, $ids, $name, $price, $categories);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2928,13 +2975,16 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by product ids (optional)
+     * @param  string $name Filter by product name, minimum 3 characters should be present for search (optional)
+     * @param  string[] $price Filter by product price, like price[lte] (optional)
+     * @param  string[] $categories Filter by category ids (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductsAsync($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getProductsAsync($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null, $price = null, $categories = null)
     {
-        return $this->getProductsAsyncWithHttpInfo($limit, $offset, $sort, $ids)
+        return $this->getProductsAsyncWithHttpInfo($limit, $offset, $sort, $ids, $name, $price, $categories)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2951,14 +3001,17 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by product ids (optional)
+     * @param  string $name Filter by product name, minimum 3 characters should be present for search (optional)
+     * @param  string[] $price Filter by product price, like price[lte] (optional)
+     * @param  string[] $categories Filter by category ids (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductsAsyncWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    public function getProductsAsyncWithHttpInfo($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null, $price = null, $categories = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetProducts';
-        $request = $this->getProductsRequest($limit, $offset, $sort, $ids);
+        $request = $this->getProductsRequest($limit, $offset, $sort, $ids, $name, $price, $categories);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3004,11 +3057,14 @@ class EcommerceApi
      * @param  int $offset Index of the first document in the page (optional, default to 0)
      * @param  string $sort Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed (optional, default to desc)
      * @param  string[] $ids Filter by product ids (optional)
+     * @param  string $name Filter by product name, minimum 3 characters should be present for search (optional)
+     * @param  string[] $price Filter by product price, like price[lte] (optional)
+     * @param  string[] $categories Filter by category ids (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getProductsRequest($limit = '50', $offset = '0', $sort = 'desc', $ids = null)
+    protected function getProductsRequest($limit = '50', $offset = '0', $sort = 'desc', $ids = null, $name = null, $price = null, $categories = null)
     {
         if ($limit !== null && $limit > 1000) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EcommerceApi.getProducts, must be smaller than or equal to 1000.');
@@ -3040,6 +3096,24 @@ class EcommerceApi
         } else
         if ($ids !== null) {
             $queryParams['ids'] = ObjectSerializer::toQueryValue($ids);
+        }
+        // query params
+        if ($name !== null) {
+            $queryParams['name'] = ObjectSerializer::toQueryValue($name);
+        }
+        // query params
+        if (is_array($price)) {
+            $queryParams['price'] = $price;
+        } else
+        if ($price !== null) {
+            $queryParams['price'] = ObjectSerializer::toQueryValue($price);
+        }
+        // query params
+        if (is_array($categories)) {
+            $queryParams['categories'] = $categories;
+        } else
+        if ($categories !== null) {
+            $queryParams['categories'] = ObjectSerializer::toQueryValue($categories);
         }
 
 

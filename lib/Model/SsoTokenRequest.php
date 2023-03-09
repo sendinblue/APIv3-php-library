@@ -58,7 +58,8 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-        'email' => 'string'
+        'email' => 'string',
+        'target' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'int64',
-        'email' => null
+        'email' => null,
+        'target' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'email' => 'email'
+        'email' => 'email',
+        'target' => 'target'
     ];
 
     /**
@@ -109,7 +112,8 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'email' => 'setEmail'
+        'email' => 'setEmail',
+        'target' => 'setTarget'
     ];
 
     /**
@@ -119,7 +123,8 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'email' => 'getEmail'
+        'email' => 'getEmail',
+        'target' => 'getTarget'
     ];
 
     /**
@@ -163,8 +168,35 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const TARGET_AUTOMATION = 'automation';
+    const TARGET_EMAIL_CAMPAIGN = 'email_campaign';
+    const TARGET_CONTACTS = 'contacts';
+    const TARGET_LANDING_PAGES = 'landing_pages';
+    const TARGET_EMAIL_TRANSACTIONAL = 'email_transactional';
+    const TARGET_SENDERS = 'senders';
+    const TARGET_SMS_CAMPAIGN = 'sms_campaign';
+    const TARGET_SMS_TRANSACTIONAL = 'sms_transactional';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTargetAllowableValues()
+    {
+        return [
+            self::TARGET_AUTOMATION,
+            self::TARGET_EMAIL_CAMPAIGN,
+            self::TARGET_CONTACTS,
+            self::TARGET_LANDING_PAGES,
+            self::TARGET_EMAIL_TRANSACTIONAL,
+            self::TARGET_SENDERS,
+            self::TARGET_SMS_CAMPAIGN,
+            self::TARGET_SMS_TRANSACTIONAL,
+        ];
+    }
     
 
     /**
@@ -184,6 +216,7 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
     }
 
     /**
@@ -198,6 +231,14 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
+        $allowedValues = $this->getTargetAllowableValues();
+        if (!is_null($this->container['target']) && !in_array($this->container['target'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'target', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -257,6 +298,39 @@ class SsoTokenRequest implements ModelInterface, ArrayAccess
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets target
+     *
+     * @return string
+     */
+    public function getTarget()
+    {
+        return $this->container['target'];
+    }
+
+    /**
+     * Sets target
+     *
+     * @param string $target Set target after login success * automation - Redirect to Automation after login * email_campaign - Redirect to Email Campaign after login * contacts - Redirect to Contacts after login * landing_pages - Redirect to Landing Pages after login * email_transactional - Redirect to Email Transactional after login * senders - Redirect to Contacts after login * sms_campaign - Redirect to Sms Campaign after login * sms_transactional - Redirect to Sms Transactional after login
+     *
+     * @return $this
+     */
+    public function setTarget($target)
+    {
+        $allowedValues = $this->getTargetAllowableValues();
+        if (!is_null($target) && !in_array($target, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'target', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['target'] = $target;
 
         return $this;
     }

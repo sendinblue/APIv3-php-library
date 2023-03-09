@@ -131,4 +131,18 @@ class CreateUpdateProductsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyParentId()
     {
     }
+
+    /**
+     * Test attribute "metaInfo"
+     */
+    public function testPropertyMetaInfo()
+    {
+    }
+
+    /**
+     * Test attribute "deletedAt"
+     */
+    public function testPropertyDeletedAt()
+    {
+    }
 }

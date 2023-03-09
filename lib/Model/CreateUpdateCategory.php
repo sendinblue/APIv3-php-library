@@ -60,7 +60,8 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'url' => 'string',
-        'updateEnabled' => 'bool'
+        'updateEnabled' => 'bool',
+        'deletedAt' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
         'id' => 'email',
         'name' => null,
         'url' => null,
-        'updateEnabled' => null
+        'updateEnabled' => null,
+        'deletedAt' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'url' => 'url',
-        'updateEnabled' => 'updateEnabled'
+        'updateEnabled' => 'updateEnabled',
+        'deletedAt' => 'deletedAt'
     ];
 
     /**
@@ -117,7 +120,8 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'url' => 'setUrl',
-        'updateEnabled' => 'setUpdateEnabled'
+        'updateEnabled' => 'setUpdateEnabled',
+        'deletedAt' => 'setDeletedAt'
     ];
 
     /**
@@ -129,7 +133,8 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'url' => 'getUrl',
-        'updateEnabled' => 'getUpdateEnabled'
+        'updateEnabled' => 'getUpdateEnabled',
+        'deletedAt' => 'getDeletedAt'
     ];
 
     /**
@@ -196,6 +201,7 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['updateEnabled'] = isset($data['updateEnabled']) ? $data['updateEnabled'] : false;
+        $this->container['deletedAt'] = isset($data['deletedAt']) ? $data['deletedAt'] : null;
     }
 
     /**
@@ -317,6 +323,30 @@ class CreateUpdateCategory implements ModelInterface, ArrayAccess
     public function setUpdateEnabled($updateEnabled)
     {
         $this->container['updateEnabled'] = $updateEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets deletedAt
+     *
+     * @return string
+     */
+    public function getDeletedAt()
+    {
+        return $this->container['deletedAt'];
+    }
+
+    /**
+     * Sets deletedAt
+     *
+     * @param string $deletedAt UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of the category deleted from the shop's database
+     *
+     * @return $this
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->container['deletedAt'] = $deletedAt;
 
         return $this;
     }

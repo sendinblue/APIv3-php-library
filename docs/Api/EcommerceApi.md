@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBatchOrder**](EcommerceApi.md#createBatchOrder) | **POST** /orders/status/batch | Maintains a batch of orders
-[**createOrder**](EcommerceApi.md#createOrder) | **POST** /orders/status | Maintains every transactional status of the order
-[**createUpdateBatchCategory**](EcommerceApi.md#createUpdateBatchCategory) | **POST** /categories/batch | Create the categories in a batch
-[**createUpdateBatchProducts**](EcommerceApi.md#createUpdateBatchProducts) | **POST** /products/batch | Creates the products in a batch
+[**createBatchOrder**](EcommerceApi.md#createBatchOrder) | **POST** /orders/status/batch | Create orders in batch
+[**createOrder**](EcommerceApi.md#createOrder) | **POST** /orders/status | Managing the status of the order
+[**createUpdateBatchCategory**](EcommerceApi.md#createUpdateBatchCategory) | **POST** /categories/batch | Create categories in batch
+[**createUpdateBatchProducts**](EcommerceApi.md#createUpdateBatchProducts) | **POST** /products/batch | Create products in batch
 [**createUpdateCategory**](EcommerceApi.md#createUpdateCategory) | **POST** /categories | Create/Update a category
 [**createUpdateProduct**](EcommerceApi.md#createUpdateProduct) | **POST** /products | Create/Update a product
-[**ecommerceActivatePost**](EcommerceApi.md#ecommerceActivatePost) | **POST** /ecommerce/activate | **Fulfills the eCommerce pre-requisites**
+[**ecommerceActivatePost**](EcommerceApi.md#ecommerceActivatePost) | **POST** /ecommerce/activate | Activate the eCommerce app
 [**getCategories**](EcommerceApi.md#getCategories) | **GET** /categories | Return all your categories
 [**getCategoryInfo**](EcommerceApi.md#getCategoryInfo) | **GET** /categories/{id} | Get a category details
 [**getProductInfo**](EcommerceApi.md#getProductInfo) | **GET** /products/{id} | Get a product&#39;s details
@@ -20,7 +20,9 @@ Method | HTTP request | Description
 # **createBatchOrder**
 > createBatchOrder($orderBatch)
 
-Maintains a batch of orders
+Create orders in batch
+
+Create multiple orders at one time instead of one order at a time
 
 ### Example
 ```php
@@ -76,7 +78,9 @@ void (empty response body)
 # **createOrder**
 > createOrder($order)
 
-Maintains every transactional status of the order
+Managing the status of the order
+
+Manages the transactional status of the order
 
 ### Example
 ```php
@@ -132,7 +136,7 @@ void (empty response body)
 # **createUpdateBatchCategory**
 > \SendinBlue\Client\Model\CreateUpdateBatchCategoryModel createUpdateBatchCategory($createUpdateBatchCategory)
 
-Create the categories in a batch
+Create categories in batch
 
 ### Example
 ```php
@@ -189,7 +193,7 @@ Name | Type | Description  | Notes
 # **createUpdateBatchProducts**
 > \SendinBlue\Client\Model\CreateUpdateBatchProductsModel createUpdateBatchProducts($createUpdateBatchProducts)
 
-Creates the products in a batch
+Create products in batch
 
 ### Example
 ```php
@@ -360,7 +364,9 @@ Name | Type | Description  | Notes
 # **ecommerceActivatePost**
 > ecommerceActivatePost()
 
-**Fulfills the eCommerce pre-requisites**
+Activate the eCommerce app
+
+Getting access to Sendinblue eCommerce.
 
 ### Example
 ```php
@@ -410,7 +416,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCategories**
-> \SendinBlue\Client\Model\GetCategories getCategories($limit, $offset, $sort, $ids)
+> \SendinBlue\Client\Model\GetCategories getCategories($limit, $offset, $sort, $ids, $name)
 
 Return all your categories
 
@@ -438,9 +444,10 @@ $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document in the page
 $sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 $ids = array("ids_example"); // string[] | Filter by category ids
+$name = "name_example"; // string | Filter by category name
 
 try {
-    $result = $apiInstance->getCategories($limit, $offset, $sort, $ids);
+    $result = $apiInstance->getCategories($limit, $offset, $sort, $ids, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EcommerceApi->getCategories: ', $e->getMessage(), PHP_EOL;
@@ -456,6 +463,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
  **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
  **ids** | [**string[]**](../Model/string.md)| Filter by category ids | [optional]
+ **name** | **string**| Filter by category name | [optional]
 
 ### Return type
 
@@ -587,7 +595,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProducts**
-> \SendinBlue\Client\Model\GetProducts getProducts($limit, $offset, $sort, $ids)
+> \SendinBlue\Client\Model\GetProducts getProducts($limit, $offset, $sort, $ids, $name, $price, $categories)
 
 Return all your products
 
@@ -615,9 +623,12 @@ $limit = 50; // int | Number of documents per page
 $offset = 0; // int | Index of the first document in the page
 $sort = "desc"; // string | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
 $ids = array("ids_example"); // string[] | Filter by product ids
+$name = "name_example"; // string | Filter by product name, minimum 3 characters should be present for search
+$price = array("price_example"); // string[] | Filter by product price, like price[lte]
+$categories = array("categories_example"); // string[] | Filter by category ids
 
 try {
-    $result = $apiInstance->getProducts($limit, $offset, $sort, $ids);
+    $result = $apiInstance->getProducts($limit, $offset, $sort, $ids, $name, $price, $categories);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EcommerceApi->getProducts: ', $e->getMessage(), PHP_EOL;
@@ -633,6 +644,9 @@ Name | Type | Description  | Notes
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
  **sort** | **string**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
  **ids** | [**string[]**](../Model/string.md)| Filter by product ids | [optional]
+ **name** | **string**| Filter by product name, minimum 3 characters should be present for search | [optional]
+ **price** | [**string[]**](../Model/string.md)| Filter by product price, like price[lte] | [optional]
+ **categories** | [**string[]**](../Model/string.md)| Filter by category ids | [optional]
 
 ### Return type
 
