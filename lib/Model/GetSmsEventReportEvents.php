@@ -197,6 +197,7 @@ class GetSmsEventReportEvents implements ModelInterface, ArrayAccess
     const EVENT_UNSUBSCRIPTION = 'unsubscription';
     const EVENT_REPLIES = 'replies';
     const EVENT_BLOCKED = 'blocked';
+    const EVENT_REJECTED = 'rejected';
     
 
     
@@ -217,6 +218,7 @@ class GetSmsEventReportEvents implements ModelInterface, ArrayAccess
             self::EVENT_UNSUBSCRIPTION,
             self::EVENT_REPLIES,
             self::EVENT_BLOCKED,
+            self::EVENT_REJECTED,
         ];
     }
     

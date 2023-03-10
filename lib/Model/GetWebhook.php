@@ -189,7 +189,7 @@ class GetWebhook implements ModelInterface, ArrayAccess
     }
 
     const TYPE_MARKETING = 'marketing';
-    const TYPE_TRANSAC = 'transac';
+    const TYPE_TRANSACTIONAL = 'transactional';
     
 
     
@@ -202,7 +202,7 @@ class GetWebhook implements ModelInterface, ArrayAccess
     {
         return [
             self::TYPE_MARKETING,
-            self::TYPE_TRANSAC,
+            self::TYPE_TRANSACTIONAL,
         ];
     }
     
@@ -393,7 +393,7 @@ class GetWebhook implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type Type of webhook (marketing or transac)
+     * @param string $type Type of webhook (marketing or transactional)
      *
      * @return $this
      */

@@ -161,9 +161,23 @@ class GetProductDetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "metaInfo"
+     */
+    public function testPropertyMetaInfo()
+    {
+    }
+
+    /**
      * Test attribute "s3ThumbEditor"
      */
     public function testPropertyS3ThumbEditor()
+    {
+    }
+
+    /**
+     * Test attribute "isDeleted"
+     */
+    public function testPropertyIsDeleted()
     {
     }
 }

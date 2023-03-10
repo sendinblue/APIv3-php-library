@@ -158,13 +158,13 @@ Class | Method | HTTP request | Description
 *DealsApi* | [**crmDealsLinkUnlinkIdPatch**](docs/Api/DealsApi.md#crmdealslinkunlinkidpatch) | **PATCH** /crm/deals/link-unlink/{id} | Link and Unlink a deal with contacts and companies
 *DealsApi* | [**crmDealsPost**](docs/Api/DealsApi.md#crmdealspost) | **POST** /crm/deals | Create a deal
 *DealsApi* | [**crmPipelineDetailsGet**](docs/Api/DealsApi.md#crmpipelinedetailsget) | **GET** /crm/pipeline/details | Get pipeline stages
-*EcommerceApi* | [**createBatchOrder**](docs/Api/EcommerceApi.md#createbatchorder) | **POST** /orders/status/batch | Maintains a batch of orders
-*EcommerceApi* | [**createOrder**](docs/Api/EcommerceApi.md#createorder) | **POST** /orders/status | Maintains every transactional status of the order
-*EcommerceApi* | [**createUpdateBatchCategory**](docs/Api/EcommerceApi.md#createupdatebatchcategory) | **POST** /categories/batch | Create the categories in a batch
-*EcommerceApi* | [**createUpdateBatchProducts**](docs/Api/EcommerceApi.md#createupdatebatchproducts) | **POST** /products/batch | Creates the products in a batch
+*EcommerceApi* | [**createBatchOrder**](docs/Api/EcommerceApi.md#createbatchorder) | **POST** /orders/status/batch | Create orders in batch
+*EcommerceApi* | [**createOrder**](docs/Api/EcommerceApi.md#createorder) | **POST** /orders/status | Managing the status of the order
+*EcommerceApi* | [**createUpdateBatchCategory**](docs/Api/EcommerceApi.md#createupdatebatchcategory) | **POST** /categories/batch | Create categories in batch
+*EcommerceApi* | [**createUpdateBatchProducts**](docs/Api/EcommerceApi.md#createupdatebatchproducts) | **POST** /products/batch | Create products in batch
 *EcommerceApi* | [**createUpdateCategory**](docs/Api/EcommerceApi.md#createupdatecategory) | **POST** /categories | Create/Update a category
 *EcommerceApi* | [**createUpdateProduct**](docs/Api/EcommerceApi.md#createupdateproduct) | **POST** /products | Create/Update a product
-*EcommerceApi* | [**ecommerceActivatePost**](docs/Api/EcommerceApi.md#ecommerceactivatepost) | **POST** /ecommerce/activate | **Fulfills the eCommerce pre-requisites**
+*EcommerceApi* | [**ecommerceActivatePost**](docs/Api/EcommerceApi.md#ecommerceactivatepost) | **POST** /ecommerce/activate | Activate the eCommerce app
 *EcommerceApi* | [**getCategories**](docs/Api/EcommerceApi.md#getcategories) | **GET** /categories | Return all your categories
 *EcommerceApi* | [**getCategoryInfo**](docs/Api/EcommerceApi.md#getcategoryinfo) | **GET** /categories/{id} | Get a category details
 *EcommerceApi* | [**getProductInfo**](docs/Api/EcommerceApi.md#getproductinfo) | **GET** /products/{id} | Get a product&#39;s details
@@ -210,6 +210,7 @@ Class | Method | HTTP request | Description
 *MasterAccountApi* | [**corporateSubAccountIdDelete**](docs/Api/MasterAccountApi.md#corporatesubaccountiddelete) | **DELETE** /corporate/subAccount/{id} | Delete a sub-account
 *MasterAccountApi* | [**corporateSubAccountIdGet**](docs/Api/MasterAccountApi.md#corporatesubaccountidget) | **GET** /corporate/subAccount/{id} | Get sub-account details
 *MasterAccountApi* | [**corporateSubAccountIdPlanPut**](docs/Api/MasterAccountApi.md#corporatesubaccountidplanput) | **PUT** /corporate/subAccount/{id}/plan | Update sub-account plan
+*MasterAccountApi* | [**corporateSubAccountKeyPost**](docs/Api/MasterAccountApi.md#corporatesubaccountkeypost) | **POST** /corporate/subAccount/key | Create an API key for a sub-account
 *MasterAccountApi* | [**corporateSubAccountPost**](docs/Api/MasterAccountApi.md#corporatesubaccountpost) | **POST** /corporate/subAccount | Create a new sub-account under a master account.
 *MasterAccountApi* | [**corporateSubAccountSsoTokenPost**](docs/Api/MasterAccountApi.md#corporatesubaccountssotokenpost) | **POST** /corporate/subAccount/ssoToken | Generate SSO token to access Sendinblue
 *NotesApi* | [**crmNotesGet**](docs/Api/NotesApi.md#crmnotesget) | **GET** /crm/notes | Get all notes
@@ -284,11 +285,15 @@ Class | Method | HTTP request | Description
 *TransactionalSMSApi* | [**getTransacAggregatedSmsReport**](docs/Api/TransactionalSMSApi.md#gettransacaggregatedsmsreport) | **GET** /transactionalSMS/statistics/aggregatedReport | Get your SMS activity aggregated over a period of time
 *TransactionalSMSApi* | [**getTransacSmsReport**](docs/Api/TransactionalSMSApi.md#gettransacsmsreport) | **GET** /transactionalSMS/statistics/reports | Get your SMS activity aggregated per day
 *TransactionalSMSApi* | [**sendTransacSms**](docs/Api/TransactionalSMSApi.md#sendtransacsms) | **POST** /transactionalSMS/sms | Send SMS message to a mobile number
+*TransactionalWhatsAppApi* | [**getWhatsappEventReport**](docs/Api/TransactionalWhatsAppApi.md#getwhatsappeventreport) | **GET** /whatsapp/statistics/events | Get all your WhatsApp activity (unaggregated events)
+*TransactionalWhatsAppApi* | [**sendWhatsappMessage**](docs/Api/TransactionalWhatsAppApi.md#sendwhatsappmessage) | **POST** /whatsapp/sendMessage | Send a WhatsApp message
 *WebhooksApi* | [**createWebhook**](docs/Api/WebhooksApi.md#createwebhook) | **POST** /webhooks | Create a webhook
 *WebhooksApi* | [**deleteWebhook**](docs/Api/WebhooksApi.md#deletewebhook) | **DELETE** /webhooks/{webhookId} | Delete a webhook
 *WebhooksApi* | [**getWebhook**](docs/Api/WebhooksApi.md#getwebhook) | **GET** /webhooks/{webhookId} | Get a webhook details
 *WebhooksApi* | [**getWebhooks**](docs/Api/WebhooksApi.md#getwebhooks) | **GET** /webhooks | Get all webhooks
 *WebhooksApi* | [**updateWebhook**](docs/Api/WebhooksApi.md#updatewebhook) | **PUT** /webhooks/{webhookId} | Update a webhook
+*WhatsappCampaignsApi* | [**deleteWhatsappCampaign**](docs/Api/WhatsappCampaignsApi.md#deletewhatsappcampaign) | **DELETE** /whatsappCampaigns/{campaignId} | Delete a whatsapp campaign
+*WhatsappCampaignsApi* | [**getWhatsappCampaign**](docs/Api/WhatsappCampaignsApi.md#getwhatsappcampaign) | **GET** /whatsappCampaigns/{campaignId} | Get a whatsapp campaign
 
 
 ## Documentation For Models
@@ -316,13 +321,17 @@ Class | Method | HTTP request | Description
  - [Body7](docs/Model/Body7.md)
  - [Body8](docs/Model/Body8.md)
  - [Body9](docs/Model/Body9.md)
+ - [BodyVariablesItems](docs/Model/BodyVariablesItems.md)
  - [CompaniesList](docs/Model/CompaniesList.md)
  - [Company](docs/Model/Company.md)
  - [CompanyAttributes](docs/Model/CompanyAttributes.md)
  - [CompanyAttributesInner](docs/Model/CompanyAttributesInner.md)
+ - [ComponentItems](docs/Model/ComponentItems.md)
  - [ConversationsMessage](docs/Model/ConversationsMessage.md)
  - [ConversationsMessageFile](docs/Model/ConversationsMessageFile.md)
  - [ConversationsMessageFileImageInfo](docs/Model/ConversationsMessageFileImageInfo.md)
+ - [CreateApiKeyRequest](docs/Model/CreateApiKeyRequest.md)
+ - [CreateApiKeyResponse](docs/Model/CreateApiKeyResponse.md)
  - [CreateAttribute](docs/Model/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/Model/CreateAttributeEnumeration.md)
  - [CreateCategoryModel](docs/Model/CreateCategoryModel.md)
@@ -478,9 +487,13 @@ Class | Method | HTTP request | Description
  - [GetTransacSmsReportReports](docs/Model/GetTransacSmsReportReports.md)
  - [GetWebhook](docs/Model/GetWebhook.md)
  - [GetWebhooks](docs/Model/GetWebhooks.md)
+ - [GetWhatsappCampaignOverview](docs/Model/GetWhatsappCampaignOverview.md)
+ - [GetWhatsappEventReport](docs/Model/GetWhatsappEventReport.md)
+ - [GetWhatsappEventReportEvents](docs/Model/GetWhatsappEventReportEvents.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InlineResponse201](docs/Model/InlineResponse201.md)
  - [InlineResponse2011](docs/Model/InlineResponse2011.md)
+ - [InlineResponse2012](docs/Model/InlineResponse2012.md)
  - [ManageIp](docs/Model/ManageIp.md)
  - [MasterDetailsResponse](docs/Model/MasterDetailsResponse.md)
  - [MasterDetailsResponseBillingInfo](docs/Model/MasterDetailsResponseBillingInfo.md)
@@ -529,6 +542,7 @@ Class | Method | HTTP request | Description
  - [SendTestEmail](docs/Model/SendTestEmail.md)
  - [SendTestSms](docs/Model/SendTestSms.md)
  - [SendTransacSms](docs/Model/SendTransacSms.md)
+ - [SendWhatsappMessage](docs/Model/SendWhatsappMessage.md)
  - [SsoTokenRequest](docs/Model/SsoTokenRequest.md)
  - [SubAccountDetailsResponse](docs/Model/SubAccountDetailsResponse.md)
  - [SubAccountDetailsResponsePlanInfo](docs/Model/SubAccountDetailsResponsePlanInfo.md)
@@ -576,6 +590,9 @@ Class | Method | HTTP request | Description
  - [GetSmsCampaign](docs/Model/GetSmsCampaign.md)
  - [GetAccount](docs/Model/GetAccount.md)
  - [GetEmailCampaign](docs/Model/GetEmailCampaign.md)
+ - [VariablesItems](docs/Model/VariablesItems.md)
+ - [WhatsappCampStats](docs/Model/WhatsappCampStats.md)
+ - [WhatsappCampTemplate](docs/Model/WhatsappCampTemplate.md)
 
 
 ## Documentation For Authorization

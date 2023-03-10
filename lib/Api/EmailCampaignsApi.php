@@ -1239,14 +1239,15 @@ class EmailCampaignsApi
      * Get an email campaign report
      *
      * @param  int $campaignId Id of the campaign (required)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetEmailCampaign
      */
-    public function getEmailCampaign($campaignId)
+    public function getEmailCampaign($campaignId, $statistics = null)
     {
-        list($response) = $this->getEmailCampaignWithHttpInfo($campaignId);
+        list($response) = $this->getEmailCampaignWithHttpInfo($campaignId, $statistics);
         return $response;
     }
 
@@ -1256,15 +1257,16 @@ class EmailCampaignsApi
      * Get an email campaign report
      *
      * @param  int $campaignId Id of the campaign (required)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      *
      * @throws \SendinBlue\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetEmailCampaign, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailCampaignWithHttpInfo($campaignId)
+    public function getEmailCampaignWithHttpInfo($campaignId, $statistics = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailCampaign';
-        $request = $this->getEmailCampaignRequest($campaignId);
+        $request = $this->getEmailCampaignRequest($campaignId, $statistics);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1347,13 +1349,14 @@ class EmailCampaignsApi
      * Get an email campaign report
      *
      * @param  int $campaignId Id of the campaign (required)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailCampaignAsync($campaignId)
+    public function getEmailCampaignAsync($campaignId, $statistics = null)
     {
-        return $this->getEmailCampaignAsyncWithHttpInfo($campaignId)
+        return $this->getEmailCampaignAsyncWithHttpInfo($campaignId, $statistics)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1367,14 +1370,15 @@ class EmailCampaignsApi
      * Get an email campaign report
      *
      * @param  int $campaignId Id of the campaign (required)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailCampaignAsyncWithHttpInfo($campaignId)
+    public function getEmailCampaignAsyncWithHttpInfo($campaignId, $statistics = null)
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailCampaign';
-        $request = $this->getEmailCampaignRequest($campaignId);
+        $request = $this->getEmailCampaignRequest($campaignId, $statistics);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1417,11 +1421,12 @@ class EmailCampaignsApi
      * Create request for operation 'getEmailCampaign'
      *
      * @param  int $campaignId Id of the campaign (required)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailCampaignRequest($campaignId)
+    protected function getEmailCampaignRequest($campaignId, $statistics = null)
     {
         // verify the required parameter 'campaignId' is set
         if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
@@ -1437,6 +1442,10 @@ class EmailCampaignsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($statistics !== null) {
+            $queryParams['statistics'] = ObjectSerializer::toQueryValue($statistics);
+        }
 
         // path params
         if ($campaignId !== null) {
@@ -1535,6 +1544,7 @@ class EmailCampaignsApi
      *
      * @param  string $type Filter on the type of the campaigns (optional)
      * @param  string $status Filter on the status of the campaign (optional)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      * @param  string $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  string $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
@@ -1545,9 +1555,9 @@ class EmailCampaignsApi
      * @throws \InvalidArgumentException
      * @return \SendinBlue\Client\Model\GetEmailCampaigns
      */
-    public function getEmailCampaigns($type = null, $status = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
+    public function getEmailCampaigns($type = null, $status = null, $statistics = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
-        list($response) = $this->getEmailCampaignsWithHttpInfo($type, $status, $startDate, $endDate, $limit, $offset, $sort);
+        list($response) = $this->getEmailCampaignsWithHttpInfo($type, $status, $statistics, $startDate, $endDate, $limit, $offset, $sort);
         return $response;
     }
 
@@ -1558,6 +1568,7 @@ class EmailCampaignsApi
      *
      * @param  string $type Filter on the type of the campaigns (optional)
      * @param  string $status Filter on the status of the campaign (optional)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      * @param  string $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  string $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
@@ -1568,10 +1579,10 @@ class EmailCampaignsApi
      * @throws \InvalidArgumentException
      * @return array of \SendinBlue\Client\Model\GetEmailCampaigns, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailCampaignsWithHttpInfo($type = null, $status = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
+    public function getEmailCampaignsWithHttpInfo($type = null, $status = null, $statistics = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailCampaigns';
-        $request = $this->getEmailCampaignsRequest($type, $status, $startDate, $endDate, $limit, $offset, $sort);
+        $request = $this->getEmailCampaignsRequest($type, $status, $statistics, $startDate, $endDate, $limit, $offset, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1647,6 +1658,7 @@ class EmailCampaignsApi
      *
      * @param  string $type Filter on the type of the campaigns (optional)
      * @param  string $status Filter on the status of the campaign (optional)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      * @param  string $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  string $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
@@ -1656,9 +1668,9 @@ class EmailCampaignsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailCampaignsAsync($type = null, $status = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
+    public function getEmailCampaignsAsync($type = null, $status = null, $statistics = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
-        return $this->getEmailCampaignsAsyncWithHttpInfo($type, $status, $startDate, $endDate, $limit, $offset, $sort)
+        return $this->getEmailCampaignsAsyncWithHttpInfo($type, $status, $statistics, $startDate, $endDate, $limit, $offset, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1673,6 +1685,7 @@ class EmailCampaignsApi
      *
      * @param  string $type Filter on the type of the campaigns (optional)
      * @param  string $status Filter on the status of the campaign (optional)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      * @param  string $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  string $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
@@ -1682,10 +1695,10 @@ class EmailCampaignsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailCampaignsAsyncWithHttpInfo($type = null, $status = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
+    public function getEmailCampaignsAsyncWithHttpInfo($type = null, $status = null, $statistics = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
         $returnType = '\SendinBlue\Client\Model\GetEmailCampaigns';
-        $request = $this->getEmailCampaignsRequest($type, $status, $startDate, $endDate, $limit, $offset, $sort);
+        $request = $this->getEmailCampaignsRequest($type, $status, $statistics, $startDate, $endDate, $limit, $offset, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1729,6 +1742,7 @@ class EmailCampaignsApi
      *
      * @param  string $type Filter on the type of the campaigns (optional)
      * @param  string $status Filter on the status of the campaign (optional)
+     * @param  string $statistics Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
      * @param  string $startDate Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  string $endDate Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) (optional)
      * @param  int $limit Number of documents per page (optional, default to 50)
@@ -1738,7 +1752,7 @@ class EmailCampaignsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailCampaignsRequest($type = null, $status = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
+    protected function getEmailCampaignsRequest($type = null, $status = null, $statistics = null, $startDate = null, $endDate = null, $limit = '50', $offset = '0', $sort = 'desc')
     {
         if ($limit !== null && $limit > 100) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EmailCampaignsApi.getEmailCampaigns, must be smaller than or equal to 100.');
@@ -1762,6 +1776,10 @@ class EmailCampaignsApi
         // query params
         if ($status !== null) {
             $queryParams['status'] = ObjectSerializer::toQueryValue($status);
+        }
+        // query params
+        if ($statistics !== null) {
+            $queryParams['statistics'] = ObjectSerializer::toQueryValue($statistics);
         }
         // query params
         if ($startDate !== null) {

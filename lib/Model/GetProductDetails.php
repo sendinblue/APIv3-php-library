@@ -69,7 +69,9 @@ class GetProductDetails implements ModelInterface, ArrayAccess
         'parentId' => 'string',
         's3Original' => 'string',
         's3ThumbAnalytics' => 'string',
-        's3ThumbEditor' => 'string'
+        'metaInfo' => 'object',
+        's3ThumbEditor' => 'string',
+        'isDeleted' => 'bool'
     ];
 
     /**
@@ -90,7 +92,9 @@ class GetProductDetails implements ModelInterface, ArrayAccess
         'parentId' => 'string',
         's3Original' => 'string',
         's3ThumbAnalytics' => 'string',
-        's3ThumbEditor' => 'string'
+        'metaInfo' => null,
+        's3ThumbEditor' => 'string',
+        'isDeleted' => 'string'
     ];
 
     /**
@@ -132,7 +136,9 @@ class GetProductDetails implements ModelInterface, ArrayAccess
         'parentId' => 'parentId',
         's3Original' => 's3Original',
         's3ThumbAnalytics' => 's3ThumbAnalytics',
-        's3ThumbEditor' => 's3ThumbEditor'
+        'metaInfo' => 'metaInfo',
+        's3ThumbEditor' => 's3ThumbEditor',
+        'isDeleted' => 'isDeleted'
     ];
 
     /**
@@ -153,7 +159,9 @@ class GetProductDetails implements ModelInterface, ArrayAccess
         'parentId' => 'setParentId',
         's3Original' => 'setS3Original',
         's3ThumbAnalytics' => 'setS3ThumbAnalytics',
-        's3ThumbEditor' => 'setS3ThumbEditor'
+        'metaInfo' => 'setMetaInfo',
+        's3ThumbEditor' => 'setS3ThumbEditor',
+        'isDeleted' => 'setIsDeleted'
     ];
 
     /**
@@ -174,7 +182,9 @@ class GetProductDetails implements ModelInterface, ArrayAccess
         'parentId' => 'getParentId',
         's3Original' => 'getS3Original',
         's3ThumbAnalytics' => 'getS3ThumbAnalytics',
-        's3ThumbEditor' => 'getS3ThumbEditor'
+        'metaInfo' => 'getMetaInfo',
+        's3ThumbEditor' => 'getS3ThumbEditor',
+        'isDeleted' => 'getIsDeleted'
     ];
 
     /**
@@ -249,7 +259,9 @@ class GetProductDetails implements ModelInterface, ArrayAccess
         $this->container['parentId'] = isset($data['parentId']) ? $data['parentId'] : null;
         $this->container['s3Original'] = isset($data['s3Original']) ? $data['s3Original'] : null;
         $this->container['s3ThumbAnalytics'] = isset($data['s3ThumbAnalytics']) ? $data['s3ThumbAnalytics'] : null;
+        $this->container['metaInfo'] = isset($data['metaInfo']) ? $data['metaInfo'] : null;
         $this->container['s3ThumbEditor'] = isset($data['s3ThumbEditor']) ? $data['s3ThumbEditor'] : null;
+        $this->container['isDeleted'] = isset($data['isDeleted']) ? $data['isDeleted'] : null;
     }
 
     /**
@@ -583,6 +595,30 @@ class GetProductDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets metaInfo
+     *
+     * @return object
+     */
+    public function getMetaInfo()
+    {
+        return $this->container['metaInfo'];
+    }
+
+    /**
+     * Sets metaInfo
+     *
+     * @param object $metaInfo Meta data of product such as description, vendor, producer, stock level, etc.
+     *
+     * @return $this
+     */
+    public function setMetaInfo($metaInfo)
+    {
+        $this->container['metaInfo'] = $metaInfo;
+
+        return $this;
+    }
+
+    /**
      * Gets s3ThumbEditor
      *
      * @return string
@@ -602,6 +638,30 @@ class GetProductDetails implements ModelInterface, ArrayAccess
     public function setS3ThumbEditor($s3ThumbEditor)
     {
         $this->container['s3ThumbEditor'] = $s3ThumbEditor;
+
+        return $this;
+    }
+
+    /**
+     * Gets isDeleted
+     *
+     * @return bool
+     */
+    public function getIsDeleted()
+    {
+        return $this->container['isDeleted'];
+    }
+
+    /**
+     * Sets isDeleted
+     *
+     * @param bool $isDeleted product deleted from the shop's database
+     *
+     * @return $this
+     */
+    public function setIsDeleted($isDeleted)
+    {
+        $this->container['isDeleted'] = $isDeleted;
 
         return $this;
     }

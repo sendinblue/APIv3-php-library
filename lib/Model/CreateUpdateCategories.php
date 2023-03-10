@@ -59,7 +59,8 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'deletedAt' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'email',
         'name' => null,
-        'url' => null
+        'url' => null,
+        'deletedAt' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'url' => 'url'
+        'url' => 'url',
+        'deletedAt' => 'deletedAt'
     ];
 
     /**
@@ -113,7 +116,8 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'url' => 'setUrl'
+        'url' => 'setUrl',
+        'deletedAt' => 'setDeletedAt'
     ];
 
     /**
@@ -124,7 +128,8 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'url' => 'getUrl'
+        'url' => 'getUrl',
+        'deletedAt' => 'getDeletedAt'
     ];
 
     /**
@@ -190,6 +195,7 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['deletedAt'] = isset($data['deletedAt']) ? $data['deletedAt'] : null;
     }
 
     /**
@@ -287,6 +293,30 @@ class CreateUpdateCategories implements ModelInterface, ArrayAccess
     public function setUrl($url)
     {
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets deletedAt
+     *
+     * @return string
+     */
+    public function getDeletedAt()
+    {
+        return $this->container['deletedAt'];
+    }
+
+    /**
+     * Sets deletedAt
+     *
+     * @param string $deletedAt UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of the category deleted from the shop's database
+     *
+     * @return $this
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->container['deletedAt'] = $deletedAt;
 
         return $this;
     }

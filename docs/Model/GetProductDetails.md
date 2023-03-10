@@ -15,7 +15,9 @@ Name | Type | Description | Notes
 **parentId** | **string** | Parent product id of the product | [optional] 
 **s3Original** | **string** | S3 url of original image | [optional] 
 **s3ThumbAnalytics** | **string** | S3 thumbnail url of original image in 120x120 dimension for analytics section | 
+**metaInfo** | **object** | Meta data of product such as description, vendor, producer, stock level, etc. | [optional] 
 **s3ThumbEditor** | **string** | S3 thumbnail url of original image in 600x400 dimension for editor section | 
+**isDeleted** | **bool** | product deleted from the shop&#39;s database | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -122,6 +122,16 @@ class MasterAccountApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for corporateSubAccountKeyPost
+     *
+     * Create an API key for a sub-account.
+     *
+     */
+    public function testCorporateSubAccountKeyPost()
+    {
+    }
+
+    /**
      * Test case for corporateSubAccountPost
      *
      * Create a new sub-account under a master account..

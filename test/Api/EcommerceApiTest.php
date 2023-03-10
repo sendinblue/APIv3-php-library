@@ -74,7 +74,7 @@ class EcommerceApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createBatchOrder
      *
-     * Maintains a batch of orders.
+     * Create orders in batch.
      *
      */
     public function testCreateBatchOrder()
@@ -84,7 +84,7 @@ class EcommerceApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createOrder
      *
-     * Maintains every transactional status of the order.
+     * Managing the status of the order.
      *
      */
     public function testCreateOrder()
@@ -94,7 +94,7 @@ class EcommerceApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createUpdateBatchCategory
      *
-     * Create the categories in a batch.
+     * Create categories in batch.
      *
      */
     public function testCreateUpdateBatchCategory()
@@ -104,7 +104,7 @@ class EcommerceApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createUpdateBatchProducts
      *
-     * Creates the products in a batch.
+     * Create products in batch.
      *
      */
     public function testCreateUpdateBatchProducts()
@@ -134,7 +134,7 @@ class EcommerceApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for ecommerceActivatePost
      *
-     * **Fulfills the eCommerce pre-requisites**.
+     * Activate the eCommerce app.
      *
      */
     public function testEcommerceActivatePost()

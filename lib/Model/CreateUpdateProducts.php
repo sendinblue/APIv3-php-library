@@ -64,7 +64,9 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
         'sku' => 'string',
         'price' => 'float',
         'categories' => 'string[]',
-        'parentId' => 'string'
+        'parentId' => 'string',
+        'metaInfo' => 'map[string,string]',
+        'deletedAt' => 'string'
     ];
 
     /**
@@ -80,7 +82,9 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
         'sku' => 'string',
         'price' => 'float',
         'categories' => null,
-        'parentId' => 'string'
+        'parentId' => 'string',
+        'metaInfo' => null,
+        'deletedAt' => null
     ];
 
     /**
@@ -117,7 +121,9 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
         'sku' => 'sku',
         'price' => 'price',
         'categories' => 'categories',
-        'parentId' => 'parentId'
+        'parentId' => 'parentId',
+        'metaInfo' => 'metaInfo',
+        'deletedAt' => 'deletedAt'
     ];
 
     /**
@@ -133,7 +139,9 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
         'sku' => 'setSku',
         'price' => 'setPrice',
         'categories' => 'setCategories',
-        'parentId' => 'setParentId'
+        'parentId' => 'setParentId',
+        'metaInfo' => 'setMetaInfo',
+        'deletedAt' => 'setDeletedAt'
     ];
 
     /**
@@ -149,7 +157,9 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
         'sku' => 'getSku',
         'price' => 'getPrice',
         'categories' => 'getCategories',
-        'parentId' => 'getParentId'
+        'parentId' => 'getParentId',
+        'metaInfo' => 'getMetaInfo',
+        'deletedAt' => 'getDeletedAt'
     ];
 
     /**
@@ -220,6 +230,8 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['categories'] = isset($data['categories']) ? $data['categories'] : null;
         $this->container['parentId'] = isset($data['parentId']) ? $data['parentId'] : null;
+        $this->container['metaInfo'] = isset($data['metaInfo']) ? $data['metaInfo'] : null;
+        $this->container['deletedAt'] = isset($data['deletedAt']) ? $data['deletedAt'] : null;
     }
 
     /**
@@ -440,6 +452,54 @@ class CreateUpdateProducts implements ModelInterface, ArrayAccess
     public function setParentId($parentId)
     {
         $this->container['parentId'] = $parentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets metaInfo
+     *
+     * @return map[string,string]
+     */
+    public function getMetaInfo()
+    {
+        return $this->container['metaInfo'];
+    }
+
+    /**
+     * Sets metaInfo
+     *
+     * @param map[string,string] $metaInfo Meta data of product such as description, vendor, producer, stock level. The size of cumulative metaInfo shall not exceed **1000 KB**. Maximum length of metaInfo object can be 10.
+     *
+     * @return $this
+     */
+    public function setMetaInfo($metaInfo)
+    {
+        $this->container['metaInfo'] = $metaInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets deletedAt
+     *
+     * @return string
+     */
+    public function getDeletedAt()
+    {
+        return $this->container['deletedAt'];
+    }
+
+    /**
+     * Sets deletedAt
+     *
+     * @param string $deletedAt UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) of the product deleted from the shop's database
+     *
+     * @return $this
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->container['deletedAt'] = $deletedAt;
 
         return $this;
     }

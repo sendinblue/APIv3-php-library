@@ -61,7 +61,8 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
         'name' => 'string',
         'createdAt' => 'string',
         'modifiedAt' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'isDeleted' => 'bool'
     ];
 
     /**
@@ -74,7 +75,8 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
         'name' => 'string',
         'createdAt' => null,
         'modifiedAt' => null,
-        'url' => 'string'
+        'url' => 'string',
+        'isDeleted' => 'string'
     ];
 
     /**
@@ -108,7 +110,8 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
         'name' => 'name',
         'createdAt' => 'createdAt',
         'modifiedAt' => 'modifiedAt',
-        'url' => 'url'
+        'url' => 'url',
+        'isDeleted' => 'isDeleted'
     ];
 
     /**
@@ -121,7 +124,8 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'createdAt' => 'setCreatedAt',
         'modifiedAt' => 'setModifiedAt',
-        'url' => 'setUrl'
+        'url' => 'setUrl',
+        'isDeleted' => 'setIsDeleted'
     ];
 
     /**
@@ -134,7 +138,8 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'createdAt' => 'getCreatedAt',
         'modifiedAt' => 'getModifiedAt',
-        'url' => 'getUrl'
+        'url' => 'getUrl',
+        'isDeleted' => 'getIsDeleted'
     ];
 
     /**
@@ -202,6 +207,7 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['isDeleted'] = isset($data['isDeleted']) ? $data['isDeleted'] : null;
     }
 
     /**
@@ -356,6 +362,30 @@ class GetCategoryDetails implements ModelInterface, ArrayAccess
     public function setUrl($url)
     {
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets isDeleted
+     *
+     * @return bool
+     */
+    public function getIsDeleted()
+    {
+        return $this->container['isDeleted'];
+    }
+
+    /**
+     * Sets isDeleted
+     *
+     * @param bool $isDeleted category deleted from the shop's database
+     *
+     * @return $this
+     */
+    public function setIsDeleted($isDeleted)
+    {
+        $this->container['isDeleted'] = $isDeleted;
 
         return $this;
     }

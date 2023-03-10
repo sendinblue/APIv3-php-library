@@ -96,4 +96,11 @@ class CreateUpdateCategoriesTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUrl()
     {
     }
+
+    /**
+     * Test attribute "deletedAt"
+     */
+    public function testPropertyDeletedAt()
+    {
+    }
 }
